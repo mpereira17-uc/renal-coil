@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 370" role="group" aria-labelledby="kidney-title kidney-desc">
+  <title id="kidney-title" data-i18n="kidneyTitle">Riñón: esquema interactivo</title><desc id="kidney-desc" data-i18n="kidneyDescription">Corte esquemático de un riñón. Cinco puntos permiten explorar corteza, médula, glomérulo, uréter y arteria.</desc>
+  <!-- Corte anatómico simplificado para educación; no imagen clínica. -->
+  <ellipse cx="232" cy="344" rx="127" ry="9" fill="#cdd6c4" opacity=".55"/>
+  <path class="kidney-outline" d="M224 31C140 18 84 73 79 169c-5 95 49 164 120 160 57-3 84-41 69-72-8-18-45-25-43-70 1-36 34-46 44-62 22-34 4-87-45-94Z"/>
+  <path d="M218 48C150 37 101 85 96 167c-5 83 44 146 102 144 41-2 63-30 55-49-9-21-43-39-43-77 0-44 31-54 42-68 20-29 1-63-34-69Z" fill="#f0cbb0" stroke="#bc795f" stroke-width="1.2"/>
+  <path class="medulla-region" d="M191 68c-30 4-49 14-57 24l70 45-13-69Z"/>
+  <path class="medulla-region" d="M116 120c-10 19-13 40-11 57l89-4-78-53Z"/>
+  <path class="medulla-region" d="M106 204c4 25 14 45 26 56l67-58-93 2Z"/>
+  <path class="medulla-region" d="M155 285c16 15 43 18 63 10l-18-79-45 69Z"/>
+  <path d="M205 139c9 15 6 24 6 36 0 14-2 26-9 36 25-6 30 7 37 18 12-12 18-27 15-43-4-13-15-22-15-32 0-9 7-18 14-24-19 3-33 10-48 9Z" fill="#e1c390" stroke="#b39964" stroke-width="1.5"/>
+  <path d="M241 210c20 28 25 49 25 116" fill="none" stroke="#bba062" stroke-width="16" stroke-linecap="round"/>
+  <path d="M241 210c20 28 25 49 25 116" fill="none" stroke="#eddaaa" stroke-width="11" stroke-linecap="round"/>
+  <path d="M241 156c27-9 38-10 90-10" fill="none" stroke="#914f40" stroke-width="17" stroke-linecap="round"/>
+  <path d="M241 156c27-9 38-10 90-10" fill="none" stroke="#c87363" stroke-width="12" stroke-linecap="round"/>
+  <path d="M239 174c29 6 43 4 94 4" fill="none" stroke="#416f82" stroke-width="13" stroke-linecap="round"/>
+  <path d="M239 174c29 6 43 4 94 4" fill="none" stroke="#80a4af" stroke-width="9" stroke-linecap="round"/>
+  <path class="kidney-detail-line" d="M237 154c-18-2-23-13-32-22M220 149l-28-32m37 40-37 6m32 15-33 25m32-15-28 44"/>
+  <path class="kidney-detail-line" d="m185 110-3-15m1 6-9-5m14 16-10 5m-30 37-12-8m12 8-11 7m17 75-12 8m12-8 5 10m42 42-2 11"/>
+  <circle cx="127" cy="103" r="14" fill="#f9e7d3" stroke="#b97359" stroke-width="1.5"/>
+  <path d="M120 107c-8-10 10-21 10-5-9 12-14-10-2-9 10 2-9 21-11 10" fill="none" stroke="#b15e4e" stroke-width="2"/>
+  <circle r="3.5" fill="#fbe6ce"><animateMotion dur="3s" repeatCount="indefinite" path="M331 146C285 146 254 150 224 157"/></circle>
+  <circle r="3" fill="#e6f2ed"><animateMotion dur="3.5s" repeatCount="indefinite" path="M239 174C273 180 304 178 333 178"/></circle>
+  <circle r="3" fill="#fff4d0"><animateMotion dur="4s" repeatCount="indefinite" path="M241 210C262 241 266 268 266 326"/></circle>
+  <path class="kidney-label-line" d="M177 47 177 22 133 22M296 146l34-27h73M282 277h80"/>
+  <text x="58" y="25" class="kidney-label" data-i18n="filterMembrane">Barrera de filtrado</text>
+  <text x="335" y="113" class="kidney-label" data-i18n="filterBlood">Sangre que llega</text>
+  <text x="306" y="300" class="kidney-label" data-i18n="filterUrine">Hacia la orina</text>
+  <g class="kidney-hotspot" data-part="corteza" tabindex="0" role="button" aria-pressed="true" aria-label="Corteza renal" transform="translate(99 177)"><circle class="hotspot-hit" r="25" fill="transparent"/><circle class="hotspot-halo" r="13"/><circle class="hotspot-center" r="4"/></g>
+  <g class="kidney-hotspot" data-part="medula" tabindex="0" role="button" aria-pressed="false" aria-label="Médula renal" transform="translate(151 220)"><circle class="hotspot-hit" r="25" fill="transparent"/><circle class="hotspot-halo" r="13"/><circle class="hotspot-center" r="4"/></g>
+  <g class="kidney-hotspot" data-part="glomerulo" tabindex="0" role="button" aria-pressed="false" aria-label="Glomérulo" transform="translate(126 104)"><circle class="hotspot-hit" r="25" fill="transparent"/><circle class="hotspot-halo" r="13"/><circle class="hotspot-center" r="4"/></g>
+  <g class="kidney-hotspot" data-part="ureter" tabindex="0" role="button" aria-pressed="false" aria-label="Uréter" transform="translate(265 292)"><circle class="hotspot-hit" r="25" fill="transparent"/><circle class="hotspot-halo" r="13"/><circle class="hotspot-center" r="4"/></g>
+  <g class="kidney-hotspot" data-part="arteria" tabindex="0" role="button" aria-pressed="false" aria-label="Arteria renal" transform="translate(296 146)"><circle class="hotspot-hit" r="25" fill="transparent"/><circle class="hotspot-halo" r="13"/><circle class="hotspot-center" r="4"/></g>
+</svg>
