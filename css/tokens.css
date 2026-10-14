@@ -1,0 +1,89 @@
+/* Identidad visual: cambia estos valores para ajustar toda la aplicación. */ @font-face{
+  font-family:RenalEditorial;
+  src:url('../assets/fonts/editorial.woff2') format('woff2');
+  font-weight:400;
+  font-style:normal;
+  font-display:swap
+}
+@font-face{
+  font-family:RenalEditorial;
+  src:url('../assets/fonts/editorial-italic.woff2') format('woff2');
+  font-weight:400;
+  font-style:italic;
+  font-display:swap
+}
+@font-face{
+  font-family:RenalText;
+  src:url('../assets/fonts/texto.woff2') format('woff2');
+  font-weight:400;
+  font-display:swap
+}
+@font-face{
+  font-family:RenalText;
+  src:url('../assets/fonts/texto-bold.woff2') format('woff2');
+  font-weight:600 900;
+  font-display:swap
+}
+:root{
+  color-scheme:light;
+  --paper:#f5f7f9;
+  --surface:#ffffff;
+  --studio:#edf4f8;
+  --sage:#dbeaf1;
+  --sage-dark:#52758a;
+  --ink:#203442;
+  --text:#40525f;
+  --muted:#5b6d7b;
+  --line:#dfe6ec;
+  --coral:#a65040;
+  --coral-soft:#faeee8;
+  --blue:#146d88;
+  --blue-soft:#edf4f8;
+  --amber:#805917;
+  --amber-soft:#fff8eb;
+  --warning-line:#e7d5b3;
+  --green-soft:#e9f4ee;
+  --green:#28634d;
+  --danger:#a83c38;
+  --danger-action:#a23935;
+  --danger-soft:#fff4f3;
+  --danger-line:#e5c5c2;
+  --action:#146d88;
+  --action-hover:#0d526b;
+  --action-text:#ffffff;
+  --control:#ffffff;
+  --control-hover:#edf4f8;
+  --control-border:#b4c3ce;
+  --control-active:#e8f2f8;
+  --control-text:#285268;
+  --input-border:#8195a5;
+  --focus:#146d88;
+  --card-shadow:0 3px 14px rgb(20 45 64 / 3%);
+  --recipe-breakfast:#f6efdf;
+  --recipe-lunch:#edf3e9;
+  --recipe-dinner:#eaf1f7;
+  --recipe-snack:#f6ece8;
+  --serif:RenalEditorial,Palatino,'Book Antiqua',Georgia,serif;
+  --sans:RenalText,'Segoe UI',Arial,sans-serif;
+  --radius:18px;
+  --ease:cubic-bezier(.2,.7,.2,1);
+  --max-width:1240px;
+  --gutter:clamp(1rem,4vw,4rem);
+  --header-height:84px
+}
+/* Tema oscuro con colores propios, sin invertir las ilustraciones. */
+[data-theme="dark"]{
+  color-scheme:dark;
+  --paper:#141e27;--surface:#1d2b36;--studio:#243743;
+  --sage:#344e5e;--sage-dark:#a2bed0;--ink:#edf3f7;--text:#d2dee7;
+  --muted:#afc0ce;--line:#3c505f;--coral:#efa88c;--coral-soft:#44342e;
+  --blue:#8dccdf;--blue-soft:#243743;--amber:#edca88;--amber-soft:#3b3324;
+  --warning-line:#635237;--green:#b0d9bf;--green-soft:#263f35;
+  --danger:#ffb4ad;--danger-soft:#422f32;--danger-line:#715051;
+  --action:#8dccdf;--action-hover:#b1deec;--action-text:#18313f;
+  --control:#1d2b36;--control-hover:#2a4050;--control-border:#5b7588;
+  --control-active:#2b4354;--control-text:#c3e3f1;--input-border:#7693a5;
+  --focus:#8dccdf;--card-shadow:0 3px 16px rgb(0 0 0 / 10%);
+  --recipe-breakfast:#363528;--recipe-lunch:#2b3b30;
+  --recipe-dinner:#283b4b;--recipe-snack:#3d3332
+}
