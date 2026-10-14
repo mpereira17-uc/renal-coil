@@ -1,0 +1,20 @@
+{
+  "name": "renal-coil",
+  "version": "3.3.0",
+  "private": true,
+  "description": "Web educativa estática sobre salud renal. Sin dependencias.",
+  "scripts": {
+    "dev": "node tools/servidor_node.cjs",
+    "portable": "node tools/portable.cjs",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint js tests tools/*.cjs eslint.config.js",
+    "check:i18n": "node tools/check_i18n.cjs",
+    "verify": "node tools/verify.cjs"
+  },
+  "devDependencies": {
+    "eslint": "^10.12.0",
+    "vitest": "^5.0.3"
+  },
+  "type": "module"
+}
