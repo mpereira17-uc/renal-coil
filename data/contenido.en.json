@@ -1,0 +1,1091 @@
+{
+  "skip": "Skip to content",
+  "mainNav": "Main navigation",
+  "language": "Language",
+  "present": "Presentation mode",
+  "menu": "Open menu",
+  "navDiscover": "Discover",
+  "navTrack": "My records",
+  "navFood": "Food",
+  "navHabits": "Habits",
+  "navSigns": "Signs",
+  "academic": "LEARNING EXPERIENCE / COIL",
+  "discoverEyebrow": "DIABETES AND KIDNEY HEALTH",
+  "anatomy": "01 / INTERACTIVE ANATOMY",
+  "schematic": "EDUCATIONAL DIAGRAM",
+  "exploreParts": "Explore kidney structures",
+  "heroEyebrow": "UNDERSTANDING TO CARE",
+  "heroTitle": "Your kidney health,",
+  "heroAccent": "up close.",
+  "heroDescription": "A space to understand how diabetes can affect your kidneys and how you can care for them, every day.",
+  "compareFilter": "Compare filtration",
+  "startTracking": "View my records",
+  "qsEyebrow": "EXPLORE AT YOUR OWN PACE",
+  "qsTitle": "Where would you like to start?",
+  "qsTrackTitle": "Log my measurements",
+  "qsTrackText": "Glucose, blood pressure and lab results in one place.",
+  "qsFoodTitle": "Recipes and meal diary",
+  "qsFoodText": "Ideas for your table and a log of what you eat.",
+  "qsHabitsTitle": "Check off my habits",
+  "qsHabitsText": "A simple record, day by day.",
+  "qsSignsTitle": "Learn the signs",
+  "qsSignsText": "What to look for and when to seek care.",
+  "heroMessage": "Having diabetes does not mean you will develop kidney damage. Follow-up and daily care can reduce the risk.",
+  "exploreHint": "Select a point on the kidney to explore.",
+  "fiveParts": "5 structures",
+  "filterEyebrow": "ONE FILTER, MANY WAYS TO CARE",
+  "filterTitle": "How filtration can change",
+  "closeComparison": "Close comparison",
+  "illustrative": "Conceptual simulation",
+  "progression": "Explore the changes",
+  "filterHealthy": "Preserved filtration",
+  "filterAffected": "Affected filtration",
+  "filterDisclaimer": "This does not represent clinical stages, percentages of function or an individual's progression. Damage is not inevitable.",
+  "educationEyebrow": "KNOWLEDGE IS PART OF CARE",
+  "educationTitle": "Understand the essentials.",
+  "fourChapters": "FOUR CHAPTERS",
+  "chapters": "Kidney health chapters",
+  "dailyStep": "ONE STEP FOR TODAY",
+  "dailyTitle": "Make room for your care.",
+  "dailyDescription": "Organize your measurements, explore a cooking idea and track the habits you agreed on with your health care team.",
+  "viewHabits": "View my habits",
+  "trackingPreview": "A LOOK AT YOUR RECORDS",
+  "openTracking": "Open all records",
+  "trackEyebrow": "YOUR DATA, IN CONTEXT",
+  "trackTitle": "Every record matters.",
+  "trackDescription": "Keep your measurements and laboratory results together to discuss at your appointments.",
+  "addRecord": "Add measurement",
+  "trendEyebrow": "TREND",
+  "period": "Period",
+  "sevenDays": "7 days",
+  "thirtyDays": "30 days",
+  "allTime": "All time",
+  "metric": "Measurement",
+  "readTogether": "READ THEM TOGETHER",
+  "noSingleNumber": "Your health is more than a number.",
+  "trackNote": "A trend helps organize information. A single measurement cannot confirm or rule out kidney disease.",
+  "rangesNote": "The example's colors and reference bands await clinical validation. Your targets must be individual.",
+  "viewReferences": "View example references",
+  "localOnly": "Stored only in this browser.",
+  "history": "HISTORY",
+  "resultsTitle": "Your results, organized.",
+  "exportCSV": "Export CSV",
+  "clearRecords": "Delete records",
+  "from": "From",
+  "to": "To",
+  "resetDates": "Clear date filter",
+  "resultsDisclaimer": "Illustrative values do not replace medical assessment. Color comparisons for personal records require the health care team to validate the references.",
+  "todayRecipe": "AN IDEA TO REVIEW",
+  "foodTeaserTitle": "Cooking can be simple, too.",
+  "foodTeaserDescription": "Find sample dishes to discuss with your dietitian. Portions and ingredients must be adapted to each person.",
+  "openRecipes": "Explore recipes",
+  "nextVisit": "AT YOUR NEXT APPOINTMENT",
+  "askTeam": "Questions worth bringing.",
+  "foodEyebrow": "FLAVOR, CARE AND CONTEXT",
+  "foodTitle": "Ideas for your table.",
+  "foodDescription": "A sample recipe collection to review with your health care team, as a starting point.",
+  "dietNote": "There is no single kidney diet. Protein, potassium, phosphorus, sodium and fluids depend on your kidney function and results. All these recipes require validation.",
+  "searchRecipe": "Search for a recipe or ingredient",
+  "lessSalt": "Ideas with less salt",
+  "onlyFavorites": "My favorites",
+  "mealFilter": "Meal type",
+  "sodiumNote": "“Less salt” identifies ideas using fresh ingredients with no added salt; it is not a low-sodium nutritional claim. Check labels and portions.",
+  "habitsEyebrow": "CARE TAKES PRACTICE",
+  "habitsTitle": "Small steps. Every day.",
+  "habitsDescription": "Track the habits in your plan. Consistency starts with what you can do.",
+  "weekProgress": "YOUR WEEK",
+  "streakLabel": "consecutive days with a habit recorded",
+  "habitTargets": "Initial sample goals: activity on 5 days; other habits on 7. Adjust frequency with your health care team.",
+  "previousWeek": "Previous week",
+  "nextWeek": "Next week",
+  "habitHint": "Mark each day you complete a habit. Select it again to correct it.",
+  "clearWeek": "Clear week",
+  "yourPace": "At your pace, with support.",
+  "habitNote": "Adapt activity to your condition and consult before changing your routine. Do not increase fluids or protein without professional guidance.",
+  "readPrevention": "Read about prevention",
+  "signsEyebrow": "OBSERVE WITHOUT SELF-DIAGNOSING",
+  "signsTitle": "Listen to the signs.",
+  "signsDescription": "Symptoms can have different causes. Understanding them helps you seek care and prepare for a visit.",
+  "silentTitle": "Early damage can be silent.",
+  "silentNote": "Feeling well does not rule out kidney problems. Blood and urine tests can detect changes before they are noticeable.",
+  "selfCheckEyebrow": "PREPARE FOR YOUR VISIT",
+  "selfCheckTitle": "What have you noticed?",
+  "selfCheckDescription": "Select what you are experiencing now. This tool organizes signs; it does not calculate risk or make a diagnosis.",
+  "symptomsPrivacy": "Your selections are not saved.",
+  "checkSymptoms": "View guidance",
+  "projectEyebrow": "KNOWLEDGE THAT CONNECTS",
+  "projectTitle": "Different perspectives. Shared care.",
+  "projectDescription": "A COIL project bringing together design, technology and health education to make kidney care more accessible.",
+  "sourcesTitle": "Sources and review.",
+  "contentReview": "Academic review pending",
+  "footerProject": "COIL PROJECT / KIDNEY HEALTH",
+  "footerNote": "Education to understand. Professional support to decide.",
+  "credits": "Project, credits and sources",
+  "personalRecord": "PERSONAL RECORD",
+  "newRecord": "New measurement.",
+  "close": "Close",
+  "recordHelp": "Enter at least one measurement. Copy the units from your results; we do not calculate filtration from creatinine.",
+  "cancel": "Cancel",
+  "saveRecord": "Save measurement",
+  "referenceTitle": "Targets in context.",
+  "delete": "Delete",
+  "presentation": "Presentation",
+  "exitPresentation": "Exit presentation",
+  "previous": "Previous",
+  "next": "Continue",
+  "presentationHint": "Use ← → to navigate · Esc to exit",
+  "demoMode": "DEMONSTRATION DATA",
+  "realMode": "MY RECORDS",
+  "demoDescription": "Fictional examples. They do not belong to a person.",
+  "realDescription": "Your personal measurements, separate from the example.",
+  "showReal": "View my records",
+  "showDemo": "View example",
+  "noRecords": "No measurements yet.",
+  "noRecordsHint": "Add a record or explore the demonstration data.",
+  "noFilteredRecords": "No measurements in this period.",
+  "noChartData": "No values for this measurement in this period.",
+  "chartSampleBand": "Example band · unvalidated",
+  "chartNoBand": "No individual target configured",
+  "chartRecords": "{count} recorded values",
+  "chartDelta": "Change: {delta} {unit} between the first and last record.",
+  "chartSingle": "One value: more records are needed to see a trend.",
+  "chartAccessible": "{metric} trend. {summary}",
+  "date": "Date",
+  "glucose": "Fasting glucose",
+  "hba1c": "HbA1c",
+  "systolic": "Systolic pressure",
+  "diastolic": "Diastolic pressure",
+  "creatinine": "Creatinine",
+  "egfr": "eGFR (estimated filtration)",
+  "uacr": "Urine albumin/creatinine",
+  "weight": "Weight",
+  "glucoseShort": "Glucose",
+  "bloodPressure": "Blood pressure",
+  "status": "Reference",
+  "actions": "Actions",
+  "reviewPending": "For assessment",
+  "exampleWithin": "Example: within range",
+  "exampleAttention": "Example: attention",
+  "exampleConsult": "Example: consult",
+  "referenceWithin": "Within reference",
+  "referenceAttention": "Review with your team",
+  "referenceConsult": "Consult your clinician",
+  "deleteRecord": "Delete measurement from {date}",
+  "recordSaved": "Measurement saved in this browser.",
+  "saveFailed": "Unable to save. Check storage space or browser permissions.",
+  "invalidRecord": "Check the date and enter at least one valid measurement.",
+  "futureRecord": "The date cannot be in the future.",
+  "pressurePair": "Enter both pressure values; systolic must be higher than diastolic.",
+  "invalidDates": "The start date must be on or before the end date.",
+  "dateRequired": "Measurement date",
+  "optional": "Optional",
+  "savedMeasurements": "{count} personal measurements",
+  "deleteTitle": "Delete these records?",
+  "deleteDescription": "They will be removed from this browser. Export a CSV copy if you want to keep them.",
+  "deleteOneDescription": "This measurement will be removed from this browser.",
+  "deleted": "Records deleted.",
+  "emptyExport": "No visible records to export.",
+  "exported": "CSV exported.",
+  "demoClearNote": "Examples cannot be deleted. Switch to My records to delete personal data.",
+  "referencesDisclaimer": "These bands and rules are interface examples, not personal targets or diagnostic thresholds. Personal indicators are disabled until validated by the health care team.",
+  "referencesIndividual": "Creatinine and weight have no universal reference. Kidney results require context, trends and clinical assessment.",
+  "recipesFound": "{count} sample dishes",
+  "noRecipes": "No dishes match these filters.",
+  "clearRecipeFilters": "Clear filters",
+  "allMeals": "All",
+  "breakfast": "Breakfast",
+  "lunch": "Lunch",
+  "dinner": "Dinner",
+  "snack": "Snack",
+  "recipeExample": "Example to validate with your health care team",
+  "reviewNutritionist": "To review with a dietitian",
+  "recipeOpen": "View preparation",
+  "minutes": "min",
+  "servings": "{count} sample servings",
+  "saveFavorite": "Save favorite: {title}",
+  "removeFavorite": "Remove favorite: {title}",
+  "favoriteSaved": "Recipe saved to favorites.",
+  "favoriteRemoved": "Recipe removed from favorites.",
+  "ingredients": "Ingredients",
+  "preparation": "Preparation",
+  "reviewNote": "Review before preparing",
+  "weekCompleted": "{done} of {total} habit records in the weekly goal.",
+  "feedbackStart": "One first step is enough.",
+  "feedbackSome": "You are building consistency.",
+  "feedbackGood": "You are making room for care.",
+  "feedbackComplete": "Your week is recorded.",
+  "habitColumn": "Habit",
+  "habitDay": "{habit}, {date}",
+  "futureDay": "Future day",
+  "weekClearTitle": "Clear this week?",
+  "weekClearDescription": "This week's marks will be removed. Other weeks will be kept.",
+  "habitUpdated": "Habit updated.",
+  "alertUrgent": "Seek emergency care now.",
+  "alertUrgentNote": "Severe breathing difficulty or sudden confusion need urgent care, whatever the cause. Contact your local emergency services.",
+  "alertVisit": "Contact your health care team.",
+  "alertVisitNote": "Discuss these signs, especially if they are new, persistent or worsening. Seek urgent care if they become severe. Do not change medicines on your own.",
+  "alertNone": "Keep your scheduled checkups.",
+  "alertNoneNote": "Not selecting symptoms does not rule out kidney damage. Ask about the blood and urine tests you need.",
+  "sourceLabel": "Source",
+  "year": "Year",
+  "population": "Population",
+  "pendingSource": "[source to confirm]",
+  "pendingYear": "[year to confirm]",
+  "pendingPopulation": "[population to confirm]",
+  "draftStat": "DRAFT FIGURE / UNVALIDATED",
+  "draftEstimate": "Estimate proposed by the team; do not use as verified global prevalence.",
+  "globalView": "Global perspective",
+  "globalNote": "Frequency varies by country, population and definition of kidney disease. These figures must not be applied to all people with diabetes.",
+  "mexico": "Mexico",
+  "usComparison": "Available reference: United States",
+  "usNumber": "≈ 1 in 3",
+  "usPopulation": "Adults with diabetes in the United States; CDC 2019 reference cited by NIDDK.",
+  "labReminder": "Assessment combines blood and urine tests and changes over time.",
+  "educationCTA": "Organize my care",
+  "knowledgeNote": "Educational information. Final review with the academic and health care team.",
+  "slideLearning": "UNDERSTAND",
+  "slideCare": "CARE",
+  "slideTrack": "TRACK",
+  "slideFood": "ADAPT",
+  "slideConnect": "COLLABORATE",
+  "slideDemoNote": "Demonstration chart with fictional data. Personal records are not shown.",
+  "slideQuestion": "What can we do today to care for tomorrow's kidneys?",
+  "slideGo": "Go to slide {number}",
+  "presentationEnd": "End of presentation",
+  "sourceChecked": "Accessed October 6, 2026",
+  "notClinical": "Educational prototype, without diagnosis or prescriptions.",
+  "storageWarning": "Your browser does not allow data storage. Changes will not persist after closing.",
+  "fieldUnits": "Enter the value in {unit}.",
+  "symptomsSelected": "Selected signs: {count}.",
+  "filterBlood": "Incoming blood",
+  "filterMembrane": "Filtration barrier",
+  "filterUrine": "Toward urine",
+  "filterProtein": "Proteins",
+  "filterWaste": "Water and waste",
+  "filterDiagramLabel": "Diagram of water, waste and proteins moving through a filtration barrier.",
+  "pageTitle": "Renal · COIL Project",
+  "pageDescription": "Diabetes and kidney health education: explore, learn and organize your care.",
+  "weekRange": "{start} — {end}",
+  "recordDateHint": "Use the test or measurement date.",
+  "demoTableNote": "Colored labels are unvalidated interface examples.",
+  "personalTableNote": "Interpretation pending with your health care team.",
+  "slideSources": "Sources, credits and editable content in the Project section.",
+  "sourcePendingDisclaimer": "The 2–4 in 10 and 1 in 4 in Mexico figures come from the team's draft. Source, year and population remain to be confirmed.",
+  "recipeCardNote": "TO VALIDATE",
+  "habitSource": "Draft activity goal: 30 minutes on 5 days, adapted to your condition. CDC recommends 150 minutes weekly for many adults.",
+  "glucoseFormHint": "Fasting result, according to your team's instructions.",
+  "egfrFormHint": "Copy the laboratory eGFR. It is not the creatinine value.",
+  "uacrFormHint": "Albumin/creatinine ratio in mg/g only; not albumin in mg/L.",
+  "formUnitsNote": "If your laboratory uses different units, ask before entering the results.",
+  "sourceLink": "Read source",
+  "optionalInputs": "Fields with no data can be left blank.",
+  "savedSuccessTitle": "Personal data",
+  "educationAffects": "It can affect people with type 1 and type 2 diabetes, in any country.",
+  "showAllResults": "View results",
+  "filterStageAccessible": "Conceptual change {number} of 4",
+  "studyTeam": "COIL TEAM",
+  "sourceTable": "Content references",
+  "clearFilters": "Clear filters",
+  "visitQuestion1": "What are my glucose and pressure targets?",
+  "visitQuestion2": "When should I repeat my blood and urine tests?",
+  "visitQuestion3": "Should I adjust food or fluids?",
+  "ingredientNotFound": "Try another ingredient or meal type.",
+  "selectedPart": "Selected structure",
+  "formRangeError": "Check the units and values you entered.",
+  "signsDisclaimer": "Do not wait for this tool's result if you feel you need urgent care.",
+  "openProject": "Explore the project",
+  "slideKidneyDescription": "Kidneys remove waste and water from blood. Diabetes and high pressure can affect their small vessels.",
+  "slideLabDescription": "Kidney assessment combines urine albumin and an estimate of filtration from a blood test.",
+  "slidePreventionDescription": "Glucose and pressure, prescribed medicines, adapted activity and checkups. Everyday care with your team's support.",
+  "slideFoodDescription": "No recipe suits everyone. Kidney function and results guide adjustments.",
+  "slideHabitsDescription": "Recording small steps makes consistency visible, without replacing your health care plan.",
+  "slideThanks": "Learning together for better care.",
+  "emptyHabitsLabel": "No habit records this week.",
+  "glucoseChartLabel": "Fasting glucose (mg/dL)",
+  "printUnits": "Units",
+  "validationPending": "Clinical validation pending",
+  "slidePress": "Educational presentation",
+  "sourceNoDate": "Review date to confirm",
+  "nutritionAmount": "Amounts are preparation examples, not prescribed portions.",
+  "profileNone": "Profiles are stored unencrypted in this browser. Anyone with browser access can read them. They are not private accounts.",
+  "recipeShortBadge": "EXAMPLE",
+  "noFavoriteYet": "Save a recipe with the heart to see it here.",
+  "habitWeeklyGoal": "Goal: {count} days",
+  "tableFullData": "Full measurement table",
+  "resultsCount": "{count} visible records",
+  "allMetrics": "All measurements",
+  "viewSource": "View source",
+  "stepLabel": "STEP {number}",
+  "slideOf": "{current} / {total}",
+  "sourceScope": "Source scope",
+  "futureNote": "Future days become available on their date.",
+  "resetComplete": "Week cleared.",
+  "demoNoSave": "The example does not change your personal data.",
+  "unitsDisclaimer": "Check that units match your laboratory report.",
+  "slideCreditLabel": "INTERUNIVERSITY COLLABORATION",
+  "parts": [
+    {
+      "id": "corteza",
+      "title": "Renal cortex",
+      "description": "The outer layer. It contains structures where blood filtration begins."
+    },
+    {
+      "id": "medula",
+      "title": "Renal medulla",
+      "description": "The inner region. Its tubules help concentrate urine and recover water and substances the body needs."
+    },
+    {
+      "id": "glomerulo",
+      "title": "Glomerulus",
+      "description": "A small cluster of vessels acting as a filter. Water and waste pass through; large proteins usually stay in the blood."
+    },
+    {
+      "id": "ureter",
+      "title": "Ureter",
+      "description": "The tube carrying urine from the kidney to the bladder. It does not carry blood."
+    },
+    {
+      "id": "arteria",
+      "title": "Renal artery",
+      "description": "The vessel supplying blood to the kidney. High glucose and blood pressure can damage small vessels in the filtration system."
+    }
+  ],
+  "filterStages": [
+    {
+      "title": "A barrier that selects.",
+      "description": "With preserved filtration, water and small molecules pass through. Blood cells and most large proteins remain in circulation."
+    },
+    {
+      "title": "Small vessels face pressure.",
+      "description": "Sustained high glucose and elevated pressure can affect filter structures. There may be no symptoms at first."
+    },
+    {
+      "title": "Some proteins may pass through.",
+      "description": "When the barrier changes, urine albumin may increase. A test measures it; looking at urine cannot confirm it."
+    },
+    {
+      "title": "Filtration may decrease.",
+      "description": "If damage progresses, the kidney may remove less waste. Repeated tests and clinical context assess progression; care and treatment may slow it."
+    }
+  ],
+  "sections": [
+    {
+      "id": "causas",
+      "tab": "Causes and risks",
+      "eyebrow": "01 / UNDERSTAND",
+      "title": "Why can kidney damage occur?",
+      "description": "Diabetic kidney disease is kidney damage related to type 1 or type 2 diabetes. Long-term high glucose can affect the kidney’s small blood vessels.",
+      "pointsTitle": "Factors that can increase risk",
+      "points": [
+        "More years with diabetes and sustained high glucose.",
+        "High blood pressure, cholesterol and triglycerides.",
+        "Age, family history of kidney disease and previous kidney injury.",
+        "Smoking, inactivity, excess salt and obesity."
+      ],
+      "note": "Risk can be reduced: managing glucose and blood pressure, following treatment and attending checkups helps protect the kidneys.",
+      "sources": [
+        "niddk-dkd",
+        "mayo"
+      ]
+    },
+    {
+      "id": "epidemiologia",
+      "tab": "Who is affected?",
+      "eyebrow": "02 / GLOBAL PERSPECTIVE",
+      "title": "Prevention starts with context.",
+      "description": "Kidney disease is an important diabetes complication worldwide. Risk varies with diabetes duration, age, glucose control, blood pressure, weight and blood lipids.",
+      "pointsTitle": "A figure needs context",
+      "points": [
+        "Comparing countries requires knowing the population, year and disease definition.",
+        "Draft figures are displayed pending verification.",
+        "A population statistic does not predict an individual’s progression."
+      ],
+      "note": "Not everyone with diabetes develops kidney damage. Statistics help study the issue; checkups guide personal care.",
+      "sources": [
+        "niddk-dkd"
+      ]
+    },
+    {
+      "id": "prevencion",
+      "tab": "Daily care",
+      "eyebrow": "03 / CARE",
+      "title": "Daily care can make a difference.",
+      "description": "Early detection and diabetes management can prevent or delay complications. Damage can develop slowly without obvious signs.",
+      "pointsTitle": "Care to agree on with your team",
+      "points": [
+        "Glucose and pressure: know your targets and monitor as advised.",
+        "Medicines: follow prescribed treatment and ask before making changes.",
+        "Avoid tobacco and vaping; seek support to quit.",
+        "Adapted activity: one possible goal is 30 minutes on 5 days. Include strength work if advised.",
+        "Food and fluids: review salt and adapt amounts to your results.",
+        "Checkups: ask about yearly tests for type 2 diabetes and after 5 years of type 1 diabetes, or sooner if advised."
+      ],
+      "note": "This is not an absolute guarantee of prevention. Testing frequency, exercise and targets must be adapted to each person.",
+      "sources": [
+        "niddk-dkd",
+        "cdc-activity",
+        "niddk-diet"
+      ]
+    },
+    {
+      "id": "manifestaciones",
+      "tab": "Signs and tests",
+      "eyebrow": "04 / DETECT",
+      "title": "Tests are part of the answer.",
+      "description": "Early stages can have few or no symptoms. Blood and urine tests help assess how the kidneys work.",
+      "pointsTitle": "Two complementary tests",
+      "points": [
+        "Blood: creatinine helps the laboratory estimate glomerular filtration rate (eGFR).",
+        "Urine: the albumin/creatinine ratio helps assess protein loss.",
+        "The team interprets repeated results alongside clinical history.",
+        "Thirst and frequent urination can accompany diabetes; they do not confirm kidney damage."
+      ],
+      "note": "Swelling, changes in urine or tiredness need assessment. General diabetes symptoms should not be confused with confirmation of kidney disease.",
+      "sources": [
+        "niddk-tests",
+        "cdc-signs",
+        "mayo"
+      ]
+    }
+  ],
+  "symptomCategories": [
+    {
+      "title": "General diabetes symptoms",
+      "subtitle": "These are not proof of kidney damage.",
+      "items": [
+        "Thirst and frequent urination",
+        "Extreme hunger",
+        "Tiredness and dizziness",
+        "Wounds that heal slowly"
+      ]
+    },
+    {
+      "title": "Signs needing kidney assessment",
+      "subtitle": "They can also have other causes.",
+      "items": [
+        "Swelling in feet, legs, hands or face",
+        "Foamy urine or changes in frequency, color or smell",
+        "Nausea, poor appetite or persistent tiredness"
+      ]
+    },
+    {
+      "title": "Other diabetes-related effects",
+      "subtitle": "Complications assessed separately.",
+      "items": [
+        "High pressure and cardiovascular risk",
+        "Vision changes",
+        "Loss of sensation in the feet"
+      ]
+    },
+    {
+      "title": "Laboratory findings",
+      "subtitle": "Detected in blood and urine.",
+      "items": [
+        "Elevated urine albumin or proteins",
+        "Decreased estimated filtration",
+        "Progressive changes in repeated tests"
+      ]
+    }
+  ],
+  "symptomChecks": [
+    {
+      "id": "breathing",
+      "text": "Severe difficulty breathing right now",
+      "urgent": true
+    },
+    {
+      "id": "confusion",
+      "text": "Sudden confusion or difficulty staying alert",
+      "urgent": true
+    },
+    {
+      "id": "swelling",
+      "text": "New or persistent swelling",
+      "urgent": false
+    },
+    {
+      "id": "urine",
+      "text": "Persistent urine changes",
+      "urgent": false
+    },
+    {
+      "id": "nausea",
+      "text": "Persistent nausea, low appetite or tiredness",
+      "urgent": false
+    },
+    {
+      "id": "diabetes",
+      "text": "Thirst, frequent urination or slow-healing wounds",
+      "urgent": false
+    }
+  ],
+  "habits": [
+    {
+      "id": "activity",
+      "title": "Adapted activity",
+      "detail": "30 min, if advised",
+      "target": 5
+    },
+    {
+      "id": "tobacco",
+      "title": "No tobacco or vaping",
+      "detail": "Seek support when needed",
+      "target": 7
+    },
+    {
+      "id": "glucose",
+      "title": "Glucose as planned",
+      "detail": "Only the advised frequency",
+      "target": 7
+    },
+    {
+      "id": "medicine",
+      "title": "Prescribed medicines",
+      "detail": "According to prescription",
+      "target": 7
+    },
+    {
+      "id": "salt",
+      "title": "Mindful of salt",
+      "detail": "Check labels and preparations",
+      "target": 7
+    },
+    {
+      "id": "fluids",
+      "title": "Fluids as planned",
+      "detail": "The amount advised by my team",
+      "target": 7
+    }
+  ],
+  "creditsBlocks": [
+    {
+      "number": "01",
+      "title": "Collaborative design",
+      "text": "Laura’s mockup is the starting point: illustration on the left, information on the right, measurements and recommendations. This version keeps that logic and expands interaction."
+    },
+    {
+      "number": "02",
+      "title": "Building knowledge",
+      "text": "Zoom meetings and work across universities bring together causes, epidemiology, prevention and detection. The team will add meeting evidence and participant names."
+    },
+    {
+      "number": "03",
+      "title": "Accessible language",
+      "text": "Spanish and English versions make sharing easier. Both translations require academic and terminology review by the participating teams."
+    },
+    {
+      "number": "04",
+      "title": "Next steps",
+      "text": "Confirm epidemiological sources, validate individual ranges, approve recipes and complete credits. Publication and the domain will be decided after this review."
+    }
+  ],
+  "universities": [
+    "Universidad Católica de Colombia",
+    "Tecnológico de Monterrey",
+    "Universidad de Florida"
+  ],
+  "creditReview": "Institutions from the project base; confirm names, participants and authorizations before publication.",
+  "kidneyTitle": "Kidney: interactive diagram",
+  "kidneyDescription": "Schematic kidney cross-section. Five points explore the cortex, medulla, glomerulus, ureter and artery.",
+  "fullscreen": "Full screen",
+  "servingsOne": "1 sample serving",
+  "recipesFoundOne": "1 sample dish",
+  "resultsCountOne": "1 visible record",
+  "chartRecordsOne": "1 recorded value",
+  "savedMeasurementsOne": "1 personal measurement",
+  "fullscreenUnavailable": "Full screen is unavailable here. Use your browser’s full-screen option; you can keep using this viewer.",
+  "searchAll": "Search the project",
+  "settings": "Settings",
+  "theme": "Appearance",
+  "lightTheme": "Light",
+  "darkTheme": "Dark",
+  "systemTheme": "Use device setting",
+  "motion": "Motion",
+  "reduceMotion": "Reduce motion",
+  "allowMotion": "Allow motion, respecting device settings",
+  "systemMotion": "Use device setting",
+  "localProfile": "Local profile",
+  "newProfile": "Create profile",
+  "profileName": "Profile name",
+  "create": "Create",
+  "profileExport": "Export profile JSON",
+  "profileImport": "Import profile JSON",
+  "profilePrivacy": "Profiles are stored unencrypted in this browser. Anyone with browser access can read them. They are not private accounts.",
+  "declaredEgfr": "Declared eGFR (optional)",
+  "declaredEgfrHint": "Copy the result confirmed by your team, in mL/min/1.73 m². This app does not calculate it.",
+  "saveSettings": "Save settings",
+  "privacy": "Privacy",
+  "privacyTitle": "Your data, in this browser.",
+  "privacyBody": "Records, notes, habits and favorites remain until you delete them or clear browser data. They are not sent to a server. You control exported files. Team contact: to be confirmed. Migration backups are removed when you clear all site data in the browser.",
+  "deleteProfile": "Delete this profile",
+  "deleteProfileHint": "All history in this local profile will be deleted. Export first if you want to keep it.",
+  "welcomeTitle": "Meet your care space.",
+  "welcomeStep": "Step {current} of 3",
+  "welcomeLanguage": "Choose your reading language.",
+  "welcomeMode": "Explore an example or start your record.",
+  "welcomePrivacy": "Your information stays in this browser.",
+  "welcomeDemo": "Explore the fictional example",
+  "welcomePersonal": "Start my records",
+  "start": "Start",
+  "shortcuts": "Keyboard shortcuts",
+  "shortcutNav": "Go to a section: press g, then the letter",
+  "shortcutPresentation": "Presentation · Esc to close",
+  "shortcutNotes": "Presenter notes",
+  "shortcutReset": "Reset timer",
+  "shortcutPause": "Pause or resume timer",
+  "searchPlaceholder": "Find a part, recipe or habit…",
+  "searchCount": "{count} results. Use ↑ ↓ and Enter.",
+  "searchEmpty": "Try another term.",
+  "section": "Section",
+  "chapter": "Chapter",
+  "recipe": "Recipe",
+  "habit": "Habit",
+  "profileImported": "Profile imported as a new copy.",
+  "importConfirm": "Confirm import",
+  "importPreview": "Review the import",
+  "importInvalid": "This file is invalid. Your data has not changed.",
+  "importCSV": "Import CSV",
+  "importCSVHint": "Accepts CSV exported by Renal. Review rows, units and origin before saving.",
+  "acceptedRows": "Accepted rows: {count}",
+  "rejectedRows": "Rejected rows: {count}",
+  "duplicates": "Date and metric matches: {count}",
+  "keepBoth": "Keep both measurements",
+  "overwrite": "Overwrite matching metrics",
+  "importOrigin": "Fictional examples are excluded from the personal profile.",
+  "notes": "Notes",
+  "recordNotesHint": "Maximum 280 characters. Avoid information you do not want to leave in a shared browser.",
+  "tags": "Measurement context",
+  "tag-fasting": "Fasting",
+  "tag-post-dinner": "After dinner",
+  "tag-visit": "At appointment",
+  "allTags": "All contexts",
+  "compareDates": "Compare two records",
+  "firstRecord": "First record",
+  "secondRecord": "Last record",
+  "comparisonResult": "Difference: {delta} {unit} · Change: {percent}",
+  "noPercent": "Cannot calculate (initial value is zero)",
+  "compareHint": "The difference describes values; it does not interpret their clinical meaning.",
+  "quickGlucose": "Glucose only",
+  "exportPDF": "Print / save PDF",
+  "consultation": "Prepare appointment view",
+  "professionalNotes": "Notes for your clinician",
+  "professionalHint": "Optional space. Maximum 3000 characters.",
+  "myStory": "My story · last 30 days",
+  "storyTitle": "Your story in data.",
+  "storyCount": "You recorded {count} entries in the last 30 days.",
+  "storyMetric": "{metric}: from {first} to {last} {unit}; difference {delta} {unit}.",
+  "storyEnd": "This summary describes records without evaluating their clinical meaning. Review it with your healthcare team.",
+  "exportText": "Export text",
+  "periodPrinted": "Period: {from} — {to}",
+  "print": "Print / save PDF",
+  "printBlocked": "Allow pop-ups to open the print view.",
+  "servingsControl": "Example servings",
+  "addShopping": "Add to my shopping list",
+  "shoppingList": "Your shopping list",
+  "shoppingEmpty": "Add preparations from their detail view.",
+  "shoppingAdded": "Preparation added to the list.",
+  "shoppingClear": "Clear list",
+  "substitutions": "Substitutions · validation pending",
+  "onlyUnvalidated": "Unvalidated only",
+  "renalFoodWarning": "Your profile declares an eGFR below 60. Review potassium, phosphorus and portions with your team; this list does not calculate requirements or prescribe restrictions.",
+  "weeklyView": "Week",
+  "monthlyView": "Month",
+  "dailyNote": "Daily note",
+  "saveNote": "Save note",
+  "noteSaved": "Note saved.",
+  "habitStreak": "{count} consecutive days",
+  "exportHabits": "Export habits CSV",
+  "monthPrevious": "Previous month",
+  "monthNext": "Next month",
+  "monthlyHint": "Each day shows marked habits. Select a date to review marks and its note.",
+  "prepareVisit": "Prepare appointment questions",
+  "questionsTitle": "To discuss with your team.",
+  "symptomQuestion": "How should this sign be assessed: {symptom}? Which changes should I watch for and when should I follow up?",
+  "urgentQuestions": "Do not delay urgent care to prepare this list.",
+  "notDiagnosis": "Educational guidance · not a diagnosis",
+  "urgentAlert": "URGENT ALERT",
+  "compareParts": "Compare two parts",
+  "comparisonPartA": "First part",
+  "comparisonPartB": "Second part",
+  "partFocus": "Part explanation",
+  "reviewQuiz": "Review · 5 questions",
+  "quizTitle": "What did you learn about the kidney?",
+  "checkAnswers": "Check answers",
+  "quizScore": "{score} out of 5. Your score is not saved.",
+  "quizCorrect": "Correct answer",
+  "quizTry": "Review this part’s explanation.",
+  "beforeAfter": "A change, seen from within.",
+  "beforeLabel": "Preserved filtration",
+  "afterLabel": "Conceptual change",
+  "conceptSlider": "Conceptual filtration comparison",
+  "conceptTimeline": "Year {year} · conceptual",
+  "conceptDisclaimer": "Concept illustration: years are narrative markers, not a clinical timeline or prediction. Progression can vary and requires professional assessment.",
+  "presenterNotes": "Notes for the presenter",
+  "notesFullscreen": "Notes are hidden in native fullscreen. In the window viewer, everyone can see them.",
+  "presentationExport": "Export 9 scenes as PDF",
+  "timer": "Presentation time",
+  "waitingTitle": "Learning together for better care.",
+  "waitingHint": "Press → to begin.",
+  "install": "Install",
+  "recoveryTitle": "We kept the previous state.",
+  "recoveryHint": "Migration failed. Download the original backup before restarting; your data has not been overwritten.",
+  "downloadBackup": "Download original backup",
+  "restart": "Restart after backup",
+  "profilePreview": "Profile: {name} · {count} records",
+  "filterDates": "Selected dates",
+  "technicalReport": "Prototype validation and limitations",
+  "skipWelcome": "Skip",
+  "reviewQuestions": [
+    {
+      "question": "Which structure brings blood to the kidney?",
+      "answer": "arteria"
+    },
+    {
+      "question": "Which tube carries urine to the bladder?",
+      "answer": "ureter"
+    },
+    {
+      "question": "Which cluster of small vessels acts as a filter?",
+      "answer": "glomerulo"
+    },
+    {
+      "question": "Which is the outer layer of the kidney?",
+      "answer": "corteza"
+    },
+    {
+      "question": "Which region contains tubules that help concentrate urine?",
+      "answer": "medula"
+    }
+  ],
+  "statistics": [
+    {
+      "id": "global-draft",
+      "display": "2–4 / 10",
+      "sourceId": null,
+      "source": null,
+      "url": null,
+      "year": null,
+      "population": null,
+      "methodology": null,
+      "verified": false
+    },
+    {
+      "id": "mexico-draft",
+      "display": "1 / 4",
+      "sourceId": null,
+      "source": null,
+      "url": null,
+      "year": null,
+      "population": null,
+      "methodology": null,
+      "verified": false
+    },
+    {
+      "id": "us-reference",
+      "display": "≈ 1 / 3",
+      "sourceId": "niddk-dkd",
+      "source": "NIDDK; CDC 2019 reference",
+      "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/preventing-problems/diabetic-kidney-disease",
+      "year": 2019,
+      "population": "Adults with diabetes in the United States",
+      "methodology": null,
+      "verified": true
+    }
+  ],
+  "habitStreakOne": "1 consecutive day",
+  "perHabitStreakTitle": "Consistency, habit by habit.",
+  "methodology": "Methodology",
+  "pendingMethodology": "[methodology to be confirmed]",
+  "reviewContacts": {
+    "clinicalReviewer": null,
+    "nutritionReviewer": null,
+    "englishReviewer": null,
+    "coordinator": null,
+    "teamMembers": []
+  },
+  "foodNoticeTitle": "Before choosing a recipe",
+  "shoppingEyebrow": "ORGANIZE YOUR INGREDIENTS",
+  "shoppingEmptyTitle": "Your list is ready to get started",
+  "shoppingClearHint": "All ingredients will be removed from your shopping list.",
+  "shoppingCleared": "Shopping list cleared.",
+  "shoppingCount": "{count} ingredients",
+  "shoppingCountOne": "{count} ingredient",
+  "navInfo": "Infographics",
+  "qsInfoTitle": "See the infographics",
+  "qsInfoText": "Causes, consequences and care in easy-to-read diagrams.",
+  "infoEyebrow": "SEEN AT A GLANCE",
+  "infoTitle": "Understanding diabetic nephropathy, at a glance.",
+  "infoDescription": "Three diagrams to walk through the whole picture: how the kidney is damaged, what causes it, what can happen and which care helps.",
+  "infoFlowEyebrow": "HOW DOES IT AFFECT YOU?",
+  "infoFlowTitle": "From blood sugar to the kidney's filter.",
+  "infoFlow": [
+    {
+      "title": "Sustained high glucose",
+      "text": "High blood sugar levels damage the blood vessels in the kidney."
+    },
+    {
+      "title": "The filter changes",
+      "text": "The kidney's filter (glomerulus) is altered."
+    },
+    {
+      "title": "Protein in the urine",
+      "text": "Protein starts to be lost in the urine."
+    },
+    {
+      "title": "Less filtering capacity",
+      "text": "Over time, the kidney's ability to filter the blood can decrease."
+    }
+  ],
+  "infoFlowNote": "It is a slow process and not inevitable: with check-ups and care it can be prevented or delayed.",
+  "infoColumnsEyebrow": "CAUSE, CONSEQUENCE AND CARE",
+  "infoColumnsTitle": "Three columns to read the full picture.",
+  "infoColumns": [
+    {
+      "label": "Causes",
+      "subtitle": "What raises the risk",
+      "items": [
+        {
+          "title": "More years with diabetes",
+          "text": "The longer glucose stays high, the greater the risk of kidney damage."
+        },
+        {
+          "title": "High blood pressure",
+          "text": "It can damage the small vessels of the kidney's filter."
+        },
+        {
+          "title": "High cholesterol and triglycerides",
+          "text": "They can make the disease worse."
+        },
+        {
+          "title": "Age and history",
+          "text": "Relatives with kidney disease, older age or a previous kidney injury raise the likelihood."
+        },
+        {
+          "title": "Smoking",
+          "text": "It can worsen circulation and increase kidney damage."
+        },
+        {
+          "title": "Little activity and a lot of salt",
+          "text": "Both are associated with obesity, diabetes and high blood pressure."
+        }
+      ]
+    },
+    {
+      "label": "Consequences",
+      "subtitle": "What can happen",
+      "items": [
+        {
+          "title": "Damaged filter vessels",
+          "text": "The glomerulus stops working as it used to."
+        },
+        {
+          "title": "Protein in the urine",
+          "text": "Elevated albumin in urine is one of the first signs in lab tests."
+        },
+        {
+          "title": "Lower estimated filtration",
+          "text": "eGFR can decline over the years and is monitored with blood tests."
+        },
+        {
+          "title": "Swelling, tiredness or urine changes",
+          "text": "They may appear later and have other causes; they need evaluation."
+        },
+        {
+          "title": "Higher cardiovascular risk",
+          "text": "High blood pressure and kidney damage are associated with more risk for the heart."
+        }
+      ]
+    },
+    {
+      "label": "Care and treatment",
+      "subtitle": "What helps",
+      "items": [
+        {
+          "title": "Glucose and blood pressure goals",
+          "text": "Know them and monitor as your health team indicates."
+        },
+        {
+          "title": "Prescribed medicines",
+          "text": "Follow the prescribed treatment and ask before changing it."
+        },
+        {
+          "title": "Food and salt",
+          "text": "Check the salt and adjust portions with your dietitian."
+        },
+        {
+          "title": "Adapted activity",
+          "text": "One possible goal is 30 minutes, 5 days a week, if your team recommends it."
+        },
+        {
+          "title": "No tobacco or vaping",
+          "text": "Look for support to quit."
+        },
+        {
+          "title": "Blood and urine check-ups",
+          "text": "Ask how often to repeat them: early detection helps."
+        }
+      ]
+    }
+  ],
+  "infoColumnsNote": "Your health team defines your goals and treatment. This infographic does not replace a consultation.",
+  "infoStatsEyebrow": "NUMBERS IN CONTEXT",
+  "infoStatsTitle": "What the numbers say, and their limits.",
+  "infoStats": [
+    {
+      "label": "Worldwide · team draft",
+      "text": "Between 2 and 4 in every 10 people with diabetes would develop kidney disease.",
+      "badge": "Pending validation"
+    },
+    {
+      "label": "Mexico · team draft",
+      "text": "1 in 4 people with diabetes would develop chronic kidney disease.",
+      "badge": "Pending validation"
+    },
+    {
+      "label": "United States · reference",
+      "text": "About 1 in 3 adults with diabetes has diabetes-related kidney disease.",
+      "badge": "NIDDK · CDC 2019"
+    }
+  ],
+  "infoStatsNote": "A population figure does not predict what will happen to one person. The first two come from the team's draft and still need a confirmed source, year and population.",
+  "infoSignsTitle": "Have you noticed any of these changes?",
+  "infoSignsChips": [
+    "Swelling in feet, legs, hands or face",
+    "Foamy or changed urine",
+    "Persistent tiredness",
+    "Nausea or loss of appetite"
+  ],
+  "infoSignsText": "They can have other causes. Review the signs and prepare questions for your appointment.",
+  "infoSignsCta": "Go to Signs",
+  "infoGlossaryEyebrow": "KEY TERMS",
+  "infoGlossaryTitle": "Words you will hear at your appointment.",
+  "infoGlossary": [
+    {
+      "term": "Diabetic nephropathy",
+      "def": "Kidney damage related to diabetes. It usually progresses slowly and silently."
+    },
+    {
+      "term": "Glomerulus",
+      "def": "A cluster of tiny kidney vessels that filters the blood."
+    },
+    {
+      "term": "Albumin",
+      "def": "A protein that normally stays in the blood. If it persistently appears in urine, it may point to filter damage."
+    },
+    {
+      "term": "Creatinine",
+      "def": "A muscle waste product measured in blood. The lab uses it to estimate eGFR."
+    },
+    {
+      "term": "eGFR",
+      "def": "Estimated glomerular filtration rate: a calculation of how well the kidneys filter. Your health team interprets it."
+    },
+    {
+      "term": "Albumin-to-creatinine ratio",
+      "def": "A urine test that helps assess protein loss."
+    },
+    {
+      "term": "HbA1c",
+      "def": "A test that reflects average glucose over the last few months."
+    },
+    {
+      "term": "Blood pressure",
+      "def": "The force of blood against the arteries. It is written as two numbers (systolic/diastolic) in mmHg."
+    }
+  ],
+  "infoGlossaryNote": "Definitions for study purposes; academic review is pending.",
+  "infoSourcesLink": "See sources and review",
+  "foodTabsLabel": "Food views",
+  "foodTabRecipes": "Recipes",
+  "foodTabDiary": "My meal diary",
+  "diaryEyebrow": "YOUR MEAL LOG",
+  "diaryTitle": "Log what you eat.",
+  "diaryIntro": "Log your dishes, see how much sodium, potassium, phosphorus and protein they add up to, and compare them with goals you agree on with your health team. Saved only in this browser.",
+  "diaryAdd": "Add a meal",
+  "diaryToday": "Today",
+  "diaryPrevDay": "Previous day",
+  "diaryNextDay": "Next day",
+  "diaryDate": "Date",
+  "diarySummary": "Day summary",
+  "diaryNutrients": {
+    "kcal": "Energy",
+    "protein": "Protein",
+    "sodium": "Sodium",
+    "potassium": "Potassium",
+    "phosphorus": "Phosphorus"
+  },
+  "diaryOfGoal": "{percent}% of the number you entered ({goal} {unit})",
+  "diaryOverGoal": "Above the number you entered ({goal} {unit})",
+  "diaryNoGoal": "No goal entered",
+  "diaryGoalsTitle": "My daily goals (optional)",
+  "diaryGoalsHint": "Enter the numbers you agreed on with your dietitian or health team. If you do not have them, leave them empty: the app does not set clinical goals.",
+  "diaryGoalsSave": "Save goals",
+  "diaryGoalsExample": "Use a sodium example",
+  "diaryGoalsSaved": "Goals saved",
+  "diaryGoalsInvalid": "Check the goals: use positive numbers.",
+  "diaryGoalsExampleNote": "General WHO example: under 2000 mg of sodium per day for adults. Your team may give you a different number, especially if you have kidney disease.",
+  "diaryMealsDay": "Meals of the day",
+  "diaryEmptyDay": "You have not logged any meals for this day yet.",
+  "diaryEmptyHint": "Add a dish and its foods to see the summary.",
+  "diaryItemsCount": "{count} foods",
+  "diaryItemsCountOne": "1 food",
+  "diaryUnknown": "Includes foods without nutrition data: the real total may be higher.",
+  "diaryEdit": "Edit",
+  "diaryDuplicate": "Copy to today",
+  "diaryShare": "Share",
+  "diaryDeleteTitle": "Delete this meal?",
+  "diaryDeleteText": "It will be removed from your diary in this browser. This cannot be undone.",
+  "diaryDeleted": "Meal deleted",
+  "diaryDialogNew": "New meal",
+  "diaryDialogEdit": "Edit meal",
+  "diaryDialogEyebrow": "MEAL DIARY",
+  "diaryName": "Dish name",
+  "diaryNamePh": "e.g. Chicken rice with salad",
+  "diarySlot": "Meal time",
+  "diaryFoods": "Foods and amounts",
+  "diaryFoodSelect": "Choose a food",
+  "diaryFoodCustom": "Other food (no nutrition data)",
+  "diaryCustomName": "Food name",
+  "diaryGrams": "Amount (g)",
+  "diaryAddFood": "Add food",
+  "diaryRemoveFood": "Remove food",
+  "diaryNotes": "Notes (optional)",
+  "diaryNotesHint": "Maximum 280 characters.",
+  "diaryPreview": "Approximate contribution of this dish",
+  "diarySave": "Save meal",
+  "diarySaved": "Meal saved",
+  "diaryErrName": "Enter the dish name.",
+  "diaryErrItems": "Add at least one food with its amount in grams.",
+  "diaryErrSave": "Could not save. Check the data.",
+  "diaryCompareTitle": "Compare two dishes",
+  "diaryCompareHint": "Pick two meals from your diary to see the difference for each nutrient.",
+  "diaryCompareA": "Dish A",
+  "diaryCompareB": "Dish B",
+  "diaryCompareChoose": "Choose a meal",
+  "diaryCompareNeed": "You need at least two logged meals to compare.",
+  "diaryCompareNutrient": "Nutrient",
+  "diaryCompareDiff": "Difference (B − A)",
+  "diaryToolsTitle": "Share and back up",
+  "diaryToolsHint": "Share a dish as text from its card, or back up your diary in a file you can import later.",
+  "diaryExport": "Export diary",
+  "diaryImport": "Import diary",
+  "diaryImported": "{count} meals imported",
+  "diaryImportInvalid": "The file is not a valid diary.",
+  "diaryNothingToExport": "There are no meals to export yet.",
+  "diaryShareFooter": "Approximate values from a sample database, not validated. Renal / COIL.",
+  "diaryShareCopied": "Text copied to share",
+  "diaryShareFail": "Could not share",
+  "diaryDbBadge": "Sample food database · pending validation",
+  "diaryDisclaimer": "Nutrition values are approximate per 100 g and come from a sample database pending validation. Comparing with your goals is not a diagnosis and does not replace your dietitian's guidance.",
+  "mealGroups": {
+    "cereals": "Grains and tubers",
+    "fruits": "Fruits",
+    "vegetables": "Vegetables and herbs",
+    "protein": "Meat, fish and eggs",
+    "legumes": "Legumes",
+    "dairy": "Dairy",
+    "fats": "Fats and oils",
+    "processed": "Processed foods",
+    "drinks": "Drinks"
+  }
+}

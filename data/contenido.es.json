@@ -1,0 +1,1091 @@
+{
+  "skip": "Ir al contenido",
+  "mainNav": "Navegación principal",
+  "language": "Idioma",
+  "present": "Modo presentación",
+  "menu": "Abrir menú",
+  "navDiscover": "Descubrir",
+  "navTrack": "Mi seguimiento",
+  "navFood": "Alimentación",
+  "navHabits": "Hábitos",
+  "navSigns": "Señales",
+  "academic": "EXPERIENCIA EDUCATIVA / COIL",
+  "discoverEyebrow": "DIABETES Y SALUD RENAL",
+  "anatomy": "01 / ANATOMÍA INTERACTIVA",
+  "schematic": "ESQUEMA EDUCATIVO",
+  "exploreParts": "Explorar partes del riñón",
+  "heroEyebrow": "COMPRENDER PARA CUIDAR",
+  "heroTitle": "Tu salud renal,",
+  "heroAccent": "vista de cerca.",
+  "heroDescription": "Un espacio para entender cómo la diabetes puede afectar tus riñones y qué puedes hacer para cuidarlos, cada día.",
+  "compareFilter": "Comparar el filtrado",
+  "startTracking": "Ver mi seguimiento",
+  "qsEyebrow": "EXPLORA A TU RITMO",
+  "qsTitle": "¿Por dónde quieres empezar?",
+  "qsTrackTitle": "Registrar mis mediciones",
+  "qsTrackText": "Glucosa, presión y laboratorio en un solo lugar.",
+  "qsFoodTitle": "Recetas y diario de comidas",
+  "qsFoodText": "Ideas para tu mesa y un registro de lo que comes.",
+  "qsHabitsTitle": "Marcar mis hábitos",
+  "qsHabitsText": "Un registro simple, día a día.",
+  "qsSignsTitle": "Conocer las señales",
+  "qsSignsText": "Qué observar y cuándo consultar.",
+  "heroMessage": "Tener diabetes no significa que tus riñones se dañarán. El seguimiento y los cuidados pueden reducir el riesgo.",
+  "exploreHint": "Toca los puntos del riñón para explorar.",
+  "fiveParts": "5 estructuras",
+  "filterEyebrow": "UN FILTRO, MUCHOS CUIDADOS",
+  "filterTitle": "Lo que cambia en el filtrado",
+  "closeComparison": "Cerrar comparación",
+  "illustrative": "Simulación conceptual",
+  "progression": "Explora los cambios",
+  "filterHealthy": "Filtrado conservado",
+  "filterAffected": "Filtrado afectado",
+  "filterDisclaimer": "No representa etapas clínicas, porcentajes de función ni la evolución de una persona. El daño no es inevitable.",
+  "educationEyebrow": "EL CONOCIMIENTO TAMBIÉN CUIDA",
+  "educationTitle": "Entiende lo esencial.",
+  "fourChapters": "CUATRO CAPÍTULOS",
+  "chapters": "Capítulos sobre salud renal",
+  "dailyStep": "UN PASO PARA HOY",
+  "dailyTitle": "Haz espacio para tus cuidados.",
+  "dailyDescription": "Organiza tus mediciones, revisa una idea para cocinar y registra los hábitos que acordaste con tu equipo de salud.",
+  "viewHabits": "Ver mis hábitos",
+  "trackingPreview": "UNA VISTA DE TU SEGUIMIENTO",
+  "openTracking": "Abrir el registro completo",
+  "trackEyebrow": "TUS DATOS, CON CONTEXTO",
+  "trackTitle": "Cada registro cuenta.",
+  "trackDescription": "Reúne tus mediciones y resultados de laboratorio para conversar sobre ellos en tus controles.",
+  "addRecord": "Añadir medición",
+  "trendEyebrow": "TENDENCIA",
+  "period": "Periodo",
+  "sevenDays": "7 días",
+  "thirtyDays": "30 días",
+  "allTime": "Todo",
+  "metric": "Medición",
+  "readTogether": "LEERLOS EN CONJUNTO",
+  "noSingleNumber": "Tu salud es más que un número.",
+  "trackNote": "La tendencia ayuda a organizar la información. Una medición aislada no confirma ni descarta enfermedad renal.",
+  "rangesNote": "Los colores y las bandas de referencia del ejemplo están pendientes de validación clínica. Tus metas deben ser individuales.",
+  "viewReferences": "Ver referencias del ejemplo",
+  "localOnly": "Guardado únicamente en este navegador.",
+  "history": "HISTORIAL",
+  "resultsTitle": "Tus resultados, en orden.",
+  "exportCSV": "Exportar CSV",
+  "clearRecords": "Borrar registros",
+  "from": "Desde",
+  "to": "Hasta",
+  "resetDates": "Quitar filtro",
+  "resultsDisclaimer": "Valores orientativos: no sustituyen una valoración médica. Las comparaciones de color se habilitan para registros personales cuando el equipo de salud valide las referencias.",
+  "todayRecipe": "UNA IDEA PARA REVISAR",
+  "foodTeaserTitle": "Cocinar también puede ser sencillo.",
+  "foodTeaserDescription": "Encuentra preparaciones de ejemplo para conversar con tu nutricionista. Las porciones y los ingredientes se ajustan a cada persona.",
+  "openRecipes": "Explorar recetas",
+  "nextVisit": "EN TU PRÓXIMA CONSULTA",
+  "askTeam": "Preguntas que vale la pena llevar.",
+  "foodEyebrow": "SABOR, CUIDADO Y CONTEXTO",
+  "foodTitle": "Ideas para tu mesa.",
+  "foodDescription": "Un recetario de ejemplo para revisar con el equipo de salud, pensado como punto de partida.",
+  "dietNote": "No existe una dieta renal única. Las cantidades de proteína, potasio, fósforo, sodio y líquidos se ajustan a tu función renal y tus resultados. Todas estas recetas requieren validación.",
+  "searchRecipe": "Buscar una receta o ingrediente",
+  "lessSalt": "Ideas con menos sal",
+  "onlyFavorites": "Mis favoritas",
+  "mealFilter": "Tipo de comida",
+  "sodiumNote": "«Menos sal» identifica ideas sin sal añadida con ingredientes frescos; no es una declaración nutricional de bajo sodio. Revisa etiquetas y porciones.",
+  "habitsEyebrow": "EL CUIDADO SE CONSTRUYE",
+  "habitsTitle": "Pequeños pasos. Cada día.",
+  "habitsDescription": "Registra los hábitos que forman parte de tu plan. La constancia empieza con lo que sí puedes hacer.",
+  "weekProgress": "TU SEMANA",
+  "streakLabel": "días seguidos con algún hábito registrado",
+  "habitTargets": "Metas iniciales de ejemplo: actividad 5 días; los demás hábitos 7. Ajusta la frecuencia con tu equipo de salud.",
+  "previousWeek": "Semana anterior",
+  "nextWeek": "Semana siguiente",
+  "habitHint": "Marca cada día que cumplas un hábito. Puedes corregirlo tocándolo de nuevo.",
+  "clearWeek": "Limpiar semana",
+  "yourPace": "A tu ritmo, con acompañamiento.",
+  "habitNote": "Adapta la actividad a tu condición y consulta antes de cambiar tu rutina. No aumentes líquidos ni proteínas sin orientación profesional.",
+  "readPrevention": "Leer sobre prevención",
+  "signsEyebrow": "OBSERVAR SIN AUTODIAGNOSTICARSE",
+  "signsTitle": "Escucha las señales.",
+  "signsDescription": "Los síntomas pueden tener distintas causas. Saber distinguirlos ayuda a buscar atención y preparar una consulta.",
+  "silentTitle": "El daño temprano puede ser silencioso.",
+  "silentNote": "Sentirte bien no descarta un problema renal. La sangre y la orina permiten evaluar cambios antes de que sean evidentes.",
+  "selfCheckEyebrow": "PREPARA TU CONSULTA",
+  "selfCheckTitle": "¿Qué has notado?",
+  "selfCheckDescription": "Marca lo que ocurre ahora. Esta herramienta organiza señales; no calcula riesgo ni establece un diagnóstico.",
+  "symptomsPrivacy": "Las selecciones no se guardan.",
+  "checkSymptoms": "Ver orientación",
+  "projectEyebrow": "CONOCIMIENTO QUE CONECTA",
+  "projectTitle": "Distintas miradas. Un mismo cuidado.",
+  "projectDescription": "Un proyecto COIL que reúne diseño, tecnología y educación en salud para acercar el cuidado renal a más personas.",
+  "sourcesTitle": "Fuentes y revisión.",
+  "contentReview": "Revisión académica pendiente",
+  "footerProject": "PROYECTO COIL / SALUD RENAL",
+  "footerNote": "Educación para comprender. Acompañamiento profesional para decidir.",
+  "credits": "Proyecto, créditos y fuentes",
+  "personalRecord": "REGISTRO PERSONAL",
+  "newRecord": "Nueva medición.",
+  "close": "Cerrar",
+  "recordHelp": "Introduce al menos una medición. Copia las unidades de tus resultados; no calculamos la filtración a partir de la creatinina.",
+  "cancel": "Cancelar",
+  "saveRecord": "Guardar medición",
+  "referenceTitle": "Metas con contexto.",
+  "delete": "Borrar",
+  "presentation": "Presentación",
+  "exitPresentation": "Salir de presentación",
+  "previous": "Anterior",
+  "next": "Continuar",
+  "presentationHint": "Usa ← → para navegar · Esc para salir",
+  "demoMode": "DATOS DE DEMOSTRACIÓN",
+  "realMode": "MIS REGISTROS",
+  "demoDescription": "Ejemplos ficticios. No pertenecen a una persona.",
+  "realDescription": "Tus mediciones personales, separadas del ejemplo.",
+  "showReal": "Ver mis registros",
+  "showDemo": "Ver ejemplo",
+  "noRecords": "Todavía no hay mediciones.",
+  "noRecordsHint": "Añade un registro o explora los datos de demostración.",
+  "noFilteredRecords": "No hay mediciones en este periodo.",
+  "noChartData": "No hay valores de esta medición en el periodo.",
+  "chartSampleBand": "Banda del ejemplo · sin validar",
+  "chartNoBand": "Sin meta individual configurada",
+  "chartRecords": "{count} valores registrados",
+  "chartDelta": "Cambio: {delta} {unit} entre el primer y el último registro.",
+  "chartSingle": "Un valor: hacen falta más registros para ver una tendencia.",
+  "chartAccessible": "Tendencia de {metric}. {summary}",
+  "date": "Fecha",
+  "glucose": "Glucosa en ayunas",
+  "hba1c": "HbA1c",
+  "systolic": "Presión sistólica",
+  "diastolic": "Presión diastólica",
+  "creatinine": "Creatinina",
+  "egfr": "TFGe (filtración estimada)",
+  "uacr": "Albúmina/creatinina en orina",
+  "weight": "Peso",
+  "glucoseShort": "Glucosa",
+  "bloodPressure": "Presión arterial",
+  "status": "Referencia",
+  "actions": "Acciones",
+  "reviewPending": "Por valorar",
+  "exampleWithin": "Ejemplo: dentro del rango",
+  "exampleAttention": "Ejemplo: atención",
+  "exampleConsult": "Ejemplo: consultar",
+  "referenceWithin": "Dentro de la referencia",
+  "referenceAttention": "Revisar con el equipo",
+  "referenceConsult": "Consultar al médico",
+  "deleteRecord": "Borrar medición del {date}",
+  "recordSaved": "Medición guardada en este navegador.",
+  "saveFailed": "No se pudo guardar. Revisa el espacio o los permisos de tu navegador.",
+  "invalidRecord": "Revisa la fecha e introduce al menos una medición válida.",
+  "futureRecord": "La fecha no puede estar en el futuro.",
+  "pressurePair": "Introduce ambas cifras de presión; la sistólica debe superar a la diastólica.",
+  "invalidDates": "La fecha inicial debe ser anterior o igual a la final.",
+  "dateRequired": "Fecha de la medición",
+  "optional": "Opcional",
+  "savedMeasurements": "{count} mediciones personales",
+  "deleteTitle": "¿Borrar estos registros?",
+  "deleteDescription": "Se eliminarán de este navegador. Exporta una copia CSV si quieres conservarlos.",
+  "deleteOneDescription": "Se eliminará esta medición de este navegador.",
+  "deleted": "Registros borrados.",
+  "emptyExport": "No hay registros visibles para exportar.",
+  "exported": "CSV exportado.",
+  "demoClearNote": "Los ejemplos no se borran. Cambia a Mis registros para borrar datos personales.",
+  "referencesDisclaimer": "Estas bandas y reglas son ejemplos de interfaz, no metas personales ni umbrales diagnósticos. Los indicadores personales están desactivados hasta su validación por el equipo de salud.",
+  "referencesIndividual": "Creatinina y peso no tienen una referencia universal. Los resultados renales requieren contexto, evolución y evaluación clínica.",
+  "recipesFound": "{count} preparaciones de ejemplo",
+  "noRecipes": "No encontramos preparaciones con esos filtros.",
+  "clearRecipeFilters": "Quitar filtros",
+  "allMeals": "Todas",
+  "breakfast": "Desayuno",
+  "lunch": "Almuerzo",
+  "dinner": "Cena",
+  "snack": "Merienda",
+  "recipeExample": "Ejemplo por validar con el equipo de salud",
+  "reviewNutritionist": "Para revisar con nutricionista",
+  "recipeOpen": "Ver preparación",
+  "minutes": "min",
+  "servings": "{count} porciones de ejemplo",
+  "saveFavorite": "Guardar favorita: {title}",
+  "removeFavorite": "Quitar favorita: {title}",
+  "favoriteSaved": "Receta guardada en favoritas.",
+  "favoriteRemoved": "Receta retirada de favoritas.",
+  "ingredients": "Ingredientes",
+  "preparation": "Preparación",
+  "reviewNote": "Revisar antes de preparar",
+  "weekCompleted": "{done} de {total} registros de hábito de la meta semanal.",
+  "feedbackStart": "Un primer paso basta.",
+  "feedbackSome": "Estás construyendo constancia.",
+  "feedbackGood": "Tus cuidados tienen su espacio.",
+  "feedbackComplete": "Tu semana está registrada.",
+  "habitColumn": "Hábito",
+  "habitDay": "{habit}, {date}",
+  "futureDay": "Día futuro",
+  "weekClearTitle": "¿Limpiar esta semana?",
+  "weekClearDescription": "Se quitarán las marcas de esta semana. Las otras semanas se conservan.",
+  "habitUpdated": "Hábito actualizado.",
+  "alertUrgent": "Busca atención de urgencias ahora.",
+  "alertUrgentNote": "La dificultad intensa para respirar o la confusión repentina requieren atención urgente, cualquiera que sea la causa. Contacta los servicios de emergencia de tu localidad.",
+  "alertVisit": "Contacta a tu equipo de salud.",
+  "alertVisitNote": "Comenta estas señales, especialmente si son nuevas, persistentes o empeoran. Si se vuelven intensas, busca atención urgente. No cambies tus medicamentos por tu cuenta.",
+  "alertNone": "Mantén tus controles programados.",
+  "alertNoneNote": "No marcar síntomas no descarta daño renal. Consulta sobre las pruebas de sangre y orina que te corresponden.",
+  "sourceLabel": "Fuente",
+  "year": "Año",
+  "population": "Población",
+  "pendingSource": "[fuente por confirmar]",
+  "pendingYear": "[año por confirmar]",
+  "pendingPopulation": "[población por confirmar]",
+  "draftStat": "CIFRA DEL BORRADOR / NO VALIDADA",
+  "draftEstimate": "Estimación propuesta por el equipo; no usar como prevalencia global verificada.",
+  "globalView": "Perspectiva global",
+  "globalNote": "La frecuencia cambia según país, población y definición de enfermedad renal. Estas cifras no se deben extrapolar a todas las personas con diabetes.",
+  "mexico": "México",
+  "usComparison": "Referencia disponible: Estados Unidos",
+  "usNumber": "≈ 1 de cada 3",
+  "usPopulation": "Adultos con diabetes en Estados Unidos; referencia CDC 2019 citada por NIDDK.",
+  "labReminder": "La evaluación combina pruebas de sangre y orina, y cambios a lo largo del tiempo.",
+  "educationCTA": "Organizar mis cuidados",
+  "knowledgeNote": "Información educativa. Revisión final con el equipo académico y de salud.",
+  "slideLearning": "COMPRENDER",
+  "slideCare": "CUIDAR",
+  "slideTrack": "REGISTRAR",
+  "slideFood": "ADAPTAR",
+  "slideConnect": "COLABORAR",
+  "slideDemoNote": "Gráfica de demostración con datos ficticios. No se muestran registros personales.",
+  "slideQuestion": "¿Qué podemos hacer hoy para cuidar los riñones de mañana?",
+  "slideGo": "Ir a diapositiva {number}",
+  "presentationEnd": "Fin de la presentación",
+  "sourceChecked": "Consultada el 6 de octubre de 2026",
+  "notClinical": "Prototipo educativo, sin diagnóstico ni prescripción.",
+  "storageWarning": "El navegador no permite guardar datos. Los cambios no se conservarán al cerrar.",
+  "fieldUnits": "Introduce el valor en {unit}.",
+  "symptomsSelected": "Señales seleccionadas: {count}.",
+  "filterBlood": "Sangre que llega",
+  "filterMembrane": "Barrera de filtrado",
+  "filterUrine": "Hacia la orina",
+  "filterProtein": "Proteínas",
+  "filterWaste": "Agua y desechos",
+  "filterDiagramLabel": "Esquema del paso de agua, desechos y proteínas por una barrera de filtrado.",
+  "pageTitle": "Renal · Proyecto COIL",
+  "pageDescription": "Educación sobre diabetes y salud renal: explora, aprende y organiza tus cuidados.",
+  "weekRange": "{start} — {end}",
+  "recordDateHint": "Usa la fecha del examen o de la medición.",
+  "demoTableNote": "Las etiquetas de color son ejemplos de interfaz sin validación clínica.",
+  "personalTableNote": "Interpretación pendiente con tu equipo de salud.",
+  "slideSources": "Fuentes, créditos y contenido revisable en la sección Proyecto.",
+  "sourcePendingDisclaimer": "Las cifras de 2–4 de cada 10 y 1 de cada 4 en México provienen del borrador del equipo. Falta confirmar fuente, año y población.",
+  "recipeCardNote": "POR VALIDAR",
+  "habitSource": "Meta de actividad del borrador: 30 minutos en 5 días, adaptada a tu condición. CDC recomienda 150 minutos semanales para muchos adultos.",
+  "glucoseFormHint": "Resultado en ayunas, según las indicaciones de tu equipo.",
+  "egfrFormHint": "Copia la TFGe del laboratorio. No es el valor de creatinina.",
+  "uacrFormHint": "Solo relación albúmina/creatinina en mg/g; no albúmina en mg/L.",
+  "formUnitsNote": "Si tu laboratorio usa otras unidades, consulta antes de introducir los resultados.",
+  "sourceLink": "Leer fuente",
+  "optionalInputs": "Los campos sin dato pueden dejarse vacíos.",
+  "savedSuccessTitle": "Datos personales",
+  "educationAffects": "Puede afectar a personas con diabetes tipo 1 y tipo 2, en cualquier país.",
+  "showAllResults": "Ver resultados",
+  "filterStageAccessible": "Cambio conceptual {number} de 4",
+  "studyTeam": "EQUIPO COIL",
+  "sourceTable": "Referencias de contenido",
+  "clearFilters": "Limpiar filtros",
+  "visitQuestion1": "¿Cuáles son mis metas de glucosa y presión?",
+  "visitQuestion2": "¿Cuándo debo repetir mis pruebas de sangre y orina?",
+  "visitQuestion3": "¿Debo ajustar mi alimentación o los líquidos?",
+  "ingredientNotFound": "Prueba con otro ingrediente o tipo de comida.",
+  "selectedPart": "Estructura seleccionada",
+  "formRangeError": "Revisa las unidades y los valores introducidos.",
+  "signsDisclaimer": "No esperes al resultado de esta herramienta si sientes que necesitas atención urgente.",
+  "openProject": "Conocer el proyecto",
+  "slideKidneyDescription": "Los riñones eliminan desechos y agua de la sangre. La diabetes y la presión alta pueden afectar sus pequeños vasos.",
+  "slideLabDescription": "La evaluación del riñón combina albúmina en la orina y una estimación del filtrado en sangre.",
+  "slidePreventionDescription": "Glucosa y presión, medicamentos indicados, actividad adaptada y controles. Un cuidado cotidiano acompañado por tu equipo.",
+  "slideFoodDescription": "No existe una receta adecuada para todas las personas. La función renal y los resultados orientan los ajustes.",
+  "slideHabitsDescription": "Registrar los pequeños pasos hace visible la constancia, sin sustituir el plan de tu equipo de salud.",
+  "slideThanks": "Aprender juntos para cuidar mejor.",
+  "emptyHabitsLabel": "Sin registros de hábitos esta semana.",
+  "glucoseChartLabel": "Glucosa en ayunas (mg/dL)",
+  "printUnits": "Unidades",
+  "validationPending": "Validación clínica pendiente",
+  "slidePress": "Presentación educativa",
+  "sourceNoDate": "Fecha de revisión por confirmar",
+  "nutritionAmount": "Las cantidades son ejemplos de preparación, no una prescripción de porciones.",
+  "profileNone": "Los perfiles se guardan sin cifrado en este navegador. Cualquier persona con acceso al navegador puede leerlos. No son cuentas privadas.",
+  "recipeShortBadge": "EJEMPLO",
+  "noFavoriteYet": "Guarda una receta con el corazón para verla aquí.",
+  "habitWeeklyGoal": "Meta: {count} días",
+  "tableFullData": "Tabla completa de mediciones",
+  "resultsCount": "{count} registros visibles",
+  "allMetrics": "Todas las mediciones",
+  "viewSource": "Ver fuente",
+  "stepLabel": "PASO {number}",
+  "slideOf": "{current} / {total}",
+  "sourceScope": "Alcance de la fuente",
+  "futureNote": "Los días futuros se habilitan cuando llega la fecha.",
+  "resetComplete": "Semana limpiada.",
+  "demoNoSave": "El ejemplo no altera tus datos personales.",
+  "unitsDisclaimer": "Comprueba que las unidades coincidan con el laboratorio.",
+  "slideCreditLabel": "COLABORACIÓN ENTRE UNIVERSIDADES",
+  "parts": [
+    {
+      "id": "corteza",
+      "title": "Corteza renal",
+      "description": "La capa externa. Contiene estructuras donde empieza el filtrado de la sangre."
+    },
+    {
+      "id": "medula",
+      "title": "Médula renal",
+      "description": "La región interna. Sus túbulos ayudan a concentrar la orina y recuperar agua y sustancias que el cuerpo necesita."
+    },
+    {
+      "id": "glomerulo",
+      "title": "Glomérulo",
+      "description": "Un pequeño conjunto de vasos que actúa como filtro. El agua y desechos pasan; las proteínas grandes suelen permanecer en la sangre."
+    },
+    {
+      "id": "ureter",
+      "title": "Uréter",
+      "description": "El conducto que lleva la orina del riñón a la vejiga. No lleva sangre."
+    },
+    {
+      "id": "arteria",
+      "title": "Arteria renal",
+      "description": "El vaso que lleva sangre al riñón. La glucosa elevada y la presión alta pueden dañar vasos pequeños del sistema de filtrado."
+    }
+  ],
+  "filterStages": [
+    {
+      "title": "Una barrera que selecciona.",
+      "description": "En un filtrado conservado, pasan agua y moléculas pequeñas. Las células de la sangre y la mayoría de proteínas grandes permanecen en la circulación."
+    },
+    {
+      "title": "Los pequeños vasos reciben presión.",
+      "description": "La glucosa alta sostenida y la presión elevada pueden afectar las estructuras del filtro. Al principio puede no haber síntomas."
+    },
+    {
+      "title": "Algunas proteínas pueden atravesar.",
+      "description": "Cuando la barrera se altera, puede aumentar la albúmina en la orina. Se mide mediante una prueba; no se confirma mirando la orina."
+    },
+    {
+      "title": "El filtrado puede disminuir.",
+      "description": "Si el daño progresa, el riñón puede eliminar menos desechos. La evolución se evalúa con pruebas repetidas y contexto clínico; puede frenarse con cuidados y tratamiento."
+    }
+  ],
+  "sections": [
+    {
+      "id": "causas",
+      "tab": "Causas y riesgos",
+      "eyebrow": "01 / COMPRENDER",
+      "title": "¿Por qué ocurre el daño renal?",
+      "description": "La nefropatía diabética es un daño renal relacionado con la diabetes tipo 1 o tipo 2. La glucosa elevada durante mucho tiempo puede afectar los pequeños vasos del riñón.",
+      "pointsTitle": "Factores que pueden aumentar el riesgo",
+      "points": [
+        "Más años con diabetes y glucosa elevada de forma sostenida.",
+        "Presión arterial alta, colesterol y triglicéridos elevados.",
+        "Edad, antecedentes familiares de enfermedad renal y lesión renal previa.",
+        "Fumar, sedentarismo, exceso de sal y obesidad."
+      ],
+      "note": "El riesgo puede reducirse: controlar la glucosa y la presión, seguir el tratamiento y asistir a controles ayuda a proteger los riñones.",
+      "sources": [
+        "niddk-dkd",
+        "mayo"
+      ]
+    },
+    {
+      "id": "epidemiologia",
+      "tab": "¿A quiénes afecta?",
+      "eyebrow": "02 / PERSPECTIVA GLOBAL",
+      "title": "La prevención empieza por entender el contexto.",
+      "description": "La enfermedad renal es una complicación importante de la diabetes en todo el mundo. El riesgo cambia con los años de diabetes, la edad, el control de glucosa, la presión, el peso y los lípidos.",
+      "pointsTitle": "Una cifra necesita contexto",
+      "points": [
+        "Comparar países exige conocer la población, el año y cómo se definió la enfermedad.",
+        "Las cifras del borrador se muestran pendientes de verificación.",
+        "Una estadística de población no predice la evolución de una persona."
+      ],
+      "note": "No todas las personas con diabetes desarrollan daño renal. Las cifras orientan el estudio del problema; los controles guían el cuidado personal.",
+      "sources": [
+        "niddk-dkd"
+      ]
+    },
+    {
+      "id": "prevencion",
+      "tab": "Cómo cuidarte",
+      "eyebrow": "03 / CUIDAR",
+      "title": "El cuidado cotidiano puede hacer la diferencia.",
+      "description": "La detección temprana y el cuidado de la diabetes pueden prevenir o retrasar complicaciones. El daño puede desarrollarse lentamente y sin señales evidentes.",
+      "pointsTitle": "Cuidados para acordar con tu equipo",
+      "points": [
+        "Glucosa y presión: conoce tus metas y monitorea según indicación.",
+        "Medicamentos: sigue el tratamiento prescrito y consulta antes de modificarlo.",
+        "Sin tabaco ni vapeo; busca apoyo para dejarlo.",
+        "Actividad adaptada: una meta posible es 30 minutos en 5 días. Incluye fuerza si tu equipo lo indica.",
+        "Alimentación y líquidos: revisa la sal y adapta las cantidades a tus resultados.",
+        "Controles: consulta sobre exámenes anuales en diabetes tipo 2 y tras 5 años de diabetes tipo 1, o antes si te lo indican."
+      ],
+      "note": "No es una garantía absoluta de prevención. La frecuencia de exámenes, el ejercicio y los objetivos deben ajustarse a cada persona.",
+      "sources": [
+        "niddk-dkd",
+        "cdc-activity",
+        "niddk-diet"
+      ]
+    },
+    {
+      "id": "manifestaciones",
+      "tab": "Señales y exámenes",
+      "eyebrow": "04 / DETECTAR",
+      "title": "La respuesta también está en los exámenes.",
+      "description": "En las primeras etapas puede haber pocos síntomas o ninguno. Los análisis de sangre y orina permiten valorar cómo trabajan los riñones.",
+      "pointsTitle": "Dos pruebas que se complementan",
+      "points": [
+        "Sangre: la creatinina permite al laboratorio estimar la tasa de filtración glomerular (TFGe).",
+        "Orina: la relación albúmina/creatinina ayuda a valorar la pérdida de proteínas.",
+        "El equipo interpreta los resultados repetidos junto con la historia clínica.",
+        "Sed y micción frecuente pueden acompañar a la diabetes; no confirman daño renal."
+      ],
+      "note": "Hinchazón, cambios en la orina o cansancio necesitan evaluación. No se deben confundir síntomas generales de diabetes con una confirmación de nefropatía.",
+      "sources": [
+        "niddk-tests",
+        "cdc-signs",
+        "mayo"
+      ]
+    }
+  ],
+  "symptomCategories": [
+    {
+      "title": "Síntomas generales de diabetes",
+      "subtitle": "No son una prueba de daño renal.",
+      "items": [
+        "Sed y orinar con frecuencia",
+        "Hambre extrema",
+        "Cansancio y mareo",
+        "Heridas que tardan en sanar"
+      ]
+    },
+    {
+      "title": "Señales que requieren valoración renal",
+      "subtitle": "También pueden tener otras causas.",
+      "items": [
+        "Hinchazón de pies, piernas, manos o cara",
+        "Orina espumosa o cambios de frecuencia, color u olor",
+        "Náusea, falta de apetito o cansancio persistente"
+      ]
+    },
+    {
+      "title": "Otros efectos asociados a la diabetes",
+      "subtitle": "Son complicaciones que se evalúan por separado.",
+      "items": [
+        "Presión alta y riesgo cardiovascular",
+        "Cambios de visión",
+        "Pérdida de sensibilidad en pies"
+      ]
+    },
+    {
+      "title": "Hallazgos de laboratorio",
+      "subtitle": "Se detectan en sangre y orina.",
+      "items": [
+        "Albúmina o proteínas elevadas en orina",
+        "Disminución de la filtración estimada",
+        "Cambios progresivos en pruebas repetidas"
+      ]
+    }
+  ],
+  "symptomChecks": [
+    {
+      "id": "breathing",
+      "text": "Dificultad intensa para respirar ahora",
+      "urgent": true
+    },
+    {
+      "id": "confusion",
+      "text": "Confusión repentina o dificultad para mantenerse alerta",
+      "urgent": true
+    },
+    {
+      "id": "swelling",
+      "text": "Hinchazón nueva o persistente",
+      "urgent": false
+    },
+    {
+      "id": "urine",
+      "text": "Cambios persistentes en la orina",
+      "urgent": false
+    },
+    {
+      "id": "nausea",
+      "text": "Náuseas, poco apetito o cansancio persistente",
+      "urgent": false
+    },
+    {
+      "id": "diabetes",
+      "text": "Sed, micción frecuente o heridas que tardan en sanar",
+      "urgent": false
+    }
+  ],
+  "habits": [
+    {
+      "id": "activity",
+      "title": "Actividad adaptada",
+      "detail": "30 min, si está indicado",
+      "target": 5
+    },
+    {
+      "id": "tobacco",
+      "title": "Sin tabaco ni vapeo",
+      "detail": "Busca apoyo si lo necesitas",
+      "target": 7
+    },
+    {
+      "id": "glucose",
+      "title": "Glucosa según mi plan",
+      "detail": "Solo la frecuencia indicada",
+      "target": 7
+    },
+    {
+      "id": "medicine",
+      "title": "Medicación indicada",
+      "detail": "Según la prescripción",
+      "target": 7
+    },
+    {
+      "id": "salt",
+      "title": "Atención a la sal",
+      "detail": "Revisar etiquetas y preparaciones",
+      "target": 7
+    },
+    {
+      "id": "fluids",
+      "title": "Líquidos según mi plan",
+      "detail": "La cantidad que indicó mi equipo",
+      "target": 7
+    }
+  ],
+  "creditsBlocks": [
+    {
+      "number": "01",
+      "title": "Diseño en colaboración",
+      "text": "El mockup de Laura es el punto de partida: ilustración a la izquierda, información a la derecha, mediciones y recomendaciones. La nueva versión conserva esa lógica y amplía la interacción."
+    },
+    {
+      "number": "02",
+      "title": "Construcción del conocimiento",
+      "text": "Las reuniones por Zoom y el trabajo entre universidades articulan información sobre causas, epidemiología, prevención y detección. El equipo completa la evidencia de reuniones y los nombres de participantes."
+    },
+    {
+      "number": "03",
+      "title": "Lenguaje que acerca",
+      "text": "La versión en español y en inglés facilita compartir el proyecto. Ambas traducciones requieren revisión académica y de terminología por los equipos participantes."
+    },
+    {
+      "number": "04",
+      "title": "Lo que sigue",
+      "text": "Confirmar las fuentes epidemiológicas, validar rangos individuales, aprobar recetas y completar los créditos. La publicación y el dominio se definirán al finalizar esta revisión."
+    }
+  ],
+  "universities": [
+    "Universidad Católica de Colombia",
+    "Tecnológico de Monterrey",
+    "Universidad de Florida"
+  ],
+  "creditReview": "Instituciones según la base del proyecto; confirmar denominaciones, integrantes y autorizaciones antes de publicar.",
+  "kidneyTitle": "Riñón: esquema interactivo",
+  "kidneyDescription": "Corte esquemático de un riñón. Cinco puntos permiten explorar corteza, médula, glomérulo, uréter y arteria.",
+  "fullscreen": "Pantalla completa",
+  "servingsOne": "1 porción de ejemplo",
+  "recipesFoundOne": "1 preparación de ejemplo",
+  "resultsCountOne": "1 registro visible",
+  "chartRecordsOne": "1 valor registrado",
+  "savedMeasurementsOne": "1 medición personal",
+  "fullscreenUnavailable": "La pantalla completa no está disponible aquí. Usa la opción de pantalla completa del navegador; el visor puede seguir abierto.",
+  "searchAll": "Buscar en el proyecto",
+  "settings": "Ajustes",
+  "theme": "Apariencia",
+  "lightTheme": "Claro",
+  "darkTheme": "Oscuro",
+  "systemTheme": "Según el dispositivo",
+  "motion": "Movimiento",
+  "reduceMotion": "Reducir movimiento",
+  "allowMotion": "Permitir movimiento, respetando el dispositivo",
+  "systemMotion": "Según el dispositivo",
+  "localProfile": "Perfil local",
+  "newProfile": "Crear perfil",
+  "profileName": "Nombre del perfil",
+  "create": "Crear",
+  "profileExport": "Exportar perfil JSON",
+  "profileImport": "Importar perfil JSON",
+  "profilePrivacy": "Los perfiles se guardan sin cifrado en este navegador. Cualquier persona con acceso al navegador puede leerlos. No son cuentas privadas.",
+  "declaredEgfr": "TFGe declarada (opcional)",
+  "declaredEgfrHint": "Copia el resultado que tu equipo confirmó, en mL/min/1.73 m². No se calcula aquí.",
+  "saveSettings": "Guardar ajustes",
+  "privacy": "Privacidad",
+  "privacyTitle": "Tus datos, en este navegador.",
+  "privacyBody": "Se guardan registros, notas, hábitos y favoritas hasta que los borres o limpies los datos del navegador. No se envían a un servidor. Las exportaciones quedan bajo tu control. Contacto del equipo: pendiente de confirmar. Las copias de migración se eliminan al borrar los datos completos del sitio en el navegador.",
+  "deleteProfile": "Borrar este perfil",
+  "deleteProfileHint": "Se borrará todo su historial local. Exporta antes si quieres conservarlo.",
+  "welcomeTitle": "Conoce tu espacio de cuidado.",
+  "welcomeStep": "Paso {current} de 3",
+  "welcomeLanguage": "Elige cómo prefieres leer.",
+  "welcomeMode": "Explora un ejemplo o empieza tu registro.",
+  "welcomePrivacy": "Tu información permanece en este navegador.",
+  "welcomeDemo": "Explorar el ejemplo ficticio",
+  "welcomePersonal": "Empezar mis registros",
+  "start": "Empezar",
+  "shortcuts": "Atajos de teclado",
+  "shortcutNav": "Ir a una sección: pulsa g y luego la letra",
+  "shortcutPresentation": "Presentación · Esc para salir",
+  "shortcutNotes": "Notas del presentador",
+  "shortcutReset": "Reiniciar cronómetro",
+  "shortcutPause": "Pausar o continuar cronómetro",
+  "searchPlaceholder": "Busca una zona, receta o hábito…",
+  "searchCount": "{count} resultados. Usa ↑ ↓ y Enter.",
+  "searchEmpty": "Prueba con otro término.",
+  "section": "Sección",
+  "chapter": "Capítulo",
+  "recipe": "Receta",
+  "habit": "Hábito",
+  "profileImported": "Perfil importado como una copia nueva.",
+  "importConfirm": "Confirmar importación",
+  "importPreview": "Revisa la importación",
+  "importInvalid": "El archivo no es válido. No se han cambiado tus datos.",
+  "importCSV": "Importar CSV",
+  "importCSVHint": "Acepta CSV exportado por Renal. Revisa filas, unidades y procedencia antes de guardar.",
+  "acceptedRows": "Filas aceptadas: {count}",
+  "rejectedRows": "Filas rechazadas: {count}",
+  "duplicates": "Coincidencias de fecha y métrica: {count}",
+  "keepBoth": "Conservar ambas mediciones",
+  "overwrite": "Sobrescribir las métricas coincidentes",
+  "importOrigin": "Los ejemplos ficticios se excluyen del perfil personal.",
+  "notes": "Notas",
+  "recordNotesHint": "Máximo 280 caracteres. Evita información que no quieras dejar en un navegador compartido.",
+  "tags": "Contexto de la medición",
+  "tag-fasting": "Ayunas",
+  "tag-post-dinner": "Después de cenar",
+  "tag-visit": "En consulta",
+  "allTags": "Todos los contextos",
+  "compareDates": "Comparar dos registros",
+  "firstRecord": "Registro inicial",
+  "secondRecord": "Registro final",
+  "comparisonResult": "Diferencia: {delta} {unit} · Variación: {percent}",
+  "noPercent": "No calculable (valor inicial cero)",
+  "compareHint": "La diferencia describe valores; no interpreta su significado clínico.",
+  "quickGlucose": "Solo glucosa",
+  "exportPDF": "Imprimir / guardar PDF",
+  "consultation": "Preparar vista de consulta",
+  "professionalNotes": "Notas para el profesional",
+  "professionalHint": "Espacio opcional. Máximo 3000 caracteres.",
+  "myStory": "Mi historia · últimos 30 días",
+  "storyTitle": "Tu historia en datos.",
+  "storyCount": "Registraste {count} entradas en los últimos 30 días.",
+  "storyMetric": "{metric}: de {first} a {last} {unit}; diferencia {delta} {unit}.",
+  "storyEnd": "Este resumen describe registros, sin evaluar su significado clínico. Revísalo con tu equipo de salud.",
+  "exportText": "Exportar texto",
+  "periodPrinted": "Periodo: {from} — {to}",
+  "print": "Imprimir / guardar PDF",
+  "printBlocked": "Permite ventanas emergentes para abrir la vista de impresión.",
+  "servingsControl": "Porciones de ejemplo",
+  "addShopping": "Añadir a mi lista de compras",
+  "shoppingList": "Tu lista de compras",
+  "shoppingEmpty": "Añade preparaciones desde su detalle.",
+  "shoppingAdded": "Preparación añadida a la lista.",
+  "shoppingClear": "Vaciar lista",
+  "substitutions": "Sustituciones · por validar",
+  "onlyUnvalidated": "Sin validar",
+  "renalFoodWarning": "Tu perfil declara una TFGe menor de 60. Revisa con tu equipo cómo ajustar potasio, fósforo y porciones; esta lista no calcula requerimientos ni prescribe restricciones.",
+  "weeklyView": "Semana",
+  "monthlyView": "Mes",
+  "dailyNote": "Nota del día",
+  "saveNote": "Guardar nota",
+  "noteSaved": "Nota guardada.",
+  "habitStreak": "{count} días seguidos",
+  "exportHabits": "Exportar hábitos CSV",
+  "monthPrevious": "Mes anterior",
+  "monthNext": "Mes siguiente",
+  "monthlyHint": "Cada día muestra hábitos marcados. Selecciona una fecha para revisar marcas y nota.",
+  "prepareVisit": "Preparar preguntas para mi consulta",
+  "questionsTitle": "Para conversar con tu equipo.",
+  "symptomQuestion": "¿Cómo debo evaluar esta señal: {symptom}? ¿Qué cambios debo observar y cuándo volver a consultar?",
+  "urgentQuestions": "No retrases la atención urgente para preparar esta lista.",
+  "notDiagnosis": "Orientación educativa · no es un diagnóstico",
+  "urgentAlert": "ALERTA DE URGENCIA",
+  "compareParts": "Comparar dos zonas",
+  "comparisonPartA": "Primera zona",
+  "comparisonPartB": "Segunda zona",
+  "partFocus": "Explicación de la zona",
+  "reviewQuiz": "Repaso · 5 preguntas",
+  "quizTitle": "¿Qué aprendiste del riñón?",
+  "checkAnswers": "Revisar respuestas",
+  "quizScore": "{score} de 5. La puntuación no se guarda.",
+  "quizCorrect": "Respuesta correcta",
+  "quizTry": "Revisa la explicación de esta zona.",
+  "beforeAfter": "Un cambio, visto por dentro.",
+  "beforeLabel": "Filtrado conservado",
+  "afterLabel": "Alteración conceptual",
+  "conceptSlider": "Comparación conceptual del filtrado",
+  "conceptTimeline": "Año {year} · conceptual",
+  "conceptDisclaimer": "Ilustración conceptual: los años son marcadores narrativos, no una cronología clínica ni una predicción. La evolución puede variar y requiere evaluación profesional.",
+  "presenterNotes": "Notas para quien presenta",
+  "notesFullscreen": "Las notas se ocultan en pantalla completa nativa. En el visor de ventana, todos pueden verlas.",
+  "presentationExport": "Exportar 9 escenas PDF",
+  "timer": "Tiempo de exposición",
+  "waitingTitle": "Aprender juntos para cuidar mejor.",
+  "waitingHint": "Pulsa → para comenzar.",
+  "install": "Instalar",
+  "recoveryTitle": "Conservamos el estado anterior.",
+  "recoveryHint": "No se pudo migrar. Descarga la copia original antes de reiniciar; tus datos todavía no se han sobrescrito.",
+  "downloadBackup": "Descargar copia original",
+  "restart": "Reiniciar después de respaldar",
+  "profilePreview": "Perfil: {name} · {count} registros",
+  "filterDates": "Fechas seleccionadas",
+  "technicalReport": "Validación y límites del prototipo",
+  "skipWelcome": "Saltar",
+  "reviewQuestions": [
+    {
+      "question": "¿Qué zona lleva sangre al riñón?",
+      "answer": "arteria"
+    },
+    {
+      "question": "¿Qué conducto lleva la orina a la vejiga?",
+      "answer": "ureter"
+    },
+    {
+      "question": "¿Qué conjunto de pequeños vasos actúa como filtro?",
+      "answer": "glomerulo"
+    },
+    {
+      "question": "¿Cuál es la capa externa del riñón?",
+      "answer": "corteza"
+    },
+    {
+      "question": "¿Qué región contiene túbulos que ayudan a concentrar la orina?",
+      "answer": "medula"
+    }
+  ],
+  "statistics": [
+    {
+      "id": "global-draft",
+      "display": "2–4 / 10",
+      "sourceId": null,
+      "source": null,
+      "url": null,
+      "year": null,
+      "population": null,
+      "methodology": null,
+      "verified": false
+    },
+    {
+      "id": "mexico-draft",
+      "display": "1 / 4",
+      "sourceId": null,
+      "source": null,
+      "url": null,
+      "year": null,
+      "population": null,
+      "methodology": null,
+      "verified": false
+    },
+    {
+      "id": "us-reference",
+      "display": "≈ 1 / 3",
+      "sourceId": "niddk-dkd",
+      "source": "NIDDK; referencia CDC 2019",
+      "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/preventing-problems/diabetic-kidney-disease",
+      "year": 2019,
+      "population": "Adultos con diabetes en Estados Unidos",
+      "methodology": null,
+      "verified": true
+    }
+  ],
+  "habitStreakOne": "1 día seguido",
+  "perHabitStreakTitle": "Constancia, hábito por hábito.",
+  "methodology": "Metodología",
+  "pendingMethodology": "[metodología por confirmar]",
+  "reviewContacts": {
+    "clinicalReviewer": null,
+    "nutritionReviewer": null,
+    "englishReviewer": null,
+    "coordinator": null,
+    "teamMembers": []
+  },
+  "foodNoticeTitle": "Antes de elegir una receta",
+  "shoppingEyebrow": "ORGANIZA TUS INGREDIENTES",
+  "shoppingEmptyTitle": "Tu lista está lista para empezar",
+  "shoppingClearHint": "Se quitarán todos los ingredientes de tu lista de compras.",
+  "shoppingCleared": "Lista de compras vaciada.",
+  "shoppingCount": "{count} ingredientes",
+  "shoppingCountOne": "{count} ingrediente",
+  "navInfo": "Infografías",
+  "qsInfoTitle": "Ver las infografías",
+  "qsInfoText": "Causas, consecuencias y cuidados en esquemas fáciles de leer.",
+  "infoEyebrow": "VISTO EN IMÁGENES",
+  "infoTitle": "Entender la nefropatía, de un vistazo.",
+  "infoDescription": "Tres esquemas para recorrer el camino completo: cómo se daña el riñón, qué lo causa, qué puede ocurrir y qué cuidados ayudan.",
+  "infoFlowEyebrow": "¿CÓMO AFECTA?",
+  "infoFlowTitle": "Del azúcar en la sangre al filtro del riñón.",
+  "infoFlow": [
+    {
+      "title": "Glucosa alta sostenida",
+      "text": "Niveles altos de azúcar en la sangre dañan los vasos sanguíneos del riñón."
+    },
+    {
+      "title": "El filtro se altera",
+      "text": "Se altera el filtro del riñón (glomérulo)."
+    },
+    {
+      "title": "Proteínas en la orina",
+      "text": "Comienzan a perderse proteínas en la orina."
+    },
+    {
+      "title": "Menos capacidad de filtrar",
+      "text": "Con el tiempo puede disminuir la capacidad del riñón para filtrar la sangre."
+    }
+  ],
+  "infoFlowNote": "Es un proceso lento y no inevitable: con controles y cuidados puede prevenirse o retrasarse.",
+  "infoColumnsEyebrow": "CAUSA, CONSECUENCIA Y CUIDADO",
+  "infoColumnsTitle": "Tres columnas para leer el panorama completo.",
+  "infoColumns": [
+    {
+      "label": "Causas",
+      "subtitle": "Lo que aumenta el riesgo",
+      "items": [
+        {
+          "title": "Más años con diabetes",
+          "text": "Mientras más tiempo con glucosa elevada, mayor es el riesgo de dañar los riñones."
+        },
+        {
+          "title": "Presión arterial alta",
+          "text": "Puede dañar los pequeños vasos del filtro renal."
+        },
+        {
+          "title": "Colesterol y triglicéridos elevados",
+          "text": "Pueden agravar la enfermedad."
+        },
+        {
+          "title": "Edad y antecedentes",
+          "text": "Tener familiares con enfermedad renal, más edad o una lesión renal previa aumenta la probabilidad."
+        },
+        {
+          "title": "Fumar",
+          "text": "Puede empeorar la circulación y aumentar el daño renal."
+        },
+        {
+          "title": "Poca actividad y mucha sal",
+          "text": "Se asocian con obesidad, diabetes y presión alta."
+        }
+      ]
+    },
+    {
+      "label": "Consecuencias",
+      "subtitle": "Lo que puede ocurrir",
+      "items": [
+        {
+          "title": "Daño en los vasos del filtro",
+          "text": "El glomérulo deja de trabajar como antes."
+        },
+        {
+          "title": "Proteínas en la orina",
+          "text": "La albúmina elevada en orina es una de las primeras señales en los análisis."
+        },
+        {
+          "title": "Filtración estimada más baja",
+          "text": "La TFGe puede disminuir con los años y se vigila con análisis de sangre."
+        },
+        {
+          "title": "Hinchazón, cansancio o cambios en la orina",
+          "text": "Pueden aparecer más adelante y tener otras causas; necesitan evaluación."
+        },
+        {
+          "title": "Más riesgo cardiovascular",
+          "text": "La presión alta y el daño renal se asocian con más riesgo para el corazón."
+        }
+      ]
+    },
+    {
+      "label": "Cuidados y tratamiento",
+      "subtitle": "Lo que ayuda",
+      "items": [
+        {
+          "title": "Metas de glucosa y presión",
+          "text": "Conócelas y monitorea según indique tu equipo de salud."
+        },
+        {
+          "title": "Medicamentos indicados",
+          "text": "Sigue el tratamiento prescrito y consulta antes de cambiarlo."
+        },
+        {
+          "title": "Alimentación y sal",
+          "text": "Revisa la sal y adapta las cantidades con tu nutricionista."
+        },
+        {
+          "title": "Actividad adaptada",
+          "text": "Una meta posible es 30 minutos, 5 días a la semana, si tu equipo lo indica."
+        },
+        {
+          "title": "Sin tabaco ni vapeo",
+          "text": "Busca apoyo para dejarlo."
+        },
+        {
+          "title": "Controles de sangre y orina",
+          "text": "Pregunta cada cuánto repetirlos: la detección temprana ayuda."
+        }
+      ]
+    }
+  ],
+  "infoColumnsNote": "Las metas y el tratamiento los define tu equipo de salud. Esta infografía no sustituye una consulta.",
+  "infoStatsEyebrow": "CIFRAS CON CONTEXTO",
+  "infoStatsTitle": "Lo que dicen los números, y sus límites.",
+  "infoStats": [
+    {
+      "label": "Mundial · borrador del equipo",
+      "text": "Entre 2 y 4 de cada 10 personas con diabetes desarrollarían enfermedad renal.",
+      "badge": "Pendiente de validar"
+    },
+    {
+      "label": "México · borrador del equipo",
+      "text": "1 de cada 4 personas con diabetes desarrollaría enfermedad renal crónica.",
+      "badge": "Pendiente de validar"
+    },
+    {
+      "label": "Estados Unidos · referencia",
+      "text": "Aproximadamente 1 de cada 3 adultos con diabetes tiene enfermedad renal relacionada con la diabetes.",
+      "badge": "NIDDK · CDC 2019"
+    }
+  ],
+  "infoStatsNote": "Una cifra de población no predice lo que le pasará a una persona. Las dos primeras salen del borrador del equipo y falta confirmar fuente, año y población.",
+  "infoSignsTitle": "¿Has notado alguno de estos cambios?",
+  "infoSignsChips": [
+    "Hinchazón de pies, piernas, manos o cara",
+    "Orina espumosa o con cambios",
+    "Cansancio persistente",
+    "Náuseas o falta de apetito"
+  ],
+  "infoSignsText": "Pueden tener otras causas. Revisa las señales y prepara las preguntas para tu consulta.",
+  "infoSignsCta": "Ir a Señales",
+  "infoGlossaryEyebrow": "TÉRMINOS CLAVE",
+  "infoGlossaryTitle": "Palabras que vas a escuchar en la consulta.",
+  "infoGlossary": [
+    {
+      "term": "Nefropatía diabética",
+      "def": "Daño en los riñones relacionado con la diabetes. Suele avanzar de forma lenta y silenciosa."
+    },
+    {
+      "term": "Glomérulo",
+      "def": "Conjunto de pequeños vasos del riñón que filtra la sangre."
+    },
+    {
+      "term": "Albúmina",
+      "def": "Proteína que normalmente permanece en la sangre. Si aparece de forma persistente en la orina, puede indicar daño del filtro."
+    },
+    {
+      "term": "Creatinina",
+      "def": "Residuo del músculo que se mide en la sangre. El laboratorio la usa para estimar la TFGe."
+    },
+    {
+      "term": "TFGe",
+      "def": "Tasa de filtración glomerular estimada: un cálculo que indica qué tan bien filtran los riñones. La interpreta tu equipo de salud."
+    },
+    {
+      "term": "Relación albúmina/creatinina",
+      "def": "Prueba de orina que ayuda a valorar la pérdida de proteínas."
+    },
+    {
+      "term": "HbA1c",
+      "def": "Análisis que refleja el promedio de glucosa de los últimos meses."
+    },
+    {
+      "term": "Presión arterial",
+      "def": "Fuerza de la sangre contra las arterias. Se anota con dos cifras (sistólica/diastólica) en mmHg."
+    }
+  ],
+  "infoGlossaryNote": "Definiciones para estudio; la revisión académica está pendiente.",
+  "infoSourcesLink": "Ver fuentes y revisión",
+  "foodTabsLabel": "Vistas de Alimentación",
+  "foodTabRecipes": "Recetas",
+  "foodTabDiary": "Mi diario de comidas",
+  "diaryEyebrow": "TU REGISTRO DE COMIDAS",
+  "diaryTitle": "Anota lo que comes.",
+  "diaryIntro": "Registra tus platillos, mira cuánto suman en sodio, potasio, fósforo y proteína, y compáralos con las metas que acuerdes con tu equipo de salud. Se guarda solo en este navegador.",
+  "diaryAdd": "Añadir comida",
+  "diaryToday": "Hoy",
+  "diaryPrevDay": "Día anterior",
+  "diaryNextDay": "Día siguiente",
+  "diaryDate": "Fecha",
+  "diarySummary": "Resumen del día",
+  "diaryNutrients": {
+    "kcal": "Energía",
+    "protein": "Proteína",
+    "sodium": "Sodio",
+    "potassium": "Potasio",
+    "phosphorus": "Fósforo"
+  },
+  "diaryOfGoal": "{percent} % de la cifra que anotaste ({goal} {unit})",
+  "diaryOverGoal": "Supera la cifra que anotaste ({goal} {unit})",
+  "diaryNoGoal": "Sin meta anotada",
+  "diaryGoalsTitle": "Mis metas diarias (opcional)",
+  "diaryGoalsHint": "Escribe las cifras que acordaste con tu nutricionista o tu equipo de salud. Si no las tienes, déjalas vacías: la aplicación no define metas clínicas.",
+  "diaryGoalsSave": "Guardar metas",
+  "diaryGoalsExample": "Usar ejemplo de sodio",
+  "diaryGoalsSaved": "Metas guardadas",
+  "diaryGoalsInvalid": "Revisa las metas: usa números positivos.",
+  "diaryGoalsExampleNote": "Ejemplo general de la OMS: menos de 2000 mg de sodio al día para adultos. Tu equipo puede indicarte otra cifra, sobre todo si tienes enfermedad renal.",
+  "diaryMealsDay": "Comidas del día",
+  "diaryEmptyDay": "Todavía no anotaste comidas este día.",
+  "diaryEmptyHint": "Añade un platillo y sus alimentos para ver el resumen.",
+  "diaryItemsCount": "{count} alimentos",
+  "diaryItemsCountOne": "1 alimento",
+  "diaryUnknown": "Incluye alimentos sin datos nutricionales: el total real puede ser mayor.",
+  "diaryEdit": "Editar",
+  "diaryDuplicate": "Duplicar hoy",
+  "diaryShare": "Compartir",
+  "diaryDeleteTitle": "¿Borrar esta comida?",
+  "diaryDeleteText": "Se quitará de tu diario en este navegador. Esta acción no se puede deshacer.",
+  "diaryDeleted": "Comida borrada",
+  "diaryDialogNew": "Nueva comida",
+  "diaryDialogEdit": "Editar comida",
+  "diaryDialogEyebrow": "DIARIO DE COMIDAS",
+  "diaryName": "Nombre del platillo",
+  "diaryNamePh": "Ej. Arroz con pollo y ensalada",
+  "diarySlot": "Momento del día",
+  "diaryFoods": "Alimentos y cantidades",
+  "diaryFoodSelect": "Elige un alimento",
+  "diaryFoodCustom": "Otro alimento (sin datos nutricionales)",
+  "diaryCustomName": "Nombre del alimento",
+  "diaryGrams": "Cantidad (g)",
+  "diaryAddFood": "Agregar alimento",
+  "diaryRemoveFood": "Quitar alimento",
+  "diaryNotes": "Notas (opcional)",
+  "diaryNotesHint": "Máximo 280 caracteres.",
+  "diaryPreview": "Aporte aproximado de este platillo",
+  "diarySave": "Guardar comida",
+  "diarySaved": "Comida guardada",
+  "diaryErrName": "Escribe el nombre del platillo.",
+  "diaryErrItems": "Agrega al menos un alimento con su cantidad en gramos.",
+  "diaryErrSave": "No se pudo guardar. Revisa los datos.",
+  "diaryCompareTitle": "Comparar dos platillos",
+  "diaryCompareHint": "Elige dos comidas de tu diario para ver la diferencia en cada nutriente.",
+  "diaryCompareA": "Platillo A",
+  "diaryCompareB": "Platillo B",
+  "diaryCompareChoose": "Elige una comida",
+  "diaryCompareNeed": "Necesitas al menos dos comidas registradas para comparar.",
+  "diaryCompareNutrient": "Nutriente",
+  "diaryCompareDiff": "Diferencia (B − A)",
+  "diaryToolsTitle": "Compartir y respaldar",
+  "diaryToolsHint": "Comparte un platillo como texto desde su tarjeta, o respalda tu diario en un archivo que puedes importar después.",
+  "diaryExport": "Exportar diario",
+  "diaryImport": "Importar diario",
+  "diaryImported": "{count} comidas importadas",
+  "diaryImportInvalid": "El archivo no es un diario válido.",
+  "diaryNothingToExport": "Aún no hay comidas para exportar.",
+  "diaryShareFooter": "Valores aproximados de una base de ejemplo, sin validar. Renal / COIL.",
+  "diaryShareCopied": "Texto copiado para compartir",
+  "diaryShareFail": "No se pudo compartir",
+  "diaryDbBadge": "Base de alimentos de ejemplo · pendiente de validar",
+  "diaryDisclaimer": "Los valores nutricionales son aproximados por 100 g y vienen de una base de ejemplo pendiente de validación. Comparar con tus metas no es un diagnóstico ni sustituye la orientación de tu nutricionista.",
+  "mealGroups": {
+    "cereals": "Cereales y tubérculos",
+    "fruits": "Frutas",
+    "vegetables": "Verduras y hierbas",
+    "protein": "Carnes, pescado y huevo",
+    "legumes": "Legumbres",
+    "dairy": "Lácteos",
+    "fats": "Grasas y aceites",
+    "processed": "Procesados",
+    "drinks": "Bebidas"
+  }
+}
