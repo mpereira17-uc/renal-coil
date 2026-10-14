@@ -79,6 +79,3 @@ La guía completa de edición está en [`LEEME.md`](LEEME.md) y los pendientes e
 
 Cómo colaborar: lee [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
-## Historial
-
-Las primeras entradas del historial corresponden a la **importación inicial** de la versión 3.5, subida por partes. El trabajo del equipo continúa en commits, ramas y pull requests propios.
