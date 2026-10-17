@@ -1,0 +1,123 @@
+/* Renal 3.6 · Pulido visual.
+   Se carga al final y solo afina lo que ya existe: no cambia colores de sección, estructura ni textos.
+   Para volver al diseño 3.5 basta con quitar esta hoja de index.html y de tools/crear_portable.py. */
+
+/* ---------- 1. Profundidad y lectura ---------- */
+:root {
+  --ring: 0 0 0 1px rgb(20 45 64 / 6%);
+  --card-shadow: var(--ring), 0 1px 2px rgb(20 45 64 / 4%), 0 12px 32px -12px rgb(20 45 64 / 14%);
+  --lift-shadow: var(--ring), 0 2px 4px rgb(20 45 64 / 5%), 0 22px 44px -16px rgb(20 45 64 / 24%);
+}
+[data-theme="dark"] {
+  --ring: 0 0 0 1px rgb(255 255 255 / 6%);
+  --card-shadow: var(--ring), 0 12px 32px -12px rgb(0 0 0 / 45%);
+  --lift-shadow: var(--ring), 0 22px 44px -16px rgb(0 0 0 / 60%);
+}
+body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility; }
+h2, h3 { text-wrap: balance; }
+p, li { text-wrap: pretty; }
+::selection { background: color-mix(in srgb, var(--accent, var(--action)) 22%, transparent); }
+.results-table, .metric-summary, .stat-number, .orbit-value, .streak-box, .habit-day-heading, .mini-result-grid, .recipe-meta { font-variant-numeric: tabular-nums; }
+
+/* Un solo anillo de foco, del color de la sección. */
+:where(a, button, [role="tab"], summary, label:has(input)):focus-visible { outline: 3px solid var(--accent, var(--action)); outline-offset: 3px; }
+
+/* ---------- 2. Encabezado ---------- */
+/* Solo en pantallas anchas: en el teléfono la barra inferior vive dentro del encabezado y el filtro la desplazaría. */
+@supports (backdrop-filter: blur(8px)) { @media (min-width: 761px) {
+  .site-header { background: color-mix(in srgb, var(--surface) 86%, transparent); backdrop-filter: saturate(1.4) blur(14px); -webkit-backdrop-filter: saturate(1.4) blur(14px); }
+  .workspace-strip { background: color-mix(in srgb, var(--paper) 80%, transparent); }
+} }
+#main-nav a { transition: background-color 160ms var(--ease), color 160ms var(--ease), box-shadow 160ms var(--ease); }
+#main-nav a svg { transition: transform 200ms var(--ease); }
+@media (hover: hover) { #main-nav a:hover svg { transform: translateY(-1px); } }
+.workspace-strip { min-height: 36px; }
+.workspace-strip .fine-print { color: var(--muted); }
+.workspace-strip select { min-height: 34px; padding-block: .2rem; border-radius: 10px; }
+.workspace-strip .text-link { min-height: 34px; padding: .3rem .7rem; font-size: .8rem; border-radius: 10px; }
+
+/* ---------- 3. Botones ---------- */
+.button, .text-link, .site-footer a, .site-footer button { transition: background-color 160ms var(--ease), border-color 160ms var(--ease), color 160ms var(--ease), box-shadow 160ms var(--ease), transform 160ms var(--ease); }
+.button.primary { box-shadow: 0 1px 0 rgb(255 255 255 / 18%) inset, 0 6px 16px -6px color-mix(in srgb, var(--accent, var(--action)) 70%, transparent); }
+@media (hover: hover) { .route .button.primary:hover { box-shadow: 0 1px 0 rgb(255 255 255 / 18%) inset, 0 10px 22px -8px color-mix(in srgb, var(--accent, var(--action)) 80%, transparent); transform: translateY(-1px); } }
+.button:active, .text-link:active { transform: translateY(0) scale(.98); }
+.button.secondary, .text-link:not(.danger-text) { background: var(--surface); }
+
+/* ---------- 4. Portadas de sección ---------- */
+.page-intro { box-shadow: var(--card-shadow); padding: 2.6rem 3rem; }
+.page-intro h1 { letter-spacing: -.045em; line-height: 1.06; margin-block: .2rem .9rem; }
+.page-intro p:not(.eyebrow) { max-width: 52ch; line-height: 1.6; }
+.intro-symbol { box-shadow: var(--ring), 0 10px 24px -8px color-mix(in srgb, var(--accent) 45%, transparent); }
+
+/* ---------- 5. Tarjetas ---------- */
+.recipe-card, .chart-surface, .week-surface, .habit-score, .note-surface, .streak-surface, .education-panel, .results-section, .filter-section, .shopping-surface, .anatomy-comparison, .glomerulus-surface, .tracking-aside, .daily-note, .mini-tracking, .food-teaser, .next-visit, .habit-bottom, .symptom-category, .self-check, .credit-block, .universities, .sources-section, .kidney-studio, .quick-card, .recipe-toolbar, .data-mode-bar { box-shadow: var(--card-shadow); }
+.quick-card { border: 1.5px solid transparent; }
+@media (hover: hover) {
+  .quick-card:hover, .recipe-card:hover { box-shadow: var(--lift-shadow); }
+  .quick-card:hover .quick-icon { transform: scale(1.06) rotate(-3deg); }
+}
+.quick-icon { transition: transform 220ms var(--ease); }
+.quick-card strong { margin-top: .35rem; }
+.symptom-category h2, .credit-block h2 { line-height: 1.2; }
+
+/* ---------- 6. Títulos de bloque ---------- */
+.section-heading { margin-bottom: 1.6rem; }
+.section-heading h2, .quick-start h2 { letter-spacing: -.035em; }
+.quick-start { margin-top: 3.5rem; }
+.quick-start .eyebrow + h2 { margin-top: 0; }
+
+/* ---------- 7. Descubrir ---------- */
+.discovery-copy h1 { letter-spacing: -.05em; line-height: 1.04; }
+.hero-description { line-height: 1.6; }
+.hero-message { box-shadow: 0 6px 18px -10px rgb(166 112 0 / 35%); }
+.kidney-studio { box-shadow: var(--lift-shadow); }
+.education-tabs { gap: .5rem; border: 0; }
+.education-tabs button { border: 1px solid var(--line); background: var(--surface); transition: background-color 160ms var(--ease), border-color 160ms var(--ease); }
+@media (hover: hover) { .education-tabs button:not([aria-selected="true"]):hover { border-color: var(--accent); background: var(--accent-soft); } }
+.education-tabs [aria-selected="true"]::after { display: none; }
+/* Corrige el número del capítulo que se partía en dos líneas en el teléfono. */
+.education-tabs button > span:first-child { white-space: nowrap; flex-shrink: 0; font-variant-numeric: tabular-nums; opacity: .85; }
+
+/* Comparación conceptual: mismas esquinas suaves que el resto de tarjetas. */
+.specimen-compare, .glomerulus-surface, .part-comparison-grid article { border-radius: 20px; }
+.specimen-compare { border-color: transparent; box-shadow: var(--card-shadow); }
+.specimen-label { border-radius: 999px; padding: .3rem .7rem; box-shadow: var(--ring); border-color: transparent; }
+.specimen-divider span { box-shadow: 0 4px 12px rgb(20 45 64 / 18%); }
+/* Un halo suave detrás del riñón da profundidad a la portada. */
+.discovery-grid { position: relative; isolation: isolate; }
+.discovery-grid::before { content: ""; position: absolute; z-index: -1; right: -4%; top: 50%; width: 62%; aspect-ratio: 1; transform: translateY(-50%); border-radius: 50%;
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--accent) 22%, transparent), transparent 70%); pointer-events: none; }
+
+/* ---------- 8. Seguimiento ---------- */
+.metric-summary strong { letter-spacing: -.04em; }
+.results-table tbody tr { transition: background-color 120ms; }
+@media (hover: hover) { .results-table tbody tr:hover td { background: var(--accent-soft); } }
+
+/* ---------- 9. Pie de página ---------- */
+.site-footer { margin-top: 3rem; padding-top: 2.25rem; padding-bottom: 2.25rem; }
+.site-footer > p { line-height: 1.6; }
+
+/* ---------- 10. Teléfonos ---------- */
+@media (max-width: 760px) {
+  .header-tools { gap: .25rem; }
+  .header-tools .icon-button, .header-tools .language-control { box-shadow: var(--ring); border-color: transparent; }
+  .page-intro { padding: 1.75rem 1.4rem 1.6rem; }
+    .page-intro h1 { font-size: 2.2rem; }
+  .discovery-copy h1 { font-size: clamp(2.45rem, 11vw, 3rem); }
+  .hero-actions { display: grid; gap: .6rem; }
+  .hero-actions .button { width: 100%; justify-content: center; }
+  /* Barra inferior: todos los iconos a la misma altura aunque la etiqueta ocupe dos líneas. */
+  #main-nav, #main-nav.open { background: color-mix(in srgb, var(--surface) 94%, transparent); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+  #main-nav a { justify-content: flex-start; padding-top: .55rem; gap: .25rem; }
+  #main-nav a svg { flex-shrink: 0; }
+  .discovery-grid::before { right: -30%; top: 62%; width: 120%; }
+  .education-tabs { grid-template-columns: 1fr 1fr; }
+  .education-tabs button { padding: .85rem .8rem; border-radius: 14px; }
+  .tracking-tools { display: grid; grid-template-columns: 1fr; }
+  .tracking-tools .button, .tracking-tools .text-link { width: 100%; justify-content: center; }
+  .site-footer { margin-top: 2rem; }
+}
+
+@media (prefers-reduced-motion: reduce) { .quick-icon, #main-nav a svg { transition: none; } .quick-card:hover .quick-icon { transform: none; } .button:active, .text-link:active { transform: none; } }
+[data-motion="reduced"] .quick-card:hover .quick-icon { transform: none; }
+@media print { .site-header { backdrop-filter: none; } 
