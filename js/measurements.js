@@ -24,3 +24,11 @@ export function visibleRecords() {
   const start=selectedPeriod==='all'?null:shiftDate(localDate(),-(Number(selectedPeriod)-1));
   return getVisibleRecords(state,{records,start,from,to,tag:document.getElementById('record-tag-filter')?.value||''});
 }
+
+function valueStatus(value, metric, mode) {
+  if(value===null||value===undefined)return null;
+  const rule=data.ranges.metrics[metric].exampleRules;
+  if(!rule || (mode!=='demo'&&!clinicalReady()))return {className:'pending',label:t('reviewPending')};
+  const type=value>=rule.within[0]&&value<=rule.within[1]?'within':value>=rule.attention[0]&&value<=rule.attention[1]?'attention':'consult';
+  return {className:type,label:t((mode==='demo'?'example':'reference')+({within:'Within',attention:'Attention',consult:'Consult'}[type]))};
+}
