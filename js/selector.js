@@ -1,0 +1,8 @@
+// Selectores puros. La caché acotada conserva resultados congelados, nunca el estado mutable.
+const freeze=value=>{if(value&&typeof value==='object'){Object.values(value).forEach(freeze);Object.freeze(value);}return value;};
+function memo(fn){const cache=new Map();return(...args)=>{const key=JSON.stringify(args);if(cache.has(key))return cache.get(key);const result=freeze(fn(...args));if(cache.size>=40)cache.delete(cache.keys().next().value);cache.set(key,result);return result;};}
+const normalized=value=>String(value).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+export const getVisibleRecords=memo((state,filters={})=>(filters.records||state.records).filter(r=>(!filters.start||r.date>=filters.start)&&(!filters.from||r.date>=filters.from)&&(!filters.to||r.date<=filters.to)&&(!filters.tag||r.tags?.includes(filters.tag))).map(r=>structuredClone(r)).sort((a,b)=>a.date.localeCompare(b.date)||a.id.localeCompare(b.id)));
+export const getChartSeries=memo((state,metric,filters={})=>getVisibleRecords(state,filters).filter(r=>typeof r[metric]==='number'&&Number.isFinite(r[metric])).map(r=>({id:r.id,date:r.date,value:r[metric]})));
+function previousDay(value){const date=new Date(`${value}T12:00:00`);date.setDate(date.getDate()-1);return `${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')}`;}
+function streak(marks,today,test){let date=today;if(!test(marks[date]||{}))date=previousDay(date);let count=0;while(test(marks[date]||{})&&count<3650){count++;date=previousDay(date);}return count;}
