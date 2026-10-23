@@ -34,3 +34,6 @@ export function readMeasurementCSV(text,{metrics,esLabels,enLabels,today}){
   }catch(error){rejected.push({line:index+2,reason:error.message});}});
   return {language,accepted,rejected};
 }
+
+export function duplicateCount(existing,incoming){return incoming.reduce((count,row)=>count+measurementKeys.filter(key=>row[key]!==null&&existing.some(r=>r.date===row.date&&r[key]!==null)).length,0);}
+export function mergeImportedRecords(existing,incoming,strategy='keep'){let result=structuredClone(existing);for(const row of incoming){if(strategy==='overwrite'){result=result.map(r=>r.date===row.date?{...r,...Object.fromEntries(measurementKeys.filter(key=>row[key]!==null).map(key=>[key,null]))}:r).filter(r=>measurementKeys.some(key=>r[key]!==null));}result.push(structuredClone({...row,id:globalThis.crypto?.randomUUID?.()||`${row.id}-${Math.random().toString(36).slice(2)}`}));}return result;}
