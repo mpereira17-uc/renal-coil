@@ -32,3 +32,12 @@ function valueStatus(value, metric, mode) {
   const type=value>=rule.within[0]&&value<=rule.within[1]?'within':value>=rule.attention[0]&&value<=rule.attention[1]?'attention':'consult';
   return {className:type,label:t((mode==='demo'?'example':'reference')+({within:'Within',attention:'Attention',consult:'Consult'}[type]))};
 }
+
+function renderTable(records, mode) {
+  const target=document.getElementById('results-table');
+  if(!records.length){target.innerHTML=emptyState(getState().records.length||mode==='demo'?'noFilteredRecords':'noRecords','noRecordsHint');return;}
+  target.innerHTML=`<table class="results-table"><caption class="sr-only">${escapeHTML(t('tableFullData'))}</caption><thead><tr><th scope="col">${escapeHTML(t('date'))}</th>${fieldKeys.map(key=>`<th scope="col" data-metric="${key}">${escapeHTML(t(key))}<br><small>${escapeHTML(data.ranges.metrics[key].unit)}</small></th>`).join('')}<th scope="col">${escapeHTML(t('notes'))}</th><th scope="col">${escapeHTML(t('tags'))}</th><th scope="col">${escapeHTML(t('status'))}<br><small>${escapeHTML(t(selectedMetric))}</small></th>${mode==='personal'?`<th scope="col">${escapeHTML(t('actions'))}</th>`:''}</tr></thead><tbody>${records.slice().reverse().map(record=>{
+    const status=valueStatus(record[selectedMetric],selectedMetric,mode);
+    return `<tr><td>${escapeHTML(formatDate(record.date,{day:'2-digit',month:'short',year:'numeric'}))}</td>${fieldKeys.map(key=>`<td data-metric="${key}">${record[key]===null||record[key]===undefined?'—':escapeHTML(formatNumber(record[key],key==='creatinine'?2:1))}</td>`).join('')}<td class="record-note-cell">${escapeHTML(record.notes||'')}</td><td>${(record.tags||[]).map(tag=>escapeHTML(t('tag-'+tag))).join(', ')}</td><td>${status?`<span class="status-badge ${status.className}">${escapeHTML(status.label)}</span>`:'—'}</td>${mode==='personal'?`<td><button class="icon-button" data-delete-record="${escapeHTML(record.id)}" aria-label="${escapeHTML(t('deleteRecord',{date:formatDate(record.date)}))}">${icon('trash',18)}</button></td>`:''}</tr>`;
+  }).join('')}</tbody></table><p class="table-explanation">${escapeHTML(t('resultsCount',{count:records.length}))} · ${escapeHTML(t(mode==='demo'?'demoTableNote':'personalTableNote'))}</p>`;
+}
