@@ -78,3 +78,11 @@ function renderFields() {
 function renderReferences() {
   document.getElementById('reference-content').innerHTML=`<div class="reference-content"><span class="tag demo-tag">${escapeHTML(t('validationPending'))}</span><p style="margin-top:1rem">${escapeHTML(t('referencesDisclaimer'))}</p><table class="reference-table"><tbody>${fieldKeys.filter(key=>data.ranges.metrics[key].exampleBand).map(key=>`<tr><td>${escapeHTML(t(key))}</td><td>${data.ranges.metrics[key].exampleBand.map(n=>formatNumber(n,2)).join('–')} ${escapeHTML(data.ranges.metrics[key].unit)}</td></tr>`).join('')}</tbody></table><p>${escapeHTML(t('referencesIndividual'))}</p><p class="fine-print">${escapeHTML(t('unitsDisclaimer'))}</p></div>`;
 }
+
+function exportCSV() {
+  const records=visibleRecords();if(!records.length){toast(t('emptyExport'));return;}
+  const mode=getState().dataMode;
+  const labels=Object.fromEntries(['date',...fieldKeys].map(key=>[key,t(key)]));
+  const csv=measurementCSV(records,{language:language(),mode,metrics:data.ranges.metrics,labels});
+  const link=document.createElement('a');link.href=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8;'}));link.download=`renal-${mode}-${localDate()}.csv`;link.hidden=true;document.body.appendChild(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(link.href),1000);toast(t('exported'));
+}
