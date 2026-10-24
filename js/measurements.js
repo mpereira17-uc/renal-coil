@@ -97,3 +97,9 @@ function saveRecord(event) {
   for(const key of fieldKeys){const raw=input.get(key);record[key]=raw===''?null:Number(raw);const config=data.ranges.metrics[key];if(record[key]!==null&&(!Number.isFinite(record[key])||record[key]<config.technicalMin||record[key]>config.technicalMax)){error.textContent=t('formRangeError');return;}}
   if(fieldKeys.every(k=>record[k]===null)){error.textContent=t('invalidRecord');return;}
   if((record.systolic!==null)!==(record.diastolic!==null)||(record.systolic!==null&&record.systolic<=record.diastolic)){error.textContent=t('pressurePair');return;}
+
+
+record.notes=String(input.get('notes')||'');record.tags=input.getAll('tags');
+  if(!updateState({records:[...getState().records,record],dataMode:'personal'})){error.textContent=t('saveFailed');return;}
+  closeDialog('record-dialog');form.reset();renderFields();toast(t('recordSaved'));
+}
