@@ -109,3 +109,21 @@ export function updateState(changes) {
   }catch {storageAvailable=false;return false;}
   emit(EVENTOS.STATE,{keys:[...new Set([...Object.keys(changes),...(('activeProfile' in changes||'profiles' in changes)?profileFields:[])])],profileId:state.activeProfile});return true;
 }
+
+export function restartAfterBackup() {
+  if(!recovery)return true;
+  try {globalThis.localStorage.setItem(`${STORAGE_KEY}-recovery-original`,recovery.raw);const next=defaults();globalThis.localStorage.setItem(STORAGE_KEY,JSON.stringify(next));state=next;recovery=null;storageAvailable=true;emit(EVENTOS.STATE,{keys:['profiles','activeProfile','records','habits','favorites']});return true;}catch{return false;}
+}
+
+export function createProfile(name){const profile=blankProfile(name,newId());if(!updateState({profiles:[...state.profiles,profile],activeProfile:profile.id,dataMode:'personal'}))return null;return profile.id;}
+
+export function switchProfile(id){if(!state.profiles.some(p=>p.id===id))return false;return updateState({activeProfile:id});}
+
+export function profileExport(){return {kind:'renal-coil-profile',schemaVersion:SCHEMA_VERSION,exportedAt:new Date().toISOString(),profile:clone(state.profiles.find(p=>p.id===state.activeProfile))};}
+
+export function validateProfileExport(value){if(!object(value)||value.kind!=='renal-coil-profile'||value.schemaVersion!==SCHEMA_VERSION)throw new Error('Archivo de perfil: esquema no reconocido');return validateProfile(value.profile);}
+
+export function importProfile(value){const profile=validateProfileExport(value);profile.id=newId();return updateState({profiles:[...state.profiles,profile],activeProfile:profile.id,dataMode:'personal'});}
+
+export function demoRecords(){const values=[155,143,149,132,139,125,131,119,124,115,122,118];return values.map((glucose,i)=>({id:`demo-${i}`,date:shiftDate(localDate(),-(values.length-1-i)*3),glucose,hba1c:i===0?7.5:i===11?6.8:null,systolic:128+(i%3)*4,diastolic:76+(i%3)*2,creatinine:i%3===0?1.02:null,egfr:i%3===0?82+i:null,uacr:i%3===0?24-i:null,weight:74-i*.1,notes:'',tags:['fasting']}));}
+try{initializeStore();}catch{storageAvailable=false;}
