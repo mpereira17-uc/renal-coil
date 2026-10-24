@@ -98,8 +98,29 @@ function saveRecord(event) {
   if(fieldKeys.every(k=>record[k]===null)){error.textContent=t('invalidRecord');return;}
   if((record.systolic!==null)!==(record.diastolic!==null)||(record.systolic!==null&&record.systolic<=record.diastolic)){error.textContent=t('pressurePair');return;}
 
-
 record.notes=String(input.get('notes')||'');record.tags=input.getAll('tags');
   if(!updateState({records:[...getState().records,record],dataMode:'personal'})){error.textContent=t('saveFailed');return;}
   closeDialog('record-dialog');form.reset();renderFields();toast(t('recordSaved'));
+}
+
+export function initMeasurements() {
+  initTrackingTools({render:renderMeasurements,visibleRecords,metric:()=>selectedMetric,setMetric:value=>{selectedMetric=value;},allRecords:()=>getState().dataMode==='demo'?demoRecords():getState().records});
+  document.getElementById('add-record').addEventListener('click',()=>{renderFields();document.getElementById('record-error').textContent='';openDialog('record-dialog');});
+  document.getElementById('record-form').addEventListener('submit',saveRecord);
+  document.getElementById('record-form').addEventListener('input',()=>{document.getElementById('record-error').textContent='';});
+  document.getElementById('toggle-demo').addEventListener('click',()=>{if(!updateState({dataMode:getState().dataMode==='demo'?'personal':'demo'}))toast(t('saveFailed'));});
+  document.getElementById('metric-select').addEventListener('change',event=>{selectedMetric=event.target.value;renderMeasurements();});
+  document.querySelectorAll('[data-period]').forEach(button=>button.addEventListener('click',()=>{selectedPeriod=button.dataset.period;document.querySelectorAll('[data-period]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));renderMeasurements();}));
+  ['date-from','date-to'].forEach(id=>document.getElementById(id).addEventListener('change',()=>{const from=document.getElementById('date-from').value,to=document.getElementById('date-to').value;if(from&&to&&from>to)toast(t('invalidDates'));renderMeasurements();}));
+  document.getElementById('reset-dates').addEventListener('click',()=>{document.getElementById('date-from').value='';document.getElementById('date-to').value='';renderMeasurements();});
+  document.getElementById('export-csv').addEventListener('click',exportCSV);
+  document.getElementById('show-ranges').addEventListener('click',()=>{renderReferences();openDialog('reference-dialog');});
+  document.getElementById('clear-records').addEventListener('click',async()=>{if(getState().dataMode==='demo'){toast(t('demoClearNote'));return;}if(await confirmAction(t('deleteTitle'),t('deleteDescription'))){if(updateState({records:[]}))toast(t('deleted'));else toast(t('saveFailed'));}});
+  document.getElementById('results-table').addEventListener('click',async event=>{const button=event.target.closest('[data-delete-record]');if(!button)return;if(await confirmAction(t('deleteTitle'),t('deleteOneDescription'))){if(updateState({records:getState().records.filter(r=>r.id!==button.dataset.deleteRecord)}))toast(t('deleted'));else toast(t('saveFailed'));}});
+  on(EVENTOS.STATE,event=>{if(event.detail.keys.some(k=>['records','dataMode'].includes(k)))renderMeasurements();});
+  on(EVENTOS.LANGUAGE,()=>{renderFields();renderReferences();renderMeasurements();});
+  on(EVENTOS.ROUTE,event=>{if(event.detail.route==='seguimiento'||event.detail.route==='descubrir')renderMeasurements();});
+  let resizeTimer,lastWidth=0;const resize=new ResizeObserver(entries=>{const width=Math.round(entries[0].contentRect.width);if(width===lastWidth||width===0)return;lastWidth=width;clearTimeout(resizeTimer);resizeTimer=setTimeout(()=>{if(!document.getElementById('route-seguimiento').hidden)renderMeasurements();},150);});resize.observe(document.getElementById('trend-chart'));
+  attachChartTooltip(document.getElementById('trend-chart'));
+  renderFields();renderReferences();renderMeasurements();
 }
