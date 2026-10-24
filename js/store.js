@@ -76,3 +76,9 @@ export function validateState(input) {
   return {version:SCHEMA_VERSION,language:input.language==='en'?'en':'es',theme:['system','light','dark'].includes(input.theme)?input.theme:'system',motion:['system','reduce','full'].includes(input.motion)?input.motion:'system',onboarding:input.onboarding===true,dataMode:input.dataMode==='personal'?'personal':'demo',activeProfile:input.activeProfile,profiles};
 }
 
+export function migrate(fromVersion, input) {
+  // v2 → v3: las colecciones pasan a un perfil. Ninguna fila se descarta silenciosamente.
+  if(fromVersion===2){const next=defaults();next.language=input.language;next.dataMode=input.dataMode;next.onboarding=false;next.profiles=[validateProfile({...blankProfile(),records:input.records,favorites:input.favorites,habits:input.habits})];return validateState(next);}
+  if(fromVersion===SCHEMA_VERSION)return validateState(input);
+  throw new Error(`Versión no admitida: ${fromVersion}`);
+}
