@@ -82,3 +82,14 @@ export function migrate(fromVersion, input) {
   if(fromVersion===SCHEMA_VERSION)return validateState(input);
   throw new Error(`Versión no admitida: ${fromVersion}`);
 }
+
+export function initializeStore(storage=globalThis.localStorage) {
+  state=defaults();storageAvailable=true;recovery=null;
+  let raw=null;
+  try {
+    raw=storage.getItem(STORAGE_KEY);
+    if(raw){const saved=JSON.parse(raw),next=migrate(saved.version,saved);if(saved.version!==SCHEMA_VERSION){storage.setItem(`${STORAGE_KEY}-before-v${SCHEMA_VERSION}`,raw);storage.setItem(STORAGE_KEY,JSON.stringify(next));console.info('[coil:migración]',`${saved.version} → ${SCHEMA_VERSION}`);}state=next;}
+    else storage.setItem(STORAGE_KEY,JSON.stringify(state));
+  }catch(error){storageAvailable=false;if(raw)recovery={raw,error:error.message};}
+  return getState();
+}
