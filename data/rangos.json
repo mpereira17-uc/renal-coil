@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 1,
+  "clinicalValidation": {
+    "approved": false,
+    "reviewer": null,
+    "reviewDate": null,
+    "scope": "Ejemplos de interfaz; sin metas personales. Activar únicamente tras validación documentada del equipo de salud."
+  },
+  "metrics": {
+    "glucose": {
+      "unit": "mg/dL",
+      "technicalMin": 1,
+      "technicalMax": 2000,
+      "step": 0.1,
+      "exampleBand": [
+        80,
+        130
+      ],
+      "exampleRules": {
+        "within": [
+          80,
+          130
+        ],
+        "attention": [
+          70,
+          180
+        ]
+      },
+      "sourceId": null
+    },
+    "hba1c": {
+      "unit": "%",
+      "technicalMin": 0.1,
+      "technicalMax": 30,
+      "step": 0.1,
+      "exampleBand": [
+        4,
+        7
+      ],
+      "exampleRules": {
+        "within": [
+          4,
+          7
+        ],
+        "attention": [
+          3,
+          9
+        ]
+      },
+      "sourceId": null
+    },
+    "systolic": {
+      "unit": "mmHg",
+      "technicalMin": 1,
+      "technicalMax": 350,
+      "step": 1,
+      "exampleBand": [
+        90,
+        130
+      ],
+      "exampleRules": {
+        "within": [
+          90,
+          130
+        ],
+        "attention": [
+          80,
+          160
+        ]
+      },
+      "sourceId": null
+    },
+    "diastolic": {
+      "unit": "mmHg",
+      "technicalMin": 1,
+      "technicalMax": 250,
+      "step": 1,
+      "exampleBand": [
+        60,
+        80
+      ],
+      "exampleRules": {
+        "within": [
+          60,
+          80
+        ],
+        "attention": [
+          50,
+          100
+        ]
+      },
+      "sourceId": null
+    },
+    "creatinine": {
+      "unit": "mg/dL",
+      "technicalMin": 0.01,
+      "technicalMax": 50,
+      "step": 0.01,
+      "exampleBand": null,
+      "exampleRules": null,
+      "sourceId": null
+    },
+    "egfr": {
+      "unit": "mL/min/1.73 m²",
+      "technicalMin": 0,
+      "technicalMax": 250,
+      "step": 0.1,
+      "exampleBand": [
+        60,
+        120
+      ],
+      "exampleRules": {
+        "within": [
+          60,
+          250
+        ],
+        "attention": [
+          30,
+          59.999
+        ]
+      },
+      "sourceId": null
+    },
+    "uacr": {
+      "unit": "mg/g",
+      "technicalMin": 0,
+      "technicalMax": 30000,
+      "step": 0.1,
+      "exampleBand": [
+        0,
+        30
+      ],
+      "exampleRules": {
+        "within": [
+          0,
+          29.999
+        ],
+        "attention": [
+          30,
+          300
+        ]
+      },
+      "sourceId": null
+    },
+    "weight": {
+      "unit": "kg",
+      "technicalMin": 0.1,
+      "technicalMax": 600,
+      "step": 0.1,
+      "exampleBand": null,
+      "exampleRules": null,
+      "sourceId": null
+    }
+  },
+  "notes": [
+    "Límites technicalMin/Max detectan errores de captura: no son rangos fisiológicos ni metas clínicas.",
+    "Las bandas y reglas son datos de demostración sin validar; no aplicarlas a registros reales.",
+    "Una cifra aislada de TFGe o albúmina no establece un diagnóstico."
+  ]
+}
