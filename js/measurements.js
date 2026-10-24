@@ -63,3 +63,18 @@ export function renderMeasurements() {
   renderTable(records,mode);renderHomeTracking();renderTrackingTools();
   document.getElementById('visit-questions').innerHTML=['visitQuestion1','visitQuestion2','visitQuestion3'].map(key=>`<li>${escapeHTML(t(key))}</li>`).join('');
 }
+
+function renderFields() {
+  const form=document.getElementById('record-form');
+  const draft=Object.fromEntries([...form.querySelectorAll('input,textarea')].map(input=>[input.name,input.value]));
+  const tags=[...form.querySelectorAll('[name=tags]:checked')].map(input=>input.value);
+  const hints={glucose:'glucoseFormHint',egfr:'egfrFormHint',uacr:'uacrFormHint'};
+  document.getElementById('record-fields').innerHTML=`<label class="form-field" for="record-date"><span>${escapeHTML(t('dateRequired'))}</span><input id="record-date" name="date" type="date" required max="${localDate()}" value="${escapeHTML(draft.date||localDate())}" aria-describedby="record-date-hint"><span id="record-date-hint" class="field-hint">${escapeHTML(t('recordDateHint'))}</span></label>${fieldKeys.map(key=>{
+    const config=data.ranges.metrics[key];
+    return `<label class="form-field" data-metric="${key}" for="record-${key}"><span>${escapeHTML(t(key))}</span><span class="unit-label">${escapeHTML(config.unit)} · ${escapeHTML(t('optional'))}</span><input id="record-${key}" data-metric="${key}" name="${key}" type="number" inputmode="decimal" min="${config.technicalMin}" max="${config.technicalMax}" step="${config.step}" value="${escapeHTML(draft[key]||'')}" placeholder="—" aria-describedby="hint-${key}"><span id="hint-${key}" class="field-hint">${escapeHTML(hints[key]?t(hints[key]):t('fieldUnits',{unit:config.unit}))}</span></label>`;
+  }).join('')}<label class="form-field record-extra"><span>${escapeHTML(t('notes'))}</span><textarea name="notes" maxlength="280" rows="3" aria-describedby="record-notes-hint">${escapeHTML(draft.notes||'')}</textarea><span id="record-notes-hint" class="field-hint">${escapeHTML(t('recordNotesHint'))}</span></label><fieldset class="record-extra"><legend>${escapeHTML(t('tags'))}</legend>${['fasting','post-dinner','visit'].map(tag=>`<label class="checkbox-control"><input type="checkbox" name="tags" value="${tag}" ${tags.includes(tag)?'checked':''}>${escapeHTML(t('tag-'+tag))}</label>`).join('')}</fieldset><p class="fine-print" style="grid-column:1/-1">${escapeHTML(t('formUnitsNote'))}</p>`;
+}
+
+function renderReferences() {
+  document.getElementById('reference-content').innerHTML=`<div class="reference-content"><span class="tag demo-tag">${escapeHTML(t('validationPending'))}</span><p style="margin-top:1rem">${escapeHTML(t('referencesDisclaimer'))}</p><table class="reference-table"><tbody>${fieldKeys.filter(key=>data.ranges.metrics[key].exampleBand).map(key=>`<tr><td>${escapeHTML(t(key))}</td><td>${data.ranges.metrics[key].exampleBand.map(n=>formatNumber(n,2)).join('–')} ${escapeHTML(data.ranges.metrics[key].unit)}</td></tr>`).join('')}</tbody></table><p>${escapeHTML(t('referencesIndividual'))}</p><p class="fine-print">${escapeHTML(t('unitsDisclaimer'))}</p></div>`;
+}
