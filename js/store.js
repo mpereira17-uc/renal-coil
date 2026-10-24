@@ -27,3 +27,22 @@ export function validateRecord(input) {
   if(input.tags!==undefined&&(!Array.isArray(input.tags)||input.tags.some(tag=>!recordTags.includes(tag))))throw new Error('Etiquetas inválidas');
   result.notes=input.notes||'';result.tags=[...new Set(input.tags||[])];return result;
 }
+
+export const mealSlots = ['breakfast','lunch','dinner','snack'];
+export const goalKeys = ['sodium','potassium','phosphorus','protein'];
+
+export function validateMeal(input) {
+  if(!object(input)||typeof input.id!=='string'||!input.id||!validDate(input.date))throw new Error('Comida: identificador o fecha inválidos');
+  if(!mealSlots.includes(input.slot))throw new Error('Comida: momento del día inválido');
+  const name=typeof input.name==='string'?input.name.trim():'';if(!name||name.length>80)throw new Error('Comida: nombre inválido');
+  if(!Array.isArray(input.items)||!input.items.length||input.items.length>30)throw new Error('Comida: se requieren entre 1 y 30 alimentos');
+  const items=input.items.map(item=>{
+    if(!object(item))throw new Error('Comida: alimento inválido');
+    const foodId=item.foodId??null;if(foodId!==null&&(typeof foodId!=='string'||!/^[-\w]+$/.test(foodId)||foodId.length>60))throw new Error('Comida: alimento desconocido');
+    const itemName=typeof item.name==='string'?item.name.trim():'';if(!itemName||itemName.length>60)throw new Error('Comida: nombre de alimento inválido');
+    if(typeof item.grams!=='number'||!Number.isFinite(item.grams)||item.grams<=0||item.grams>5000)throw new Error('Comida: cantidad inválida');
+    return {foodId,name:itemName,grams:item.grams};
+  });
+  if(input.notes!==undefined&&(typeof input.notes!=='string'||input.notes.length>280))throw new Error('Notas: máximo 280 caracteres');
+  return {id:input.id,date:input.date,slot:input.slot,name,items,notes:input.notes||''};
+}
