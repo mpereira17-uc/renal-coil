@@ -41,3 +41,25 @@ function renderTable(records, mode) {
     return `<tr><td>${escapeHTML(formatDate(record.date,{day:'2-digit',month:'short',year:'numeric'}))}</td>${fieldKeys.map(key=>`<td data-metric="${key}">${record[key]===null||record[key]===undefined?'—':escapeHTML(formatNumber(record[key],key==='creatinine'?2:1))}</td>`).join('')}<td class="record-note-cell">${escapeHTML(record.notes||'')}</td><td>${(record.tags||[]).map(tag=>escapeHTML(t('tag-'+tag))).join(', ')}</td><td>${status?`<span class="status-badge ${status.className}">${escapeHTML(status.label)}</span>`:'—'}</td>${mode==='personal'?`<td><button class="icon-button" data-delete-record="${escapeHTML(record.id)}" aria-label="${escapeHTML(t('deleteRecord',{date:formatDate(record.date)}))}">${icon('trash',18)}</button></td>`:''}</tr>`;
   }).join('')}</tbody></table><p class="table-explanation">${escapeHTML(t('resultsCount',{count:records.length}))} · ${escapeHTML(t(mode==='demo'?'demoTableNote':'personalTableNote'))}</p>`;
 }
+
+export function renderMeasurements() {
+  const state=getState(),mode=state.dataMode,records=visibleRecords();
+  document.getElementById('data-mode-tag').textContent=t(mode==='demo'?'demoMode':'realMode');
+  document.getElementById('data-mode-description').textContent=t(mode==='demo'?'demoDescription':'realDescription');
+  document.getElementById('toggle-demo').textContent=t(mode==='demo'?'showReal':'showDemo');
+  document.querySelector('.data-mode-bar').classList.toggle('personal',mode==='personal');
+  document.getElementById('clear-records').disabled=mode==='demo'||state.records.length===0;
+  const select=document.getElementById('metric-select');
+  select.innerHTML=fieldKeys.map(key=>`<option value="${key}">${escapeHTML(t(key))}</option>`).join('');select.value=selectedMetric;
+  document.getElementById('chart-heading').textContent=t(selectedMetric);
+  document.getElementById('metric-unit').textContent=data.ranges.metrics[selectedMetric].unit;
+  const values=getChartSeries(state,selectedMetric,{records});
+  document.getElementById('latest-value').textContent=values.length?formatNumber(values.at(-1).value,selectedMetric==='creatinine'?2:1):'—';
+  document.getElementById('metric-delta').textContent=values.length>1?t('chartDelta',{delta:formatNumber(values.at(-1).value-values[0].value,2),unit:data.ranges.metrics[selectedMetric].unit}):values.length?t('chartSingle'):t('noChartData');
+  const chart=document.getElementById('trend-chart');
+  chart.innerHTML=makeChart(values,selectedMetric,mode,{width:chart.clientWidth||640,height:chart.clientWidth<480?230:260});
+  const showBand=(mode==='demo'||clinicalReady())&&data.ranges.metrics[selectedMetric].exampleBand;
+  document.getElementById('chart-caption').textContent=t(showBand?'chartSampleBand':'chartNoBand');
+  renderTable(records,mode);renderHomeTracking();renderTrackingTools();
+  document.getElementById('visit-questions').innerHTML=['visitQuestion1','visitQuestion2','visitQuestion3'].map(key=>`<li>${escapeHTML(t(key))}</li>`).join('');
+}
