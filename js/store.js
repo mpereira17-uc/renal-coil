@@ -93,3 +93,19 @@ export function initializeStore(storage=globalThis.localStorage) {
   }catch(error){storageAvailable=false;if(raw)recovery={raw,error:error.message};}
   return getState();
 }
+
+export function getState() {const profile=state.profiles.find(p=>p.id===state.activeProfile);return clone({...state,...Object.fromEntries(profileFields.map(key=>[key,profile[key]]))});}
+
+export function canStore(){return storageAvailable&&!recovery;}
+
+export function getRecovery(){return recovery?clone(recovery):null;}
+
+export function updateState(changes) {
+  if(recovery)return false;
+  try {
+    const next=clone(state),profile=next.profiles.find(p=>p.id===next.activeProfile);
+    for(const [key,value] of Object.entries(changes)){if(profileFields.includes(key))profile[key]=clone(value);else if(key in next)next[key]=clone(value);}
+    const validated=validateState(next);globalThis.localStorage.setItem(STORAGE_KEY,JSON.stringify(validated));state=validated;storageAvailable=true;
+  }catch {storageAvailable=false;return false;}
+  emit(EVENTOS.STATE,{keys:[...new Set([...Object.keys(changes),...(('activeProfile' in changes||'profiles' in changes)?profileFields:[])])],profileId:state.activeProfile});return true;
+}
