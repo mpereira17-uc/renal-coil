@@ -53,3 +53,19 @@ export function validateMealGoals(input) {
   for(const key of goalKeys){const value=input?.[key]??null;if(value!==null&&(typeof value!=='number'||!Number.isFinite(value)||value<=0||value>20000))throw new Error(`Meta de ${key} inválida`);goals[key]=value;}
   return goals;
 }
+
+export function validateProfile(input) {
+  if(!object(input)||typeof input.id!=='string'||!input.id||typeof input.name!=='string'||!input.name.trim()||input.name.length>60)throw new Error('Perfil inválido');
+  if(!Array.isArray(input.records)||!Array.isArray(input.favorites)||!object(input.habits))throw new Error('El perfil requiere registros, favoritas y hábitos');
+  const records=input.records.map(validateRecord);if(new Set(records.map(r=>r.id)).size!==records.length)throw new Error('Identificadores duplicados');
+  if(input.favorites.some(id=>typeof id!=='string'))throw new Error('Favoritas inválidas');
+  const habits={};for(const [date,marks] of Object.entries(input.habits)){if(!validDate(date)||!object(marks)||Object.entries(marks).some(([key,value])=>!/^[-\w]+$/.test(key)||typeof value!=='boolean'))throw new Error('Hábitos inválidos');habits[date]={...marks};}
+  const habitNotes={};if(input.habitNotes!==undefined&&!object(input.habitNotes))throw new Error('Notas diarias inválidas');for(const [date,note] of Object.entries(input.habitNotes||{})){if(!validDate(date)||typeof note!=='string'||note.length>280)throw new Error('Nota diaria inválida');habitNotes[date]=note;}
+  const shoppingList=input.shoppingList||[];if(!Array.isArray(shoppingList)||shoppingList.some(item=>!object(item)||typeof item.recipeId!=='string'||!Number.isInteger(item.servings)||item.servings<1||item.servings>24))throw new Error('Lista de compras inválida');
+  const professionalNotes=input.professionalNotes||'';if(typeof professionalNotes!=='string'||professionalNotes.length>3000)throw new Error('Notas profesionales inválidas');
+  const declaredEgfr=input.declaredEgfr??null;if(declaredEgfr!==null&&(typeof declaredEgfr!=='number'||!Number.isFinite(declaredEgfr)||declaredEgfr<0||declaredEgfr>250))throw new Error('TFGe declarada inválida');
+  if(input.meals!==undefined&&(!Array.isArray(input.meals)||input.meals.length>3000))throw new Error('Comidas inválidas');
+  const meals=(input.meals||[]).map(validateMeal);if(new Set(meals.map(m=>m.id)).size!==meals.length)throw new Error('Comidas con identificadores duplicados');
+  const mealGoals=validateMealGoals(input.mealGoals);
+  return {id:input.id,name:input.name.trim(),records,favorites:[...new Set(input.favorites)],habits,habitNotes,shoppingList:clone(shoppingList),professionalNotes,declaredEgfr,meals,mealGoals};
+}
