@@ -9,3 +9,6 @@ import { downloadText, datedName } from './files.js';
 import { openPrintView } from './print.js';
 import { makeChart } from './charts.js';
 import { getChartSeries } from './selectors.js';
+
+let api=null,imported=null,story='',comparisonChosen=false;
+const labelMap=lang=>Object.fromEntries(['date',...measurementKeys].map(key=>[key,data[lang][key]]));
