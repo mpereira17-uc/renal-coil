@@ -69,3 +69,10 @@ export function validateProfile(input) {
   const mealGoals=validateMealGoals(input.mealGoals);
   return {id:input.id,name:input.name.trim(),records,favorites:[...new Set(input.favorites)],habits,habitNotes,shoppingList:clone(shoppingList),professionalNotes,declaredEgfr,meals,mealGoals};
 }
+
+export function validateState(input) {
+  if(!object(input)||input.version!==SCHEMA_VERSION||!Array.isArray(input.profiles)||!input.profiles.length||input.profiles.length>30)throw new Error('Esquema de estado inválido');
+  const profiles=input.profiles.map(validateProfile);if(new Set(profiles.map(p=>p.id)).size!==profiles.length||!profiles.some(p=>p.id===input.activeProfile))throw new Error('Perfil activo inválido');
+  return {version:SCHEMA_VERSION,language:input.language==='en'?'en':'es',theme:['system','light','dark'].includes(input.theme)?input.theme:'system',motion:['system','reduce','full'].includes(input.motion)?input.motion:'system',onboarding:input.onboarding===true,dataMode:input.dataMode==='personal'?'personal':'demo',activeProfile:input.activeProfile,profiles};
+}
+
