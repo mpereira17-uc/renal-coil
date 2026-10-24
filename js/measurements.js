@@ -86,3 +86,14 @@ function exportCSV() {
   const csv=measurementCSV(records,{language:language(),mode,metrics:data.ranges.metrics,labels});
   const link=document.createElement('a');link.href=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8;'}));link.download=`renal-${mode}-${localDate()}.csv`;link.hidden=true;document.body.appendChild(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(link.href),1000);toast(t('exported'));
 }
+
+function saveRecord(event) {
+  event.preventDefault();const form=event.currentTarget,error=document.getElementById('record-error');error.textContent='';
+  if(!form.reportValidity())return;
+  const input=new FormData(form),date=input.get('date');
+  if(!date||!/^\d{4}-\d{2}-\d{2}$/.test(date)){error.textContent=t('invalidRecord');return;}
+  if(date>localDate()){error.textContent=t('futureRecord');return;}
+  const record={id:crypto.randomUUID?crypto.randomUUID():`record-${Date.now()}-${Math.random().toString(36).slice(2)}`,date};
+  for(const key of fieldKeys){const raw=input.get(key);record[key]=raw===''?null:Number(raw);const config=data.ranges.metrics[key];if(record[key]!==null&&(!Number.isFinite(record[key])||record[key]<config.technicalMin||record[key]>config.technicalMax)){error.textContent=t('formRangeError');return;}}
+  if(fieldKeys.every(k=>record[k]===null)){error.textContent=t('invalidRecord');return;}
+  if((record.systolic!==null)!==(record.diastolic!==null)||(record.systolic!==null&&record.systolic<=record.diastolic)){error.textContent=t('pressurePair');return;}
