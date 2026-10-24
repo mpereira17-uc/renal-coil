@@ -46,3 +46,10 @@ export function validateMeal(input) {
   if(input.notes!==undefined&&(typeof input.notes!=='string'||input.notes.length>280))throw new Error('Notas: máximo 280 caracteres');
   return {id:input.id,date:input.date,slot:input.slot,name,items,notes:input.notes||''};
 }
+
+export function validateMealGoals(input) {
+  if(input!==undefined&&input!==null&&!object(input))throw new Error('Metas inválidas');
+  const goals=blankGoals();
+  for(const key of goalKeys){const value=input?.[key]??null;if(value!==null&&(typeof value!=='number'||!Number.isFinite(value)||value<=0||value>20000))throw new Error(`Meta de ${key} inválida`);goals[key]=value;}
+  return goals;
+}
