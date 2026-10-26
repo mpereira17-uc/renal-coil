@@ -1,0 +1,100 @@
+[
+  {
+    "id": "niddk-dkd",
+    "title": {
+      "es": "NIDDK · Enfermedad renal relacionada con diabetes",
+      "en": "NIDDK · Diabetic Kidney Disease"
+    },
+    "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/preventing-problems/diabetic-kidney-disease",
+    "scope": {
+      "es": "Causas, riesgos, cuidados y pruebas; cifra estadounidense con referencia CDC 2019.",
+      "en": "Causes, risks, care and tests; US figure citing CDC 2019."
+    },
+    "reviewDate": "2017-02 / CDC 2019",
+    "accessed": "2026-10-06"
+  },
+  {
+    "id": "niddk-tests",
+    "title": {
+      "es": "NIDDK · Pruebas y diagnóstico renal",
+      "en": "NIDDK · Kidney Tests and Diagnosis"
+    },
+    "url": "https://www.niddk.nih.gov/health-information/kidney-disease/chronic-kidney-disease-ckd/tests-diagnosis",
+    "scope": {
+      "es": "Pruebas de sangre y orina; interpretación de filtración y albúmina.",
+      "en": "Blood and urine tests; filtration and albumin assessment."
+    },
+    "reviewDate": null,
+    "accessed": "2026-10-06"
+  },
+  {
+    "id": "niddk-diet",
+    "title": {
+      "es": "NIDDK · Alimentación y enfermedad renal",
+      "en": "NIDDK · Nutrition and Kidney Disease"
+    },
+    "url": "https://www.niddk.nih.gov/health-information/kidney-disease/chronic-kidney-disease-ckd/healthy-eating-adults-chronic-kidney-disease",
+    "scope": {
+      "es": "Necesidades individuales de proteína, líquidos, potasio, fósforo y sodio.",
+      "en": "Individual needs for protein, fluids, potassium, phosphorus and sodium."
+    },
+    "reviewDate": null,
+    "accessed": "2026-10-06"
+  },
+  {
+    "id": "mayo",
+    "title": {
+      "es": "Mayo Clinic · Nefropatía diabética",
+      "en": "Mayo Clinic · Diabetic Nephropathy"
+    },
+    "url": "https://www.mayoclinic.org/diseases-conditions/diabetic-nephropathy/symptoms-causes/syc-20354556",
+    "scope": {
+      "es": "Síntomas, factores de riesgo y función de las estructuras renales.",
+      "en": "Symptoms, risk factors and kidney structure function."
+    },
+    "reviewDate": null,
+    "accessed": "2026-10-06"
+  },
+  {
+    "id": "cdc-signs",
+    "title": {
+      "es": "CDC · Síntomas de diabetes",
+      "en": "CDC · Diabetes Symptoms"
+    },
+    "url": "https://www.cdc.gov/diabetes/signs-symptoms/index.html",
+    "scope": {
+      "es": "Síntomas generales de diabetes, separados de enfermedad renal.",
+      "en": "General diabetes symptoms, distinguished from kidney disease."
+    },
+    "reviewDate": null,
+    "accessed": "2026-10-06"
+  },
+  {
+    "id": "cdc-activity",
+    "title": {
+      "es": "CDC · Actividad física y diabetes",
+      "en": "CDC · Physical Activity and Diabetes"
+    },
+    "url": "https://www.cdc.gov/diabetes/living-with/physical-activity.html",
+    "scope": {
+      "es": "Meta orientativa de 150 minutos semanales; adaptación con el médico.",
+      "en": "Illustrative goal of 150 minutes weekly; adapt with your clinician."
+    },
+    "reviewDate": "2024-05-15",
+    "accessed": "2026-10-06"
+  },
+  {
+    "id": "medline",
+    "title": {
+      "es": "MedlinePlus · Enfermedad renal crónica",
+      "en": "MedlinePlus · Chronic Kidney Disease"
+    },
+    "url": "https://medlineplus.gov/ency/article/000471.htm",
+    "scope": {
+      "es": "Manifestaciones y necesidad de valoración profesional.",
+      "en": "Symptoms and need for professional assessment."
+    },
+    "reviewDate": null,
+    "accessed": "2026-10-06"
+  }
+]

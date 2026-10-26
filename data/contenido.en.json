@@ -98,7 +98,7 @@
   "habitTargets": "Initial sample goals: activity on 5 days; other habits on 7. Adjust frequency with your health care team.",
   "previousWeek": "Previous week",
   "nextWeek": "Next week",
-  "habitHint": "Mark each day you complete a habit. Select it again to correct it.",
+  "habitHint": "Each tap changes the day: done, not done, does not apply and not logged.",
   "clearWeek": "Clear week",
   "yourPace": "At your pace, with support.",
   "habitNote": "Adapt activity to your condition and consult before changing your routine. Do not increase fluids or protein without professional guidance.",
@@ -111,7 +111,7 @@
   "selfCheckEyebrow": "PREPARE FOR YOUR VISIT",
   "selfCheckTitle": "What have you noticed?",
   "selfCheckDescription": "Select what you are experiencing now. This tool organizes signs; it does not calculate risk or make a diagnosis.",
-  "symptomsPrivacy": "Your selections are not saved.",
+  "symptomsPrivacy": "What you tick here is not saved: it clears when the page reloads.",
   "checkSymptoms": "View guidance",
   "projectEyebrow": "KNOWLEDGE THAT CONNECTS",
   "projectTitle": "Different perspectives. Shared care.",
@@ -199,6 +199,7 @@
   "snack": "Snack",
   "recipeExample": "Example to validate with your health care team",
   "reviewNutritionist": "To review with a dietitian",
+  "photoBy": "Photo: {author} · Unsplash",
   "recipeOpen": "View preparation",
   "minutes": "min",
   "servings": "{count} sample servings",
@@ -933,7 +934,7 @@
   "infoStats": [
     {
       "label": "Worldwide · team draft",
-      "text": "Between 2 and 4 in every 10 people with diabetes would develop kidney disease.",
+      "text": "Between 2 and 4 in every 10 people with diabetes (20–40%) develop diabetic kidney disease, according to global estimates.",
       "badge": "Pending validation"
     },
     {
@@ -962,35 +963,193 @@
   "infoGlossary": [
     {
       "term": "Diabetic nephropathy",
-      "def": "Kidney damage related to diabetes. It usually progresses slowly and silently."
+      "def": "Kidney damage related to diabetes. It usually progresses slowly and silently.",
+      "alt": "Nefropatía diabética"
     },
     {
       "term": "Glomerulus",
-      "def": "A cluster of tiny kidney vessels that filters the blood."
+      "def": "A cluster of tiny kidney vessels that filters the blood.",
+      "alt": "Glomérulo"
     },
     {
       "term": "Albumin",
-      "def": "A protein that normally stays in the blood. If it persistently appears in urine, it may point to filter damage."
+      "def": "A protein that normally stays in the blood. If it persistently appears in urine, it may point to filter damage.",
+      "alt": "Albúmina"
     },
     {
       "term": "Creatinine",
-      "def": "A muscle waste product measured in blood. The lab uses it to estimate eGFR."
+      "def": "A muscle waste product measured in blood. The lab uses it to estimate eGFR.",
+      "alt": "Creatinina"
     },
     {
       "term": "eGFR",
-      "def": "Estimated glomerular filtration rate: a calculation of how well the kidneys filter. Your health team interprets it."
+      "def": "Estimated glomerular filtration rate: a calculation of how well the kidneys filter. Your health team interprets it.",
+      "alt": "TFGe",
+      "aliases": [
+        "estimated glomerular filtration rate",
+        "glomerular filtration rate",
+        "GFR"
+      ]
     },
     {
       "term": "Albumin-to-creatinine ratio",
-      "def": "A urine test that helps assess protein loss."
+      "def": "A urine test that helps assess protein loss.",
+      "alt": "Relación albúmina/creatinina"
     },
     {
       "term": "HbA1c",
-      "def": "A test that reflects average glucose over the last few months."
+      "def": "A test that reflects average glucose over the last few months.",
+      "alt": "HbA1c"
     },
     {
       "term": "Blood pressure",
-      "def": "The force of blood against the arteries. It is written as two numbers (systolic/diastolic) in mmHg."
+      "def": "The force of blood against the arteries. It is written as two numbers (systolic/diastolic) in mmHg.",
+      "alt": "Presión arterial"
+    },
+    {
+      "term": "Diabetic kidney disease (DKD)",
+      "def": "A condition in which diabetes damages the kidneys over time, making it harder for them to filter waste and extra fluid from the blood.",
+      "alt": "Enfermedad renal diabética (ERD)",
+      "aliases": [
+        "diabetic kidney disease",
+        "DKD"
+      ],
+      "source": "mx"
+    },
+    {
+      "term": "Chronic kidney disease (CKD)",
+      "def": "A condition in which the kidneys have damage or reduced function that lasts for at least three months.",
+      "alt": "Enfermedad renal crónica (ERC)",
+      "aliases": [
+        "chronic kidney disease",
+        "CKD"
+      ],
+      "source": "mx"
+    },
+    {
+      "term": "Diabetes mellitus (DM)",
+      "def": "A long-term condition in which blood sugar levels are too high because the body does not make enough insulin or cannot use insulin properly.",
+      "alt": "Diabetes mellitus (DM)",
+      "aliases": [
+        "diabetes mellitus"
+      ],
+      "source": "mx"
+    },
+    {
+      "term": "Microvascular complications",
+      "def": "Health problems caused by damage to the body’s smallest blood vessels. Diabetes can cause these complications in the eyes, kidneys, and nerves.",
+      "alt": "Complicaciones microvasculares",
+      "aliases": [
+        "microvascular complications"
+      ],
+      "source": "mx"
+    },
+    {
+      "term": "Type 1 diabetes",
+      "def": "A condition in which the body’s immune system attacks the cells in the pancreas that make insulin. People with type 1 diabetes need insulin to manage their blood sugar.",
+      "alt": "Diabetes tipo 1",
+      "aliases": [
+        "type 1 diabetes"
+      ],
+      "source": "mx"
+    },
+    {
+      "term": "Type 2 diabetes",
+      "def": "The most common type of diabetes. The body makes insulin but does not use it well (insulin resistance) and, over time, may make less of it. It is linked to age, excess weight, low physical activity and family history. It is managed with diet, physical activity, medicines and sometimes insulin.",
+      "alt": "Diabetes tipo 2",
+      "aliases": [
+        "type 2 diabetes"
+      ],
+      "source": "mx",
+      "draft": "redactado por el equipo de diseño, por validar"
+    },
+    {
+      "term": "Hyperglycemia",
+      "def": "When the level of sugar (glucose) in the blood is higher than normal.",
+      "alt": "Hiperglucemia",
+      "aliases": [
+        "hyperglycemia"
+      ],
+      "source": "mx"
+    },
+    {
+      "term": "Obesity",
+      "def": "A condition in which excess body fat can affect a person’s health.",
+      "alt": "Obesidad",
+      "aliases": [
+        "obesity"
+      ],
+      "source": "mx"
+    },
+    {
+      "term": "High blood pressure",
+      "def": "When blood pushes against the walls of the blood vessels with persistently elevated force. Also called hypertension.",
+      "alt": "Presión arterial alta",
+      "aliases": [
+        "hypertension",
+        "arterial hypertension"
+      ],
+      "source": "mx"
+    },
+    {
+      "term": "Cardiovascular disease",
+      "def": "A group of conditions that affect the heart or blood vessels.",
+      "alt": "Enfermedad cardiovascular",
+      "aliases": [
+        "cardiovascular disease"
+      ],
+      "source": "mx"
+    },
+    {
+      "term": "Dyslipidemia",
+      "def": "When levels of fats in the blood, such as cholesterol or triglycerides, are outside the healthy range.",
+      "alt": "Dislipidemia",
+      "aliases": [
+        "dyslipidemia"
+      ],
+      "source": "mx"
+    },
+    {
+      "term": "Albuminuria",
+      "def": "Albumin (a protein) in the urine: it means protein is leaking into the urine.",
+      "alt": "Albuminuria",
+      "aliases": [
+        "albuminuria",
+        "microalbuminuria",
+        "macroalbuminuria"
+      ],
+      "source": "mx"
+    },
+    {
+      "term": "Proteinuria",
+      "def": "Protein in the urine in a higher amount than normal. It includes albumin and other proteins. If it persists over time, it may point to kidney damage.",
+      "alt": "Proteinuria",
+      "aliases": [
+        "proteinuria"
+      ],
+      "source": "mx",
+      "draft": "redactado por el equipo de diseño, por validar"
+    },
+    {
+      "term": "Renin-angiotensin-aldosterone system",
+      "def": "A hormone system that helps control blood pressure and fluid balance. When it stays too active, it can increase pressure inside the kidneys.",
+      "alt": "Sistema renina-angiotensina-aldosterona",
+      "aliases": [
+        "renin-angiotensin-aldosterone system",
+        "renin–angiotensin system",
+        "renin-angiotensin"
+      ],
+      "source": "mx"
+    },
+    {
+      "term": "Kidney vulnerability",
+      "def": "When the kidneys get damaged more easily than usual, for example because of age, family history, or having diabetes, high blood pressure and other risk factors at the same time.",
+      "alt": "Vulnerabilidad renal",
+      "aliases": [
+        "kidney vulnerability"
+      ],
+      "source": "mx",
+      "draft": "redactado por el equipo de diseño, por validar"
     }
   ],
   "infoGlossaryNote": "Definitions for study purposes; academic review is pending.",
@@ -1087,5 +1246,746 @@
     "fats": "Fats and oils",
     "processed": "Processed foods",
     "drinks": "Drinks"
-  }
+  },
+  "contrastTheme": "High contrast",
+  "fontScale": "Text size",
+  "fontNormal": "Normal",
+  "fontLarge": "Large",
+  "fontXLarge": "Extra large",
+  "todayEyebrow": "Your day",
+  "todayTitle": "Today, {date}",
+  "todayLatest": "Latest reading",
+  "todayNoRecord": "No readings yet.",
+  "todayOpenTracking": "Go to my tracking",
+  "todayHabits": "Today's habits",
+  "todayHabitsCount": "{done} of {total} checked",
+  "todayOpenHabits": "Check habits",
+  "todayNextVisit": "Next appointment",
+  "todayNoVisit": "You have no saved appointments.",
+  "todayAddVisit": "Add an appointment",
+  "todayOpenVisits": "See appointments",
+  "todayOpenRecipe": "See recipes",
+  "todayLearning": "Your learning",
+  "todayChapters": "{done} of {total} chapters read",
+  "todayQuiz": "Best review: {score} of {total}",
+  "todayQuizNone": "Review pending",
+  "badgesTitle": "Badges",
+  "badgeExplorer": "Kidney explorer",
+  "badgeExplorerHint": "Read the four chapters in The essentials.",
+  "badgeQuiz": "Perfect review",
+  "badgeQuizHint": "Answer every review question correctly.",
+  "badgeRecord": "First reading",
+  "badgeRecordHint": "Save your first personal reading.",
+  "badgeWeek": "Steady week",
+  "badgeWeekHint": "Check at least one habit seven days in a row.",
+  "badgeMeal": "First meal",
+  "badgeMealHint": "Log a meal in your diary.",
+  "badgeEarned": "Earned",
+  "badgeLocked": "Pending",
+  "badgeNew": "New badge: {name}!",
+  "listen": "Listen",
+  "listenStop": "Stop reading",
+  "listenUnavailable": "Your browser cannot read aloud.",
+  "moreMenu": "More options",
+  "moreTitle": "More",
+  "moreProject": "Project, credits and sources",
+  "moreSearch": "Search",
+  "moreTheme": "Switch light or dark theme",
+  "moreSettings": "Settings and text size",
+  "morePresentation": "Presentation mode",
+  "morePrivacy": "Privacy",
+  "backToTop": "Back to top",
+  "termClose": "Close definition",
+  "careEyebrow": "Care plan",
+  "careTitle": "Medications and appointments",
+  "careIntro": "Write down what your health team told you so you have it at hand and can bring it to your visit. It is saved only in this browser.",
+  "medsTitle": "Medications",
+  "medName": "Medication",
+  "medDose": "Dose",
+  "medSchedule": "When",
+  "medAdd": "Add medication",
+  "medsEmpty": "You have not added medications yet.",
+  "medNamePlaceholder": "E.g. metformin",
+  "medDosePlaceholder": "E.g. 850 mg",
+  "medSchedulePlaceholder": "E.g. with breakfast",
+  "visitsTitle": "Appointments and check-ups",
+  "visitDate": "Date",
+  "visitTime": "Time",
+  "visitTitle": "Reason",
+  "visitPlace": "Place",
+  "visitAdd": "Save appointment",
+  "visitsEmpty": "You have not added appointments yet.",
+  "visitTitlePlaceholder": "E.g. nephrology check-up",
+  "visitPlacePlaceholder": "E.g. health center",
+  "visitCalendar": "Download to calendar",
+  "visitsCalendarAll": "Download all (.ics)",
+  "remove": "Remove",
+  "careSaved": "Saved to your care plan.",
+  "careRemoved": "Removed from your care plan.",
+  "pastVisits": "Past appointments",
+  "comboEyebrow": "Combined view",
+  "comboTitle": "Glucose and blood pressure, week by week",
+  "comboHint": "Weekly average of fasting glucose and systolic pressure. Use it to talk with your team; it does not indicate a diagnosis.",
+  "comboWeek": "Week of {date}",
+  "comboEmpty": "Glucose and pressure readings are needed to compare.",
+  "printCare": "Care plan",
+  "printHabits": "Habits over the last 7 days",
+  "printQuestions": "Questions for my visit",
+  "printQuestionsHint": "Write your questions here before the visit.",
+  "privacyPageTitle": "Privacy and legal notice",
+  "privacyReadFull": "Read the full notice",
+  "emptyAddRecord": "Add my first reading",
+  "privacyPage": [
+    {
+      "title": "What is saved",
+      "text": "The browser saves language, theme, local profiles, readings, habits, notes, meals, medications, appointments and your learning progress. Example readings are fictitious. Symptom selections and review answers are not saved, only the best score."
+    },
+    {
+      "title": "No accounts or server",
+      "text": "Profiles are not accounts: they have no password or encryption. The site does not send your data to any server and uses no third-party advertising or analytics. On a shared computer, someone else could see the information."
+    },
+    {
+      "title": "Downloads",
+      "text": "CSV, JSON, calendar files and print views are created on your device. They may contain readable health information; saving, sharing or deleting them is your decision."
+    },
+    {
+      "title": "How to delete everything",
+      "text": "You can delete readings, clear the habit week or remove a profile from Settings. To also delete backups, clear the site data from your browser's privacy settings."
+    },
+    {
+      "title": "Educational use",
+      "text": "Renal COIL is an educational tool. It is not a medical record, does not give diagnoses and is not for emergencies. If you have severe symptoms, seek medical care right away."
+    },
+    {
+      "title": "Pending before publishing",
+      "text": "The COIL team must confirm the institutional owner and privacy contact, and review the applicable rules (Law 1581 of 2012 in Colombia and LFPDPPP in Mexico) before public use."
+    }
+  ],
+  "todayRecipeCard": "Recipe of the day",
+  "studyKicker": "A STUDY IN LAYERS",
+  "studyObject": "KIDNEY / V3.7",
+  "studyCounter": "KIDNEY",
+  "studySkip": "Skip the tour",
+  "studyIndex": "INDEX",
+  "studySilhouette": "The silhouette",
+  "studyScroll": "Scroll to separate the layers",
+  "studyAnimate": "Play the animated tour",
+  "navLearn": "Learn",
+  "learnEyebrow": "UNDERSTANDING THE DISEASE",
+  "learnTitle": "What the science says,",
+  "learnAccent": "in plain words.",
+  "learnDescription": "Seven chapters written by medical students in Mexico, translated and simplified by the COIL team. Tap the underlined words to see what they mean.",
+  "learnReview": "Content under clinical review",
+  "learnBy": "Text",
+  "learnTranslated": "Translation and simplification: COIL team",
+  "learnSources": "Sources cited by the team",
+  "learnIndex": "Chapters",
+  "learnPro": "For health professionals",
+  "learnPending": "Pending review",
+  "learnStart": "Start reading",
+  "learnBank": "Go to the word bank",
+  "learnNext": "Next chapter",
+  "bankEyebrow": "WORD BANK",
+  "bankTitle": "Medical words.",
+  "bankDescription": "Short definitions in Spanish and English.",
+  "bankSearch": "Search for a word",
+  "bankCount": "{count} words",
+  "bankCountOne": "{count} word",
+  "bankEmpty": "We could not find that word. Try another spelling.",
+  "bankOther": "In Spanish",
+  "bankPendingDef": "Definition pending from the medical team.",
+  "qsLearnTitle": "Understand the disease",
+  "qsLearnText": "Causes, risk factors, diagnosis and prevention, in seven chapters.",
+  "moreLearn": "Understand the disease",
+  "heroProgress": "SCROLL",
+  "learn": [
+    {
+      "id": "epidemiologia",
+      "ghost": "Epidemiology",
+      "label": "Epidemiology",
+      "title": "A common complication.",
+      "accent": "In Mexico, too.",
+      "highlight": "common",
+      "draft": "ajustado por el equipo de diseño (v4.6), por validar",
+      "author": "",
+      "blocks": [
+        {
+          "heading": "What is it?",
+          "paragraphs": [
+            "Diabetic kidney disease (DKD) is one of the most common complications of diabetes. Over time, high blood sugar levels can damage the small blood vessels in the kidneys, making it harder for them to filter waste from the blood. Globally, diabetes is one of the leading causes of chronic kidney disease (CKD), and DKD occurs in approximately 20–40% of people with diabetes.",
+            "For people with type 1 diabetes, DKD can occur several years later. In contrast, people with type 2 diabetes may already have DKD when their diabetes is diagnosed.",
+            "The risk of developing DKD increases with age and with the length of time a person has had diabetes. People with type 2 diabetes are also at greater risk. Other risk factors include obesity, high blood sugar, abnormal blood fat levels, high blood pressure, or having a cardiovascular disease. Together, these factors can increase the risk of kidney damage. Sex differences exist, but studies have found different results depending on factors such as population and age."
+          ]
+        },
+        {
+          "heading": "What about in Mexico?",
+          "paragraphs": [
+            "In Mexico, kidney disease is a major public health concern due to the high rates of diabetes and other cardiovascular risk factors. National data estimate that 16.8% of adults in Mexico have diabetes, while only about 42% of those with diabetes have their blood sugar levels under control. It is estimated that about 14 million Mexicans live with chronic kidney disease (CKD) from any cause, diagnosed or not, with diabetes being one of the most significant causes. It is also estimated that 1 out of every 4 people who live with diabetes develop DKD."
+          ]
+        }
+      ],
+      "stats": [
+        {
+          "value": "20–40%",
+          "label": "of people with diabetes develop DKD worldwide"
+        },
+        {
+          "value": "16.8%",
+          "label": "of adults in Mexico live with diabetes"
+        },
+        {
+          "value": "42%",
+          "label": "of them have their blood sugar under control"
+        },
+        {
+          "value": "1 in 4",
+          "label": "people with diabetes develop DKD"
+        }
+      ],
+      "sources": [
+        "American Diabetes Association Professional Practice Committee, 2024",
+        "Hoogeveen, 2022",
+        "Palomo-Piñón et al., 2024",
+        "Basto-Abreu et al., 2022",
+        "College of Nephrologists of Mexico, 2024"
+      ]
+    },
+    {
+      "id": "etiologia",
+      "ghost": "Causes",
+      "label": "Causes",
+      "title": "Why does it happen?",
+      "accent": "Many causes at once.",
+      "highlight": "happen",
+      "author": "Prabhath",
+      "blocks": [
+        {
+          "paragraphs": [
+            "Diabetic kidney disease, also known as diabetic nephropathy, is a complication of both type 1 and type 2 diabetes, and it has many causes at once (its origin is multifactorial).",
+            "The main cause is long exposure to diabetes, especially when blood sugar is not well controlled. According to global estimates, 20–40% of people with diabetes develop diabetic kidney disease (see Epidemiology).",
+            "How long a person has had diabetes and how poorly it is controlled are among the most important risk factors: the longer someone lives with the disease, the higher the risk for the kidneys. High blood pressure (hypertension) also plays a key role: it often comes with diabetes and increases the risk of developing chronic kidney disease and of it getting worse. A genetic predisposition has also been observed: kidney disease is more common in people with a family history of it. Although the exact genetic basis is still unknown, family history is very useful when planning prevention and care.",
+            "Other factors that often contribute are older age, obesity, dyslipidemia, insulin resistance, and metabolic syndrome. These factors not only raise the risk of kidney disease but also worsen the symptoms and complications of diabetes. Finally, lifestyle and environmental factors such as smoking, physical inactivity, and a high-sodium diet can intensify kidney damage, mostly by promoting high blood pressure, inflammation throughout the body, and metabolic problems. Having had an acute kidney injury or another kidney condition has also been linked to a higher chance of developing this disease."
+          ]
+        }
+      ],
+      "sources": [
+        "Dwivedi & Sikarwar, 2024",
+        "Gross et al., 2005"
+      ]
+    },
+    {
+      "id": "riesgo",
+      "ghost": "Risk",
+      "label": "Risk factors",
+      "title": "What you can’t change, and what you can.",
+      "accent": "and what you can.",
+      "highlight": "and what you can",
+      "author": "Jasmyn",
+      "blocks": [
+        {
+          "paragraphs": [
+            "The main risk factors for diabetic nephropathy are poor blood glucose control, high blood pressure, how long a person has had diabetes, and genetic predisposition. The combination of these risk factors can work together to worsen kidney health, causing a greater harmful effect than what each factor would cause individually."
+          ]
+        }
+      ],
+      "columns": [
+        {
+          "title": "Can’t be changed",
+          "items": [
+            "Duration of diabetes: the risk increases significantly after more than 10 years with the illness.",
+            "Age over 55, which is associated with stiffer blood vessels and kidneys that are more easily damaged.",
+            "Higher incidence in African American, Asian, and Native American people.",
+            "Genetics: siblings of people who develop diabetic nephropathy have three times the risk.",
+            "Male sex."
+          ]
+        },
+        {
+          "title": "Can be changed",
+          "items": [
+            "Poor diabetes control: high HbA1c levels are linked to a faster loss of the kidneys’ ability to filter (glomerular filtration rate).",
+            "Hypertension (high blood pressure), partly due to an overactive renin–angiotensin system.",
+            "Dyslipidemia, especially high LDL cholesterol.",
+            "Tobacco use.",
+            "Obesity.",
+            "Albuminuria and proteinuria (protein in the urine)."
+          ]
+        }
+      ],
+      "note": "These factors act together and increase the risk of developing diabetic nephropathy.",
+      "sources": [
+        "Shah et al., 2024",
+        "Gross et al., 2005",
+        "Azagew et al., 2024"
+      ]
+    },
+    {
+      "id": "fisiopatologia",
+      "ghost": "Filter",
+      "label": "How damage happens",
+      "title": "How the filter gets damaged.",
+      "accent": "Step by step.",
+      "highlight": "filter",
+      "author": "William",
+      "dark": true,
+      "steps": [
+        "Diabetic kidney disease occurs when high blood sugar damages the kidneys over time. This damage can cause inflammation, scarring, and changes in how the kidneys filter blood. One sign is albuminuria, which means protein is leaking into the urine.",
+        "High blood sugar can damage kidney cells and cause inflammation and scarring. It can also affect hormones and blood vessels that help the kidneys work properly, eventually leading to kidney damage.",
+        "One way diabetes damages the kidneys is by increasing harmful molecules that can injure cells. This can weaken the kidneys’ filters, allowing proteins to pass into the urine. As a result, protein levels in the urine may increase over time.",
+        "Diabetes can also cause the kidneys to filter blood harder than normal, increasing pressure inside their tiny blood vessels. Over time, this extra pressure can damage the kidney filters and worsen kidney function.",
+        "A hormone system called the renin-angiotensin-aldosterone system helps control blood pressure and fluid balance. When this system stays too active, it can increase pressure inside the kidneys and contribute to inflammation and scarring, making kidney disease worse.",
+        "As kidney disease progresses, the structures that support the kidney filters can become thicker and develop scar-like changes. These changes make it harder for the kidneys to filter blood properly and can contribute to the gradual loss of kidney function.",
+        "Specialized kidney cells that help keep the filters working properly can also become damaged. When this happens, the kidneys may have trouble keeping proteins in the blood, causing more protein to leak into the urine.",
+        "In advanced stages, more severe scarring and structural damage can develop inside the kidneys. These changes can further reduce the kidneys’ ability to filter blood and maintain normal function."
+      ],
+      "sources": [
+        "Doumani et al., 2025",
+        "Cao & Cooper, 2011",
+        "Luis-Rodríguez et al., 2012",
+        "Mir et al., 2025"
+      ]
+    },
+    {
+      "id": "manifestaciones",
+      "ghost": "Silence",
+      "label": "Clinical signs",
+      "title": "Silent for years.",
+      "accent": "That’s why it’s measured.",
+      "highlight": "Silent",
+      "draft": "ajustado por el equipo de diseño (v4.6), por validar",
+      "author": "Stephanie",
+      "blocks": [
+        {
+          "paragraphs": [
+            "Diabetic nephropathy shows up as albuminuria that increases over time, a decline in glomerular filtration rate (GFR) and, in late stages, swelling of the legs (peripheral edema) and high blood pressure. For much of its course it causes no obvious symptoms."
+          ]
+        }
+      ],
+      "timelineTitle": "The classic course (Mogensen model)",
+      "timeline": [
+        {
+          "title": "Glomerular hyperfiltration",
+          "text": "The kidneys filter more than normal. It is reversible, causes no symptoms, and usually appears in the early stages."
+        },
+        {
+          "title": "Microalbuminuria",
+          "text": "The first sign of diabetic nephropathy. It usually causes no symptoms."
+        },
+        {
+          "title": "Macroalbuminuria",
+          "text": "May develop after years of untreated microalbuminuria. It may come with a progressive rise in blood pressure."
+        },
+        {
+          "title": "Falling GFR",
+          "text": "Once macroalbuminuria is established, filtration falls progressively."
+        },
+        {
+          "title": "End-stage kidney disease",
+          "text": "The most advanced stage. How long it takes to get there varies a lot from person to person, and treatment can delay or prevent it."
+        }
+      ],
+      "after": [
+        "This is a general model, not a prognosis: not everyone goes through every stage or at the same pace, and some people have reduced filtration without albuminuria.",
+        "Swelling of the legs is usually the first symptom people notice before seeking care, but it appears at a very advanced stage of the disease.",
+        "Diabetic nephropathy is also linked to other complications: high blood pressure, which tends to worsen as the disease progresses, and more illness and death from cardiovascular causes, because people with a low GFR and high albuminuria have much higher rates of kidney failure, hospitalization, and death. It is also often associated with diabetic retinopathy (eyes) and large-vessel disease, as well as neuropathy, bladder problems, cognitive impairment, and depression. This is why diabetic nephropathy is a hub for many diabetes complications."
+      ],
+      "pro": [
+        "Glomerular hyperfiltration corresponds to a higher-than-normal GFR; more than 120 mL/min/1.73 m² is often used as a reference.",
+        "Assessment for microalbuminuria or macroalbuminuria is recommended in people with diabetic retinopathy and macrovascular disease."
+      ],
+      "sources": [
+        "Afkarian, 2016",
+        "Mora-Fernández, 2014"
+      ]
+    },
+    {
+      "id": "diagnostico",
+      "ghost": "Diagnosis",
+      "label": "Diagnosis",
+      "title": "How it’s confirmed.",
+      "accent": "Several tests together.",
+      "highlight": "confirmed",
+      "draft": "ajustado por el equipo de diseño (v4.6), por validar",
+      "author": "Brady",
+      "blocks": [
+        {
+          "paragraphs": [
+            "The diagnosis of diabetic nephropathy depends on the type of diabetes, how well it is controlled, how it has progressed, the signs and symptoms, and other factors.",
+            "Regular measurements should be taken, and clinical findings should be related to kidney disease: glucose measurements and laboratory results are considered together with the person’s signs and symptoms. In type 1 diabetes, if albuminuria (albumin in the urine) appears less than 5 years or more than 25 years after diagnosis, the kidney disease is less likely to be caused by diabetes. These time frames guide the health team but do not decide the cause on their own. People with type 2 diabetes, on the other hand, may already have diabetic nephropathy when their diabetes is diagnosed.",
+            "The main damage comes from injury to small blood vessels caused by sustained high glucose. This affects not only the kidneys but other organs too, which is why people with diabetic nephropathy may also have diabetic retinopathy (eyes) and diabetic neuropathy (nerves). The diagnosis is usually clinical: it combines symptoms, physical examination findings, and laboratory results. A kidney biopsy is not needed in most cases; it is considered in specific situations, for example when the picture is not typical or another cause is suspected."
+          ]
+        }
+      ],
+      "proTitle": "What a biopsy can show under light microscopy",
+      "pro": [
+        "Extracellular matrix deposits, primarily in the mesangium.",
+        "Thickening of the glomerular basement membrane.",
+        "Proliferative changes.",
+        "Tubular atrophy.",
+        "Interstitial fibrosis and/or glomerular sclerosis."
+      ],
+      "sources": [
+        "Umanath & Lewis, 2018"
+      ]
+    },
+    {
+      "id": "prevencion",
+      "ghost": "Care",
+      "label": "Prevention",
+      "title": "Protecting the kidneys.",
+      "accent": "Starting today.",
+      "highlight": "kidneys",
+      "author": "Victoria",
+      "blocks": [
+        {
+          "paragraphs": [
+            "Preventing diabetic kidney disease (DKD) involves managing diabetes and reducing the risk of kidney damage. The main strategies are controlling blood sugar, managing high blood pressure, detecting kidney problems early, and reducing other risk factors."
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "value": "≈ 7%",
+          "title": "Blood sugar under control",
+          "text": "Keeping blood sugar under control is one of the most important ways to prevent kidney damage. For most adults with diabetes, the recommended HbA1c is around 7% or lower. HbA1c is a blood test that measures average blood sugar over the past two to three months. This goal can change depending on a person’s age and overall health. For people with type 1 diabetes, starting insulin treatment early can help prevent kidney disease."
+        },
+        {
+          "value": "1× year",
+          "title": "Early detection",
+          "text": "Early detection is one of the most important tools. Urine tests check for albumin, a protein that can appear when the kidneys are damaged, and blood tests measure kidney function. They are recommended yearly for type 2 diabetes and from five years after diagnosis for type 1 diabetes. To confirm persistently high albumin, at least two out of three urine tests taken over three to six months must be abnormal. Abnormal results should be confirmed with repeat testing, because infections, exercise, and high blood sugar can temporarily affect them."
+        },
+        {
+          "value": "< 130/80",
+          "title": "Blood pressure",
+          "text": "For people with DKD, the recommended blood pressure is generally below 130/80 mmHg, when safe. Doctors may prescribe medications called ACE inhibitors or ARBs to lower blood pressure, which reduce kidney damage, especially when protein is found in the urine. They should not be taken together and are not recommended solely for prevention in people with normal blood pressure and kidney function."
+        },
+        {
+          "value": "T2D + CKD",
+          "title": "Additional medications",
+          "text": "For people with type 2 diabetes who already have kidney disease, additional medications can help slow kidney damage: SGLT2 inhibitors, GLP-1 receptor agonists, and finerenone. Treatment depends on kidney function and overall health. Regular checkups help monitor kidney health and possible side effects, especially after starting or changing medications."
+        },
+        {
+          "value": "Every day",
+          "title": "Habits",
+          "text": "Eating a healthy diet, exercising regularly, maintaining a healthy weight, and avoiding smoking can help protect the kidneys. Managing high cholesterol can reduce the risk of heart problems associated with diabetes and kidney disease."
+        }
+      ],
+      "note": "Goals and medications are set by your health team. Do not start, change, or stop a treatment on your own.",
+      "sources": [
+        "Perkovic et al., 2026",
+        "Inzucchi & Lupsa, 2026",
+        "American Diabetes Association Professional Practice Committee, 2026",
+        "Glassock, 2026"
+      ]
+    }
+  ],
+  "heroProject": "Project",
+  "heroDataGlucose": "Latest glucose: {value} mg/dL",
+  "heroDataDemo": "demo",
+  "heroDataNoRecords": "No records yet",
+  "heroDataMeals": "Meals logged today: {count}",
+  "heroDataHabits": "Habits checked in 7 days: {count}",
+  "heroDataLearn": "{chapters} chapters · {terms} words",
+  "heroDataSigns": "When in doubt, ask",
+  "photoAlt": "Illustrative photo of {title}",
+  "country_all": "All",
+  "country_co": "Colombia",
+  "country_mx": "Mexico",
+  "country_us": "U.S.",
+  "countryFilter": "Suggested origin",
+  "pantryFilter": "What do you have at home?",
+  "pantryClear": "Clear ingredients",
+  "pantry_chicken": "Chicken",
+  "pantry_fish": "Fish",
+  "pantry_egg": "Egg",
+  "pantry_rice": "Rice",
+  "pantry_oats": "Oats",
+  "pantry_zucchini": "Zucchini",
+  "pantry_carrot": "Carrot",
+  "pantry_pepper": "Bell pepper",
+  "pantry_cauliflower": "Cauliflower",
+  "pantry_cabbage": "Cabbage",
+  "pantry_cucumber": "Cucumber",
+  "pantry_fruit": "Fruit",
+  "validatedBy": "Reviewed by {name} · {date}",
+  "cookMode": "Cooking mode",
+  "cookPrepare": "Get your ingredients ready",
+  "cookStep": "Step {n} of {total}",
+  "cookPrev": "Back",
+  "cookNext": "Next",
+  "cookDone": "Finish",
+  "cookFinished": "Enjoy your meal!",
+  "cookAwake": "The screen stays on while you cook.",
+  "cookAwakeNo": "Use the arrow keys or the buttons to move on.",
+  "shareWhatsapp": "Share on WhatsApp",
+  "relatedTitle": "Similar recipes",
+  "planAdd": "Add to my week",
+  "planEyebrow": "WEEKLY PLAN",
+  "planTitle": "My week of meals",
+  "planLead": "Pick a recipe for each meal. Then send everything to the shopping list.",
+  "planSuggest": "Fill with suggestions",
+  "planToShopping": "Send to shopping list",
+  "planPrint": "Print week",
+  "planClear": "Clear week",
+  "planCount": "{count} meals planned",
+  "planCountOne": "1 meal planned",
+  "planNote": "Example plan with recipes pending validation. Adjust portions and foods with your health care team.",
+  "planSuggested": "Week filled with suggestions.",
+  "planCleared": "Week cleared.",
+  "planAddedShopping": "{count} recipes sent to the shopping list.",
+  "planAdded": "Added to {day}.",
+  "planFull": "That meal already has a recipe every day.",
+  "cookbookButton": "Download cookbook (PDF)",
+  "cookbookTitle": "Example cookbook",
+  "cookbookLead": "{count} recipes to review with your health care team.",
+  "diaryFromRecipes": "Pick from the recipes",
+  "tourSkip": "Skip",
+  "tourNext": "Next",
+  "tourDone": "Got it",
+  "tourStep": "{n} of {total}",
+  "tourFood1Title": "Search or filter",
+  "tourFood1": "Search by name or ingredient, or tick what you have at home to see what you can cook.",
+  "tourFood2Title": "Open a recipe",
+  "tourFood2": "Each recipe has adjustable servings, a step-by-step cooking mode and a share button.",
+  "tourFood3Title": "Plan your week",
+  "tourFood3": "Further down you can plan your week and send it to the shopping list in one click.",
+  "tourTrack1Title": "Add a reading",
+  "tourTrack1": "Log glucose, blood pressure and other values. Everything stays in this browser.",
+  "tourTrack2Title": "See the trend",
+  "tourTrack2": "Charts show how your values change over 7 or 30 days.",
+  "tourTrack3Title": "Bring it to your visit",
+  "tourTrack3": "Print a summary or prepare questions for your health care team.",
+  "slidePhotosTitle": "Recipes with real photos",
+  "slidePhotosDescription": "25 example recipes, filters by country and ingredients, cooking mode and weekly plan.",
+  "draftLabel": "Draft · under review",
+  "faqEyebrow": "FREQUENTLY ASKED QUESTIONS",
+  "faqTitle": "What people ask most.",
+  "faqHighlight": "ask most",
+  "faqDescription": "Short answers. Each one links to the part of the site that explains it in more detail, and to its source.",
+  "faqRead": "Read more on the site",
+  "faqSource": "Source",
+  "faqNav": "FAQ",
+  "faq": [{"id": "riesgo", "q": "If I have diabetes, will my kidneys be damaged?", "a": "Not necessarily. About 2 to 4 in 10 people with diabetes develop diabetic kidney disease. Keeping blood sugar and blood pressure within the goals you agree on with your health team greatly lowers the risk.", "link": "#aprende/epidemiologia", "source": 0}, {"id": "examenes", "q": "Which tests detect kidney damage?", "a": "Two simple tests: a urine test (albumin-to-creatinine ratio), which looks for protein in the urine, and a blood test (creatinine), used to calculate eGFR. With diabetes they are usually done at least once a year; your health team decides how often.", "link": "#aprende/diagnostico", "source": 1}, {"id": "sintomas", "q": "Can you feel kidney damage?", "a": "Almost never at first. It can go years without symptoms. Leg swelling or tiredness show up when the disease is already advanced. That is why tests are the only way to catch it early.", "link": "#aprende/manifestaciones", "source": 0}, {"id": "frenar", "q": "Can it be slowed down or reversed?", "a": "If it is caught early, treatment can slow it down and, in early stages, albumin in the urine can go down. Function that is badly damaged does not come back, but what still works can be protected.", "link": "#aprende/prevencion", "source": 0}, {"id": "comida", "q": "What should I eat?", "a": "There is no single kidney diet. What suits you depends on your kidney function and your results. The recipes on this site are examples to talk over with your dietitian.", "link": "#alimentacion", "source": 2}, {"id": "analgesicos", "q": "Can I take over-the-counter pain relievers?", "a": "Some common anti-inflammatory drugs, such as ibuprofen or naproxen, can harm the kidneys if used often or in high doses. Ask your doctor or pharmacist before taking them.", "link": "#senales", "source": 6}, {"id": "senales", "q": "When should I see a doctor soon?", "a": "If you notice new swelling, you urinate much less than usual, you feel short of breath, or you have tiredness that does not get better, see a doctor soon. For severe symptoms, seek emergency care.", "link": "#senales", "source": 6}, {"id": "datos", "q": "Where is my data stored?", "a": "Only in this browser: the page does not send it to any server. It has no password or encryption, so anyone using this same browser can see it. On a shared computer, save a copy and delete it from Settings when you finish.", "link": "#proyecto", "source": null}, {"id": "consulta", "q": "Does this site replace a medical visit?", "a": "No. It is an educational tool to help you understand the disease and come better prepared to your appointment. Goals, tests and treatments are decided by your health team.", "link": "#proyecto", "source": null}],
+  "resEyebrow": "RESOURCES",
+  "resTitle": "To read more and find evidence.",
+  "resHighlight": "find evidence",
+  "resDescription": "Patient guides, clinical guidelines, articles and tools selected by the team. Links open external sites.",
+  "resNav": "Resources",
+  "resAiWarning": "AI tools can make mistakes. Use them to find articles, always check the original source, and do not type in your personal or health data.",
+  "resBibtex": "Download references (BibTeX)",
+  "resRis": "Download references (RIS)",
+  "resForPros": "For professionals",
+  "resForAll": "For everyone",
+  "resources": [{"group": "Patient guides", "items": [{"title": "NIDDK · Diabetic kidney disease", "detail": "What it is, how it is detected and how to prevent it. Plain language.", "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/preventing-problems/diabetic-kidney-disease", "audience": "all", "id": "niddk-dkd", "lang": "en", "year": "", "access": "open"}, {"title": "MedlinePlus · Chronic kidney disease", "detail": "Medical encyclopedia from the US National Library of Medicine.", "url": "https://medlineplus.gov/ency/article/000471.htm", "audience": "all", "id": "medline-erc", "lang": "es", "year": "", "access": "open"}, {"title": "NIDDK · Healthy eating for adults with CKD", "detail": "Eating tips by stage, to review with your dietitian.", "url": "https://www.niddk.nih.gov/health-information/kidney-disease/chronic-kidney-disease-ckd/healthy-eating-adults-chronic-kidney-disease", "audience": "all", "id": "niddk-food", "lang": "en", "year": "", "access": "open"}]}, {"group": "Clinical guidelines", "items": [{"title": "KDIGO 2022 · Diabetes management in chronic kidney disease", "detail": "International clinical practice guideline (Kidney International, 2022).", "url": "https://kdigo.org/wp-content/uploads/2023/12/KDIGO-2022-Diabetes-Guideline.pdf", "audience": "pros", "cite": {"type": "article", "key": "kdigo2022", "author": "{Kidney Disease: Improving Global Outcomes (KDIGO) Diabetes Work Group}", "title": "KDIGO 2022 Clinical Practice Guideline for Diabetes Management in Chronic Kidney Disease", "journal": "Kidney International", "year": "2022", "volume": "102", "number": "5S", "pages": "S1--S127", "doi": "10.1016/j.kint.2022.06.008"}, "id": "kdigo2022", "lang": "en", "year": "2022", "access": "open"}, {"title": "ADA · Standards of Care in Diabetes—2026, section 11: chronic kidney disease", "detail": "2026 edition of the American Diabetes Association’s yearly recommendations. Section 11 covers chronic kidney disease.", "url": "https://doi.org/10.2337/dc26-S011", "audience": "pros", "id": "ada2026", "lang": "en", "year": "2026", "access": "open"}]}, {"group": "Articles", "items": [{"title": "Alicic, Rooney & Tuttle (2017) · Diabetic Kidney Disease: Challenges, Progress, and Possibilities", "detail": "General review of diabetic kidney disease. Clinical Journal of the American Society of Nephrology.", "url": "https://doi.org/10.2215/CJN.11491116", "audience": "pros", "cite": {"type": "article", "key": "alicic2017", "author": "Alicic, Radica Z. and Rooney, Michele T. and Tuttle, Katherine R.", "title": "Diabetic Kidney Disease: Challenges, Progress, and Possibilities", "journal": "Clinical Journal of the American Society of Nephrology", "year": "2017", "volume": "12", "number": "12", "pages": "2032--2045", "doi": "10.2215/CJN.11491116"}, "id": "alicic2017", "lang": "en", "year": "2017", "access": "check", "sheet": {"question": "What is known about diabetic kidney disease and what challenges remain in preventing and treating it?", "population": "It does not study patients directly: it gathers studies published up to 2016.", "method": "Expert narrative (non-systematic) review.", "findings": "Summarizes frequency, mechanisms and the treatments available at the time, and points to the need for new therapies.", "limits": "It does not follow a systematic method and predates treatments approved after 2017; compare it with recent guidelines."}}, {"title": "Umanath & Lewis (2018) · Update on Diabetic Nephropathy: Core Curriculum 2018", "detail": "Basis of the Diagnosis chapter. American Journal of Kidney Diseases.", "url": "https://doi.org/10.1053/j.ajkd.2017.10.026", "audience": "pros", "cite": {"type": "article", "key": "umanath2018", "author": "Umanath, Kausik and Lewis, Julia B.", "title": "Update on Diabetic Nephropathy: Core Curriculum 2018", "journal": "American Journal of Kidney Diseases", "year": "2018", "volume": "71", "number": "6", "pages": "884--895", "doi": "10.1053/j.ajkd.2017.10.026"}, "id": "umanath2018", "lang": "en", "year": "2018", "access": "check", "sheet": {"question": "What should a clinician know about diagnosing and managing diabetic nephropathy?", "population": "Educational material for clinicians; not a patient study.", "method": "Educational “Core Curriculum” review with cases and questions.", "findings": "Explains diagnostic criteria, when to suspect another cause and the treatment options as of 2018.", "limits": "It is a teaching text, not an original study; some treatment recommendations have since been updated."}}, {"title": "Thomas et al. (2015) · Diabetic kidney disease", "detail": "Full overview: epidemiology, mechanisms, diagnosis and treatment. Nature Reviews Disease Primers.", "url": "https://doi.org/10.1038/nrdp.2015.18", "audience": "pros", "cite": {"type": "article", "key": "thomas2015", "author": "Thomas, Merlin C. and others", "title": "Diabetic kidney disease", "journal": "Nature Reviews Disease Primers", "year": "2015", "volume": "1", "pages": "15018", "doi": "10.1038/nrdp.2015.18"}, "id": "thomas2015", "lang": "en", "year": "2015", "access": "check", "sheet": {"question": "What is the full picture of diabetic kidney disease: epidemiology, mechanisms, diagnosis and treatment?", "population": "Gathers studies from different countries and populations published up to 2015.", "method": "“Primer”-style review written by an expert group.", "findings": "Gives an overview of the disease and of the research questions open at the time.", "limits": "It dates from 2015 and does not include later treatment advances. It may require a subscription."}}]}, {"group": "Tools", "items": [{"title": "National Kidney Foundation eGFR calculator", "detail": "Uses the CKD-EPI 2021 equation. Meant for health professionals; your team interprets the result.", "url": "https://www.kidney.org/apps/professionals/egfr-calculator", "audience": "pros", "id": "nkf-egfr", "lang": "en", "year": "", "access": "open"}]}, {"group": "AI tools to find evidence", "ai": true, "items": [{"title": "Consensus", "detail": "Finds answers in scientific papers and shows which studies they come from.", "url": "https://consensus.app/", "audience": "all", "id": "consensus", "lang": "en", "year": "", "access": "account", "aiSheet": {"task": "Answer a question with sentences taken from scientific papers.", "audience": "Students and the public interested in evidence.", "access": "Free plan with limits; advanced features are paid (checked October 2026).", "example": "Do SGLT2 inhibitors slow the progression of diabetic kidney disease?", "verify": "Open at least two of the cited papers and check that the sentence appears in the abstract or results."}}, {"title": "Elicit", "detail": "Helps find and summarize papers for a research question.", "url": "https://elicit.com/", "audience": "pros", "id": "elicit", "lang": "en", "year": "", "access": "account", "aiSheet": {"task": "Find papers for a research question and summarize them in a table.", "audience": "Students and researchers.", "access": "Free basic plan; paid plans for more analyses (checked October 2026).", "example": "Studies on albuminuria screening in primary care in Latin America.", "verify": "Check each paper’s population, design and results: automatic summaries can leave out limitations."}}, {"title": "OpenEvidence", "detail": "Medical evidence search engine designed for health professionals.", "url": "https://www.openevidence.com/", "audience": "pros", "id": "openevidence", "lang": "en", "year": "", "access": "pros", "aiSheet": {"task": "Answer clinical questions with references to guidelines and papers.", "audience": "Health professionals.", "access": "Free for verified US health professionals (checked October 2026).", "example": "What does KDIGO 2022 recommend for blood pressure control in CKD with diabetes?", "verify": "Compare the answer with the original guideline cited; do not use it for patient decisions without checking."}}]}],
+  "aboutEyebrow": "ABOUT THE PROJECT",
+  "aboutTitle": "Three universities, one goal.",
+  "aboutIntro": "Renal is a COIL (Collaborative Online International Learning) project. Students from Colombia, Mexico and the United States worked together to explain diabetic kidney disease in plain language and offer simple tools for self-care.",
+  "aboutGoalTitle": "Goal",
+  "aboutGoal": "Help a person with diabetes, or their caregiver, understand how diabetes can affect the kidneys, know which tests to ask for, and come better prepared to appointments.",
+  "aboutTeamsTitle": "Who did what",
+  "aboutTeams": [{"country": "Colombia", "university": "Universidad Católica de Colombia", "role": "Experience design, web development, infographics, recipes and tracking tools."}, {"country": "Mexico", "university": "Tecnológico de Monterrey", "role": "Medical content for the Understand chapters and the word bank."}, {"country": "United States", "university": "University of Florida", "role": "Translation and simplification of the medical content, and English review."}],
+  "aboutScopeTitle": "Scope",
+  "aboutScope": "This is an educational website. It does not diagnose, prescribe treatment or replace a medical visit. The data you enter stays in your browser. Some texts are still being reviewed by the teams; they are marked «Draft · under review».",
+  "shopCat_protein": "Protein",
+  "shopCat_produce": "Vegetables",
+  "shopCat_fruit": "Fruit",
+  "shopCat_grain": "Grains",
+  "shopCat_other": "Seasonings and other",
+  "shopHave": "I already have it",
+  "shopHaveCount": "{count} already at home",
+  "shopHaveCountOne": "1 already at home",
+  "cookTimerStart": "Start {min}-minute timer",
+  "cookTimerStop": "Stop",
+  "cookTimerLeft": "{time} left",
+  "cookTimerDone": "Time's up! Check your cooking.",
+  "planSwap": "Another option",
+  "tourAgain": "Show this section's guide",
+  "glucosePostDinner": "Glucose after dinner",
+  "glucoseCount": "{count} records",
+  "glucoseCountOne": "1 record",
+  "glucoseCountExcluded": "{count} fasting or untagged records; {excluded} after dinner are not included",
+  "comboCount": "Glucose: {count} fasting or untagged records.",
+  "comboCountSkipped": "Glucose: {count} fasting or untagged records. {skipped} after-dinner records are left out of the average.",
+  "comboN": "{count} records",
+  "comboNOne": "1 record",
+  "planShoppingUpdated": "Shopping list updated from the plan (no duplicates).",
+  "planPeople": "People",
+  "planPeopleValue": "Plan for {count} people",
+  "planPeopleValueOne": "Plan for 1 person",
+  "planAddedFor": "Added to {day} · plan for {count} people.",
+  "planAddedForOne": "Added to {day} · plan for 1 person.",
+  "diaryRecipeReview": "Check the foods and grams before saving: they are a per-serving estimate.",
+  "diaryRecipeMissing": "Not in the table: {list}. To log them, use “Other food”.",
+  "todayChaptersBoth": "Discover: {done} of {total} · Understand: {learnDone} of {learnTotal}",
+  "visitDuration": "Duration",
+  "visitMinutes": "{count} min",
+  "undo": "Undo",
+  "edit": "Edit",
+  "moreActions": "More",
+  "moveUp": "Move up",
+  "moveDown": "Move down",
+  "heroExpand": "Show full cover",
+  "heroCompact": "Compact cover",
+  "careSaveChanges": "Save changes",
+  "visitStatus_done": "Done",
+  "visitStatus_cancelled": "Cancelled",
+  "visitMarkDone": "Mark as done",
+  "visitMarkCancelled": "Mark as cancelled",
+  "visitUnmark": "Remove the mark",
+  "visitSaveHint": "“Save appointment” keeps it on this page. To add it to your own calendar, use “Download to calendar” in the list.",
+  "recordTime": "Time",
+  "recordTimeHint": "Helps tell apart two measurements on the same day.",
+  "contextMeal": "Timing relative to meals",
+  "contextNone": "Not specified",
+  "contextMealHint": "Choose only one: a glucose reading cannot be fasting and after dinner at the same time.",
+  "contextPlace": "Where it was measured",
+  "contextPlaceHint": "This is separate: a measurement taken at a visit can also be fasting.",
+  "editRecord": "Edit the record from {date}",
+  "editRecordTitle": "Edit measurement.",
+  "recordUpdated": "Measurement updated.",
+  "lastOn": "latest: {date}",
+  "fewData": "With these filters only {count} values of this measurement remain. Widen the period or clear filters to see a trend.",
+  "fewDataOne": "With these filters only 1 value of this measurement remains. Widen the period or clear filters to see a trend.",
+  "reportGuideOpen": "Where do I find these values in my report?",
+  "reportGuideEyebrow": "Fictional example",
+  "reportGuideTitle": "How to read a lab report.",
+  "reportGuideIntro": "This report is made up. It is for practicing where to find the test name, the value and the unit.",
+  "reportGuideSheet": "Fictional lab report",
+  "reportGuideLab": "SAMPLE LAB · Patient: Fictional person · Collected: 10/12/2026",
+  "reportColName": "Test",
+  "reportColValue": "Result",
+  "reportColUnit": "Unit",
+  "reportColRef": "Lab range",
+  "reportColField": "Where it goes on this page",
+  "reportStep1": "Find the test name. It may appear under another name (for example, “fasting plasma glucose”).",
+  "reportStep2": "Copy the number exactly as shown, with its decimals.",
+  "reportStep3": "Check the unit. If it does not match the one on this page, ask before entering it: do not convert it yourself.",
+  "reportGuideNote": "The lab range is a general reference, not your personal goal. Your goals are set by your care team.",
+  "todayPressure": "Blood pressure",
+  "todayResume": "Continue: {title}",
+  "badgeReader": "Understand reader",
+  "badgeReaderHint": "Read the seven chapters in Understand.",
+  "habitState_done": "Done",
+  "habitState_missed": "Not done",
+  "habitState_na": "Does not apply",
+  "habitState_none": "Not logged",
+  "habitPlanOpen": "Choose my habits",
+  "habitPlanEyebrow": "Your plan",
+  "habitPlanTitle": "Choose your habits.",
+  "habitPlanIntro": "Tick the habits that are part of your plan and how many days a week you aim for each. Agree on this with your care team.",
+  "habitPlanTarget": "Days per week",
+  "habitPlanDays": "{count} days a week",
+  "habitPlanDaysOne": "1 day a week",
+  "habitPlanSave": "Save my plan",
+  "habitPlanSaved": "Habit plan saved.",
+  "habitPlanNone": "Choose at least one habit.",
+  "habitHowTitle": "How is the percentage calculated?",
+  "habitHowText": "We add the days marked “Done” for each habit, up to its weekly target, and divide by the sum of the targets. “Does not apply” days are taken off the target. “Not done” and “Not logged” do not count.",
+  "feedbackRestart": "The streak broke, and that is okay. Starting again today counts too.",
+  "shopPending": "{count} of {total} still to buy",
+  "shopEdit": "Change amount",
+  "shopEdited": "Amount changed.",
+  "shopRemoved": "Removed from the list.",
+  "shopAdd": "Add",
+  "shopAddLabel": "Add an item by hand",
+  "shopAddPlaceholder": "E.g. 1 bag of lentils",
+  "shopAddedToast": "Added to the list.",
+  "shopAddedByHand": "Added by hand",
+  "photoIllustrative": "Illustrative photo",
+  "diaryPartial": "partial",
+  "diaryNoData": "No data",
+  "diarySource": "Where the values come from:",
+  "diaryImportPreviewTitle": "Review before importing",
+  "diaryImportPreview": "{count} meals will be added. {repeated} look like duplicates (same date, time of day and name) and will not be imported.",
+  "diaryImportNothing": "There are no new meals to import.",
+  "guidanceWhy": "Why you see this:",
+  "guidanceWhyUrgent": "It appears because you selected:",
+  "myQuestionsEyebrow": "To bring to your visit",
+  "myQuestionsTitle": "My questions for the visit.",
+  "myQuestionsIntro": "Write them down when they come to mind, order them by importance and tick the ones you already asked.",
+  "myQuestionsNew": "New question",
+  "myQuestionsPlaceholder": "E.g. How often should I repeat the urine test?",
+  "myQuestionsAdd": "Add",
+  "myQuestionsSuggest": "Add suggested ones",
+  "myQuestionsFromDialog": "Move to “My questions”",
+  "myQuestionsEmpty": "No questions yet. Write one or add the suggested ones.",
+  "myQuestionsAsked": "Already asked",
+  "myQuestionsAdded": "{count} questions added.",
+  "myQuestionsAddedOne": "1 question added.",
+  "myQuestionsNone": "Those questions are already on your list.",
+  "myQuestionsRemoved": "Question removed.",
+  "myQuestionsPrivacy": "Your questions are saved only in this browser. The signs ticked above are not saved: they clear when the page reloads.",
+  "reportExample": [{"name": "Fasting glucose", "alt": "Also: fasting plasma glucose, FPG", "value": "104", "unit": "mg/dL", "ref": "70 – 99", "field": "glucose"}, {"name": "Glycated hemoglobin (HbA1c)", "alt": "Also: A1c", "value": "6.8", "unit": "%", "ref": "< 5.7", "field": "hba1c"}, {"name": "Serum creatinine", "alt": "In blood, not urine", "value": "0.95", "unit": "mg/dL", "ref": "0.6 – 1.1", "field": "creatinine"}, {"name": "Estimated GFR (CKD-EPI 2021)", "alt": "Also: eGFR", "value": "82", "unit": "mL/min/1.73 m²", "ref": "> 60", "field": "egfr"}, {"name": "Urine albumin-to-creatinine ratio", "alt": "Also: UACR, microalbuminuria", "value": "24", "unit": "mg/g", "ref": "< 30", "field": "uacr"}],
+  "learnGuides": [{"id": "epidemiologia", "key": "Diabetic kidney disease is common, but it does not happen to everyone with diabetes.", "summary": ["It appears in about 2 to 4 in every 10 people with diabetes.", "In type 2 diabetes it can already be present at diagnosis.", "Risk grows with years of diabetes, high blood pressure and other factors."], "quiz": [{"q": "Does everyone with diabetes develop kidney damage?", "options": ["Yes, always", "No, most do not", "Only older people"], "answer": 1, "why": "Estimates speak of 2 to 4 in every 10. Check-ups and care lower the risk."}, {"q": "In type 2 diabetes, when can kidney damage appear?", "options": ["Only after 20 years", "It can be present from diagnosis", "Never before age 60"], "answer": 1, "why": "Type 2 diabetes can go undiagnosed for years, so kidneys are worth checking from the start."}], "ask": ["What is my personal risk of kidney disease?", "How often should my kidneys be checked?"]}, {"id": "etiologia", "key": "Kidney damage in diabetes has several causes that add up.", "summary": ["High glucose over a long time is the main cause.", "High blood pressure often comes with diabetes and speeds up damage.", "Family history, tobacco, salt and obesity also play a part."], "quiz": [{"q": "What is the main cause of diabetic kidney disease?", "options": ["Drinking a lot of water", "High glucose sustained over time", "Exercising"], "answer": 1, "why": "Long exposure to high glucose damages the small kidney vessels."}, {"q": "Why does blood pressure matter?", "options": ["Because it often comes with diabetes and adds to the damage", "It does not affect the kidneys", "It only matters in young people"], "answer": 0, "why": "High blood pressure raises the risk of kidney disease and of it progressing."}], "ask": ["Does my family history change what I should watch?", "What should my blood pressure goal be?"]}, {"id": "riesgo", "key": "Some factors cannot be changed, but several of the most important ones can.", "summary": ["Cannot be changed: years with diabetes, age, genetics and sex.", "Can be changed: glucose, blood pressure, cholesterol, tobacco and weight.", "Factors add up: improving one already helps."], "quiz": [{"q": "Which of these factors can be changed?", "options": ["Age", "High blood pressure", "Family history"], "answer": 1, "why": "Blood pressure can be treated with habits and medicines prescribed by the care team."}, {"q": "If I have factors I cannot change, what helps?", "options": ["Nothing, damage is inevitable", "Take better care of the factors that can be changed", "Stop check-ups"], "answer": 1, "why": "Fixed factors do not decide the outcome: controlling glucose, blood pressure and tobacco still makes a difference."}], "ask": ["Which of my risk factors can I improve first?", "Do I need help to quit smoking?"]}, {"id": "fisiopatologia", "key": "High glucose and pressure inside the kidney slowly damage the filter.", "summary": ["The kidney filter becomes inflamed and scarred.", "Pressure inside the kidney rises and strains the filters.", "An early sign is albumin (protein) in the urine."], "quiz": [{"q": "Which early sign shows the filter is being damaged?", "options": ["Albumin in the urine", "Headache", "Strong thirst"], "answer": 0, "why": "When the filter changes, it lets albumin through. A urine test detects it."}, {"q": "Which hormone system can raise pressure inside the kidney?", "options": ["Renin-angiotensin-aldosterone", "Thyroid", "Insulin"], "answer": 0, "why": "When this system is overactive, kidney pressure rises; some medicines act on it."}], "ask": ["Do I have albumin in my urine?", "Could any medicine protect my kidneys?"]}, {"id": "manifestaciones", "key": "For years it causes no symptoms: that is why it is measured with tests.", "summary": ["At first it only shows up in urine and blood tests.", "Swelling and tiredness appear when it is already advanced.", "The course is a general model, not a personal prognosis."], "quiz": [{"q": "If I feel well, can I rule out kidney damage?", "options": ["Yes", "No, it can cause no symptoms for years", "Only if I am not thirsty"], "answer": 1, "why": "Feeling well does not rule it out: tests are how it is caught early."}, {"q": "Does everyone go through all stages at the same pace?", "options": ["Yes, always", "No, it varies a lot between people", "Only in type 1 diabetes"], "answer": 1, "why": "The model describes a general course; treatment can delay or prevent progression."}], "ask": ["Which symptoms should make me seek care soon?", "What stage are my kidneys in?"]}, {"id": "diagnostico", "key": "It is confirmed by combining repeated tests with the clinical history.", "summary": ["A urine test (albumin) and a blood test (creatinine to estimate eGFR) are used.", "An abnormal result is repeated before confirming.", "A biopsy is not needed in most cases."], "quiz": [{"q": "Is one abnormal urine test enough to confirm?", "options": ["Yes", "No, it is repeated because other causes can change it", "Only if it hurts"], "answer": 1, "why": "Infections, exercise or high glucose can change it for a while; that is why it is repeated."}, {"q": "Is a kidney biopsy always needed?", "options": ["Yes, always", "No, only in specific situations", "Only in children"], "answer": 1, "why": "Diagnosis is usually clinical; a biopsy is considered when the picture is atypical or another cause is suspected."}], "ask": ["When should I repeat the tests?", "What do my eGFR and albumin values mean?"]}, {"id": "prevencion", "key": "Controlling glucose and blood pressure and getting timely check-ups protects the kidneys.", "summary": ["Glucose and blood pressure goals are agreed with the care team.", "Urine and blood tests are recommended at least once a year.", "Not smoking, moving and watching salt all add up."], "quiz": [{"q": "How often are kidney checks recommended in type 2 diabetes?", "options": ["Every 5 years", "At least once a year", "Only if there are symptoms"], "answer": 1, "why": "Yearly is recommended, or as often as your care team says."}, {"q": "Who sets your glucose and blood pressure goals?", "options": ["A website", "Your care team, together with you", "No one, they are the same for everyone"], "answer": 1, "why": "Goals change with each person's age and health."}], "ask": ["What are my HbA1c and blood pressure goals?", "Which changes in my eating are a priority for me?"]}],
+  "infoQuiz": [{"q": "If a person with diabetes feels well, can they have kidney damage?", "options": ["No, no symptoms means no damage", "Yes, at first it usually causes no symptoms"], "answer": 1, "why": "Early damage is found with urine and blood tests, not by how you feel."}, {"q": "Which of these protects the kidneys?", "options": ["Quitting tobacco and vaping", "Taking painkillers every day", "Skipping check-ups if all seems fine"], "answer": 0, "why": "Tobacco damages blood vessels, including the kidney ones. Some painkillers can harm the kidneys if used often."}, {"q": "Which test looks for protein (albumin) in the urine?", "options": ["Urine albumin-to-creatinine ratio", "Glycated hemoglobin (HbA1c)", "Cholesterol"], "answer": 0, "why": "The albumin-to-creatinine ratio detects the albumin that a damaged filter lets through."}],
+  "infoStepAll": "Show all three",
+  "infoStepsLabel": "Go through the columns",
+  "infoDetailHint": "Tap an item in the columns to see its explanation and where to read more.",
+  "infoReadMore": "Read more in Understand: {title}",
+  "infoSummaryTitle": "Text summary of this page",
+  "infoQuizEyebrow": "Test what you saw",
+  "infoQuizTitle": "Three quick questions.",
+  "infoQuizRight": "Correct!",
+  "infoQuizWrong": "Not quite.",
+  "guideKey": "The main idea",
+  "guideSummary": "In short",
+  "guideQuiz": "Chapter review",
+  "guideAsk": "Questions you can bring to your visit",
+  "guideAskAdd": "Add to “My questions”",
+  "guideMarkRead": "Mark as read",
+  "guideRead": "Read ✓",
+  "learnProgressCount": "{done} of {total} chapters read",
+  "learnCases": [{"id": "ana", "name": "Ana, 52", "intro": "Ana has had type 2 diabetes for 8 years. She feels well and has never been asked for a urine test.", "steps": [{"q": "What should she ask at her next visit?", "options": ["Nothing, she feels well", "Whether she should have the urine albumin test and blood creatinine", "Whether she can stop her medication"], "answer": 1, "why": "In type 2 diabetes, kidney checks are recommended at least once a year, even without symptoms."}, {"q": "The urine test is abnormal once. What does it mean?", "options": ["That kidney disease is confirmed", "That it needs to be repeated to confirm", "That the lab made a mistake"], "answer": 1, "why": "Infections, exercise or high glucose can change it for a while. It is confirmed with at least two of three samples over 3 to 6 months."}]}, {"id": "luis", "name": "Luis, 64", "intro": "Luis has diabetes and high blood pressure. His doctor said his eGFR is somewhat low. He has knee pain and plans to take ibuprofen every day.", "steps": [{"q": "What should he do before taking ibuprofen daily?", "options": ["Take it, it is over the counter", "Ask his doctor or pharmacist", "Double the dose so it works better"], "answer": 1, "why": "Some anti-inflammatory drugs can harm the kidneys if used often, especially when kidney function is already reduced."}, {"q": "What could he bring to the visit to discuss his blood pressure?", "options": ["His home blood pressure readings, with dates", "Only how he feels", "Nothing, blood pressure does not affect the kidneys"], "answer": 0, "why": "High blood pressure speeds up kidney damage; dated readings help adjust treatment."}]}, {"id": "marta", "name": "Marta, 38", "intro": "Marta has had type 1 diabetes for 6 years. She smokes and wants to know what she can do for her kidneys.", "steps": [{"q": "Which of these changes has the most impact on protecting her kidneys?", "options": ["Quitting smoking with support", "Drinking more water than advised", "Eating more protein"], "answer": 0, "why": "Tobacco damages blood vessels, including the kidney ones. Extra water or protein without advice does not protect and may not be suitable."}, {"q": "From when are yearly kidney checks recommended for her?", "options": ["From 5 years after diagnosis", "Only after age 60", "Never, it is not needed in type 1"], "answer": 0, "why": "In type 1 diabetes it is recommended from 5 years after diagnosis; Marta is already there."}]}],
+  "criticalItems": [{"claim": "Headline: “Coffee protects the kidneys of people with diabetes.”", "study": "Fictional study: 800 adults with diabetes were followed for 3 years. Coffee drinkers had slightly less albumin in their urine. No one was assigned to drink coffee.", "options": ["Yes, the study proves coffee protects", "Not quite: it shows an association, not that coffee is the cause", "No, the study is not about coffee"], "answer": 1, "why": "In an observational study other differences (age, habits, income, other care) can explain the result. Showing cause needs clinical trials."}, {"claim": "Conclusion: “Drug X prevents dialysis.”", "study": "Fictional trial: 300 people for 1 year. Drug X lowered urine albumin compared with placebo. No one in either group reached dialysis.", "options": ["Yes, because no one reached dialysis", "No: it measured albumin over 1 year, not dialysis", "Yes, because it had a placebo"], "answer": 1, "why": "The study measured an intermediate outcome (albumin) for a short time. No one reaching dialysis in 1 year does not show the drug prevents it."}],
+  "aiExercise": {"answer": 1, "steps": ["Find the cited source (the KDIGO 2022 guideline is in Resources).", "Look for the specific recommendation in it: does it mention 3 liters of water?", "Check whether the answer says the same as the source or adds something.", "Decide: does the source support the answer?"], "options": ["Yes, it supports it", "No: the citation does not support that figure; fluids are adjusted with the care team"], "why": "AI tools can attribute to a real source something it does not say. In advanced kidney disease, drinking too much may not be suitable: the amount is set by the care team."},
+  "casesEyebrow": "Practice cases",
+  "casesTitle": "Three stories, your decisions.",
+  "casesHighlight": "your decisions",
+  "casesIntro": "Made-up people, common situations. Choose what you would do and read the explanation.",
+  "casesNav": "Practice cases",
+  "caseNext": "Next decision",
+  "caseRestart": "Start again",
+  "caseDone": "You finished this case.",
+  "caseStep": "Decision {n} of {total}",
+  "workshopNav": "Critical reading and AI",
+  "workshopEyebrow": "Workshop",
+  "workshopTitle": "Read closely.",
+  "workshopHighlight": "closely",
+  "workshopIntro": "Practice comparing what a conclusion says with what the paper actually studied. The studies are made up for practice.",
+  "criticalTitle": "Is the conclusion supported?",
+  "criticalStudy": "What it studied",
+  "aiExerciseTitle": "Exercise: AI and evidence",
+  "aiExerciseSteps": "How to check it",
+  "aiExerciseQuestion": "Does the source support the answer?",
+  "resSearch": "Search by topic, title or author",
+  "resAllTypes": "All",
+  "resLangAll": "All languages",
+  "resLang_es": "Spanish",
+  "resLang_en": "English",
+  "resAudienceAll": "Any audience",
+  "resOnlySaved": "Only my library",
+  "resSave": "Save",
+  "resSaved": "Saved",
+  "resMarkRead": "Mark read",
+  "resIsRead": "Read",
+  "resLibraryCount": "My library: {saved} saved · {read} read",
+  "resNone": "No resource matches the search.",
+  "resAccess_open": "Free full text",
+  "resAccess_check": "May require a subscription",
+  "resAccess_account": "Requires an account",
+  "resAccess_pros": "For verified professionals",
+  "resExternal": "Opens an external site",
+  "resSheet": "View summary card",
+  "sheetQuestion": "Question",
+  "sheetPopulation": "Population",
+  "sheetMethod": "Method",
+  "sheetFindings": "Findings",
+  "sheetLimits": "Limitations",
+  "aiTask": "What it is for",
+  "aiAudience": "Audience",
+  "aiAccess": "Access",
+  "aiExample": "Example question",
+  "aiVerify": "How to check the answer",
+  "resReviewed": "Links checked by web search on October 25, 2026.",
+  "resCiteScope": "The download includes the guidelines and papers in this list that have bibliographic data. Each chapter lists its own sources at its end.",
+  "resYear": "Year {year}"
 }

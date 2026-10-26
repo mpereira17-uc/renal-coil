@@ -98,7 +98,7 @@
   "habitTargets": "Metas iniciales de ejemplo: actividad 5 días; los demás hábitos 7. Ajusta la frecuencia con tu equipo de salud.",
   "previousWeek": "Semana anterior",
   "nextWeek": "Semana siguiente",
-  "habitHint": "Marca cada día que cumplas un hábito. Puedes corregirlo tocándolo de nuevo.",
+  "habitHint": "Cada toque cambia el día: hecho, no se hizo, no aplica y sin registro.",
   "clearWeek": "Limpiar semana",
   "yourPace": "A tu ritmo, con acompañamiento.",
   "habitNote": "Adapta la actividad a tu condición y consulta antes de cambiar tu rutina. No aumentes líquidos ni proteínas sin orientación profesional.",
@@ -111,7 +111,7 @@
   "selfCheckEyebrow": "PREPARA TU CONSULTA",
   "selfCheckTitle": "¿Qué has notado?",
   "selfCheckDescription": "Marca lo que ocurre ahora. Esta herramienta organiza señales; no calcula riesgo ni establece un diagnóstico.",
-  "symptomsPrivacy": "Las selecciones no se guardan.",
+  "symptomsPrivacy": "Lo que marques aquí no se guarda: se borra al recargar la página.",
   "checkSymptoms": "Ver orientación",
   "projectEyebrow": "CONOCIMIENTO QUE CONECTA",
   "projectTitle": "Distintas miradas. Un mismo cuidado.",
@@ -199,6 +199,7 @@
   "snack": "Merienda",
   "recipeExample": "Ejemplo por validar con el equipo de salud",
   "reviewNutritionist": "Para revisar con nutricionista",
+  "photoBy": "Foto: {author} · Unsplash",
   "recipeOpen": "Ver preparación",
   "minutes": "min",
   "servings": "{count} porciones de ejemplo",
@@ -933,7 +934,7 @@
   "infoStats": [
     {
       "label": "Mundial · borrador del equipo",
-      "text": "Entre 2 y 4 de cada 10 personas con diabetes desarrollarían enfermedad renal.",
+      "text": "Entre 2 y 4 de cada 10 personas con diabetes (20 a 40 %) desarrollan enfermedad renal diabética, según estimaciones mundiales.",
       "badge": "Pendiente de validar"
     },
     {
@@ -962,35 +963,193 @@
   "infoGlossary": [
     {
       "term": "Nefropatía diabética",
-      "def": "Daño en los riñones relacionado con la diabetes. Suele avanzar de forma lenta y silenciosa."
+      "def": "Daño en los riñones relacionado con la diabetes. Suele avanzar de forma lenta y silenciosa.",
+      "alt": "Diabetic nephropathy"
     },
     {
       "term": "Glomérulo",
-      "def": "Conjunto de pequeños vasos del riñón que filtra la sangre."
+      "def": "Conjunto de pequeños vasos del riñón que filtra la sangre.",
+      "alt": "Glomerulus"
     },
     {
       "term": "Albúmina",
-      "def": "Proteína que normalmente permanece en la sangre. Si aparece de forma persistente en la orina, puede indicar daño del filtro."
+      "def": "Proteína que normalmente permanece en la sangre. Si aparece de forma persistente en la orina, puede indicar daño del filtro.",
+      "alt": "Albumin"
     },
     {
       "term": "Creatinina",
-      "def": "Residuo del músculo que se mide en la sangre. El laboratorio la usa para estimar la TFGe."
+      "def": "Residuo del músculo que se mide en la sangre. El laboratorio la usa para estimar la TFGe.",
+      "alt": "Creatinine"
     },
     {
       "term": "TFGe",
-      "def": "Tasa de filtración glomerular estimada: un cálculo que indica qué tan bien filtran los riñones. La interpreta tu equipo de salud."
+      "def": "Tasa de filtración glomerular estimada: un cálculo que indica qué tan bien filtran los riñones. La interpreta tu equipo de salud.",
+      "alt": "eGFR",
+      "aliases": [
+        "tasa de filtración glomerular",
+        "tasa de filtrado glomerular",
+        "TFG"
+      ]
     },
     {
       "term": "Relación albúmina/creatinina",
-      "def": "Prueba de orina que ayuda a valorar la pérdida de proteínas."
+      "def": "Prueba de orina que ayuda a valorar la pérdida de proteínas.",
+      "alt": "Albumin-to-creatinine ratio"
     },
     {
       "term": "HbA1c",
-      "def": "Análisis que refleja el promedio de glucosa de los últimos meses."
+      "def": "Análisis que refleja el promedio de glucosa de los últimos meses.",
+      "alt": "HbA1c"
     },
     {
       "term": "Presión arterial",
-      "def": "Fuerza de la sangre contra las arterias. Se anota con dos cifras (sistólica/diastólica) en mmHg."
+      "def": "Fuerza de la sangre contra las arterias. Se anota con dos cifras (sistólica/diastólica) en mmHg.",
+      "alt": "Blood pressure"
+    },
+    {
+      "term": "Enfermedad renal diabética (ERD)",
+      "def": "Enfermedad en la que la diabetes daña los riñones con el tiempo y les cuesta más filtrar los desechos y el exceso de líquido de la sangre.",
+      "alt": "Diabetic kidney disease (DKD)",
+      "aliases": [
+        "enfermedad renal diabética",
+        "ERD"
+      ],
+      "source": "mx"
+    },
+    {
+      "term": "Enfermedad renal crónica (ERC)",
+      "def": "Enfermedad en la que los riñones tienen daño o funcionan menos durante al menos tres meses.",
+      "alt": "Chronic kidney disease (CKD)",
+      "aliases": [
+        "enfermedad renal crónica",
+        "ERC"
+      ],
+      "source": "mx"
+    },
+    {
+      "term": "Diabetes mellitus (DM)",
+      "def": "Enfermedad de larga duración en la que el azúcar en la sangre está demasiado alto porque el cuerpo no produce suficiente insulina o no puede usarla bien.",
+      "alt": "Diabetes mellitus (DM)",
+      "aliases": [
+        "diabetes mellitus"
+      ],
+      "source": "mx"
+    },
+    {
+      "term": "Complicaciones microvasculares",
+      "def": "Problemas de salud causados por daño en los vasos sanguíneos más pequeños del cuerpo. La diabetes puede causarlos en los ojos, los riñones y los nervios.",
+      "alt": "Microvascular complications",
+      "aliases": [
+        "complicaciones microvasculares"
+      ],
+      "source": "mx"
+    },
+    {
+      "term": "Diabetes tipo 1",
+      "def": "Enfermedad en la que el sistema de defensa del cuerpo ataca las células del páncreas que producen insulina. Las personas con diabetes tipo 1 necesitan insulina para controlar su glucosa.",
+      "alt": "Type 1 diabetes",
+      "aliases": [
+        "diabetes tipo 1"
+      ],
+      "source": "mx"
+    },
+    {
+      "term": "Diabetes tipo 2",
+      "def": "El tipo de diabetes más frecuente. El cuerpo produce insulina pero no la usa bien (resistencia a la insulina) y, con el tiempo, puede producir menos. Se relaciona con la edad, el exceso de peso, la poca actividad física y los antecedentes familiares. Se controla con alimentación, actividad física, medicamentos y, a veces, insulina.",
+      "alt": "Type 2 diabetes",
+      "aliases": [
+        "diabetes tipo 2"
+      ],
+      "source": "mx",
+      "draft": "redactado por el equipo de diseño, por validar"
+    },
+    {
+      "term": "Hiperglucemia",
+      "def": "Cuando el nivel de azúcar (glucosa) en la sangre está más alto de lo normal.",
+      "alt": "Hyperglycemia",
+      "aliases": [
+        "hiperglucemia"
+      ],
+      "source": "mx"
+    },
+    {
+      "term": "Obesidad",
+      "def": "Condición en la que el exceso de grasa corporal puede afectar la salud.",
+      "alt": "Obesity",
+      "aliases": [
+        "obesidad"
+      ],
+      "source": "mx"
+    },
+    {
+      "term": "Presión arterial alta",
+      "def": "Cuando la sangre empuja contra las paredes de los vasos sanguíneos con una fuerza elevada de forma persistente. También se llama hipertensión.",
+      "alt": "High blood pressure",
+      "aliases": [
+        "hipertensión",
+        "hipertensión arterial"
+      ],
+      "source": "mx"
+    },
+    {
+      "term": "Enfermedad cardiovascular",
+      "def": "Grupo de enfermedades que afectan al corazón o a los vasos sanguíneos.",
+      "alt": "Cardiovascular disease",
+      "aliases": [
+        "enfermedad cardiovascular"
+      ],
+      "source": "mx"
+    },
+    {
+      "term": "Dislipidemia",
+      "def": "Cuando los niveles de grasas en la sangre, como el colesterol o los triglicéridos, están fuera del rango saludable.",
+      "alt": "Dyslipidemia",
+      "aliases": [
+        "dislipidemia"
+      ],
+      "source": "mx"
+    },
+    {
+      "term": "Albuminuria",
+      "def": "Albúmina (una proteína) en la orina: significa que hay proteína escapando hacia la orina.",
+      "alt": "Albuminuria",
+      "aliases": [
+        "albuminuria",
+        "microalbuminuria",
+        "macroalbuminuria"
+      ],
+      "source": "mx"
+    },
+    {
+      "term": "Proteinuria",
+      "def": "Proteínas en la orina en una cantidad mayor de lo normal. Incluye la albúmina y otras proteínas. Si se mantiene en el tiempo, puede indicar daño en los riñones.",
+      "alt": "Proteinuria",
+      "aliases": [
+        "proteinuria"
+      ],
+      "source": "mx",
+      "draft": "redactado por el equipo de diseño, por validar"
+    },
+    {
+      "term": "Sistema renina-angiotensina-aldosterona",
+      "def": "Sistema de hormonas que ayuda a controlar la presión arterial y el equilibrio de líquidos. Si se mantiene demasiado activo, puede aumentar la presión dentro de los riñones.",
+      "alt": "Renin-angiotensin-aldosterone system",
+      "aliases": [
+        "renina-angiotensina-aldosterona",
+        "sistema renina-angiotensina",
+        "renina-angiotensina"
+      ],
+      "source": "mx"
+    },
+    {
+      "term": "Vulnerabilidad renal",
+      "def": "Cuando los riñones se dañan con más facilidad de lo habitual, por ejemplo por la edad, los antecedentes familiares o por tener a la vez diabetes, presión arterial alta y otros factores de riesgo.",
+      "alt": "Kidney vulnerability",
+      "aliases": [
+        "vulnerabilidad renal"
+      ],
+      "source": "mx",
+      "draft": "redactado por el equipo de diseño, por validar"
     }
   ],
   "infoGlossaryNote": "Definiciones para estudio; la revisión académica está pendiente.",
@@ -1087,5 +1246,746 @@
     "fats": "Grasas y aceites",
     "processed": "Procesados",
     "drinks": "Bebidas"
-  }
+  },
+  "contrastTheme": "Alto contraste",
+  "fontScale": "Tamaño de letra",
+  "fontNormal": "Normal",
+  "fontLarge": "Grande",
+  "fontXLarge": "Muy grande",
+  "todayEyebrow": "Tu día",
+  "todayTitle": "Hoy, {date}",
+  "todayLatest": "Última medición",
+  "todayNoRecord": "Aún no hay mediciones.",
+  "todayOpenTracking": "Ir a mi seguimiento",
+  "todayHabits": "Hábitos de hoy",
+  "todayHabitsCount": "{done} de {total} marcados",
+  "todayOpenHabits": "Marcar hábitos",
+  "todayNextVisit": "Próxima cita",
+  "todayNoVisit": "No tienes citas guardadas.",
+  "todayAddVisit": "Agregar una cita",
+  "todayOpenVisits": "Ver citas",
+  "todayOpenRecipe": "Ver recetas",
+  "todayLearning": "Tu aprendizaje",
+  "todayChapters": "{done} de {total} capítulos leídos",
+  "todayQuiz": "Mejor repaso: {score} de {total}",
+  "todayQuizNone": "Repaso pendiente",
+  "badgesTitle": "Insignias",
+  "badgeExplorer": "Explorador del riñón",
+  "badgeExplorerHint": "Lee los cuatro capítulos de Entiende lo esencial.",
+  "badgeQuiz": "Repaso perfecto",
+  "badgeQuizHint": "Responde bien todas las preguntas del repaso.",
+  "badgeRecord": "Primer registro",
+  "badgeRecordHint": "Guarda tu primera medición propia.",
+  "badgeWeek": "Semana constante",
+  "badgeWeekHint": "Marca al menos un hábito siete días seguidos.",
+  "badgeMeal": "Primera comida",
+  "badgeMealHint": "Anota una comida en tu diario.",
+  "badgeEarned": "Conseguida",
+  "badgeLocked": "Pendiente",
+  "badgeNew": "¡Nueva insignia: {name}!",
+  "listen": "Escuchar",
+  "listenStop": "Detener lectura",
+  "listenUnavailable": "Tu navegador no puede leer en voz alta.",
+  "moreMenu": "Más opciones",
+  "moreTitle": "Más",
+  "moreProject": "Proyecto, créditos y fuentes",
+  "moreSearch": "Buscar",
+  "moreTheme": "Cambiar tema claro u oscuro",
+  "moreSettings": "Ajustes y tamaño de letra",
+  "morePresentation": "Modo presentación",
+  "morePrivacy": "Privacidad",
+  "backToTop": "Volver arriba",
+  "termClose": "Cerrar definición",
+  "careEyebrow": "Plan de cuidado",
+  "careTitle": "Medicamentos y citas",
+  "careIntro": "Anota lo que te indicó tu equipo de salud para tenerlo a mano y llevarlo a la consulta. Se guarda solo en este navegador.",
+  "medsTitle": "Medicamentos",
+  "medName": "Medicamento",
+  "medDose": "Dosis",
+  "medSchedule": "Cuándo",
+  "medAdd": "Agregar medicamento",
+  "medsEmpty": "Aún no has agregado medicamentos.",
+  "medNamePlaceholder": "Ej.: metformina",
+  "medDosePlaceholder": "Ej.: 850 mg",
+  "medSchedulePlaceholder": "Ej.: con el desayuno",
+  "visitsTitle": "Citas y controles",
+  "visitDate": "Fecha",
+  "visitTime": "Hora",
+  "visitTitle": "Motivo",
+  "visitPlace": "Lugar",
+  "visitAdd": "Guardar cita",
+  "visitsEmpty": "Aún no has agregado citas.",
+  "visitTitlePlaceholder": "Ej.: control de nefrología",
+  "visitPlacePlaceholder": "Ej.: centro de salud",
+  "visitCalendar": "Descargar al calendario",
+  "visitsCalendarAll": "Descargar todas (.ics)",
+  "remove": "Quitar",
+  "careSaved": "Guardado en tu plan de cuidado.",
+  "careRemoved": "Eliminado del plan de cuidado.",
+  "pastVisits": "Citas pasadas",
+  "comboEyebrow": "Vista combinada",
+  "comboTitle": "Glucosa y presión, semana a semana",
+  "comboHint": "Promedio semanal de glucosa en ayunas y presión sistólica. Sirve para conversar con tu equipo; no indica un diagnóstico.",
+  "comboWeek": "Semana del {date}",
+  "comboEmpty": "Faltan mediciones de glucosa y presión para comparar.",
+  "printCare": "Plan de cuidado",
+  "printHabits": "Hábitos de los últimos 7 días",
+  "printQuestions": "Preguntas para mi consulta",
+  "printQuestionsHint": "Escribe aquí tus dudas antes de la cita.",
+  "privacyPageTitle": "Privacidad y aviso legal",
+  "privacyReadFull": "Leer el aviso completo",
+  "emptyAddRecord": "Añadir mi primera medición",
+  "privacyPage": [
+    {
+      "title": "Qué se guarda",
+      "text": "El navegador guarda idioma, tema, perfiles locales, mediciones, hábitos, notas, comidas, medicamentos, citas y tu progreso de aprendizaje. Los ejemplos de mediciones son ficticios. Las selecciones de síntomas y las respuestas del repaso no se guardan, solo el mejor puntaje."
+    },
+    {
+      "title": "Sin cuentas ni servidor",
+      "text": "Los perfiles no son cuentas: no tienen contraseña ni cifrado. La página no envía tus datos a ningún servidor ni usa publicidad ni analítica de terceros. Si usas un computador compartido, otra persona podría ver la información."
+    },
+    {
+      "title": "Descargas",
+      "text": "Los archivos CSV, JSON, de calendario y las vistas para imprimir se generan en tu equipo. Pueden contener información de salud en texto legible; guardarlos, compartirlos o borrarlos es tu decisión."
+    },
+    {
+      "title": "Cómo borrar todo",
+      "text": "Puedes borrar registros, limpiar la semana de hábitos o eliminar un perfil desde Ajustes. Para borrar también los respaldos, elimina los datos del sitio desde la configuración de privacidad del navegador."
+    },
+    {
+      "title": "Uso educativo",
+      "text": "Renal COIL es una herramienta educativa. No es un expediente clínico, no da diagnósticos y no sirve para emergencias. Ante síntomas graves busca atención médica inmediata."
+    },
+    {
+      "title": "Pendiente antes de publicar",
+      "text": "El equipo COIL debe confirmar el responsable institucional y el contacto de privacidad, y revisar las normas aplicables (Ley 1581 de 2012 en Colombia y LFPDPPP en México) antes de un uso público."
+    }
+  ],
+  "todayRecipeCard": "Receta del día",
+  "studyKicker": "UN ESTUDIO EN CAPAS",
+  "studyObject": "RIÑÓN / V3.7",
+  "studyCounter": "RIÑÓN",
+  "studySkip": "Saltar recorrido",
+  "studyIndex": "ÍNDICE",
+  "studySilhouette": "La silueta",
+  "studyScroll": "Desliza para separar las capas",
+  "studyAnimate": "Ver el recorrido animado",
+  "navLearn": "Entender",
+  "learnEyebrow": "ENTENDER LA ENFERMEDAD",
+  "learnTitle": "Lo que dice la ciencia,",
+  "learnAccent": "en palabras simples.",
+  "learnDescription": "Siete capítulos escritos por estudiantes de medicina en México, traducidos y simplificados por el equipo COIL. Toca las palabras subrayadas para ver qué significan.",
+  "learnReview": "Contenido en revisión clínica",
+  "learnBy": "Texto",
+  "learnTranslated": "Traducción y simplificación: equipo COIL",
+  "learnSources": "Fuentes citadas por el equipo",
+  "learnIndex": "Capítulos",
+  "learnPro": "Para profesionales de la salud",
+  "learnPending": "Pendiente de revisión",
+  "learnStart": "Empezar a leer",
+  "learnBank": "Ir al banco de palabras",
+  "learnNext": "Siguiente capítulo",
+  "bankEyebrow": "BANCO DE PALABRAS",
+  "bankTitle": "Palabras médicas.",
+  "bankDescription": "Definiciones cortas en español e inglés.",
+  "bankSearch": "Buscar una palabra",
+  "bankCount": "{count} palabras",
+  "bankCountOne": "{count} palabra",
+  "bankEmpty": "No encontramos esa palabra. Prueba con otra forma de escribirla.",
+  "bankOther": "En inglés",
+  "bankPendingDef": "Definición pendiente del equipo médico.",
+  "qsLearnTitle": "Entender la enfermedad",
+  "qsLearnText": "Causas, factores de riesgo, diagnóstico y prevención, en siete capítulos.",
+  "moreLearn": "Entender la enfermedad",
+  "heroProgress": "RECORRIDO",
+  "learn": [
+    {
+      "id": "epidemiologia",
+      "ghost": "Epidemiología",
+      "label": "Epidemiología",
+      "title": "Una complicación frecuente.",
+      "accent": "También en México.",
+      "highlight": "frecuente",
+      "draft": "ajustado por el equipo de diseño (v4.6), por validar",
+      "author": "",
+      "blocks": [
+        {
+          "heading": "¿Qué es?",
+          "paragraphs": [
+            "La enfermedad renal diabética (ERD) es una de las complicaciones más frecuentes de la diabetes. Con el tiempo, el azúcar alto en la sangre puede dañar los pequeños vasos sanguíneos de los riñones y hacer que les cueste más filtrar los desechos de la sangre. En el mundo, la diabetes es una de las principales causas de enfermedad renal crónica (ERC), y la ERD aparece en aproximadamente el 20 al 40 % de las personas con diabetes.",
+            "En las personas con diabetes tipo 1, la ERD puede aparecer varios años después. En cambio, las personas con diabetes tipo 2 pueden tener ya ERD cuando se les diagnostica la diabetes.",
+            "El riesgo de desarrollar ERD aumenta con la edad y con el tiempo que una persona lleva con diabetes. Las personas con diabetes tipo 2 también tienen mayor riesgo. Otros factores de riesgo son la obesidad, el azúcar alto en la sangre, los niveles anormales de grasas en la sangre, la presión arterial alta o tener una enfermedad cardiovascular. Juntos, estos factores pueden aumentar el riesgo de daño renal. Existen diferencias entre hombres y mujeres, pero los estudios han encontrado resultados distintos según la población y la edad."
+          ]
+        },
+        {
+          "heading": "¿Y en México?",
+          "paragraphs": [
+            "En México, la enfermedad renal es un problema importante de salud pública por las altas tasas de diabetes y de otros factores de riesgo cardiovascular. Datos nacionales estiman que el 16.8 % de los adultos en México vive con diabetes, y que solo alrededor del 42 % de ellos tiene la glucosa bajo control. Se estima que alrededor de 14 millones de mexicanos viven con enfermedad renal crónica (ERC) de cualquier causa, diagnosticada o no, y la diabetes es una de sus causas más importantes. También se estima que 1 de cada 4 personas que viven con diabetes desarrolla ERD."
+          ]
+        }
+      ],
+      "stats": [
+        {
+          "value": "20–40 %",
+          "label": "de las personas con diabetes desarrolla ERD en el mundo"
+        },
+        {
+          "value": "16.8 %",
+          "label": "de los adultos en México vive con diabetes"
+        },
+        {
+          "value": "42 %",
+          "label": "de ellos tiene la glucosa bajo control"
+        },
+        {
+          "value": "1 de 4",
+          "label": "personas con diabetes desarrolla ERD"
+        }
+      ],
+      "sources": [
+        "American Diabetes Association Professional Practice Committee, 2024",
+        "Hoogeveen, 2022",
+        "Palomo-Piñón et al., 2024",
+        "Basto-Abreu et al., 2022",
+        "Colegio de Nefrólogos de México, 2024"
+      ]
+    },
+    {
+      "id": "etiologia",
+      "ghost": "Causas",
+      "label": "Causas",
+      "title": "¿Por qué ocurre?",
+      "accent": "Varias causas a la vez.",
+      "highlight": "ocurre",
+      "author": "Prabhath",
+      "blocks": [
+        {
+          "paragraphs": [
+            "La enfermedad renal diabética, también llamada nefropatía diabética, es una complicación tanto de la diabetes tipo 1 como de la diabetes tipo 2, y tiene varias causas a la vez (su origen es multifactorial).",
+            "La causa principal es la exposición prolongada a la diabetes, sobre todo cuando la glucosa no está bien controlada. Según las estimaciones mundiales, entre el 20 y el 40 % de las personas con diabetes desarrolla enfermedad renal diabética (ver Epidemiología).",
+            "El tiempo con diabetes y su mal control están entre los factores de riesgo más importantes: cuanto más tiempo se vive con la enfermedad, mayor es el riesgo para los riñones. La presión arterial alta (hipertensión) también tiene un papel clave: suele acompañar a la diabetes y aumenta el riesgo de desarrollar enfermedad renal crónica y de que avance. También se ha observado una predisposición genética: la enfermedad renal es más frecuente en personas con antecedentes familiares. Aunque todavía no se conoce la base genética exacta, la historia familiar es muy útil para planear la prevención y el cuidado.",
+            "Otros factores que contribuyen con frecuencia son la edad avanzada, la obesidad, la dislipidemia, la resistencia a la insulina y el síndrome metabólico. Estos factores no solo aumentan el riesgo de enfermedad renal: también empeoran los síntomas y las complicaciones de la diabetes. Por último, factores del estilo de vida y del entorno, como fumar, la falta de actividad física y una dieta alta en sodio, pueden intensificar el daño renal, sobre todo porque favorecen la presión alta, la inflamación en todo el cuerpo y alteraciones del metabolismo. Haber tenido una lesión renal aguda u otra enfermedad de los riñones también se ha relacionado con mayor probabilidad de desarrollar esta enfermedad."
+          ]
+        }
+      ],
+      "sources": [
+        "Dwivedi & Sikarwar, 2024",
+        "Gross et al., 2005"
+      ]
+    },
+    {
+      "id": "riesgo",
+      "ghost": "Riesgo",
+      "label": "Factores de riesgo",
+      "title": "Lo que no se puede cambiar, y lo que sí.",
+      "accent": "y lo que sí.",
+      "highlight": "y lo que sí",
+      "author": "Jasmyn",
+      "blocks": [
+        {
+          "paragraphs": [
+            "Los principales factores de riesgo de la nefropatía diabética son el mal control de la glucosa, la presión arterial alta, el tiempo que se lleva con diabetes y la predisposición genética. La combinación de estos factores puede empeorar la salud de los riñones más de lo que causaría cada uno por separado."
+          ]
+        }
+      ],
+      "columns": [
+        {
+          "title": "No se pueden cambiar",
+          "items": [
+            "Tiempo con diabetes: el riesgo aumenta mucho después de 10 años con la enfermedad.",
+            "Edad mayor de 55 años, que se asocia con vasos sanguíneos más rígidos y riñones que se dañan con más facilidad.",
+            "Mayor frecuencia en personas afroamericanas, asiáticas e indígenas de Norteamérica.",
+            "Genética: los hermanos de una persona con nefropatía diabética tienen el triple de riesgo.",
+            "Sexo masculino."
+          ]
+        },
+        {
+          "title": "Se pueden cambiar",
+          "items": [
+            "Mal control de la diabetes: una HbA1c alta se asocia con una pérdida más rápida de la capacidad de filtrar de los riñones (tasa de filtración glomerular).",
+            "Hipertensión (presión arterial alta), en parte por un sistema renina-angiotensina demasiado activo.",
+            "Dislipidemia, sobre todo colesterol LDL alto.",
+            "Consumo de tabaco.",
+            "Obesidad.",
+            "Albuminuria y proteinuria (proteína en la orina)."
+          ]
+        }
+      ],
+      "note": "Estos factores actúan juntos y aumentan el riesgo de desarrollar nefropatía diabética.",
+      "sources": [
+        "Shah et al., 2024",
+        "Gross et al., 2005",
+        "Azagew et al., 2024"
+      ]
+    },
+    {
+      "id": "fisiopatologia",
+      "ghost": "Filtro",
+      "label": "Cómo se daña",
+      "title": "Cómo se daña el filtro.",
+      "accent": "Paso a paso.",
+      "highlight": "el filtro",
+      "author": "William",
+      "dark": true,
+      "steps": [
+        "La enfermedad renal diabética aparece cuando el azúcar alto daña los riñones con el tiempo. Ese daño puede causar inflamación, cicatrices y cambios en la forma en que los riñones filtran la sangre. Una señal es la albuminuria: proteína que se escapa hacia la orina.",
+        "El azúcar alto puede dañar las células del riñón y causar inflamación y cicatrices. También puede afectar las hormonas y los vasos sanguíneos que ayudan a los riñones a funcionar bien, hasta producir daño renal.",
+        "Una forma en que la diabetes daña los riñones es aumentando moléculas dañinas que lesionan las células. Esto puede debilitar los filtros del riñón y dejar pasar proteínas a la orina. Por eso, la cantidad de proteína en la orina puede aumentar con el tiempo.",
+        "La diabetes también puede hacer que los riñones filtren con más fuerza de lo normal, lo que sube la presión dentro de sus pequeños vasos. Con el tiempo, esa presión extra puede dañar los filtros y empeorar la función renal.",
+        "Un sistema de hormonas llamado renina-angiotensina-aldosterona ayuda a controlar la presión arterial y el equilibrio de líquidos. Cuando se mantiene demasiado activo, puede aumentar la presión dentro de los riñones y contribuir a la inflamación y las cicatrices, empeorando la enfermedad.",
+        "A medida que la enfermedad avanza, las estructuras que sostienen los filtros pueden engrosarse y formar cambios parecidos a cicatrices. Esto hace más difícil filtrar bien la sangre y contribuye a la pérdida gradual de la función renal.",
+        "Las células especializadas que mantienen los filtros funcionando también pueden dañarse. Entonces a los riñones les cuesta retener las proteínas en la sangre, y se escapa más proteína a la orina.",
+        "En etapas avanzadas pueden aparecer cicatrices más graves y daño en la estructura del riñón, que reducen aún más su capacidad de filtrar la sangre y de funcionar con normalidad."
+      ],
+      "sources": [
+        "Doumani et al., 2025",
+        "Cao & Cooper, 2011",
+        "Luis-Rodríguez et al., 2012",
+        "Mir et al., 2025"
+      ]
+    },
+    {
+      "id": "manifestaciones",
+      "ghost": "Silencio",
+      "label": "Manifestaciones",
+      "title": "Silenciosa por años.",
+      "accent": "Por eso se mide.",
+      "highlight": "Silenciosa",
+      "draft": "ajustado por el equipo de diseño (v4.6), por validar",
+      "author": "Stephanie",
+      "blocks": [
+        {
+          "paragraphs": [
+            "La nefropatía diabética se manifiesta con albuminuria que aumenta poco a poco, una disminución de la tasa de filtración glomerular (TFG) y, en fases tardías, hinchazón en las piernas (edema periférico) e hipertensión arterial. Durante gran parte de su evolución no da síntomas evidentes."
+          ]
+        }
+      ],
+      "timelineTitle": "El curso clásico (modelo de Mogensen)",
+      "timeline": [
+        {
+          "title": "Hiperfiltración glomerular",
+          "text": "Los riñones filtran más de lo normal. Es reversible, no da síntomas y suele aparecer en fases tempranas."
+        },
+        {
+          "title": "Microalbuminuria",
+          "text": "Es el primer signo de nefropatía diabética. Generalmente no da síntomas."
+        },
+        {
+          "title": "Macroalbuminuria",
+          "text": "Puede aparecer tras años de microalbuminuria sin tratar. Puede acompañarse de un aumento progresivo de la presión arterial."
+        },
+        {
+          "title": "Descenso de la TFG",
+          "text": "Una vez instaurada la macroalbuminuria, la filtración cae de forma progresiva."
+        },
+        {
+          "title": "Enfermedad renal terminal",
+          "text": "Es la etapa más avanzada. El tiempo para llegar a ella cambia mucho de una persona a otra, y el tratamiento puede retrasarla o evitarla."
+        }
+      ],
+      "after": [
+        "Este es un modelo general, no un pronóstico: no todas las personas pasan por todas las etapas ni en el mismo tiempo, y algunas tienen la filtración reducida sin albuminuria.",
+        "La hinchazón en las piernas suele ser el primer síntoma que la persona nota antes de ir a consulta, pero aparece en una etapa muy avanzada de la enfermedad.",
+        "Además, la nefropatía diabética se asocia con otras complicaciones: hipertensión arterial, que suele empeorar a medida que avanza la enfermedad, y más enfermedad y muerte por causas cardiovasculares, porque las personas con TFG baja y albuminuria alta tienen tasas mucho mayores de insuficiencia renal, hospitalización y muerte. También suele asociarse con retinopatía diabética (ojos) y enfermedad de los vasos grandes, y con neuropatía, problemas de la vejiga, deterioro cognitivo y depresión. Por eso la nefropatía diabética es un eje de muchas complicaciones de la diabetes."
+      ],
+      "pro": [
+        "La hiperfiltración glomerular corresponde a una TFG más alta de lo normal; como referencia se suele usar más de 120 mL/min/1.73 m².",
+        "Se recomienda evaluar microalbuminuria o macroalbuminuria en personas con retinopatía diabética y enfermedad macrovascular."
+      ],
+      "sources": [
+        "Afkarian, 2016",
+        "Mora-Fernández, 2014"
+      ]
+    },
+    {
+      "id": "diagnostico",
+      "ghost": "Diagnóstico",
+      "label": "Diagnóstico",
+      "title": "Cómo se confirma.",
+      "accent": "Varias pruebas juntas.",
+      "highlight": "se confirma",
+      "draft": "ajustado por el equipo de diseño (v4.6), por validar",
+      "author": "Brady",
+      "blocks": [
+        {
+          "paragraphs": [
+            "El diagnóstico de la nefropatía diabética depende del tipo de diabetes, de qué tan controlada está, de cómo ha avanzado, de los signos y síntomas, y de otros factores.",
+            "Se deben hacer mediciones periódicas y relacionar los hallazgos con la enfermedad renal: las mediciones de glucosa y los resultados de laboratorio se interpretan junto con los signos y síntomas de la persona. En la diabetes tipo 1, si la albuminuria (albúmina en la orina) aparece menos de 5 años o más de 25 años después del diagnóstico, es menos probable que la enfermedad renal se deba a la diabetes. Estos plazos orientan al equipo de salud, pero no deciden por sí solos la causa. En cambio, las personas con diabetes tipo 2 pueden tener ya nefropatía diabética cuando se diagnostica la diabetes.",
+            "El daño principal viene de la lesión de los vasos sanguíneos pequeños por la glucosa alta sostenida. Esto no solo afecta a los riñones sino a otros órganos; por eso las personas con nefropatía diabética también pueden tener retinopatía diabética (ojos) y neuropatía diabética (nervios). El diagnóstico suele ser clínico: combina los síntomas, la exploración física y los resultados de laboratorio. La biopsia del riñón no es necesaria en la mayoría de los casos; se considera en situaciones concretas, por ejemplo cuando el cuadro no es el típico o se sospecha otra causa."
+          ]
+        }
+      ],
+      "proTitle": "Qué puede mostrar una biopsia al microscopio de luz",
+      "pro": [
+        "Depósitos de matriz extracelular, sobre todo en el mesangio.",
+        "Engrosamiento de la membrana basal glomerular.",
+        "Cambios proliferativos.",
+        "Atrofia tubular.",
+        "Fibrosis intersticial y/o esclerosis glomerular."
+      ],
+      "sources": [
+        "Umanath & Lewis, 2018"
+      ]
+    },
+    {
+      "id": "prevencion",
+      "ghost": "Cuidado",
+      "label": "Prevención",
+      "title": "Proteger los riñones.",
+      "accent": "Desde hoy.",
+      "highlight": "los riñones",
+      "author": "Victoria",
+      "blocks": [
+        {
+          "paragraphs": [
+            "Prevenir la enfermedad renal diabética implica controlar la diabetes y reducir el riesgo de daño renal. Las estrategias principales son controlar la glucosa, tratar la presión arterial alta, detectar a tiempo los problemas del riñón y reducir otros factores de riesgo."
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "value": "≈ 7 %",
+          "title": "Glucosa bajo control",
+          "text": "Mantener la glucosa controlada es una de las formas más importantes de prevenir el daño renal. Para la mayoría de los adultos con diabetes, la meta de HbA1c es de alrededor del 7 % o menos. La HbA1c es un análisis de sangre que mide el promedio de glucosa de los últimos dos a tres meses. Esta meta puede cambiar según la edad y la salud de cada persona. En la diabetes tipo 1, empezar pronto el tratamiento con insulina puede ayudar a prevenir la enfermedad renal."
+        },
+        {
+          "value": "1 × año",
+          "title": "Detectar a tiempo",
+          "text": "La detección temprana es una de las herramientas más importantes. Se usan análisis de orina para buscar albúmina, una proteína que puede aparecer cuando los riñones están dañados, y análisis de sangre para medir la función renal. Se recomiendan cada año en la diabetes tipo 2 y a partir de los cinco años de diagnóstico en la diabetes tipo 1. Para confirmar que la albúmina está alta de forma persistente, al menos dos de tres análisis de orina hechos en tres a seis meses deben salir alterados. Un resultado alterado se debe repetir, porque las infecciones, el ejercicio y la glucosa alta pueden cambiarlo por un tiempo."
+        },
+        {
+          "value": "< 130/80",
+          "title": "Presión arterial",
+          "text": "En personas con ERD, la presión recomendada suele estar por debajo de 130/80 mmHg, cuando es seguro. El médico puede indicar medicamentos llamados IECA o ARA II para bajar la presión, que reducen el daño renal, sobre todo cuando hay proteína en la orina. No deben tomarse juntos y no se recomiendan solo para prevenir en personas con presión y función renal normales."
+        },
+        {
+          "value": "DM2 + ERC",
+          "title": "Medicamentos adicionales",
+          "text": "En personas con diabetes tipo 2 que ya tienen enfermedad renal, otros medicamentos pueden ayudar a frenar el daño: los inhibidores de SGLT2, los agonistas del receptor de GLP-1 y la finerenona. El tratamiento depende de la función renal y de la salud general. Los controles periódicos permiten vigilar los riñones y los posibles efectos secundarios, sobre todo al empezar o cambiar un medicamento."
+        },
+        {
+          "value": "Cada día",
+          "title": "Hábitos",
+          "text": "Comer de forma saludable, hacer ejercicio con regularidad, mantener un peso saludable y no fumar ayudan a proteger los riñones. Controlar el colesterol alto reduce el riesgo de problemas del corazón asociados a la diabetes y a la enfermedad renal."
+        }
+      ],
+      "note": "Las metas y los medicamentos los indica tu equipo de salud. No empieces, cambies ni suspendas un tratamiento por tu cuenta.",
+      "sources": [
+        "Perkovic et al., 2026",
+        "Inzucchi & Lupsa, 2026",
+        "American Diabetes Association Professional Practice Committee, 2026",
+        "Glassock, 2026"
+      ]
+    }
+  ],
+  "heroProject": "Proyecto",
+  "heroDataGlucose": "Última glucosa: {value} mg/dL",
+  "heroDataDemo": "demo",
+  "heroDataNoRecords": "Aún sin registros",
+  "heroDataMeals": "Comidas registradas hoy: {count}",
+  "heroDataHabits": "Hábitos marcados en 7 días: {count}",
+  "heroDataLearn": "{chapters} capítulos · {terms} palabras",
+  "heroDataSigns": "Ante la duda, consulta",
+  "photoAlt": "Foto ilustrativa de {title}",
+  "country_all": "Todos",
+  "country_co": "Colombia",
+  "country_mx": "México",
+  "country_us": "EE. UU.",
+  "countryFilter": "Origen sugerido",
+  "pantryFilter": "¿Qué tienes en casa?",
+  "pantryClear": "Quitar ingredientes",
+  "pantry_chicken": "Pollo",
+  "pantry_fish": "Pescado",
+  "pantry_egg": "Huevo",
+  "pantry_rice": "Arroz",
+  "pantry_oats": "Avena",
+  "pantry_zucchini": "Calabacín",
+  "pantry_carrot": "Zanahoria",
+  "pantry_pepper": "Pimentón",
+  "pantry_cauliflower": "Coliflor",
+  "pantry_cabbage": "Repollo",
+  "pantry_cucumber": "Pepino",
+  "pantry_fruit": "Fruta",
+  "validatedBy": "Revisado por {name} · {date}",
+  "cookMode": "Modo cocina",
+  "cookPrepare": "Prepara los ingredientes",
+  "cookStep": "Paso {n} de {total}",
+  "cookPrev": "Anterior",
+  "cookNext": "Siguiente",
+  "cookDone": "Terminar",
+  "cookFinished": "¡Buen provecho!",
+  "cookAwake": "La pantalla se mantiene encendida mientras cocinas.",
+  "cookAwakeNo": "Usa las flechas del teclado o los botones para avanzar.",
+  "shareWhatsapp": "Compartir por WhatsApp",
+  "relatedTitle": "Recetas parecidas",
+  "planAdd": "Añadir a mi semana",
+  "planEyebrow": "PLAN DE LA SEMANA",
+  "planTitle": "Mi semana de comidas",
+  "planLead": "Elige una receta para cada momento del día. Después puedes pasar todo a la lista de compras.",
+  "planSuggest": "Llenar con sugerencias",
+  "planToShopping": "Pasar a la lista de compras",
+  "planPrint": "Imprimir semana",
+  "planClear": "Vaciar semana",
+  "planCount": "{count} comidas planeadas",
+  "planCountOne": "1 comida planeada",
+  "planNote": "Plan de ejemplo con recetas por validar. Ajusta porciones y alimentos con tu equipo de salud.",
+  "planSuggested": "Semana completada con sugerencias.",
+  "planCleared": "Semana vaciada.",
+  "planAddedShopping": "{count} recetas pasaron a la lista de compras.",
+  "planAdded": "Añadida al {day}.",
+  "planFull": "Ya hay una receta para ese momento todos los días.",
+  "cookbookButton": "Descargar recetario (PDF)",
+  "cookbookTitle": "Recetario de ejemplo",
+  "cookbookLead": "{count} preparaciones para revisar con el equipo de salud.",
+  "diaryFromRecipes": "Elegir del recetario",
+  "tourSkip": "Saltar",
+  "tourNext": "Siguiente",
+  "tourDone": "Entendido",
+  "tourStep": "{n} de {total}",
+  "tourFood1Title": "Busca o filtra",
+  "tourFood1": "Busca por nombre o ingrediente, o marca lo que tienes en casa para ver qué puedes cocinar.",
+  "tourFood2Title": "Abre una receta",
+  "tourFood2": "Cada receta trae porciones ajustables, modo cocina paso a paso y un botón para compartirla.",
+  "tourFood3Title": "Planea tu semana",
+  "tourFood3": "Más abajo armas tu semana de comidas y la pasas a la lista de compras con un clic.",
+  "tourTrack1Title": "Registra una medición",
+  "tourTrack1": "Anota glucosa, presión y otros valores. Todo se guarda solo en este navegador.",
+  "tourTrack2Title": "Mira la tendencia",
+  "tourTrack2": "Las gráficas muestran cómo cambian tus valores en 7 o 30 días.",
+  "tourTrack3Title": "Llévalo a tu consulta",
+  "tourTrack3": "Imprime un resumen o prepara preguntas para tu equipo de salud.",
+  "slidePhotosTitle": "Recetas con fotos reales",
+  "slidePhotosDescription": "25 preparaciones de ejemplo, filtros por país e ingredientes, modo cocina y plan semanal.",
+  "draftLabel": "Borrador · por revisar",
+  "faqEyebrow": "PREGUNTAS FRECUENTES",
+  "faqTitle": "Lo que más se pregunta.",
+  "faqHighlight": "más se pregunta",
+  "faqDescription": "Respuestas cortas. Cada una lleva a la parte de la página donde se explica mejor y a su fuente.",
+  "faqRead": "Leer más en la página",
+  "faqSource": "Fuente",
+  "faqNav": "Preguntas frecuentes",
+  "faq": [{"id": "riesgo", "q": "Si tengo diabetes, ¿voy a tener daño en los riñones?", "a": "No necesariamente. Alrededor de 2 a 4 de cada 10 personas con diabetes desarrollan enfermedad renal diabética. Mantener la glucosa y la presión arterial en las metas que acuerdes con tu equipo de salud reduce mucho el riesgo.", "link": "#aprende/epidemiologia", "source": 0}, {"id": "examenes", "q": "¿Qué exámenes detectan el daño en los riñones?", "a": "Dos exámenes sencillos: uno de orina (relación albúmina/creatinina), que busca proteína en la orina, y uno de sangre (creatinina), que sirve para calcular la TFGe. Con diabetes se suelen pedir al menos una vez al año; tu equipo de salud decide la frecuencia.", "link": "#aprende/diagnostico", "source": 1}, {"id": "sintomas", "q": "¿El daño en los riñones se siente?", "a": "Casi nunca al principio. Puede pasar años sin dar síntomas. La hinchazón de piernas o el cansancio aparecen cuando la enfermedad ya está avanzada. Por eso los exámenes son la única forma de detectarla a tiempo.", "link": "#aprende/manifestaciones", "source": 0}, {"id": "frenar", "q": "¿Se puede frenar o revertir?", "a": "Si se detecta a tiempo, el tratamiento puede frenar el avance y, en etapas tempranas, la albúmina en la orina puede bajar. Lo que ya está muy dañado no se recupera, pero se puede proteger lo que funciona.", "link": "#aprende/prevencion", "source": 0}, {"id": "comida", "q": "¿Qué debo comer?", "a": "No existe una dieta renal única. Lo que conviene depende de tu función renal y de tus resultados. Las recetas de esta página son ejemplos para conversar con tu nutricionista.", "link": "#alimentacion", "source": 2}, {"id": "analgesicos", "q": "¿Puedo tomar analgésicos sin receta?", "a": "Algunos antiinflamatorios comunes, como el ibuprofeno o el naproxeno, pueden dañar los riñones si se usan seguido o en dosis altas. Pregunta a tu médico o farmacéutico antes de tomarlos.", "link": "#senales", "source": 6}, {"id": "senales", "q": "¿Cuándo debo consultar pronto?", "a": "Si notas hinchazón nueva, orinas mucho menos de lo habitual, tienes falta de aire o un cansancio que no mejora, consulta pronto. Ante síntomas graves, busca atención de urgencia.", "link": "#senales", "source": 6}, {"id": "datos", "q": "¿Dónde se guardan mis datos?", "a": "Solo en este navegador: la página no los envía a ningún servidor. No tienen contraseña ni cifrado, así que cualquier persona que use este mismo navegador puede verlos. En un equipo compartido, guarda una copia y bórralos desde Ajustes al terminar.", "link": "#proyecto", "source": null}, {"id": "consulta", "q": "¿Esta página reemplaza la consulta?", "a": "No. Es una herramienta educativa para entender la enfermedad y llegar mejor preparado a la consulta. Las metas, los exámenes y los tratamientos los decide tu equipo de salud.", "link": "#proyecto", "source": null}],
+  "resEyebrow": "RECURSOS",
+  "resTitle": "Para leer más y buscar evidencia.",
+  "resHighlight": "buscar evidencia",
+  "resDescription": "Guías para pacientes, guías clínicas, artículos y herramientas seleccionadas por el equipo. Los enlaces abren sitios externos.",
+  "resNav": "Recursos",
+  "resAiWarning": "Las herramientas de IA pueden equivocarse. Úsalas para encontrar artículos, revisa siempre la fuente original y no escribas tus datos personales ni de salud.",
+  "resBibtex": "Descargar referencias (BibTeX)",
+  "resRis": "Descargar referencias (RIS)",
+  "resForPros": "Para profesionales",
+  "resForAll": "Para todos",
+  "resources": [{"group": "Guías para pacientes", "items": [{"title": "NIDDK · Enfermedad renal relacionada con la diabetes", "detail": "Qué es, cómo se detecta y cómo prevenirla. En inglés, lenguaje sencillo.", "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/preventing-problems/diabetic-kidney-disease", "audience": "all", "id": "niddk-dkd", "lang": "en", "year": "", "access": "open"}, {"title": "MedlinePlus · Enfermedad renal crónica", "detail": "Enciclopedia médica de la Biblioteca Nacional de Medicina de EE. UU., en español.", "url": "https://medlineplus.gov/spanish/ency/article/000471.htm", "audience": "all", "id": "medline-erc", "lang": "es", "year": "", "access": "open"}, {"title": "NIDDK · Alimentación y enfermedad renal", "detail": "Consejos de alimentación por etapas, para revisar con tu nutricionista.", "url": "https://www.niddk.nih.gov/health-information/kidney-disease/chronic-kidney-disease-ckd/healthy-eating-adults-chronic-kidney-disease", "audience": "all", "id": "niddk-food", "lang": "en", "year": "", "access": "open"}]}, {"group": "Guías clínicas", "items": [{"title": "KDIGO 2022 · Manejo de la diabetes en la enfermedad renal crónica", "detail": "Guía internacional de práctica clínica (Kidney International, 2022).", "url": "https://kdigo.org/wp-content/uploads/2023/12/KDIGO-2022-Diabetes-Guideline.pdf", "audience": "pros", "cite": {"type": "article", "key": "kdigo2022", "author": "{Kidney Disease: Improving Global Outcomes (KDIGO) Diabetes Work Group}", "title": "KDIGO 2022 Clinical Practice Guideline for Diabetes Management in Chronic Kidney Disease", "journal": "Kidney International", "year": "2022", "volume": "102", "number": "5S", "pages": "S1--S127", "doi": "10.1016/j.kint.2022.06.008"}, "id": "kdigo2022", "lang": "en", "year": "2022", "access": "open"}, {"title": "ADA · Standards of Care in Diabetes—2026, sección 11: enfermedad renal crónica", "detail": "Edición 2026 de las recomendaciones anuales de la Asociación Americana de Diabetes. La sección 11 trata la enfermedad renal crónica.", "url": "https://doi.org/10.2337/dc26-S011", "audience": "pros", "id": "ada2026", "lang": "en", "year": "2026", "access": "open"}]}, {"group": "Artículos", "items": [{"title": "Alicic, Rooney y Tuttle (2017) · Diabetic Kidney Disease: Challenges, Progress, and Possibilities", "detail": "Revisión general de la enfermedad renal diabética. Clinical Journal of the American Society of Nephrology.", "url": "https://doi.org/10.2215/CJN.11491116", "audience": "pros", "cite": {"type": "article", "key": "alicic2017", "author": "Alicic, Radica Z. and Rooney, Michele T. and Tuttle, Katherine R.", "title": "Diabetic Kidney Disease: Challenges, Progress, and Possibilities", "journal": "Clinical Journal of the American Society of Nephrology", "year": "2017", "volume": "12", "number": "12", "pages": "2032--2045", "doi": "10.2215/CJN.11491116"}, "id": "alicic2017", "lang": "en", "year": "2017", "access": "check", "sheet": {"question": "¿Qué se sabe de la enfermedad renal diabética y qué retos quedan para prevenirla y tratarla?", "population": "No estudia pacientes directamente: reúne estudios publicados hasta 2016.", "method": "Revisión narrativa (no sistemática) de expertos.", "findings": "Resume la frecuencia, los mecanismos y los tratamientos disponibles entonces, y señala la necesidad de nuevas terapias.", "limits": "No sigue un método sistemático y es anterior a tratamientos aprobados después de 2017; contrástala con guías recientes."}}, {"title": "Umanath y Lewis (2018) · Update on Diabetic Nephropathy: Core Curriculum 2018", "detail": "Base del capítulo Diagnóstico. American Journal of Kidney Diseases.", "url": "https://doi.org/10.1053/j.ajkd.2017.10.026", "audience": "pros", "cite": {"type": "article", "key": "umanath2018", "author": "Umanath, Kausik and Lewis, Julia B.", "title": "Update on Diabetic Nephropathy: Core Curriculum 2018", "journal": "American Journal of Kidney Diseases", "year": "2018", "volume": "71", "number": "6", "pages": "884--895", "doi": "10.1053/j.ajkd.2017.10.026"}, "id": "umanath2018", "lang": "en", "year": "2018", "access": "check", "sheet": {"question": "¿Qué debe saber un profesional sobre el diagnóstico y el manejo de la nefropatía diabética?", "population": "Material educativo para profesionales; no es un estudio con pacientes.", "method": "Revisión educativa tipo «Core Curriculum», con casos y preguntas.", "findings": "Explica criterios diagnósticos, cuándo sospechar otra causa y las opciones de tratamiento de 2018.", "limits": "Es un texto docente, no un estudio original; algunas recomendaciones de tratamiento ya se actualizaron."}}, {"title": "Thomas y colaboradores (2015) · Diabetic kidney disease", "detail": "Panorama completo: epidemiología, mecanismos, diagnóstico y tratamiento. Nature Reviews Disease Primers.", "url": "https://doi.org/10.1038/nrdp.2015.18", "audience": "pros", "cite": {"type": "article", "key": "thomas2015", "author": "Thomas, Merlin C. and others", "title": "Diabetic kidney disease", "journal": "Nature Reviews Disease Primers", "year": "2015", "volume": "1", "pages": "15018", "doi": "10.1038/nrdp.2015.18"}, "id": "thomas2015", "lang": "en", "year": "2015", "access": "check", "sheet": {"question": "¿Cuál es el panorama completo de la enfermedad renal diabética: epidemiología, mecanismos, diagnóstico y tratamiento?", "population": "Reúne estudios de distintos países y poblaciones publicados hasta 2015.", "method": "Revisión de tipo «Primer» escrita por un grupo de expertos.", "findings": "Ofrece una visión de conjunto de la enfermedad y de las líneas de investigación abiertas en ese momento.", "limits": "Es de 2015; no incluye los avances terapéuticos posteriores. Puede requerir suscripción."}}]}, {"group": "Herramientas", "items": [{"title": "Calculadora de TFGe de la National Kidney Foundation", "detail": "Usa la ecuación CKD-EPI 2021. Pensada para profesionales de la salud; el resultado lo interpreta tu equipo.", "url": "https://www.kidney.org/apps/professionals/egfr-calculator", "audience": "pros", "id": "nkf-egfr", "lang": "en", "year": "", "access": "open"}]}, {"group": "Herramientas de IA para buscar evidencia", "ai": true, "items": [{"title": "Consensus", "detail": "Busca respuestas en artículos científicos y muestra de qué estudios salen.", "url": "https://consensus.app/", "audience": "all", "id": "consensus", "lang": "en", "year": "", "access": "account", "aiSheet": {"task": "Responder una pregunta con frases sacadas de artículos científicos.", "audience": "Estudiantes y público general con interés en la evidencia.", "access": "Plan gratuito con límites; funciones avanzadas de pago (revisado en octubre de 2026).", "example": "¿Los inhibidores de SGLT2 reducen la progresión de la enfermedad renal diabética?", "verify": "Abre al menos dos de los artículos citados y comprueba que la frase esté en el resumen o en los resultados."}}, {"title": "Elicit", "detail": "Ayuda a encontrar y resumir artículos para una pregunta de investigación.", "url": "https://elicit.com/", "audience": "pros", "id": "elicit", "lang": "en", "year": "", "access": "account", "aiSheet": {"task": "Buscar artículos para una pregunta de investigación y resumirlos en una tabla.", "audience": "Estudiantes e investigadores.", "access": "Plan básico gratuito; planes de pago para más análisis (revisado en octubre de 2026).", "example": "Estudios sobre cribado de albuminuria en atención primaria en América Latina.", "verify": "Revisa en cada artículo la población, el diseño y los resultados: los resúmenes automáticos pueden omitir limitaciones."}}, {"title": "OpenEvidence", "detail": "Buscador de evidencia médica pensado para profesionales de la salud.", "url": "https://www.openevidence.com/", "audience": "pros", "id": "openevidence", "lang": "en", "year": "", "access": "pros", "aiSheet": {"task": "Responder preguntas clínicas con referencias a guías y artículos.", "audience": "Profesionales de la salud.", "access": "Gratuito para profesionales de la salud verificados en EE. UU. (revisado en octubre de 2026).", "example": "¿Qué recomienda KDIGO 2022 para el control de la presión en ERC con diabetes?", "verify": "Compara la respuesta con la guía original citada; no la uses para decisiones sobre un paciente sin revisarla."}}]}],
+  "aboutEyebrow": "ACERCA DEL PROYECTO",
+  "aboutTitle": "Tres universidades, un mismo objetivo.",
+  "aboutIntro": "Renal es un proyecto COIL (aprendizaje internacional colaborativo en línea). Estudiantes de Colombia, México y Estados Unidos trabajaron juntos para explicar la enfermedad renal diabética en un lenguaje claro y ofrecer herramientas sencillas para cuidarse.",
+  "aboutGoalTitle": "Objetivo",
+  "aboutGoal": "Que una persona con diabetes, o quien la cuida, entienda cómo la diabetes puede afectar los riñones, sepa qué exámenes pedir y llegue mejor preparada a su consulta.",
+  "aboutTeamsTitle": "Quién hizo qué",
+  "aboutTeams": [{"country": "Colombia", "university": "Universidad Católica de Colombia", "role": "Diseño de la experiencia, desarrollo de la web, infografías, recetas y herramientas de seguimiento."}, {"country": "México", "university": "Tecnológico de Monterrey", "role": "Contenido médico de los capítulos de Entender y del banco de palabras."}, {"country": "Estados Unidos", "university": "Universidad de Florida", "role": "Traducción y simplificación del contenido médico, y revisión del inglés."}],
+  "aboutScopeTitle": "Alcance",
+  "aboutScope": "Es una web educativa. No diagnostica, no indica tratamientos y no reemplaza la consulta. Los datos que registras se quedan en tu navegador. Algunos textos están en revisión por los equipos; se marcan como «Borrador · por revisar».",
+  "shopCat_protein": "Proteínas",
+  "shopCat_produce": "Verduras",
+  "shopCat_fruit": "Frutas",
+  "shopCat_grain": "Granos y cereales",
+  "shopCat_other": "Condimentos y otros",
+  "shopHave": "Ya lo tengo",
+  "shopHaveCount": "{count} ya en casa",
+  "shopHaveCountOne": "1 ya en casa",
+  "cookTimerStart": "Iniciar temporizador de {min} min",
+  "cookTimerStop": "Detener",
+  "cookTimerLeft": "Quedan {time}",
+  "cookTimerDone": "¡Tiempo! Revisa la preparación.",
+  "planSwap": "Otra opción",
+  "tourAgain": "Ver la guía de esta sección",
+  "glucosePostDinner": "Glucosa después de cenar",
+  "glucoseCount": "{count} registros",
+  "glucoseCountOne": "1 registro",
+  "glucoseCountExcluded": "{count} registros en ayunas o sin etiqueta; {excluded} después de cenar no se incluyen",
+  "comboCount": "Glucosa: {count} registros en ayunas o sin etiqueta.",
+  "comboCountSkipped": "Glucosa: {count} registros en ayunas o sin etiqueta. {skipped} de después de cenar no entran en el promedio.",
+  "comboN": "{count} registros",
+  "comboNOne": "1 registro",
+  "planShoppingUpdated": "Lista de compras actualizada con el plan (sin repetir).",
+  "planPeople": "Personas",
+  "planPeopleValue": "Plan para {count} personas",
+  "planPeopleValueOne": "Plan para 1 persona",
+  "planAddedFor": "Añadida al {day} · plan para {count} personas.",
+  "planAddedForOne": "Añadida al {day} · plan para 1 persona.",
+  "diaryRecipeReview": "Revisa los alimentos y los gramos antes de guardar: son una estimación por porción.",
+  "diaryRecipeMissing": "No están en la tabla: {list}. Si quieres anotarlos, usa «Otro alimento».",
+  "todayChaptersBoth": "Descubrir: {done} de {total} · Entender: {learnDone} de {learnTotal}",
+  "visitDuration": "Duración",
+  "visitMinutes": "{count} min",
+  "undo": "Deshacer",
+  "edit": "Editar",
+  "moreActions": "Más",
+  "moveUp": "Subir",
+  "moveDown": "Bajar",
+  "heroExpand": "Ver portada completa",
+  "heroCompact": "Compactar portada",
+  "careSaveChanges": "Guardar cambios",
+  "visitStatus_done": "Realizada",
+  "visitStatus_cancelled": "Cancelada",
+  "visitMarkDone": "Marcar como realizada",
+  "visitMarkCancelled": "Marcar como cancelada",
+  "visitUnmark": "Quitar la marca",
+  "visitSaveHint": "«Guardar cita» la deja en esta página. Para tenerla en tu agenda, usa «Descargar al calendario» en la lista.",
+  "recordTime": "Hora",
+  "recordTimeHint": "Sirve para distinguir dos mediciones del mismo día.",
+  "contextMeal": "Momento respecto a la comida",
+  "contextNone": "Sin indicar",
+  "contextMealHint": "Elige solo uno: una glucosa no puede ser en ayunas y después de cenar a la vez.",
+  "contextPlace": "Lugar de la medición",
+  "contextPlaceHint": "Es un dato aparte: una medición en consulta también puede ser en ayunas.",
+  "editRecord": "Editar el registro del {date}",
+  "editRecordTitle": "Editar medición.",
+  "recordUpdated": "Medición actualizada.",
+  "lastOn": "última: {date}",
+  "fewData": "Con estos filtros quedan {count} datos de esta medición. Amplía el periodo o quita filtros para ver una tendencia.",
+  "fewDataOne": "Con estos filtros queda 1 dato de esta medición. Amplía el periodo o quita filtros para ver una tendencia.",
+  "reportGuideOpen": "¿Dónde encuentro estos datos en mi informe?",
+  "reportGuideEyebrow": "Ejemplo ficticio",
+  "reportGuideTitle": "Cómo leer un informe de laboratorio.",
+  "reportGuideIntro": "Este informe es inventado. Sirve para practicar dónde están el nombre del examen, el valor y la unidad.",
+  "reportGuideSheet": "Informe de laboratorio ficticio",
+  "reportGuideLab": "LABORATORIO DE EJEMPLO · Paciente: Persona ficticia · Fecha de toma: 12/10/2026",
+  "reportColName": "Examen",
+  "reportColValue": "Resultado",
+  "reportColUnit": "Unidad",
+  "reportColRef": "Rango del laboratorio",
+  "reportColField": "Dónde va en la página",
+  "reportStep1": "Busca el nombre del examen. Puede aparecer con otro nombre (por ejemplo, «glicemia basal» es la glucosa en ayunas).",
+  "reportStep2": "Copia el número tal como aparece, con sus decimales.",
+  "reportStep3": "Revisa la unidad. Si no coincide con la de la página, pregunta antes de anotarlo: no conviertas por tu cuenta.",
+  "reportGuideNote": "El rango del laboratorio es una referencia general, no tu meta personal. Tus metas las define tu equipo de salud.",
+  "todayPressure": "Presión arterial",
+  "todayResume": "Continuar: {title}",
+  "badgeReader": "Lector de Entender",
+  "badgeReaderHint": "Lee los siete capítulos de Entender.",
+  "habitState_done": "Hecho",
+  "habitState_missed": "No se hizo",
+  "habitState_na": "No aplica",
+  "habitState_none": "Sin registro",
+  "habitPlanOpen": "Elegir mis hábitos",
+  "habitPlanEyebrow": "Tu plan",
+  "habitPlanTitle": "Elige tus hábitos.",
+  "habitPlanIntro": "Marca los hábitos que forman parte de tu plan y cuántos días por semana te propones cada uno. Acuérdalo con tu equipo de salud.",
+  "habitPlanTarget": "Días por semana",
+  "habitPlanDays": "{count} días por semana",
+  "habitPlanDaysOne": "1 día por semana",
+  "habitPlanSave": "Guardar mi plan",
+  "habitPlanSaved": "Plan de hábitos guardado.",
+  "habitPlanNone": "Elige al menos un hábito.",
+  "habitHowTitle": "¿Cómo se calcula el porcentaje?",
+  "habitHowText": "Se suman los días marcados como «Hecho» de cada hábito, hasta su meta semanal, y se dividen por la suma de las metas. Los días «No aplica» se descuentan de la meta. «No se hizo» y «Sin registro» no suman.",
+  "feedbackRestart": "La racha se cortó, y está bien. Retomar hoy también cuenta.",
+  "shopPending": "Faltan {count} de {total}",
+  "shopEdit": "Cambiar cantidad",
+  "shopEdited": "Cantidad cambiada.",
+  "shopRemoved": "Quitado de la lista.",
+  "shopAdd": "Añadir",
+  "shopAddLabel": "Añadir un producto a mano",
+  "shopAddPlaceholder": "Ej.: 1 bolsa de lentejas",
+  "shopAddedToast": "Añadido a la lista.",
+  "shopAddedByHand": "Añadido a mano",
+  "photoIllustrative": "Foto ilustrativa",
+  "diaryPartial": "parcial",
+  "diaryNoData": "Sin datos",
+  "diarySource": "De dónde salen los valores:",
+  "diaryImportPreviewTitle": "Revisar antes de importar",
+  "diaryImportPreview": "Se añadirán {count} comidas. {repeated} parecen repetidas (misma fecha, momento y nombre) y no se importarán.",
+  "diaryImportNothing": "No hay comidas nuevas para importar.",
+  "guidanceWhy": "Por qué ves esto:",
+  "guidanceWhyUrgent": "Aparece porque marcaste:",
+  "myQuestionsEyebrow": "Para llevar a la consulta",
+  "myQuestionsTitle": "Mis preguntas para la consulta.",
+  "myQuestionsIntro": "Escríbelas cuando se te ocurran, ordénalas por importancia y marca las que ya preguntaste.",
+  "myQuestionsNew": "Nueva pregunta",
+  "myQuestionsPlaceholder": "Ej.: ¿Cada cuánto debo repetir el examen de orina?",
+  "myQuestionsAdd": "Agregar",
+  "myQuestionsSuggest": "Agregar las sugeridas",
+  "myQuestionsFromDialog": "Pasar a «Mis preguntas»",
+  "myQuestionsEmpty": "Todavía no hay preguntas. Escribe una o agrega las sugeridas.",
+  "myQuestionsAsked": "Ya la pregunté",
+  "myQuestionsAdded": "{count} preguntas agregadas.",
+  "myQuestionsAddedOne": "1 pregunta agregada.",
+  "myQuestionsNone": "Esas preguntas ya están en tu lista.",
+  "myQuestionsRemoved": "Pregunta quitada.",
+  "myQuestionsPrivacy": "Tus preguntas se guardan solo en este navegador. Las señales marcadas arriba no se guardan: se borran al recargar la página.",
+  "reportExample": [{"name": "Glucosa en ayunas", "alt": "También: glicemia basal, glucosa sérica", "value": "104", "unit": "mg/dL", "ref": "70 – 99", "field": "glucose"}, {"name": "Hemoglobina glicosilada (HbA1c)", "alt": "También: A1c, hemoglobina glucosilada", "value": "6,8", "unit": "%", "ref": "< 5,7", "field": "hba1c"}, {"name": "Creatinina sérica", "alt": "En sangre, no en orina", "value": "0,95", "unit": "mg/dL", "ref": "0,6 – 1,1", "field": "creatinine"}, {"name": "TFG estimada (CKD-EPI 2021)", "alt": "También: TFGe, filtración glomerular estimada", "value": "82", "unit": "mL/min/1,73 m²", "ref": "> 60", "field": "egfr"}, {"name": "Relación albúmina/creatinina en orina", "alt": "También: RAC, microalbuminuria, UACR", "value": "24", "unit": "mg/g", "ref": "< 30", "field": "uacr"}],
+  "learnGuides": [{"id": "epidemiologia", "key": "La enfermedad renal diabética es frecuente, pero no le pasa a todas las personas con diabetes.", "summary": ["Aparece en alrededor de 2 a 4 de cada 10 personas con diabetes.", "En la diabetes tipo 2 puede estar presente desde el diagnóstico.", "El riesgo crece con los años de diabetes, la presión alta y otros factores."], "quiz": [{"q": "¿Todas las personas con diabetes desarrollan daño renal?", "options": ["Sí, siempre", "No, la mayoría no", "Solo las personas mayores"], "answer": 1, "why": "Las estimaciones hablan de 2 a 4 de cada 10. Los controles y el cuidado reducen el riesgo."}, {"q": "En la diabetes tipo 2, ¿cuándo puede aparecer el daño renal?", "options": ["Solo después de 20 años", "Puede estar presente desde el diagnóstico", "Nunca antes de los 60 años"], "answer": 1, "why": "La diabetes tipo 2 puede pasar años sin diagnosticarse, por eso conviene revisar los riñones desde el inicio."}], "ask": ["¿Cuál es mi riesgo personal de enfermedad renal?", "¿Cada cuánto debo revisar mis riñones?"]}, {"id": "etiologia", "key": "El daño renal en la diabetes tiene varias causas que se suman.", "summary": ["La glucosa alta durante mucho tiempo es la causa principal.", "La presión alta acompaña a la diabetes y acelera el daño.", "Los antecedentes familiares, el tabaco, la sal y la obesidad también influyen."], "quiz": [{"q": "¿Cuál es la causa principal de la enfermedad renal diabética?", "options": ["Tomar mucha agua", "La glucosa alta sostenida en el tiempo", "Hacer ejercicio"], "answer": 1, "why": "La exposición prolongada a la glucosa alta daña los vasos pequeños del riñón."}, {"q": "¿Por qué importa la presión arterial?", "options": ["Porque suele acompañar a la diabetes y aumenta el daño", "No influye en los riñones", "Solo importa en jóvenes"], "answer": 0, "why": "La presión alta aumenta el riesgo de enfermedad renal y de que avance."}], "ask": ["¿Mis antecedentes familiares cambian lo que debo vigilar?", "¿Cuál debería ser mi meta de presión arterial?"]}, {"id": "riesgo", "key": "Algunos factores no se pueden cambiar, pero varios de los más importantes sí.", "summary": ["No se pueden cambiar: años con diabetes, edad, genética y sexo.", "Se pueden cambiar: glucosa, presión, colesterol, tabaco y peso.", "Los factores se suman: mejorar uno ya ayuda."], "quiz": [{"q": "¿Cuál de estos factores se puede cambiar?", "options": ["La edad", "La presión arterial alta", "Los antecedentes familiares"], "answer": 1, "why": "La presión se puede tratar con hábitos y medicamentos indicados por el equipo de salud."}, {"q": "Si tengo factores que no puedo cambiar, ¿qué conviene hacer?", "options": ["Nada, el daño es inevitable", "Cuidar más los factores que sí se pueden cambiar", "Dejar los controles"], "answer": 1, "why": "Tener factores fijos no decide el resultado: el control de la glucosa, la presión y el tabaco sigue marcando la diferencia."}], "ask": ["¿Cuáles de mis factores de riesgo puedo mejorar primero?", "¿Necesito ayuda para dejar de fumar?"]}, {"id": "fisiopatologia", "key": "La glucosa alta y la presión dentro del riñón dañan poco a poco el filtro.", "summary": ["El filtro del riñón se inflama y forma cicatrices.", "La presión dentro del riñón sube y fuerza los filtros.", "Una señal temprana es la albúmina (proteína) en la orina."], "quiz": [{"q": "¿Qué señal temprana muestra que el filtro se está dañando?", "options": ["Albúmina en la orina", "Dolor de cabeza", "Sed intensa"], "answer": 0, "why": "Cuando el filtro se altera, deja pasar albúmina. Se detecta con un examen de orina."}, {"q": "¿Qué sistema hormonal puede aumentar la presión dentro del riñón?", "options": ["Renina-angiotensina-aldosterona", "Tiroides", "Insulina"], "answer": 0, "why": "Cuando este sistema está muy activo sube la presión en el riñón; algunos medicamentos actúan sobre él."}], "ask": ["¿Tengo albúmina en la orina?", "¿Algún medicamento puede proteger mis riñones?"]}, {"id": "manifestaciones", "key": "Durante años no da síntomas: por eso se mide con exámenes.", "summary": ["Al principio solo se ve en los exámenes de orina y sangre.", "La hinchazón y el cansancio aparecen cuando ya está avanzada.", "El curso es un modelo general, no un pronóstico personal."], "quiz": [{"q": "Si me siento bien, ¿puedo descartar daño renal?", "options": ["Sí", "No, puede no dar síntomas por años", "Solo si no tengo sed"], "answer": 1, "why": "Sentirse bien no descarta el daño: los exámenes son la forma de detectarlo a tiempo."}, {"q": "¿Todas las personas pasan por todas las etapas al mismo ritmo?", "options": ["Sí, siempre", "No, cambia mucho entre personas", "Solo en la diabetes tipo 1"], "answer": 1, "why": "El modelo describe un curso general; el tratamiento puede retrasar o evitar el avance."}], "ask": ["¿Qué síntomas deberían hacerme consultar pronto?", "¿En qué etapa están mis riñones?"]}, {"id": "diagnostico", "key": "Se confirma combinando exámenes repetidos con la historia clínica.", "summary": ["Se usan un examen de orina (albúmina) y uno de sangre (creatinina para calcular la TFGe).", "Un resultado alterado se repite antes de confirmar.", "La biopsia no se necesita en la mayoría de los casos."], "quiz": [{"q": "¿Basta un solo examen de orina alterado para confirmar?", "options": ["Sí", "No, se repite porque puede cambiar por otras causas", "Solo si duele"], "answer": 1, "why": "Infecciones, ejercicio o glucosa alta pueden alterarlo por un tiempo; por eso se repite."}, {"q": "¿Siempre se necesita una biopsia del riñón?", "options": ["Sí, siempre", "No, solo en situaciones concretas", "Solo en niños"], "answer": 1, "why": "El diagnóstico suele ser clínico; la biopsia se considera si el cuadro no es típico o se sospecha otra causa."}], "ask": ["¿Cuándo me toca repetir los exámenes?", "¿Qué significan mis valores de TFGe y albúmina?"]}, {"id": "prevencion", "key": "Controlar la glucosa y la presión y hacerse controles a tiempo protege los riñones.", "summary": ["Las metas de glucosa y presión se acuerdan con el equipo de salud.", "Los exámenes de orina y sangre se recomiendan al menos una vez al año.", "No fumar, moverse y cuidar la sal suman."], "quiz": [{"q": "¿Cada cuánto se recomienda revisar los riñones en la diabetes tipo 2?", "options": ["Cada 5 años", "Al menos una vez al año", "Solo si hay síntomas"], "answer": 1, "why": "Se recomienda cada año, o con la frecuencia que indique tu equipo de salud."}, {"q": "¿Quién define tus metas de glucosa y presión?", "options": ["Una página web", "Tu equipo de salud, contigo", "Nadie, son iguales para todos"], "answer": 1, "why": "Las metas cambian según la edad y la salud de cada persona."}], "ask": ["¿Cuáles son mis metas de HbA1c y de presión?", "¿Qué cambios en mi alimentación son prioritarios para mí?"]}],
+  "infoQuiz": [{"q": "Si una persona con diabetes se siente bien, ¿puede tener daño renal?", "options": ["No, si no hay síntomas no hay daño", "Sí, al principio no suele dar síntomas"], "answer": 1, "why": "El daño temprano se detecta con exámenes de orina y sangre, no por cómo se siente uno."}, {"q": "¿Cuál de estos cuidados protege los riñones?", "options": ["Dejar el tabaco y el vapeo", "Tomar analgésicos a diario", "Saltarse los controles si todo va bien"], "answer": 0, "why": "El tabaco daña los vasos sanguíneos, también los del riñón. Algunos analgésicos pueden dañar los riñones si se usan seguido."}, {"q": "¿Qué examen busca proteína (albúmina) en la orina?", "options": ["Relación albúmina/creatinina en orina", "Hemoglobina glicosilada (HbA1c)", "Colesterol"], "answer": 0, "why": "La relación albúmina/creatinina detecta la albúmina que el filtro dañado deja pasar."}],
+  "infoStepAll": "Ver las tres",
+  "infoStepsLabel": "Recorrer las columnas",
+  "infoDetailHint": "Toca un elemento de las columnas para ver su explicación y dónde leer más.",
+  "infoReadMore": "Leer más en Entender: {title}",
+  "infoSummaryTitle": "Resumen en texto de esta página",
+  "infoQuizEyebrow": "Pon a prueba lo que viste",
+  "infoQuizTitle": "Tres preguntas rápidas.",
+  "infoQuizRight": "¡Correcto!",
+  "infoQuizWrong": "No exactamente.",
+  "guideKey": "La idea principal",
+  "guideSummary": "En resumen",
+  "guideQuiz": "Repaso del capítulo",
+  "guideAsk": "Preguntas que puedes llevar a consulta",
+  "guideAskAdd": "Agregar a «Mis preguntas»",
+  "guideMarkRead": "Marcar como leído",
+  "guideRead": "Leído ✓",
+  "learnProgressCount": "{done} de {total} capítulos leídos",
+  "learnCases": [{"id": "ana", "name": "Ana, 52 años", "intro": "Ana tiene diabetes tipo 2 desde hace 8 años. Se siente bien y nunca le han pedido un examen de orina.", "steps": [{"q": "¿Qué le conviene preguntar en su próxima consulta?", "options": ["Nada, se siente bien", "Si debe hacerse el examen de albúmina en orina y la creatinina en sangre", "Si puede dejar la medicación"], "answer": 1, "why": "En la diabetes tipo 2 se recomienda revisar los riñones al menos una vez al año, aunque no haya síntomas."}, {"q": "El examen de orina sale alterado una vez. ¿Qué significa?", "options": ["Que ya tiene enfermedad renal confirmada", "Que hay que repetirlo para confirmar", "Que el laboratorio se equivocó"], "answer": 1, "why": "Infecciones, ejercicio o glucosa alta pueden alterarlo por un tiempo. Se confirma con al menos dos de tres muestras en 3 a 6 meses."}]}, {"id": "luis", "name": "Luis, 64 años", "intro": "Luis tiene diabetes y presión alta. Su médico le dijo que su TFGe está algo baja. Tiene dolor de rodilla y piensa tomar ibuprofeno todos los días.", "steps": [{"q": "¿Qué debería hacer antes de tomar ibuprofeno a diario?", "options": ["Tomarlo, es de venta libre", "Consultar a su médico o farmacéutico", "Duplicar la dosis para que funcione mejor"], "answer": 1, "why": "Algunos antiinflamatorios pueden dañar los riñones si se usan seguido, sobre todo cuando la función renal ya está reducida."}, {"q": "¿Qué dato puede llevar a la consulta para conversar sobre su presión?", "options": ["Sus mediciones de presión en casa, con fecha", "Solo cómo se siente", "Nada, la presión no influye en los riñones"], "answer": 0, "why": "La presión alta acelera el daño renal; tener mediciones con fecha ayuda a ajustar el tratamiento."}]}, {"id": "marta", "name": "Marta, 38 años", "intro": "Marta tiene diabetes tipo 1 desde hace 6 años. Fuma y quiere saber qué puede hacer por sus riñones.", "steps": [{"q": "¿Cuál de estos cambios tiene más impacto para proteger sus riñones?", "options": ["Dejar de fumar con apoyo", "Tomar más agua de la indicada", "Comer más proteína"], "answer": 0, "why": "El tabaco daña los vasos sanguíneos, también los del riñón. Más agua o proteína sin indicación no protege y puede no ser adecuado."}, {"q": "¿Desde cuándo se recomienda revisar sus riñones cada año?", "options": ["Desde los 5 años de diagnóstico", "Solo después de los 60 años", "Nunca, en tipo 1 no hace falta"], "answer": 0, "why": "En la diabetes tipo 1 se recomienda a partir de los 5 años del diagnóstico; Marta ya está en ese momento."}]}],
+  "criticalItems": [{"claim": "Titular: «El café protege los riñones de las personas con diabetes».", "study": "Estudio ficticio: se observó a 800 adultos con diabetes durante 3 años. Quienes tomaban café tuvieron un poco menos de albúmina en la orina. No se asignó a nadie a tomar café.", "options": ["Sí, el estudio demuestra que el café protege", "No del todo: muestra una asociación, no que el café sea la causa", "No, el estudio no habla de café"], "answer": 1, "why": "En un estudio observacional otras diferencias (edad, hábitos, dinero, otros cuidados) pueden explicar el resultado. Para hablar de causa se necesitan ensayos clínicos."}, {"claim": "Conclusión: «El medicamento X evita la diálisis».", "study": "Ensayo ficticio: 300 personas durante 1 año. El medicamento X bajó la albúmina en orina comparado con placebo. Nadie llegó a diálisis en ninguno de los grupos.", "options": ["Sí, porque nadie llegó a diálisis", "No: midió albúmina en 1 año, no diálisis", "Sí, porque fue un ensayo con placebo"], "answer": 1, "why": "El estudio midió un resultado intermedio (albúmina) por poco tiempo. Que nadie llegara a diálisis en 1 año no permite concluir que el medicamento la evite."}],
+  "aiExercise": {"answer": 1, "steps": ["Busca la fuente citada (la guía KDIGO 2022 está en Recursos).", "Busca en ella la recomendación concreta: ¿habla de 3 litros de agua?", "Comprueba si la respuesta dice lo mismo que la fuente o si añade algo.", "Decide: ¿la fuente respalda la respuesta?"], "options": ["Sí, la respalda", "No: la cita no respalda esa cifra; los líquidos se ajustan con el equipo de salud"], "why": "Las herramientas de IA pueden atribuir a una fuente real algo que no dice. En enfermedad renal avanzada, beber de más puede no ser adecuado: la cantidad la indica el equipo de salud."},
+  "casesEyebrow": "Casos para practicar",
+  "casesTitle": "Tres historias, tus decisiones.",
+  "casesHighlight": "tus decisiones",
+  "casesIntro": "Personas inventadas, situaciones comunes. Elige qué harías y lee la explicación.",
+  "casesNav": "Casos para practicar",
+  "caseNext": "Siguiente decisión",
+  "caseRestart": "Volver a empezar",
+  "caseDone": "Terminaste este caso.",
+  "caseStep": "Decisión {n} de {total}",
+  "workshopNav": "Lectura crítica e IA",
+  "workshopEyebrow": "Taller",
+  "workshopTitle": "Leer con lupa.",
+  "workshopHighlight": "con lupa",
+  "workshopIntro": "Practica comparar lo que dice una conclusión con lo que realmente estudió el artículo. Los estudios son inventados para practicar.",
+  "criticalTitle": "¿La conclusión está respaldada?",
+  "criticalStudy": "Lo que estudió",
+  "aiExerciseTitle": "Ejercicio: IA y evidencia",
+  "aiExerciseSteps": "Cómo comprobarlo",
+  "aiExerciseQuestion": "¿La fuente respalda la respuesta?",
+  "resSearch": "Buscar por tema, título o autor",
+  "resAllTypes": "Todos",
+  "resLangAll": "Todos los idiomas",
+  "resLang_es": "Español",
+  "resLang_en": "Inglés",
+  "resAudienceAll": "Cualquier público",
+  "resOnlySaved": "Solo mi biblioteca",
+  "resSave": "Guardar",
+  "resSaved": "Guardado",
+  "resMarkRead": "Marcar leído",
+  "resIsRead": "Leído",
+  "resLibraryCount": "Mi biblioteca: {saved} guardados · {read} leídos",
+  "resNone": "Ningún recurso coincide con la búsqueda.",
+  "resAccess_open": "Texto completo libre",
+  "resAccess_check": "Puede requerir suscripción",
+  "resAccess_account": "Requiere cuenta",
+  "resAccess_pros": "Para profesionales verificados",
+  "resExternal": "Abre un sitio externo",
+  "resSheet": "Ver ficha",
+  "sheetQuestion": "Pregunta",
+  "sheetPopulation": "Población",
+  "sheetMethod": "Método",
+  "sheetFindings": "Hallazgos",
+  "sheetLimits": "Limitaciones",
+  "aiTask": "Para qué sirve",
+  "aiAudience": "Público",
+  "aiAccess": "Acceso",
+  "aiExample": "Ejemplo de pregunta",
+  "aiVerify": "Cómo comprobar la respuesta",
+  "resReviewed": "Enlaces revisados por búsqueda web el 25 de octubre de 2026.",
+  "resCiteScope": "La descarga incluye las guías y artículos de esta lista con datos bibliográficos. Las fuentes de cada capítulo están al final de cada capítulo.",
+  "resYear": "Año {year}"
 }

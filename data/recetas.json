@@ -1,0 +1,2261 @@
+[
+  {
+    "id": "avena",
+    "image": "assets/recetas/avena.svg",
+    "meal": "breakfast",
+    "minutes": 12,
+    "servings": 1,
+    "lessSaltIdea": true,
+    "status": "sample-unvalidated",
+    "es": {
+      "title": "Avena con manzana y canela",
+      "ingredients": [
+        "⅓ taza de avena",
+        "½ manzana en cubos",
+        "Agua según textura",
+        "Canela al gusto"
+      ],
+      "steps": [
+        "Cocina la avena con agua a fuego bajo.",
+        "Añade la manzana y la canela. Cocina hasta que se ablande."
+      ],
+      "note": "Revisar porción de carbohidratos y aporte de fósforo y potasio. No añadir azúcar.",
+      "substitutions": [
+        "Propuesta: pera en lugar de manzana; revisar aporte y porción antes del cambio."
+      ]
+    },
+    "en": {
+      "title": "Oats with apple and cinnamon",
+      "ingredients": [
+        "⅓ cup oats",
+        "½ diced apple",
+        "Water as needed for texture",
+        "Cinnamon to taste"
+      ],
+      "steps": [
+        "Cook oats with water over low heat.",
+        "Add apple and cinnamon. Cook until soft."
+      ],
+      "note": "Review carbohydrate portion, phosphorus and potassium. Do not add sugar.",
+      "substitutions": [
+        "Proposal: pear instead of apple; review nutrient content and portion before changing."
+      ]
+    },
+    "ingredientAmounts": [
+      {
+        "amount": 0.3333333333333333,
+        "es": "taza de avena",
+        "en": "cup oats",
+        "esPlural": "tazas de avena",
+        "enPlural": "cups oats"
+      },
+      {
+        "amount": 0.5,
+        "es": "manzana en cubos",
+        "en": "diced apple",
+        "esPlural": "manzanas en cubos",
+        "enPlural": "diced apples"
+      },
+      {
+        "amount": null,
+        "es": "Agua según textura",
+        "en": "Water as needed for texture",
+        "esPlural": "Agua según textura",
+        "enPlural": "Water as needed for texture"
+      },
+      {
+        "amount": null,
+        "es": "Canela al gusto",
+        "en": "Cinnamon to taste",
+        "esPlural": "Canela al gusto",
+        "enPlural": "Cinnamon to taste"
+      }
+    ],
+    "validatedBy": null,
+    "validatedAt": null,
+    "nutrientAnalysis": {
+      "kcal": null,
+      "proteinG": null,
+      "sodiumMg": null,
+      "potassiumMg": null,
+      "phosphorusMg": null
+    },
+    "photo": "assets/recetas/fotos/avena.webp",
+    "photoCredit": {
+      "author": "Jefferson Santana",
+      "url": "https://unsplash.com/photos/sliced-fruit-in-white-ceramic-bowl-kOdebJCs8AU",
+      "license": "Unsplash"
+    },
+    "countries": [
+      "us"
+    ]
+  },
+  {
+    "id": "pollo",
+    "image": "assets/recetas/pollo.svg",
+    "meal": "lunch",
+    "minutes": 25,
+    "servings": 2,
+    "lessSaltIdea": true,
+    "status": "sample-unvalidated",
+    "es": {
+      "title": "Pollo al limón con hierbas",
+      "ingredients": [
+        "160 g de pollo fresco sin piel",
+        "Jugo de ½ limón",
+        "1 cucharadita de aceite de oliva",
+        "Hierbas frescas y pimienta"
+      ],
+      "steps": [
+        "Mezcla limón, aceite y hierbas.",
+        "Cocina el pollo completamente en sartén o al horno.",
+        "Sirve la porción acordada con tu equipo."
+      ],
+      "note": "Ajustar la porción de proteína. Elegir pollo sin marinados ni fosfatos añadidos.",
+      "substitutions": [
+        "Propuesta: hierbas frescas en lugar de un marinado comercial; revisar ingredientes."
+      ]
+    },
+    "en": {
+      "title": "Lemon and herb chicken",
+      "ingredients": [
+        "160 g fresh skinless chicken",
+        "Juice of ½ lemon",
+        "1 tsp olive oil",
+        "Fresh herbs and pepper"
+      ],
+      "steps": [
+        "Mix lemon, oil and herbs.",
+        "Cook the chicken thoroughly in a pan or oven.",
+        "Serve the portion agreed on with your team."
+      ],
+      "note": "Adjust the protein portion. Choose chicken without added marinades or phosphates.",
+      "substitutions": [
+        "Proposal: fresh herbs instead of a commercial marinade; review ingredients."
+      ]
+    },
+    "ingredientAmounts": [
+      {
+        "amount": 160,
+        "es": "g de pollo fresco sin piel",
+        "en": "g fresh skinless chicken",
+        "esPlural": "g de pollo fresco sin piel",
+        "enPlural": "g fresh skinless chicken"
+      },
+      {
+        "amount": 0.5,
+        "es": "limón (jugo)",
+        "en": "lemon (juice)",
+        "esPlural": "limones (jugo)",
+        "enPlural": "lemons (juice)"
+      },
+      {
+        "amount": 1,
+        "es": "cucharadita de aceite de oliva",
+        "en": "tsp olive oil",
+        "esPlural": "cucharaditas de aceite de oliva",
+        "enPlural": "tsp olive oil"
+      },
+      {
+        "amount": null,
+        "es": "Hierbas frescas y pimienta",
+        "en": "Fresh herbs and pepper",
+        "esPlural": "Hierbas frescas y pimienta",
+        "enPlural": "Fresh herbs and pepper"
+      }
+    ],
+    "validatedBy": null,
+    "validatedAt": null,
+    "nutrientAnalysis": {
+      "kcal": null,
+      "proteinG": null,
+      "sodiumMg": null,
+      "potassiumMg": null,
+      "phosphorusMg": null
+    },
+    "photo": "assets/recetas/fotos/pollo.webp",
+    "photoCredit": {
+      "author": "Mark DeYoung",
+      "url": "https://unsplash.com/photos/cooked-dish-mjcJ0FFgdWI",
+      "license": "Unsplash"
+    }
+  },
+  {
+    "id": "arroz",
+    "image": "assets/recetas/arroz.svg",
+    "meal": "lunch",
+    "minutes": 20,
+    "servings": 2,
+    "lessSaltIdea": true,
+    "status": "sample-unvalidated",
+    "es": {
+      "title": "Arroz con calabacín y perejil",
+      "ingredients": [
+        "½ taza de arroz crudo",
+        "½ calabacín pequeño",
+        "1 cucharadita de aceite",
+        "Perejil fresco"
+      ],
+      "steps": [
+        "Cocina el arroz sin cubos de caldo.",
+        "Saltea el calabacín y mezcla con el arroz.",
+        "Añade perejil fresco."
+      ],
+      "note": "Ajustar carbohidratos, tamaño de porción y vegetales según potasio.",
+      "substitutions": [
+        "Propuesta: otra verdura disponible en lugar de calabacín; elección y cantidad con el equipo."
+      ]
+    },
+    "en": {
+      "title": "Rice with zucchini and parsley",
+      "ingredients": [
+        "½ cup uncooked rice",
+        "½ small zucchini",
+        "1 tsp oil",
+        "Fresh parsley"
+      ],
+      "steps": [
+        "Cook rice without stock cubes.",
+        "Sauté zucchini and mix with rice.",
+        "Add fresh parsley."
+      ],
+      "note": "Adjust carbohydrate intake, portion size and vegetables according to potassium.",
+      "substitutions": [
+        "Proposal: another available vegetable instead of zucchini; choose type and amount with your team."
+      ]
+    },
+    "ingredientAmounts": [
+      {
+        "amount": 0.5,
+        "es": "taza de arroz crudo",
+        "en": "cup uncooked rice",
+        "esPlural": "tazas de arroz crudo",
+        "enPlural": "cups uncooked rice"
+      },
+      {
+        "amount": 0.5,
+        "es": "calabacín pequeño",
+        "en": "small zucchini",
+        "esPlural": "calabacines pequeños",
+        "enPlural": "small zucchinis"
+      },
+      {
+        "amount": 1,
+        "es": "cucharadita de aceite",
+        "en": "tsp oil",
+        "esPlural": "cucharaditas de aceite",
+        "enPlural": "tsp oil"
+      },
+      {
+        "amount": null,
+        "es": "Perejil fresco",
+        "en": "Fresh parsley",
+        "esPlural": "Perejil fresco",
+        "enPlural": "Fresh parsley"
+      }
+    ],
+    "validatedBy": null,
+    "validatedAt": null,
+    "nutrientAnalysis": {
+      "kcal": null,
+      "proteinG": null,
+      "sodiumMg": null,
+      "potassiumMg": null,
+      "phosphorusMg": null
+    },
+    "photo": "assets/recetas/fotos/arroz.webp",
+    "photoCredit": {
+      "author": "Julien Pianetti",
+      "url": "https://unsplash.com/photos/risotto-on-white-ceramic-plate-qIPRTMulc-g",
+      "license": "Unsplash"
+    }
+  },
+  {
+    "id": "pepino",
+    "image": "assets/recetas/pepino.svg",
+    "meal": "snack",
+    "minutes": 8,
+    "servings": 2,
+    "lessSaltIdea": true,
+    "status": "sample-unvalidated",
+    "es": {
+      "title": "Pepino fresco con limón",
+      "ingredients": [
+        "1 pepino pequeño",
+        "Jugo de ¼ limón",
+        "Hierbas frescas al gusto"
+      ],
+      "steps": [
+        "Lava el pepino y córtalo.",
+        "Añade limón y hierbas justo antes de servir."
+      ],
+      "note": "Revisar tolerancia, cantidad de vegetales y necesidades de potasio.",
+      "substitutions": [
+        "Propuesta: hierbas frescas en lugar de un aderezo comercial; revisar cantidad y tolerancia."
+      ]
+    },
+    "en": {
+      "title": "Fresh cucumber with lemon",
+      "ingredients": [
+        "1 small cucumber",
+        "Juice of ¼ lemon",
+        "Fresh herbs to taste"
+      ],
+      "steps": [
+        "Wash and slice the cucumber.",
+        "Add lemon and herbs just before serving."
+      ],
+      "note": "Review tolerance, vegetable quantity and potassium needs.",
+      "substitutions": [
+        "Proposal: fresh herbs instead of commercial dressing; review amount and tolerance."
+      ]
+    },
+    "ingredientAmounts": [
+      {
+        "amount": 1,
+        "es": "pepino pequeño",
+        "en": "small cucumber",
+        "esPlural": "pepinos pequeños",
+        "enPlural": "small cucumbers"
+      },
+      {
+        "amount": 0.25,
+        "es": "limón (jugo)",
+        "en": "lemon (juice)",
+        "esPlural": "limones (jugo)",
+        "enPlural": "lemons (juice)"
+      },
+      {
+        "amount": null,
+        "es": "Hierbas frescas al gusto",
+        "en": "Fresh herbs to taste",
+        "esPlural": "Hierbas frescas al gusto",
+        "enPlural": "Fresh herbs to taste"
+      }
+    ],
+    "validatedBy": null,
+    "validatedAt": null,
+    "nutrientAnalysis": {
+      "kcal": null,
+      "proteinG": null,
+      "sodiumMg": null,
+      "potassiumMg": null,
+      "phosphorusMg": null
+    },
+    "photo": "assets/recetas/fotos/pepino.webp",
+    "photoCredit": {
+      "author": "Daniel",
+      "url": "https://unsplash.com/photos/a-metal-bowl-filled-with-sliced-cucumbers-8NVYJO199Bg",
+      "license": "Unsplash"
+    }
+  },
+  {
+    "id": "pescado",
+    "image": "assets/recetas/pescado.svg",
+    "meal": "dinner",
+    "minutes": 30,
+    "servings": 2,
+    "lessSaltIdea": true,
+    "status": "sample-unvalidated",
+    "es": {
+      "title": "Pescado al horno con ajo suave",
+      "ingredients": [
+        "160 g de pescado fresco",
+        "1 diente de ajo pequeño",
+        "1 cucharadita de aceite de oliva",
+        "Limón y hierbas"
+      ],
+      "steps": [
+        "Coloca el pescado en una fuente de horno.",
+        "Añade ajo, limón, aceite y hierbas.",
+        "Hornea hasta que esté completamente cocido."
+      ],
+      "note": "Revisar porción de proteína, fósforo y procedencia del pescado.",
+      "substitutions": [
+        "Propuesta: cambiar las hierbas según disponibilidad; revisar tolerancia y preparación."
+      ]
+    },
+    "en": {
+      "title": "Baked fish with mild garlic",
+      "ingredients": [
+        "160 g fresh fish",
+        "1 small garlic clove",
+        "1 tsp olive oil",
+        "Lemon and herbs"
+      ],
+      "steps": [
+        "Place fish in a baking dish.",
+        "Add garlic, lemon, oil and herbs.",
+        "Bake until fully cooked."
+      ],
+      "note": "Review protein portion, phosphorus and fish source.",
+      "substitutions": [
+        "Proposal: use different herbs based on availability; review tolerance and preparation."
+      ]
+    },
+    "ingredientAmounts": [
+      {
+        "amount": 160,
+        "es": "g de pescado fresco",
+        "en": "g fresh fish",
+        "esPlural": "g de pescado fresco",
+        "enPlural": "g fresh fish"
+      },
+      {
+        "amount": 1,
+        "es": "diente de ajo pequeño",
+        "en": "small garlic clove",
+        "esPlural": "dientes de ajo pequeños",
+        "enPlural": "small garlic cloves"
+      },
+      {
+        "amount": 1,
+        "es": "cucharadita de aceite de oliva",
+        "en": "tsp olive oil",
+        "esPlural": "cucharaditas de aceite de oliva",
+        "enPlural": "tsp olive oil"
+      },
+      {
+        "amount": null,
+        "es": "Limón y hierbas",
+        "en": "Lemon and herbs",
+        "esPlural": "Limón y hierbas",
+        "enPlural": "Lemon and herbs"
+      }
+    ],
+    "validatedBy": null,
+    "validatedAt": null,
+    "nutrientAnalysis": {
+      "kcal": null,
+      "proteinG": null,
+      "sodiumMg": null,
+      "potassiumMg": null,
+      "phosphorusMg": null
+    },
+    "photo": "assets/recetas/fotos/pescado.webp",
+    "photoCredit": {
+      "author": "Tim Bish",
+      "url": "https://unsplash.com/photos/plate-of-asparagus-beside-fork-i31hiD8LINA",
+      "license": "Unsplash"
+    }
+  },
+  {
+    "id": "tostada",
+    "image": "assets/recetas/tostada.svg",
+    "meal": "breakfast",
+    "minutes": 10,
+    "servings": 1,
+    "lessSaltIdea": false,
+    "status": "sample-unvalidated",
+    "es": {
+      "title": "Tostada con huevo y hierbas",
+      "ingredients": [
+        "1 rebanada de pan",
+        "1 huevo",
+        "Hierbas frescas",
+        "Aceite para la sartén"
+      ],
+      "steps": [
+        "Tuesta el pan.",
+        "Cocina completamente el huevo con las hierbas.",
+        "Sirve sobre el pan."
+      ],
+      "note": "Revisar sodio del pan, carbohidratos y aporte de proteína y fósforo del huevo.",
+      "substitutions": [
+        "Propuesta: otra variedad de pan; comparar etiquetas y revisar la porción."
+      ]
+    },
+    "en": {
+      "title": "Toast with egg and herbs",
+      "ingredients": [
+        "1 slice of bread",
+        "1 egg",
+        "Fresh herbs",
+        "Oil for the pan"
+      ],
+      "steps": [
+        "Toast the bread.",
+        "Fully cook the egg with herbs.",
+        "Serve on the bread."
+      ],
+      "note": "Review bread sodium, carbohydrates and the egg’s protein and phosphorus.",
+      "substitutions": [
+        "Proposal: a different bread variety; compare labels and review portion size."
+      ]
+    },
+    "ingredientAmounts": [
+      {
+        "amount": 1,
+        "es": "rebanada de pan",
+        "en": "slice of bread",
+        "esPlural": "rebanadas de pan",
+        "enPlural": "slices of bread"
+      },
+      {
+        "amount": 1,
+        "es": "huevo",
+        "en": "egg",
+        "esPlural": "huevos",
+        "enPlural": "eggs"
+      },
+      {
+        "amount": null,
+        "es": "Hierbas frescas",
+        "en": "Fresh herbs",
+        "esPlural": "Hierbas frescas",
+        "enPlural": "Fresh herbs"
+      },
+      {
+        "amount": null,
+        "es": "Aceite para la sartén",
+        "en": "Oil for the pan",
+        "esPlural": "Aceite para la sartén",
+        "enPlural": "Oil for the pan"
+      }
+    ],
+    "validatedBy": null,
+    "validatedAt": null,
+    "nutrientAnalysis": {
+      "kcal": null,
+      "proteinG": null,
+      "sodiumMg": null,
+      "potassiumMg": null,
+      "phosphorusMg": null
+    },
+    "photo": "assets/recetas/fotos/tostada.webp",
+    "photoCredit": {
+      "author": "Bakd&Raw by Karolin Baitinger",
+      "url": "https://unsplash.com/photos/a-white-plate-topped-with-a-piece-of-toast-covered-in-eggs-and-broccoli-k9HhDB9eOyo",
+      "license": "Unsplash"
+    },
+    "countries": [
+      "us"
+    ]
+  },
+  {
+    "id": "coliflor",
+    "image": "assets/recetas/coliflor.svg",
+    "meal": "dinner",
+    "minutes": 22,
+    "servings": 2,
+    "lessSaltIdea": true,
+    "status": "sample-unvalidated",
+    "es": {
+      "title": "Coliflor al horno con especias",
+      "ingredients": [
+        "1 taza de coliflor en floretes",
+        "1 cucharadita de aceite de oliva",
+        "Pimentón dulce y hierbas"
+      ],
+      "steps": [
+        "Lava y corta la coliflor.",
+        "Mezcla con aceite y especias.",
+        "Hornea hasta que esté tierna."
+      ],
+      "note": "Revisar potasio y porción. No usar sustitutos de sal con cloruro de potasio.",
+      "substitutions": [
+        "Propuesta: perejil en lugar de pimentón; revisar tolerancia y cantidades."
+      ]
+    },
+    "en": {
+      "title": "Roasted cauliflower with spices",
+      "ingredients": [
+        "1 cup cauliflower florets",
+        "1 tsp olive oil",
+        "Sweet paprika and herbs"
+      ],
+      "steps": [
+        "Wash and cut cauliflower.",
+        "Mix with oil and spices.",
+        "Roast until tender."
+      ],
+      "note": "Review potassium and portion size. Avoid salt substitutes containing potassium chloride.",
+      "substitutions": [
+        "Proposal: parsley instead of paprika; review tolerance and amounts."
+      ]
+    },
+    "ingredientAmounts": [
+      {
+        "amount": 1,
+        "es": "taza de coliflor en floretes",
+        "en": "cup cauliflower florets",
+        "esPlural": "tazas de coliflor en floretes",
+        "enPlural": "cups cauliflower florets"
+      },
+      {
+        "amount": 1,
+        "es": "cucharadita de aceite de oliva",
+        "en": "tsp olive oil",
+        "esPlural": "cucharaditas de aceite de oliva",
+        "enPlural": "tsp olive oil"
+      },
+      {
+        "amount": null,
+        "es": "Pimentón dulce y hierbas",
+        "en": "Sweet paprika and herbs",
+        "esPlural": "Pimentón dulce y hierbas",
+        "enPlural": "Sweet paprika and herbs"
+      }
+    ],
+    "validatedBy": null,
+    "validatedAt": null,
+    "nutrientAnalysis": {
+      "kcal": null,
+      "proteinG": null,
+      "sodiumMg": null,
+      "potassiumMg": null,
+      "phosphorusMg": null
+    },
+    "photo": "assets/recetas/fotos/coliflor.webp",
+    "photoCredit": {
+      "author": "tonny huang",
+      "url": "https://unsplash.com/photos/a-person-pouring-sauce-on-a-plate-of-food-UXepg0MN8dQ",
+      "license": "Unsplash"
+    }
+  },
+  {
+    "id": "pera",
+    "image": "assets/recetas/pera.svg",
+    "meal": "snack",
+    "minutes": 15,
+    "servings": 1,
+    "lessSaltIdea": true,
+    "status": "sample-unvalidated",
+    "es": {
+      "title": "Pera tibia con canela",
+      "ingredients": [
+        "½ pera",
+        "Canela al gusto",
+        "Agua para la cocción"
+      ],
+      "steps": [
+        "Corta la pera en gajos.",
+        "Cocina con un poco de agua y canela hasta que esté tierna."
+      ],
+      "note": "Revisar carbohidratos, potasio y porción de fruta. No añadir miel ni azúcar.",
+      "substitutions": [
+        "Propuesta: otra fruta aprobada en tu plan; confirmar cantidades con el equipo."
+      ]
+    },
+    "en": {
+      "title": "Warm pear with cinnamon",
+      "ingredients": [
+        "½ pear",
+        "Cinnamon to taste",
+        "Water for cooking"
+      ],
+      "steps": [
+        "Cut pear into wedges.",
+        "Cook with a little water and cinnamon until tender."
+      ],
+      "note": "Review carbohydrates, potassium and fruit portion. Do not add honey or sugar.",
+      "substitutions": [
+        "Proposal: another fruit approved in your plan; confirm amounts with your team."
+      ]
+    },
+    "ingredientAmounts": [
+      {
+        "amount": 0.5,
+        "es": "pera",
+        "en": "pear",
+        "esPlural": "peras",
+        "enPlural": "pears"
+      },
+      {
+        "amount": null,
+        "es": "Canela al gusto",
+        "en": "Cinnamon to taste",
+        "esPlural": "Canela al gusto",
+        "enPlural": "Cinnamon to taste"
+      },
+      {
+        "amount": null,
+        "es": "Agua para la cocción",
+        "en": "Water for cooking",
+        "esPlural": "Agua para la cocción",
+        "enPlural": "Water for cooking"
+      }
+    ],
+    "validatedBy": null,
+    "validatedAt": null,
+    "nutrientAnalysis": {
+      "kcal": null,
+      "proteinG": null,
+      "sodiumMg": null,
+      "potassiumMg": null,
+      "phosphorusMg": null
+    },
+    "photo": "assets/recetas/fotos/pera.webp",
+    "photoCredit": {
+      "author": "Maria Shkliaeva",
+      "url": "https://unsplash.com/photos/brown-bread-on-white-surface-v20iAW34n3g",
+      "license": "Unsplash"
+    }
+  },
+  {
+    "id": "huevo-pimenton",
+    "image": "assets/recetas/tostada.svg",
+    "meal": "breakfast",
+    "minutes": 12,
+    "servings": 1,
+    "lessSaltIdea": true,
+    "status": "sample-unvalidated",
+    "origin": "propuesta-por-validar",
+    "es": {
+      "title": "Revuelto de huevo con pimentón y cebolla",
+      "ingredients": [
+        "1 huevo",
+        "1 clara de huevo",
+        "¼ de pimentón en tiras",
+        "2 cucharadas de cebolla picada",
+        "1 cucharadita de aceite"
+      ],
+      "steps": [
+        "Sofríe el pimentón y la cebolla con el aceite a fuego bajo.",
+        "Añade el huevo batido y revuelve hasta que cuaje por completo.",
+        "Sirve sin sal añadida; usa hierbas para dar sabor."
+      ],
+      "note": "Revisar la cantidad de huevo y yema según la proteína indicada por tu equipo.",
+      "substitutions": [
+        "Propuesta: calabacín en lugar de pimentón; revisar cantidad y tolerancia."
+      ]
+    },
+    "en": {
+      "title": "Scrambled egg with bell pepper and onion",
+      "ingredients": [
+        "1 egg",
+        "1 egg white",
+        "¼ bell pepper, in strips",
+        "2 tbsp chopped onion",
+        "1 tsp oil"
+      ],
+      "steps": [
+        "Gently cook the pepper and onion in the oil over low heat.",
+        "Add the beaten egg and stir until fully set.",
+        "Serve without added salt; use herbs for flavor."
+      ],
+      "note": "Review egg and yolk amount according to the protein your team recommends.",
+      "substitutions": [
+        "Proposal: zucchini instead of bell pepper; review amount and tolerance."
+      ]
+    },
+    "ingredientAmounts": [
+      {
+        "amount": 1,
+        "es": "huevo",
+        "en": "egg",
+        "esPlural": "huevos",
+        "enPlural": "eggs"
+      },
+      {
+        "amount": 1,
+        "es": "clara de huevo",
+        "en": "egg white",
+        "esPlural": "claras de huevo",
+        "enPlural": "egg whites"
+      },
+      {
+        "amount": 0.25,
+        "es": "pimentón en tiras",
+        "en": "bell pepper, in strips",
+        "esPlural": "pimentones en tiras",
+        "enPlural": "bell peppers, in strips"
+      },
+      {
+        "amount": 2,
+        "es": "cucharada de cebolla picada",
+        "en": "tbsp chopped onion",
+        "esPlural": "cucharadas de cebolla picada",
+        "enPlural": "tbsp chopped onion"
+      },
+      {
+        "amount": 1,
+        "es": "cucharadita de aceite",
+        "en": "tsp oil",
+        "esPlural": "cucharaditas de aceite",
+        "enPlural": "tsp oil"
+      }
+    ],
+    "validatedBy": null,
+    "validatedAt": null,
+    "nutrientAnalysis": {
+      "kcal": null,
+      "proteinG": null,
+      "sodiumMg": null,
+      "potassiumMg": null,
+      "phosphorusMg": null
+    },
+    "photo": "assets/recetas/fotos/huevo-pimenton.webp",
+    "photoCredit": {
+      "author": "VD Photography",
+      "url": "https://unsplash.com/photos/a-white-bowl-filled-with-vegetables-on-top-of-a-table-OyryBUoVouE",
+      "license": "Unsplash"
+    },
+    "countries": [
+      "co",
+      "mx"
+    ]
+  },
+  {
+    "id": "panqueques-avena",
+    "image": "assets/recetas/avena.svg",
+    "meal": "breakfast",
+    "minutes": 20,
+    "servings": 2,
+    "lessSaltIdea": true,
+    "status": "sample-unvalidated",
+    "origin": "propuesta-por-validar",
+    "es": {
+      "title": "Panqueques de avena con arándanos",
+      "ingredients": [
+        "½ taza de avena en hojuelas",
+        "2 claras de huevo",
+        "¼ taza de arándanos",
+        "Canela al gusto"
+      ],
+      "steps": [
+        "Licúa la avena con las claras y la canela hasta tener una mezcla espesa.",
+        "Cocina porciones pequeñas en sartén antiadherente, 2 minutos por lado.",
+        "Sirve con los arándanos encima, sin miel ni sirope."
+      ],
+      "note": "Revisar porción de carbohidratos y aporte de fósforo y potasio. No añadir azúcar.",
+      "substitutions": [
+        "Propuesta: fresas en lugar de arándanos; revisar aporte y porción."
+      ]
+    },
+    "en": {
+      "title": "Oat pancakes with blueberries",
+      "ingredients": [
+        "½ cup rolled oats",
+        "2 egg whites",
+        "¼ cup blueberries",
+        "Cinnamon to taste"
+      ],
+      "steps": [
+        "Blend the oats with the egg whites and cinnamon into a thick batter.",
+        "Cook small portions in a non-stick pan, 2 minutes per side.",
+        "Top with blueberries, without honey or syrup."
+      ],
+      "note": "Review carbohydrate portion, phosphorus and potassium. Do not add sugar.",
+      "substitutions": [
+        "Proposal: strawberries instead of blueberries; review nutrient content and portion."
+      ]
+    },
+    "ingredientAmounts": [
+      {
+        "amount": 0.5,
+        "es": "taza de avena en hojuelas",
+        "en": "cup rolled oats",
+        "esPlural": "tazas de avena en hojuelas",
+        "enPlural": "cups rolled oats"
+      },
+      {
+        "amount": 2,
+        "es": "clara de huevo",
+        "en": "egg white",
+        "esPlural": "claras de huevo",
+        "enPlural": "egg whites"
+      },
+      {
+        "amount": 0.25,
+        "es": "taza de arándanos",
+        "en": "cup blueberries",
+        "esPlural": "tazas de arándanos",
+        "enPlural": "cups blueberries"
+      },
+      {
+        "amount": null,
+        "es": "Canela al gusto",
+        "en": "Cinnamon to taste",
+        "esPlural": "Canela al gusto",
+        "enPlural": "Cinnamon to taste"
+      }
+    ],
+    "validatedBy": null,
+    "validatedAt": null,
+    "nutrientAnalysis": {
+      "kcal": null,
+      "proteinG": null,
+      "sodiumMg": null,
+      "potassiumMg": null,
+      "phosphorusMg": null
+    },
+    "photo": "assets/recetas/fotos/panqueques-avena.webp",
+    "photoCredit": {
+      "author": "Ala",
+      "url": "https://unsplash.com/photos/pan-cake-with-berries-on-top-sA4JM1lYYgQ",
+      "license": "Unsplash"
+    },
+    "countries": [
+      "us"
+    ]
+  },
+  {
+    "id": "ensalada-pollo",
+    "image": "assets/recetas/pepino.svg",
+    "meal": "lunch",
+    "minutes": 20,
+    "servings": 1,
+    "lessSaltIdea": true,
+    "status": "sample-unvalidated",
+    "origin": "propuesta-por-validar",
+    "es": {
+      "title": "Ensalada de pollo con lechuga y pepino",
+      "ingredients": [
+        "80 g de pechuga de pollo cocida",
+        "1 taza de lechuga",
+        "½ pepino en rodajas",
+        "Cebolla morada, limón y 1 cucharadita de aceite"
+      ],
+      "steps": [
+        "Cocina el pollo a la plancha sin sal y córtalo en tiras.",
+        "Mezcla la lechuga, el pepino y la cebolla.",
+        "Aliña con limón y aceite; añade el pollo al servir."
+      ],
+      "note": "Ajustar la porción de proteína. Evitar aderezos comerciales con sal añadida.",
+      "substitutions": [
+        "Propuesta: pimentón en lugar de tomate; revisar cantidad de vegetales y potasio."
+      ]
+    },
+    "en": {
+      "title": "Chicken salad with lettuce and cucumber",
+      "ingredients": [
+        "80 g cooked chicken breast",
+        "1 cup lettuce",
+        "½ cucumber, sliced",
+        "Red onion, lemon and 1 tsp oil"
+      ],
+      "steps": [
+        "Grill the chicken without salt and slice it into strips.",
+        "Toss the lettuce, cucumber and onion.",
+        "Dress with lemon and oil; add the chicken when serving."
+      ],
+      "note": "Adjust the protein portion. Avoid commercial dressings with added salt.",
+      "substitutions": [
+        "Proposal: bell pepper instead of tomato; review vegetable quantity and potassium."
+      ]
+    },
+    "ingredientAmounts": [
+      {
+        "amount": 80,
+        "es": "g de pechuga de pollo cocida",
+        "en": "g cooked chicken breast",
+        "esPlural": "g de pechuga de pollo cocida",
+        "enPlural": "g cooked chicken breast"
+      },
+      {
+        "amount": 1,
+        "es": "taza de lechuga",
+        "en": "cup lettuce",
+        "esPlural": "tazas de lechuga",
+        "enPlural": "cups lettuce"
+      },
+      {
+        "amount": 0.5,
+        "es": "pepino en rodajas",
+        "en": "cucumber, sliced",
+        "esPlural": "pepinos en rodajas",
+        "enPlural": "cucumbers, sliced"
+      },
+      {
+        "amount": null,
+        "es": "Cebolla morada, limón y 1 cucharadita de aceite",
+        "en": "Red onion, lemon and 1 tsp oil",
+        "esPlural": "Cebolla morada, limón y 1 cucharadita de aceite",
+        "enPlural": "Red onion, lemon and 1 tsp oil"
+      }
+    ],
+    "validatedBy": null,
+    "validatedAt": null,
+    "nutrientAnalysis": {
+      "kcal": null,
+      "proteinG": null,
+      "sodiumMg": null,
+      "potassiumMg": null,
+      "phosphorusMg": null
+    },
+    "photo": "assets/recetas/fotos/ensalada-pollo.webp",
+    "photoCredit": {
+      "author": "BRALRO",
+      "url": "https://unsplash.com/photos/a-wooden-bowl-filled-with-a-salad-on-top-of-a-wooden-board-sPzG9heRMrw",
+      "license": "Unsplash"
+    },
+    "countries": [
+      "us"
+    ]
+  },
+  {
+    "id": "tacos-pescado",
+    "image": "assets/recetas/pescado.svg",
+    "meal": "lunch",
+    "minutes": 25,
+    "servings": 2,
+    "lessSaltIdea": true,
+    "status": "sample-unvalidated",
+    "origin": "propuesta-por-validar",
+    "es": {
+      "title": "Tacos de pescado con cebolla y cilantro",
+      "ingredients": [
+        "160 g de pescado blanco fresco",
+        "4 tortillas de maíz pequeñas",
+        "Cebolla blanca y cilantro picados",
+        "Limón y 1 cucharadita de aceite"
+      ],
+      "steps": [
+        "Cocina el pescado a la plancha con el aceite y desmenúzalo.",
+        "Calienta las tortillas en un comal o sartén.",
+        "Sirve el pescado en las tortillas con cebolla, cilantro y limón."
+      ],
+      "note": "Ajustar la porción de proteína y de tortilla. No usar sazonadores comerciales con sal.",
+      "substitutions": [
+        "Propuesta: repollo rallado como guarnición; revisar cantidad y tolerancia."
+      ]
+    },
+    "en": {
+      "title": "Fish tacos with onion and cilantro",
+      "ingredients": [
+        "160 g fresh white fish",
+        "4 small corn tortillas",
+        "Chopped white onion and cilantro",
+        "Lemon and 1 tsp oil"
+      ],
+      "steps": [
+        "Pan-cook the fish with the oil and flake it.",
+        "Warm the tortillas on a griddle or pan.",
+        "Fill the tortillas with fish, onion, cilantro and lemon."
+      ],
+      "note": "Adjust the protein and tortilla portions. Do not use commercial seasonings with salt.",
+      "substitutions": [
+        "Proposal: shredded cabbage as a side; review amount and tolerance."
+      ]
+    },
+    "ingredientAmounts": [
+      {
+        "amount": 160,
+        "es": "g de pescado blanco fresco",
+        "en": "g fresh white fish",
+        "esPlural": "g de pescado blanco fresco",
+        "enPlural": "g fresh white fish"
+      },
+      {
+        "amount": 4,
+        "es": "tortilla de maíz pequeña",
+        "en": "small corn tortilla",
+        "esPlural": "tortillas de maíz pequeñas",
+        "enPlural": "small corn tortillas"
+      },
+      {
+        "amount": null,
+        "es": "Cebolla blanca y cilantro picados",
+        "en": "Chopped white onion and cilantro",
+        "esPlural": "Cebolla blanca y cilantro picados",
+        "enPlural": "Chopped white onion and cilantro"
+      },
+      {
+        "amount": null,
+        "es": "Limón y 1 cucharadita de aceite",
+        "en": "Lemon and 1 tsp oil",
+        "esPlural": "Limón y 1 cucharadita de aceite",
+        "enPlural": "Lemon and 1 tsp oil"
+      }
+    ],
+    "validatedBy": null,
+    "validatedAt": null,
+    "nutrientAnalysis": {
+      "kcal": null,
+      "proteinG": null,
+      "sodiumMg": null,
+      "potassiumMg": null,
+      "phosphorusMg": null
+    },
+    "photo": "assets/recetas/fotos/tacos-pescado.webp",
+    "photoCredit": {
+      "author": "Federico Ramirez",
+      "url": "https://unsplash.com/photos/a-plate-of-food-Zggo6DP_P88",
+      "license": "Unsplash"
+    },
+    "countries": [
+      "mx"
+    ]
+  },
+  {
+    "id": "pechuga-habichuelas",
+    "image": "assets/recetas/pollo.svg",
+    "meal": "lunch",
+    "minutes": 30,
+    "servings": 1,
+    "lessSaltIdea": true,
+    "status": "sample-unvalidated",
+    "origin": "propuesta-por-validar",
+    "es": {
+      "title": "Pechuga a la plancha con habichuelas",
+      "ingredients": [
+        "80 g de pechuga de pollo",
+        "1 taza de habichuelas (judías verdes)",
+        "¼ taza de puré de zanahoria",
+        "1 cucharadita de aceite y hierbas"
+      ],
+      "steps": [
+        "Cocina la pechuga a la plancha con hierbas, sin sal.",
+        "Hierve las habichuelas en abundante agua y escúrrelas.",
+        "Sirve con una porción pequeña de puré de zanahoria."
+      ],
+      "note": "Ajustar la porción de proteína. Revisar la cantidad de vegetales y de potasio con tu equipo.",
+      "substitutions": [
+        "Propuesta: arroz blanco en lugar del puré; revisar la porción de carbohidratos."
+      ]
+    },
+    "en": {
+      "title": "Grilled chicken breast with green beans",
+      "ingredients": [
+        "80 g chicken breast",
+        "1 cup green beans",
+        "¼ cup carrot purée",
+        "1 tsp oil and herbs"
+      ],
+      "steps": [
+        "Grill the chicken breast with herbs, without salt.",
+        "Boil the green beans in plenty of water and drain.",
+        "Serve with a small portion of carrot purée."
+      ],
+      "note": "Adjust the protein portion. Review vegetable quantity and potassium with your team.",
+      "substitutions": [
+        "Proposal: white rice instead of the purée; review the carbohydrate portion."
+      ]
+    },
+    "ingredientAmounts": [
+      {
+        "amount": 80,
+        "es": "g de pechuga de pollo",
+        "en": "g chicken breast",
+        "esPlural": "g de pechuga de pollo",
+        "enPlural": "g chicken breast"
+      },
+      {
+        "amount": 1,
+        "es": "taza de habichuelas (judías verdes)",
+        "en": "cup green beans",
+        "esPlural": "tazas de habichuelas (judías verdes)",
+        "enPlural": "cups green beans"
+      },
+      {
+        "amount": 0.25,
+        "es": "taza de puré de zanahoria",
+        "en": "cup carrot purée",
+        "esPlural": "tazas de puré de zanahoria",
+        "enPlural": "cups carrot purée"
+      },
+      {
+        "amount": null,
+        "es": "1 cucharadita de aceite y hierbas",
+        "en": "1 tsp oil and herbs",
+        "esPlural": "1 cucharadita de aceite y hierbas",
+        "enPlural": "1 tsp oil and herbs"
+      }
+    ],
+    "validatedBy": null,
+    "validatedAt": null,
+    "nutrientAnalysis": {
+      "kcal": null,
+      "proteinG": null,
+      "sodiumMg": null,
+      "potassiumMg": null,
+      "phosphorusMg": null
+    },
+    "photo": "assets/recetas/fotos/pechuga-habichuelas.webp",
+    "photoCredit": {
+      "author": "Kristina Petrick",
+      "url": "https://unsplash.com/photos/plate-of-beans-35R0CMoBtX0",
+      "license": "Unsplash"
+    },
+    "countries": [
+      "co"
+    ]
+  },
+  {
+    "id": "sopa-pollo",
+    "image": "assets/recetas/pollo.svg",
+    "meal": "dinner",
+    "minutes": 35,
+    "servings": 2,
+    "lessSaltIdea": true,
+    "status": "sample-unvalidated",
+    "origin": "propuesta-por-validar",
+    "es": {
+      "title": "Sopa de pollo con fideos y verduras",
+      "ingredients": [
+        "100 g de pollo sin piel",
+        "½ taza de fideos",
+        "½ zanahoria y ½ calabacín en trozos",
+        "Cebolla, ajo y cilantro"
+      ],
+      "steps": [
+        "Cocina el pollo en agua con cebolla y ajo, sin cubos de caldo.",
+        "Añade la zanahoria, el calabacín y los fideos; cocina hasta que estén suaves.",
+        "Desmenuza el pollo y termina con cilantro."
+      ],
+      "note": "Evitar caldos en cubo o sobre por su sal. Revisar la cantidad de líquido si tu equipo la limita.",
+      "substitutions": [
+        "Propuesta: arroz en lugar de fideos; revisar la porción de carbohidratos."
+      ]
+    },
+    "en": {
+      "title": "Chicken noodle soup with vegetables",
+      "ingredients": [
+        "100 g skinless chicken",
+        "½ cup noodles",
+        "½ carrot and ½ zucchini, chopped",
+        "Onion, garlic and cilantro"
+      ],
+      "steps": [
+        "Cook the chicken in water with onion and garlic, without bouillon cubes.",
+        "Add the carrot, zucchini and noodles; cook until tender.",
+        "Shred the chicken and finish with cilantro."
+      ],
+      "note": "Avoid bouillon cubes or packets because of their salt. Review the amount of liquid if your team limits it.",
+      "substitutions": [
+        "Proposal: rice instead of noodles; review the carbohydrate portion."
+      ]
+    },
+    "ingredientAmounts": [
+      {
+        "amount": 100,
+        "es": "g de pollo sin piel",
+        "en": "g skinless chicken",
+        "esPlural": "g de pollo sin piel",
+        "enPlural": "g skinless chicken"
+      },
+      {
+        "amount": 0.5,
+        "es": "taza de fideos",
+        "en": "cup noodles",
+        "esPlural": "tazas de fideos",
+        "enPlural": "cups noodles"
+      },
+      {
+        "amount": null,
+        "es": "½ zanahoria y ½ calabacín en trozos",
+        "en": "½ carrot and ½ zucchini, chopped",
+        "esPlural": "½ zanahoria y ½ calabacín en trozos",
+        "enPlural": "½ carrot and ½ zucchini, chopped"
+      },
+      {
+        "amount": null,
+        "es": "Cebolla, ajo y cilantro",
+        "en": "Onion, garlic and cilantro",
+        "esPlural": "Cebolla, ajo y cilantro",
+        "enPlural": "Onion, garlic and cilantro"
+      }
+    ],
+    "validatedBy": null,
+    "validatedAt": null,
+    "nutrientAnalysis": {
+      "kcal": null,
+      "proteinG": null,
+      "sodiumMg": null,
+      "potassiumMg": null,
+      "phosphorusMg": null
+    },
+    "photo": "assets/recetas/fotos/sopa-pollo.webp",
+    "photoCredit": {
+      "author": "Melissa Walker Horn",
+      "url": "https://unsplash.com/photos/white-ceramic-bowl-with-brown-wooden-chopsticks-sjiX2VEVtpc",
+      "license": "Unsplash"
+    },
+    "countries": [
+      "co",
+      "mx"
+    ]
+  },
+  {
+    "id": "tortilla-calabacin",
+    "image": "assets/recetas/tostada.svg",
+    "meal": "dinner",
+    "minutes": 15,
+    "servings": 1,
+    "lessSaltIdea": true,
+    "status": "sample-unvalidated",
+    "origin": "propuesta-por-validar",
+    "es": {
+      "title": "Tortilla de claras con calabacín",
+      "ingredients": [
+        "3 claras de huevo",
+        "½ calabacín rallado",
+        "1 cucharada de pimentón rojo picado",
+        "1 cucharadita de aceite"
+      ],
+      "steps": [
+        "Saltea el calabacín y el pimentón con el aceite.",
+        "Vierte las claras batidas y cocina a fuego bajo.",
+        "Dobla la tortilla y sirve con hierbas."
+      ],
+      "note": "Revisar la porción de proteína según lo indicado por tu equipo.",
+      "substitutions": [
+        "Propuesta: cebolla en lugar de pimentón; revisar cantidad y tolerancia."
+      ]
+    },
+    "en": {
+      "title": "Egg white omelette with zucchini",
+      "ingredients": [
+        "3 egg whites",
+        "½ zucchini, grated",
+        "1 tbsp chopped red bell pepper",
+        "1 tsp oil"
+      ],
+      "steps": [
+        "Sauté the zucchini and pepper in the oil.",
+        "Pour in the beaten egg whites and cook over low heat.",
+        "Fold the omelette and serve with herbs."
+      ],
+      "note": "Review the protein portion recommended by your team.",
+      "substitutions": [
+        "Proposal: onion instead of bell pepper; review amount and tolerance."
+      ]
+    },
+    "ingredientAmounts": [
+      {
+        "amount": 3,
+        "es": "clara de huevo",
+        "en": "egg white",
+        "esPlural": "claras de huevo",
+        "enPlural": "egg whites"
+      },
+      {
+        "amount": 0.5,
+        "es": "calabacín rallado",
+        "en": "zucchini, grated",
+        "esPlural": "calabacines rallados",
+        "enPlural": "zucchinis, grated"
+      },
+      {
+        "amount": 1,
+        "es": "cucharada de pimentón rojo picado",
+        "en": "tbsp chopped red bell pepper",
+        "esPlural": "cucharadas de pimentón rojo picado",
+        "enPlural": "tbsp chopped red bell pepper"
+      },
+      {
+        "amount": 1,
+        "es": "cucharadita de aceite",
+        "en": "tsp oil",
+        "esPlural": "cucharaditas de aceite",
+        "enPlural": "tsp oil"
+      }
+    ],
+    "validatedBy": null,
+    "validatedAt": null,
+    "nutrientAnalysis": {
+      "kcal": null,
+      "proteinG": null,
+      "sodiumMg": null,
+      "potassiumMg": null,
+      "phosphorusMg": null
+    },
+    "photo": "assets/recetas/fotos/tortilla-calabacin.webp",
+    "photoCredit": {
+      "author": "Samuel Agyeman-Duah",
+      "url": "https://unsplash.com/photos/a-slice-of-quiche-on-a-white-plate-on-a-wooden-table-ivFdoHieX08",
+      "license": "Unsplash"
+    }
+  },
+  {
+    "id": "fresas-hierbabuena",
+    "image": "assets/recetas/pera.svg",
+    "meal": "snack",
+    "minutes": 5,
+    "servings": 1,
+    "lessSaltIdea": true,
+    "status": "sample-unvalidated",
+    "origin": "propuesta-por-validar",
+    "es": {
+      "title": "Fresas con hierbabuena",
+      "ingredients": [
+        "¾ taza de fresas",
+        "Hojas de hierbabuena",
+        "Unas gotas de limón"
+      ],
+      "steps": [
+        "Lava las fresas y córtalas por la mitad.",
+        "Añade la hierbabuena picada y unas gotas de limón."
+      ],
+      "note": "Revisar porción de fruta y carbohidratos. No añadir azúcar ni crema.",
+      "substitutions": [
+        "Propuesta: manzana en cubos en lugar de fresas; revisar aporte y porción."
+      ]
+    },
+    "en": {
+      "title": "Strawberries with mint",
+      "ingredients": [
+        "¾ cup strawberries",
+        "Mint leaves",
+        "A few drops of lemon"
+      ],
+      "steps": [
+        "Wash the strawberries and cut them in half.",
+        "Add chopped mint and a few drops of lemon."
+      ],
+      "note": "Review fruit and carbohydrate portion. Do not add sugar or cream.",
+      "substitutions": [
+        "Proposal: diced apple instead of strawberries; review nutrient content and portion."
+      ]
+    },
+    "ingredientAmounts": [
+      {
+        "amount": 0.75,
+        "es": "taza de fresas",
+        "en": "cup strawberries",
+        "esPlural": "tazas de fresas",
+        "enPlural": "cups strawberries"
+      },
+      {
+        "amount": null,
+        "es": "Hojas de hierbabuena",
+        "en": "Mint leaves",
+        "esPlural": "Hojas de hierbabuena",
+        "enPlural": "Mint leaves"
+      },
+      {
+        "amount": null,
+        "es": "Unas gotas de limón",
+        "en": "A few drops of lemon",
+        "esPlural": "Unas gotas de limón",
+        "enPlural": "A few drops of lemon"
+      }
+    ],
+    "validatedBy": null,
+    "validatedAt": null,
+    "nutrientAnalysis": {
+      "kcal": null,
+      "proteinG": null,
+      "sodiumMg": null,
+      "potassiumMg": null,
+      "phosphorusMg": null
+    },
+    "photo": "assets/recetas/fotos/fresas-hierbabuena.webp",
+    "photoCredit": {
+      "author": "Alexander Mils",
+      "url": "https://unsplash.com/photos/strawberries-in-ceramic-bowl-OM80jTzhLyA",
+      "license": "Unsplash"
+    }
+  },
+  {
+    "id": "arepa-pollo",
+    "image": "assets/recetas/tostada.svg",
+    "meal": "breakfast",
+    "minutes": 20,
+    "servings": 1,
+    "lessSaltIdea": true,
+    "status": "sample-unvalidated",
+    "origin": "propuesta-por-validar",
+    "es": {
+      "title": "Arepa con pollo desmechado",
+      "ingredients": [
+        "1 arepa delgada de maíz sin sal",
+        "60 g de pollo cocido y desmechado",
+        "Cebolla y cilantro picados",
+        "1 cucharadita de aceite"
+      ],
+      "steps": [
+        "Asa la arepa en un sartén o budare sin añadir sal ni mantequilla.",
+        "Calienta el pollo con la cebolla y el cilantro.",
+        "Abre la arepa y rellénala con el pollo."
+      ],
+      "note": "Revisar la porción de arepa (carbohidrato) y de proteína. La foto lleva aguacate: inclúyelo solo si tu equipo lo indica.",
+      "substitutions": [
+        "Propuesta: huevo revuelto en lugar de pollo; revisar la porción de proteína."
+      ]
+    },
+    "en": {
+      "title": "Corn arepa with shredded chicken",
+      "ingredients": [
+        "1 thin unsalted corn arepa",
+        "60 g cooked shredded chicken",
+        "Chopped onion and cilantro",
+        "1 tsp oil"
+      ],
+      "steps": [
+        "Toast the arepa in a pan or griddle without adding salt or butter.",
+        "Warm the chicken with the onion and cilantro.",
+        "Split the arepa and fill it with the chicken."
+      ],
+      "note": "Review the arepa (carbohydrate) and protein portions. The photo includes avocado: add it only if your team recommends it.",
+      "substitutions": [
+        "Proposal: scrambled egg instead of chicken; review the protein portion."
+      ]
+    },
+    "ingredientAmounts": [
+      {
+        "amount": 1,
+        "es": "arepa delgada de maíz sin sal",
+        "en": "thin unsalted corn arepa",
+        "esPlural": "arepas delgadas de maíz sin sal",
+        "enPlural": "thin unsalted corn arepas"
+      },
+      {
+        "amount": 60,
+        "es": "g de pollo cocido y desmechado",
+        "en": "g cooked shredded chicken",
+        "esPlural": "g de pollo cocido y desmechado",
+        "enPlural": "g cooked shredded chicken"
+      },
+      {
+        "amount": null,
+        "es": "Cebolla y cilantro picados",
+        "en": "Chopped onion and cilantro",
+        "esPlural": "Cebolla y cilantro picados",
+        "enPlural": "Chopped onion and cilantro"
+      },
+      {
+        "amount": 1,
+        "es": "cucharadita de aceite",
+        "en": "tsp oil",
+        "esPlural": "cucharaditas de aceite",
+        "enPlural": "tsp oil"
+      }
+    ],
+    "validatedBy": null,
+    "validatedAt": null,
+    "nutrientAnalysis": {
+      "kcal": null,
+      "proteinG": null,
+      "sodiumMg": null,
+      "potassiumMg": null,
+      "phosphorusMg": null
+    },
+    "photo": "assets/recetas/fotos/arepa-pollo.webp",
+    "photoCredit": {
+      "author": "Anton Acosta",
+      "url": "https://unsplash.com/photos/arepa-sandwich-filled-with-avocado-and-chicken-iOUvc07TdWo",
+      "license": "Unsplash"
+    },
+    "countries": [
+      "co"
+    ]
+  },
+  {
+    "id": "arroz-pollo",
+    "image": "assets/recetas/arroz.svg",
+    "meal": "lunch",
+    "minutes": 40,
+    "servings": 2,
+    "lessSaltIdea": true,
+    "status": "sample-unvalidated",
+    "origin": "propuesta-por-validar",
+    "es": {
+      "title": "Arroz con pollo y arvejas",
+      "ingredients": [
+        "¾ taza de arroz crudo",
+        "160 g de pechuga de pollo en cubos",
+        "¼ taza de arvejas y ½ zanahoria picada",
+        "Cebolla, ajo, comino y una pizca de cúrcuma"
+      ],
+      "steps": [
+        "Dora el pollo con la cebolla y el ajo, sin cubos de caldo.",
+        "Añade el arroz, las verduras, las especias y el agua.",
+        "Cocina tapado a fuego bajo hasta que el arroz esté suave."
+      ],
+      "note": "Evitar caldos en cubo y sazonadores con sal. Revisar la porción de arroz y de proteína.",
+      "substitutions": [
+        "Propuesta: habichuelas en lugar de arvejas; revisar cantidad y potasio."
+      ]
+    },
+    "en": {
+      "title": "Chicken rice with peas",
+      "ingredients": [
+        "¾ cup uncooked rice",
+        "160 g chicken breast, diced",
+        "¼ cup peas and ½ chopped carrot",
+        "Onion, garlic, cumin and a pinch of turmeric"
+      ],
+      "steps": [
+        "Brown the chicken with onion and garlic, without bouillon cubes.",
+        "Add the rice, vegetables, spices and water.",
+        "Cook covered over low heat until the rice is tender."
+      ],
+      "note": "Avoid bouillon cubes and salty seasonings. Review rice and protein portions.",
+      "substitutions": [
+        "Proposal: green beans instead of peas; review amount and potassium."
+      ]
+    },
+    "ingredientAmounts": [
+      {
+        "amount": 0.75,
+        "es": "taza de arroz crudo",
+        "en": "cup uncooked rice",
+        "esPlural": "tazas de arroz crudo",
+        "enPlural": "cups uncooked rice"
+      },
+      {
+        "amount": 160,
+        "es": "g de pechuga de pollo en cubos",
+        "en": "g chicken breast, diced",
+        "esPlural": "g de pechuga de pollo en cubos",
+        "enPlural": "g chicken breast, diced"
+      },
+      {
+        "amount": null,
+        "es": "¼ taza de arvejas y ½ zanahoria picada",
+        "en": "¼ cup peas and ½ chopped carrot",
+        "esPlural": "¼ taza de arvejas y ½ zanahoria picada",
+        "enPlural": "¼ cup peas and ½ chopped carrot"
+      },
+      {
+        "amount": null,
+        "es": "Cebolla, ajo, comino y una pizca de cúrcuma",
+        "en": "Onion, garlic, cumin and a pinch of turmeric",
+        "esPlural": "Cebolla, ajo, comino y una pizca de cúrcuma",
+        "enPlural": "Onion, garlic, cumin and a pinch of turmeric"
+      }
+    ],
+    "validatedBy": null,
+    "validatedAt": null,
+    "nutrientAnalysis": {
+      "kcal": null,
+      "proteinG": null,
+      "sodiumMg": null,
+      "potassiumMg": null,
+      "phosphorusMg": null
+    },
+    "photo": "assets/recetas/fotos/arroz-pollo.webp",
+    "photoCredit": {
+      "author": "Vikas Kumar",
+      "url": "https://unsplash.com/photos/a-wooden-bowl-filled-with-rice-and-peas-e_RzVSD40NI",
+      "license": "Unsplash"
+    },
+    "countries": [
+      "co",
+      "mx"
+    ]
+  },
+  {
+    "id": "pasta-pollo",
+    "image": "assets/recetas/pollo.svg",
+    "meal": "lunch",
+    "minutes": 25,
+    "servings": 2,
+    "lessSaltIdea": true,
+    "status": "sample-unvalidated",
+    "origin": "propuesta-por-validar",
+    "es": {
+      "title": "Pasta con pollo y pimentón asado",
+      "ingredients": [
+        "1 taza de pasta corta cruda",
+        "160 g de pechuga de pollo",
+        "1 pimentón rojo asado en tiras",
+        "Ajo, aceite de oliva y perejil"
+      ],
+      "steps": [
+        "Cocina la pasta en agua sin sal.",
+        "Cocina el pollo a la plancha y córtalo en tiras.",
+        "Saltea el pimentón con ajo y aceite, mezcla con la pasta y sirve con el pollo."
+      ],
+      "note": "Revisar la porción de pasta (carbohidrato) y de proteína. Evitar salsas comerciales y queso salado.",
+      "substitutions": [
+        "Propuesta: calabacín en lugar de pimentón; revisar cantidad y tolerancia."
+      ]
+    },
+    "en": {
+      "title": "Pasta with chicken and roasted pepper",
+      "ingredients": [
+        "1 cup uncooked short pasta",
+        "160 g chicken breast",
+        "1 roasted red bell pepper, in strips",
+        "Garlic, olive oil and parsley"
+      ],
+      "steps": [
+        "Cook the pasta in unsalted water.",
+        "Grill the chicken and slice it.",
+        "Sauté the pepper with garlic and oil, toss with the pasta and serve with the chicken."
+      ],
+      "note": "Review pasta (carbohydrate) and protein portions. Avoid store-bought sauces and salty cheese.",
+      "substitutions": [
+        "Proposal: zucchini instead of bell pepper; review amount and tolerance."
+      ]
+    },
+    "ingredientAmounts": [
+      {
+        "amount": 1,
+        "es": "taza de pasta corta cruda",
+        "en": "cup uncooked short pasta",
+        "esPlural": "tazas de pasta corta cruda",
+        "enPlural": "cups uncooked short pasta"
+      },
+      {
+        "amount": 160,
+        "es": "g de pechuga de pollo",
+        "en": "g chicken breast",
+        "esPlural": "g de pechuga de pollo",
+        "enPlural": "g chicken breast"
+      },
+      {
+        "amount": 1,
+        "es": "pimentón rojo asado en tiras",
+        "en": "roasted red bell pepper, in strips",
+        "esPlural": "pimentones rojos asados en tiras",
+        "enPlural": "roasted red bell peppers, in strips"
+      },
+      {
+        "amount": null,
+        "es": "Ajo, aceite de oliva y perejil",
+        "en": "Garlic, olive oil and parsley",
+        "esPlural": "Ajo, aceite de oliva y perejil",
+        "enPlural": "Garlic, olive oil and parsley"
+      }
+    ],
+    "validatedBy": null,
+    "validatedAt": null,
+    "nutrientAnalysis": {
+      "kcal": null,
+      "proteinG": null,
+      "sodiumMg": null,
+      "potassiumMg": null,
+      "phosphorusMg": null
+    },
+    "photo": "assets/recetas/fotos/pasta-pollo.webp",
+    "photoCredit": {
+      "author": "Gennady Zakharin",
+      "url": "https://unsplash.com/photos/a-plate-of-pasta-with-chicken-and-tomatoes-b5bKbtyn4A0",
+      "license": "Unsplash"
+    }
+  },
+  {
+    "id": "pollo-guisado",
+    "image": "assets/recetas/pollo.svg",
+    "meal": "lunch",
+    "minutes": 45,
+    "servings": 2,
+    "lessSaltIdea": true,
+    "status": "sample-unvalidated",
+    "origin": "propuesta-por-validar",
+    "es": {
+      "title": "Pollo guisado con zanahoria y arroz",
+      "ingredients": [
+        "160 g de pollo sin piel en presas pequeñas",
+        "1 zanahoria en trozos",
+        "½ taza de arroz blanco cocido por persona",
+        "Cebolla, ajo, laurel y hierbas"
+      ],
+      "steps": [
+        "Sofríe la cebolla y el ajo, añade el pollo y dóralo.",
+        "Agrega la zanahoria, el laurel y un poco de agua; cocina tapado 30 minutos.",
+        "Sirve con el arroz."
+      ],
+      "note": "Evitar cubos de caldo y salsas de paquete. Ajustar la porción de proteína y de arroz.",
+      "substitutions": [
+        "Propuesta: habichuelas en lugar de zanahoria; revisar cantidad y potasio."
+      ]
+    },
+    "en": {
+      "title": "Chicken stew with carrot and rice",
+      "ingredients": [
+        "160 g skinless chicken, small pieces",
+        "1 carrot, chopped",
+        "½ cup cooked white rice per person",
+        "Onion, garlic, bay leaf and herbs"
+      ],
+      "steps": [
+        "Sauté onion and garlic, add the chicken and brown it.",
+        "Add the carrot, bay leaf and a little water; cook covered for 30 minutes.",
+        "Serve with the rice."
+      ],
+      "note": "Avoid bouillon cubes and packet sauces. Adjust protein and rice portions.",
+      "substitutions": [
+        "Proposal: green beans instead of carrot; review amount and potassium."
+      ]
+    },
+    "ingredientAmounts": [
+      {
+        "amount": 160,
+        "es": "g de pollo sin piel en presas pequeñas",
+        "en": "g skinless chicken, small pieces",
+        "esPlural": "g de pollo sin piel en presas pequeñas",
+        "enPlural": "g skinless chicken, small pieces"
+      },
+      {
+        "amount": 1,
+        "es": "zanahoria en trozos",
+        "en": "carrot, chopped",
+        "esPlural": "zanahorias en trozos",
+        "enPlural": "carrots, chopped"
+      },
+      {
+        "amount": null,
+        "es": "½ taza de arroz blanco cocido por persona",
+        "en": "½ cup cooked white rice per person",
+        "esPlural": "½ taza de arroz blanco cocido por persona",
+        "enPlural": "½ cup cooked white rice per person"
+      },
+      {
+        "amount": null,
+        "es": "Cebolla, ajo, laurel y hierbas",
+        "en": "Onion, garlic, bay leaf and herbs",
+        "esPlural": "Cebolla, ajo, laurel y hierbas",
+        "enPlural": "Onion, garlic, bay leaf and herbs"
+      }
+    ],
+    "validatedBy": null,
+    "validatedAt": null,
+    "nutrientAnalysis": {
+      "kcal": null,
+      "proteinG": null,
+      "sodiumMg": null,
+      "potassiumMg": null,
+      "phosphorusMg": null
+    },
+    "photo": "assets/recetas/fotos/pollo-guisado.webp",
+    "photoCredit": {
+      "author": "Jacques Bopp",
+      "url": "https://unsplash.com/photos/steamed-rice-and-meat-and-vegetable-slices-dDSH6Fz7_Uk",
+      "license": "Unsplash"
+    },
+    "countries": [
+      "co"
+    ]
+  },
+  {
+    "id": "calabacin-relleno",
+    "image": "assets/recetas/coliflor.svg",
+    "meal": "dinner",
+    "minutes": 35,
+    "servings": 2,
+    "lessSaltIdea": true,
+    "status": "sample-unvalidated",
+    "origin": "propuesta-por-validar",
+    "es": {
+      "title": "Calabacín relleno de pollo",
+      "ingredients": [
+        "1 calabacín mediano",
+        "120 g de pollo molido",
+        "¼ de pimentón rojo picado",
+        "Cebolla, ajo y orégano"
+      ],
+      "steps": [
+        "Corta el calabacín a lo largo y retira un poco de la pulpa.",
+        "Sofríe el pollo con la pulpa, la cebolla, el ajo y el pimentón.",
+        "Rellena el calabacín y hornea 20 minutos a 180 °C."
+      ],
+      "note": "Ajustar la porción de proteína. No añadir queso salado ni sal.",
+      "substitutions": [
+        "Propuesta: pimentón entero en lugar de calabacín; revisar cantidad y tolerancia."
+      ]
+    },
+    "en": {
+      "title": "Chicken-stuffed zucchini",
+      "ingredients": [
+        "1 medium zucchini",
+        "120 g ground chicken",
+        "¼ red bell pepper, chopped",
+        "Onion, garlic and oregano"
+      ],
+      "steps": [
+        "Halve the zucchini lengthwise and scoop out some flesh.",
+        "Sauté the chicken with the flesh, onion, garlic and pepper.",
+        "Fill the zucchini and bake for 20 minutes at 180 °C."
+      ],
+      "note": "Adjust the protein portion. Do not add salty cheese or salt.",
+      "substitutions": [
+        "Proposal: whole bell pepper instead of zucchini; review amount and tolerance."
+      ]
+    },
+    "ingredientAmounts": [
+      {
+        "amount": 1,
+        "es": "calabacín mediano",
+        "en": "medium zucchini",
+        "esPlural": "calabacines medianos",
+        "enPlural": "medium zucchinis"
+      },
+      {
+        "amount": 120,
+        "es": "g de pollo molido",
+        "en": "g ground chicken",
+        "esPlural": "g de pollo molido",
+        "enPlural": "g ground chicken"
+      },
+      {
+        "amount": 0.25,
+        "es": "pimentón rojo picado",
+        "en": "red bell pepper, chopped",
+        "esPlural": "pimentones rojos picados",
+        "enPlural": "red bell peppers, chopped"
+      },
+      {
+        "amount": null,
+        "es": "Cebolla, ajo y orégano",
+        "en": "Onion, garlic and oregano",
+        "esPlural": "Cebolla, ajo y orégano",
+        "enPlural": "Onion, garlic and oregano"
+      }
+    ],
+    "validatedBy": null,
+    "validatedAt": null,
+    "nutrientAnalysis": {
+      "kcal": null,
+      "proteinG": null,
+      "sodiumMg": null,
+      "potassiumMg": null,
+      "phosphorusMg": null
+    },
+    "photo": "assets/recetas/fotos/calabacin-relleno.webp",
+    "photoCredit": {
+      "author": "Joachim Lesne",
+      "url": "https://unsplash.com/photos/a-plate-of-stuffed-peppers-on-a-table-rrEjq7z0qvE",
+      "license": "Unsplash"
+    },
+    "countries": [
+      "mx"
+    ]
+  },
+  {
+    "id": "crema-coliflor",
+    "image": "assets/recetas/coliflor.svg",
+    "meal": "dinner",
+    "minutes": 30,
+    "servings": 2,
+    "lessSaltIdea": true,
+    "status": "sample-unvalidated",
+    "origin": "propuesta-por-validar",
+    "es": {
+      "title": "Crema de coliflor",
+      "ingredients": [
+        "2 tazas de coliflor en floretes",
+        "½ cebolla",
+        "1 diente de ajo",
+        "1 cucharadita de aceite de oliva y eneldo"
+      ],
+      "steps": [
+        "Sofríe la cebolla y el ajo en el aceite.",
+        "Añade la coliflor y agua hasta cubrir; cocina 15 minutos.",
+        "Licúa hasta que quede cremosa y sirve con eneldo, sin crema de leche."
+      ],
+      "note": "Revisar la cantidad de líquido si tu equipo la limita. No usar cubos de caldo.",
+      "substitutions": [
+        "Propuesta: calabacín en lugar de coliflor; revisar cantidad y tolerancia."
+      ]
+    },
+    "en": {
+      "title": "Cream of cauliflower soup",
+      "ingredients": [
+        "2 cups cauliflower florets",
+        "½ onion",
+        "1 garlic clove",
+        "1 tsp olive oil and dill"
+      ],
+      "steps": [
+        "Sauté the onion and garlic in the oil.",
+        "Add the cauliflower and water to cover; cook for 15 minutes.",
+        "Blend until creamy and serve with dill, without cream."
+      ],
+      "note": "Review the amount of liquid if your team limits it. Do not use bouillon cubes.",
+      "substitutions": [
+        "Proposal: zucchini instead of cauliflower; review amount and tolerance."
+      ]
+    },
+    "ingredientAmounts": [
+      {
+        "amount": 2,
+        "es": "taza de coliflor en floretes",
+        "en": "cup cauliflower florets",
+        "esPlural": "tazas de coliflor en floretes",
+        "enPlural": "cups cauliflower florets"
+      },
+      {
+        "amount": 0.5,
+        "es": "cebolla",
+        "en": "onion",
+        "esPlural": "cebollas",
+        "enPlural": "onions"
+      },
+      {
+        "amount": 1,
+        "es": "diente de ajo",
+        "en": "garlic clove",
+        "esPlural": "dientes de ajo",
+        "enPlural": "garlic cloves"
+      },
+      {
+        "amount": null,
+        "es": "1 cucharadita de aceite de oliva y eneldo",
+        "en": "1 tsp olive oil and dill",
+        "esPlural": "1 cucharadita de aceite de oliva y eneldo",
+        "enPlural": "1 tsp olive oil and dill"
+      }
+    ],
+    "validatedBy": null,
+    "validatedAt": null,
+    "nutrientAnalysis": {
+      "kcal": null,
+      "proteinG": null,
+      "sodiumMg": null,
+      "potassiumMg": null,
+      "phosphorusMg": null
+    },
+    "photo": "assets/recetas/fotos/crema-coliflor.webp",
+    "photoCredit": {
+      "author": "Julia Kicova",
+      "url": "https://unsplash.com/photos/soup-with-green-leaf-on-white-ceramic-bowl-18YZ7zuQG4Q",
+      "license": "Unsplash"
+    }
+  },
+  {
+    "id": "ensalada-repollo",
+    "image": "assets/recetas/pepino.svg",
+    "meal": "dinner",
+    "minutes": 15,
+    "servings": 2,
+    "lessSaltIdea": true,
+    "status": "sample-unvalidated",
+    "origin": "propuesta-por-validar",
+    "es": {
+      "title": "Ensalada de repollo y zanahoria",
+      "ingredients": [
+        "2 tazas de repollo en tiras finas",
+        "1 zanahoria rallada",
+        "¼ de cebolla morada",
+        "Limón, 1 cucharadita de aceite y cilantro"
+      ],
+      "steps": [
+        "Mezcla el repollo, la zanahoria y la cebolla.",
+        "Aliña con limón, aceite y cilantro justo antes de servir."
+      ],
+      "note": "Evitar mayonesa y aderezos comerciales con sal. Revisar la cantidad de vegetales y potasio.",
+      "substitutions": [
+        "Propuesta: pepino en lugar de zanahoria; revisar cantidad y tolerancia."
+      ]
+    },
+    "en": {
+      "title": "Cabbage and carrot slaw",
+      "ingredients": [
+        "2 cups thinly sliced cabbage",
+        "1 grated carrot",
+        "¼ red onion",
+        "Lemon, 1 tsp oil and cilantro"
+      ],
+      "steps": [
+        "Toss the cabbage, carrot and onion.",
+        "Dress with lemon, oil and cilantro just before serving."
+      ],
+      "note": "Avoid mayonnaise and salty store-bought dressings. Review vegetable quantity and potassium.",
+      "substitutions": [
+        "Proposal: cucumber instead of carrot; review amount and tolerance."
+      ]
+    },
+    "ingredientAmounts": [
+      {
+        "amount": 2,
+        "es": "taza de repollo en tiras finas",
+        "en": "cup thinly sliced cabbage",
+        "esPlural": "tazas de repollo en tiras finas",
+        "enPlural": "cups thinly sliced cabbage"
+      },
+      {
+        "amount": 1,
+        "es": "zanahoria rallada",
+        "en": "grated carrot",
+        "esPlural": "zanahorias ralladas",
+        "enPlural": "grated carrots"
+      },
+      {
+        "amount": 0.25,
+        "es": "cebolla morada",
+        "en": "red onion",
+        "esPlural": "cebollas moradas",
+        "enPlural": "red onions"
+      },
+      {
+        "amount": null,
+        "es": "Limón, 1 cucharadita de aceite y cilantro",
+        "en": "Lemon, 1 tsp oil and cilantro",
+        "esPlural": "Limón, 1 cucharadita de aceite y cilantro",
+        "enPlural": "Lemon, 1 tsp oil and cilantro"
+      }
+    ],
+    "validatedBy": null,
+    "validatedAt": null,
+    "nutrientAnalysis": {
+      "kcal": null,
+      "proteinG": null,
+      "sodiumMg": null,
+      "potassiumMg": null,
+      "phosphorusMg": null
+    },
+    "photo": "assets/recetas/fotos/ensalada-repollo.webp",
+    "photoCredit": {
+      "author": "Jacques Bopp",
+      "url": "https://unsplash.com/photos/vegetable-salad-on-plate-hhv1wKlzLIw",
+      "license": "Unsplash"
+    },
+    "countries": [
+      "co"
+    ]
+  },
+  {
+    "id": "palomitas",
+    "image": "assets/recetas/avena.svg",
+    "meal": "snack",
+    "minutes": 8,
+    "servings": 1,
+    "lessSaltIdea": true,
+    "status": "sample-unvalidated",
+    "origin": "propuesta-por-validar",
+    "es": {
+      "title": "Palomitas de maíz sin sal",
+      "ingredients": [
+        "2 cucharadas de maíz pira",
+        "1 cucharadita de aceite",
+        "Canela o pimentón dulce al gusto"
+      ],
+      "steps": [
+        "Calienta el aceite en una olla tapada y añade el maíz.",
+        "Mueve la olla hasta que dejen de reventar.",
+        "Sazona con canela o pimentón, sin sal ni mantequilla."
+      ],
+      "note": "Revisar la porción de carbohidratos. Evitar las palomitas de microondas o de cine por su sal.",
+      "substitutions": [
+        "Propuesta: manzana en cubos en lugar de palomitas; revisar porción."
+      ]
+    },
+    "en": {
+      "title": "Unsalted popcorn",
+      "ingredients": [
+        "2 tbsp popcorn kernels",
+        "1 tsp oil",
+        "Cinnamon or sweet paprika to taste"
+      ],
+      "steps": [
+        "Heat the oil in a covered pot and add the kernels.",
+        "Shake the pot until the popping stops.",
+        "Season with cinnamon or paprika, without salt or butter."
+      ],
+      "note": "Review the carbohydrate portion. Avoid microwave or movie-theater popcorn because of salt.",
+      "substitutions": [
+        "Proposal: diced apple instead of popcorn; review portion."
+      ]
+    },
+    "ingredientAmounts": [
+      {
+        "amount": 2,
+        "es": "cucharada de maíz pira",
+        "en": "tbsp popcorn kernels",
+        "esPlural": "cucharadas de maíz pira",
+        "enPlural": "tbsp popcorn kernels"
+      },
+      {
+        "amount": 1,
+        "es": "cucharadita de aceite",
+        "en": "tsp oil",
+        "esPlural": "cucharaditas de aceite",
+        "enPlural": "tsp oil"
+      },
+      {
+        "amount": null,
+        "es": "Canela o pimentón dulce al gusto",
+        "en": "Cinnamon or sweet paprika to taste",
+        "esPlural": "Canela o pimentón dulce al gusto",
+        "enPlural": "Cinnamon or sweet paprika to taste"
+      }
+    ],
+    "validatedBy": null,
+    "validatedAt": null,
+    "nutrientAnalysis": {
+      "kcal": null,
+      "proteinG": null,
+      "sodiumMg": null,
+      "potassiumMg": null,
+      "phosphorusMg": null
+    },
+    "photo": "assets/recetas/fotos/palomitas.webp",
+    "photoCredit": {
+      "author": "Edgar Soto",
+      "url": "https://unsplash.com/photos/white-popcorn-in-white-ceramic-bowl-brXWdf2HuOA",
+      "license": "Unsplash"
+    },
+    "countries": [
+      "us"
+    ]
+  },
+  {
+    "id": "pina",
+    "image": "assets/recetas/pera.svg",
+    "meal": "snack",
+    "minutes": 5,
+    "servings": 1,
+    "lessSaltIdea": true,
+    "status": "sample-unvalidated",
+    "origin": "propuesta-por-validar",
+    "es": {
+      "title": "Piña en trozos con limón",
+      "ingredients": [
+        "¾ taza de piña fresca en trozos",
+        "Unas gotas de limón",
+        "Hierbabuena al gusto"
+      ],
+      "steps": [
+        "Corta la piña en trozos pequeños.",
+        "Añade el limón y la hierbabuena al servir."
+      ],
+      "note": "Revisar porción de fruta y carbohidratos. Preferir fruta fresca a la de lata en almíbar.",
+      "substitutions": [
+        "Propuesta: fresas en lugar de piña; revisar aporte y porción."
+      ]
+    },
+    "en": {
+      "title": "Pineapple chunks with lime",
+      "ingredients": [
+        "¾ cup fresh pineapple chunks",
+        "A few drops of lime",
+        "Mint to taste"
+      ],
+      "steps": [
+        "Cut the pineapple into small pieces.",
+        "Add lime and mint when serving."
+      ],
+      "note": "Review fruit and carbohydrate portion. Prefer fresh fruit over canned in syrup.",
+      "substitutions": [
+        "Proposal: strawberries instead of pineapple; review nutrient content and portion."
+      ]
+    },
+    "ingredientAmounts": [
+      {
+        "amount": 0.75,
+        "es": "taza de piña fresca en trozos",
+        "en": "cup fresh pineapple chunks",
+        "esPlural": "tazas de piña fresca en trozos",
+        "enPlural": "cups fresh pineapple chunks"
+      },
+      {
+        "amount": null,
+        "es": "Unas gotas de limón",
+        "en": "A few drops of lime",
+        "esPlural": "Unas gotas de limón",
+        "enPlural": "A few drops of lime"
+      },
+      {
+        "amount": null,
+        "es": "Hierbabuena al gusto",
+        "en": "Mint to taste",
+        "esPlural": "Hierbabuena al gusto",
+        "enPlural": "Mint to taste"
+      }
+    ],
+    "validatedBy": null,
+    "validatedAt": null,
+    "nutrientAnalysis": {
+      "kcal": null,
+      "proteinG": null,
+      "sodiumMg": null,
+      "potassiumMg": null,
+      "phosphorusMg": null
+    },
+    "photo": "assets/recetas/fotos/pina.webp",
+    "photoCredit": {
+      "author": "Suri Huang",
+      "url": "https://unsplash.com/photos/sliced-fruit-in-blue-ceramic-bowl-ZrszvAFfT-I",
+      "license": "Unsplash"
+    },
+    "countries": [
+      "co",
+      "mx"
+    ]
+  }
+]

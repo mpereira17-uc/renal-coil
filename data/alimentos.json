@@ -1,0 +1,500 @@
+{
+  "version": 1,
+  "status": "sample-unvalidated",
+  "note": {
+    "es": "Valores aproximados por 100 g de alimento, tomados de referencias generales de composición de alimentos (tipo USDA FoodData Central). Es una base de ejemplo: falta la validación de un profesional y no sustituye la tabla de composición oficial de tu país.",
+    "en": "Approximate values per 100 g of food, taken from general food-composition references (USDA FoodData Central type). This is a sample database: it still needs review by a professional and does not replace your country's official food-composition table."
+  },
+  "foods": [
+    {
+      "id": "avena-cocida",
+      "group": "cereals",
+      "es": "Avena cocida en agua",
+      "en": "Oatmeal cooked in water",
+      "portion": 200,
+      "per100g": {
+        "kcal": 71,
+        "protein": 2.5,
+        "sodium": 4,
+        "potassium": 70,
+        "phosphorus": 77
+      }
+    },
+    {
+      "id": "arroz-blanco",
+      "group": "cereals",
+      "es": "Arroz blanco cocido",
+      "en": "White rice, cooked",
+      "portion": 150,
+      "per100g": {
+        "kcal": 130,
+        "protein": 2.7,
+        "sodium": 1,
+        "potassium": 35,
+        "phosphorus": 43
+      }
+    },
+    {
+      "id": "arroz-integral",
+      "group": "cereals",
+      "es": "Arroz integral cocido",
+      "en": "Brown rice, cooked",
+      "portion": 150,
+      "per100g": {
+        "kcal": 123,
+        "protein": 2.7,
+        "sodium": 4,
+        "potassium": 86,
+        "phosphorus": 103
+      }
+    },
+    {
+      "id": "pasta-cocida",
+      "group": "cereals",
+      "es": "Pasta cocida",
+      "en": "Pasta, cooked",
+      "portion": 150,
+      "per100g": {
+        "kcal": 158,
+        "protein": 5.8,
+        "sodium": 1,
+        "potassium": 44,
+        "phosphorus": 58
+      }
+    },
+    {
+      "id": "pan-blanco",
+      "group": "cereals",
+      "es": "Pan blanco (1 rebanada ≈ 30 g)",
+      "en": "White bread (1 slice ≈ 30 g)",
+      "portion": 30,
+      "per100g": {
+        "kcal": 265,
+        "protein": 9,
+        "sodium": 491,
+        "potassium": 115,
+        "phosphorus": 99
+      }
+    },
+    {
+      "id": "papa-cocida",
+      "group": "cereals",
+      "es": "Papa cocida sin piel",
+      "en": "Boiled potato, peeled",
+      "portion": 150,
+      "per100g": {
+        "kcal": 87,
+        "protein": 1.9,
+        "sodium": 4,
+        "potassium": 379,
+        "phosphorus": 44
+      }
+    },
+    {
+      "id": "manzana",
+      "group": "fruits",
+      "es": "Manzana",
+      "en": "Apple",
+      "portion": 150,
+      "per100g": {
+        "kcal": 52,
+        "protein": 0.3,
+        "sodium": 1,
+        "potassium": 107,
+        "phosphorus": 11
+      }
+    },
+    {
+      "id": "pera",
+      "group": "fruits",
+      "es": "Pera",
+      "en": "Pear",
+      "portion": 150,
+      "per100g": {
+        "kcal": 57,
+        "protein": 0.4,
+        "sodium": 1,
+        "potassium": 116,
+        "phosphorus": 12
+      }
+    },
+    {
+      "id": "banano",
+      "group": "fruits",
+      "es": "Banano",
+      "en": "Banana",
+      "portion": 100,
+      "per100g": {
+        "kcal": 89,
+        "protein": 1.1,
+        "sodium": 1,
+        "potassium": 358,
+        "phosphorus": 22
+      }
+    },
+    {
+      "id": "papaya",
+      "group": "fruits",
+      "es": "Papaya",
+      "en": "Papaya",
+      "portion": 150,
+      "per100g": {
+        "kcal": 43,
+        "protein": 0.5,
+        "sodium": 8,
+        "potassium": 182,
+        "phosphorus": 10
+      }
+    },
+    {
+      "id": "aguacate",
+      "group": "fruits",
+      "es": "Aguacate",
+      "en": "Avocado",
+      "portion": 50,
+      "per100g": {
+        "kcal": 160,
+        "protein": 2,
+        "sodium": 7,
+        "potassium": 485,
+        "phosphorus": 52
+      }
+    },
+    {
+      "id": "calabacin",
+      "group": "vegetables",
+      "es": "Calabacín cocido",
+      "en": "Zucchini, cooked",
+      "portion": 100,
+      "per100g": {
+        "kcal": 15,
+        "protein": 1.1,
+        "sodium": 3,
+        "potassium": 253,
+        "phosphorus": 38
+      }
+    },
+    {
+      "id": "coliflor",
+      "group": "vegetables",
+      "es": "Coliflor cocida",
+      "en": "Cauliflower, cooked",
+      "portion": 100,
+      "per100g": {
+        "kcal": 23,
+        "protein": 1.8,
+        "sodium": 15,
+        "potassium": 142,
+        "phosphorus": 32
+      }
+    },
+    {
+      "id": "pepino",
+      "group": "vegetables",
+      "es": "Pepino",
+      "en": "Cucumber",
+      "portion": 80,
+      "per100g": {
+        "kcal": 15,
+        "protein": 0.7,
+        "sodium": 2,
+        "potassium": 147,
+        "phosphorus": 24
+      }
+    },
+    {
+      "id": "tomate",
+      "group": "vegetables",
+      "es": "Tomate",
+      "en": "Tomato",
+      "portion": 100,
+      "per100g": {
+        "kcal": 18,
+        "protein": 0.9,
+        "sodium": 5,
+        "potassium": 237,
+        "phosphorus": 24
+      }
+    },
+    {
+      "id": "zanahoria",
+      "group": "vegetables",
+      "es": "Zanahoria cruda",
+      "en": "Carrot, raw",
+      "portion": 80,
+      "per100g": {
+        "kcal": 41,
+        "protein": 0.9,
+        "sodium": 69,
+        "potassium": 320,
+        "phosphorus": 35
+      }
+    },
+    {
+      "id": "brocoli",
+      "group": "vegetables",
+      "es": "Brócoli cocido",
+      "en": "Broccoli, cooked",
+      "portion": 100,
+      "per100g": {
+        "kcal": 35,
+        "protein": 2.4,
+        "sodium": 41,
+        "potassium": 293,
+        "phosphorus": 67
+      }
+    },
+    {
+      "id": "espinaca",
+      "group": "vegetables",
+      "es": "Espinaca cocida",
+      "en": "Spinach, cooked",
+      "portion": 80,
+      "per100g": {
+        "kcal": 23,
+        "protein": 3,
+        "sodium": 70,
+        "potassium": 466,
+        "phosphorus": 56
+      }
+    },
+    {
+      "id": "perejil",
+      "group": "vegetables",
+      "es": "Perejil",
+      "en": "Parsley",
+      "portion": 5,
+      "per100g": {
+        "kcal": 36,
+        "protein": 3,
+        "sodium": 56,
+        "potassium": 554,
+        "phosphorus": 58
+      }
+    },
+    {
+      "id": "ajo",
+      "group": "vegetables",
+      "es": "Ajo",
+      "en": "Garlic",
+      "portion": 3,
+      "per100g": {
+        "kcal": 149,
+        "protein": 6.4,
+        "sodium": 17,
+        "potassium": 401,
+        "phosphorus": 153
+      }
+    },
+    {
+      "id": "pechuga-pollo",
+      "group": "protein",
+      "es": "Pechuga de pollo cocida sin piel",
+      "en": "Chicken breast, cooked, skinless",
+      "portion": 120,
+      "per100g": {
+        "kcal": 165,
+        "protein": 31,
+        "sodium": 74,
+        "potassium": 256,
+        "phosphorus": 228
+      }
+    },
+    {
+      "id": "tilapia",
+      "group": "protein",
+      "es": "Pescado blanco (tilapia) horneado",
+      "en": "White fish (tilapia), baked",
+      "portion": 120,
+      "per100g": {
+        "kcal": 128,
+        "protein": 26.2,
+        "sodium": 56,
+        "potassium": 380,
+        "phosphorus": 204
+      }
+    },
+    {
+      "id": "atun-agua",
+      "group": "protein",
+      "es": "Atún en agua, escurrido",
+      "en": "Tuna in water, drained",
+      "portion": 80,
+      "per100g": {
+        "kcal": 116,
+        "protein": 25.5,
+        "sodium": 247,
+        "potassium": 237,
+        "phosphorus": 163
+      }
+    },
+    {
+      "id": "huevo-cocido",
+      "group": "protein",
+      "es": "Huevo cocido (1 unidad ≈ 50 g)",
+      "en": "Boiled egg (1 unit ≈ 50 g)",
+      "portion": 50,
+      "per100g": {
+        "kcal": 155,
+        "protein": 12.6,
+        "sodium": 124,
+        "potassium": 126,
+        "phosphorus": 172
+      }
+    },
+    {
+      "id": "frijol-negro",
+      "group": "legumes",
+      "es": "Frijoles negros cocidos",
+      "en": "Black beans, cooked",
+      "portion": 130,
+      "per100g": {
+        "kcal": 132,
+        "protein": 8.9,
+        "sodium": 1,
+        "potassium": 355,
+        "phosphorus": 140
+      }
+    },
+    {
+      "id": "lenteja",
+      "group": "legumes",
+      "es": "Lentejas cocidas",
+      "en": "Lentils, cooked",
+      "portion": 150,
+      "per100g": {
+        "kcal": 116,
+        "protein": 9,
+        "sodium": 2,
+        "potassium": 369,
+        "phosphorus": 180
+      }
+    },
+    {
+      "id": "leche-entera",
+      "group": "dairy",
+      "es": "Leche entera",
+      "en": "Whole milk",
+      "portion": 200,
+      "per100g": {
+        "kcal": 61,
+        "protein": 3.2,
+        "sodium": 43,
+        "potassium": 132,
+        "phosphorus": 84
+      }
+    },
+    {
+      "id": "yogur-natural",
+      "group": "dairy",
+      "es": "Yogur natural",
+      "en": "Plain yogurt",
+      "portion": 150,
+      "per100g": {
+        "kcal": 61,
+        "protein": 3.5,
+        "sodium": 46,
+        "potassium": 155,
+        "phosphorus": 95
+      }
+    },
+    {
+      "id": "queso-cheddar",
+      "group": "dairy",
+      "es": "Queso tipo cheddar",
+      "en": "Cheddar-type cheese",
+      "portion": 30,
+      "per100g": {
+        "kcal": 403,
+        "protein": 24.9,
+        "sodium": 621,
+        "potassium": 98,
+        "phosphorus": 512
+      }
+    },
+    {
+      "id": "aceite-oliva",
+      "group": "fats",
+      "es": "Aceite de oliva",
+      "en": "Olive oil",
+      "portion": 10,
+      "per100g": {
+        "kcal": 884,
+        "protein": 0,
+        "sodium": 2,
+        "potassium": 1,
+        "phosphorus": 0
+      }
+    },
+    {
+      "id": "jamon-cocido",
+      "group": "processed",
+      "es": "Jamón cocido",
+      "en": "Cooked ham",
+      "portion": 40,
+      "per100g": {
+        "kcal": 145,
+        "protein": 18,
+        "sodium": 1200,
+        "potassium": 280,
+        "phosphorus": 230
+      }
+    },
+    {
+      "id": "papas-paquete",
+      "group": "processed",
+      "es": "Papas fritas de paquete",
+      "en": "Packaged potato chips",
+      "portion": 30,
+      "per100g": {
+        "kcal": 536,
+        "protein": 7,
+        "sodium": 525,
+        "potassium": 1275,
+        "phosphorus": 150
+      }
+    },
+    {
+      "id": "jugo-naranja",
+      "group": "drinks",
+      "es": "Jugo de naranja",
+      "en": "Orange juice",
+      "portion": 200,
+      "per100g": {
+        "kcal": 45,
+        "protein": 0.7,
+        "sodium": 1,
+        "potassium": 200,
+        "phosphorus": 17
+      }
+    },
+    {
+      "id": "jugo-limon",
+      "group": "drinks",
+      "es": "Jugo de limón",
+      "en": "Lemon juice",
+      "portion": 15,
+      "per100g": {
+        "kcal": 22,
+        "protein": 0.4,
+        "sodium": 1,
+        "potassium": 103,
+        "phosphorus": 8
+      }
+    },
+    {
+      "id": "gaseosa-cola",
+      "group": "drinks",
+      "es": "Gaseosa de cola",
+      "en": "Cola soft drink",
+      "portion": 250,
+      "per100g": {
+        "kcal": 41,
+        "protein": 0,
+        "sodium": 4,
+        "potassium": 2,
+        "phosphorus": 15
+      }
+    }
+  ]
+}
