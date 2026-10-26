@@ -1,4 +1,4 @@
 # Plantilla: habilitar indexación únicamente tras revisión y dominio final.
 User-agent: *
 Disallow: /
-Sitemap: https://DOMINIO_PENDIENTE.invalid/sitemap.xml
+Sitemap: https://renal-coil.renalcoil.workers.dev/sitemap.xml

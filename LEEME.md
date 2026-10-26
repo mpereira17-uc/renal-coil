@@ -1,5 +1,6 @@
 # Renal / COIL · Rediseño 3.3
 
+> Web publicada: https://renal-coil.renalcoil.workers.dev (Cloudflare; cada push a main se publica solo). QR en docs/qr/qr_renalcoil.svg.
 > v4.9: movimiento inspirado en Cuvia (entrada de portada, apariciones al desplazarse, botones, explorador del riñón, secciones y paneles) con un sistema central en css/movimiento.css y js/animations.js. Ver docs/CAMBIOS_v4.9.md.
 > v4.8 (vista previa): entregas 2-4 de la revisión: sistema visual unificado, editar registros y citas, hábitos configurables, compras editables, casos interactivos, biblioteca y lectura crítica. Ver docs/CAMBIOS_v4.8.md.
 > v4.7 (vista previa): arreglos de conexión entre herramientas (glucosa por contexto, ⅓ de taza, plan → compras sin duplicar, filtros, porciones, receta → diario, privacidad, progreso y calendario). Ver docs/CAMBIOS_v4.7.md.
