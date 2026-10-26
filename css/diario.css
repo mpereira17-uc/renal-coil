@@ -1,0 +1,111 @@
+/* Alimentación: pestañas Recetas / Diario y diario de comidas. */
+.food-tabs { display: inline-flex; gap: 4px; padding: 5px; margin: 0 0 1.5rem; border-radius: 999px; background: var(--surface); box-shadow: var(--card-shadow); max-width: 100%; }
+.food-tabs a { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: .6rem 1.4rem; border-radius: 999px; font-weight: 700; font-size: .9688rem; color: var(--text); text-align: center; transition: background 160ms var(--ease), color 160ms var(--ease); }
+.food-tabs a:hover { background: var(--accent-soft); }
+.food-tabs a[aria-current="page"] { background: var(--accent); color: #fff; }
+[data-theme="dark"] .food-tabs a[aria-current="page"] { color: #10202b; }
+#route-alimentacion[data-tab="diary"] > *:not(.page-intro):not(.food-tabs):not(.food-diary) { display: none; }
+#route-alimentacion:not([data-tab="diary"]) > .food-diary { display: none; }
+
+.food-diary { display: flex; flex-direction: column; gap: 1.5rem; }
+.food-diary .wide, .meal-dialog .wide { grid-column: 1 / -1; }
+.goal-fields .form-field, .compare-pick .form-field { grid-column: auto; }
+.diary-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; }
+.diary-head h2 { margin-bottom: .6rem; }
+.diary-intro { color: var(--text); max-width: 62ch; margin-bottom: .9rem; }
+.diary-head .button { min-height: 54px; padding-inline: 1.6rem; }
+.diary-day { display: flex; align-items: center; gap: .6rem; flex-wrap: wrap; padding: .75rem; border-radius: 20px; background: var(--surface); box-shadow: var(--card-shadow); }
+.day-picker { position: relative; flex: 1; min-width: 220px; display: flex; flex-direction: column; gap: .1rem; padding: .35rem .8rem; border-radius: 14px; background: var(--paper); }
+.day-picker strong::first-letter { text-transform: uppercase; }
+.day-picker strong { color: var(--ink); font-size: 1.02rem; pointer-events: none; }
+.day-picker input { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; min-height: 0; padding: 0; border: 0; }
+.diary-card { padding: 1.75rem; border-radius: 24px; background: var(--surface); box-shadow: var(--card-shadow); }
+.diary-card > h3, .diary-section-title { font-size: 1.3rem; margin-bottom: 1rem; }
+.diary-hint { color: var(--muted); font-size: .9688rem; margin-bottom: 1rem; }
+.diary-warning { margin-top: .9rem; padding: .6rem .9rem; border-radius: 12px; background: var(--amber-soft); color: var(--amber); font-size: .875rem; border: 1px solid var(--warning-line); }
+.diary-footnote { max-width: 80ch; }
+
+/* Resumen */
+.summary-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 1rem; }
+.summary-tile { display: flex; flex-direction: column; gap: .35rem; padding: 1.1rem; border-radius: 18px; background: var(--accent-soft); }
+.summary-tile strong { font-size: 1.9rem; line-height: 1.1; color: var(--accent-ink); letter-spacing: -.02em; }
+.summary-tile strong span { margin-left: .25rem; font-size: .875rem; font-weight: 600; color: var(--muted); letter-spacing: 0; }
+.summary-tile small { font-size: .8125rem; color: var(--muted); line-height: 1.35; }
+.goal-bar { height: 10px; border-radius: 999px; background: color-mix(in srgb, var(--surface) 70%, var(--line)); overflow: hidden; margin-top: .3rem; }
+.goal-bar span { display: block; height: 100%; border-radius: 999px; background: var(--accent); transition: width 300ms var(--ease); }
+.goal-bar.over span { background: #c4513d; }
+[data-theme="dark"] .goal-bar.over span { background: #f4a28d; }
+
+/* Metas */
+.diary-goals summary { cursor: pointer; font-weight: 700; color: var(--ink); font-size: 1.1rem; min-height: 40px; display: flex; align-items: center; list-style: none; gap: .6rem; }
+.diary-goals summary::-webkit-details-marker { display: none; }
+.diary-goals summary::before { content: "+"; display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: var(--accent-soft); color: var(--accent-ink); font-size: 1.2rem; }
+.diary-goals[open] summary::before { content: "–"; }
+.diary-goals[open] summary { margin-bottom: 1rem; }
+.goal-fields { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
+.goal-actions { display: flex; gap: .75rem; flex-wrap: wrap; margin: 1.25rem 0 .75rem; }
+
+/* Comidas */
+.meal-group { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; align-items: start; }
+.meal-card { display: flex; flex-direction: column; gap: 1rem; padding: 1.5rem; border-radius: 24px; background: var(--surface); box-shadow: var(--card-shadow); border-top: 5px solid var(--accent); }
+.meal-card header { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; flex-wrap: wrap; }
+.meal-card h4 { font-size: 1.25rem; margin: .5rem 0 .15rem; color: var(--ink); letter-spacing: -.02em; }
+.meal-count { font-size: .875rem; color: var(--muted); }
+.meal-actions { display: flex; flex-wrap: wrap; gap: .35rem; }
+.meal-actions .text-link { min-height: 40px; padding: .4rem .8rem; font-size: .875rem; }
+.meal-items { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
+.meal-items li { display: flex; justify-content: space-between; gap: 1rem; margin: 0; padding: .55rem 0; border-bottom: 1px dashed var(--line); font-size: .9688rem; color: var(--text); }
+.meal-items li span { color: var(--muted); white-space: nowrap; }
+.meal-chips { display: flex; flex-wrap: wrap; gap: .45rem; }
+.meal-chip { display: inline-flex; align-items: baseline; gap: .3rem; padding: .35rem .75rem; border-radius: 999px; background: var(--accent-soft); color: var(--accent-ink); font-size: .8125rem; }
+.meal-chip b { font-size: .9375rem; }
+.meal-chip span { color: var(--muted); }
+.meal-notes { padding: .75rem 1rem; border-radius: 12px; background: var(--paper); color: var(--text); font-size: .9375rem; }
+.diary-meals .empty-state { padding: 1.5rem 1rem; }
+
+/* Comparación */
+.compare-pick { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin-bottom: 1.25rem; }
+.compare-table { width: 100%; border-collapse: collapse; font-size: .9688rem; }
+.compare-table th, .compare-table td { padding: .8rem 1rem; text-align: left; border-bottom: 1px solid var(--line); }
+.compare-table thead th { background: var(--accent-soft); color: var(--accent-ink); font-size: .8125rem; }
+.compare-table td.plus { color: #b3442e; font-weight: 700; }
+.compare-table td.minus { color: #2b7a50; font-weight: 700; }
+[data-theme="dark"] .compare-table td.plus { color: #f4a28d; }
+[data-theme="dark"] .compare-table td.minus { color: #86d3a3; }
+.tool-row { display: flex; gap: .75rem; flex-wrap: wrap; }
+.file-button { position: relative; cursor: pointer; }
+.file-button .file-input { position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; }
+
+/* Diálogo */
+.meal-dialog { width: min(96vw, 720px); }
+.meal-foods { margin: 1.25rem 0; padding: 1.1rem; border: 1px solid var(--line); border-radius: 16px; }
+.meal-foods legend { padding: 0 .5rem; font-weight: 700; color: var(--ink); }
+.meal-row { display: grid; grid-template-columns: minmax(0, 1fr) 120px 44px; gap: .6rem; align-items: center; margin-bottom: .6rem; }
+.meal-row .meal-custom { grid-column: 1 / -1; grid-row: 2; }
+.meal-row select { min-width: 0; }
+.meal-remove { width: 44px; height: 44px; font-size: 1.4rem; color: var(--danger); }
+.meal-preview { padding: 1rem; border-radius: 16px; background: var(--accent-soft); margin-bottom: 1.25rem; }
+.meal-preview .small-label { margin-bottom: .5rem; }
+.meal-preview .meal-chip { background: var(--surface); }
+.meal-dialog textarea { width: 100%; border-radius: 12px; border: 1.5px solid var(--input-border); padding: .7rem .8rem; font: inherit; background: var(--surface); color: var(--ink); resize: vertical; }
+
+@media (max-width: 1100px) { .summary-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } .goal-fields { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 760px) {
+  .food-tabs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); width: 100%; border-radius: 22px; }
+  .food-tabs a { padding: .6rem .5rem; font-size: .875rem; border-radius: 18px; }
+  .diary-head .button { width: 100%; }
+  .diary-card, .meal-card { padding: 1.25rem; border-radius: 20px; }
+  .summary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; }
+  .summary-tile { padding: .9rem; }
+  .summary-tile strong { font-size: 1.5rem; }
+  .meal-group, .compare-pick { grid-template-columns: minmax(0, 1fr); }
+  .meal-row { grid-template-columns: minmax(0, 1fr) 44px; padding-bottom: .9rem; margin-bottom: .9rem; border-bottom: 1px dashed var(--line); }
+  .meal-row .meal-food { grid-column: 1; grid-row: 1; }
+  .meal-row .meal-remove { grid-column: 2; grid-row: 1; }
+  .meal-row .meal-custom { grid-column: 1 / -1; grid-row: 2; }
+  .meal-row .meal-grams { grid-column: 1 / -1; grid-row: 3; }
+  .diary-day { padding: .6rem; }
+  .day-picker { min-width: 0; flex-basis: calc(100% - 110px); }
+  .diary-day .text-link { flex: 1 1 100%; }
+}
+@media print { .food-tabs, .diary-day, .meal-actions, .diary-tools { display: none; } }

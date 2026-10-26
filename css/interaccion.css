@@ -1,0 +1,38 @@
+/* Renal 3.6 · Capa de interacción (js/interaction.js).
+   Fondo de partículas, relieve en tarjetas, profundidad en la portada y chispas al marcar hábitos.
+   Con "menos movimiento" todo queda quieto. */
+
+/* ---------- Fondo de partículas ---------- */
+.flow-field { position: fixed; inset: 0; width: 100vw; height: 100vh; height: 100dvh; z-index: -1; pointer-events: none; opacity: .9; }
+[data-theme="dark"] .flow-field { opacity: 1; mix-blend-mode: screen; }
+[data-motion="reduced"] .flow-field { opacity: .55; }
+@media print { .flow-field { display: none; } }
+
+/* ---------- Tarjetas con relieve y brillo ---------- */
+@media (hover: hover) and (pointer: fine) {
+  :is(.quick-card, .recipe-card, .symptom-category, .credit-block, .cct-column, .flow-step, .info-stat, .glossary-item, .stat-cell) {
+    transform-style: preserve-3d; will-change: auto;
+    transition: transform 220ms cubic-bezier(.22,1,.36,1), box-shadow 220ms cubic-bezier(.22,1,.36,1), border-color 180ms;
+  }
+  [data-tilt] {
+    transform: perspective(900px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)) translateY(-4px) !important;
+    transition: transform 90ms linear, box-shadow 220ms cubic-bezier(.22,1,.36,1) !important;
+    box-shadow: var(--lift-shadow) !important;
+    background-image: radial-gradient(circle at var(--glow-x, 50%) var(--glow-y, 50%), color-mix(in srgb, var(--accent, var(--action)) 11%, transparent), transparent 55%);
+  }
+  .quick-card[data-tilt] { border-color: var(--accent); }
+}
+[data-motion="reduced"] [data-tilt] { transform: none !important; background-image: none; }
+
+/* ---------- Profundidad en la portada ---------- */
+.discovery-grid .kidney-visual svg { transition: transform 300ms cubic-bezier(.22,1,.36,1); transform: translate(calc(var(--depth-x, 0) * 14px), calc(var(--depth-y, 0) * 10px)); }
+.discovery-grid::before { transition: transform 400ms cubic-bezier(.22,1,.36,1); transform: translate(calc(var(--depth-x, 0) * -28px), calc(-50% + var(--depth-y, 0) * -20px)); }
+.discovery-copy { transition: transform 400ms cubic-bezier(.22,1,.36,1); transform: translate(calc(var(--depth-x, 0) * -6px), calc(var(--depth-y, 0) * -4px)); }
+
+/* ---------- Chispas al marcar un hábito ---------- */
+.habit-spark { position: fixed; z-index: 70; width: 7px; height: 7px; border-radius: 50%; pointer-events: none; }
+.just-checked { animation: habit-pop 360ms cubic-bezier(.3,1.6,.5,1); }
+@keyframes habit-pop { 0% { transform: scale(.7); } 100% { transform: scale(1); } }
+
+/* ---------- Cifras ---------- */
+.count-value { font-variant-numeric: tabular-nums; }

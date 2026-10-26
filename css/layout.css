@@ -681,7 +681,7 @@
   background:var(--control, #fff);
   color:var(--control-text, #1a4a63);
   font-weight:650;
-  transition:all 180ms ease;
+  transition:color 180ms ease,background-color 180ms ease,border-color 180ms ease;
 }
 .site-footer a:hover, .site-footer button:hover{
   background:var(--control-hover, #e8f4fa);

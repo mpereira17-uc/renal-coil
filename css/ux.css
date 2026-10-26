@@ -1,0 +1,53 @@
+/* v4.1 · Pulido de usabilidad con la lista de ui-ux-pro-max (perfil "app de salud").
+   No cambia la paleta médica, los colores por sección ni el estilo de la v3.9: solo tamaños táctiles,
+   contraste de textos pequeños y respuesta de los controles. Para quitarlo, borra esta hoja de index.html. */
+
+/* Contraste mínimo 4.5:1 en textos pequeños */
+.brand-project,.workspace-strip .fine-print{color:var(--ink);opacity:.82}
+[data-theme="dark"] .brand-project,[data-theme="dark"] .workspace-strip .fine-print{opacity:.9}
+
+/* Objetivos táctiles de al menos 44 × 44 px */
+.header-tools .icon-button,.header-tools .utility-button,#open-more{min-width:44px;min-height:44px}
+.language-control button{min-height:40px;min-width:40px}
+.habit-check,#week-prev,#week-next{min-width:44px;min-height:44px}
+.listen-button,#export-csv,#import-csv-label,.table-actions .button{min-height:44px}
+.segmented button,.chart-toolbar button,.range-toggle button,.food-tabs a{min-height:44px}
+.ks-skip{display:inline-flex;align-items:center;min-height:44px}
+.ks-index button{min-height:40px}
+main .text-link:not(p .text-link),.site-footer a,.site-footer button{display:inline-flex;align-items:center;min-height:44px}
+@media (max-width:760px){.quick-card{min-height:52px}}
+
+/* Todo lo que se puede tocar lo parece: cursor y respuesta suave (150–250 ms) */
+button,[role="tab"],a[href],summary,label[for],select{cursor:pointer}
+.button,.text-link,.icon-button,.quick-card,.recipe-card,.part-buttons button,.habit-check,.chip-list li{transition:background-color .18s ease,color .18s ease,border-color .18s ease,transform .18s ease}
+.button:active,.icon-button:active,.habit-check:active{transform:scale(.97)}
+@media (prefers-reduced-motion:reduce){.button:active,.icon-button:active,.habit-check:active{transform:none}}
+
+/* Foco visible y consistente para teclado */
+:where(a,button,input,select,textarea,summary,[tabindex]):focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+
+/* Barra de secciones que se ajusta sola (js/nav-fit.js) */
+html.nav-fit-1 #main-nav a svg{display:none}
+html.nav-fit-2 #main-nav{gap:.15rem}
+html.nav-fit-2 #main-nav a{padding:.5rem .55rem;font-size:.84rem}
+@media (min-width:761px){
+  html.nav-fit-3 #main-nav{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:var(--paper);border-bottom:1px solid var(--line);padding:.7rem var(--gutter)}
+  html.nav-fit-3 #main-nav.open{display:flex}
+  html.nav-fit-3 #main-nav a{padding:.8rem 0;font-size:1rem}
+  html.nav-fit-3 #main-nav a svg{display:inline}
+  html.nav-fit-3 .mobile-only{display:inline-flex}
+}
+
+/* Fotos reales de los platos (opcional, campo "photo" en data/recetas.json) */
+.recipe-visual{position:relative;overflow:hidden}
+.recipe-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+/* v4.3: fotos reales de platos (Unsplash). Si no carga la foto, queda el dibujo. */
+.recipe-visual:has(.recipe-photo){height:200px;padding:0}
+.recipe-visual .recipe-number{z-index:1}
+.recipe-photo{transition:transform .5s ease}
+.recipe-card:hover .recipe-photo{transform:scale(1.03)}
+.recipe-detail-photo{margin:0 0 1rem;border-radius:var(--radius);overflow:hidden;position:relative}
+.recipe-detail-photo img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}
+.recipe-detail-photo figcaption{position:absolute;right:.5rem;bottom:.5rem;padding:.2rem .5rem;border-radius:999px;background:rgb(0 0 0 / 55%);color:#fff;font-size:.75rem}
+[data-motion="reduced"] .recipe-photo{transition:none}[data-motion="reduced"] .recipe-card:hover .recipe-photo{transform:none}

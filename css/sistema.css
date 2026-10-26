@@ -1,0 +1,220 @@
+/* v4.8 · Sistema visual común. Se carga al final y es la referencia para botones, tarjetas, avisos,
+   estados activos, espaciados y microanimaciones. Las hojas anteriores no deberían volver a definir estas piezas:
+   si algo se ve distinto, se corrige aquí. No cambia la paleta: usa los colores de tokens.css y --accent de cada sección. */
+:root{
+  --space-1:.25rem;--space-2:.5rem;--space-3:.75rem;--space-4:1rem;--space-5:1.5rem;--space-6:2rem;
+  --pad-card:clamp(1.15rem,2.4vw,1.75rem);
+  --pad-surface:clamp(1.25rem,3vw,2.25rem);
+  --radius-card:18px;--radius-control:12px;
+  --lift:translateY(-2px);
+}
+
+/* ---------- Botones: una acción principal por bloque; las demás, secundarias o enlaces ---------- */
+.button{min-height:46px;padding:.7rem 1.15rem;border-radius:var(--radius-control);font-weight:700;letter-spacing:.005em}
+.button.secondary,.text-link{border-radius:var(--radius-control)}
+.text-link{min-height:40px}
+.button:focus-visible,.text-link:focus-visible,.icon-button:focus-visible,.chip-row button:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.tool-row{display:flex;flex-wrap:wrap;align-items:center;gap:var(--space-2) var(--space-3)}
+/* Las herramientas de Seguimiento son secundarias frente a «Añadir medición». */
+.tracking-tools .button,.tracking-tools .text-link{min-height:40px;font-size:.88rem}
+/* Acciones destructivas: mismo tratamiento discreto en todas partes (con confirmación o «Deshacer»). */
+.danger-text,.text-link.danger-text{color:var(--danger);background:transparent;border-color:var(--danger-line)}
+.text-link.danger-text:hover{background:var(--danger-soft);border-color:var(--danger)}
+
+/* ---------- Estados activos: fondo, texto e indicador, no solo el borde ---------- */
+.chip-row button[aria-pressed="true"],.period-control [aria-pressed="true"],.segmented [aria-pressed="true"],.recipe-meal-filters [aria-pressed="true"],.info-steps [aria-pressed="true"]{
+  background:var(--accent,var(--action));border-color:var(--accent,var(--action));color:#fff;font-weight:700}
+.chip-row button[aria-pressed="true"]::before,.recipe-meal-filters [aria-pressed="true"]::before,.info-steps [aria-pressed="true"]::before{content:"✓";margin-right:.35rem;font-weight:800}
+[data-theme="dark"] .chip-row button[aria-pressed="true"],[data-theme="dark"] .period-control [aria-pressed="true"],[data-theme="dark"] .segmented [aria-pressed="true"],[data-theme="dark"] .recipe-meal-filters [aria-pressed="true"],[data-theme="dark"] .info-steps [aria-pressed="true"]{color:#10202b}
+
+/* ---------- Tres familias de tarjetas ---------- */
+/* 1) Contenido educativo: fondo neutro, título en serif. */
+.learn-card,.case-card,.faq-item,.bank-item{border-radius:var(--radius-card)}
+.case-card{display:flex;flex-direction:column;gap:var(--space-3);padding:var(--pad-card);border:1px solid var(--line);background:var(--surface)}
+.case-card h3{margin:0;font:400 1.35rem/1.2 var(--serif);color:var(--ink)}
+.case-card p{margin:0;line-height:1.55}
+/* 2) Herramientas: superficie blanca, borde fino, mismo margen interior. */
+.chart-surface,.tracking-aside,.care-card,.shopping-surface,.week-plan,.my-questions,.diary-card,.combo-surface,.results-section,.today-panel,.week-surface,.note-surface,.streak-surface,.self-check{padding:var(--pad-surface)!important;border-radius:var(--radius-card)}
+.care-card,.diary-card{background:var(--surface)}
+.section-heading{gap:var(--space-3) var(--space-5)}
+.section-heading h2{margin-bottom:var(--space-2)}
+.section-heading p{margin-top:0}
+/* 3) Avisos: icono, título breve, explicación; la intensidad depende del tipo. */
+.notice{display:flex;gap:var(--space-4);align-items:flex-start;padding:var(--pad-card);border-radius:var(--radius-card);border:1px solid var(--warning-line);background:var(--amber-soft)}
+.notice-content p{margin:0;line-height:1.55}
+.notice.food-notice{background:var(--blue-soft);border-color:var(--line)}
+.notice.urgent-text,.symptom-result.urgent{background:var(--danger-soft);border:1px solid var(--danger-line);border-left:6px solid var(--danger);color:var(--ink)}
+.few-data{margin:.5rem 0 0;padding:.6rem .85rem;border-radius:10px;background:var(--amber-soft);border:1px solid var(--warning-line);font-size:.88rem;color:var(--ink)}
+
+/* ---------- Tipografía: etiquetas pequeñas legibles ---------- */
+.eyebrow,.learn-mono,.small-label{font-size:max(.72rem,11.5px)}
+.fine-print,.field-hint{font-size:max(.8rem,12.5px);line-height:1.5}
+
+/* ---------- Microanimaciones con una misma lógica: elevar al señalar, ceder al pulsar ---------- */
+.today-card,.res-card,.recipe-card,.case-card,.cct-item{transition:transform .18s var(--ease),box-shadow .18s var(--ease),border-color .18s var(--ease)}
+@media (hover:hover){.today-card:hover,.res-card:hover,.recipe-card:hover{transform:var(--lift);box-shadow:0 10px 26px -14px rgb(20 45 64 / 35%)}}
+.button:active,.chip-row button:active,.cct-item:active{transform:scale(.98)}
+.toast:not([hidden]){animation:toast-in .25s var(--ease)}
+@keyframes toast-in{from{opacity:0;transform:translate(-50%,10px)}to{opacity:1;transform:translate(-50%,0)}}
+.toast-undo{margin-left:.6rem;padding:.3rem .75rem;border:1px solid currentColor;border-radius:999px;background:transparent;color:inherit;font:inherit;font-weight:700;cursor:pointer}
+.toast-undo:hover{background:rgb(255 255 255 / 14%)}
+[data-motion="reduced"] *,[data-motion="reduced"] *::before,[data-motion="reduced"] *::after{transition-duration:0s!important;animation-duration:0s!important}
+@media (prefers-reduced-motion:reduce){:root:not([data-motion="full"]) .toast:not([hidden]){animation:none}}
+
+/* ---------- Portadas compactas en herramientas de uso diario ---------- */
+.page-intro.sh-hero.is-compact{min-height:0;padding-top:clamp(1.2rem,3vh,2rem);padding-bottom:1.4rem;grid-template-columns:minmax(0,1fr) auto}
+.sh-hero.is-compact h1{font-size:clamp(1.9rem,3.4vw,2.7rem)}
+.sh-hero.is-compact .sh-scene,.sh-hero.is-compact .sh-ghost,.sh-hero.is-compact .sh-readout .sh-pct,.sh-hero.is-compact .sh-readout .sh-index{display:none}
+.sh-hero.is-compact .sh-readout{position:static;margin-top:.8rem}
+.sh-hero.is-compact>div:not(.sh-scene) p{margin-bottom:0}
+.sh-toggle{grid-column:1;justify-self:start;position:relative;z-index:2;margin-top:.6rem;font-size:.85rem}
+.sh-hero:not(.is-compact) .sh-toggle{position:absolute;right:var(--gutter);top:1rem}
+
+/* ---------- Seguimiento ---------- */
+.row-actions{display:flex;gap:.3rem;align-items:center;white-space:nowrap}
+.row-actions .text-link{min-height:34px;padding:.25rem .6rem;font-size:.82rem}
+.record-context{display:flex;flex-wrap:wrap;gap:.4rem 1rem}
+.record-context .field-hint{flex-basis:100%;margin:0}
+.report-sheet{overflow-x:auto;margin:1rem 0;padding:1rem;border:1px dashed var(--control-border);border-radius:12px;background:var(--paper);font-family:var(--sans)}
+.report-lab{margin:0 0 .6rem;font-size:.78rem;letter-spacing:.06em;color:var(--muted)}
+.report-sheet table{width:100%;border-collapse:collapse;font-size:.88rem}
+.report-sheet th,.report-sheet td{padding:.5rem .6rem;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.report-mark{display:inline-grid;place-items:center;width:1.3rem;height:1.3rem;margin-right:.35rem;border-radius:50%;background:var(--accent,var(--action));color:#fff;font-size:.72rem}
+.report-steps{padding-left:1.2rem;line-height:1.55}
+.today-latest{display:grid;gap:.35rem;margin:.4rem 0}
+.today-latest div{display:flex;justify-content:space-between;gap:.6rem;align-items:baseline;border-bottom:1px solid var(--line);padding-bottom:.25rem}
+.today-latest dt{font-size:.8rem;color:var(--muted)}
+.today-latest dd{margin:0;text-align:right;font-size:.9rem;color:var(--ink)}
+.today-latest dd span{display:block;font-size:.72rem;color:var(--muted)}
+.today-resume{margin-top:.5rem;font-size:.85rem}
+
+/* ---------- Citas y medicamentos ---------- */
+.care-form-actions{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;grid-column:1/-1}
+.care-status{display:inline-block;margin-left:.3rem;padding:.05rem .5rem;border-radius:999px;font:700 .7rem/1.6 var(--sans);vertical-align:middle;background:var(--green-soft);color:var(--green)}
+.care-status.is-cancelled{background:var(--danger-soft);color:var(--danger)}
+.care-item.is-cancelled .care-text strong{text-decoration:line-through;text-decoration-thickness:1px}
+.care-more{position:relative}
+.care-more summary{list-style:none;cursor:pointer;padding:.35rem .7rem;border:1px solid var(--control-border);border-radius:var(--radius-control);font-size:.85rem;font-weight:600}
+.care-more summary::-webkit-details-marker{display:none}
+.care-menu{position:absolute;right:0;top:calc(100% + .3rem);z-index:5;display:grid;min-width:13rem;padding:.35rem;border:1px solid var(--line);border-radius:12px;background:var(--surface);box-shadow:0 12px 30px -12px rgb(20 45 64 / 35%)}
+.care-menu button{padding:.55rem .7rem;border:0;border-radius:8px;background:transparent;color:var(--ink);font:inherit;text-align:left;cursor:pointer}
+.care-menu button:hover,.care-menu button:focus-visible{background:var(--control-hover)}
+.care-menu .danger-text{color:var(--danger)}
+
+/* ---------- Hábitos ---------- */
+.habit-check.is-missed{border-style:dashed;color:var(--danger);font-weight:800}
+.habit-check.is-na{background:var(--studio);color:var(--muted);border-color:var(--line)}
+.habit-help{display:flex;flex-wrap:wrap;gap:.6rem 1rem;align-items:flex-start;flex-basis:100%;margin-bottom:.8rem}
+.habit-how{flex:1;min-width:16rem;font-size:.88rem}
+.habit-how summary{cursor:pointer;font-weight:700;color:var(--accent-ink,var(--ink))}
+.habit-legend{display:flex;flex-wrap:wrap;gap:.4rem 1rem;color:var(--muted)}
+.habit-legend>span{display:inline-flex;gap:.3rem;align-items:center}
+.week-bottom{flex-wrap:wrap}
+.habit-plan-list{display:grid;gap:.4rem;margin:1rem 0}
+.habit-plan-row{display:flex;justify-content:space-between;gap:1rem;align-items:center;padding:.6rem 0;border-bottom:1px solid var(--line)}
+.habit-plan-row small{display:block;color:var(--muted);font-size:.8rem}
+.habit-plan-target select{min-height:40px;border-radius:10px}
+
+/* ---------- Compras y cocina ---------- */
+#shopping-items li{display:flex;justify-content:space-between;gap:.6rem;align-items:center}
+.shop-from{display:block;font-size:.76rem;color:var(--muted);text-decoration:none}
+.shop-actions{display:flex;gap:.2rem;align-items:center;flex:none}
+.shop-actions .text-link{min-height:32px;padding:.2rem .55rem;font-size:.8rem}
+.shop-edit-input{width:6rem;min-height:34px;padding:.2rem .45rem;border:1px solid var(--input-border);border-radius:8px;font:inherit}
+.shopping-add{display:flex;gap:.6rem;margin-top:1rem;flex-wrap:wrap}
+.shopping-add label{flex:1;min-width:12rem}
+.shopping-add input{width:100%;min-height:44px;padding:.5rem .8rem;border:1px solid var(--input-border);border-radius:var(--radius-control);font:inherit;background:var(--control);color:inherit}
+.recipe-detail-photo figcaption{font-size:.78rem;color:var(--muted)}
+
+/* ---------- Diario ---------- */
+.partial-tag{display:inline-block;padding:0 .4rem;border-radius:999px;background:var(--amber-soft);color:var(--amber);font-size:.66rem;font-weight:700;letter-spacing:.02em;text-transform:none}
+.summary-tile .no-data{font-size:1.05rem;color:var(--muted)}
+.diary-source{margin:.6rem 0 0;font-size:.78rem;color:var(--muted);line-height:1.5}
+
+/* ---------- Señales y «Mis preguntas» ---------- */
+.guidance-why{margin:.6rem 0;font-size:.9rem}
+.symptom-result h3:focus{outline:none}
+.my-questions{margin-top:2rem;border:1px solid var(--line);background:var(--surface)}
+.myq-form{display:flex;gap:.6rem;flex-wrap:wrap;margin:1rem 0}
+.myq-form label{flex:1;min-width:14rem}
+.myq-form input,.myq-edit{width:100%;min-height:44px;padding:.5rem .8rem;border:1px solid var(--input-border);border-radius:var(--radius-control);font:inherit;background:var(--control);color:inherit}
+.myq-list{display:grid;gap:.4rem;margin:0;padding:0;list-style:none;counter-reset:q}
+.myq-list li{display:flex;gap:.6rem;align-items:center;padding:.55rem .7rem;border:1px solid var(--line);border-radius:12px;background:var(--paper);counter-increment:q}
+.myq-list li:not(.myq-empty)::before{content:counter(q);display:inline-grid;place-items:center;flex:none;width:1.6rem;height:1.6rem;border-radius:50%;background:var(--accent-soft,var(--studio));color:var(--accent-ink,var(--ink));font-weight:700;font-size:.8rem}
+.myq-list li.is-done .myq-text{text-decoration:line-through;color:var(--muted)}
+.myq-text{flex:1;line-height:1.45}
+.myq-actions{display:flex;gap:.15rem;align-items:center}
+.myq-actions .icon-button{width:34px;height:34px;min-width:34px}
+.myq-actions .text-link{min-height:32px;padding:.2rem .55rem;font-size:.8rem}
+.myq-empty{color:var(--muted)}
+
+/* ---------- Infografías interactivas ---------- */
+.info-steps{margin-bottom:1rem}
+.cct-column li{padding:0}
+.cct-item{display:flex;gap:.9rem;align-items:flex-start;width:100%;padding:1rem .4rem;border:0;border-radius:12px;background:transparent;color:inherit;font:inherit;text-align:left;cursor:pointer}
+.cct-item:hover{background:var(--col-soft,var(--studio))}
+.cct-item[aria-pressed="true"]{background:var(--col-soft,var(--studio));box-shadow:inset 3px 0 0 var(--col,var(--action))}
+.cct-item strong{display:block;color:var(--ink);font-size:1rem;line-height:1.3;margin-bottom:.2rem}
+.cct-item span:not(.cct-icon){display:block;font-size:.9375rem;color:var(--muted);line-height:1.5}
+.cct-grid[data-focus="0"] .cct-column:not(.is-focus),.cct-grid[data-focus="1"] .cct-column:not(.is-focus),.cct-grid[data-focus="2"] .cct-column:not(.is-focus){opacity:.45}
+.info-detail{margin-top:1rem;padding:var(--pad-card);border-radius:var(--radius-card);border:1px solid var(--line);background:var(--surface)}
+.info-detail h3{margin:.2rem 0 .4rem}
+.info-detail p{margin:0 0 .6rem}
+.info-detail-hint{color:var(--muted)}
+.info-summary{margin-top:1rem;padding:1rem 1.2rem;border:1px solid var(--line);border-radius:var(--radius-card);background:var(--surface)}
+.info-summary summary{cursor:pointer;font-weight:700}
+.info-summary h3{font-size:1rem;margin:1rem 0 .3rem}
+.info-quiz,.workshop-grid,.case-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:1rem}
+.info-quiz-item{display:grid;gap:.35rem;margin:0;padding:1rem 1.1rem;border:1px solid var(--line);border-radius:var(--radius-card);background:var(--surface)}
+.info-quiz-item legend{float:left;width:100%;padding:0;margin-bottom:.4rem;font-weight:700;color:var(--ink);line-height:1.4}
+.info-quiz-item legend+*{clear:both}
+.info-quiz-answer{margin:.4rem 0 0;padding:.6rem .8rem;border-radius:10px;font-size:.9rem;line-height:1.5}
+.info-quiz-answer.is-right{background:var(--green-soft);color:var(--green)}
+.info-quiz-answer.is-wrong{background:var(--amber-soft);color:var(--amber)}
+
+/* ---------- Entender: guía de lectura, casos, taller y biblioteca ---------- */
+.learn-guide-top{display:grid;gap:1rem;max-width:46rem;margin:1.4rem 0 2rem}
+.learn-key{margin:0;padding:1rem 1.2rem;border-left:4px solid var(--accent);border-radius:0 14px 14px 0;background:var(--accent-soft,var(--studio));font:400 1.2rem/1.4 var(--serif);color:var(--ink)}
+.learn-key .learn-mono{display:block;margin-bottom:.3rem;font-family:var(--sans)}
+.learn-summary ul{margin:.3rem 0 0;padding-left:1.2rem;line-height:1.6}
+.learn-guide-bottom{display:grid;gap:1.4rem;max-width:58rem;margin-top:2.4rem;padding-top:1.6rem;border-top:1px solid var(--line)}
+.learn-quiz{display:grid;gap:.8rem}
+.learn-quiz h3,.learn-ask h3{margin:0;font-size:1.05rem}
+.learn-ask ul{padding-left:1.2rem;line-height:1.6}
+.learn-read-row{margin:0}
+.button.is-read{color:var(--green);border-color:var(--green)}
+.learn-chapter.is-dark .info-quiz-item,.learn-chapter.is-dark .learn-key{background:rgb(255 255 255 / 6%);color:inherit}
+.learn-chapter.is-dark .info-quiz-item legend{color:inherit}
+#learn-index a.is-read{color:var(--ink)}
+.learn-check{margin-left:auto;color:var(--green);font-weight:800}
+.learn-read-count{margin:.6rem 0 0;font-size:.8rem;color:var(--muted)}
+.case-done{font-weight:700;color:var(--green)}
+.workshop-claim{padding:.7rem .9rem;border-radius:12px;background:var(--paper);font-weight:600}
+.learn-extra>h3{margin:2rem 0 1rem}
+.ai-exercise ol{padding-left:1.2rem;line-height:1.6;margin:0}
+.res-tools{display:grid;gap:.8rem;margin:1.2rem 0 1.6rem}
+.res-search input{width:100%;min-height:46px;padding:.55rem .9rem;border:1px solid var(--input-border);border-radius:var(--radius-control);font:inherit;background:var(--control);color:inherit}
+.res-selects{display:flex;flex-wrap:wrap;gap:.6rem 1rem;align-items:center}
+.res-selects select{min-height:42px;padding:.3rem .6rem;border:1px solid var(--input-border);border-radius:10px;background:var(--control);color:inherit;font:inherit}
+.res-library-count{margin:0;font-size:.85rem;color:var(--muted)}
+.res-card.is-read{border-style:dashed}
+.res-title{color:inherit;text-decoration:none}
+.res-title:hover strong{text-decoration:underline}
+.res-access{align-self:flex-start;font-size:.74rem;font-weight:700;color:var(--green)}
+.res-access.is-check,.res-access.is-account,.res-access.is-pros{color:var(--amber)}
+.res-sheet summary{cursor:pointer;font-size:.85rem;font-weight:700;color:var(--accent-ink,var(--action))}
+.res-sheet dl{margin:.5rem 0 0;font-size:.86rem;line-height:1.5}
+.res-sheet dt{font-weight:700;color:var(--ink)}
+.res-sheet dd{margin:0 0 .45rem}
+.res-lib{display:flex;flex-wrap:wrap;gap:.3rem}
+.res-lib .text-link{min-height:34px;padding:.2rem .6rem;font-size:.82rem}
+.res-lib [aria-pressed="true"]{color:var(--accent-ink,var(--action));border-color:var(--accent,var(--action))}
+
+@media (max-width:640px){
+  #shopping-items li{align-items:flex-start}
+  .habit-plan-row{flex-direction:column;align-items:flex-start}
+  .myq-list li{flex-wrap:wrap}
+  .myq-actions{margin-left:auto}
+  .sh-hero:not(.is-compact) .sh-toggle{position:static}
+}
+@media print{.sh-toggle,.res-lib,.res-tools,.myq-actions,.myq-form,.shop-actions,.shopping-add{display:none!important}}
