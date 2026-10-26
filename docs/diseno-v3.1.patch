@@ -1,0 +1,1064 @@
+--- /dev/null
++++ b/GUIA_DISENO_BOTONES.md
+@@ -0,0 +1,58 @@
++# Actualización visual de Renal / COIL 3.1
++
++## Abrirla de inmediato
++
++Reemplaza `Abrir_sin_instalar.html` por el archivo nuevo y ábrelo con Chrome o Edge. Conserva el mismo nombre y ubicación si quieres mantener el mismo espacio de datos del navegador. Exporta un respaldo de tus registros desde Ajustes antes de mover la aplicación a otra carpeta, navegador o equipo.
++
++## Qué cambió
++
++- Fondo claro, superficies blancas, azul para las acciones y acentos turquesa.
++- Menú principal con botones: fondo, borde, estado activo y foco de teclado.
++- Botones coherentes en anatomía, capítulos, fechas conceptuales, filtros y herramientas.
++- Tipografía de lectura más directa, con las fuentes locales del proyecto.
++- Transiciones de 160 ms: elevación de 2 px al pasar el cursor y presión breve al pulsar.
++- Bordes finos en la ilustración y el comparador. Movimiento reducido desde Ajustes o desde el sistema.
++
++## Actualizar una carpeta v3 sin personalizaciones
++
++1. Haz una copia de tu carpeta actual.
++2. Extrae `Actualizacion_Diseno_Botones_COIL.zip`.
++3. Copia el contenido de `proyecto-coil-renal` dentro de tu carpeta existente y acepta reemplazar los archivos incluidos.
++4. Abre el HTML autónomo actualizado; para desarrollar, inicia el servidor como explica `LEEME.md`.
++
++Este ZIP pequeño complementa una carpeta v3. Para empezar desde cero, usa `Proyecto_COIL_Renal_Profesional.zip`.
++
++## Si personalizaste textos o la estructura
++
++Los nuevos estilos están aislados en `css/visual.css`. Conserva tus archivos de contenido de `data/` y los demás módulos de `js/`. El archivo actualizado `js/search.js` incluye una corrección para cerrar la búsqueda con Esc. En tu `index.html`, añade esta línea justo después del enlace a `css/extensions.css`:
++
++```html
++<link rel="stylesheet" href="css/visual.css">
++```
++
++Copia también el generador actualizado `tools/crear_portable.py` y ejecuta:
++
++```bash
++python tools/crear_portable.py
++```
++
++Así obtendrás el HTML autónomo con tus propios textos y el diseño nuevo. El ZIP incluye los archivos completos y `docs/diseno-v3.1.patch` para comparar la base v3. El archivo autónomo entregado corresponde a los textos de la versión base; regénéralo si ya los habías cambiado.
++
++## Archivos cambiados
++
++| Archivo | Cambio y motivo |
++| --- | --- |
++| `css/visual.css` | Nuevo. Mantiene los estilos visuales en un solo archivo para poder ajustarlos o retirarlos. |
++| `index.html` | Añade la hoja visual y actualiza el color de la interfaz del navegador. |
++| `tools/crear_portable.py` | Incluye la hoja nueva al generar el HTML autónomo. |
++| `js/search.js` | Corrige el cierre inmediato de la búsqueda con Esc cuando hay texto escrito. |
++| `sw.js` | Renueva la versión de caché e incluye la hoja nueva. |
++| `manifest.webmanifest`, `assets/favicon.svg` | Coordinan el color de instalación y el icono con la interfaz. |
++| `package.json`, `package-lock.json` | Identifican esta entrega como 3.1.0. |
++| `LEEME.md`, `VALIDACION.md` | Documentan cómo aplicar el diseño y qué se comprobó. |
++
++El esquema de datos permanece en v3. No se alteraron fórmulas, mediciones, perfiles, traducciones ni reglas clínicas. Las verificaciones clínicas y de contenido pendientes de la versión anterior se conservan.
++
++## Referencia y alcance
++
++Se tomó como referencia https://www.clubdelafarmacia.com/ y el HTML compartido. La paleta y los controles se implementaron como estilos propios del proyecto. No se incorporaron marcas, imágenes, scripts, formularios de acceso ni servicios de seguimiento del sitio de referencia.
+--- a/LEEME.md
++++ b/LEEME.md
+@@ -1,4 +1,6 @@
+-# Renal / COIL · Versión 3.0
++# Renal / COIL · Versión 3.1
++
++La versión 3.1 renueva los colores, la tipografía y los botones a partir de la referencia visual del Club de la Farmacia. Consulta `GUIA_DISENO_BOTONES.md` para aplicar solo esta capa visual.
+ 
+ Web educativa de seis secciones, editable con HTML, CSS, JavaScript y JSON. El proyecto conserva la identidad de la versión anterior y agrega movimiento, búsqueda, perfiles, importaciones y herramientas para presentar. No necesita un framework ni un servicio de cuentas.
+ 
+@@ -36,6 +38,7 @@
+ | `index.html` | Estructura y formularios de las seis secciones. |
+ | `css/tokens.css` | Colores claros/oscuros, fuentes y medidas generales. |
+ | `css/base.css`, `css/layout.css`, `css/components.css` | Tipografía, distribución y componentes existentes. |
++| `css/visual.css` | Paleta azul y turquesa, botones de navegación, tipografía y respuesta al pasar el cursor o pulsar. |
+ | `css/extensions.css` | Búsqueda, perfiles, comparaciones, calendario y ajustes de accesibilidad. |
+ | `data/contenido.es.json`, `data/contenido.en.json` | Textos, capítulos, estadísticas y créditos en ambos idiomas. |
+ | `data/recetas.json` | Ocho propuestas con cantidades, sustituciones y validación pendiente. |
+--- a/VALIDACION.md
++++ b/VALIDACION.md
+@@ -1,3 +1,24 @@
++# Revisión del diseño · Renal / COIL 3.1
++
++Comprobaciones del 7 de octubre de 2026, sobre esta entrega.
++
++- `npm run verify`: ESLint aprobado, 665 claves ES/EN equivalentes, 19 pruebas aprobadas y autónomo de 539,296 bytes.
++- Apertura real del HTML autónomo por `file://`, con Chromium 153.0.8010.0 en Linux. Consola sin errores de la aplicación.
++- 48 comprobaciones: seis secciones × 360, 768, 1280 y 1920 px × fuente raíz de 16 y 32 px. Sin desbordamiento horizontal del documento. La tabla conserva su desplazamiento interno.
++- Texto al 200 % se verificó cambiando la fuente raíz, no con el zoom nativo del navegador.
++- Búsqueda con Ctrl K y cierre con Esc, presentación hasta 9/9, cambio a inglés y tema oscuro: aprobados.
++- Respuesta al pasar el cursor: transición de 160 ms y desplazamiento de 2 px. Movimiento reducido del sistema: duración 0 s y transformación `none`.
++- Ocho combinaciones de texto/fondo de la paleta por tema: mínimo 5.26:1 en claro y 6.42:1 en oscuro. Esta comprobación de colores definidos no cubre todos los elementos SVG, estados o transparencias; no certifica WCAG.
++- Capturas nuevas en `docs/capturas/diseno-3.1-*.jpg`; evidencia detallada en `docs/auditoria/diseno-3.1.json`.
++
++No se repitió Lighthouse para 3.1. Las cifras y capturas de Lighthouse de la sección histórica inferior corresponden a 3.0. Tampoco se probaron esta revisión en Windows/Edge físicos, lectores de pantalla, instalación PWA ni guardado nativo de PDF.
++
++La actualización cambia la presentación visual. Se conservan las validaciones clínicas y de contenido pendientes. También se corrigió el cierre inmediato de la búsqueda con Esc desde su campo de texto.
++
++---
++
++## Registro histórico de la versión 3.0
++
+ # Comprobaciones realizadas · Renal / COIL 3.0
+ 
+ Entrega del 7 de octubre de 2026. Se probaron datos ficticios en un perfil llamado «Prueba de presentación»; esos registros no forman parte de los archivos de código entregados.
+--- a/assets/favicon.svg
++++ b/assets/favicon.svg
+@@ -1 +1 @@
+-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><rect width="40" height="40" rx="9" fill="#173e36"/><path d="M23 7C9 5 4 23 14 31c6 5 13-1 10-7-6-1-6-7-2-10 4-2 5-6 1-7Z" fill="#d7e2ce"/><path d="M24 16c5 0 6 7 6 14" fill="none" stroke="#d7e2ce" stroke-width="2"/></svg>
++<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><rect width="40" height="40" rx="9" fill="#096b8d"/><path d="M23 7C9 5 4 23 14 31c6 5 13-1 10-7-6-1-6-7-2-10 4-2 5-6 1-7Z" fill="#d7e2ce"/><path d="M24 16c5 0 6 7 6 14" fill="none" stroke="#d7e2ce" stroke-width="2"/></svg>
+--- /dev/null
++++ b/css/visual.css
+@@ -0,0 +1,223 @@
++/* Renal 3.1: superficies claras, acciones visibles y movimiento breve. */
++:root {
++  --paper: #f5f8fb;
++  --surface: #ffffff;
++  --studio: #edf5f9;
++  --sage: #dcecf3;
++  --sage-dark: #526f80;
++  --ink: #173e55;
++  --text: #2c4657;
++  --muted: #536b79;
++  --line: #cbd9e2;
++  --blue: #146b91;
++  --blue-soft: #e7f2f8;
++  --coral: #a94d34;
++  --coral-soft: #f8e7de;
++  --action: #096b8d;
++  --action-hover: #07536d;
++  --action-text: #ffffff;
++  --accent: #00a88e;
++  --control: #ffffff;
++  --control-hover: #e7f2f8;
++  --control-border: #b8ccd9;
++  --control-active: #dceef7;
++  --control-text: #214f68;
++  --header-surface: #ffffff;
++  --button-shadow: 0 2px 5px #173e5510;
++  --button-hover-shadow: 0 5px 12px #173e551b;
++}
++
++[data-theme="dark"] {
++  --paper: #121e28;
++  --surface: #1b2b39;
++  --studio: #223a49;
++  --sage: #304f61;
++  --sage-dark: #adc5d3;
++  --ink: #e3eff6;
++  --text: #d4e4ed;
++  --muted: #adc2ce;
++  --line: #456174;
++  --blue: #92cbe8;
++  --blue-soft: #254557;
++  --coral: #f2b29b;
++  --coral-soft: #493129;
++  --action: #9ad7f0;
++  --action-hover: #bceaff;
++  --action-text: #103548;
++  --accent: #38d3b8;
++  --control: #203544;
++  --control-hover: #2b495d;
++  --control-border: #4f6d80;
++  --control-active: #315970;
++  --control-text: #d4eaf7;
++  --header-surface: #182936;
++  --button-shadow: 0 2px 5px #00000020;
++  --button-hover-shadow: 0 5px 12px #00000030;
++}
++
++::selection { background: var(--control-active); color: var(--ink); }
++
++h1, h2 { font-family: var(--sans); font-weight: 700; letter-spacing: -.035em; }
++h2 { font-size: clamp(1.65rem, 2.5vw, 2.3rem); line-height: 1.18; }
++.discovery-copy h1 { font-size: clamp(2.8rem, 4.6vw, 4.6rem); line-height: 1.08; }
++.discovery-copy h1 em { font-family: inherit; font-style: normal; color: var(--action); font-weight: 700; }
++.studio-caption p { color: var(--muted); }
++.glomerulus-surface h3 { font: 700 1.55rem/1.25 var(--sans); letter-spacing: -.02em; }
++
++.site-header { background: var(--header-surface); border-top: 3px solid var(--accent); box-shadow: 0 3px 15px #173e5508; }
++.reading-progress span { background: var(--accent); }
++.header-inner { gap: 1rem; flex-wrap: wrap; padding-top: .8rem; padding-bottom: .8rem; }
++#main-nav { gap: .45rem; flex-wrap: wrap; justify-content: center; }
++#main-nav a {
++  display: inline-flex; align-items: center; justify-content: center;
++  min-height: 44px; padding: .7rem .85rem; border: 1px solid var(--control-border);
++  background: var(--control); color: var(--control-text); border-radius: .5rem;
++  font-size: .925rem; font-weight: 700; line-height: 1.25;
++  box-shadow: var(--button-shadow);
++}
++#main-nav a[aria-current="page"] {
++  background: var(--action); color: var(--action-text); border-color: var(--action);
++  box-shadow: inset 0 -3px var(--accent);
++}
++#main-nav a[aria-current="page"]::after { display: none; }
++.header-tools { gap: .4rem; }
++.header-tools .icon-button { border: 1px solid var(--control-border); background: var(--control); color: var(--control-text); border-radius: .5rem; }
++.language-control { background: var(--control-hover); border-radius: .5rem; }
++.language-control button { border-radius: .35rem; font-weight: 700; }
++.language-control [aria-pressed="true"] { background: var(--action); color: var(--action-text); }
++.workspace-strip { border-top-color: var(--line); padding-top: .55rem; padding-bottom: .55rem; flex-wrap: wrap; }
++.workspace-strip select { background: var(--control); border-color: var(--control-border); border-radius: .45rem; min-height: 36px; }
++
++.button, .text-link {
++  border-radius: .5rem; min-height: 44px; font-weight: 700;
++  box-shadow: var(--button-shadow); line-height: 1.3;
++}
++.button.primary { background: var(--action); border-color: var(--action); color: var(--action-text); }
++.button.primary:hover { background: var(--action-hover); border-color: var(--action-hover); color: var(--action-text); }
++.button.secondary, .text-link {
++  border: 1px solid var(--control-border); background: var(--control); color: var(--control-text);
++}
++.text-link { padding: .55rem .85rem; justify-content: center; text-align: center; text-decoration: none; }
++.button.secondary:hover, .text-link:hover { background: var(--control-hover); color: var(--control-text); }
++.danger-text { color: var(--danger); }
++.text-link.danger-text, .text-link.danger-text:hover { color: var(--danger); }
++.hero-actions { gap: .75rem; align-items: stretch; }
++.hero-actions .text-link { padding: .85rem 1.25rem; font-size: 1rem; }
++.daily-note { background: #0d536f; color: #ffffff; }
++.daily-note h2, .daily-note .eyebrow { color: #ffffff; }
++.daily-note .button.primary { background: #ffffff; border-color: #ffffff; color: #174e66; }
++.daily-note .button.primary:hover { background: #e7f2f8; color: #174e66; }
++
++.kidney-studio { border: 1px solid var(--line); border-radius: 6px; }
++.studio-caption { border-top-color: var(--line); }
++.caption-index { border-color: var(--control-border); }
++.studio-tools { gap: .6rem; }
++.studio-tools .text-link { font-size: .8rem; min-height: 38px; padding: .55rem .7rem; }
++.part-buttons { gap: .4rem; }
++.part-buttons button {
++  flex: 1 1 auto; padding: .6rem .7rem; min-height: 42px; border-radius: .45rem;
++  border: 1px solid var(--control-border); background: var(--control); color: var(--control-text);
++  box-shadow: var(--button-shadow); font-weight: 700;
++}
++.part-buttons [aria-pressed="true"] { background: var(--action); border-color: var(--action); color: var(--action-text); }
++
++.education-tabs { border: 0; gap: .6rem; }
++.education-tabs button {
++  min-height: 62px; gap: .65rem; padding: 1rem; border: 1px solid var(--control-border);
++  background: var(--control); border-radius: .5rem; color: var(--control-text); font-weight: 700;
++  box-shadow: var(--button-shadow);
++}
++.education-tabs button > span:first-child { color: inherit; opacity: .8; }
++.education-tabs [aria-selected="true"] {
++  border-color: var(--action); background: var(--control-active); color: var(--ink);
++  box-shadow: inset 0 -3px var(--action);
++}
++.education-tabs [aria-selected="true"]::after { display: none; }
++.concept-timeline { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .5rem; }
++.concept-timeline button {
++  min-height: 42px; border: 1px solid var(--control-border); background: var(--control);
++  color: var(--control-text); border-radius: .45rem; padding: .55rem .35rem; font-weight: 700;
++}
++.concept-timeline [aria-pressed="true"] { background: var(--action); color: var(--action-text); border-color: var(--action); }
++.period-control { background: var(--control-hover); border: 1px solid var(--line); border-radius: .5rem; }
++.period-control button { min-height: 38px; border-radius: .35rem; }
++.period-control [aria-pressed="true"] { background: var(--action); color: var(--action-text); }
++.segmented { background: var(--control); border-radius: .5rem; }
++.segmented button { border-radius: .35rem; }
++.segmented [aria-pressed="true"] { background: var(--action); color: var(--action-text); }
++.recipe-meal-filters button { border-radius: .45rem; background: var(--control); border-color: var(--control-border); min-height: 42px; font-weight: 700; }
++.recipe-meal-filters [aria-pressed="true"] { background: var(--action); color: var(--action-text); border-color: var(--action); }
++.page-intro .eyebrow { display: inline-flex; padding: .4rem .65rem; background: var(--blue-soft); color: var(--ink); border-left: 3px solid var(--accent); border-radius: .4rem; }
++.recipe-card, .chart-surface, .week-surface, .streak-surface, .note-surface { background: var(--surface); border-radius: 6px; }
++.results-table tr:hover td { background: var(--control-hover); }
++.month-habit-list [aria-pressed="true"], .habit-check[aria-pressed="true"] { background: var(--action); color: var(--action-text); }
++.month-day[aria-pressed="true"] { background: var(--control-active); }
++
++/* Estas transiciones no afectan medidas ni retrasan la acción de un control. */
++:is(#main-nav a, .button, .text-link, .icon-button, .part-buttons button,
++    .education-tabs button, .concept-timeline button, .period-control button,
++    .segmented button, .recipe-meal-filters button, .language-control button) {
++  transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease,
++              box-shadow 160ms ease, transform 160ms var(--ease);
++}
++@media (hover: hover) and (pointer: fine) {
++  :is(#main-nav a, .button, .text-link, .icon-button, .part-buttons button,
++      .education-tabs button, .concept-timeline button, .recipe-meal-filters button):not(:disabled):hover {
++    transform: translateY(-2px); box-shadow: var(--button-hover-shadow);
++  }
++  #main-nav a:not([aria-current="page"]):hover,
++  .part-buttons button:not([aria-pressed="true"]):hover,
++  .education-tabs button:not([aria-selected="true"]):hover,
++  .concept-timeline button:not([aria-pressed="true"]):hover,
++  .header-tools .icon-button:hover { background: var(--control-hover); border-color: var(--action); }
++}
++:is(#main-nav a, .button, .text-link, .icon-button, .part-buttons button,
++    .education-tabs button, .concept-timeline button):not(:disabled):active {
++  transform: translateY(0) scale(.98); box-shadow: none;
++}
++:is(button, a, input, select, textarea, [tabindex]):focus-visible { outline-color: var(--blue); }
++
++/* Las reglas previas de modo oscuro tienen mayor especificidad: armonizarlas. */
++[data-theme="dark"] .education-tabs [aria-selected="true"] { background: var(--control-active); }
++[data-theme="dark"] .button.primary:hover { background: var(--action-hover); color: var(--action-text); }
++[data-theme="dark"] .daily-note { background: #203f50; color: #d9edf8; }
++[data-theme="dark"] .daily-note h2, [data-theme="dark"] .daily-note .eyebrow { color: #d9edf8; }
++[data-theme="dark"] .daily-note .button.primary:hover { background: #e7f2f8; color: #174e66; }
++[data-theme="dark"] .discovery-copy h1 em { color: var(--action); }
++
++@media (max-width: 1150px) {
++  #main-nav { padding: .8rem var(--gutter) 1rem; gap: .45rem; background: var(--header-surface); box-shadow: 0 8px 15px #173e5515; }
++  #main-nav a { justify-content: flex-start; padding: .85rem 1rem; min-height: 48px; white-space: normal; }
++}
++@media (max-width: 760px) {
++  .header-inner { gap: .7rem; }
++  .header-tools { gap: .25rem; }
++  .hero-actions .button, .hero-actions .text-link { flex: 1 1 auto; }
++  .education-tabs button { padding: .85rem .7rem; font-size: .875rem; }
++  .discovery-copy h1 { font-size: clamp(2.5rem, 7.5vw, 3.8rem); }
++}
++@media (max-width: 440px) {
++  .header-inner { display: flex; flex-wrap: wrap; justify-content: space-between; padding-top: .7rem; padding-bottom: .7rem; }
++  .header-tools { flex-wrap: wrap; margin-left: auto; }
++  .header-tools .icon-button, .header-tools .utility-button { width: 32px; height: 34px; }
++  .header-tools .language-control button { min-width: 25px; padding: .3rem; }
++  .brand-name { font-size: 1.65rem; }
++  .workspace-strip { gap: .5rem; }
++  .workspace-strip .text-link { padding: .4rem .6rem; }
++  .concept-timeline { gap: .3rem; }
++  .concept-timeline button { font-size: .65rem; overflow-wrap: anywhere; }
++  .part-buttons button { padding: .55rem .6rem; }
++}
++
++@media (prefers-reduced-motion: reduce) {
++  :is(#main-nav a, .button, .text-link, .icon-button, .part-buttons button,
++      .education-tabs button, .concept-timeline button, .period-control button,
++      .segmented button, .recipe-meal-filters button, .language-control button) {
++    transform: none !important; transition: none !important;
++  }
++}
++[data-motion="reduced"] :is(#main-nav a, .button, .text-link, .icon-button,
++    .part-buttons button, .education-tabs button, .concept-timeline button,
++    .period-control button, .segmented button, .recipe-meal-filters button,
++    .language-control button) { transform: none !important; transition: none !important; }
++@media print { .site-header { box-shadow: none; } .button, .text-link { box-shadow: none; } }
+--- a/docs/ARCHIVOS_NUEVOS.md
++++ b/docs/ARCHIVOS_NUEVOS.md
+@@ -685,3 +685,8 @@
+ const result=spawnSync(process.execPath,['tools/portable.cjs'],{cwd:root,stdio:'inherit'});if(result.status!==0)process.exit(result.status||1);const size=fs.statSync(path.join(root,'Abrir_sin_instalar.html')).size;if(size<=500000||size>=3000000){console.error('Tamaño autónomo fuera de los límites:',size);process.exit(1);}console.log('Listo para presentar');console.log('La revisión técnica no sustituye la aprobación clínica del contenido.');
+ ```
+ 
++
++
++## Archivos nuevos de 3.1
++
++`css/visual.css`, `GUIA_DISENO_BOTONES.md`, `docs/diseno-v3.1.patch`, `docs/auditoria/diseno-3.1.json` y las capturas `docs/capturas/diseno-3.1-*.jpg`.
+--- a/docs/CAMBIOS_POR_ARCHIVO.md
++++ b/docs/CAMBIOS_POR_ARCHIVO.md
+@@ -89,3 +89,8 @@
+ Los documentos generados `CODIGO_COMPLETO.md`, `ARCHIVOS_NUEVOS.md` y este índice acompañan la entrega. El package-lock completo se distribuye como archivo para que las herramientas puedan reproducirse. No se sustituyó HTML/CSS/JavaScript por otra arquitectura.
+ 
+ Para personalizaciones propias, compara antes de reemplazar los JSON y las hojas de estilo. Revisa `../COMO_ACTUALIZAR_ANIMACIONES.md`.
++
++
++## Diseño 3.1
++
++Consulta `../GUIA_DISENO_BOTONES.md` y `diseno-v3.1.patch`. La capa nueva está en `css/visual.css`; se conectó a la entrada modular, al generador autónomo y a la caché. `js/search.js` cierra la búsqueda con Esc aun cuando el campo contiene texto.
+--- /dev/null
++++ b/docs/auditoria/diseno-3.1.json
+@@ -0,0 +1,583 @@
++{
++  "date": "2026-10-07T14:21:04.906Z",
++  "browser": "153.0.8010.0",
++  "os": "linux",
++  "matrix": [
++    {
++      "width": 360,
++      "fontSize": 16,
++      "route": "descubrir",
++      "scrollWidth": 360,
++      "pass": true,
++      "overflows": [
++        {
++          "tag": "ellipse",
++          "id": "",
++          "class": {},
++          "rect": {
++            "x": 196,
++            "y": 2097.78125,
++            "width": 188,
++            "height": 124,
++            "top": 2097.78125,
++            "right": 384,
++            "bottom": 2221.78125,
++            "left": 196
++          }
++        },
++        {
++          "tag": "path",
++          "id": "",
++          "class": {},
++          "rect": {
++            "x": 192,
++            "y": 2160.78125,
++            "width": 196,
++            "height": 52,
++            "top": 2160.78125,
++            "right": 388,
++            "bottom": 2212.78125,
++            "left": 192
++          }
++        },
++        {
++          "tag": "path",
++          "id": "",
++          "class": {},
++          "rect": {
++            "x": 340.97943115234375,
++            "y": 2126.203125,
++            "width": 28.880615234375,
++            "height": 47.678955078125,
++            "top": 2126.203125,
++            "right": 369.86004638671875,
++            "bottom": 2173.882080078125,
++            "left": 340.97943115234375
++          }
++        }
++      ]
++    },
++    {
++      "width": 360,
++      "fontSize": 16,
++      "route": "seguimiento",
++      "scrollWidth": 360,
++      "pass": true,
++      "overflows": []
++    },
++    {
++      "width": 360,
++      "fontSize": 16,
++      "route": "alimentacion",
++      "scrollWidth": 360,
++      "pass": true,
++      "overflows": []
++    },
++    {
++      "width": 360,
++      "fontSize": 16,
++      "route": "habitos",
++      "scrollWidth": 360,
++      "pass": true,
++      "overflows": []
++    },
++    {
++      "width": 360,
++      "fontSize": 16,
++      "route": "senales",
++      "scrollWidth": 360,
++      "pass": true,
++      "overflows": []
++    },
++    {
++      "width": 360,
++      "fontSize": 16,
++      "route": "proyecto",
++      "scrollWidth": 360,
++      "pass": true,
++      "overflows": []
++    },
++    {
++      "width": 360,
++      "fontSize": 32,
++      "route": "descubrir",
++      "scrollWidth": 360,
++      "pass": true,
++      "overflows": [
++        {
++          "tag": "ellipse",
++          "id": "",
++          "class": {},
++          "rect": {
++            "x": 196,
++            "y": 5609.3125,
++            "width": 188,
++            "height": 124,
++            "top": 5609.3125,
++            "right": 384,
++            "bottom": 5733.3125,
++            "left": 196
++          }
++        },
++        {
++          "tag": "path",
++          "id": "",
++          "class": {},
++          "rect": {
++            "x": 192,
++            "y": 5672.3125,
++            "width": 196,
++            "height": 52,
++            "top": 5672.3125,
++            "right": 388,
++            "bottom": 5724.3125,
++            "left": 192
++          }
++        },
++        {
++          "tag": "path",
++          "id": "",
++          "class": {},
++          "rect": {
++            "x": 340.97943115234375,
++            "y": 5637.734375,
++            "width": 28.880615234375,
++            "height": 47.6787109375,
++            "top": 5637.734375,
++            "right": 369.86004638671875,
++            "bottom": 5685.4130859375,
++            "left": 340.97943115234375
++          }
++        }
++      ]
++    },
++    {
++      "width": 360,
++      "fontSize": 32,
++      "route": "seguimiento",
++      "scrollWidth": 360,
++      "pass": true,
++      "overflows": []
++    },
++    {
++      "width": 360,
++      "fontSize": 32,
++      "route": "alimentacion",
++      "scrollWidth": 360,
++      "pass": true,
++      "overflows": []
++    },
++    {
++      "width": 360,
++      "fontSize": 32,
++      "route": "habitos",
++      "scrollWidth": 360,
++      "pass": true,
++      "overflows": []
++    },
++    {
++      "width": 360,
++      "fontSize": 32,
++      "route": "senales",
++      "scrollWidth": 360,
++      "pass": true,
++      "overflows": []
++    },
++    {
++      "width": 360,
++      "fontSize": 32,
++      "route": "proyecto",
++      "scrollWidth": 360,
++      "pass": true,
++      "overflows": []
++    },
++    {
++      "width": 768,
++      "fontSize": 16,
++      "route": "descubrir",
++      "scrollWidth": 768,
++      "pass": true,
++      "overflows": []
++    },
++    {
++      "width": 768,
++      "fontSize": 16,
++      "route": "seguimiento",
++      "scrollWidth": 768,
++      "pass": true,
++      "overflows": []
++    },
++    {
++      "width": 768,
++      "fontSize": 16,
++      "route": "alimentacion",
++      "scrollWidth": 768,
++      "pass": true,
++      "overflows": []
++    },
++    {
++      "width": 768,
++      "fontSize": 16,
++      "route": "habitos",
++      "scrollWidth": 768,
++      "pass": true,
++      "overflows": []
++    },
++    {
++      "width": 768,
++      "fontSize": 16,
++      "route": "senales",
++      "scrollWidth": 768,
++      "pass": true,
++      "overflows": []
++    },
++    {
++      "width": 768,
++      "fontSize": 16,
++      "route": "proyecto",
++      "scrollWidth": 768,
++      "pass": true,
++      "overflows": []
++    },
++    {
++      "width": 768,
++      "fontSize": 32,
++      "route": "descubrir",
++      "scrollWidth": 768,
++      "pass": true,
++      "overflows": []
++    },
++    {
++      "width": 768,
++      "fontSize": 32,
++      "route": "seguimiento",
++      "scrollWidth": 768,
++      "pass": true,
++      "overflows": []
++    },
++    {
++      "width": 768,
++      "fontSize": 32,
++      "route": "alimentacion",
++      "scrollWidth": 768,
++      "pass": true,
++      "overflows": []
++    },
++    {
++      "width": 768,
++      "fontSize": 32,
++      "route": "habitos",
++      "scrollWidth": 768,
++      "pass": true,
++      "overflows": []
++    },
++    {
++      "width": 768,
++      "fontSize": 32,
++      "route": "senales",
++      "scrollWidth": 768,
++      "pass": true,
++      "overflows": []
++    },
++    {
++      "width": 768,
++      "fontSize": 32,
++      "route": "proyecto",
++      "scrollWidth": 768,
++      "pass": true,
++      "overflows": []
++    },
++    {
++      "width": 1280,
++      "fontSize": 16,
++      "route": "descubrir",
++      "scrollWidth": 1280,
++      "pass": true,
++      "overflows": []
++    },
++    {
++      "width": 1280,
++      "fontSize": 16,
++      "route": "seguimiento",
++      "scrollWidth": 1280,
++      "pass": true,
++      "overflows": []
++    },
++    {
++      "width": 1280,
++      "fontSize": 16,
++      "route": "alimentacion",
++      "scrollWidth": 1280,
++      "pass": true,
++      "overflows": []
++    },
++    {
++      "width": 1280,
++      "fontSize": 16,
++      "route": "habitos",
++      "scrollWidth": 1280,
++      "pass": true,
++      "overflows": []
++    },
++    {
++      "width": 1280,
++      "fontSize": 16,
++      "route": "senales",
++      "scrollWidth": 1280,
++      "pass": true,
++      "overflows": []
++    },
++    {
++      "width": 1280,
++      "fontSize": 16,
++      "route": "proyecto",
++      "scrollWidth": 1280,
++      "pass": true,
++      "overflows": []
++    },
++    {
++      "width": 1280,
++      "fontSize": 32,
++      "route": "descubrir",
++      "scrollWidth": 1280,
++      "pass": true,
++      "overflows": []
++    },
++    {
++      "width": 1280,
++      "fontSize": 32,
++      "route": "seguimiento",
++      "scrollWidth": 1280,
++      "pass": true,
++      "overflows": []
++    },
++    {
++      "width": 1280,
++      "fontSize": 32,
++      "route": "alimentacion",
++      "scrollWidth": 1280,
++      "pass": true,
++      "overflows": []
++    },
++    {
++      "width": 1280,
++      "fontSize": 32,
++      "route": "habitos",
++      "scrollWidth": 1280,
++      "pass": true,
++      "overflows": []
++    },
++    {
++      "width": 1280,
++      "fontSize": 32,
++      "route": "senales",
++      "scrollWidth": 1280,
++      "pass": true,
++      "overflows": []
++    },
++    {
++      "width": 1280,
++      "fontSize": 32,
++      "route": "proyecto",
++      "scrollWidth": 1280,
++      "pass": true,
++      "overflows": []
++    },
++    {
++      "width": 1920,
++      "fontSize": 16,
++      "route": "descubrir",
++      "scrollWidth": 1920,
++      "pass": true,
++      "overflows": []
++    },
++    {
++      "width": 1920,
++      "fontSize": 16,
++      "route": "seguimiento",
++      "scrollWidth": 1920,
++      "pass": true,
++      "overflows": []
++    },
++    {
++      "width": 1920,
++      "fontSize": 16,
++      "route": "alimentacion",
++      "scrollWidth": 1920,
++      "pass": true,
++      "overflows": []
++    },
++    {
++      "width": 1920,
++      "fontSize": 16,
++      "route": "habitos",
++      "scrollWidth": 1920,
++      "pass": true,
++      "overflows": []
++    },
++    {
++      "width": 1920,
++      "fontSize": 16,
++      "route": "senales",
++      "scrollWidth": 1920,
++      "pass": true,
++      "overflows": []
++    },
++    {
++      "width": 1920,
++      "fontSize": 16,
++      "route": "proyecto",
++      "scrollWidth": 1920,
++      "pass": true,
++      "overflows": []
++    },
++    {
++      "width": 1920,
++      "fontSize": 32,
++      "route": "descubrir",
++      "scrollWidth": 1920,
++      "pass": true,
++      "overflows": []
++    },
++    {
++      "width": 1920,
++      "fontSize": 32,
++      "route": "seguimiento",
++      "scrollWidth": 1920,
++      "pass": true,
++      "overflows": []
++    },
++    {
++      "width": 1920,
++      "fontSize": 32,
++      "route": "alimentacion",
++      "scrollWidth": 1920,
++      "pass": true,
++      "overflows": []
++    },
++    {
++      "width": 1920,
++      "fontSize": 32,
++      "route": "habitos",
++      "scrollWidth": 1920,
++      "pass": true,
++      "overflows": []
++    },
++    {
++      "width": 1920,
++      "fontSize": 32,
++      "route": "senales",
++      "scrollWidth": 1920,
++      "pass": true,
++      "overflows": []
++    },
++    {
++      "width": 1920,
++      "fontSize": 32,
++      "route": "proyecto",
++      "scrollWidth": 1920,
++      "pass": true,
++      "overflows": []
++    }
++  ],
++  "errors": [],
++  "reduced": {
++    "transition": "0s",
++    "transform": "none"
++  },
++  "hover": {
++    "transition": "0.16s, 0.16s, 0.16s, 0.16s, 0.16s",
++    "transform": "matrix(1, 0, 0, 1, 0, -2)",
++    "background": "rgb(231, 242, 248)"
++  },
++  "search": "1 resultados. Usa ↑ ↓ y Enter.",
++  "slideCounter": "9 / 9",
++  "theme": "dark",
++  "english": "en",
++  "paletteContrast": {
++    "light": [
++      {
++        "text": "text",
++        "background": "paper",
++        "ratio": 9.29
++      },
++      {
++        "text": "muted",
++        "background": "paper",
++        "ratio": 5.26
++      },
++      {
++        "text": "ink",
++        "background": "paper",
++        "ratio": 10.61
++      },
++      {
++        "text": "control-text",
++        "background": "control",
++        "ratio": 8.81
++      },
++      {
++        "text": "control-text",
++        "background": "control-hover",
++        "ratio": 7.74
++      },
++      {
++        "text": "action-text",
++        "background": "action",
++        "ratio": 6.0
++      },
++      {
++        "text": "action-text",
++        "background": "action-hover",
++        "ratio": 8.51
++      },
++      {
++        "text": "ink",
++        "background": "control-active",
++        "ratio": 9.49
++      }
++    ],
++    "dark": [
++      {
++        "text": "text",
++        "background": "paper",
++        "ratio": 12.98
++      },
++      {
++        "text": "muted",
++        "background": "paper",
++        "ratio": 9.17
++      },
++      {
++        "text": "ink",
++        "background": "paper",
++        "ratio": 14.45
++      },
++      {
++        "text": "control-text",
++        "background": "control",
++        "ratio": 10.22
++      },
++      {
++        "text": "control-text",
++        "background": "control-hover",
++        "ratio": 7.64
++      },
++      {
++        "text": "action-text",
++        "background": "action",
++        "ratio": 8.22
++      },
++      {
++        "text": "action-text",
++        "background": "action-hover",
++        "ratio": 10.06
++      },
++      {
++        "text": "ink",
++        "background": "control-active",
++        "ratio": 6.42
++      }
++    ]
++  }
++}
+--- a/index.html
++++ b/index.html
+@@ -3,7 +3,7 @@
+ <head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+-  <meta name="theme-color" content="#173e36">
++  <meta name="theme-color" content="#096b8d">
+   <meta name="description" content="Una experiencia educativa sobre diabetes y salud renal. Explora, aprende y organiza tus cuidados con el proyecto COIL.">
+   <meta property="og:title" content="Renal · Proyecto COIL">
+   <meta property="og:description" content="Comprender tus riñones es el primer paso para cuidarlos. Educación, seguimiento y hábitos.">
+@@ -24,6 +24,7 @@
+   <link rel="stylesheet" href="css/layout.css">
+   <link rel="stylesheet" href="css/components.css">
+   <link rel="stylesheet" href="css/extensions.css">
++  <link rel="stylesheet" href="css/visual.css">
+   <link rel="preload" href="assets/fonts/texto.woff2" as="font" type="font/woff2" crossorigin>
+   <link rel="preload" href="assets/fonts/editorial.woff2" as="font" type="font/woff2" crossorigin>
+   <link rel="preload" href="assets/fonts/editorial-italic.woff2" as="font" type="font/woff2" crossorigin>
+--- a/js/search.js
++++ b/js/search.js
+@@ -16,7 +16,17 @@
+   document.getElementById('open-search').addEventListener('click',async()=>{await loadData(['recipes']);buildIndex();selected=0;renderSearch();openDialog('search-dialog');document.getElementById('global-search').focus();});
+   document.getElementById('global-search').addEventListener('input',()=>{selected=0;renderSearch();});
+   document.getElementById('search-results').addEventListener('click',event=>{const button=event.target.closest('[data-search-result]');if(button)go(Number(button.dataset.searchResult));});
+-  document.getElementById('search-dialog').addEventListener('keydown',event=>{if(['ArrowDown','ArrowUp'].includes(event.key)){event.preventDefault();selected=Math.max(0,Math.min(results.length-1,selected+(event.key==='ArrowDown'?1:-1)));renderSearch();document.getElementById(`search-result-${selected}`)?.scrollIntoView({block:'nearest',behavior:'instant'});}if(event.key==='Enter'&&event.target.id==='global-search'){event.preventDefault();go(selected);}});
++  document.getElementById('search-dialog').addEventListener('keydown',event=>{
++    // El input de búsqueda puede consumir Esc para borrar el texto antes de cerrar.
++    if(event.key==='Escape'){
++      event.preventDefault();event.stopPropagation();closeDialog('search-dialog');return;
++    }
++    if(['ArrowDown','ArrowUp'].includes(event.key)){
++      event.preventDefault();selected=Math.max(0,Math.min(results.length-1,selected+(event.key==='ArrowDown'?1:-1)));
++      renderSearch();document.getElementById(`search-result-${selected}`)?.scrollIntoView({block:'nearest',behavior:'instant'});
++    }
++    if(event.key==='Enter'&&event.target.id==='global-search'){event.preventDefault();go(selected);}
++  });
+   document.addEventListener('keydown',event=>{const editable=event.target.closest('input,textarea,select,[contenteditable=true]');if((event.ctrlKey||event.metaKey)&&event.key.toLowerCase()==='k'){event.preventDefault();document.getElementById('open-search').click();return;}if(editable||event.ctrlKey||event.metaKey||event.altKey||document.querySelector('dialog[open]'))return;const key=event.key.toLowerCase();if(gPrefix){gPrefix=false;clearTimeout(gTimer);const route={d:'descubrir',s:'seguimiento',a:'alimentacion',h:'habitos',n:'senales',j:'proyecto'}[key];if(route){event.preventDefault();location.hash=route;return;}}if(key==='g'){gPrefix=true;gTimer=setTimeout(()=>{gPrefix=false;},1200);}if(event.key==='?'){event.preventDefault();openDialog('shortcuts-dialog');}if(key==='p'){event.preventDefault();document.getElementById('open-presentation').click();}if(key===','){event.preventDefault();document.getElementById('open-settings').click();}});
+   on(EVENTOS.LANGUAGE,()=>{shortcuts();if(index.length){buildIndex();renderSearch();}});
+ }
+--- a/manifest.webmanifest
++++ b/manifest.webmanifest
+@@ -1 +1,17 @@
+-{"name":"Renal · Proyecto COIL","short_name":"Renal","lang":"es","start_url":"./index.html#descubrir","display":"standalone","background_color":"#faf8f1","theme_color":"#173e36","icons":[{"src":"assets/favicon.svg","sizes":"any","type":"image/svg+xml","purpose":"any"}]}
++{
++  "name": "Renal · Proyecto COIL",
++  "short_name": "Renal",
++  "lang": "es",
++  "start_url": "./index.html#descubrir",
++  "display": "standalone",
++  "background_color": "#f5f8fb",
++  "theme_color": "#096b8d",
++  "icons": [
++    {
++      "src": "assets/favicon.svg",
++      "sizes": "any",
++      "type": "image/svg+xml",
++      "purpose": "any"
++    }
++  ]
++}
+--- a/package-lock.json
++++ b/package-lock.json
+@@ -1,12 +1,12 @@
+ {
+   "name": "renal-coil",
+-  "version": "3.0.0",
++  "version": "3.1.0",
+   "lockfileVersion": 3,
+   "requires": true,
+   "packages": {
+     "": {
+       "name": "renal-coil",
+-      "version": "3.0.0",
++      "version": "3.1.0",
+       "devDependencies": {
+         "eslint": "^10.12.0",
+         "vitest": "^5.0.3"
+--- a/package.json
++++ b/package.json
+@@ -1,8 +1,8 @@
+ {
+   "name": "renal-coil",
+-  "version": "3.0.0",
++  "version": "3.1.0",
+   "private": true,
+-  "description": "Web educativa est\u00e1tica sobre salud renal. Sin dependencias.",
++  "description": "Web educativa estática sobre salud renal. Sin dependencias.",
+   "scripts": {
+     "dev": "node tools/servidor_node.cjs",
+     "portable": "node tools/portable.cjs",
+--- a/sw.js
++++ b/sw.js
+@@ -1,5 +1,5 @@
+ // Caché limitada a la interfaz. JSON de contenido y archivo autónomo quedan fuera.
+-const CACHE='coil-ui-v3-20261007-3';
++const CACHE='coil-ui-v3-1-20261007';
+ const FILES=[
+   "./",
+   "./index.html",
+@@ -38,6 +38,7 @@
+   "css/extensions.css",
+   "css/layout.css",
+   "css/tokens.css",
++  "css/visual.css",
+   "assets/fonts/editorial-italic.woff2",
+   "assets/fonts/editorial.woff2",
+   "assets/fonts/texto-bold.woff2",
+--- a/tools/crear_portable.py
++++ b/tools/crear_portable.py
+@@ -48,7 +48,7 @@
+     assets[key] = json.loads((ROOT/'data'/filename).read_text(encoding='utf-8'))
+ assets['kidney'] = (ROOT/'assets/kidney.svg').read_text(encoding='utf-8')
+ styles=[]
+-for path in ['tokens.css','base.css','layout.css','components.css','extensions.css']:
++for path in ['tokens.css','base.css','layout.css','components.css','extensions.css','visual.css']:
+     source=(ROOT/'css'/path).read_text(encoding='utf-8')
+     def embed_font(match):
+         font=(ROOT/'css'/match.group(1)).resolve()

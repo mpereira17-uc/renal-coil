@@ -1,5 +1,14 @@
 # Renal / COIL · Rediseño 3.3
 
+> v4.8 (vista previa): entregas 2-4 de la revisión: sistema visual unificado, editar registros y citas, hábitos configurables, compras editables, casos interactivos, biblioteca y lectura crítica. Ver docs/CAMBIOS_v4.8.md.
+> v4.7 (vista previa): arreglos de conexión entre herramientas (glucosa por contexto, ⅓ de taza, plan → compras sin duplicar, filtros, porciones, receta → diario, privacidad, progreso y calendario). Ver docs/CAMBIOS_v4.7.md.
+> v4.5 (vista previa): cocina, plan semanal, compartir por WhatsApp, guía de 3 pasos, plantillas para el equipo y preparación para publicar. Ver docs/CAMBIOS_v4.5.md.
+> v4.1 (vista previa): la v3.9 con el pulido de usabilidad de ui-ux-pro-max. Ver docs/CAMBIOS_v4.1.md.
+
+> **v3.8 (vista previa):** sección "Entender" con el contenido de México, banco de palabras y portadas animadas en todas las secciones. Ver `docs/CAMBIOS_v3.8.md` y `docs/NOTAS_CONTENIDO_MEXICO.md`.
+>
+> **v3.7:** portada con el recorrido "Un estudio en capas". Detalles en `docs/CAMBIOS_v3.7.md`.
+
 Esta entrega rehace el diseño de las seis secciones, sus herramientas y ventanas: botones con espacio propio, tarjetas claras, avisos diferenciados y tipografía consistente. Consulta `docs/GUIA_DISENO_BOTONES.md` para ver los cambios y la organización de los estilos.
 
 Web educativa de seis secciones, editable con HTML, CSS, JavaScript y JSON. El proyecto conserva la identidad de la versión anterior y agrega movimiento, búsqueda, perfiles, importaciones y herramientas para presentar. No necesita un framework ni un servicio de cuentas.
@@ -50,6 +59,9 @@ Después de editar, genera la copia autónoma con `python tools/crear_portable.p
 | `js/recipes.js`, `js/recipe-tools.js` | Recetas, porciones, favoritas y lista de compra. |
 | `js/habits.js`, `js/habit-tools.js` | Semana, calendario mensual, rachas y notas. |
 | `js/kidney-explorer.js`, `js/kidney-tools.js` | Anatomía, comparación conceptual y cuestionario. |
+| `js/kidney-study.js`, `css/estudio.css` | Recorrido "Un estudio en capas" de la portada. |
+| `js/learn.js`, `css/aprende.css` | Sección Entender y banco de palabras (textos en la clave `learn`). |
+| `js/section-heroes.js`, `css/portadas.css` | Portadas animadas de cada sección. |
 | `js/symptoms.js`, `js/presentation.js`, `js/print.js` | Señales, exposición e impresión. |
 | `js/store.js`, `js/events.js`, `js/selectors.js` | Datos locales versionados, eventos tipados con JSDoc y consultas memorizadas. |
 | `js/app.js`, `js/data.js` | Inicio y carga por sección. |
@@ -119,6 +131,28 @@ renal/
 ```
 
 **Cambiar el dibujo de una receta:** reemplaza `assets/recetas/<id>.svg` conservando el nombre y `viewBox="0 0 180 120"`, y ejecuta `python tools/crear_portable.py`. **Agregar una receta:** añade su bloque en `data/recetas.json` con `"image": "assets/recetas/<id>.svg"` y crea ese archivo.
+
+## Novedades 3.6 · Interfaz interactiva y funciones para uso real
+
+**Diseño e interacción** (`css/pulido.css`, `css/interaccion.css`, `js/interaction.js`)
+- Pulido visual: tarjetas con más definición, botones con el color de su sección, foco uniforme y encabezado translúcido.
+- Fondo de partículas con hilos tipo capilares que toma el color de cada sección y se aparta del mouse.
+- Tarjetas con inclinación 3D y brillo, profundidad en la portada, transiciones entre secciones, cifras que cuentan y chispas al marcar hábitos.
+- Con "menos movimiento" todo queda quieto.
+
+**Funciones nuevas** (`css/funciones.css`, `js/extras.js`, `js/care-plan.js`)
+- Panel **Hoy** en la portada: última medición, hábitos del día, próxima cita y receta del día.
+- **Progreso de aprendizaje e insignias**: capítulos leídos, mejor puntaje del repaso y cinco insignias.
+- **Medicamentos y citas** en Mi seguimiento, con archivo `.ics` para el calendario del teléfono.
+- **Gráfica combinada** de glucosa y presión con promedios semanales.
+- La **vista de consulta** para imprimir incluye medicamentos, citas, hábitos de 7 días y un espacio para preguntas.
+- **Escuchar** cada capítulo en voz alta y **glosario emergente** en términos como TFGe o albúmina.
+- Ajustes: **tamaño de letra** (normal, grande, muy grande) y tema de **alto contraste**.
+- En el teléfono, menú **Más** con Proyecto, búsqueda, tema, ajustes, presentación y privacidad; botón **volver arriba**.
+- **Aviso de privacidad** completo dentro de la página Proyecto.
+- Datos: los perfiles guardan `medications`, `appointments` y `learning`; los perfiles anteriores abren sin cambios.
+- Accesibilidad revisada con axe (WCAG 2 AA) en tema claro, oscuro y alto contraste, sin errores.
+- Corrige el número de capítulo que se partía en el teléfono y el botón "Ver preparación" en tema oscuro.
 
 ## Novedades 3.5
 

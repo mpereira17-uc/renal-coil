@@ -1,0 +1,2 @@
+﻿país (CO / MX / US),nombre del plato (español),nombre en inglés,comida (desayuno / almuerzo / cena / merienda),porciones,ingredientes con cantidad (uno por línea o separados por ;),pasos (separados por ;),minutos,¿lleva sal añadida? (sí / no),sustituciones posibles,quién lo propone,¿reemplaza a una receta actual? (id),¿hay foto propia? (nombre del archivo)
+CO,Ejemplo: Sancocho de pollo ligero,Light chicken sancocho,almuerzo,4,pechuga de pollo 400 g; yuca 200 g; mazorca 2; cilantro 1 manojo,...,45,no,...,Nombre,—,sancocho.jpg
