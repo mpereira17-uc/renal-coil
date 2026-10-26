@@ -1,0 +1,4 @@
+import { it,expect } from 'vitest';
+import { getVisibleRecords,getChartSeries,getHabitScore } from '../js/selectors.js';
+it('filtra de forma inmutable, conserva cero y reutiliza el resultado',()=>{const state={records:[{id:'b',date:'2026-10-02',uacr:0,tags:['visit']},{id:'a',date:'2026-09-02',uacr:3,tags:[]}]},filters={from:'2026-10-01',tag:'visit'};const result=getVisibleRecords(state,filters);expect(result).toHaveLength(1);expect(Object.isFrozen(result[0])).toBe(true);expect(getVisibleRecords(state,filters)).toBe(result);expect(getChartSeries(state,'uacr',filters)[0].value).toBe(0);});
+it('calcula rachas por hábito sin premiar fechas futuras',()=>{const state={habits:{'2026-10-05':{a:true},'2026-10-06':{a:true},'2026-10-07':{a:true}}};const score=getHabitScore(state,[{id:'a',target:7}],['2026-10-05','2026-10-06'],'2026-10-06');expect(score.perHabit.a).toBe(2);expect(score.done).toBe(2);});

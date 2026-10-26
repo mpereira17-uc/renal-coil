@@ -1,0 +1,4 @@
+const {spawnSync}=require('node:child_process'),fs=require('node:fs'),path=require('node:path');
+const root=path.resolve(__dirname,'..'),npm=process.platform==='win32'?'npm.cmd':'npm';
+for(const task of ['lint','check:i18n','test']){const result=spawnSync(npm,['run',task],{cwd:root,stdio:'inherit',shell:process.platform==='win32'});if(result.status!==0)process.exit(result.status||1);}
+const result=spawnSync(process.execPath,['tools/portable.cjs'],{cwd:root,stdio:'inherit'});if(result.status!==0)process.exit(result.status||1);const size=fs.statSync(path.join(root,'Abrir_sin_instalar.html')).size;if(size<=500000||size>=6000000){console.error('Tamaño autónomo fuera de los límites:',size);process.exit(1);}console.log('Listo para presentar');console.log('La revisión técnica no sustituye la aprobación clínica del contenido.');

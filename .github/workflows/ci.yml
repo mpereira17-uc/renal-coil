@@ -1,0 +1,31 @@
+# Pruebas automáticas en cada cambio (recomendación 35).
+# Revisa estilo del código, que español e inglés tengan las mismas claves,
+# las pruebas unitarias y que la copia sin instalar se pueda regenerar.
+name: Comprobaciones
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  comprobar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run check:i18n
+      - run: npm test
+      - name: Regenerar la copia sin instalar
+        run: python tools/crear_portable.py
