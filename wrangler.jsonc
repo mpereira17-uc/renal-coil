@@ -1,0 +1,9 @@
+{
+  // Publicación en Cloudflare (Workers con archivos estáticos). Cada push a main se publica solo.
+  "name": "renal-coil",
+  "compatibility_date": "2026-10-19",
+  "assets": {
+    "directory": ".",
+    "not_found_handling": "single-page-application"
+  }
+}
