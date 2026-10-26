@@ -49,9 +49,10 @@
 
 /* ---------- Explorador del riñón ---------- */
 .kidney-hotspot .hotspot-halo,.kidney-hotspot .hotspot-center{transition:fill var(--m-base) var(--m-ease),stroke var(--m-fast) var(--m-ease),stroke-width var(--m-fast) var(--m-ease),opacity var(--m-fast)}
-.kidney-hotspot{transform-box:fill-box;transform-origin:center;transition:transform var(--m-base) var(--m-ease)}
-.kidney-hotspot:is(:hover,:focus-visible){transform:scale(1.12)}
-.kidney-hotspot[aria-pressed=true]{transform:scale(1.06)}
+/* El grupo ya trae su posición en el atributo transform del SVG: solo se escala el halo, nunca el grupo. */
+.kidney-hotspot .hotspot-halo{transform-box:fill-box;transform-origin:center;transition:fill var(--m-base) var(--m-ease),stroke var(--m-fast) var(--m-ease),stroke-width var(--m-fast) var(--m-ease),transform var(--m-base) var(--m-ease)}
+.kidney-hotspot:is(:hover,:focus-visible) .hotspot-halo{transform:scale(1.15)}
+.kidney-hotspot[aria-pressed=true] .hotspot-halo{transform:scale(1.08)}
 .studio-caption{transition:outline-color var(--m-base) var(--m-ease),box-shadow var(--m-base) var(--m-ease)}
 .part-buttons button[aria-pressed=true]{transition-duration:var(--m-base)}
 
@@ -81,5 +82,5 @@ details > summary{transition:color var(--m-fast) var(--m-ease),background-color 
 [data-motion="reduced"] .route,[data-motion="reduced"] dialog[open],[data-motion="reduced"] dialog[open]::backdrop,[data-motion="reduced"] #main-nav.open{animation:none}
 [data-motion="reduced"] .ks-chapter :is(.ks-label,.ks-title,.ks-text){transition:none}
 [data-motion="reduced"] .ks-chapter.is-active :is(.ks-label,.ks-title,.ks-text){opacity:1;transform:none}
-[data-motion="reduced"] :is(.m-roll-in,.m-arrow,.recipe-photo,.kidney-hotspot){transition:none;transform:none!important}
+[data-motion="reduced"] :is(.m-roll-in,.m-arrow,.recipe-photo,.kidney-hotspot .hotspot-halo){transition:none;transform:none!important}
 @media print{.m-roll-in::after{content:none}}
