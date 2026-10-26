@@ -1,0 +1,12 @@
+Fotos reales de los platos
+--------------------------
+Desde la v4.3 cada receta trae una foto en formato .webp (1200 x 900 px) con licencia Unsplash.
+Autores y enlaces: docs/CREDITOS_FOTOS.md y creditos.json en esta carpeta.
+
+Para cambiar una foto por una propia del equipo:
+1. Guarda la foto con el mismo nombre (por ejemplo avena.webp), horizontal 4:3, de unos 1200 px de ancho.
+   También sirve .jpg: en ese caso cambia la ruta "photo" en data/recetas.json.
+2. En data/recetas.json cambia "photoCredit" -> "author" por el nombre de quien tomó la foto.
+3. Vuelve a crear la copia portable: python tools/crear_portable.py
+Si una foto no carga, la tarjeta sigue mostrando el dibujo.
+Usa solo fotos propias o con licencia que permita su uso.
