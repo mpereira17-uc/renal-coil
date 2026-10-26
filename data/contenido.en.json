@@ -1764,7 +1764,71 @@
   "faqRead": "Read more on the site",
   "faqSource": "Source",
   "faqNav": "FAQ",
-  "faq": [{"id": "riesgo", "q": "If I have diabetes, will my kidneys be damaged?", "a": "Not necessarily. About 2 to 4 in 10 people with diabetes develop diabetic kidney disease. Keeping blood sugar and blood pressure within the goals you agree on with your health team greatly lowers the risk.", "link": "#aprende/epidemiologia", "source": 0}, {"id": "examenes", "q": "Which tests detect kidney damage?", "a": "Two simple tests: a urine test (albumin-to-creatinine ratio), which looks for protein in the urine, and a blood test (creatinine), used to calculate eGFR. With diabetes they are usually done at least once a year; your health team decides how often.", "link": "#aprende/diagnostico", "source": 1}, {"id": "sintomas", "q": "Can you feel kidney damage?", "a": "Almost never at first. It can go years without symptoms. Leg swelling or tiredness show up when the disease is already advanced. That is why tests are the only way to catch it early.", "link": "#aprende/manifestaciones", "source": 0}, {"id": "frenar", "q": "Can it be slowed down or reversed?", "a": "If it is caught early, treatment can slow it down and, in early stages, albumin in the urine can go down. Function that is badly damaged does not come back, but what still works can be protected.", "link": "#aprende/prevencion", "source": 0}, {"id": "comida", "q": "What should I eat?", "a": "There is no single kidney diet. What suits you depends on your kidney function and your results. The recipes on this site are examples to talk over with your dietitian.", "link": "#alimentacion", "source": 2}, {"id": "analgesicos", "q": "Can I take over-the-counter pain relievers?", "a": "Some common anti-inflammatory drugs, such as ibuprofen or naproxen, can harm the kidneys if used often or in high doses. Ask your doctor or pharmacist before taking them.", "link": "#senales", "source": 6}, {"id": "senales", "q": "When should I see a doctor soon?", "a": "If you notice new swelling, you urinate much less than usual, you feel short of breath, or you have tiredness that does not get better, see a doctor soon. For severe symptoms, seek emergency care.", "link": "#senales", "source": 6}, {"id": "datos", "q": "Where is my data stored?", "a": "Only in this browser: the page does not send it to any server. It has no password or encryption, so anyone using this same browser can see it. On a shared computer, save a copy and delete it from Settings when you finish.", "link": "#proyecto", "source": null}, {"id": "consulta", "q": "Does this site replace a medical visit?", "a": "No. It is an educational tool to help you understand the disease and come better prepared to your appointment. Goals, tests and treatments are decided by your health team.", "link": "#proyecto", "source": null}],
+  "faq": [
+    {
+      "id": "riesgo",
+      "q": "If I have diabetes, will my kidneys be damaged?",
+      "a": "Not necessarily. About 2 to 4 in 10 people with diabetes develop diabetic kidney disease. Keeping blood sugar and blood pressure within the goals you agree on with your health team greatly lowers the risk.",
+      "link": "#aprende/epidemiologia",
+      "source": 0
+    },
+    {
+      "id": "examenes",
+      "q": "Which tests detect kidney damage?",
+      "a": "Two simple tests: a urine test (albumin-to-creatinine ratio), which looks for protein in the urine, and a blood test (creatinine), used to calculate eGFR. With diabetes they are usually done at least once a year; your health team decides how often.",
+      "link": "#aprende/diagnostico",
+      "source": 1
+    },
+    {
+      "id": "sintomas",
+      "q": "Can you feel kidney damage?",
+      "a": "Almost never at first. It can go years without symptoms. Leg swelling or tiredness show up when the disease is already advanced. That is why tests are the only way to catch it early.",
+      "link": "#aprende/manifestaciones",
+      "source": 0
+    },
+    {
+      "id": "frenar",
+      "q": "Can it be slowed down or reversed?",
+      "a": "If it is caught early, treatment can slow it down and, in early stages, albumin in the urine can go down. Function that is badly damaged does not come back, but what still works can be protected.",
+      "link": "#aprende/prevencion",
+      "source": 0
+    },
+    {
+      "id": "comida",
+      "q": "What should I eat?",
+      "a": "There is no single kidney diet. What suits you depends on your kidney function and your results. The recipes on this site are examples to talk over with your dietitian.",
+      "link": "#alimentacion",
+      "source": 2
+    },
+    {
+      "id": "analgesicos",
+      "q": "Can I take over-the-counter pain relievers?",
+      "a": "Some common anti-inflammatory drugs, such as ibuprofen or naproxen, can harm the kidneys if used often or in high doses. Ask your doctor or pharmacist before taking them.",
+      "link": "#senales",
+      "source": 6
+    },
+    {
+      "id": "senales",
+      "q": "When should I see a doctor soon?",
+      "a": "If you notice new swelling, you urinate much less than usual, you feel short of breath, or you have tiredness that does not get better, see a doctor soon. For severe symptoms, seek emergency care.",
+      "link": "#senales",
+      "source": 6
+    },
+    {
+      "id": "datos",
+      "q": "Where is my data stored?",
+      "a": "Only in this browser: the page does not send it to any server. It has no password or encryption, so anyone using this same browser can see it. On a shared computer, save a copy and delete it from Settings when you finish.",
+      "link": "#proyecto",
+      "source": null
+    },
+    {
+      "id": "consulta",
+      "q": "Does this site replace a medical visit?",
+      "a": "No. It is an educational tool to help you understand the disease and come better prepared to your appointment. Goals, tests and treatments are decided by your health team.",
+      "link": "#proyecto",
+      "source": null
+    }
+  ],
   "resEyebrow": "RESOURCES",
   "resTitle": "To read more and find evidence.",
   "resHighlight": "find evidence",
@@ -1775,14 +1839,266 @@
   "resRis": "Download references (RIS)",
   "resForPros": "For professionals",
   "resForAll": "For everyone",
-  "resources": [{"group": "Patient guides", "items": [{"title": "NIDDK · Diabetic kidney disease", "detail": "What it is, how it is detected and how to prevent it. Plain language.", "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/preventing-problems/diabetic-kidney-disease", "audience": "all", "id": "niddk-dkd", "lang": "en", "year": "", "access": "open"}, {"title": "MedlinePlus · Chronic kidney disease", "detail": "Medical encyclopedia from the US National Library of Medicine.", "url": "https://medlineplus.gov/ency/article/000471.htm", "audience": "all", "id": "medline-erc", "lang": "es", "year": "", "access": "open"}, {"title": "NIDDK · Healthy eating for adults with CKD", "detail": "Eating tips by stage, to review with your dietitian.", "url": "https://www.niddk.nih.gov/health-information/kidney-disease/chronic-kidney-disease-ckd/healthy-eating-adults-chronic-kidney-disease", "audience": "all", "id": "niddk-food", "lang": "en", "year": "", "access": "open"}]}, {"group": "Clinical guidelines", "items": [{"title": "KDIGO 2022 · Diabetes management in chronic kidney disease", "detail": "International clinical practice guideline (Kidney International, 2022).", "url": "https://kdigo.org/wp-content/uploads/2023/12/KDIGO-2022-Diabetes-Guideline.pdf", "audience": "pros", "cite": {"type": "article", "key": "kdigo2022", "author": "{Kidney Disease: Improving Global Outcomes (KDIGO) Diabetes Work Group}", "title": "KDIGO 2022 Clinical Practice Guideline for Diabetes Management in Chronic Kidney Disease", "journal": "Kidney International", "year": "2022", "volume": "102", "number": "5S", "pages": "S1--S127", "doi": "10.1016/j.kint.2022.06.008"}, "id": "kdigo2022", "lang": "en", "year": "2022", "access": "open"}, {"title": "ADA · Standards of Care in Diabetes—2026, section 11: chronic kidney disease", "detail": "2026 edition of the American Diabetes Association’s yearly recommendations. Section 11 covers chronic kidney disease.", "url": "https://doi.org/10.2337/dc26-S011", "audience": "pros", "id": "ada2026", "lang": "en", "year": "2026", "access": "open"}]}, {"group": "Articles", "items": [{"title": "Alicic, Rooney & Tuttle (2017) · Diabetic Kidney Disease: Challenges, Progress, and Possibilities", "detail": "General review of diabetic kidney disease. Clinical Journal of the American Society of Nephrology.", "url": "https://doi.org/10.2215/CJN.11491116", "audience": "pros", "cite": {"type": "article", "key": "alicic2017", "author": "Alicic, Radica Z. and Rooney, Michele T. and Tuttle, Katherine R.", "title": "Diabetic Kidney Disease: Challenges, Progress, and Possibilities", "journal": "Clinical Journal of the American Society of Nephrology", "year": "2017", "volume": "12", "number": "12", "pages": "2032--2045", "doi": "10.2215/CJN.11491116"}, "id": "alicic2017", "lang": "en", "year": "2017", "access": "check", "sheet": {"question": "What is known about diabetic kidney disease and what challenges remain in preventing and treating it?", "population": "It does not study patients directly: it gathers studies published up to 2016.", "method": "Expert narrative (non-systematic) review.", "findings": "Summarizes frequency, mechanisms and the treatments available at the time, and points to the need for new therapies.", "limits": "It does not follow a systematic method and predates treatments approved after 2017; compare it with recent guidelines."}}, {"title": "Umanath & Lewis (2018) · Update on Diabetic Nephropathy: Core Curriculum 2018", "detail": "Basis of the Diagnosis chapter. American Journal of Kidney Diseases.", "url": "https://doi.org/10.1053/j.ajkd.2017.10.026", "audience": "pros", "cite": {"type": "article", "key": "umanath2018", "author": "Umanath, Kausik and Lewis, Julia B.", "title": "Update on Diabetic Nephropathy: Core Curriculum 2018", "journal": "American Journal of Kidney Diseases", "year": "2018", "volume": "71", "number": "6", "pages": "884--895", "doi": "10.1053/j.ajkd.2017.10.026"}, "id": "umanath2018", "lang": "en", "year": "2018", "access": "check", "sheet": {"question": "What should a clinician know about diagnosing and managing diabetic nephropathy?", "population": "Educational material for clinicians; not a patient study.", "method": "Educational “Core Curriculum” review with cases and questions.", "findings": "Explains diagnostic criteria, when to suspect another cause and the treatment options as of 2018.", "limits": "It is a teaching text, not an original study; some treatment recommendations have since been updated."}}, {"title": "Thomas et al. (2015) · Diabetic kidney disease", "detail": "Full overview: epidemiology, mechanisms, diagnosis and treatment. Nature Reviews Disease Primers.", "url": "https://doi.org/10.1038/nrdp.2015.18", "audience": "pros", "cite": {"type": "article", "key": "thomas2015", "author": "Thomas, Merlin C. and others", "title": "Diabetic kidney disease", "journal": "Nature Reviews Disease Primers", "year": "2015", "volume": "1", "pages": "15018", "doi": "10.1038/nrdp.2015.18"}, "id": "thomas2015", "lang": "en", "year": "2015", "access": "check", "sheet": {"question": "What is the full picture of diabetic kidney disease: epidemiology, mechanisms, diagnosis and treatment?", "population": "Gathers studies from different countries and populations published up to 2015.", "method": "“Primer”-style review written by an expert group.", "findings": "Gives an overview of the disease and of the research questions open at the time.", "limits": "It dates from 2015 and does not include later treatment advances. It may require a subscription."}}]}, {"group": "Tools", "items": [{"title": "National Kidney Foundation eGFR calculator", "detail": "Uses the CKD-EPI 2021 equation. Meant for health professionals; your team interprets the result.", "url": "https://www.kidney.org/apps/professionals/egfr-calculator", "audience": "pros", "id": "nkf-egfr", "lang": "en", "year": "", "access": "open"}]}, {"group": "AI tools to find evidence", "ai": true, "items": [{"title": "Consensus", "detail": "Finds answers in scientific papers and shows which studies they come from.", "url": "https://consensus.app/", "audience": "all", "id": "consensus", "lang": "en", "year": "", "access": "account", "aiSheet": {"task": "Answer a question with sentences taken from scientific papers.", "audience": "Students and the public interested in evidence.", "access": "Free plan with limits; advanced features are paid (checked October 2026).", "example": "Do SGLT2 inhibitors slow the progression of diabetic kidney disease?", "verify": "Open at least two of the cited papers and check that the sentence appears in the abstract or results."}}, {"title": "Elicit", "detail": "Helps find and summarize papers for a research question.", "url": "https://elicit.com/", "audience": "pros", "id": "elicit", "lang": "en", "year": "", "access": "account", "aiSheet": {"task": "Find papers for a research question and summarize them in a table.", "audience": "Students and researchers.", "access": "Free basic plan; paid plans for more analyses (checked October 2026).", "example": "Studies on albuminuria screening in primary care in Latin America.", "verify": "Check each paper’s population, design and results: automatic summaries can leave out limitations."}}, {"title": "OpenEvidence", "detail": "Medical evidence search engine designed for health professionals.", "url": "https://www.openevidence.com/", "audience": "pros", "id": "openevidence", "lang": "en", "year": "", "access": "pros", "aiSheet": {"task": "Answer clinical questions with references to guidelines and papers.", "audience": "Health professionals.", "access": "Free for verified US health professionals (checked October 2026).", "example": "What does KDIGO 2022 recommend for blood pressure control in CKD with diabetes?", "verify": "Compare the answer with the original guideline cited; do not use it for patient decisions without checking."}}]}],
+  "resources": [
+    {
+      "group": "Patient guides",
+      "items": [
+        {
+          "title": "NIDDK · Diabetic kidney disease",
+          "detail": "What it is, how it is detected and how to prevent it. Plain language.",
+          "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/preventing-problems/diabetic-kidney-disease",
+          "audience": "all",
+          "id": "niddk-dkd",
+          "lang": "en",
+          "year": "",
+          "access": "open"
+        },
+        {
+          "title": "MedlinePlus · Chronic kidney disease",
+          "detail": "Medical encyclopedia from the US National Library of Medicine.",
+          "url": "https://medlineplus.gov/ency/article/000471.htm",
+          "audience": "all",
+          "id": "medline-erc",
+          "lang": "es",
+          "year": "",
+          "access": "open"
+        },
+        {
+          "title": "NIDDK · Healthy eating for adults with CKD",
+          "detail": "Eating tips by stage, to review with your dietitian.",
+          "url": "https://www.niddk.nih.gov/health-information/kidney-disease/chronic-kidney-disease-ckd/healthy-eating-adults-chronic-kidney-disease",
+          "audience": "all",
+          "id": "niddk-food",
+          "lang": "en",
+          "year": "",
+          "access": "open"
+        }
+      ]
+    },
+    {
+      "group": "Clinical guidelines",
+      "items": [
+        {
+          "title": "KDIGO 2022 · Diabetes management in chronic kidney disease",
+          "detail": "International clinical practice guideline (Kidney International, 2022).",
+          "url": "https://kdigo.org/wp-content/uploads/2023/12/KDIGO-2022-Diabetes-Guideline.pdf",
+          "audience": "pros",
+          "cite": {
+            "type": "article",
+            "key": "kdigo2022",
+            "author": "{Kidney Disease: Improving Global Outcomes (KDIGO) Diabetes Work Group}",
+            "title": "KDIGO 2022 Clinical Practice Guideline for Diabetes Management in Chronic Kidney Disease",
+            "journal": "Kidney International",
+            "year": "2022",
+            "volume": "102",
+            "number": "5S",
+            "pages": "S1--S127",
+            "doi": "10.1016/j.kint.2022.06.008"
+          },
+          "id": "kdigo2022",
+          "lang": "en",
+          "year": "2022",
+          "access": "open"
+        },
+        {
+          "title": "ADA · Standards of Care in Diabetes—2026, section 11: chronic kidney disease",
+          "detail": "2026 edition of the American Diabetes Association’s yearly recommendations. Section 11 covers chronic kidney disease.",
+          "url": "https://doi.org/10.2337/dc26-S011",
+          "audience": "pros",
+          "id": "ada2026",
+          "lang": "en",
+          "year": "2026",
+          "access": "open"
+        }
+      ]
+    },
+    {
+      "group": "Articles",
+      "items": [
+        {
+          "title": "Alicic, Rooney & Tuttle (2017) · Diabetic Kidney Disease: Challenges, Progress, and Possibilities",
+          "detail": "General review of diabetic kidney disease. Clinical Journal of the American Society of Nephrology.",
+          "url": "https://doi.org/10.2215/CJN.11491116",
+          "audience": "pros",
+          "cite": {
+            "type": "article",
+            "key": "alicic2017",
+            "author": "Alicic, Radica Z. and Rooney, Michele T. and Tuttle, Katherine R.",
+            "title": "Diabetic Kidney Disease: Challenges, Progress, and Possibilities",
+            "journal": "Clinical Journal of the American Society of Nephrology",
+            "year": "2017",
+            "volume": "12",
+            "number": "12",
+            "pages": "2032--2045",
+            "doi": "10.2215/CJN.11491116"
+          },
+          "id": "alicic2017",
+          "lang": "en",
+          "year": "2017",
+          "access": "check",
+          "sheet": {
+            "question": "What is known about diabetic kidney disease and what challenges remain in preventing and treating it?",
+            "population": "It does not study patients directly: it gathers studies published up to 2016.",
+            "method": "Expert narrative (non-systematic) review.",
+            "findings": "Summarizes frequency, mechanisms and the treatments available at the time, and points to the need for new therapies.",
+            "limits": "It does not follow a systematic method and predates treatments approved after 2017; compare it with recent guidelines."
+          }
+        },
+        {
+          "title": "Umanath & Lewis (2018) · Update on Diabetic Nephropathy: Core Curriculum 2018",
+          "detail": "Basis of the Diagnosis chapter. American Journal of Kidney Diseases.",
+          "url": "https://doi.org/10.1053/j.ajkd.2017.10.026",
+          "audience": "pros",
+          "cite": {
+            "type": "article",
+            "key": "umanath2018",
+            "author": "Umanath, Kausik and Lewis, Julia B.",
+            "title": "Update on Diabetic Nephropathy: Core Curriculum 2018",
+            "journal": "American Journal of Kidney Diseases",
+            "year": "2018",
+            "volume": "71",
+            "number": "6",
+            "pages": "884--895",
+            "doi": "10.1053/j.ajkd.2017.10.026"
+          },
+          "id": "umanath2018",
+          "lang": "en",
+          "year": "2018",
+          "access": "check",
+          "sheet": {
+            "question": "What should a clinician know about diagnosing and managing diabetic nephropathy?",
+            "population": "Educational material for clinicians; not a patient study.",
+            "method": "Educational “Core Curriculum” review with cases and questions.",
+            "findings": "Explains diagnostic criteria, when to suspect another cause and the treatment options as of 2018.",
+            "limits": "It is a teaching text, not an original study; some treatment recommendations have since been updated."
+          }
+        },
+        {
+          "title": "Thomas et al. (2015) · Diabetic kidney disease",
+          "detail": "Full overview: epidemiology, mechanisms, diagnosis and treatment. Nature Reviews Disease Primers.",
+          "url": "https://doi.org/10.1038/nrdp.2015.18",
+          "audience": "pros",
+          "cite": {
+            "type": "article",
+            "key": "thomas2015",
+            "author": "Thomas, Merlin C. and others",
+            "title": "Diabetic kidney disease",
+            "journal": "Nature Reviews Disease Primers",
+            "year": "2015",
+            "volume": "1",
+            "pages": "15018",
+            "doi": "10.1038/nrdp.2015.18"
+          },
+          "id": "thomas2015",
+          "lang": "en",
+          "year": "2015",
+          "access": "check",
+          "sheet": {
+            "question": "What is the full picture of diabetic kidney disease: epidemiology, mechanisms, diagnosis and treatment?",
+            "population": "Gathers studies from different countries and populations published up to 2015.",
+            "method": "“Primer”-style review written by an expert group.",
+            "findings": "Gives an overview of the disease and of the research questions open at the time.",
+            "limits": "It dates from 2015 and does not include later treatment advances. It may require a subscription."
+          }
+        }
+      ]
+    },
+    {
+      "group": "Tools",
+      "items": [
+        {
+          "title": "National Kidney Foundation eGFR calculator",
+          "detail": "Uses the CKD-EPI 2021 equation. Meant for health professionals; your team interprets the result.",
+          "url": "https://www.kidney.org/apps/professionals/egfr-calculator",
+          "audience": "pros",
+          "id": "nkf-egfr",
+          "lang": "en",
+          "year": "",
+          "access": "open"
+        }
+      ]
+    },
+    {
+      "group": "AI tools to find evidence",
+      "ai": true,
+      "items": [
+        {
+          "title": "Consensus",
+          "detail": "Finds answers in scientific papers and shows which studies they come from.",
+          "url": "https://consensus.app/",
+          "audience": "all",
+          "id": "consensus",
+          "lang": "en",
+          "year": "",
+          "access": "account",
+          "aiSheet": {
+            "task": "Answer a question with sentences taken from scientific papers.",
+            "audience": "Students and the public interested in evidence.",
+            "access": "Free plan with limits; advanced features are paid (checked October 2026).",
+            "example": "Do SGLT2 inhibitors slow the progression of diabetic kidney disease?",
+            "verify": "Open at least two of the cited papers and check that the sentence appears in the abstract or results."
+          }
+        },
+        {
+          "title": "Elicit",
+          "detail": "Helps find and summarize papers for a research question.",
+          "url": "https://elicit.com/",
+          "audience": "pros",
+          "id": "elicit",
+          "lang": "en",
+          "year": "",
+          "access": "account",
+          "aiSheet": {
+            "task": "Find papers for a research question and summarize them in a table.",
+            "audience": "Students and researchers.",
+            "access": "Free basic plan; paid plans for more analyses (checked October 2026).",
+            "example": "Studies on albuminuria screening in primary care in Latin America.",
+            "verify": "Check each paper’s population, design and results: automatic summaries can leave out limitations."
+          }
+        },
+        {
+          "title": "OpenEvidence",
+          "detail": "Medical evidence search engine designed for health professionals.",
+          "url": "https://www.openevidence.com/",
+          "audience": "pros",
+          "id": "openevidence",
+          "lang": "en",
+          "year": "",
+          "access": "pros",
+          "aiSheet": {
+            "task": "Answer clinical questions with references to guidelines and papers.",
+            "audience": "Health professionals.",
+            "access": "Free for verified US health professionals (checked October 2026).",
+            "example": "What does KDIGO 2022 recommend for blood pressure control in CKD with diabetes?",
+            "verify": "Compare the answer with the original guideline cited; do not use it for patient decisions without checking."
+          }
+        }
+      ]
+    }
+  ],
   "aboutEyebrow": "ABOUT THE PROJECT",
   "aboutTitle": "Three universities, one goal.",
   "aboutIntro": "Renal is a COIL (Collaborative Online International Learning) project. Students from Colombia, Mexico and the United States worked together to explain diabetic kidney disease in plain language and offer simple tools for self-care.",
   "aboutGoalTitle": "Goal",
   "aboutGoal": "Help a person with diabetes, or their caregiver, understand how diabetes can affect the kidneys, know which tests to ask for, and come better prepared to appointments.",
   "aboutTeamsTitle": "Who did what",
-  "aboutTeams": [{"country": "Colombia", "university": "Universidad Católica de Colombia", "role": "Experience design, web development, infographics, recipes and tracking tools."}, {"country": "Mexico", "university": "Tecnológico de Monterrey", "role": "Medical content for the Understand chapters and the word bank."}, {"country": "United States", "university": "University of Florida", "role": "Translation and simplification of the medical content, and English review."}],
+  "aboutTeams": [
+    {
+      "country": "Colombia",
+      "university": "Universidad Católica de Colombia",
+      "role": "Experience design, web development, infographics, recipes and tracking tools."
+    },
+    {
+      "country": "Mexico",
+      "university": "Tecnológico de Monterrey",
+      "role": "Medical content for the Understand chapters and the word bank."
+    },
+    {
+      "country": "United States",
+      "university": "University of Florida",
+      "role": "Translation and simplification of the medical content, and English review."
+    }
+  ],
   "aboutScopeTitle": "Scope",
   "aboutScope": "This is an educational website. It does not diagnose, prescribe treatment or replace a medical visit. The data you enter stays in your browser. Some texts are still being reviewed by the teams; they are marked «Draft · under review».",
   "shopCat_protein": "Protein",
@@ -1914,9 +2230,113 @@
   "myQuestionsNone": "Those questions are already on your list.",
   "myQuestionsRemoved": "Question removed.",
   "myQuestionsPrivacy": "Your questions are saved only in this browser. The signs ticked above are not saved: they clear when the page reloads.",
-  "reportExample": [{"name": "Fasting glucose", "alt": "Also: fasting plasma glucose, FPG", "value": "104", "unit": "mg/dL", "ref": "70 – 99", "field": "glucose"}, {"name": "Glycated hemoglobin (HbA1c)", "alt": "Also: A1c", "value": "6.8", "unit": "%", "ref": "< 5.7", "field": "hba1c"}, {"name": "Serum creatinine", "alt": "In blood, not urine", "value": "0.95", "unit": "mg/dL", "ref": "0.6 – 1.1", "field": "creatinine"}, {"name": "Estimated GFR (CKD-EPI 2021)", "alt": "Also: eGFR", "value": "82", "unit": "mL/min/1.73 m²", "ref": "> 60", "field": "egfr"}, {"name": "Urine albumin-to-creatinine ratio", "alt": "Also: UACR, microalbuminuria", "value": "24", "unit": "mg/g", "ref": "< 30", "field": "uacr"}],
-  "learnGuides": [{"id": "epidemiologia", "key": "Diabetic kidney disease is common, but it does not happen to everyone with diabetes.", "summary": ["It appears in about 2 to 4 in every 10 people with diabetes.", "In type 2 diabetes it can already be present at diagnosis.", "Risk grows with years of diabetes, high blood pressure and other factors."], "quiz": [{"q": "Does everyone with diabetes develop kidney damage?", "options": ["Yes, always", "No, most do not", "Only older people"], "answer": 1, "why": "Estimates speak of 2 to 4 in every 10. Check-ups and care lower the risk."}, {"q": "In type 2 diabetes, when can kidney damage appear?", "options": ["Only after 20 years", "It can be present from diagnosis", "Never before age 60"], "answer": 1, "why": "Type 2 diabetes can go undiagnosed for years, so kidneys are worth checking from the start."}], "ask": ["What is my personal risk of kidney disease?", "How often should my kidneys be checked?"]}, {"id": "etiologia", "key": "Kidney damage in diabetes has several causes that add up.", "summary": ["High glucose over a long time is the main cause.", "High blood pressure often comes with diabetes and speeds up damage.", "Family history, tobacco, salt and obesity also play a part."], "quiz": [{"q": "What is the main cause of diabetic kidney disease?", "options": ["Drinking a lot of water", "High glucose sustained over time", "Exercising"], "answer": 1, "why": "Long exposure to high glucose damages the small kidney vessels."}, {"q": "Why does blood pressure matter?", "options": ["Because it often comes with diabetes and adds to the damage", "It does not affect the kidneys", "It only matters in young people"], "answer": 0, "why": "High blood pressure raises the risk of kidney disease and of it progressing."}], "ask": ["Does my family history change what I should watch?", "What should my blood pressure goal be?"]}, {"id": "riesgo", "key": "Some factors cannot be changed, but several of the most important ones can.", "summary": ["Cannot be changed: years with diabetes, age, genetics and sex.", "Can be changed: glucose, blood pressure, cholesterol, tobacco and weight.", "Factors add up: improving one already helps."], "quiz": [{"q": "Which of these factors can be changed?", "options": ["Age", "High blood pressure", "Family history"], "answer": 1, "why": "Blood pressure can be treated with habits and medicines prescribed by the care team."}, {"q": "If I have factors I cannot change, what helps?", "options": ["Nothing, damage is inevitable", "Take better care of the factors that can be changed", "Stop check-ups"], "answer": 1, "why": "Fixed factors do not decide the outcome: controlling glucose, blood pressure and tobacco still makes a difference."}], "ask": ["Which of my risk factors can I improve first?", "Do I need help to quit smoking?"]}, {"id": "fisiopatologia", "key": "High glucose and pressure inside the kidney slowly damage the filter.", "summary": ["The kidney filter becomes inflamed and scarred.", "Pressure inside the kidney rises and strains the filters.", "An early sign is albumin (protein) in the urine."], "quiz": [{"q": "Which early sign shows the filter is being damaged?", "options": ["Albumin in the urine", "Headache", "Strong thirst"], "answer": 0, "why": "When the filter changes, it lets albumin through. A urine test detects it."}, {"q": "Which hormone system can raise pressure inside the kidney?", "options": ["Renin-angiotensin-aldosterone", "Thyroid", "Insulin"], "answer": 0, "why": "When this system is overactive, kidney pressure rises; some medicines act on it."}], "ask": ["Do I have albumin in my urine?", "Could any medicine protect my kidneys?"]}, {"id": "manifestaciones", "key": "For years it causes no symptoms: that is why it is measured with tests.", "summary": ["At first it only shows up in urine and blood tests.", "Swelling and tiredness appear when it is already advanced.", "The course is a general model, not a personal prognosis."], "quiz": [{"q": "If I feel well, can I rule out kidney damage?", "options": ["Yes", "No, it can cause no symptoms for years", "Only if I am not thirsty"], "answer": 1, "why": "Feeling well does not rule it out: tests are how it is caught early."}, {"q": "Does everyone go through all stages at the same pace?", "options": ["Yes, always", "No, it varies a lot between people", "Only in type 1 diabetes"], "answer": 1, "why": "The model describes a general course; treatment can delay or prevent progression."}], "ask": ["Which symptoms should make me seek care soon?", "What stage are my kidneys in?"]}, {"id": "diagnostico", "key": "It is confirmed by combining repeated tests with the clinical history.", "summary": ["A urine test (albumin) and a blood test (creatinine to estimate eGFR) are used.", "An abnormal result is repeated before confirming.", "A biopsy is not needed in most cases."], "quiz": [{"q": "Is one abnormal urine test enough to confirm?", "options": ["Yes", "No, it is repeated because other causes can change it", "Only if it hurts"], "answer": 1, "why": "Infections, exercise or high glucose can change it for a while; that is why it is repeated."}, {"q": "Is a kidney biopsy always needed?", "options": ["Yes, always", "No, only in specific situations", "Only in children"], "answer": 1, "why": "Diagnosis is usually clinical; a biopsy is considered when the picture is atypical or another cause is suspected."}], "ask": ["When should I repeat the tests?", "What do my eGFR and albumin values mean?"]}, {"id": "prevencion", "key": "Controlling glucose and blood pressure and getting timely check-ups protects the kidneys.", "summary": ["Glucose and blood pressure goals are agreed with the care team.", "Urine and blood tests are recommended at least once a year.", "Not smoking, moving and watching salt all add up."], "quiz": [{"q": "How often are kidney checks recommended in type 2 diabetes?", "options": ["Every 5 years", "At least once a year", "Only if there are symptoms"], "answer": 1, "why": "Yearly is recommended, or as often as your care team says."}, {"q": "Who sets your glucose and blood pressure goals?", "options": ["A website", "Your care team, together with you", "No one, they are the same for everyone"], "answer": 1, "why": "Goals change with each person's age and health."}], "ask": ["What are my HbA1c and blood pressure goals?", "Which changes in my eating are a priority for me?"]}],
-  "infoQuiz": [{"q": "If a person with diabetes feels well, can they have kidney damage?", "options": ["No, no symptoms means no damage", "Yes, at first it usually causes no symptoms"], "answer": 1, "why": "Early damage is found with urine and blood tests, not by how you feel."}, {"q": "Which of these protects the kidneys?", "options": ["Quitting tobacco and vaping", "Taking painkillers every day", "Skipping check-ups if all seems fine"], "answer": 0, "why": "Tobacco damages blood vessels, including the kidney ones. Some painkillers can harm the kidneys if used often."}, {"q": "Which test looks for protein (albumin) in the urine?", "options": ["Urine albumin-to-creatinine ratio", "Glycated hemoglobin (HbA1c)", "Cholesterol"], "answer": 0, "why": "The albumin-to-creatinine ratio detects the albumin that a damaged filter lets through."}],
+  "reportExample": [
+    {
+      "name": "Fasting glucose",
+      "alt": "Also: fasting plasma glucose, FPG",
+      "value": "104",
+      "unit": "mg/dL",
+      "ref": "70 – 99",
+      "field": "glucose"
+    },
+    {
+      "name": "Glycated hemoglobin (HbA1c)",
+      "alt": "Also: A1c",
+      "value": "6.8",
+      "unit": "%",
+      "ref": "< 5.7",
+      "field": "hba1c"
+    },
+    {
+      "name": "Serum creatinine",
+      "alt": "In blood, not urine",
+      "value": "0.95",
+      "unit": "mg/dL",
+      "ref": "0.6 – 1.1",
+      "field": "creatinine"
+    },
+    {
+      "name": "Estimated GFR (CKD-EPI 2021)",
+      "alt": "Also: eGFR",
+      "value": "82",
+      "unit": "mL/min/1.73 m²",
+      "ref": "> 60",
+      "field": "egfr"
+    },
+    {
+      "name": "Urine albumin-to-creatinine ratio",
+      "alt": "Also: UACR, microalbuminuria",
+      "value": "24",
+      "unit": "mg/g",
+      "ref": "< 30",
+      "field": "uacr"
+    }
+  ],
+  "learnGuides": [
+    {
+      "id": "epidemiologia",
+      "key": "Diabetic kidney disease is common, but it does not happen to everyone with diabetes.",
+      "summary": [
+        "It appears in about 2 to 4 in every 10 people with diabetes.",
+        "In type 2 diabetes it can already be present at diagnosis.",
+        "Risk grows with years of diabetes, high blood pressure and other factors."
+      ]
+    },
+    {
+      "id": "etiologia",
+      "key": "Kidney damage in diabetes has several causes that add up.",
+      "summary": [
+        "High glucose over a long time is the main cause.",
+        "High blood pressure often comes with diabetes and speeds up damage.",
+        "Family history, tobacco, salt and obesity also play a part."
+      ]
+    },
+    {
+      "id": "riesgo",
+      "key": "Some factors cannot be changed, but several of the most important ones can.",
+      "summary": [
+        "Cannot be changed: years with diabetes, age, genetics and sex.",
+        "Can be changed: glucose, blood pressure, cholesterol, tobacco and weight.",
+        "Factors add up: improving one already helps."
+      ]
+    },
+    {
+      "id": "fisiopatologia",
+      "key": "High glucose and pressure inside the kidney slowly damage the filter.",
+      "summary": [
+        "The kidney filter becomes inflamed and scarred.",
+        "Pressure inside the kidney rises and strains the filters.",
+        "An early sign is albumin (protein) in the urine."
+      ]
+    },
+    {
+      "id": "manifestaciones",
+      "key": "For years it causes no symptoms: that is why it is measured with tests.",
+      "summary": [
+        "At first it only shows up in urine and blood tests.",
+        "Swelling and tiredness appear when it is already advanced.",
+        "The course is a general model, not a personal prognosis."
+      ]
+    },
+    {
+      "id": "diagnostico",
+      "key": "It is confirmed by combining repeated tests with the clinical history.",
+      "summary": [
+        "A urine test (albumin) and a blood test (creatinine to estimate eGFR) are used.",
+        "An abnormal result is repeated before confirming.",
+        "A biopsy is not needed in most cases."
+      ]
+    },
+    {
+      "id": "prevencion",
+      "key": "Controlling glucose and blood pressure and getting timely check-ups protects the kidneys.",
+      "summary": [
+        "Glucose and blood pressure goals are agreed with the care team.",
+        "Urine and blood tests are recommended at least once a year.",
+        "Not smoking, moving and watching salt all add up."
+      ]
+    }
+  ],
   "infoStepAll": "Show all three",
   "infoStepsLabel": "Go through the columns",
   "infoDetailHint": "Tap an item in the columns to see its explanation and where to read more.",
@@ -1934,9 +2354,6 @@
   "guideMarkRead": "Mark as read",
   "guideRead": "Read ✓",
   "learnProgressCount": "{done} of {total} chapters read",
-  "learnCases": [{"id": "ana", "name": "Ana, 52", "intro": "Ana has had type 2 diabetes for 8 years. She feels well and has never been asked for a urine test.", "steps": [{"q": "What should she ask at her next visit?", "options": ["Nothing, she feels well", "Whether she should have the urine albumin test and blood creatinine", "Whether she can stop her medication"], "answer": 1, "why": "In type 2 diabetes, kidney checks are recommended at least once a year, even without symptoms."}, {"q": "The urine test is abnormal once. What does it mean?", "options": ["That kidney disease is confirmed", "That it needs to be repeated to confirm", "That the lab made a mistake"], "answer": 1, "why": "Infections, exercise or high glucose can change it for a while. It is confirmed with at least two of three samples over 3 to 6 months."}]}, {"id": "luis", "name": "Luis, 64", "intro": "Luis has diabetes and high blood pressure. His doctor said his eGFR is somewhat low. He has knee pain and plans to take ibuprofen every day.", "steps": [{"q": "What should he do before taking ibuprofen daily?", "options": ["Take it, it is over the counter", "Ask his doctor or pharmacist", "Double the dose so it works better"], "answer": 1, "why": "Some anti-inflammatory drugs can harm the kidneys if used often, especially when kidney function is already reduced."}, {"q": "What could he bring to the visit to discuss his blood pressure?", "options": ["His home blood pressure readings, with dates", "Only how he feels", "Nothing, blood pressure does not affect the kidneys"], "answer": 0, "why": "High blood pressure speeds up kidney damage; dated readings help adjust treatment."}]}, {"id": "marta", "name": "Marta, 38", "intro": "Marta has had type 1 diabetes for 6 years. She smokes and wants to know what she can do for her kidneys.", "steps": [{"q": "Which of these changes has the most impact on protecting her kidneys?", "options": ["Quitting smoking with support", "Drinking more water than advised", "Eating more protein"], "answer": 0, "why": "Tobacco damages blood vessels, including the kidney ones. Extra water or protein without advice does not protect and may not be suitable."}, {"q": "From when are yearly kidney checks recommended for her?", "options": ["From 5 years after diagnosis", "Only after age 60", "Never, it is not needed in type 1"], "answer": 0, "why": "In type 1 diabetes it is recommended from 5 years after diagnosis; Marta is already there."}]}],
-  "criticalItems": [{"claim": "Headline: “Coffee protects the kidneys of people with diabetes.”", "study": "Fictional study: 800 adults with diabetes were followed for 3 years. Coffee drinkers had slightly less albumin in their urine. No one was assigned to drink coffee.", "options": ["Yes, the study proves coffee protects", "Not quite: it shows an association, not that coffee is the cause", "No, the study is not about coffee"], "answer": 1, "why": "In an observational study other differences (age, habits, income, other care) can explain the result. Showing cause needs clinical trials."}, {"claim": "Conclusion: “Drug X prevents dialysis.”", "study": "Fictional trial: 300 people for 1 year. Drug X lowered urine albumin compared with placebo. No one in either group reached dialysis.", "options": ["Yes, because no one reached dialysis", "No: it measured albumin over 1 year, not dialysis", "Yes, because it had a placebo"], "answer": 1, "why": "The study measured an intermediate outcome (albumin) for a short time. No one reaching dialysis in 1 year does not show the drug prevents it."}],
-  "aiExercise": {"answer": 1, "steps": ["Find the cited source (the KDIGO 2022 guideline is in Resources).", "Look for the specific recommendation in it: does it mention 3 liters of water?", "Check whether the answer says the same as the source or adds something.", "Decide: does the source support the answer?"], "options": ["Yes, it supports it", "No: the citation does not support that figure; fluids are adjusted with the care team"], "why": "AI tools can attribute to a real source something it does not say. In advanced kidney disease, drinking too much may not be suitable: the amount is set by the care team."},
   "casesEyebrow": "Practice cases",
   "casesTitle": "Three stories, your decisions.",
   "casesHighlight": "your decisions",

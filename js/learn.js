@@ -5,7 +5,6 @@ import { escapeHTML as e } from './ui.js';
 import { currentRoute } from './router.js';
 import { isReducedMotion } from './preferences.js';
 import { getState, updateState } from './store.js';
-import { addQuestions } from './consult-questions.js';
 import { renderLearnExtra, initLearnExtra, draftBadge } from './learn-extra.js';
 
 // Título en una sola frase; la parte destacada va en el color de la sección.
@@ -40,9 +39,7 @@ function guideTopHTML(guide) {
 }
 function guideBottomHTML(chapter, guide) {
   if (!guide) return '';
-  return `<div class="learn-guide-bottom"><section class="learn-quiz" aria-label="${e(t('guideQuiz'))}"><h3>${e(t('guideQuiz'))} ${draftBadge()}</h3>${guide.quiz.map((item,q)=>`<fieldset class="info-quiz-item"><legend>${e(item.q)}</legend>${item.options.map((option,o)=>`<label class="checkbox-control"><input type="radio" name="lq-${chapter.id}-${q}" value="${o}" data-learn-quiz="${chapter.id}:${q}">${e(option)}</label>`).join('')}<p class="info-quiz-answer" role="status" hidden></p></fieldset>`).join('')}</section>
-    <section class="learn-ask"><h3>${e(t('guideAsk'))}</h3><ul>${guide.ask.map(item=>`<li>${e(item)}</li>`).join('')}</ul><button type="button" class="button secondary" data-learn-ask="${chapter.id}">${e(t('guideAskAdd'))}</button></section>
-    <p class="learn-read-row"><button type="button" class="button ${isRead(chapter.id)?'secondary is-read':'primary'}" data-learn-read="${chapter.id}" aria-pressed="${isRead(chapter.id)}">${e(t(isRead(chapter.id)?'guideRead':'guideMarkRead'))}</button></p></div>`;
+  return `<div class="learn-guide-bottom"><p class="learn-read-row"><button type="button" class="button ${isRead(chapter.id)?'secondary is-read':'primary'}" data-learn-read="${chapter.id}" aria-pressed="${isRead(chapter.id)}">${e(t(isRead(chapter.id)?'guideRead':'guideMarkRead'))}</button></p></div>`;
 }
 function chapterHTML(chapter, index) {
   const guide = guideOf(chapter.id);
@@ -80,7 +77,7 @@ function renderBank() {
 
 function render() {
   const chapters = content().learn;
-  document.getElementById('learn-index').innerHTML = `<p class="learn-mono">${e(t('learnIndex'))}</p><ol>${chapters.map((chapter,i)=>`<li><a href="#aprende/${chapter.id}" data-learn-link="${chapter.id}"${isRead(chapter.id)?' class="is-read"':''}><span class="learn-mono">${pad(i+1)}</span>${e(chapter.label)}${isRead(chapter.id)?`<span class="learn-check" aria-label="${e(t('guideRead'))}">✓</span>`:''}</a></li>`).join('')}<li><a href="#aprende/palabras" data-learn-link="palabras"><span class="learn-mono">${pad(chapters.length+1)}</span>${e(t('bankEyebrow').charAt(0)+t('bankEyebrow').slice(1).toLowerCase())}</a></li><li><a href="#aprende/preguntas" data-learn-link="preguntas"><span class="learn-mono">${pad(chapters.length+2)}</span>${e(t('faqNav'))}</a></li><li><a href="#aprende/recursos" data-learn-link="recursos"><span class="learn-mono">${pad(chapters.length+3)}</span>${e(t('resNav'))}</a></li><li><a href="#aprende/casos" data-learn-link="casos"><span class="learn-mono">${pad(chapters.length+4)}</span>${e(t('casesNav'))}</a></li><li><a href="#aprende/taller" data-learn-link="taller"><span class="learn-mono">${pad(chapters.length+5)}</span>${e(t('workshopNav'))}</a></li></ol><div class="learn-progress"><span id="learn-progress"></span></div><p class="learn-read-count">${e(t('learnProgressCount',{done:chapters.filter(c=>isRead(c.id)).length,total:chapters.length}))}</p>`;
+  document.getElementById('learn-index').innerHTML = `<p class="learn-mono">${e(t('learnIndex'))}</p><ol>${chapters.map((chapter,i)=>`<li><a href="#aprende/${chapter.id}" data-learn-link="${chapter.id}"${isRead(chapter.id)?' class="is-read"':''}><span class="learn-mono">${pad(i+1)}</span>${e(chapter.label)}${isRead(chapter.id)?`<span class="learn-check" aria-label="${e(t('guideRead'))}">✓</span>`:''}</a></li>`).join('')}<li><a href="#aprende/palabras" data-learn-link="palabras"><span class="learn-mono">${pad(chapters.length+1)}</span>${e(t('bankEyebrow').charAt(0)+t('bankEyebrow').slice(1).toLowerCase())}</a></li><li><a href="#aprende/preguntas" data-learn-link="preguntas"><span class="learn-mono">${pad(chapters.length+2)}</span>${e(t('faqNav'))}</a></li><li><a href="#aprende/recursos" data-learn-link="recursos"><span class="learn-mono">${pad(chapters.length+3)}</span>${e(t('resNav'))}</a></li></ol><div class="learn-progress"><span id="learn-progress"></span></div><p class="learn-read-count">${e(t('learnProgressCount',{done:chapters.filter(c=>isRead(c.id)).length,total:chapters.length}))}</p>`;
   document.getElementById('learn-chapters').innerHTML = chapters.map(chapterHTML).join('');
   renderBank();
   renderLearnExtra();
@@ -102,7 +99,7 @@ function observe() {
     clearTimeout(readTimer); readTimer = setTimeout(() => { if (currentRoute().route === 'aprende') markRead(id); }, 2500);
     route.querySelectorAll('[data-learn-link]').forEach(link=>link.toggleAttribute('aria-current', link.dataset.learnLink===id));
   }),{rootMargin:'-45% 0px -50% 0px'});
-  route.querySelectorAll('.learn-chapter, #aprende-palabras, #aprende-preguntas, #aprende-recursos, #aprende-casos, #aprende-taller').forEach(node=>current.observe(node));
+  route.querySelectorAll('.learn-chapter, #aprende-palabras, #aprende-preguntas, #aprende-recursos').forEach(node=>current.observe(node));
   const scene = route.querySelector('.learn-glomerulus'), label = route.querySelector('[data-stage-index]');
   const steps = new IntersectionObserver(entries=>entries.forEach(entry=>{
     if(!entry.isIntersecting)return;
@@ -156,16 +153,8 @@ export function initLearn() {
   render();
   initLearnExtra();
   const route = document.getElementById('route-aprende');
-  route.addEventListener('change', event => {
-    const input = event.target.closest('[data-learn-quiz]'); if (!input) return;
-    const [id, q] = input.dataset.learnQuiz.split(':'), item = guideOf(id)?.quiz[Number(q)]; if (!item) return;
-    const right = Number(input.value) === item.answer, answer = input.closest('fieldset').querySelector('.info-quiz-answer');
-    answer.hidden = false; answer.className = `info-quiz-answer ${right ? 'is-right' : 'is-wrong'}`;
-    answer.textContent = `${t(right ? 'infoQuizRight' : 'infoQuizWrong')} ${item.why}`;
-  });
   route.addEventListener('click', event => {
-    const ask = event.target.closest('[data-learn-ask]'), read = event.target.closest('[data-learn-read]');
-    if (ask) addQuestions(guideOf(ask.dataset.learnAsk)?.ask || []);
+    const read = event.target.closest('[data-learn-read]');
     if (read) {
       const id = read.dataset.learnRead, learning = getState().learning, key = 'aprende-' + id;
       const chapters = learning.chapters.includes(key) ? learning.chapters.filter(c => c !== key) : [...learning.chapters, key];

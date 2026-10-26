@@ -58,24 +58,6 @@ function refreshResources() {
   document.querySelectorAll('[data-res-type]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.resType === filters.type)));
 }
 
-// ---------- Casos para practicar ----------
-const caseStep = {};
-function caseHTML(item) {
-  const step = caseStep[item.id] || 0, done = step >= item.steps.length, current = item.steps[Math.min(step, item.steps.length - 1)];
-  return `<article class="case-card" data-case="${e(item.id)}"><h3>${e(item.name)}</h3><p>${e(item.intro)}</p>${done ? `<p class="case-done">${e(t('caseDone'))}</p><button type="button" class="text-link" data-case-restart="${e(item.id)}">${e(t('caseRestart'))}</button>` : `<fieldset class="info-quiz-item"><legend><span class="learn-mono">${e(t('caseStep', {n: step + 1, total: item.steps.length}))}</span> ${e(current.q)}</legend>${current.options.map((option, o) => `<label class="checkbox-control"><input type="radio" name="case-${e(item.id)}-${step}" value="${o}" data-case-answer="${e(item.id)}">${e(option)}</label>`).join('')}<p class="info-quiz-answer" role="status" hidden></p></fieldset><button type="button" class="button secondary" data-case-next="${e(item.id)}" hidden>${e(t('caseNext'))}</button>`}</article>`;
-}
-function workshopHTML() {
-  const ex = content().aiExercise;
-  const question = (item, name, data) => `<fieldset class="info-quiz-item"><legend>${e(item.legend)}</legend>${item.options.map((option, o) => `<label class="checkbox-control"><input type="radio" name="${name}" value="${o}" data-workshop="${data}">${e(option)}</label>`).join('')}<p class="info-quiz-answer" role="status" hidden></p></fieldset>`;
-  return `<h3>${e(t('criticalTitle'))}</h3><div class="workshop-grid">${content().criticalItems.map((item, i) => `<article class="case-card"><p class="workshop-claim">${e(item.claim)}</p><p><span class="learn-mono">${e(t('criticalStudy'))}</span> ${e(item.study)}</p>${question({legend: t('criticalTitle'), options: item.options}, 'critical-' + i, 'critical:' + i)}</article>`).join('')}</div>
-    <h3>${e(t('aiExerciseTitle'))}</h3><article class="case-card ai-exercise"><p class="workshop-claim">${e(ex.answer)}</p><p class="learn-mono">${e(t('aiExerciseSteps'))}</p><ol>${ex.steps.map(step => `<li>${e(step)}</li>`).join('')}</ol>${question({legend: t('aiExerciseQuestion'), options: ex.options}, 'ai-exercise', 'ai:0')}<p><a class="text-link" href="#aprende/recursos">${e(t('resNav'))} →</a></p></article>`;
-}
-function answer(input, right, why) {
-  const box = input.closest('fieldset').querySelector('.info-quiz-answer');
-  box.hidden = false; box.className = `info-quiz-answer ${right ? 'is-right' : 'is-wrong'}`;
-  box.textContent = `${t(right ? 'infoQuizRight' : 'infoQuizWrong')} ${why}`;
-}
-
 function citations() {
   const seen = new Set();
   return content().resources.flatMap(group => group.items).map(item => item.cite).filter(cite => cite && !seen.has(cite.key) && seen.add(cite.key));
@@ -96,8 +78,6 @@ function ris() {
 export function renderLearnExtra() {
   const copy = content();
   document.getElementById('aprende-preguntas').innerHTML = `<header class="learn-head is-in"><p class="learn-mono learn-num">${e(t('faqEyebrow'))}</p><h2>${highlightTitle(copy.faqTitle, copy.faqHighlight)}</h2><p class="learn-credit">${e(t('faqDescription'))} ${draftBadge()}</p></header><div class="faq-list">${faqHTML()}</div>`;
-  document.getElementById('aprende-casos').innerHTML = `<header class="learn-head is-in"><p class="learn-mono learn-num">${e(t('casesEyebrow'))}</p><h2>${highlightTitle(t('casesTitle'), t('casesHighlight'))}</h2><p class="learn-credit">${e(t('casesIntro'))} ${draftBadge()}</p></header><div class="case-grid">${content().learnCases.map(caseHTML).join('')}</div>`;
-  document.getElementById('aprende-taller').innerHTML = `<header class="learn-head is-in"><p class="learn-mono learn-num">${e(t('workshopEyebrow'))}</p><h2>${highlightTitle(t('workshopTitle'), t('workshopHighlight'))}</h2><p class="learn-credit">${e(t('workshopIntro'))}</p></header>${workshopHTML()}`;
   document.getElementById('aprende-recursos').innerHTML = `<header class="learn-head is-in"><p class="learn-mono learn-num">${e(t('resEyebrow'))}</p><h2>${highlightTitle(copy.resTitle, copy.resHighlight)}</h2><p class="learn-credit">${e(t('resDescription'))}</p></header>${resourcesHTML()}<div class="res-actions"><button type="button" class="button secondary" data-cite="bib">${e(t('resBibtex'))}</button><button type="button" class="button secondary" data-cite="ris">${e(t('resRis'))}</button></div>`;
 }
 
@@ -118,25 +98,6 @@ export function initLearnExtra() {
     if (read) toggle('read', read.dataset.resRead);
   });
   on(EVENTOS.STATE, event => { if (event.detail.keys.some(key => ['library', 'activeProfile'].includes(key))) { const focused = document.activeElement; const sel = focused?.dataset.resSave ? `[data-res-save="${focused.dataset.resSave}"]` : focused?.dataset.resRead ? `[data-res-read="${focused.dataset.resRead}"]` : ''; refreshResources(); if (sel) document.querySelector(sel)?.focus(); } });
-  const cases = document.getElementById('aprende-casos');
-  cases.addEventListener('change', event => {
-    const input = event.target.closest('[data-case-answer]'); if (!input) return;
-    const item = content().learnCases.find(c => c.id === input.dataset.caseAnswer), step = item.steps[caseStep[item.id] || 0];
-    answer(input, Number(input.value) === step.answer, step.why);
-    cases.querySelector(`[data-case-next="${item.id}"]`).hidden = false;
-  });
-  cases.addEventListener('click', event => {
-    const next = event.target.closest('[data-case-next]'), restart = event.target.closest('[data-case-restart]');
-    const id = next?.dataset.caseNext || restart?.dataset.caseRestart; if (!id) return;
-    caseStep[id] = next ? (caseStep[id] || 0) + 1 : 0;
-    const card = cases.querySelector(`[data-case="${id}"]`); card.outerHTML = caseHTML(content().learnCases.find(c => c.id === id));
-    cases.querySelector(`[data-case="${id}"] input, [data-case="${id}"] [data-case-restart]`)?.focus();
-  });
-  document.getElementById('aprende-taller').addEventListener('change', event => {
-    const input = event.target.closest('[data-workshop]'); if (!input) return;
-    const [kind, i] = input.dataset.workshop.split(':'), item = kind === 'ai' ? content().aiExercise : content().criticalItems[Number(i)];
-    answer(input, Number(input.value) === item.answer, item.why);
-  });
   resources.addEventListener('click', event => {
     const kind = event.target.closest('[data-cite]')?.dataset.cite;
     if (kind === 'bib') downloadText(bibtex(), 'renal-coil-referencias.bib', 'application/x-bibtex;charset=utf-8');

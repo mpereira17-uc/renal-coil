@@ -73,11 +73,6 @@ function renderDetail() {
   target.innerHTML = `<p class="learn-mono">${escapeHTML(column.label)}</p><h3>${escapeHTML(item.title)}</h3><p>${escapeHTML(item.text)}</p>${chapter ? `<a class="text-link" href="#aprende/${chapterId}">${escapeHTML(t('infoReadMore', {title: chapter.label}))} →</a>` : ''}`;
 }
 
-// Preguntas cortas: se elige una opción y aparece la explicación.
-function renderQuiz() {
-  document.getElementById('info-quiz').innerHTML = text('infoQuiz').map((question, q) => `<fieldset class="info-quiz-item"><legend>${escapeHTML(question.q)}</legend>${question.options.map((option, o) => `<label class="checkbox-control"><input type="radio" name="info-quiz-${q}" value="${o}" data-quiz="${q}">${escapeHTML(option)}</label>`).join('')}<p class="info-quiz-answer" id="info-quiz-answer-${q}" role="status" hidden></p></fieldset>`).join('');
-}
-
 function renderStats() {
   const stats = text('infoStats');
   document.getElementById('info-stats').innerHTML = stats.map((stat, index) => {
@@ -98,7 +93,7 @@ function renderGlossary() {
 }
 
 export function renderInfographics() {
-  renderFlow(); renderColumns(); renderStats(); renderSigns(); renderGlossary(); renderQuiz();
+  renderFlow(); renderColumns(); renderStats(); renderSigns(); renderGlossary();
 }
 
 let initialized = false;
@@ -108,18 +103,10 @@ export function initInfographics() {
   const grid = document.getElementById('info-columns');
   grid.insertAdjacentHTML('beforebegin', `<div class="chip-row info-steps" id="info-steps" role="group" aria-label="${escapeHTML(t('infoStepsLabel'))}"></div>`);
   grid.insertAdjacentHTML('afterend', '<div class="info-detail" id="info-detail" aria-live="polite"></div><details class="info-summary" id="info-summary"></details>');
-  grid.closest('.info-block').insertAdjacentHTML('afterend', `<section class="info-block" aria-labelledby="info-quiz-title"><div class="section-heading"><div><p class="eyebrow" data-i18n="infoQuizEyebrow">${escapeHTML(t('infoQuizEyebrow'))}</p><h2 id="info-quiz-title" data-i18n="infoQuizTitle">${escapeHTML(t('infoQuizTitle'))}</h2></div></div><div id="info-quiz" class="info-quiz"></div></section>`);
   document.getElementById('route-infografias').addEventListener('click', event => {
     const col = event.target.closest('[data-info-col]'), item = event.target.closest('[data-info-item]');
     if (col) { focusColumn = Number(col.dataset.infoCol); focusItem = null; renderColumns(); document.querySelector(`[data-info-col="${focusColumn}"]`)?.focus(); }
     if (item) { focusItem = item.dataset.infoItem; focusColumn = Number(focusItem.split('-')[0]); renderColumns(); document.querySelector(`[data-info-item="${focusItem}"]`)?.focus(); }
-  });
-  document.getElementById('route-infografias').addEventListener('change', event => {
-    const input = event.target.closest('[data-quiz]'); if (!input) return;
-    const question = text('infoQuiz')[Number(input.dataset.quiz)], right = Number(input.value) === question.answer;
-    const answer = document.getElementById(`info-quiz-answer-${input.dataset.quiz}`);
-    answer.hidden = false; answer.className = `info-quiz-answer ${right ? 'is-right' : 'is-wrong'}`;
-    answer.textContent = `${t(right ? 'infoQuizRight' : 'infoQuizWrong')} ${question.why}`;
   });
   renderInfographics();
   on(EVENTOS.LANGUAGE, renderInfographics);
