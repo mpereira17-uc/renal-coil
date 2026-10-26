@@ -159,28 +159,6 @@ function initTilt() {
   document.addEventListener('pointerleave', () => { if (active) reset(active); active = null; });
 }
 
-// ---------- 7. Transición al cambiar de sección y entrada en cascada ----------
-function initRouteTransitions() {
-  let previous = '';
-  on(EVENTOS.ROUTE, event => {
-    const route = event.detail.route;
-    if (route === previous) return;
-    const first = !previous;
-    previous = route;
-    if (isReducedMotion() || !Element.prototype.animate) return;
-    const view = document.querySelector(`[data-view="${route}"]`);
-    if (!view) return;
-    if (!first) view.animate([{opacity: 0, transform: 'translateY(10px)'}, {opacity: 1, transform: 'none'}], {duration: 380, easing: 'cubic-bezier(.22,1,.36,1)'});
-    requestAnimationFrame(() => {
-      [...view.querySelectorAll('.quick-card, .cct-column, .flow-step, .info-stat, .glossary-item')]
-        .filter(card => card.getBoundingClientRect().top < window.innerHeight)
-        .forEach((card, index) => card.animate(
-          [{opacity: 0, transform: 'translateY(16px) scale(.98)'}, {opacity: 1, transform: 'none'}],
-          {duration: 460, delay: 80 + Math.min(index, 8) * 60, easing: 'cubic-bezier(.22,1,.36,1)', fill: 'backwards'}));
-    });
-  });
-}
-
 // ---------- 8. Cifras que cuentan y chispa al marcar un hábito ----------
 function countUp(element) {
   const text = element.textContent.trim();
@@ -196,7 +174,8 @@ function countUp(element) {
   requestAnimationFrame(tick);
 }
 function initCounters() {
-  const selector = '.metric-summary strong, .mini-result-grid strong, .streak-box strong, .orbit-label strong, .progress-orbit strong';
+  // Los valores clínicos (glucosa, presión, creatinina…) se muestran directos; solo cuentan hábitos y aprendizaje.
+  const selector = '.streak-box strong, .orbit-label strong, .progress-orbit strong';
   const observer = new IntersectionObserver(entries => entries.forEach(entry => {
     if (entry.isIntersecting) countUp(entry.target);
   }), {threshold: .4});
@@ -247,7 +226,6 @@ export function initInteraction() {
   initParticles();
   initHeroDepth();
   initTilt();
-  initRouteTransitions();
   initCounters();
   initHabitSparks();
 }

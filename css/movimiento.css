@@ -1,0 +1,85 @@
+/* v4.9 · Sistema de movimiento (referencia: Cuvia). Se carga al final.
+   Todos los tiempos, curvas y desfases viven aquí; js/animations.js los lee de :root.
+   Solo se animan transform y opacity (y colores en los estados). Para quitarlo, borra su línea en index.html. */
+:root{
+  --m-fast:160ms;      /* respuesta al cursor, foco y pulsación */
+  --m-base:280ms;      /* paneles, pestañas, cambios de texto */
+  --m-route:300ms;     /* cambio de sección */
+  --m-reveal:620ms;    /* apariciones al desplazarse */
+  --m-hero:720ms;      /* entrada de la portada */
+  --m-stagger:70ms;    /* desfase entre elementos de un mismo grupo */
+  --m-distance:22px;   /* recorrido vertical de las apariciones */
+  --m-ease:cubic-bezier(.22,1,.36,1);       /* desaceleración suave */
+  --m-ease-press:cubic-bezier(.3,.7,.4,1);  /* pulsación */
+}
+
+/* El cambio de sección lo hace js/animations.js (antes había tres animaciones a la vez). */
+.route{animation:none}
+
+/* ---------- Botones, enlaces y controles ---------- */
+:where(.button,.icon-button,.text-link,.chip-row button,.part-buttons button,.period-controls button,#main-nav a,.bottom-nav a,.filter-chip,.res-chip,.cct-item,.care-more summary,.ks-index button){
+  transition:background-color var(--m-fast) var(--m-ease),border-color var(--m-fast) var(--m-ease),color var(--m-fast) var(--m-ease),box-shadow var(--m-base) var(--m-ease),transform var(--m-fast) var(--m-ease-press),opacity var(--m-fast) var(--m-ease);
+}
+:where(.button,.icon-button,.chip-row button,.part-buttons button,.period-controls button):active{transform:scale(.97);transition-duration:80ms}
+:where(.button,.icon-button,.text-link,.chip-row button,.part-buttons button):focus-visible{transition-duration:0ms}
+
+/* Flecha que avanza un poco */
+.m-arrow{display:inline-block;margin-left:.15em;transition:transform var(--m-base) var(--m-ease)}
+:is(a,button):is(:hover,:focus-visible) > .m-arrow{transform:translateX(3px)}
+
+/* Texto que rueda en vertical: la copia es decorativa y no cambia el tamaño del botón */
+@media (hover:hover) and (pointer:fine){
+  .m-roll{display:inline-block;overflow:hidden;vertical-align:top;padding-block:.08em;margin-block:-.08em;white-space:nowrap}
+  .m-roll-in{display:block;position:relative;transition:transform calc(var(--m-base) + 80ms) var(--m-ease)}
+  .m-roll-in::after{content:attr(data-text) / "";position:absolute;left:0;right:0;top:calc(100% + .08em)}
+  .button:is(:hover,:focus-visible) .m-roll-in{transform:translateY(calc(-100% - .08em))}
+}
+
+/* ---------- Tarjetas e imágenes ---------- */
+:where(.res-card,.today-card,.care-item,.summary-tile,.faq-item,.word-card,.learn-card,.learn-column,.habit-score,.mini-tracking){
+  transition:transform var(--m-base) var(--m-ease),box-shadow var(--m-base) var(--m-ease),border-color var(--m-fast) var(--m-ease),background-color var(--m-fast) var(--m-ease);
+}
+@media (hover:hover){
+  :where(.care-item,.summary-tile,.faq-item,.word-card,.mini-tracking):hover{transform:translateY(-2px);box-shadow:0 10px 24px -16px rgb(20 45 64 / 35%)}
+}
+.recipe-photo{transition:transform 700ms var(--m-ease)}
+.recipe-card:is(:hover,:focus-within) .recipe-photo{transform:scale(1.045)}
+.related-grid img,.plan-grid img,.cook-photo{transition:transform 700ms var(--m-ease)}
+:where(.related-grid button,.plan-grid button):hover img{transform:scale(1.05)}
+
+/* ---------- Explorador del riñón ---------- */
+.kidney-hotspot .hotspot-halo,.kidney-hotspot .hotspot-center{transition:fill var(--m-base) var(--m-ease),stroke var(--m-fast) var(--m-ease),stroke-width var(--m-fast) var(--m-ease),opacity var(--m-fast)}
+.kidney-hotspot{transform-box:fill-box;transform-origin:center;transition:transform var(--m-base) var(--m-ease)}
+.kidney-hotspot:is(:hover,:focus-visible){transform:scale(1.12)}
+.kidney-hotspot[aria-pressed=true]{transform:scale(1.06)}
+.studio-caption{transition:outline-color var(--m-base) var(--m-ease),box-shadow var(--m-base) var(--m-ease)}
+.part-buttons button[aria-pressed=true]{transition-duration:var(--m-base)}
+
+/* ---------- Estudio en capas: el texto de cada capa entra por partes ---------- */
+.ks-chapter .ks-label,.ks-chapter .ks-title,.ks-chapter .ks-text{transition:opacity var(--m-base) var(--m-ease),transform calc(var(--m-reveal) - 60ms) var(--m-ease);opacity:0;transform:translateY(14px)}
+.ks-chapter.is-active .ks-label,.ks-chapter.is-active .ks-title,.ks-chapter.is-active .ks-text{opacity:1;transform:none}
+.ks-chapter.is-active .ks-title{transition-delay:var(--m-stagger)}
+.ks-chapter.is-active .ks-text{transition-delay:calc(var(--m-stagger) * 2)}
+.ks-chapter:not(.is-active){transition-duration:var(--m-base)}
+.kidney-study.is-static .ks-chapter :is(.ks-label,.ks-title,.ks-text){opacity:1;transform:none}
+.ks-layer{transition:opacity var(--m-reveal) var(--m-ease),filter var(--m-reveal) var(--m-ease)}
+.ks-index button{transition:color var(--m-fast) var(--m-ease)}
+
+/* ---------- Ventanas y paneles ---------- */
+dialog[open]{animation:m-dialog-in var(--m-base) var(--m-ease)}
+dialog[open]::backdrop{animation:m-fade var(--m-base) var(--m-ease)}
+@keyframes m-dialog-in{from{opacity:0;transform:translateY(10px) scale(.985)}}
+@keyframes m-fade{from{opacity:0}}
+details > summary{transition:color var(--m-fast) var(--m-ease),background-color var(--m-fast) var(--m-ease)}
+#main-nav.open{animation:m-fade var(--m-base) var(--m-ease)}
+
+/* ---------- Progreso (no clínico) ---------- */
+.learn-progress span{transition:transform var(--m-base) linear}
+:where(.habit-progress span,.habit-bar span,.progress-bar span,.res-progress span){transition:width var(--m-reveal) var(--m-ease),transform var(--m-reveal) var(--m-ease)}
+
+/* ---------- Menos movimiento: todo visible y quieto ---------- */
+[data-motion="reduced"] .route,[data-motion="reduced"] dialog[open],[data-motion="reduced"] dialog[open]::backdrop,[data-motion="reduced"] #main-nav.open{animation:none}
+[data-motion="reduced"] .ks-chapter :is(.ks-label,.ks-title,.ks-text){transition:none}
+[data-motion="reduced"] .ks-chapter.is-active :is(.ks-label,.ks-title,.ks-text){opacity:1;transform:none}
+[data-motion="reduced"] :is(.m-roll-in,.m-arrow,.recipe-photo,.kidney-hotspot){transition:none;transform:none!important}
+@media print{.m-roll-in::after{content:none}}
