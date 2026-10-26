@@ -6,7 +6,6 @@ import { escapeHTML } from './ui.js';
 export function metricValues(records, metric) {
   return records.filter(r=>typeof r[metric]==='number' && Number.isFinite(r[metric])).sort((a,b)=>a.date.localeCompare(b.date)||a.id.localeCompare(b.id)).map(r=>({date:r.date,value:r[metric],id:r.id}));
 }
-
 export function makeChart(values, metric, mode = 'demo', options = {}) {
   if(!values.length)return `<div class="empty-state"><p>${escapeHTML(t('noChartData'))}</p></div>`;
   const width = Math.max(310,options.width || 640), height=options.height||250;
@@ -32,7 +31,6 @@ export function makeChart(values, metric, mode = 'demo', options = {}) {
   const summary=values.map(v=>`${formatDate(v.date,{year:'numeric',month:'short',day:'numeric'})}: ${formatNumber(v.value,2)} ${config.unit}`).join('; ');
   return `<svg class="chart-svg" viewBox="0 0 ${width} ${height}" role="group" aria-label="${escapeHTML(t('chartAccessible',{metric:t(metric),summary}))}">${band}${grid}${points.length>1?`<path d="${path} L${points.at(-1).x} ${bottom} L${points[0].x} ${bottom}Z" fill="#315f7d" opacity=".035"/><polyline class="chart-line" points="${polyline}"/>`:''}${points.map(p=>`<circle class="chart-point" cx="${p.x}" cy="${p.y}" r="12" style="fill:transparent" tabindex="0" role="img" aria-label="${escapeHTML(`${formatDate(p.date)}: ${formatNumber(p.value,2)} ${config.unit}`)}" data-chart-label="${escapeHTML(`${formatDate(p.date)} · ${formatNumber(p.value,2)} ${config.unit}`)}"><title>${escapeHTML(`${formatDate(p.date)}: ${formatNumber(p.value,2)} ${config.unit}`)}</title></circle><circle class="chart-value" cx="${p.x}" cy="${p.y}" r="4" fill="var(--blue)" aria-hidden="true" pointer-events="none"/>`).join('')}${xLabels}</svg><div class="chart-tooltip" hidden></div>`;
 }
-
 export function attachChartTooltip(container) {
   const show=event=>{const point=event.target.closest('[data-chart-label]');if(!point)return;const tooltip=container.querySelector('.chart-tooltip');tooltip.textContent=point.dataset.chartLabel;tooltip.hidden=false;};
   const hide=()=>{const tooltip=container.querySelector('.chart-tooltip');if(tooltip)tooltip.hidden=true;};

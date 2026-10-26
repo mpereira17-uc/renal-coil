@@ -10,12 +10,14 @@ import { initWorkspace } from './workspace.js';
 import { initSearch } from './search.js';
 import { initAnimations } from './animations.js';
 import { initInstall } from './install.js';
+import { initInteraction } from './interaction.js';
+import { initExtras } from './extras.js';
 const initialized=new Map(),imports=new Map();
 const routes={
- descubrir:()=>import('./education.js'),infografias:()=>import('./infographics.js'),seguimiento:()=>import('./measurements.js'),alimentacion:()=>import('./recipes.js'),habitos:()=>import('./habits.js'),senales:()=>import('./symptoms.js'),proyecto:()=>import('./education.js')
+ descubrir:()=>import('./education.js'),infografias:()=>import('./infographics.js'),aprende:()=>import('./learn.js'),seguimiento:()=>import('./measurements.js'),alimentacion:()=>import('./recipes.js'),habitos:()=>import('./habits.js'),senales:()=>import('./symptoms.js'),proyecto:()=>import('./education.js')
 };
 function preload(route){if(!imports.has(route))imports.set(route,Promise.all([route==='alimentacion'?loadData(['recipes','foods']):Promise.resolve(),routes[route]()]).then(([,module])=>module).catch(error=>{imports.delete(route);throw error;}));return imports.get(route);}
-async function activate(route){if(initialized.has(route))return initialized.get(route);const task=(async()=>{if(route==='alimentacion')await loadData(['recipes','foods']);const module=await preload(route);if(route==='descubrir'){module.initEducation();const kidney=await import('./kidney-explorer.js');kidney.initKidneyExplorer();const tracking=await import('./home-tracking.js');tracking.renderHomeTracking();}if(route==='infografias')module.initInfographics();if(route==='seguimiento')module.initMeasurements();if(route==='alimentacion'){module.initRecipes();(await import('./meal-diary.js')).initMealDiary();}if(route==='habitos')module.initHabits();if(route==='senales')module.initSymptoms();if(route==='proyecto')module.renderCredits();})().catch(error=>{initialized.delete(route);throw error;});initialized.set(route,task);return task;}
+async function activate(route){if(initialized.has(route))return initialized.get(route);const task=(async()=>{if(route==='alimentacion')await loadData(['recipes','foods']);const module=await preload(route);if(route==='descubrir'){module.initEducation();const kidney=await import('./kidney-explorer.js');kidney.initKidneyExplorer();(await import('./kidney-study.js')).initKidneyStudy();const tracking=await import('./home-tracking.js');tracking.renderHomeTracking();}if(route==='infografias')module.initInfographics();if(route==='aprende')module.initLearn();if(route==='seguimiento')module.initMeasurements();if(route==='alimentacion'){module.initRecipes();(await import('./meal-diary.js')).initMealDiary();}if(route==='habitos')module.initHabits();if(route==='senales')module.initSymptoms();if(route==='proyecto')module.renderCredits();})().catch(error=>{initialized.delete(route);throw error;});initialized.set(route,task);return task;}
 async function initApp(){await loadData();initPreferences();initI18n();initWorkspace();initDialogs();initSearch();
  // Prepara descubrir aunque la dirección inicial sea otra: conserva el panel de portada.
  await activate('descubrir');
@@ -27,7 +29,7 @@ async function initApp(){await loadData();initPreferences();initI18n();initWorks
  const present=async()=>{await loadData(['recipes','presentation']);if(!presentation){presentation=await import('./presentation.js');presentation.initPresentation();}presentation.openPresentation(location.hash==='#presentacion-espera');};
  document.getElementById('open-presentation').addEventListener('click',()=>present().catch(error=>{console.error('Renal COIL presentación:',error);toast(t('importInvalid'));}));
  window.addEventListener('hashchange',()=>{if(location.hash==='#presentacion-espera')present();});
- initRouter();await activate(currentRoute().route);initAnimations();initInstall();
+ initInteraction();(await import('./section-heroes.js')).initSectionHeroes();(await import('./nav-fit.js')).initNavFit();initRouter();await activate(currentRoute().route);initExtras();initAnimations();initInstall();(await import('./tour.js')).initTour(currentRoute().route);
  let ticking=false;const updateProgress=()=>{const max=document.documentElement.scrollHeight-window.innerHeight;document.getElementById('reading-progress').style.transform=`scaleX(${max>0?window.scrollY/max:0})`;ticking=false;};
  window.addEventListener('scroll',()=>{if(!ticking){requestAnimationFrame(updateProgress);ticking=true;}},{passive:true});on(EVENTOS.ROUTE,updateProgress);updateProgress();
  if(!canStore()&&!getRecovery())toast(t('storageWarning'));document.documentElement.dataset.ready='true';emit(EVENTOS.READY,{version:3});if(location.hash==='#presentacion-espera')await present();

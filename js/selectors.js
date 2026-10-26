@@ -1,0 +1,19 @@
+// Selectores puros. La caché acotada conserva resultados congelados, nunca el estado mutable.
+const freeze=value=>{if(value&&typeof value==='object'){Object.values(value).forEach(freeze);Object.freeze(value);}return value;};
+function memo(fn){const cache=new Map();return(...args)=>{const key=JSON.stringify(args);if(cache.has(key))return cache.get(key);const result=freeze(fn(...args));if(cache.size>=40)cache.delete(cache.keys().next().value);cache.set(key,result);return result;};}
+const normalized=value=>String(value).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+export const getVisibleRecords=memo((state,filters={})=>(filters.records||state.records).filter(r=>(!filters.start||r.date>=filters.start)&&(!filters.from||r.date>=filters.from)&&(!filters.to||r.date<=filters.to)&&(!filters.tag||r.tags?.includes(filters.tag))).map(r=>structuredClone(r)).sort((a,b)=>a.date.localeCompare(b.date)||(a.time||'').localeCompare(b.time||'')||a.id.localeCompare(b.id)));
+// La glucosa en ayunas y la de después de cenar no se mezclan: sin filtro de etiqueta, la gráfica usa solo ayunas o sin etiqueta.
+export const isPostDinner=r=>Boolean(r.tags?.includes('post-dinner'));
+export const fastingGlucose=r=>typeof r.glucose==='number'&&Number.isFinite(r.glucose)&&!isPostDinner(r);
+const glucoseFits=(r,tag)=>tag==='post-dinner'||!isPostDinner(r);
+export const getChartSeries=memo((state,metric,filters={})=>getVisibleRecords(state,filters).filter(r=>typeof r[metric]==='number'&&Number.isFinite(r[metric])&&(metric!=='glucose'||glucoseFits(r,filters.tag))).map(r=>({id:r.id,date:r.date,value:r[metric]})));
+export function glucoseCounts(records,tag=''){const all=records.filter(r=>typeof r.glucose==='number'&&Number.isFinite(r.glucose));const used=all.filter(r=>glucoseFits(r,tag)).length;return {used,excluded:all.length-used};}
+function previousDay(value){const date=new Date(`${value}T12:00:00`);date.setDate(date.getDate()-1);return `${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')}`;}
+function streak(marks,today,test){let date=today;if(!test(marks[date]||{}))date=previousDay(date);let count=0;while(test(marks[date]||{})&&count<3650){count++;date=previousDay(date);}return count;}
+// Hábitos del perfil: los que la persona eligió, con su frecuencia semanal (si no eligió nada, todos con la meta de ejemplo).
+export function habitDefinitions(definitions,plan={}){return definitions.filter(h=>plan[h.id]?.on!==false).map(h=>({...h,target:plan[h.id]?.target??h.target}));}
+// Marcas: true = hecho, false = no se hizo, 'na' = no aplica ese día; sin marca = sin registro.
+// Los días «No aplica» se descuentan de la meta de la semana.
+export const getHabitScore=memo((state,definitions,dates,today)=>{const marks=state.habits,targetOf=h=>Math.max(0,Math.min(h.target,7-dates.filter(date=>marks[date]?.[h.id]==='na').length)),total=definitions.reduce((n,h)=>n+(dates.length?targetOf(h):h.target),0),done=definitions.reduce((n,h)=>n+Math.min(dates.length?targetOf(h):h.target,dates.filter(date=>marks[date]?.[h.id]===true).length),0);return {total,done,percent:total?Math.round(done/total*100):0,streak:streak(marks,today,m=>Object.values(m).some(v=>v===true)),perHabit:Object.fromEntries(definitions.map(h=>[h.id,streak(marks,today,m=>m[h.id]===true)]))};});
+export const getRecipeList=memo((state,recipes,filters={})=>recipes.filter(r=>{const copy=r[filters.language||'es'],query=normalized(filters.query||'');return(!filters.meal||filters.meal==='all'||r.meal===filters.meal)&&(!filters.lessSalt||r.lessSaltIdea)&&(!filters.favorites||state.favorites.includes(r.id))&&(!filters.status||r.status===filters.status)&&(!query||normalized([copy.title,...copy.ingredients].join(' ')).includes(query));}).map(r=>structuredClone(r)));

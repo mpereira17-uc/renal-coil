@@ -12,10 +12,17 @@ export function icon(name, size = 20) {
   return `<svg viewBox="0 0 24 ${name==='person'?28:24}" width="${size}" height="${name==='person'?size*1.6:size}" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${paths[name]||paths.check}</svg>`;
 }
 let toastTimer;
-export function toast(message) {
+// Con undo, el aviso trae un botón «Deshacer» y dura un poco más.
+export function toast(message, undo) {
   const element = document.getElementById('toast');
   clearTimeout(toastTimer); element.textContent = message; element.hidden = false;
-  toastTimer = setTimeout(()=>{element.hidden=true;},4200);
+  if (typeof undo === 'function') {
+    const button = document.createElement('button');
+    button.type = 'button'; button.className = 'toast-undo'; button.textContent = t('undo');
+    button.addEventListener('click', () => { element.hidden = true; undo(); }, {once: true});
+    element.append(' ', button);
+  }
+  toastTimer = setTimeout(()=>{element.hidden=true;},undo?7000:4200);
 }
 const dialogOpeners = new WeakMap();
 export function openDialog(id) {

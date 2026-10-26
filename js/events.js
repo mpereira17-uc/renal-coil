@@ -2,7 +2,7 @@
 /** @typedef {{route:string, chapter?:string}} RouteDetail */
 /** @typedef {{keys:string[], profileId?:string}} StateDetail */
 export const EVENTOS = Object.freeze({
-  ROUTE: 'coil:route', LANGUAGE: 'coil:language', STATE: 'coil:state', READY: 'coil:ready'
+  ROUTE: 'coil:route', LANGUAGE: 'coil:language', STATE: 'coil:state', READY: 'coil:ready', QUIZ: 'coil:quiz'
 });
 /** @param {string} event @param {RouteDetail|StateDetail|object} [detail] */
 export function emit(event, detail = {}) {

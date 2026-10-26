@@ -1,6 +1,6 @@
 import { EVENTOS, emit } from './events.js';
 // Navegación entre secciones mediante direcciones con #.
-const routes = ['descubrir','infografias','seguimiento','alimentacion','habitos','senales','proyecto'];
+const routes = ['descubrir','infografias','aprende','seguimiento','alimentacion','habitos','senales','proyecto'];
 let previousRoute = '';
 export function currentRoute() {
   const [route,chapter] = location.hash.slice(1).split('/');
