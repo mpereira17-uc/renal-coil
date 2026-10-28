@@ -45,3 +45,9 @@ Se mantuvo la paleta médica, los colores por sección, los botones y el conteni
 - Hábitos: bloque "A tu ritmo, con acompañamiento".
 - Señales: "Mis preguntas para la consulta" (se borró `js/consult-questions.js` y el botón que pasaba preguntas a esa lista).
   La ventana "Preparar preguntas" de Señales sigue igual.
+
+## Carga sin saltos (v5.0.3)
+- El panel "Hoy" ya viene en `index.html` con su alto reservado; antes aparecía un instante después y empujaba el riñón.
+- El explorador del riñón reserva el alto de su texto y botones mientras se llenan.
+- Los textos de respaldo de `index.html` se igualaron a `data/contenido.es.json`, para que no cambien al cargar.
+- En escritorio el menú va solo con texto desde el inicio (antes mostraba íconos y luego los quitaba).

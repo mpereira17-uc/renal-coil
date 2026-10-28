@@ -104,7 +104,8 @@ function renderToday() {
 function initToday() {
   const quick = document.querySelector('[data-view="descubrir"] .quick-start');
   if (!quick) return;
-  quick.insertAdjacentHTML('afterend', '<section class="today-panel" id="today-panel" aria-labelledby="today-title"></section>');
+  // El panel ya viene en index.html (así no empuja la página al cargar); se crea solo si falta.
+  if (!document.getElementById('today-panel')) quick.insertAdjacentHTML('afterend', '<section class="today-panel" id="today-panel" aria-labelledby="today-title"></section>');
   renderToday();
   loadData(['recipes']).then(renderToday).catch(() => {});
   on(EVENTOS.STATE, renderToday);

@@ -113,3 +113,13 @@ html body :is(.part-buttons, .concept-timeline, .chip-row, .period-control, .rec
 
 /* Mi seguimiento: sin la tarjeta de preguntas, la de recetas ocupa todo el ancho. */
 .support-grid { grid-template-columns: 1fr; }
+
+/* Sin saltos al cargar: el panel "Hoy" reserva su alto y el menú de escritorio va solo con texto
+   desde el principio (antes mostraba íconos y luego los quitaba al medir el espacio). */
+.today-panel:empty { min-height: 785px; }
+@media (max-width: 560px) { .today-panel:empty { min-height: 1496px; } }
+@media (min-width: 1151px) { #main-nav a svg { display: none; } }
+.studio-caption { min-height: 102px; }
+#part-buttons:empty { min-height: 87px; }
+.studio-tools:empty { min-height: 61px; }
+@media (max-width: 560px) { #part-buttons:empty { min-height: 134px; } .studio-tools:empty { min-height: 113px; } }
