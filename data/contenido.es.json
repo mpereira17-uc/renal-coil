@@ -1834,7 +1834,6 @@
   "resHighlight": "buscar evidencia",
   "resDescription": "Guías para pacientes, guías clínicas, artículos y herramientas seleccionadas por el equipo. Los enlaces abren sitios externos.",
   "resNav": "Recursos",
-  "resAiWarning": "Las herramientas de IA pueden equivocarse. Úsalas para encontrar artículos, revisa siempre la fuente original y no escribas tus datos personales ni de salud.",
   "resBibtex": "Descargar referencias (BibTeX)",
   "resRis": "Descargar referencias (RIS)",
   "resForPros": "Para profesionales",
@@ -2015,63 +2014,6 @@
           "lang": "en",
           "year": "",
           "access": "open"
-        }
-      ]
-    },
-    {
-      "group": "Herramientas de IA para buscar evidencia",
-      "ai": true,
-      "items": [
-        {
-          "title": "Consensus",
-          "detail": "Busca respuestas en artículos científicos y muestra de qué estudios salen.",
-          "url": "https://consensus.app/",
-          "audience": "all",
-          "id": "consensus",
-          "lang": "en",
-          "year": "",
-          "access": "account",
-          "aiSheet": {
-            "task": "Responder una pregunta con frases sacadas de artículos científicos.",
-            "audience": "Estudiantes y público general con interés en la evidencia.",
-            "access": "Plan gratuito con límites; funciones avanzadas de pago (revisado en octubre de 2026).",
-            "example": "¿Los inhibidores de SGLT2 reducen la progresión de la enfermedad renal diabética?",
-            "verify": "Abre al menos dos de los artículos citados y comprueba que la frase esté en el resumen o en los resultados."
-          }
-        },
-        {
-          "title": "Elicit",
-          "detail": "Ayuda a encontrar y resumir artículos para una pregunta de investigación.",
-          "url": "https://elicit.com/",
-          "audience": "pros",
-          "id": "elicit",
-          "lang": "en",
-          "year": "",
-          "access": "account",
-          "aiSheet": {
-            "task": "Buscar artículos para una pregunta de investigación y resumirlos en una tabla.",
-            "audience": "Estudiantes e investigadores.",
-            "access": "Plan básico gratuito; planes de pago para más análisis (revisado en octubre de 2026).",
-            "example": "Estudios sobre cribado de albuminuria en atención primaria en América Latina.",
-            "verify": "Revisa en cada artículo la población, el diseño y los resultados: los resúmenes automáticos pueden omitir limitaciones."
-          }
-        },
-        {
-          "title": "OpenEvidence",
-          "detail": "Buscador de evidencia médica pensado para profesionales de la salud.",
-          "url": "https://www.openevidence.com/",
-          "audience": "pros",
-          "id": "openevidence",
-          "lang": "en",
-          "year": "",
-          "access": "pros",
-          "aiSheet": {
-            "task": "Responder preguntas clínicas con referencias a guías y artículos.",
-            "audience": "Profesionales de la salud.",
-            "access": "Gratuito para profesionales de la salud verificados en EE. UU. (revisado en octubre de 2026).",
-            "example": "¿Qué recomienda KDIGO 2022 para el control de la presión en ERC con diabetes?",
-            "verify": "Compara la respuesta con la guía original citada; no la uses para decisiones sobre un paciente sin revisarla."
-          }
         }
       ]
     }

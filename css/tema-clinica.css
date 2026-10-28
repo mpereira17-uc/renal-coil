@@ -11,10 +11,8 @@
   --cl-shadow: 0 10px 30px rgb(11 47 69 / 10%);
   /* Fotos (una sola vez, para que la copia sin instalar no las repita). */
   --cl-f-aprende: url(../assets/fotos/aprende.webp);
-  --cl-f-cuidado: url(../assets/fotos/cuidado.webp);
   --cl-f-habitos: url(../assets/fotos/habitos.webp);
   --cl-f-infografias: url(../assets/fotos/infografias.webp);
-  --cl-f-proyecto: url(../assets/fotos/proyecto.webp);
   --cl-f-seguimiento: url(../assets/fotos/seguimiento.webp);
   --cl-f-senales: url(../assets/fotos/senales.webp);
   --cl-f-arroz-pollo: url(../assets/recetas/fotos/arroz-pollo.webp);
@@ -41,7 +39,7 @@
 #main-nav a:hover { color: var(--cl-blue); }
 html body #main-nav a[aria-current="page"] { color: var(--cl-blue) !important; background: none !important; }
 #main-nav a[aria-current="page"]::after, #main-nav a:hover::after { transform: scaleX(1); }
-html body .cl-cta { display: inline-flex; align-items: center; background: var(--cl-blue); border-color: var(--cl-blue); color: #fff; white-space: nowrap; border-radius: 999px; padding-inline: 1.3rem; }
+html body .cl-cta { flex: none; min-width: max-content; display: inline-flex; align-items: center; background: var(--cl-blue); border-color: var(--cl-blue); color: #fff; white-space: nowrap; border-radius: 999px; padding-inline: 1.3rem; }
 @media (max-width: 1280px) { html body .cl-cta { display: none; } }
 
 /* ---------- Portada de Inicio (estilo Clinic) ---------- */
@@ -124,7 +122,7 @@ html body .quick-card:hover { box-shadow: var(--cl-shadow); transform: translate
 .cl-stats {
   display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;
   margin: clamp(3.5rem, 7vw, 5.5rem) calc(50% - 50vw) 0; padding: 3.2rem max(var(--gutter), calc(50vw - var(--max-width) / 2));
-  background: linear-gradient(120deg, rgb(11 47 69 / 92%), rgb(20 109 136 / 88%)), var(--cl-f-cuidado) center / cover;
+  background: linear-gradient(120deg, var(--cl-navy), var(--cl-blue));
   color: #fff; text-align: center;
 }
 .cl-stat strong { display: block; font-size: clamp(2.4rem, 4vw, 3.2rem); font-weight: 700; line-height: 1; margin-bottom: .5rem; }
@@ -142,16 +140,9 @@ html body .quick-card:hover { box-shadow: var(--cl-shadow); transform: translate
 .route > .page-intro.sh-hero {
   margin-inline: calc(50% - 50vw); padding: clamp(2.8rem, 6vw, 4.5rem) max(var(--gutter), calc(50vw - var(--max-width) / 2));
   min-height: 0; border-radius: 0; border: 0;
-  background: linear-gradient(90deg, rgb(11 47 69 / 94%) 0%, rgb(11 47 69 / 82%) 45%, rgb(11 47 69 / 45%) 100%), var(--cl-photo, none) center / cover no-repeat, var(--cl-navy);
+  background: linear-gradient(120deg, var(--cl-navy) 0%, var(--cl-navy-2) 55%, var(--cl-blue) 100%);
   color: #fff; margin-bottom: 2.5rem;
 }
-#route-infografias { --cl-photo: var(--cl-f-infografias); }
-#route-aprende { --cl-photo: var(--cl-f-aprende); }
-#route-seguimiento { --cl-photo: var(--cl-f-seguimiento); }
-#route-alimentacion { --cl-photo: var(--cl-f-arroz-pollo); }
-#route-habitos { --cl-photo: var(--cl-f-habitos); }
-#route-senales { --cl-photo: var(--cl-f-senales); }
-#route-proyecto { --cl-photo: var(--cl-f-proyecto); }
 .route > .page-intro.sh-hero .sh-scene { display: none; }
 .route > .page-intro.sh-hero h1 { color: #fff; font-size: clamp(2.1rem, 4vw, 3.2rem); max-width: 20ch; }
 .route > .page-intro.sh-hero h1 em { color: #8fd6e8; font-style: normal; }
@@ -182,6 +173,13 @@ html body .route > .page-intro.sh-hero .text-link { background: transparent; bor
 .cl-footer-care p { font-size: .92rem; line-height: 1.6; margin: 0 0 1rem; }
 html body .cl-footer .button.primary { background: var(--cl-blue); border-color: var(--cl-blue); color: #fff; border-radius: 999px; }
 .cl-footer-bottom { border-top: 1px solid rgb(255 255 255 / 12%); max-width: calc(var(--max-width) + 2 * var(--gutter)); margin: auto; padding: 1.2rem var(--gutter); display: flex; justify-content: space-between; flex-wrap: wrap; gap: .5rem; font-size: .85rem; color: #93adbd; }
+
+/* ---------- Un solo color para todas las secciones: el azul de la interfaz ---------- */
+:root, .route[data-view], [data-section] { --accent: #146d88; --accent-soft: #e3f1f6; --accent-ink: #0d526b; }
+[data-theme="dark"], [data-theme="dark"] .route[data-view], [data-theme="dark"] [data-section] { --accent: #8dccdf; --accent-soft: #1f3b47; --accent-ink: #a6e2ee; }
+
+/* El capítulo oscuro de Entender también va en azul oscuro, no en vino. */
+.learn-chapter.is-dark { --accent: #8fd6e8; --accent-ink: #b5e5f1; --ink: #f1f7fa; --text: #d6e6ef; --muted: #a9c3d1; background: linear-gradient(140deg, var(--cl-navy) 0%, var(--cl-navy-2) 60%, #0f5a73 100%) !important; }
 
 /* ---------- Modo oscuro: el azul de texto se aclara para leerse bien ---------- */
 [data-theme="dark"] :is(.cl-hero h1 em, .cl-hero-copy .eyebrow, .cl-float-icon, .cl-why-icon, #route-descubrir .section-heading .eyebrow, .discovery-copy .eyebrow, .quick-card .quick-arrow) { color: #8dccdf; }

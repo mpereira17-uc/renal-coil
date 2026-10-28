@@ -1834,7 +1834,6 @@
   "resHighlight": "find evidence",
   "resDescription": "Patient guides, clinical guidelines, articles and tools selected by the team. Links open external sites.",
   "resNav": "Resources",
-  "resAiWarning": "AI tools can make mistakes. Use them to find articles, always check the original source, and do not type in your personal or health data.",
   "resBibtex": "Download references (BibTeX)",
   "resRis": "Download references (RIS)",
   "resForPros": "For professionals",
@@ -2015,63 +2014,6 @@
           "lang": "en",
           "year": "",
           "access": "open"
-        }
-      ]
-    },
-    {
-      "group": "AI tools to find evidence",
-      "ai": true,
-      "items": [
-        {
-          "title": "Consensus",
-          "detail": "Finds answers in scientific papers and shows which studies they come from.",
-          "url": "https://consensus.app/",
-          "audience": "all",
-          "id": "consensus",
-          "lang": "en",
-          "year": "",
-          "access": "account",
-          "aiSheet": {
-            "task": "Answer a question with sentences taken from scientific papers.",
-            "audience": "Students and the public interested in evidence.",
-            "access": "Free plan with limits; advanced features are paid (checked October 2026).",
-            "example": "Do SGLT2 inhibitors slow the progression of diabetic kidney disease?",
-            "verify": "Open at least two of the cited papers and check that the sentence appears in the abstract or results."
-          }
-        },
-        {
-          "title": "Elicit",
-          "detail": "Helps find and summarize papers for a research question.",
-          "url": "https://elicit.com/",
-          "audience": "pros",
-          "id": "elicit",
-          "lang": "en",
-          "year": "",
-          "access": "account",
-          "aiSheet": {
-            "task": "Find papers for a research question and summarize them in a table.",
-            "audience": "Students and researchers.",
-            "access": "Free basic plan; paid plans for more analyses (checked October 2026).",
-            "example": "Studies on albuminuria screening in primary care in Latin America.",
-            "verify": "Check each paper’s population, design and results: automatic summaries can leave out limitations."
-          }
-        },
-        {
-          "title": "OpenEvidence",
-          "detail": "Medical evidence search engine designed for health professionals.",
-          "url": "https://www.openevidence.com/",
-          "audience": "pros",
-          "id": "openevidence",
-          "lang": "en",
-          "year": "",
-          "access": "pros",
-          "aiSheet": {
-            "task": "Answer clinical questions with references to guidelines and papers.",
-            "audience": "Health professionals.",
-            "access": "Free for verified US health professionals (checked October 2026).",
-            "example": "What does KDIGO 2022 recommend for blood pressure control in CKD with diabetes?",
-            "verify": "Compare the answer with the original guideline cited; do not use it for patient decisions without checking."
-          }
         }
       ]
     }

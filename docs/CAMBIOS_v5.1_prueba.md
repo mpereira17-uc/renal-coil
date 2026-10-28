@@ -39,3 +39,10 @@ No está publicada: vive en la rama local `prueba-diseno-clinica` y en el zip `P
 - No hay errores de consola en las 8 secciones, ni en `index.html` ni en la copia sin instalar.
 - El botón de la cabecera abre el formulario.
 - «Comparar el filtrado» sigue funcionando.
+
+## v5.1.1
+
+- Se quitó de Entender › Recursos el grupo «Herramientas de IA para buscar evidencia» (Consensus, Elicit y OpenEvidence) y su aviso.
+- Las franjas de sección y la franja de cifras ya no llevan foto: ahora usan un degradado azul oscuro. Se borraron `assets/fotos/proyecto.webp` y `assets/fotos/cuidado.webp`.
+- Todas las secciones usan el azul de la interfaz (`--accent` #146d88). Antes cada una tenía su color: naranja, vino, verde, morado o rojo. El capítulo oscuro de Entender pasa de vino a azul oscuro.
+- El botón «Añadir medición» de la cabecera ya no se encoge ni corta el texto en pantallas anchas.

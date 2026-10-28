@@ -40,7 +40,7 @@ function resourcesListHTML() {
     (filters.audience === 'any' || item.audience === filters.audience) && (!filters.saved || lib.saved.includes(item.id)) &&
     (!q || plain([item.title, item.detail, item.cite?.author, item.cite?.journal, group.group].join(' ')).includes(q)))})).filter(group => group.items.length);
   if (!groups.length) return `<p class="bank-empty">${e(t('resNone'))}</p>`;
-  return groups.map(group => `<div class="res-group${group.ai ? ' is-ai' : ''}"><h3>${e(group.group)}</h3>${group.ai ? `<p class="res-warning">${e(t('resAiWarning'))}</p>` : ''}<div class="res-grid">${group.items.map(resourceCard).join('')}</div></div>`).join('');
+  return groups.map(group => `<div class="res-group"><h3>${e(group.group)}</h3><div class="res-grid">${group.items.map(resourceCard).join('')}</div></div>`).join('');
 }
 function resourcesHTML() {
   const lib = library();
