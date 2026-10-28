@@ -32,3 +32,9 @@ Se mantuvo la paleta médica, los colores por sección, los botones y el conteni
 - `js/section-heroes.js`, `js/kidney-study.js`, `js/extras.js`, `js/learn.js`, `js/workspace.js`, `js/app.js`: retirados los adornos de arriba.
 - `sw.js`: caché nueva `coil-ui-v5-0-20261028` con `css/profesional.css`.
 - 40 pruebas OK, sin errores de consola en las 8 secciones (normal y sin instalar), ES y EN.
+
+## Botones (v5.0.1)
+- Un solo sistema en toda la web: principal (relleno), secundario (borde) y enlace de texto. Todos miden 44 px de alto,
+  con esquinas de 10 px y letra de 15 px.
+- Las píldoras redondas quedan solo para elegir opciones (partes del riñón, filtros de recetas, periodos, idioma), todas de 40 px.
+- Se quitó el texto que "rueda" al pasar el mouse y el desplazamiento de las flechas.

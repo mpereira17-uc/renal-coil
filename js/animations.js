@@ -101,15 +101,6 @@ export function initAnimations() {
         element.insertAdjacentHTML('beforeend', `<span class="m-arrow" aria-hidden="true">${arrow}</span>`);
       }
     });
-    document.querySelectorAll('.button.primary, .button.secondary').forEach(button => {
-      if (button.childNodes.length !== 1 || button.firstChild.nodeType !== 3) return;
-      const label = button.textContent.trim();
-      if (!label || label.length > 32) return;
-      const roll = document.createElement('span'), inner = document.createElement('span');
-      roll.className = 'm-roll'; inner.className = 'm-roll-in';
-      inner.dataset.text = label; inner.textContent = label;
-      roll.append(inner); button.replaceChildren(roll);
-    });
   }
 
   // ---------- Entrada de la portada ----------

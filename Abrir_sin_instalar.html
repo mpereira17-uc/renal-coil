@@ -5408,6 +5408,43 @@ details > summary{transition:color var(--m-fast) var(--m-ease),background-color 
   .today-grid { grid-template-columns: 1fr; }
 }
 
+/* ---------- Botones: un solo sistema ----------
+   1. Principal (.button.primary): relleno con el color de la sección. Una acción principal por bloque.
+   2. Secundario (.button.secondary y .text-link): borde fino, fondo blanco.
+   3. Enlace: texto con flecha o subrayado, sin caja (dentro de tarjetas y franjas).
+   Las píldoras quedan solo para elegir una opción (partes del riñón, filtros, periodos). */
+html body :is(.button, .text-link):not(.workspace-strip .text-link) {
+  min-height: 44px;
+  padding: .55rem 1.1rem;
+  border-radius: 10px;
+  font-size: .9375rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0;
+  box-shadow: none;
+}
+html body .button.primary { border-width: 1px; }
+html body .button.primary:hover { box-shadow: none; filter: brightness(.94); }
+html body :is(.button.secondary, .text-link:not(.danger-text)):hover { background: var(--accent-soft, var(--control-hover)); }
+html body :is(.button, .text-link):active { transform: none; }
+.listen-button { border-radius: 10px !important; min-height: 44px; font-size: .9375rem; }
+
+html body :is(.part-buttons, .concept-timeline, .chip-row, .period-control, .recipe-meal-filters, .segmented, .education-tabs) button:not(.text-link) {
+  min-height: 40px;
+  padding: .45rem 1rem;
+  border-radius: 999px;
+  font-size: .875rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+/* La franja de perfil usa enlaces de texto, no botones. */
+.workspace-strip .text-link { min-height: 32px; padding: .2rem .3rem; border: 0; background: none; font-size: .85rem; }
+
+/* La flecha de los enlaces ya no se desplaza; solo cambia el color. */
+.m-arrow { transform: none !important; }
+
 </style>
 </head>
 <body>
@@ -6586,15 +6623,6 @@ function initAnimations() {
         last.textContent = last.textContent.replace(/\s*[→↗]\s*$/, ' ');
         element.insertAdjacentHTML('beforeend', `<span class="m-arrow" aria-hidden="true">${arrow}</span>`);
       }
-    });
-    document.querySelectorAll('.button.primary, .button.secondary').forEach(button => {
-      if (button.childNodes.length !== 1 || button.firstChild.nodeType !== 3) return;
-      const label = button.textContent.trim();
-      if (!label || label.length > 32) return;
-      const roll = document.createElement('span'), inner = document.createElement('span');
-      roll.className = 'm-roll'; inner.className = 'm-roll-in';
-      inner.dataset.text = label; inner.textContent = label;
-      roll.append(inner); button.replaceChildren(roll);
     });
   }
 
