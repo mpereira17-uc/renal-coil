@@ -30,8 +30,6 @@ async function initApp(){await loadData();initPreferences();initI18n();initWorks
  document.getElementById('open-presentation').addEventListener('click',()=>present().catch(error=>{console.error('Renal COIL presentación:',error);toast(t('importInvalid'));}));
  window.addEventListener('hashchange',()=>{if(location.hash==='#presentacion-espera')present();});
  initInteraction();(await import('./section-heroes.js')).initSectionHeroes();(await import('./nav-fit.js')).initNavFit();initRouter();await activate(currentRoute().route);initExtras();initAnimations();initInstall();(await import('./tour.js')).initTour(currentRoute().route);
- let ticking=false;const updateProgress=()=>{const max=document.documentElement.scrollHeight-window.innerHeight;document.getElementById('reading-progress').style.transform=`scaleX(${max>0?window.scrollY/max:0})`;ticking=false;};
- window.addEventListener('scroll',()=>{if(!ticking){requestAnimationFrame(updateProgress);ticking=true;}},{passive:true});on(EVENTOS.ROUTE,updateProgress);updateProgress();
  if(!canStore()&&!getRecovery())toast(t('storageWarning'));document.documentElement.dataset.ready='true';emit(EVENTOS.READY,{version:3});if(location.hash==='#presentacion-espera')await present();
 }
 initApp().catch(error=>{console.error('Renal COIL:',error);document.getElementById('startup-error').hidden=false;});

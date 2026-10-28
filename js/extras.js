@@ -3,7 +3,7 @@ import { EVENTOS, on } from './events.js';
 // menú Más en el teléfono, botón para volver arriba y aviso de privacidad dentro del sitio.
 import { data, loadData } from './data.js';
 import { content, t, language, formatNumber, formatDate, translateDOM } from './i18n.js';
-import { getState, updateState, localDate, shiftDate, demoRecords } from './store.js';
+import { getState, updateState, localDate, demoRecords } from './store.js';
 import { escapeHTML as e, toast, openDialog, closeDialog } from './ui.js';
 import { currentRoute } from './router.js';
 import { initCarePlan, upcomingAppointments } from './care-plan.js';
@@ -22,34 +22,8 @@ const icons = {
   up: '<path d="M12 19V5M6 11l6-6 6 6"/>'
 };
 
-// ---------- Progreso e insignias ----------
+// ---------- Progreso de lectura ----------
 function learning() { return getState().learning; }
-function longestHabitRun(habits) {
-  let best = 0, run = 0;
-  for (let i = 60; i >= 0; i--) {
-    const day = shiftDate(localDate(), -i);
-    run = Object.values(habits[day] || {}).some(v => v === true) ? run + 1 : 0;
-    best = Math.max(best, run);
-  }
-  return best;
-}
-function badges(state = getState()) {
-  const total = content().reviewQuestions.length;
-  return [
-    {id: 'explorer', icon: 'book', done: content().sections.every(s => state.learning.chapters.includes(s.id)), name: 'badgeExplorer', hint: 'badgeExplorerHint'},
-    {id: 'reader', icon: 'book', done: content().learn.every(c => state.learning.chapters.includes('aprende-' + c.id)), name: 'badgeReader', hint: 'badgeReaderHint'},
-    {id: 'quiz', icon: 'star', done: state.learning.quizBest === total, name: 'badgeQuiz', hint: 'badgeQuizHint'},
-    {id: 'record', icon: 'drop', done: state.records.length > 0, name: 'badgeRecord', hint: 'badgeRecordHint'},
-    {id: 'week', icon: 'check', done: longestHabitRun(state.habits) >= 7, name: 'badgeWeek', hint: 'badgeWeekHint'},
-    {id: 'meal', icon: 'bowl', done: state.meals.length > 0, name: 'badgeMeal', hint: 'badgeMealHint'}
-  ];
-}
-let earned = null;
-function celebrateNewBadges() {
-  const now = new Set(badges().filter(b => b.done).map(b => b.id));
-  if (earned) badges().filter(b => b.done && !earned.has(b.id)).forEach(b => toast(t('badgeNew', {name: t(b.name)})));
-  earned = now;
-}
 function markChapter(id) {
   const current = learning();
   if (!id || current.chapters.includes(id) || !content().sections.some(s => s.id === id)) return;
@@ -125,19 +99,17 @@ function renderToday() {
       ${recipe?.photo ? `<img class="today-photo" src="${e(recipe.photo)}" alt="" loading="lazy">` : ''}${recipe ? `<strong class="today-value today-text">${e(recipe[language()]?.title || recipe.es.title)}</strong><span class="today-sub">${recipe.minutes} min</span>` : '<span class="today-sub">…</span>'}
       <span class="today-link">${e(t('todayOpenRecipe'))} →</span></a>
   </div>
-  <div class="learning-strip"><div class="learning-progress"><span class="today-icon">${svg(icons.book)}</span><div><strong>${e(t('todayLearning'))}</strong><span>${e(t('todayChaptersBoth', {done: read, total: content().sections.length, learnDone: readLearn, learnTotal: totalLearn}))} · ${e(state.learning.quizBest === null ? t('todayQuizNone') : t('todayQuiz', {score: state.learning.quizBest, total}))}</span><div class="learning-bar"><span style="width:${Math.round((read + readLearn) / allChapters * 100)}%"></span></div>${resume ? `<a class="text-link today-resume" href="${e(resume.href)}">${e(t('todayResume', {title: resume.title}))} →</a>` : ''}</div></div>
-    <ul class="badge-list" aria-label="${e(t('badgesTitle'))}">${badges(state).map(b => `<li class="badge ${b.done ? 'is-earned' : ''}" title="${e(t(b.hint))}"><span class="badge-medal">${svg(icons[b.icon], 18)}</span><span><strong>${e(t(b.name))}</strong><small>${e(t(b.done ? 'badgeEarned' : b.hint))}</small></span></li>`).join('')}</ul></div>`;
+  <div class="learning-strip"><div class="learning-progress"><span class="today-icon">${svg(icons.book)}</span><div><strong>${e(t('todayLearning'))}</strong><span>${e(t('todayChaptersBoth', {done: read, total: content().sections.length, learnDone: readLearn, learnTotal: totalLearn}))} · ${e(state.learning.quizBest === null ? t('todayQuizNone') : t('todayQuiz', {score: state.learning.quizBest, total}))}</span><div class="learning-bar"><span style="width:${Math.round((read + readLearn) / allChapters * 100)}%"></span></div>${resume ? `<a class="text-link today-resume" href="${e(resume.href)}">${e(t('todayResume', {title: resume.title}))} →</a>` : ''}</div></div></div>`;
 }
 function initToday() {
   const quick = document.querySelector('[data-view="descubrir"] .quick-start');
   if (!quick) return;
-  quick.insertAdjacentHTML('beforebegin', '<section class="today-panel" id="today-panel" aria-labelledby="today-title"></section>');
+  quick.insertAdjacentHTML('afterend', '<section class="today-panel" id="today-panel" aria-labelledby="today-title"></section>');
   renderToday();
   loadData(['recipes']).then(renderToday).catch(() => {});
-  on(EVENTOS.STATE, () => { renderToday(); celebrateNewBadges(); });
+  on(EVENTOS.STATE, renderToday);
   on(EVENTOS.LANGUAGE, renderToday);
   on(EVENTOS.ROUTE, event => { if (event.detail.route === 'descubrir') renderToday(); });
-  celebrateNewBadges();
 }
 
 // ---------- Escuchar el capítulo ----------

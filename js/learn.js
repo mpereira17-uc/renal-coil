@@ -55,7 +55,7 @@ function chapterHTML(chapter, index) {
   const credit = [chapter.author?`${e(t('learnBy'))}: ${e(chapter.author)}`:'', e(t('learnTranslated'))].filter(Boolean).join(' · ');
   return `<article class="learn-chapter${chapter.dark?' is-dark':''}" id="aprende-${chapter.id}" data-learn="${chapter.id}" tabindex="-1">
     <span class="learn-ghost" aria-hidden="true">${e(chapter.ghost)}</span>
-    <header class="learn-head"><p class="learn-mono learn-num">${pad(index+1)} — ${e(chapter.label.toUpperCase())}</p><h2>${titleHTML(chapter)}</h2><p class="learn-credit">${credit}${chapter.draft?draftBadge():''}</p></header>
+    <header class="learn-head"><p class="learn-mono learn-num">${e(t('learnChapterN', {n: index+1}))} · ${e(chapter.label)}</p><h2>${titleHTML(chapter)}</h2><p class="learn-credit">${credit}${chapter.draft?draftBadge():''}</p></header>
     ${guideTopHTML(guide)}<div class="learn-body">${body}</div>${guideBottomHTML(chapter, guide)}
     <p class="learn-sources"><span class="learn-mono">${e(t('learnSources'))}</span> ${chapter.sources.map(e).join('; ')}</p>
   </article>`;

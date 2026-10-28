@@ -5,8 +5,6 @@ import { content, t } from './i18n.js';
 import { demoRecords, getState, localDate, shiftDate } from './store.js';
 import { fastingGlucose } from './selectors.js';
 
-const ORDER = ['descubrir','infografias','aprende','seguimiento','alimentacion','habitos','senales','proyecto'];
-const NAV_KEY = {infografias:'navInfo',aprende:'navLearn',seguimiento:'navTrack',alimentacion:'navFood',habitos:'navHabits',senales:'navSigns',proyecto:'heroProject'};
 
 const ring = (n, r, cx = 200, cy = 160) => Array.from({length:n},(_,i)=>{const a=-Math.PI/2+i/n*Math.PI*2;return [cx+Math.cos(a)*r, cy+Math.sin(a)*r];});
 
@@ -65,7 +63,7 @@ function dataLabel(route) {
   return '';
 }
 function renderData() {
-  heroes.forEach(({hero, route})=>{const node = hero.querySelector('.sh-data'); node.textContent = dataLabel(route); node.hidden = !node.textContent;});
+  heroes.forEach(({hero, route})=>{const node = hero.querySelector('.sh-data'); if (node) { node.textContent = dataLabel(route); node.hidden = !node.textContent; }});
 }
 
 function splitTitle(h1) {
@@ -80,11 +78,9 @@ function splitTitle(h1) {
 }
 
 function decorate() {
-  heroes.forEach(({hero, route})=>{
+  heroes.forEach(({hero})=>{
     const h1 = hero.querySelector('h1');
     if (h1 && h1.dataset.i18n) splitTitle(h1);
-    hero.querySelector('.sh-ghost').textContent = t(NAV_KEY[route]);
-    hero.querySelector('.sh-index').textContent = `${String(ORDER.indexOf(route)+1).padStart(2,'0')} / ${String(ORDER.length).padStart(2,'0')} — ${t(NAV_KEY[route]).toUpperCase()}`;
   });
 }
 
@@ -95,7 +91,6 @@ function update() {
     const box = hero.getBoundingClientRect();
     const p = still ? .6 : Math.min(1, Math.max(0, -box.top / Math.max(1, box.height * .9)));
     hero.style.setProperty('--p', p.toFixed(3));
-    hero.querySelector('.sh-pct').textContent = `${t('heroProgress')} ${String(Math.round(p*100)).padStart(3,'0')}`;
   });
 }
 
@@ -105,8 +100,7 @@ export function initSectionHeroes() {
     if (!hero) return;
     hero.classList.add('sh-hero');
     hero.dataset.hero = route;
-    hero.insertAdjacentHTML('afterbegin', '<span class="sh-ghost" aria-hidden="true"></span>');
-    hero.insertAdjacentHTML('beforeend', `<div class="sh-scene" aria-hidden="true">${SCENES[route]}</div><p class="sh-readout" aria-hidden="true"><span class="sh-index"></span><span class="sh-data"></span><span class="sh-pct"></span></p>`);
+    hero.insertAdjacentHTML('beforeend', `<div class="sh-scene" aria-hidden="true">${SCENES[route]}</div>`);
     if (COMPACT.includes(route)) hero.insertAdjacentHTML('beforeend', `<button type="button" class="sh-toggle text-link" data-hero-toggle="${route}" data-i18n="heroCompact">${t('heroCompact')}</button>`);
     heroes.push({hero, route});
   });

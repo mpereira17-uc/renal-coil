@@ -54,7 +54,7 @@ for recipe in assets['recipes']:
         recipe['photo'] = 'data:image/webp;base64,'+base64.b64encode(photo.read_bytes()).decode()
 assets['kidney'] = (ROOT/'assets/anatomia/kidney.svg').read_text(encoding='utf-8')
 styles=[]
-for path in ['tokens.css','base.css','layout.css','components.css','extensions.css','visual.css','rediseno.css','infografias.css','diario.css','pulido.css','interaccion.css','funciones.css','estudio.css','portadas.css','aprende.css','ux.css','cocina.css','sistema.css','movimiento.css']:
+for path in ['tokens.css','base.css','layout.css','components.css','extensions.css','visual.css','rediseno.css','infografias.css','diario.css','pulido.css','interaccion.css','funciones.css','estudio.css','portadas.css','aprende.css','ux.css','cocina.css','sistema.css','movimiento.css','profesional.css']:
     source=(ROOT/'css'/path).read_text(encoding='utf-8')
     def embed_font(match):
         font=(ROOT/'css'/match.group(1)).resolve()

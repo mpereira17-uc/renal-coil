@@ -1,0 +1,75 @@
+/* v5.0 Acabado profesional: menos adornos, rótulos legibles y titulares claros.
+   Se carga al final. Quitar la línea de index.html devuelve el aspecto anterior. */
+
+/* Rótulos: letra normal del texto, sin mayúsculas forzadas ni espaciado de máquina. */
+.eyebrow, .small-label, .ks-mono, .learn-mono, .section-topline span {
+  font-family: var(--sans);
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 600;
+}
+.eyebrow { font-size: .9rem; margin-bottom: .5rem; }
+.route .eyebrow { display: block; }
+.route .eyebrow::before, .learn-num::before { content: none; display: none; }
+.small-label { font-size: .82rem; }
+.learn-index a .learn-mono { font-size: .75rem; }
+
+/* Titulares: una sola familia, la parte destacada solo cambia de color. */
+.sh-hero h1, .learn-head h2, .word-bank h2 {
+  font-family: var(--sans);
+  font-weight: 700;
+  letter-spacing: -.03em;
+  line-height: 1.08;
+}
+.sh-hero h1 { font-size: clamp(2.3rem, 4.2vw, 3.6rem); max-width: 22ch; }
+.learn-head h2, .word-bank h2 { font-size: clamp(2rem, 3.4vw, 3rem); }
+.sh-hero h1 em, .learn-head h2 em, .word-bank h2 em, .discovery-copy h1 em, h1 em, h2 em { font-style: normal; }
+.sh-hero h1 br { display: none; }
+.sh-hero h1 em::before { content: " "; }
+
+/* Adornos que delataban una plantilla: fuera. */
+.flow-field, .reading-progress, .sh-ghost, .sh-readout, .learn-ghost,
+.section-topline, .badge-list, .ks-counter, .ks-mote, .ks-plus, .ks-kicker,
+.discovery-grid::before, .hero-footnote > span:last-child, .studio-heading .small-label:last-child { display: none !important; }
+
+/* Tarjetas: planas y tranquilas, sin relieve ni brillo que sigue al cursor. */
+.quick-card, .recipe-card, .symptom-category, .credit-block, .cct-column, .flow-step,
+.info-stat, .glossary-item, .stat-cell, .today-card {
+  transform: none !important;
+  box-shadow: 0 1px 2px rgba(20, 40, 55, .06);
+  background-image: none;
+}
+.quick-card::after, .recipe-card::after, .today-card::after, [data-tilt]::after { content: none !important; }
+.quick-card:hover, .today-card:hover { box-shadow: 0 4px 14px rgba(20, 40, 55, .08); border-color: var(--accent, var(--action)); }
+.discovery-grid .kidney-visual svg { transform: none !important; }
+
+/* Inicio: los accesos van primero y se leen como un menú, no como un mosaico. */
+.quick-start { margin-top: 2.5rem; }
+.quick-grid { grid-template-columns: repeat(auto-fill, minmax(min(100%, 210px), 1fr)); }
+.quick-card .quick-arrow { opacity: .55; }
+
+/* Recorrido del riñón: rótulos en frase normal. */
+.ks-label { font-size: .9rem; color: var(--accent, var(--action)); }
+.ks-index button span { font-family: var(--sans); letter-spacing: 0; }
+.ks-hint { font-size: .85rem; }
+
+/* La franja de perfil ahora vive dentro de Mi seguimiento. */
+.route .workspace-strip { max-width: none; margin: 0 0 1rem; padding: .6rem .9rem; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
+
+/* Etiquetas pequeñas que seguían en mayúsculas. */
+.today-label, .learn-block h3, .res-group h3, .related-card small, .plan-head span, .plan-slot-label,
+.tour-card .tour-count, .about-card h3, .shopping-cat, .search-dialog #search-results h3, .care-date span {
+  text-transform: none;
+  letter-spacing: 0;
+}
+.today-label { font-size: .85rem; }
+.brand-project { letter-spacing: 0; text-transform: none; }
+
+@media (min-width: 900px) {
+  .quick-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* En celular las tarjetas de "Hoy" van una debajo de otra para que los valores no se corten. */
+@media (max-width: 560px) {
+  .today-grid { grid-template-columns: 1fr; }
+}
