@@ -123,3 +123,6 @@ html body :is(.part-buttons, .concept-timeline, .chip-row, .period-control, .rec
 #part-buttons:empty { min-height: 87px; }
 .studio-tools:empty { min-height: 61px; }
 @media (max-width: 560px) { #part-buttons:empty { min-height: 134px; } .studio-tools:empty { min-height: 113px; } }
+
+/* Al elegir una parte del riñón ya no se marca la caja con un borde. */
+.studio-caption, .studio-caption.part-focused { outline: none !important; box-shadow: none !important; }

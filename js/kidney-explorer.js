@@ -47,14 +47,12 @@ export function initKidneyExplorer() {
   studio.innerHTML = data.kidney;
   translateDOM(studio);
   // El texto cambia con un fundido corto y la pantalla solo se mueve si la explicación quedó fuera de la vista.
-  let focusTimer = 0;
   const select = (id)=>{
     const panel=document.querySelector('.studio-caption'),changed=id!==activePart;
     activePart=id;renderPart();
     if(changed&&!isReducedMotion()&&panel.animate)panel.querySelectorAll('.caption-index, h2, p').forEach((node,index)=>node.animate([{opacity:0,transform:'translateY(8px)'},{opacity:1,transform:'none'}],{duration:340,delay:index*45,easing:'cubic-bezier(.22,1,.36,1)',fill:'backwards'}));
     const box=panel.getBoundingClientRect(),top=document.querySelector('.site-header')?.getBoundingClientRect().bottom||0;
     if(box.bottom<top+40||box.top>window.innerHeight-40)panel.scrollIntoView({behavior:isReducedMotion()?'instant':'smooth',block:'nearest'});
-    panel.classList.add('part-focused');clearTimeout(focusTimer);focusTimer=setTimeout(()=>panel.classList.remove('part-focused'),1600);
   };
   studio.addEventListener('click',event=>{const hotspot=event.target.closest('[data-part]');if(hotspot)select(hotspot.dataset.part);});
   studio.addEventListener('keydown',event=>{const hotspot=event.target.closest('[data-part]');if(hotspot && ['Enter',' '].includes(event.key)){event.preventDefault();select(hotspot.dataset.part);}});
