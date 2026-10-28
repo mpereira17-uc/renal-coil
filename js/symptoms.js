@@ -1,10 +1,9 @@
 import { EVENTOS, on } from './events.js';
 // Orientación educativa sobre señales; no guarda la selección.
 import { content, t } from './i18n.js';
-import { escapeHTML, openDialog, closeDialog, icon } from './ui.js';
+import { escapeHTML, openDialog, icon } from './ui.js';
 import { sourceLinks } from './education.js';
 import { downloadText, datedName } from './files.js';
-import { initConsultQuestions, addQuestions } from './consult-questions.js';
 let consultationText='';
 function selectedSymptoms() { return [...document.querySelectorAll('[data-symptom]:checked')].map(input=>input.dataset.symptom); }
 function showGuidance() {
@@ -24,16 +23,12 @@ function renderSymptoms() {
 }
 export function initSymptoms() {
   document.getElementById('check-symptoms').insertAdjacentHTML('afterend',`<button id="prepare-visit" class="text-link" data-i18n="prepareVisit">${escapeHTML(t('prepareVisit'))}</button>`);
-  document.body.insertAdjacentHTML('beforeend',`<dialog id="questions-dialog" class="sheet-dialog" aria-labelledby="questions-title"><div class="dialog-heading"><h2 id="questions-title" data-i18n="questionsTitle">${escapeHTML(t('questionsTitle'))}</h2><button class="icon-button" data-close-dialog="questions-dialog" data-i18n-aria="close" aria-label="${escapeHTML(t('close'))}">×</button></div><div id="consultation-questions"></div><div class="tool-row"><button id="questions-to-mine" class="button primary" data-i18n="myQuestionsFromDialog">${escapeHTML(t('myQuestionsFromDialog'))}</button><button id="questions-export" class="button secondary" data-i18n="exportText">${escapeHTML(t('exportText'))}</button></div></dialog>`);
+  document.body.insertAdjacentHTML('beforeend',`<dialog id="questions-dialog" class="sheet-dialog" aria-labelledby="questions-title"><div class="dialog-heading"><h2 id="questions-title" data-i18n="questionsTitle">${escapeHTML(t('questionsTitle'))}</h2><button class="icon-button" data-close-dialog="questions-dialog" data-i18n-aria="close" aria-label="${escapeHTML(t('close'))}">×</button></div><div id="consultation-questions"></div><div class="tool-row"><button id="questions-export" class="button secondary" data-i18n="exportText">${escapeHTML(t('exportText'))}</button></div></dialog>`);
   const prepare=()=>{const selected=selectedSymptoms(),urgent=content().symptomChecks.some(s=>s.urgent&&selected.includes(s.id));const questions=[...(urgent?[t('urgentQuestions')]:[]),...content().symptomChecks.filter(s=>selected.includes(s.id)).map(s=>t('symptomQuestion',{symptom:s.text})),t('visitQuestion1'),t('visitQuestion2'),t('visitQuestion3'),t('storyEnd')];consultationText=t('questionsTitle')+'\n\n'+questions.map(q=>'• '+q).join('\n');document.getElementById('consultation-questions').innerHTML=`${urgent?`<p class="notice urgent-text">⚠ ${escapeHTML(t('urgentQuestions'))}</p>`:''}<ul>${questions.map(q=>`<li>${escapeHTML(q)}</li>`).join('')}</ul>`;openDialog('questions-dialog');};
   document.getElementById('prepare-visit').addEventListener('click',prepare);
   document.getElementById('questions-export').addEventListener('click',()=>downloadText(consultationText,datedName('renal-preguntas','txt')));
 
   document.getElementById('check-symptoms').addEventListener('click',()=>{showGuidance();document.querySelector('#symptom-result h3')?.focus();});
-  // Preguntas sugeridas según lo marcado, para pasarlas a «Mis preguntas».
-  const suggested=()=>{const selected=selectedSymptoms(),urgent=content().symptomChecks.some(s=>s.urgent&&selected.includes(s.id));return [...(urgent?[t('urgentQuestions')]:[]),...content().symptomChecks.filter(s=>selected.includes(s.id)).map(s=>t('symptomQuestion',{symptom:s.text})),t('visitQuestion1'),t('visitQuestion2'),t('visitQuestion3')];};
-  initConsultQuestions(document.querySelector('#route-senales .self-check'),suggested);
-  document.getElementById('questions-to-mine').addEventListener('click',()=>{addQuestions(suggested());closeDialog('questions-dialog');document.getElementById('mis-preguntas').scrollIntoView({block:'start'});});
   document.getElementById('symptom-checks').addEventListener('change',()=>{if(!document.getElementById('symptom-result').hidden||content().symptomChecks.some(s=>s.urgent&&selectedSymptoms().includes(s.id)))showGuidance();});
   on(EVENTOS.LANGUAGE,renderSymptoms);
   renderSymptoms();

@@ -38,3 +38,10 @@ Se mantuvo la paleta médica, los colores por sección, los botones y el conteni
   con esquinas de 10 px y letra de 15 px.
 - Las píldoras redondas quedan solo para elegir opciones (partes del riñón, filtros de recetas, periodos, idioma), todas de 40 px.
 - Se quitó el texto que "rueda" al pasar el mouse y el desplazamiento de las flechas.
+
+## Secciones quitadas (v5.0.2, pedido de pepe)
+- Infografías: "Resumen en texto de esta página".
+- Mi seguimiento: tarjeta "Preguntas que vale la pena llevar" (la de recetas ocupa ahora todo el ancho).
+- Hábitos: bloque "A tu ritmo, con acompañamiento".
+- Señales: "Mis preguntas para la consulta" (se borró `js/consult-questions.js` y el botón que pasaba preguntas a esa lista).
+  La ventana "Preparar preguntas" de Señales sigue igual.

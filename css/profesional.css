@@ -110,3 +110,6 @@ html body :is(.part-buttons, .concept-timeline, .chip-row, .period-control, .rec
 
 /* La flecha de los enlaces ya no se desplaza; solo cambia el color. */
 .m-arrow { transform: none !important; }
+
+/* Mi seguimiento: sin la tarjeta de preguntas, la de recetas ocupa todo el ancho. */
+.support-grid { grid-template-columns: 1fr; }

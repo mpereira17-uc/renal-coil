@@ -63,7 +63,6 @@ function renderColumns() {
       `<li><button type="button" class="cct-item" data-info-item="${c}-${i}" aria-pressed="${focusItem === `${c}-${i}`}"><span class="cct-icon">${svg(COLUMN_ICONS[c][i], 22)}</span><div><strong>${escapeHTML(item.title)}</strong><span>${escapeHTML(item.text)}</span></div></button></li>`).join('')}</ul></article>`
   ).join('');
   renderDetail();
-  document.getElementById('info-summary').innerHTML = `<summary>${escapeHTML(t('infoSummaryTitle'))}</summary>${text('infoFlow').length ? `<h3>${escapeHTML(text('infoFlowTitle'))}</h3><ol>${text('infoFlow').map(step => `<li><strong>${escapeHTML(step.title)}.</strong> ${escapeHTML(step.text)}</li>`).join('')}</ol>` : ''}${columns.map(column => `<h3>${escapeHTML(column.label)}</h3><ul>${column.items.map(item => `<li><strong>${escapeHTML(item.title)}.</strong> ${escapeHTML(item.text)}</li>`).join('')}</ul>`).join('')}<h3>${escapeHTML(text('infoStatsTitle'))}</h3><ul>${text('infoStats').map(stat => `<li>${escapeHTML(stat.label)}: ${escapeHTML(stat.text)} (${escapeHTML(stat.badge)})</li>`).join('')}</ul>`;
 }
 function renderDetail() {
   const target = document.getElementById('info-detail');
@@ -102,7 +101,7 @@ export function initInfographics() {
   initialized = true;
   const grid = document.getElementById('info-columns');
   grid.insertAdjacentHTML('beforebegin', `<div class="chip-row info-steps" id="info-steps" role="group" aria-label="${escapeHTML(t('infoStepsLabel'))}"></div>`);
-  grid.insertAdjacentHTML('afterend', '<div class="info-detail" id="info-detail" aria-live="polite"></div><details class="info-summary" id="info-summary"></details>');
+  grid.insertAdjacentHTML('afterend', '<div class="info-detail" id="info-detail" aria-live="polite"></div>');
   document.getElementById('route-infografias').addEventListener('click', event => {
     const col = event.target.closest('[data-info-col]'), item = event.target.closest('[data-info-item]');
     if (col) { focusColumn = Number(col.dataset.infoCol); focusItem = null; renderColumns(); document.querySelector(`[data-info-col="${focusColumn}"]`)?.focus(); }

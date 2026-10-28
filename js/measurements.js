@@ -62,7 +62,7 @@ export function renderMeasurements() {
   if(selectedMetric==='glucose'){const counts=glucoseCounts(records,tag);caption+=' · '+t(counts.excluded?'glucoseCountExcluded':'glucoseCount',{count:counts.used,excluded:counts.excluded});}
   document.getElementById('chart-caption').textContent=caption;
   renderTable(records,mode);renderHomeTracking();renderTrackingTools();
-  document.getElementById('visit-questions').innerHTML=['visitQuestion1','visitQuestion2','visitQuestion3'].map(key=>`<li>${escapeHTML(t(key))}</li>`).join('');
+  const visitQuestions=document.getElementById('visit-questions');if(visitQuestions)visitQuestions.innerHTML=['visitQuestion1','visitQuestion2','visitQuestion3'].map(key=>`<li>${escapeHTML(t(key))}</li>`).join('');
 }
 function renderFields(record) {
   const form=document.getElementById('record-form');
