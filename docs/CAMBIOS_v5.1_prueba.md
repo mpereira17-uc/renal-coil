@@ -63,3 +63,9 @@ No está publicada: vive en la rama local `prueba-diseno-clinica` y en el zip `P
   - suben y muestran sombra al pasar el cursor;
   - iconos en un cuadro azul con el trazo blanco;
   - enlace con raya azul debajo.
+
+## v5.1.3
+
+- Las franjas de sección vuelven a tener foto. Ahora va en la mitad derecha, nítida y con el encuadre ajustado a cada foto (`--cl-pos`), y se funde con el azul hacia el texto. En celular queda de fondo, suave.
+- `assets/fotos/proyecto.webp` vuelve para Acerca del proyecto.
+- Se arregló una regla rota de modo oscuro que dejaba sin aplicar el resto de la hoja; por eso la franja superior seguía visible en celular.

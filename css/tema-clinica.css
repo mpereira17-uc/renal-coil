@@ -15,6 +15,7 @@
   --cl-f-infografias: url(../assets/fotos/infografias.webp);
   --cl-f-seguimiento: url(../assets/fotos/seguimiento.webp);
   --cl-f-senales: url(../assets/fotos/senales.webp);
+  --cl-f-proyecto: url(../assets/fotos/proyecto.webp);
   --cl-f-arroz-pollo: url(../assets/recetas/fotos/arroz-pollo.webp);
 }
 [data-theme="dark"] { --cl-sky: #1b2a35; --cl-shadow: 0 10px 30px rgb(0 0 0 / 25%); }
@@ -135,10 +136,30 @@ html body .quick-card:hover { box-shadow: var(--cl-shadow); transform: translate
 .route > .page-intro.sh-hero {
   margin-inline: calc(50% - 50vw); padding: clamp(2.8rem, 6vw, 4.5rem) max(var(--gutter), calc(50vw - var(--max-width) / 2));
   min-height: 0; border-radius: 0; border: 0;
-  background: linear-gradient(120deg, var(--cl-navy) 0%, var(--cl-navy-2) 55%, var(--cl-blue) 100%);
+  background: linear-gradient(120deg, var(--cl-navy) 0%, var(--cl-navy-2) 60%, #0f4f68 100%);
   color: #fff; margin-bottom: 2.5rem;
 }
 .route > .page-intro.sh-hero .sh-scene { display: none; }
+/* Foto a la derecha, nítida, que se funde con el azul hacia el texto (estilo Medicate). */
+.route > .page-intro.sh-hero { position: relative; overflow: hidden; isolation: isolate; }
+.route > .page-intro.sh-hero > *:not(.sh-toggle) { position: relative; z-index: 1; }
+.route > .page-intro.sh-hero > .sh-toggle { z-index: 2; }
+.route > .page-intro.sh-hero::after {
+  content: ""; position: absolute; z-index: 0; inset: 0 0 0 auto; width: 58%; height: auto; top: 0; right: 0;
+  border-radius: 0; opacity: 1; background: var(--cl-photo, none) var(--cl-pos, center) / cover no-repeat;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgb(0 0 0 / 55%) 28%, #000 60%);
+  mask-image: linear-gradient(90deg, transparent 0%, rgb(0 0 0 / 55%) 28%, #000 60%);
+}
+#route-infografias { --cl-photo: var(--cl-f-infografias); --cl-pos: 50% 40%; }
+#route-aprende { --cl-photo: var(--cl-f-aprende); --cl-pos: 60% 35%; }
+#route-seguimiento { --cl-photo: var(--cl-f-seguimiento); --cl-pos: 50% 55%; }
+#route-alimentacion { --cl-photo: var(--cl-f-arroz-pollo); --cl-pos: 50% 50%; }
+#route-habitos { --cl-photo: var(--cl-f-habitos); --cl-pos: 50% 45%; }
+#route-senales { --cl-photo: var(--cl-f-senales); --cl-pos: 40% 35%; }
+#route-proyecto { --cl-photo: var(--cl-f-proyecto); --cl-pos: 55% 30%; }
+@media (max-width: 760px) {
+  .route > .page-intro.sh-hero::after { width: 100%; opacity: .28; -webkit-mask-image: none; mask-image: none; }
+}
 .route > .page-intro.sh-hero h1 { color: #fff; font-size: clamp(2.1rem, 4vw, 3.2rem); max-width: 20ch; }
 .route > .page-intro.sh-hero h1 em { color: #8fd6e8; font-style: normal; }
 .route > .page-intro.sh-hero p:not(.eyebrow) { color: #dbe9f0; }
@@ -210,7 +231,8 @@ html body .cl-footer .button.primary { background: var(--cl-blue); border-color:
 [data-theme="dark"] :is(.today-icon, .cl-why-icon, .quick-card .quick-icon) { background: #1f5f74 !important; }
 
 /* ---------- Modo oscuro: el azul de texto se aclara para leerse bien ---------- */
-[data-theme="dark"] :is(.cl-hero h1 em, .cl-hero-copy .eyebrow, html[data-theme="dark"] body #main-nav a[aria-current="page"], [data-theme="dark"] #main-nav a:hover { color: #8dccdf !important; }
+[data-theme="dark"] :is(.cl-hero h1 em, .cl-hero-copy .eyebrow, .cl-why-icon, #route-descubrir .section-heading .eyebrow, .discovery-copy .eyebrow, .quick-card .quick-arrow) { color: #8dccdf; }
+html[data-theme="dark"] body #main-nav a[aria-current="page"], [data-theme="dark"] #main-nav a:hover { color: #8dccdf !important; }
 [data-theme="dark"] #main-nav a::after { background: #8dccdf; }
 html[data-theme="dark"] body .cl-cta { background: var(--cl-blue); border-color: var(--cl-blue); color: #fff; }
 
