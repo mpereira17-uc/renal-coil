@@ -69,3 +69,10 @@ No está publicada: vive en la rama local `prueba-diseno-clinica` y en el zip `P
 - Las franjas de sección vuelven a tener foto. Ahora va en la mitad derecha, nítida y con el encuadre ajustado a cada foto (`--cl-pos`), y se funde con el azul hacia el texto. En celular queda de fondo, suave.
 - `assets/fotos/proyecto.webp` vuelve para Acerca del proyecto.
 - Se arregló una regla rota de modo oscuro que dejaba sin aplicar el resto de la hoja; por eso la franja superior seguía visible en celular.
+
+## v5.1.4
+
+Ideas tomadas de otra plantilla de clínica de referencia (RD Navbar / Bootstrap):
+
+- La caja de beneficios de Inicio monta sobre el borde inferior de la portada («sección negativa»). Solo en escritorio.
+- Al final de Inicio hay una franja con foto: «¿Notaste algún cambio en tu cuerpo?», con botones a Señales y a Mi seguimiento. Vuelve `assets/fotos/cuidado.webp`.

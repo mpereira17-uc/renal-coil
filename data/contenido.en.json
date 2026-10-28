@@ -2381,5 +2381,8 @@
   "clStat3Text": "blood (eGFR) and urine (albumin) detect early damage",
   "clStat4Value": "Once a year",
   "clStat4Text": "at least, get your kidneys checked if you have diabetes",
-  "clStatsSource": "Sources: NIDDK, CDC and ADA Standards of Care. Population data; they do not predict what will happen to one person."
+  "clStatsSource": "Sources: NIDDK, CDC and ADA Standards of Care. Population data; they do not predict what will happen to one person.",
+  "clCtaTitle": "Noticed any change in your body?",
+  "clCtaSigns": "Check the signs",
+  "clCtaVisit": "Prepare my visit"
 }

@@ -2381,5 +2381,8 @@
   "clStat3Text": "sangre (TFGe) y orina (albúmina) detectan el daño temprano",
   "clStat4Value": "1 vez al año",
   "clStat4Text": "como mínimo, revisar los riñones si tienes diabetes",
-  "clStatsSource": "Fuentes: NIDDK, CDC y Estándares de la ADA. Datos de población; no predicen lo que le pasará a una persona."
+  "clStatsSource": "Fuentes: NIDDK, CDC y Estándares de la ADA. Datos de población; no predicen lo que le pasará a una persona.",
+  "clCtaTitle": "¿Notaste algún cambio en tu cuerpo?",
+  "clCtaSigns": "Revisar las señales",
+  "clCtaVisit": "Preparar mi consulta"
 }

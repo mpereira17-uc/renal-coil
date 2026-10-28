@@ -50,6 +50,7 @@ Fotos de Unsplash (licencia Unsplash: uso libre, sin atribución obligatoria). S
 | Entender | assets/fotos/aprende.webp | https://unsplash.com/photos/photo-1588776814546-1ffcf47267a5 |
 | Mi seguimiento | assets/fotos/seguimiento.webp | https://unsplash.com/photos/photo-1593491205049-7f032d28cf5c |
 | Hábitos | assets/fotos/habitos.webp | https://unsplash.com/photos/photo-1584515933487-779824d29309 |
+| Franja final de Inicio | assets/fotos/cuidado.webp | https://unsplash.com/photos/photo-1576765608535-5f04d1e3f289 |
 | Señales | assets/fotos/senales.webp | https://unsplash.com/photos/photo-1631815588090-d4bfec5b1ccb |
 
 Alimentación reutiliza la foto de Arroz con pollo y arvejas de la tabla de recetas.

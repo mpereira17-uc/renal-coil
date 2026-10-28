@@ -16,12 +16,13 @@
   --cl-f-seguimiento: url(../assets/fotos/seguimiento.webp);
   --cl-f-senales: url(../assets/fotos/senales.webp);
   --cl-f-proyecto: url(../assets/fotos/proyecto.webp);
+  --cl-f-cuidado: url(../assets/fotos/cuidado.webp);
   --cl-f-arroz-pollo: url(../assets/recetas/fotos/arroz-pollo.webp);
 }
 [data-theme="dark"] { --cl-sky: #1b2a35; --cl-shadow: 0 10px 30px rgb(0 0 0 / 25%); }
 
 /* Si se quita esta hoja, las piezas nuevas no se ven. */
-.cl-topbar, .cl-hero, .cl-why, .cl-stats, .cl-crumbs, .cl-cta { display: none; }
+.cl-topbar, .cl-hero, .cl-why, .cl-stats, .cl-crumbs, .cl-cta, .cl-cta-band { display: none; }
 
 /* ---------- Franja superior ---------- */
 .cl-topbar { display: block; background: var(--cl-navy); color: #d6e6ef; font-size: .85rem; }
@@ -48,7 +49,7 @@ html body .cl-cta { flex: none; min-width: max-content; display: inline-flex; al
 .cl-hero {
   display: grid; grid-template-columns: 1.05fr .95fr; gap: clamp(2rem, 5vw, 4.5rem); align-items: center;
   margin-inline: calc(50% - 50vw); padding: clamp(3rem, 7vw, 5.5rem) max(var(--gutter), calc(50vw - var(--max-width) / 2));
-  background: linear-gradient(180deg, var(--cl-sky), var(--paper));
+  background: var(--cl-sky);
 }
 .cl-hero-copy .eyebrow { display: inline-block; padding: .35rem .85rem; border-radius: 999px; background: var(--surface); color: var(--cl-blue); box-shadow: 0 1px 2px rgb(11 47 69 / 8%); font-size: .875rem; margin-bottom: 1.2rem; }
 .cl-hero-copy .eyebrow::before { content: none; }
@@ -196,6 +197,24 @@ html body .cl-footer .button.primary { background: var(--cl-blue); border-color:
 
 /* El capítulo oscuro de Entender también va en azul oscuro, no en vino. */
 .learn-chapter.is-dark { --accent: #8fd6e8; --accent-ink: #b5e5f1; --ink: #f1f7fa; --text: #d6e6ef; --muted: #a9c3d1; background: linear-gradient(140deg, var(--cl-navy) 0%, var(--cl-navy-2) 60%, #0f5a73 100%) !important; }
+
+/* ---------- Beneficios montados sobre el borde de la portada y franja final con foto ---------- */
+@media (min-width: 981px) {
+  .cl-hero { padding-bottom: clamp(6rem, 9vw, 8rem); }
+  .cl-why { position: relative; z-index: 2; margin-top: -4.5rem; }
+  .cl-why-item, .cl-why-box { box-shadow: 0 14px 34px rgb(11 47 69 / 12%) !important; }
+}
+.cl-cta-band {
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem 3rem;
+  margin: clamp(3.5rem, 7vw, 5.5rem) calc(50% - 50vw) -5rem; padding: clamp(3rem, 6vw, 4.5rem) max(var(--gutter), calc(50vw - var(--max-width) / 2));
+  background: linear-gradient(90deg, rgb(11 47 69 / 96%) 0%, rgb(11 47 69 / 88%) 45%, rgb(20 109 136 / 55%) 100%), var(--cl-f-cuidado) center 30% / cover no-repeat, var(--cl-navy);
+  color: #fff;
+}
+.cl-cta-band h2 { font-family: var(--sans); font-weight: 700; font-size: clamp(1.7rem, 3vw, 2.4rem); line-height: 1.15; color: #fff; margin: 0 0 .6rem; }
+.cl-cta-band p { color: #d6e9f1; margin: 0; max-width: 52ch; }
+.cl-cta-band-actions { display: flex; flex-wrap: wrap; gap: .75rem; }
+html body .cl-cta-band .button.primary { background: #fff; border-color: #fff; color: var(--cl-navy); border-radius: 999px; padding-inline: 1.5rem; min-height: 50px; }
+html body .cl-cta-band .text-link.text-link.text-link { background: transparent; border: 1px solid rgb(255 255 255 / 50%); color: #fff; border-radius: 999px; padding-inline: 1.5rem; min-height: 50px; }
 
 /* ---------- Tarjetas: un solo estilo en todo el sitio (referencia Docmed) ----------
    Blancas, borde fino, esquinas suaves, sin franjas de color arriba; al pasar el cursor
