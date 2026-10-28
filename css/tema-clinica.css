@@ -434,12 +434,98 @@ body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; 
 
 /* Fotos dentro de tarjetas: radio interior = radio exterior; borde interno muy suave para que no se "derramen". */
 :is(.recipe-card, .quick-card) { overflow: hidden; }
-:is(.recipe-card img, .today-photo, .cl-hero-media img, .recipe-photo img) { outline: 1px solid rgb(0 0 0 / 6%); outline-offset: -1px; }
-.cl-hero-media img { outline: none; }
+:is(.recipe-card img, .today-photo, .recipe-photo img, .quick-card img) { outline: 1px solid oklch(0 0 0 / .1); outline-offset: -1px; }
+[data-theme="dark"] :is(.recipe-card img, .today-photo, .recipe-photo img, .quick-card img) { outline-color: oklch(1 0 0 / .1); }
 
 /* Pulsar: un leve hundimiento; solo se animan las propiedades que cambian. */
 :is(.button, button.chip, .text-link, .cl-why-link, .today-resume, #main-nav a) { transition-property: color, background-color, border-color, box-shadow, transform; transition-duration: .16s; transition-timing-function: cubic-bezier(.22, 1, .36, 1); }
-:is(.button, .text-link, .cl-why-link, .today-resume, .quick-card, .today-card):active { transform: scale(.97) !important; }
-.m-arrow { display: inline-block; transition: translate .2s cubic-bezier(.22, 1, .36, 1); }
-:is(a, button):hover > .m-arrow { translate: 3px 0; }
+:is(.button, .text-link, .cl-why-link, .today-resume):active { transform: scale(.96) !important; }
 html body .route > .page-intro.sh-hero .eyebrow { color: #8fd6e8 !important; }
+
+/* ---------- v5.3: cambio de sección (View Transitions), cabecera compacta y línea de pasos ---------- */
+.site-header { view-transition-name: cabecera; }
+.cl-topbar { view-transition-name: franja-superior; }
+.bottom-nav { view-transition-name: barra-inferior; }
+::view-transition-old(root) { animation: cl-vt-out .2s cubic-bezier(.4, 0, 1, 1) both; }
+::view-transition-new(root) { animation: cl-vt-in .42s cubic-bezier(.16, 1, .3, 1) both; }
+@keyframes cl-vt-out { to { opacity: 0; transform: translateY(-10px) scale(.995); filter: blur(3px); } }
+@keyframes cl-vt-in { from { opacity: 0; transform: translateY(18px); filter: blur(4px); } }
+@media (prefers-reduced-motion: reduce) { ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation: none !important; } }
+
+.header-inner { transition: min-height .25s cubic-bezier(.22, 1, .36, 1); }
+.site-header { transition: box-shadow .25s, background-color .25s; }
+.site-header.is-compact { background: rgb(255 255 255 / 92%); -webkit-backdrop-filter: saturate(1.4) blur(12px); backdrop-filter: saturate(1.4) blur(12px); box-shadow: 0 1px 0 rgb(11 47 69 / 6%), 0 8px 24px -10px rgb(11 47 69 / 22%); }
+[data-theme="dark"] .site-header.is-compact { background: rgb(16 28 36 / 90%); }
+@media (min-width: 981px) {
+  .site-header.is-compact .header-inner { min-height: 62px; }
+}
+
+.info-flow { position: relative; padding-bottom: 1.6rem !important; }
+.info-flow::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 4px; border-radius: 4px;
+  background: linear-gradient(90deg, var(--cl-blue), #2a9bb8) 0 0 / calc(var(--flow-p, 1) * 100%) 100% no-repeat, var(--cl-sky);
+}
+@media (max-width: 760px) { .info-flow::after { display: none; } }
+
+/* ---------- v5.3: criterio de Impeccable ----------
+   Sin etiquetas pequeñas encima de los títulos (el título habla solo), títulos alineados a la
+   izquierda, sin números de sección cuando el orden no informa, avisos sin raya gruesa lateral
+   y superficies del navegador (selección, cursor, barra de scroll, foco) con la paleta. */
+:is(.route, dialog) .eyebrow:has(+ :is(h1, h2, h3)) { display: none !important; }
+.cl-hero-copy .eyebrow { display: none !important; }
+#route-descubrir .section-heading { text-align: left; }
+#route-descubrir .section-heading > div, #route-descubrir .today-panel .section-heading > * { margin-inline: 0; text-align: left; }
+#route-descubrir .section-heading h2::after { margin: .8rem 0 0; width: 40px; }
+#route-descubrir .today-panel .eyebrow { text-align: left; margin-inline: 0; }
+/* Señales, privacidad y proyecto: el orden no significa nada, así que sin 01/02/03. */
+.symptom-category > .small-label:first-child, .privacy-index, .credit-block > span:first-child { display: none !important; }
+.route :is(.notice, .info-note, .early-detection, .food-notice, .learn-note, .learn-key, .data-mode-bar, .bank-toolbar + .fine-print) {
+  border-left: 0 !important; box-shadow: inset 0 0 0 1px rgb(20 109 136 / 14%) !important;
+}
+[data-theme="dark"] .route :is(.notice, .info-note, .early-detection, .food-notice, .learn-note, .learn-key, .data-mode-bar) { box-shadow: inset 0 0 0 1px rgb(141 204 223 / 22%) !important; }
+
+::selection { background: rgb(20 109 136 / 22%); color: inherit; }
+:root { accent-color: var(--cl-blue); caret-color: var(--cl-blue); scrollbar-color: #9bbccb transparent; }
+[data-theme="dark"] { scrollbar-color: #3d6475 transparent; }
+:where(a, button, summary, [tabindex]):focus-visible { outline: 2px solid var(--cl-blue); outline-offset: 3px; border-radius: 6px; }
+.route a:not(.button, .quick-card, .today-card, .cl-why-item, .recipe-card, .res-card, [role="tab"]) { text-underline-offset: .22em; text-decoration-thickness: 1px; }
+.cl-why-link::after { content: ""; width: 16px; height: 16px; margin-left: .45rem; background: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round'%3E%3Cpath d='M6 4l4 4-4 4'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round'%3E%3Cpath d='M6 4l4 4-4 4'/%3E%3C/svg%3E") center / contain no-repeat;
+  transition: translate .35s cubic-bezier(.22, 1, .36, 1); }
+.cl-why-link:hover::after { translate: 2px 0; }
+
+/* Transitions.dev — Learn more hover (https://transitions.dev, licencia en su repositorio).
+   Adaptado: el desplazamiento usa `translate` porque profesional.css fija `transform` en .m-arrow. */
+:root {
+  --learn-shift: 2px;
+  --learn-spread: 8deg;
+  --learn-in: 350ms;
+  --learn-out: 350ms;
+  --learn-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+.t-learn-chevron {
+  display: inline-flex;
+  vertical-align: -.15em;
+  translate: 0 0;
+  transition: translate var(--learn-out) var(--learn-ease);
+}
+.t-learn-arm {
+  transform-box: view-box;
+  transform-origin: 10px 8px;
+  vector-effect: non-scaling-stroke;
+  transition: transform var(--learn-out) var(--learn-ease);
+}
+:is(.t-learn:hover, .today-card:hover .t-learn) .t-learn-chevron { translate: var(--learn-shift) 0; transition-duration: var(--learn-in); }
+:is(.t-learn:hover, .today-card:hover .t-learn) .t-learn-arm { transition-duration: var(--learn-in); }
+:is(.t-learn:hover, .today-card:hover .t-learn) .t-learn-arm-top { transform: rotate(var(--learn-spread)); }
+:is(.t-learn:hover, .today-card:hover .t-learn) .t-learn-arm-bot { transform: rotate(calc(var(--learn-spread) * -1)); }
+
+@media (prefers-reduced-motion: reduce) {
+  .t-learn-chevron, .t-learn-arm { transition: none !important; }
+}
+[data-motion="reduced"] :is(.t-learn-chevron, .t-learn-arm) { transition: none !important; }
+/* Sin cajas dentro de cajas: lo que va dentro de una tarjeta es un fondo plano, no otra tarjeta. */
+html body .privacy-grid article { background: var(--cl-sky) !important; box-shadow: none !important; }
+[data-theme="dark"] .privacy-grid article { background: rgb(255 255 255 / 4%) !important; }
+.learn-head > .learn-num:has(+ h2) { display: none; }

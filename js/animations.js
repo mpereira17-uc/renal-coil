@@ -93,12 +93,16 @@ export function initAnimations() {
   // ---------- Botones: flecha que avanza y texto que rueda en vertical ----------
   // La copia que rueda es decorativa (aria-hidden) y ocupa el mismo espacio: el tamaño del botón no cambia.
   function decorate() {
-    document.querySelectorAll('a.text-link, .button').forEach(element => {
+    document.querySelectorAll('a.text-link, .button, .today-link, a.today-resume').forEach(element => {
       const last = element.lastChild;
       if (last?.nodeType === 3 && /\s[→↗]\s*$/.test(last.textContent) && !element.querySelector('.m-arrow')) {
         const arrow = last.textContent.trim().slice(-1);
         last.textContent = last.textContent.replace(/\s*[→↗]\s*$/, ' ');
-        element.insertAdjacentHTML('beforeend', `<span class="m-arrow" aria-hidden="true">${arrow}</span>`);
+        // "→" pasa a un chevrón dibujado (Transitions.dev · Learn more hover); "↗" (enlace externo) queda como texto.
+        element.insertAdjacentHTML('beforeend', arrow === '→'
+          ? '<span class="m-arrow t-learn-chevron" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path class="t-learn-arm t-learn-arm-top" d="M6 4L10 8"/><path class="t-learn-arm t-learn-arm-bot" d="M10 8L6 12"/></svg></span>'
+          : `<span class="m-arrow" aria-hidden="true">${arrow}</span>`);
+        if (arrow === '→') element.classList.add('t-learn');
       }
     });
   }
@@ -139,7 +143,7 @@ export function initAnimations() {
   on(EVENTOS.ROUTE, event => {
     running.forEach((animation, element) => { if (element.closest('[hidden]')) animation.cancel(); });
     const view = document.querySelector(`[data-view="${event.detail.route}"]`);
-    if (view && booted) play(view, [{opacity: 0, transform: 'translateY(8px)'}, {opacity: 1, transform: 'none'}], {duration: motion.route});
+    if (view && booted && !root.classList.contains('vt-route')) play(view, [{opacity: 0, transform: 'translateY(8px)'}, {opacity: 1, transform: 'none'}], {duration: motion.route});
     schedule();
   });
   on(EVENTOS.LANGUAGE, schedule);

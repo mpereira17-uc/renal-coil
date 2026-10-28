@@ -25,6 +25,15 @@ export function initScrollMotion() {
       document.querySelectorAll('.route:not([hidden]) > .page-intro.sh-hero, .cl-cta-band').forEach(band => {
         gsap.fromTo(band, {'--cl-shift': '-18px'}, {'--cl-shift': '18px', ease: 'none', scrollTrigger: {trigger: band, start: 'top bottom', end: 'bottom top', scrub: true}});
       });
+      // Al salir de la portada o de una franja, el texto sube y se desvanece un poco.
+      document.querySelectorAll('.route:not([hidden]) > .page-intro.sh-hero, .route:not([hidden]) .cl-hero').forEach(band => {
+        const copy = band.classList.contains('cl-hero') ? band.querySelector('.cl-hero-copy') : band.querySelectorAll(':scope > :not(.sh-toggle)');
+        gsap.to(copy, {y: -40, opacity: .35, ease: 'none', scrollTrigger: {trigger: band, start: 'center 40%', end: 'bottom top', scrub: true}});
+      });
+      // Infografías: la línea bajo los cuatro pasos se llena mientras se leen.
+      document.querySelectorAll('.route:not([hidden]) .info-flow').forEach(flow => {
+        gsap.fromTo(flow, {'--flow-p': 0}, {'--flow-p': 1, ease: 'none', scrollTrigger: {trigger: flow, start: 'top 80%', end: 'bottom 45%', scrub: .4}});
+      });
       // Cifras: suben una tras otra al llegar.
       const stats = document.querySelectorAll('.cl-stats .cl-stat');
       if (stats.length) {
@@ -32,6 +41,9 @@ export function initScrollMotion() {
       }
     });
   }
+
+  // Cabecera compacta al bajar (solo cambia una clase; funciona también sin movimiento).
+  ScrollTrigger.create({start: 90, end: 'max', toggleClass: {targets: '.site-header', className: 'is-compact'}});
 
   let pending = 0;
   const rebuild = () => { cancelAnimationFrame(pending); pending = requestAnimationFrame(() => { build(); ScrollTrigger.refresh(); }); };

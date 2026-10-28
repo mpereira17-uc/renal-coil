@@ -18,7 +18,13 @@ function applyRoute(initial = false) {
 }
 export function initRouter() {
   // La entrada visual se aplica con CSS. La navegación responde de inmediato.
-  window.addEventListener('hashchange',()=>applyRoute());
+  // Cambio de sección con View Transitions cuando el navegador lo permite y hay movimiento activado.
+  window.addEventListener('hashchange',()=>{
+    const root=document.documentElement,next=currentRoute().route;
+    if(!document.startViewTransition||!root.classList.contains('motion-ready')||next===previousRoute){applyRoute();return;}
+    root.classList.add('vt-route');
+    document.startViewTransition(()=>applyRoute()).finished.finally(()=>root.classList.remove('vt-route'));
+  });
   document.getElementById('mobile-menu').addEventListener('click',()=>{const open=document.getElementById('main-nav').classList.toggle('open');document.getElementById('mobile-menu').setAttribute('aria-expanded',String(open));});
   document.getElementById('main-nav').addEventListener('keydown',event=>{if(event.key==='Escape'){document.getElementById('main-nav').classList.remove('open');document.getElementById('mobile-menu').setAttribute('aria-expanded','false');document.getElementById('mobile-menu').focus();}});
   applyRoute(true);

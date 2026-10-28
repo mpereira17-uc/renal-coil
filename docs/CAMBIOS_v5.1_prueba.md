@@ -96,3 +96,14 @@ Ideas tomadas de otra plantilla de clínica de referencia (RD Navbar / Bootstrap
 - GSAP + ScrollTrigger (js/vendor, licencia gratuita de GSAP) en `js/scroll-motion.js`: la foto de la portada y las fotos de las franjas de sección se mueven un poco más lento al bajar; las cifras suben una tras otra. Con "Reducir movimiento" no se mueve nada. También va en Abrir_sin_instalar.html.
 - Detalles finos: letra suavizada, títulos equilibrados, cifras alineadas, sombras en capas en vez de bordes en todas las tarjetas, borde interno suave en fotos, leve hundimiento al pulsar y flecha que avanza al pasar el cursor.
 - Franja "Tu aprendizaje" en una fila con el botón para continuar a la derecha; recorrido del riñón con menos hueco; campos de formulario iguales en todo el sitio con foco azul; etiqueta de las franjas legible sobre el azul oscuro.
+
+## v5.3 (2026-10-28): rediseño con las skills elegidas por pepe
+
+Skills leídas desde sus repositorios: Impeccable (solo la guía; su programa no se ejecuta), Make Interfaces Feel Better, GSAP (ScrollTrigger) y Transitions.dev.
+
+- Cambio de sección con View Transitions: el contenido sale suave y entra desde abajo; la cabecera y la barra inferior quedan fijas. Sin movimiento si se pidió reducirlo.
+- Cabecera que se compacta y se vuelve translúcida al bajar.
+- GSAP: el texto de la portada y de las franjas sube y se desvanece al salir; en Infografías una línea bajo los cuatro pasos se llena mientras se leen. Ningún valor clínico se anima.
+- Impeccable: fuera las etiquetas pequeñas encima de los títulos; títulos de Inicio alineados a la izquierda; sin 01/02/03 donde el orden no significa nada (Señales, Privacidad, Proyecto); avisos sin raya gruesa a la izquierda; sin tarjetas dentro de tarjetas en Privacidad; selección de texto, cursor, barra de scroll, casillas y foco con los colores de la página.
+- Transitions.dev (Learn more hover): las flechas "→" de los enlaces son ahora un chevrón dibujado que se abre al pasar el cursor.
+- Make Interfaces Feel Better: hundimiento al pulsar de 0.96 y borde de fotos negro/blanco al 10 %.
