@@ -54,12 +54,14 @@ for recipe in assets['recipes']:
         recipe['photo'] = 'data:image/webp;base64,'+base64.b64encode(photo.read_bytes()).decode()
 assets['kidney'] = (ROOT/'assets/anatomia/kidney.svg').read_text(encoding='utf-8')
 styles=[]
-for path in ['tokens.css','base.css','layout.css','components.css','extensions.css','visual.css','rediseno.css','infografias.css','diario.css','pulido.css','interaccion.css','funciones.css','estudio.css','portadas.css','aprende.css','ux.css','cocina.css','sistema.css','movimiento.css','profesional.css']:
+for path in ['tokens.css','base.css','layout.css','components.css','extensions.css','visual.css','rediseno.css','infografias.css','diario.css','pulido.css','interaccion.css','funciones.css','estudio.css','portadas.css','aprende.css','ux.css','cocina.css','sistema.css','movimiento.css','profesional.css','tema-clinica.css']:
     source=(ROOT/'css'/path).read_text(encoding='utf-8')
     def embed_font(match):
         font=(ROOT/'css'/match.group(1)).resolve()
         return 'url("data:font/woff2;base64,'+base64.b64encode(font.read_bytes()).decode()+'")'
     source=re.sub(r"url\(['\"]([^'\"]+\.(?:otf|woff2))['\"]\)",embed_font,source)
+    # Fotos del tema clínica: también incrustadas.
+    source=re.sub(r"url\((\.\./assets/[^)]+\.webp)\)",lambda m:'url("data:image/webp;base64,'+base64.b64encode((ROOT/'css'/m.group(1)).resolve().read_bytes()).decode()+'")',source)
     styles.append(source)
 # Platos de la portada de Alimentación: también incrustados.
 dishes = {dish.stem: 'data:image/webp;base64,'+base64.b64encode(dish.read_bytes()).decode() for dish in sorted((ROOT/'assets/recetas/platos').glob('*.webp'))}
@@ -70,6 +72,7 @@ html=re.sub(r'  <link rel="stylesheet"[^>]+>\n','',html)
 html=html.replace('</head>','<style>\n'+'\n'.join(styles)+'\n</style>\n</head>')
 favicon=(ROOT/'assets/branding/favicon.svg').read_text(encoding='utf-8')
 html=html.replace('href="assets/branding/favicon.svg"','href="data:image/svg+xml;base64,'+base64.b64encode(favicon.encode()).decode()+'"')
+html=html.replace('src="assets/fotos/inicio.webp"','src="data:image/webp;base64,'+base64.b64encode((ROOT/'assets/fotos/inicio.webp').read_bytes()).decode()+'"')
 html=re.sub(r'  <link rel="preload"[^>]+>\n','',html)
 html=re.sub(r'  <link rel="manifest"[^>]+>\n','',html)
 html=re.sub(r'  <meta (?:property="og:image[^"\n]*"|name="twitter:image")[^>]+>\n','',html)

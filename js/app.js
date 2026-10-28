@@ -27,6 +27,8 @@ async function initApp(){await loadData();initPreferences();initI18n();initWorks
  document.querySelectorAll('[data-route]').forEach(link=>{let timer;link.addEventListener('pointerenter',()=>{timer=setTimeout(()=>{preload(link.dataset.route).catch(()=>{});},200);});link.addEventListener('pointerleave',()=>clearTimeout(timer));link.addEventListener('focus',()=>{preload(link.dataset.route).catch(()=>{});});});
  let presentation;
  const present=async()=>{await loadData(['recipes','presentation']);if(!presentation){presentation=await import('./presentation.js');presentation.initPresentation();}presentation.openPresentation(location.hash==='#presentacion-espera');};
+ // Botón de la cabecera: lleva a Mi seguimiento y abre el formulario de nueva medición.
+ document.getElementById('cl-add')?.addEventListener('click',()=>{location.hash='seguimiento';setTimeout(()=>document.getElementById('add-record')?.click(),250);});
  document.getElementById('open-presentation').addEventListener('click',()=>present().catch(error=>{console.error('Renal COIL presentación:',error);toast(t('importInvalid'));}));
  window.addEventListener('hashchange',()=>{if(location.hash==='#presentacion-espera')present();});
  initInteraction();(await import('./section-heroes.js')).initSectionHeroes();(await import('./nav-fit.js')).initNavFit();initRouter();await activate(currentRoute().route);initExtras();initAnimations();initInstall();(await import('./tour.js')).initTour(currentRoute().route);

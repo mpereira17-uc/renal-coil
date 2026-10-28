@@ -38,3 +38,20 @@ La portada de Alimentación usa recortes circulares de las fotos de: Crema de co
 Si el equipo toma fotos propias, reemplaza el archivo .webp con el mismo nombre (horizontal 4:3, unos 1200 px de ancho) y cambia el autor en "photoCredit" de data/recetas.json.
 
 La imagen para compartir (`assets/branding/social.png`) y el afiche con QR (`docs/qr/afiche_qr_A5.png`) usan las fotos de Arroz con pollo y arvejas y Crema de coliflor, con los mismos créditos de la tabla.
+
+## Fotos del tema clínica (v5.1, prueba)
+
+Fotos de Unsplash (licencia Unsplash: uso libre, sin atribución obligatoria). Se dejan anotadas para poder citarlas o cambiarlas.
+
+| Uso | Archivo | Foto en Unsplash |
+|---|---|---|
+| Portada de Inicio | assets/fotos/inicio.webp | https://unsplash.com/photos/photo-1631217868264-e5b90bb7e133 |
+| Infografías | assets/fotos/infografias.webp | https://unsplash.com/photos/photo-1576091160550-2173dba999ef |
+| Entender | assets/fotos/aprende.webp | https://unsplash.com/photos/photo-1588776814546-1ffcf47267a5 |
+| Mi seguimiento | assets/fotos/seguimiento.webp | https://unsplash.com/photos/photo-1593491205049-7f032d28cf5c |
+| Hábitos | assets/fotos/habitos.webp | https://unsplash.com/photos/photo-1584515933487-779824d29309 |
+| Señales | assets/fotos/senales.webp | https://unsplash.com/photos/photo-1631815588090-d4bfec5b1ccb |
+| Acerca del proyecto | assets/fotos/proyecto.webp | https://unsplash.com/photos/photo-1666214280391-8ff5bd3c0bf0 |
+| Franja de cifras | assets/fotos/cuidado.webp | https://unsplash.com/photos/photo-1576765608535-5f04d1e3f289 |
+
+Alimentación reutiliza la foto de Arroz con pollo y arvejas de la tabla de recetas.

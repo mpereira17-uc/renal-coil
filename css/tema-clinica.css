@@ -1,0 +1,222 @@
+/* v5.1 PRUEBA · Tema clínica: aspecto de sitio médico (referencias Medicate, Clinic y Medilab).
+   Se carga al final. Quitar su línea de index.html devuelve el aspecto de v5.0 (el HTML nuevo queda oculto). */
+
+:root {
+  --cl-navy: #0b2f45;
+  --cl-navy-2: #123f5a;
+  --cl-blue: #146d88;
+  --cl-blue-dark: #0d526b;
+  --cl-sky: #eaf4f8;
+  --cl-radius: 12px;
+  --cl-shadow: 0 10px 30px rgb(11 47 69 / 10%);
+  /* Fotos (una sola vez, para que la copia sin instalar no las repita). */
+  --cl-f-aprende: url(../assets/fotos/aprende.webp);
+  --cl-f-cuidado: url(../assets/fotos/cuidado.webp);
+  --cl-f-habitos: url(../assets/fotos/habitos.webp);
+  --cl-f-infografias: url(../assets/fotos/infografias.webp);
+  --cl-f-proyecto: url(../assets/fotos/proyecto.webp);
+  --cl-f-seguimiento: url(../assets/fotos/seguimiento.webp);
+  --cl-f-senales: url(../assets/fotos/senales.webp);
+  --cl-f-arroz-pollo: url(../assets/recetas/fotos/arroz-pollo.webp);
+}
+[data-theme="dark"] { --cl-sky: #1b2a35; --cl-shadow: 0 10px 30px rgb(0 0 0 / 25%); }
+
+/* Si se quita esta hoja, las piezas nuevas no se ven. */
+.cl-topbar, .cl-hero, .cl-why, .cl-stats, .cl-crumbs, .cl-cta { display: none; }
+
+/* ---------- Franja superior ---------- */
+.cl-topbar { display: block; background: var(--cl-navy); color: #d6e6ef; font-size: .85rem; }
+.cl-topbar-inner { max-width: calc(var(--max-width) + 2 * var(--gutter)); margin: auto; padding: .5rem var(--gutter); display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+.cl-topbar-note { display: inline-flex; align-items: center; gap: .5rem; }
+.cl-topbar svg { width: 16px; height: 16px; flex: none; color: #7fd0e2; }
+.cl-topbar-links { display: inline-flex; gap: 1.5rem; align-items: center; }
+.cl-topbar a { color: #fff; font-weight: 600; text-decoration: none; }
+.cl-topbar a:hover { text-decoration: underline; }
+
+/* ---------- Cabecera ---------- */
+.site-header { background: var(--surface); box-shadow: 0 2px 14px rgb(11 47 69 / 7%); border-bottom: 0; }
+@media (min-width: 1151px) { html:not(.nav-fit-3) #main-nav { padding: 0; background: none; border: 0; border-radius: 0; } }
+#main-nav a { position: relative; border-radius: 0; background: none !important; box-shadow: none !important; color: var(--ink); font-weight: 600; }
+#main-nav a::after { content: ""; position: absolute; left: .7rem; right: .7rem; bottom: .35rem; height: 2px; background: var(--cl-blue); transform: scaleX(0); transition: transform .2s var(--ease); }
+#main-nav a:hover { color: var(--cl-blue); }
+html body #main-nav a[aria-current="page"] { color: var(--cl-blue) !important; background: none !important; }
+#main-nav a[aria-current="page"]::after, #main-nav a:hover::after { transform: scaleX(1); }
+html body .cl-cta { display: inline-flex; align-items: center; background: var(--cl-blue); border-color: var(--cl-blue); color: #fff; white-space: nowrap; border-radius: 999px; padding-inline: 1.3rem; }
+@media (max-width: 1280px) { html body .cl-cta { display: none; } }
+
+/* ---------- Portada de Inicio (estilo Clinic) ---------- */
+#route-descubrir > .section-topline { display: none; }
+.cl-hero {
+  display: grid; grid-template-columns: 1.05fr .95fr; gap: clamp(2rem, 5vw, 4.5rem); align-items: center;
+  margin-inline: calc(50% - 50vw); padding: clamp(3rem, 7vw, 5.5rem) max(var(--gutter), calc(50vw - var(--max-width) / 2));
+  background: linear-gradient(180deg, var(--cl-sky), var(--paper));
+}
+.cl-hero-copy .eyebrow { display: inline-block; padding: .35rem .85rem; border-radius: 999px; background: var(--surface); color: var(--cl-blue); box-shadow: 0 1px 2px rgb(11 47 69 / 8%); font-size: .875rem; margin-bottom: 1.2rem; }
+.cl-hero-copy .eyebrow::before { content: none; }
+.cl-hero h1 { font-family: var(--sans); font-weight: 700; font-size: clamp(2.4rem, 4.6vw, 3.9rem); line-height: 1.06; letter-spacing: -.03em; color: var(--cl-navy); margin: 0 0 1.1rem; max-width: 16ch; }
+[data-theme="dark"] .cl-hero h1 { color: var(--ink); }
+.cl-hero h1 br { display: none; }
+.cl-hero h1 em { font-style: normal; color: var(--cl-blue); }
+.cl-hero h1 em::before { content: " "; }
+.cl-hero .hero-description { font-size: 1.125rem; line-height: 1.6; max-width: 46ch; color: var(--text); margin: 0 0 1.8rem; }
+.cl-hero .hero-actions { display: flex; flex-wrap: wrap; gap: .75rem; }
+html body .cl-hero .hero-actions :is(.button, .text-link) { min-height: 50px; padding-inline: 1.5rem; border-radius: 999px; }
+html body .cl-hero .hero-actions .button.primary { background: var(--cl-blue); border-color: var(--cl-blue); color: #fff; }
+html body .cl-hero .hero-actions .text-link { background: var(--surface); border: 1px solid var(--line); color: var(--cl-navy); }
+html[data-theme="dark"] body .cl-hero .hero-actions .text-link { color: var(--ink); }
+.cl-trust { list-style: none; display: flex; flex-wrap: wrap; gap: .6rem 1.4rem; padding: 0; margin: 2rem 0 0; font-size: .9rem; font-weight: 600; color: var(--ink); }
+.cl-trust li { display: inline-flex; align-items: center; gap: .45rem; }
+.cl-trust svg { width: 20px; height: 20px; padding: 3px; border-radius: 50%; background: var(--cl-blue); color: #fff; flex: none; }
+
+.cl-hero-media { position: relative; }
+.cl-hero-media img { display: block; width: 100%; height: auto; aspect-ratio: 7 / 5.6; object-fit: cover; border-radius: 24px; box-shadow: var(--cl-shadow); }
+.cl-float { position: absolute; display: flex; align-items: center; gap: .75rem; padding: .85rem 1.1rem; border-radius: var(--cl-radius); background: var(--surface); box-shadow: var(--cl-shadow); }
+.cl-float strong { display: block; font-size: 1rem; color: var(--ink); }
+.cl-float span:not(.cl-float-icon) { display: block; font-size: .82rem; color: var(--muted); }
+.cl-float-icon { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 10px; background: var(--cl-sky); color: var(--cl-blue); flex: none; }
+.cl-float-icon svg { width: 22px; height: 22px; }
+.cl-float-a { left: -1.5rem; bottom: 2rem; }
+.cl-float-b { right: -1rem; top: 1.5rem; }
+
+/* ---------- Caja azul y beneficios (estilo Medilab) ---------- */
+.cl-why { display: grid; grid-template-columns: .9fr 2.1fr; gap: 1.5rem; margin-top: clamp(2.5rem, 5vw, 4rem); }
+.cl-why-box { padding: 2.2rem 2rem; border-radius: var(--cl-radius); background: var(--cl-blue); color: #fff; display: flex; flex-direction: column; align-items: flex-start; }
+.cl-why-box h2 { font-family: var(--sans); font-weight: 700; font-size: 1.75rem; line-height: 1.2; color: #fff; margin: 0 0 1rem; }
+.cl-why-box p { color: #e3f2f7; line-height: 1.65; margin: 0 0 1.6rem; }
+.cl-why-link { margin-top: auto; display: inline-flex; align-items: center; min-height: 44px; padding: .55rem 1.3rem; border-radius: 999px; background: rgb(255 255 255 / 18%); color: #fff; font-weight: 600; text-decoration: none; }
+.cl-why-link::after { content: "→"; margin-left: .5rem; }
+.cl-why-link:hover { background: rgb(255 255 255 / 28%); }
+.cl-why-items { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.cl-why-item { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 2rem 1.5rem; border-radius: var(--cl-radius); background: var(--surface); box-shadow: 0 2px 15px rgb(11 47 69 / 8%); color: var(--text); text-decoration: none; transition: box-shadow .2s, transform .2s; }
+.cl-why-item:hover { box-shadow: var(--cl-shadow); transform: translateY(-3px); }
+.cl-why-icon { display: grid; place-items: center; width: 64px; height: 64px; border-radius: 50%; background: var(--cl-sky); color: var(--cl-blue); margin-bottom: 1.1rem; }
+.cl-why-icon svg { width: 30px; height: 30px; }
+.cl-why-item h3 { font-family: var(--sans); font-size: 1.15rem; font-weight: 700; color: var(--ink); margin: 0 0 .5rem; }
+.cl-why-item p { font-size: .95rem; line-height: 1.55; margin: 0; }
+
+/* ---------- Títulos de sección centrados con raya ---------- */
+#route-descubrir .section-heading { display: block; text-align: center; }
+#route-descubrir .section-heading > div { margin-inline: auto; }
+#route-descubrir .section-heading h2 { font-family: var(--sans); font-weight: 700; color: var(--ink); }
+#route-descubrir .section-heading h2::after { content: ""; display: block; width: 56px; height: 3px; margin: .9rem auto 0; border-radius: 2px; background: var(--cl-blue); }
+#route-descubrir .section-heading .eyebrow { color: var(--cl-blue); text-align: center; }
+#route-descubrir .section-heading .small-label { display: none; }
+
+/* ---------- Secciones como servicios con foto ---------- */
+.quick-start { margin-top: clamp(3.5rem, 7vw, 5.5rem); }
+.quick-grid { gap: 1.5rem; }
+html body .quick-card { padding: 0 0 1.4rem; border-radius: var(--cl-radius); overflow: hidden; border: 0; box-shadow: 0 2px 15px rgb(11 47 69 / 8%); gap: .4rem; }
+html body .quick-card:hover { box-shadow: var(--cl-shadow); transform: translateY(-3px) !important; }
+.quick-card::before { content: ""; display: block; aspect-ratio: 16 / 9; margin-bottom: .9rem; background: var(--cl-sky) var(--cl-photo, none) center / cover no-repeat; transition: transform .4s var(--ease); }
+.quick-card[data-section="infografias"] { --cl-photo: var(--cl-f-infografias); }
+.quick-card[data-section="aprende"] { --cl-photo: var(--cl-f-aprende); }
+.quick-card[data-section="seguimiento"] { --cl-photo: var(--cl-f-seguimiento); }
+.quick-card[data-section="alimentacion"] { --cl-photo: var(--cl-f-arroz-pollo); }
+.quick-card[data-section="habitos"] { --cl-photo: var(--cl-f-habitos); }
+.quick-card[data-section="senales"] { --cl-photo: var(--cl-f-senales); }
+.quick-card .quick-icon { position: relative; z-index: 1; margin: -2.6rem 0 0 1.4rem; width: 52px; height: 52px; border-radius: 12px; background: var(--cl-blue); color: #fff; box-shadow: 0 6px 16px rgb(20 109 136 / 30%); display: grid; place-items: center; }
+.quick-card .quick-icon svg { width: 26px; height: 26px; }
+.quick-card strong, .quick-card .quick-text, .quick-card .quick-arrow { margin-inline: 1.4rem; }
+.quick-card strong { font-size: 1.15rem; color: var(--ink); margin-top: .5rem; }
+.quick-card .quick-arrow { color: var(--cl-blue); opacity: 1; font-weight: 700; }
+
+/* ---------- Franja de cifras ---------- */
+.cl-stats {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;
+  margin: clamp(3.5rem, 7vw, 5.5rem) calc(50% - 50vw) 0; padding: 3.2rem max(var(--gutter), calc(50vw - var(--max-width) / 2));
+  background: linear-gradient(120deg, rgb(11 47 69 / 92%), rgb(20 109 136 / 88%)), var(--cl-f-cuidado) center / cover;
+  color: #fff; text-align: center;
+}
+.cl-stat strong { display: block; font-size: clamp(2.4rem, 4vw, 3.2rem); font-weight: 700; line-height: 1; margin-bottom: .5rem; }
+.cl-stat span { color: #d6e9f1; font-size: .95rem; }
+
+/* El panel Hoy y el explorador del riñón quedan como bloques claros. */
+.today-panel { margin-top: clamp(3rem, 6vw, 4.5rem); }
+.discovery-grid { margin-top: clamp(3rem, 6vw, 4.5rem); padding: clamp(1.5rem, 3vw, 2.5rem); border-radius: 20px; background: var(--cl-sky); }
+.discovery-copy .cl-explore-title { font-family: var(--sans); font-weight: 700; font-size: clamp(1.8rem, 3vw, 2.5rem); line-height: 1.15; color: var(--ink); margin: 0 0 .8rem; }
+.discovery-copy > p:not(.eyebrow) { font-size: 1.05rem; line-height: 1.6; }
+.discovery-copy .eyebrow { color: var(--cl-blue); }
+.discovery-grid .discovery-copy { align-self: center; }
+
+/* ---------- Franja de cada sección con ruta (estilo Medicate) ---------- */
+.route > .page-intro.sh-hero {
+  margin-inline: calc(50% - 50vw); padding: clamp(2.8rem, 6vw, 4.5rem) max(var(--gutter), calc(50vw - var(--max-width) / 2));
+  min-height: 0; border-radius: 0; border: 0;
+  background: linear-gradient(90deg, rgb(11 47 69 / 94%) 0%, rgb(11 47 69 / 82%) 45%, rgb(11 47 69 / 45%) 100%), var(--cl-photo, none) center / cover no-repeat, var(--cl-navy);
+  color: #fff; margin-bottom: 2.5rem;
+}
+#route-infografias { --cl-photo: var(--cl-f-infografias); }
+#route-aprende { --cl-photo: var(--cl-f-aprende); }
+#route-seguimiento { --cl-photo: var(--cl-f-seguimiento); }
+#route-alimentacion { --cl-photo: var(--cl-f-arroz-pollo); }
+#route-habitos { --cl-photo: var(--cl-f-habitos); }
+#route-senales { --cl-photo: var(--cl-f-senales); }
+#route-proyecto { --cl-photo: var(--cl-f-proyecto); }
+.route > .page-intro.sh-hero .sh-scene { display: none; }
+.route > .page-intro.sh-hero h1 { color: #fff; font-size: clamp(2.1rem, 4vw, 3.2rem); max-width: 20ch; }
+.route > .page-intro.sh-hero h1 em { color: #8fd6e8; font-style: normal; }
+.route > .page-intro.sh-hero p:not(.eyebrow) { color: #dbe9f0; }
+.route > .page-intro.sh-hero .eyebrow { color: #8fd6e8; }
+.route > .page-intro.sh-hero .sh-data { color: #fff; background: rgb(255 255 255 / 14%); border-color: transparent; }
+html body .route > .page-intro.sh-hero .sh-toggle { color: #fff; border-color: rgb(255 255 255 / 40%); background: transparent; }
+html body .route > .page-intro.sh-hero .button.primary { background: #fff; border-color: #fff; color: var(--cl-navy); }
+html body .route > .page-intro.sh-hero .text-link { background: transparent; border-color: rgb(255 255 255 / 45%); color: #fff; }
+.cl-crumbs { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; margin-bottom: 1rem; font-size: .9rem; color: #b9d3df; }
+.cl-crumbs a { color: #fff; font-weight: 600; text-decoration: none; }
+.cl-crumbs a:hover { text-decoration: underline; }
+.cl-crumbs span[aria-hidden] { opacity: .6; }
+.route > .page-intro.sh-hero.is-compact { padding-block: 1.8rem; }
+
+/* ---------- Pie de página oscuro con columnas ---------- */
+.site-footer.cl-footer { display: block; max-width: none; padding: 0; margin: 0; border: 0; background: var(--cl-navy); color: #c3d6e1; text-align: left; }
+.cl-footer-grid { max-width: calc(var(--max-width) + 2 * var(--gutter)); margin: auto; padding: 3.5rem var(--gutter) 2.5rem; display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.3fr; gap: 2.5rem; }
+.cl-footer .footer-brand { display: block; }
+.cl-footer .footer-brand p { margin: .4rem 0 0; color: #c3d6e1; max-width: 34ch; font-size: .92rem; letter-spacing: 0; }
+.cl-footer-logo { display: inline-flex; align-items: center; gap: .5rem; color: #fff; }
+.cl-footer-logo .brand-name { color: #fff; font-size: 1.6rem; }
+.cl-footer-about { font-size: .92rem; line-height: 1.6; max-width: 34ch; }
+.cl-footer h3 { font-family: var(--sans); font-size: 1rem; font-weight: 700; color: #fff; margin: .3rem 0 1rem; text-transform: none; letter-spacing: 0; }
+.cl-footer ul { list-style: none; padding: 0; margin: 0; display: grid; gap: .55rem; }
+.cl-footer a:not(.button), html body .cl-footer .text-link.text-link.text-link { color: #c3d6e1; text-decoration: none; font-weight: 500; font-size: .95rem; min-height: 0; padding: 0; border: 0; background: none; border-radius: 0; text-align: left; }
+.cl-footer a:not(.button):hover, html body .cl-footer .text-link.text-link.text-link:hover { color: #fff; background: none; text-decoration: underline; }
+.cl-footer-care p { font-size: .92rem; line-height: 1.6; margin: 0 0 1rem; }
+html body .cl-footer .button.primary { background: var(--cl-blue); border-color: var(--cl-blue); color: #fff; border-radius: 999px; }
+.cl-footer-bottom { border-top: 1px solid rgb(255 255 255 / 12%); max-width: calc(var(--max-width) + 2 * var(--gutter)); margin: auto; padding: 1.2rem var(--gutter); display: flex; justify-content: space-between; flex-wrap: wrap; gap: .5rem; font-size: .85rem; color: #93adbd; }
+
+/* ---------- Modo oscuro: el azul de texto se aclara para leerse bien ---------- */
+[data-theme="dark"] :is(.cl-hero h1 em, .cl-hero-copy .eyebrow, .cl-float-icon, .cl-why-icon, #route-descubrir .section-heading .eyebrow, .discovery-copy .eyebrow, .quick-card .quick-arrow) { color: #8dccdf; }
+html[data-theme="dark"] body #main-nav a[aria-current="page"], [data-theme="dark"] #main-nav a:hover { color: #8dccdf !important; }
+[data-theme="dark"] #main-nav a::after { background: #8dccdf; }
+html[data-theme="dark"] body .cl-cta { background: var(--cl-blue); border-color: var(--cl-blue); color: #fff; }
+
+/* ---------- Tableta y celular ---------- */
+@media (max-width: 980px) {
+  .cl-hero { grid-template-columns: 1fr; }
+  .cl-hero-media { max-width: 620px; }
+  .cl-why { grid-template-columns: 1fr; }
+  .cl-footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 760px) {
+  .cl-topbar-links > span { display: none; }
+  .cl-topbar-inner { font-size: .8rem; }
+  .cl-why-items { grid-template-columns: 1fr; }
+  .cl-why-item { display: grid; grid-template-columns: 52px 1fr; column-gap: 1rem; text-align: left; align-items: start; padding: 1.3rem; }
+  .cl-why-icon { width: 52px; height: 52px; margin: 0; grid-row: span 2; }
+  .cl-why-item h3, .cl-why-item p { margin-inline: 0; }
+  .cl-stats { grid-template-columns: 1fr 1fr; padding-block: 2.4rem; }
+  .cl-float-a { left: .6rem; bottom: .8rem; }
+  .cl-float-b { right: .6rem; top: .8rem; }
+  .cl-float { padding: .6rem .8rem; }
+  html body .quick-card { flex-direction: column; flex-wrap: nowrap; align-items: stretch; padding: 0 0 1.2rem; }
+  .quick-card::before { aspect-ratio: 21 / 9; }
+  .quick-card strong { flex: none; padding-right: 0; }
+  .quick-card .quick-text { flex-basis: auto; padding-left: 0; margin-top: 0; }
+}
+@media (max-width: 560px) {
+  .cl-topbar { display: none; }
+  .cl-hero h1 { font-size: clamp(2.1rem, 9vw, 2.6rem); }
+  .cl-trust { flex-direction: column; }
+  .cl-footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .cl-float-b { display: none; }
+}
+@media print { .cl-topbar, .cl-hero-media, .cl-stats, .cl-why { display: none !important; } }
