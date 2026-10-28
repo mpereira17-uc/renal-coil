@@ -76,3 +76,16 @@ Ideas tomadas de otra plantilla de clínica de referencia (RD Navbar / Bootstrap
 
 - La caja de beneficios de Inicio monta sobre el borde inferior de la portada («sección negativa»). Solo en escritorio.
 - Al final de Inicio hay una franja con foto: «¿Notaste algún cambio en tu cuerpo?», con botones a Señales y a Mi seguimiento. Vuelve `assets/fotos/cuidado.webp`.
+
+## v5.1.5 · Todo el contenido con el estilo de clínica
+
+- Una sola letra en todo el sitio; los títulos en serif pasan a la letra del texto. La marca «renal» conserva la suya.
+- Títulos de bloque en negrita, con una raya azul debajo y el rótulo en azul.
+- En Infografías, los bloques alternan un fondo azul muy claro de borde a borde. En Proyecto también lo lleva el bloque de fuentes.
+- Avisos y notas: caja azul clara con raya a la izquierda. Esto incluye «La idea principal», el daño temprano, la nota de recetas y la barra de datos de ejemplo.
+- Números y pasos en cuadros azules (Señales, Infografías y Privacidad).
+- Las tres columnas de causas, consecuencias y cuidados usan tonos de la interfaz.
+- La pregunta de Infografías («¿Has notado…?») va en una franja azul oscura.
+- La autoevaluación de Señales tiene la columna de texto en una caja azul, al estilo Medilab.
+- Las tablas llevan el encabezado azul oscuro y las filas alternas.
+- Pestañas de Alimentación, anillo de Hábitos, índice de Entender, preguntas frecuentes, recursos y créditos con el mismo azul.

@@ -5712,6 +5712,90 @@ html body .cl-cta-band .text-link.text-link.text-link { background: transparent;
 #route-descubrir .today-panel .eyebrow, #route-descubrir .today-panel .section-heading > * { text-align: center; margin-inline: auto; }
 [data-theme="dark"] :is(.today-icon, .cl-why-icon, .quick-card .quick-icon) { background: #1f5f74 !important; }
 
+
+/* ==========================================================================
+   v5.1.5 · Contenido de TODAS las secciones con el mismo estilo de clínica
+   ========================================================================== */
+
+/* Una sola familia de letra en todo el sitio (la marca «renal» conserva la suya). */
+:root { --serif: var(--sans); }
+.brand-name, .cl-footer-logo .brand-name { font-family: RenalEditorial, Palatino, 'Book Antiqua', Georgia, serif; }
+
+/* Títulos de bloque: letra firme, color tinta y raya azul debajo, como en las plantillas. */
+.route:not(#route-descubrir) :is(h2, h3) { font-family: var(--sans); letter-spacing: -.015em; }
+.route:not(#route-descubrir) h2 { font-weight: 700; color: var(--ink); }
+.route:not(#route-descubrir) :is(.section-heading h2, .learn-head h2, .word-bank h2, .self-check h2, .food-diary h2:first-of-type, .sources-section h2, .info-signs h2)::after {
+  content: ""; display: block; width: 48px; height: 3px; margin-top: .8rem; border-radius: 2px; background: var(--cl-blue);
+}
+.route:not(#route-descubrir) .info-signs h2::after { background: #8fd6e8; }
+.route:not(#route-descubrir) :is(.eyebrow, .learn-mono.learn-num, .small-label) { color: var(--cl-blue); }
+.route:not(#route-descubrir) .learn-head h2 em, .route:not(#route-descubrir) h2 em { color: var(--cl-blue); font-style: normal; }
+
+/* Bloques alternos con fondo azul muy claro de borde a borde (ritmo de las plantillas). */
+#route-infografias .info-block:nth-of-type(odd), #route-proyecto .sources-section {
+  background: var(--cl-sky); box-shadow: 0 0 0 100vmax var(--cl-sky); clip-path: inset(0 -100vmax);
+  padding-block: clamp(2.5rem, 5vw, 4rem);
+}
+
+/* Avisos y notas: caja azul clara con raya a la izquierda. */
+.route :is(.notice, .info-note, .early-detection, .food-notice, .learn-note, .learn-key, .data-mode-bar, .bank-toolbar + .fine-print) {
+  background: var(--cl-sky) !important; border: 0 !important; border-left: 4px solid var(--cl-blue) !important;
+  border-radius: 8px !important; box-shadow: none !important; color: var(--text);
+}
+.route .learn-key { padding: 1.1rem 1.3rem; }
+.route .learn-key, .route .learn-key * { font-family: var(--sans) !important; }
+.route .early-detection strong { color: var(--cl-navy); }
+[data-theme="dark"] .route .early-detection strong { color: var(--ink); }
+
+/* Números y pasos en cuadros azules. */
+:is(.flow-number, .privacy-index, .caption-index, .report-mark) { background: var(--cl-blue) !important; color: #fff !important; border-radius: 8px !important; }
+.symptom-category > .small-label:first-child, .symptom-category .small-label { display: inline-grid; place-items: center; min-width: 36px; height: 36px; padding: 0 .5rem; border-radius: 8px; background: var(--cl-blue); color: #fff !important; font-weight: 700; }
+.flow-icon, .cct-icon, .guidance-icon { color: var(--cl-blue); }
+
+/* Infografías: las tres columnas en tonos de la interfaz. */
+.cct-column { --col: var(--cl-navy); --col-soft: #e6eef3; }
+.cct-column[data-kind="effects"] { --col: var(--cl-blue); --col-soft: var(--cl-sky); }
+.cct-column[data-kind="care"] { --col: #1c7d86; --col-soft: #e3f3f3; }
+[data-theme="dark"] .cct-column, [data-theme="dark"] .cct-column[data-kind] { --col: #8dccdf; --col-soft: #1f3b47; }
+.cct-column > header { border-radius: 10px 10px 0 0 !important; }
+.learn-stat :is(strong, .learn-card-value), .learn-card-value, .info-stat strong { font-family: var(--sans) !important; color: var(--cl-blue); font-weight: 700; }
+
+/* Franja de pregunta en Infografías: azul oscuro con botón blanco. */
+.route .info-signs { background: linear-gradient(120deg, var(--cl-navy), var(--cl-navy-2)) !important; color: #fff; border: 0 !important; border-radius: 12px !important; box-shadow: var(--cl-shadow) !important; }
+.route:not(#route-descubrir) .info-signs :is(h2, p) { color: #fff; }
+.route .info-signs .chip-list li { background: rgb(255 255 255 / 12%); color: #fff; border-color: transparent; }
+html body .route .info-signs .button.primary { background: #fff; border-color: #fff; color: var(--cl-navy); }
+
+/* Señales: la columna de la autoevaluación va en una caja azul (estilo Medilab). */
+.self-check { padding: 0 !important; overflow: hidden; gap: 0 !important; }
+.self-check > div:first-child { background: var(--cl-blue); color: #fff; padding: clamp(1.6rem, 3vw, 2.4rem); }
+.self-check > div:first-child :is(h2, p, .eyebrow, .fine-print) { color: #fff !important; }
+.route:not(#route-descubrir) h3 { font-weight: 700; }
+.about-teams-title { font-family: var(--sans); font-weight: 700; color: var(--ink); }
+.credit-block .small-label:first-child { background: var(--cl-blue); color: #fff !important; border-radius: 8px; padding: .15rem .55rem; }
+.stat-number { font-family: var(--sans) !important; color: var(--cl-blue); font-weight: 700; }
+.self-check > div:first-child h2::after { background: #fff !important; }
+.self-check > div:last-child { padding: clamp(1.6rem, 3vw, 2.4rem); }
+
+/* Tablas: encabezado azul oscuro, filas alternas. */
+.results-table thead th, .report-sheet thead th { background: var(--cl-navy) !important; color: #fff !important; border-color: var(--cl-navy) !important; }
+.results-table thead th small { color: #b9d3df; }
+.results-table tbody tr:nth-child(even) td { background: var(--cl-sky); }
+
+/* Entender: índice lateral con el capítulo activo en azul y preguntas frecuentes en tarjetas. */
+.learn-index a[aria-current="true"], .learn-index a.is-active, .learn-index a:hover { color: var(--cl-blue) !important; }
+.learn-index::before, .learn-index ol::before { background: var(--cl-blue) !important; }
+.faq-item { padding: .3rem 1.1rem; }
+.faq-item summary { font-family: var(--sans); font-weight: 600; color: var(--ink); }
+.bank-item h3, .res-title, .credit-block h3, .about-card h3 { font-family: var(--sans) !important; font-weight: 700; color: var(--ink); }
+.res-audience, .bank-badge, .draft-badge { background: var(--cl-sky) !important; color: var(--cl-blue-dark) !important; border-color: transparent !important; }
+[data-theme="dark"] :is(.res-audience, .bank-badge, .draft-badge) { color: #a6e2ee !important; }
+
+/* Alimentación y Hábitos: pestañas y anillo de progreso en azul. */
+.food-tabs a[aria-current="page"], .food-tabs a.is-active { background: var(--cl-blue) !important; color: #fff !important; }
+.orbit-value { stroke: var(--cl-blue) !important; }
+.habit-score h2 { font-size: 1.4rem; }
+
 /* ---------- Modo oscuro: el azul de texto se aclara para leerse bien ---------- */
 [data-theme="dark"] :is(.cl-hero h1 em, .cl-hero-copy .eyebrow, .cl-why-icon, #route-descubrir .section-heading .eyebrow, .discovery-copy .eyebrow, .quick-card .quick-arrow) { color: #8dccdf; }
 html[data-theme="dark"] body #main-nav a[aria-current="page"], [data-theme="dark"] #main-nav a:hover { color: #8dccdf !important; }
