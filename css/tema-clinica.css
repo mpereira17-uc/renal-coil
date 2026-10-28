@@ -366,3 +366,80 @@ html[data-theme="dark"] body .cl-cta { background: var(--cl-blue); border-color:
   .cl-footer-grid { grid-template-columns: 1fr; gap: 2rem; }
   }
 @media print { .cl-topbar, .cl-hero-media, .cl-stats, .cl-why { display: none !important; } }
+
+/* ---------- v5.2: portada con foto a todo el ancho (estilo Medicate/RD Navbar) ---------- */
+@media (min-width: 981px) {
+  .cl-hero { position: relative; display: block; min-height: clamp(560px, 46vw, 680px); overflow: hidden; isolation: isolate; }
+  .cl-hero-copy { position: relative; z-index: 1; max-width: 600px; }
+  .cl-hero-media { position: absolute; inset: 0 0 0 auto; width: 60%; z-index: -1; }
+  .cl-hero-media img { width: 100%; height: 100%; aspect-ratio: auto; border-radius: 0; box-shadow: none; object-position: 30% 35%;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgb(0 0 0 / 60%) 22%, #000 48%); mask-image: linear-gradient(90deg, transparent 0%, rgb(0 0 0 / 60%) 22%, #000 48%); }
+  .cl-hero-copy .eyebrow { background: var(--surface); }
+}
+
+/* Recorrido del riñón: menos hueco a la izquierda */
+@media (min-width: 981px) {
+  #route-descubrir .discovery-grid { grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: clamp(2rem, 4vw, 3.5rem); }
+  #route-descubrir .discovery-copy { padding-left: clamp(.5rem, 2vw, 1.5rem); }
+}
+
+/* Franja "Tu aprendizaje": una fila completa con la barra y el botón a la derecha */
+.learning-strip { grid-template-columns: 1fr !important; padding: 1.3rem 1.6rem !important; }
+.learning-progress > div { flex: 1; display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 2rem; align-items: center; }
+.learning-progress > div > :not(.today-resume) { grid-column: 1; }
+.learning-progress .learning-bar { max-width: 520px; height: 6px; }
+.learning-progress .today-resume { grid-column: 2; grid-row: 1 / span 3; display: inline-flex; align-items: center; min-height: 44px; padding: .5rem 1.2rem; border: 1px solid var(--line); border-radius: 999px; text-decoration: none; font-weight: 600; color: var(--cl-blue); white-space: nowrap; }
+.learning-progress .today-resume:hover { background: var(--cl-blue); border-color: var(--cl-blue); color: #fff; }
+@media (max-width: 760px) {
+  .learning-progress > div { grid-template-columns: 1fr; }
+  .learning-progress .today-resume { grid-column: 1; grid-row: auto; margin-top: .8rem; white-space: normal; }
+}
+
+/* Campos de formulario iguales en todo el sitio */
+.route :is(input[type="text"], input[type="search"], input[type="number"], input[type="date"], input[type="time"], input:not([type]), select, textarea) {
+  border: 1px solid var(--line); border-radius: 8px; background-color: var(--surface); color: var(--ink); min-height: 44px;
+  transition: border-color .15s, box-shadow .15s;
+}
+.route :is(input, select, textarea):focus-visible { outline: none; border-color: var(--cl-blue); box-shadow: 0 0 0 3px rgb(20 109 136 / 18%); }
+
+/* Profundidad al bajar (js/scroll-motion.js mueve --cl-shift con GSAP). */
+.route > .page-intro.sh-hero::after { top: -24px; bottom: -24px; translate: 0 var(--cl-shift, 0px); }
+.cl-cta-band { background-position: 0 0, center calc(30% + var(--cl-shift, 0px)), 0 0; }
+
+/* ---------- v5.2: detalles finos (Make Interfaces Feel Better) ----------
+   Letra suavizada, títulos equilibrados, cifras alineadas, sombras en capas en lugar de bordes,
+   radios concéntricos, borde sutil en fotos y respuesta táctil al pulsar. */
+body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility; }
+:is(h1, h2, h3, .today-label, .cl-why-item strong) { text-wrap: balance; }
+:is(p, li, .hero-description) { text-wrap: pretty; }
+:is(.cl-stat strong, .today-value, .stat-cell strong, table td, .chart-value, .habit-score strong, .info-stat strong, time) { font-variant-numeric: tabular-nums; }
+
+:root {
+  --cl-ring: 0 0 0 1px rgb(11 47 69 / 7%);
+  --cl-lift-1: var(--cl-ring), 0 1px 2px rgb(11 47 69 / 5%), 0 2px 6px rgb(11 47 69 / 4%);
+  --cl-lift-2: 0 0 0 1px rgb(11 47 69 / 4%), 0 6px 14px -4px rgb(11 47 69 / 10%), 0 22px 40px -12px rgb(11 47 69 / 18%);
+}
+[data-theme="dark"] { --cl-ring: 0 0 0 1px rgb(255 255 255 / 9%); --cl-lift-1: var(--cl-ring); --cl-lift-2: 0 0 0 1px rgb(255 255 255 / 12%), 0 18px 40px -12px rgb(0 0 0 / 55%); }
+:is(.today-card, .learning-strip, .quick-card, .cl-why-item, .recipe-card, .symptom-category, .credit-block, .cct-column,
+  .flow-step, .info-stat, .glossary-item, .res-card, .case-card, .about-card, .stat-cell, .habit-score, .week-surface,
+  .chart-surface, .daily-note, .discovery-bottom > *, .education-panel, .privacy-grid article, .faq-item) {
+  border-color: transparent !important;
+  box-shadow: var(--cl-lift-1) !important;
+  transition: transform .25s cubic-bezier(.22, 1, .36, 1), box-shadow .25s cubic-bezier(.22, 1, .36, 1) !important;
+}
+@media (hover: hover) {
+  :is(.today-card, .quick-card, .cl-why-item, .recipe-card, .res-card, .case-card, .symptom-category, .about-card):hover { box-shadow: var(--cl-lift-2) !important; }
+}
+@media (min-width: 981px) { .cl-why-item, .cl-why-box { box-shadow: var(--cl-lift-2) !important; } }
+
+/* Fotos dentro de tarjetas: radio interior = radio exterior; borde interno muy suave para que no se "derramen". */
+:is(.recipe-card, .quick-card) { overflow: hidden; }
+:is(.recipe-card img, .today-photo, .cl-hero-media img, .recipe-photo img) { outline: 1px solid rgb(0 0 0 / 6%); outline-offset: -1px; }
+.cl-hero-media img { outline: none; }
+
+/* Pulsar: un leve hundimiento; solo se animan las propiedades que cambian. */
+:is(.button, button.chip, .text-link, .cl-why-link, .today-resume, #main-nav a) { transition-property: color, background-color, border-color, box-shadow, transform; transition-duration: .16s; transition-timing-function: cubic-bezier(.22, 1, .36, 1); }
+:is(.button, .text-link, .cl-why-link, .today-resume, .quick-card, .today-card):active { transform: scale(.97) !important; }
+.m-arrow { display: inline-block; transition: translate .2s cubic-bezier(.22, 1, .36, 1); }
+:is(a, button):hover > .m-arrow { translate: 3px 0; }
+html body .route > .page-intro.sh-hero .eyebrow { color: #8fd6e8 !important; }

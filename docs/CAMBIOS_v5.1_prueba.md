@@ -89,3 +89,10 @@ Ideas tomadas de otra plantilla de clínica de referencia (RD Navbar / Bootstrap
 - La autoevaluación de Señales tiene la columna de texto en una caja azul, al estilo Medilab.
 - Las tablas llevan el encabezado azul oscuro y las filas alternas.
 - Pestañas de Alimentación, anillo de Hábitos, índice de Entender, preguntas frecuentes, recursos y créditos con el mismo azul.
+
+## v5.2 (2026-10-28): rediseño con las skills de diseño (GSAP y Make Interfaces Feel Better)
+
+- Portada: la foto ocupa todo el lado derecho y se funde con el fondo celeste (estilo Medicate/RD Navbar), en lugar de una foto en caja.
+- GSAP + ScrollTrigger (js/vendor, licencia gratuita de GSAP) en `js/scroll-motion.js`: la foto de la portada y las fotos de las franjas de sección se mueven un poco más lento al bajar; las cifras suben una tras otra. Con "Reducir movimiento" no se mueve nada. También va en Abrir_sin_instalar.html.
+- Detalles finos: letra suavizada, títulos equilibrados, cifras alineadas, sombras en capas en vez de bordes en todas las tarjetas, borde interno suave en fotos, leve hundimiento al pulsar y flecha que avanza al pasar el cursor.
+- Franja "Tu aprendizaje" en una fila con el botón para continuar a la derecha; recorrido del riñón con menos hueco; campos de formulario iguales en todo el sitio con foco azul; etiqueta de las franjas legible sobre el azul oscuro.

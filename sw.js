@@ -1,10 +1,13 @@
 // Caché limitada a la interfaz. JSON de contenido y archivo autónomo quedan fuera.
-const CACHE='coil-ui-v5-1-1-20261028';
+const CACHE='coil-ui-v5-2-20261028';
 const FILES=[
   "./",
   "./index.html",
   "js/animations.js",
   "js/app.js",
+  "js/scroll-motion.js",
+  "js/vendor/gsap.min.js",
+  "js/vendor/ScrollTrigger.min.js",
   "js/charts.js",
   "js/clinical.js",
   "js/csv.js",

@@ -77,6 +77,9 @@ html=re.sub(r'  <link rel="preload"[^>]+>\n','',html)
 html=re.sub(r'  <link rel="manifest"[^>]+>\n','',html)
 html=re.sub(r'  <meta (?:property="og:image[^"\n]*"|name="twitter:image")[^>]+>\n','',html)
 html=re.sub(r'  <script>if \(location.protocol[\s\S]*?</script>\n','',html)
+for vendor in ['gsap.min.js','ScrollTrigger.min.js']:
+    code=(ROOT/'js/vendor'/vendor).read_text(encoding='utf-8').replace('</script','<\\/script')
+    html=html.replace(f'  <script src="js/vendor/{vendor}" defer></script>\n','  <script>\n'+code+'\n</script>\n')
 embedded_data=json.dumps(assets,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')
 script='window.__COIL_DATA='+embedded_data+';\n'+bundle
 html=html.replace('<script type="module" src="js/app.js"></script>','<script>\n'+script.replace('</script','<\\/script')+'\n</script>')
