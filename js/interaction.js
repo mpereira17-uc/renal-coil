@@ -17,7 +17,7 @@ function countUp(element) {
 }
 function initCounters() {
   // Los valores clínicos (glucosa, presión, creatinina…) se muestran directos; solo cuentan hábitos y aprendizaje.
-  const selector = '.cl-stat strong, .streak-box strong, .orbit-label strong, .progress-orbit strong';
+  const selector = '.streak-box strong, .orbit-label strong, .progress-orbit strong';
   const observer = new IntersectionObserver(entries => entries.forEach(entry => {
     if (entry.isIntersecting) countUp(entry.target);
   }), {threshold: .4});

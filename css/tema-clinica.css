@@ -68,13 +68,6 @@ html[data-theme="dark"] body .cl-hero .hero-actions .text-link { color: var(--in
 
 .cl-hero-media { position: relative; }
 .cl-hero-media img { display: block; width: 100%; height: auto; aspect-ratio: 7 / 5.6; object-fit: cover; border-radius: 24px; box-shadow: var(--cl-shadow); }
-.cl-float { position: absolute; display: flex; align-items: center; gap: .75rem; padding: .85rem 1.1rem; border-radius: var(--cl-radius); background: var(--surface); box-shadow: var(--cl-shadow); }
-.cl-float strong { display: block; font-size: 1rem; color: var(--ink); }
-.cl-float span:not(.cl-float-icon) { display: block; font-size: .82rem; color: var(--muted); }
-.cl-float-icon { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 10px; background: var(--cl-sky); color: var(--cl-blue); flex: none; }
-.cl-float-icon svg { width: 22px; height: 22px; }
-.cl-float-a { left: -1.5rem; bottom: 2rem; }
-.cl-float-b { right: -1rem; top: 1.5rem; }
 
 /* ---------- Caja azul y beneficios (estilo Medilab) ---------- */
 .cl-why { display: grid; grid-template-columns: .9fr 2.1fr; gap: 1.5rem; margin-top: clamp(2.5rem, 5vw, 4rem); }
@@ -97,7 +90,7 @@ html[data-theme="dark"] body .cl-hero .hero-actions .text-link { color: var(--in
 #route-descubrir .section-heading > div { margin-inline: auto; }
 #route-descubrir .section-heading h2 { font-family: var(--sans); font-weight: 700; color: var(--ink); }
 #route-descubrir .section-heading h2::after { content: ""; display: block; width: 56px; height: 3px; margin: .9rem auto 0; border-radius: 2px; background: var(--cl-blue); }
-#route-descubrir .section-heading .eyebrow { color: var(--cl-blue); text-align: center; }
+#route-descubrir .section-heading .eyebrow { color: var(--cl-blue); text-align: center; margin-inline: auto; }
 #route-descubrir .section-heading .small-label { display: none; }
 
 /* ---------- Secciones como servicios con foto ---------- */
@@ -125,7 +118,9 @@ html body .quick-card:hover { box-shadow: var(--cl-shadow); transform: translate
   background: linear-gradient(120deg, var(--cl-navy), var(--cl-blue));
   color: #fff; text-align: center;
 }
-.cl-stat strong { display: block; font-size: clamp(2.4rem, 4vw, 3.2rem); font-weight: 700; line-height: 1; margin-bottom: .5rem; }
+.cl-stat strong { display: block; font-size: clamp(1.9rem, 3vw, 2.6rem); font-weight: 700; line-height: 1.1; letter-spacing: -.02em; margin-bottom: .6rem; }
+.cl-stat span { display: block; max-width: 24ch; margin-inline: auto; line-height: 1.45; }
+.cl-stats-source { grid-column: 1 / -1; margin: .6rem auto 0; max-width: none; font-size: .82rem; color: #a9c7d6; }
 .cl-stat span { color: #d6e9f1; font-size: .95rem; }
 
 /* El panel Hoy y el explorador del riñón quedan como bloques claros. */
@@ -181,9 +176,41 @@ html body .cl-footer .button.primary { background: var(--cl-blue); border-color:
 /* El capítulo oscuro de Entender también va en azul oscuro, no en vino. */
 .learn-chapter.is-dark { --accent: #8fd6e8; --accent-ink: #b5e5f1; --ink: #f1f7fa; --text: #d6e6ef; --muted: #a9c3d1; background: linear-gradient(140deg, var(--cl-navy) 0%, var(--cl-navy-2) 60%, #0f5a73 100%) !important; }
 
+/* ---------- Tarjetas: un solo estilo en todo el sitio (referencia Docmed) ----------
+   Blancas, borde fino, esquinas suaves, sin franjas de color arriba; al pasar el cursor
+   suben un poco y aparece la sombra. Iconos en un cuadro azul con el trazo en blanco. */
+:is(.today-card, .learning-strip, .quick-card, .cl-why-item, .recipe-card, .symptom-category, .credit-block, .cct-column,
+  .flow-step, .info-stat, .glossary-item, .res-card, .case-card, .about-card, .stat-cell, .habit-score, .week-surface,
+  .chart-surface, .daily-note, .discovery-bottom > *, .education-panel, .privacy-grid article, .faq-item) {
+  border: 1px solid var(--line) !important;
+  border-radius: 10px !important;
+  background: var(--surface) !important;
+  background-image: none !important;
+  box-shadow: 0 1px 2px rgb(11 47 69 / 5%) !important;
+}
+:is(.today-card, .quick-card, .cl-why-item, .recipe-card, .res-card, .case-card)::before { height: auto; }
+.today-card::before { content: none !important; }
+@media (hover: hover) {
+  :is(.today-card, .quick-card, .cl-why-item, .recipe-card, .res-card, .case-card, .symptom-category, .about-card):hover {
+    transform: translateY(-4px) !important;
+    border-color: transparent !important;
+    box-shadow: 0 14px 34px rgb(11 47 69 / 13%) !important;
+  }
+}
+.today-card { padding: 1.6rem 1.5rem 1.4rem; gap: .45rem; }
+:is(.today-icon, .cl-why-icon, .quick-card .quick-icon, .learning-strip .today-icon) { background: var(--cl-blue) !important; color: #fff !important; border-radius: 10px !important; }
+.today-label { font-size: 1.05rem; font-weight: 700; color: var(--ink); letter-spacing: 0; text-transform: none; }
+:is(.today-link, .today-resume) { color: var(--cl-blue) !important; font-weight: 700; }
+.today-link::after { content: ""; display: block; width: 28px; height: 2px; margin-top: .35rem; background: var(--cl-blue); transition: width .2s var(--ease); }
+.today-card:hover .today-link::after { width: 56px; }
+.today-photo { border-radius: 6px !important; }
+.learning-bar span { background: var(--cl-blue) !important; }
+.cl-why-icon { width: 60px; height: 60px; border-radius: 12px !important; }
+#route-descubrir .today-panel .eyebrow, #route-descubrir .today-panel .section-heading > * { text-align: center; margin-inline: auto; }
+[data-theme="dark"] :is(.today-icon, .cl-why-icon, .quick-card .quick-icon) { background: #1f5f74 !important; }
+
 /* ---------- Modo oscuro: el azul de texto se aclara para leerse bien ---------- */
-[data-theme="dark"] :is(.cl-hero h1 em, .cl-hero-copy .eyebrow, .cl-float-icon, .cl-why-icon, #route-descubrir .section-heading .eyebrow, .discovery-copy .eyebrow, .quick-card .quick-arrow) { color: #8dccdf; }
-html[data-theme="dark"] body #main-nav a[aria-current="page"], [data-theme="dark"] #main-nav a:hover { color: #8dccdf !important; }
+[data-theme="dark"] :is(.cl-hero h1 em, .cl-hero-copy .eyebrow, html[data-theme="dark"] body #main-nav a[aria-current="page"], [data-theme="dark"] #main-nav a:hover { color: #8dccdf !important; }
 [data-theme="dark"] #main-nav a::after { background: #8dccdf; }
 html[data-theme="dark"] body .cl-cta { background: var(--cl-blue); border-color: var(--cl-blue); color: #fff; }
 
@@ -202,10 +229,7 @@ html[data-theme="dark"] body .cl-cta { background: var(--cl-blue); border-color:
   .cl-why-icon { width: 52px; height: 52px; margin: 0; grid-row: span 2; }
   .cl-why-item h3, .cl-why-item p { margin-inline: 0; }
   .cl-stats { grid-template-columns: 1fr 1fr; padding-block: 2.4rem; }
-  .cl-float-a { left: .6rem; bottom: .8rem; }
-  .cl-float-b { right: .6rem; top: .8rem; }
-  .cl-float { padding: .6rem .8rem; }
-  html body .quick-card { flex-direction: column; flex-wrap: nowrap; align-items: stretch; padding: 0 0 1.2rem; }
+        html body .quick-card { flex-direction: column; flex-wrap: nowrap; align-items: stretch; padding: 0 0 1.2rem; }
   .quick-card::before { aspect-ratio: 21 / 9; }
   .quick-card strong { flex: none; padding-right: 0; }
   .quick-card .quick-text { flex-basis: auto; padding-left: 0; margin-top: 0; }
@@ -215,6 +239,5 @@ html[data-theme="dark"] body .cl-cta { background: var(--cl-blue); border-color:
   .cl-hero h1 { font-size: clamp(2.1rem, 9vw, 2.6rem); }
   .cl-trust { flex-direction: column; }
   .cl-footer-grid { grid-template-columns: 1fr; gap: 2rem; }
-  .cl-float-b { display: none; }
-}
+  }
 @media print { .cl-topbar, .cl-hero-media, .cl-stats, .cl-why { display: none !important; } }

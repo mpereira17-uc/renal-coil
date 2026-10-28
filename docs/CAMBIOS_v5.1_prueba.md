@@ -46,3 +46,20 @@ No está publicada: vive en la rama local `prueba-diseno-clinica` y en el zip `P
 - Las franjas de sección y la franja de cifras ya no llevan foto: ahora usan un degradado azul oscuro. Se borraron `assets/fotos/proyecto.webp` y `assets/fotos/cuidado.webp`.
 - Todas las secciones usan el azul de la interfaz (`--accent` #146d88). Antes cada una tenía su color: naranja, vino, verde, morado o rojo. El capítulo oscuro de Entender pasa de vino a azul oscuro.
 - El botón «Añadir medición» de la cabecera ya no se encoge ni corta el texto en pantallas anchas.
+
+## v5.1.2
+
+- Se quitaron las tarjetas flotantes de la foto de portada («7 capítulos» y «Sin cuentas»).
+- La franja de cifras ahora da datos de la enfermedad con su fuente:
+  - 1 de cada 3 adultos con diabetes tiene enfermedad renal;
+  - la diabetes es la primera causa de falla renal;
+  - dos pruebas (sangre y orina) detectan el daño temprano;
+  - conviene revisar los riñones al menos una vez al año.
+
+  Las fuentes son NIDDK, CDC y los Estándares de la ADA.
+- Todas las tarjetas del sitio comparten un estilo inspirado en Docmed:
+  - blancas, con borde fino y esquinas de 10 px;
+  - sin franja de color arriba;
+  - suben y muestran sombra al pasar el cursor;
+  - iconos en un cuadro azul con el trazo blanco;
+  - enlace con raya azul debajo.
