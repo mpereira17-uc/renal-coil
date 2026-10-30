@@ -1,0 +1,83 @@
+/* Capa de movimiento y detalles finos (v5.4).
+   No cambia colores, letras, orden ni textos: solo cómo se mueven y responden las cosas.
+   El movimiento lo lleva js/detalles.js con GSAP; aquí van los tiempos, las curvas y los detalles.
+   Sin JavaScript o con "Reducir movimiento" la página se ve completa y quieta. */
+
+:root {
+  --dur-rapida: 150ms;   /* respuesta al cursor, pulsación, foco */
+  --dur-media: 250ms;    /* entradas de tarjetas y títulos, cambios de texto */
+  --dur-lenta: 300ms;    /* lo más largo que dura una entrada o salida */
+  --escalonado: 60ms;    /* desfase entre elementos de un mismo grupo */
+  --curva: cubic-bezier(.22, 1, .36, 1);      /* desaceleración suave, sin rebote */
+  --curva-pulsar: cubic-bezier(.2, 0, 0, 1);
+
+  /* El motor de apariciones que ya existía (animations.js) lee estas variables: entradas cortas. */
+  --m-fast: var(--dur-rapida);
+  --m-base: var(--dur-media);
+  --m-route: var(--dur-media);
+  --m-reveal: var(--dur-lenta);
+  --m-hero: var(--dur-lenta);
+  --m-stagger: var(--escalonado);
+  --m-distance: 16px;
+  --m-ease: var(--curva);
+}
+
+/* Entrada de la portada: se oculta solo mientras carga el JS (la clase la pone un script en <head>
+   y se quita sola a los 2,5 s si algo falla). Sin JS nunca se aplica. */
+html.dt-entrada .cl-hero :is(.cl-hero-copy, .cl-hero-media) { opacity: 0; }
+
+/* Mientras una tarjeta entra, su transición de hover no frena a GSAP. */
+html body .dt-entrando { transition: none !important; }
+
+/* ---------- Botones: hundimiento al pulsar y "magnéticos" con mouse ---------- */
+html body :is(.button, .text-link, .cl-why-link, .today-resume, .cl-cta):active { transform: scale(.97) !important; }
+:is(.button, .text-link, .cl-why-link, .today-resume, .cl-cta) {
+  transition-property: color, background-color, border-color, box-shadow, transform, translate;
+  transition-duration: var(--dur-rapida);
+  transition-timing-function: var(--curva-pulsar);
+}
+.dt-magnetico { translate: var(--mx, 0px) var(--my, 0px); }
+
+/* ---------- Menú: el texto rueda hacia arriba y entra una copia (lectores de pantalla: una vez) ---------- */
+.dt-roll { display: inline-grid; overflow: hidden; vertical-align: top; padding-block: .06em; margin-block: -.06em; }
+.dt-roll > * { grid-area: 1 / 1; }
+.dt-roll-copia { translate: 0 110%; }
+@media (hover: hover) {
+  .dt-roll > * { transition: translate var(--dur-lenta) var(--curva); }
+  #main-nav a:hover .dt-roll > :first-child { translate: 0 -110%; }
+  #main-nav a:hover .dt-roll-copia { translate: 0 0; }
+}
+
+/* ---------- Explorador del riñón y capas: cambios suaves ---------- */
+.kidney-hotspot, .kidney-hotspot * { transition: fill var(--dur-media) var(--curva), stroke var(--dur-media) var(--curva), opacity var(--dur-media) var(--curva), transform var(--dur-media) var(--curva); }
+#part-buttons button { transition: background-color var(--dur-media) var(--curva), color var(--dur-media) var(--curva), border-color var(--dur-media) var(--curva), transform var(--dur-rapida) var(--curva-pulsar); }
+.ks-chapter { transition-duration: var(--dur-lenta), var(--dur-lenta) !important; transition-timing-function: var(--curva) !important; }
+.ks-layer { transition-duration: var(--dur-lenta) !important; }
+
+/* ---------- Cambio de sección: corto ---------- */
+::view-transition-old(root) { animation-duration: var(--dur-rapida); }
+::view-transition-new(root) { animation-duration: var(--dur-lenta); }
+
+/* ---------- Detalles finos ---------- */
+:where(.button, button, [role="tab"], summary, a.quick-card, a.today-card, .recipe-card a):focus-visible {
+  outline: 2px solid var(--cl-blue, #146d88); outline-offset: 3px;
+  box-shadow: 0 0 0 6px rgb(20 109 136 / 16%);
+}
+[data-theme="dark"] :where(.button, button, [role="tab"], summary, a):focus-visible { outline-color: #8dccdf; }
+:is(.today-value, .learning-progress span, .habit-score, .week-surface, .chart-surface, .stat-cell, .info-stat, .cl-stat, .flow-number,
+  .habit-cell, .month-habit-list, .bank-count, #bank-count, .count-value, .progress-orbit, .streak-box, table) { font-variant-numeric: tabular-nums; }
+:is(.studio-caption, .kidney-studio, .filter-diagram) img,
+:is(.cl-hero-media) img { outline: 1px solid oklch(0 0 0 / .1); outline-offset: -1px; }
+[data-theme="dark"] .cl-hero-media img { outline-color: oklch(1 0 0 / .1); }
+
+/* Todo quieto si el sistema o los ajustes de la página lo piden. */
+@media (prefers-reduced-motion: reduce) {
+  html.dt-entrada .cl-hero :is(.cl-hero-copy, .cl-hero-media) { opacity: 1; }
+  .dt-roll > *, .dt-magnetico, .kidney-hotspot, .kidney-hotspot * { transition: none !important; }
+  .dt-magnetico { translate: none; }
+  html body :is(.button, .text-link, .cl-why-link, .today-resume, .cl-cta):active { transform: none !important; }
+}
+[data-motion="reduced"] .dt-roll > *, [data-motion="reduced"] .kidney-hotspot, [data-motion="reduced"] .kidney-hotspot * { transition: none !important; }
+[data-motion="reduced"] .dt-magnetico { translate: none; }
+html[data-motion="reduced"] body :is(.button, .text-link, .cl-why-link, .today-resume, .cl-cta):active { transform: none !important; }
+@media print { .dt-roll-copia { display: none; } }

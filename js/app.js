@@ -10,6 +10,7 @@ import { initWorkspace } from './workspace.js';
 import { initSearch } from './search.js';
 import { initAnimations } from './animations.js';
 import { initScrollMotion } from './scroll-motion.js';
+import { initDetalles } from './detalles.js';
 import { initInstall } from './install.js';
 import { initInteraction } from './interaction.js';
 import { initExtras } from './extras.js';
@@ -32,7 +33,7 @@ async function initApp(){await loadData();initPreferences();initI18n();initWorks
  document.getElementById('cl-add')?.addEventListener('click',()=>{location.hash='seguimiento';setTimeout(()=>document.getElementById('add-record')?.click(),250);});
  document.getElementById('open-presentation').addEventListener('click',()=>present().catch(error=>{console.error('Renal COIL presentación:',error);toast(t('importInvalid'));}));
  window.addEventListener('hashchange',()=>{if(location.hash==='#presentacion-espera')present();});
- initInteraction();(await import('./section-heroes.js')).initSectionHeroes();(await import('./nav-fit.js')).initNavFit();initRouter();await activate(currentRoute().route);initExtras();initAnimations();initScrollMotion();initInstall();(await import('./tour.js')).initTour(currentRoute().route);
+ initInteraction();(await import('./section-heroes.js')).initSectionHeroes();(await import('./nav-fit.js')).initNavFit();initRouter();await activate(currentRoute().route);initExtras();initDetalles();initAnimations();initScrollMotion();initInstall();(await import('./tour.js')).initTour(currentRoute().route);
  if(!canStore()&&!getRecovery())toast(t('storageWarning'));document.documentElement.dataset.ready='true';emit(EVENTOS.READY,{version:3});if(location.hash==='#presentacion-espera')await present();
 }
 initApp().catch(error=>{console.error('Renal COIL:',error);document.getElementById('startup-error').hidden=false;});

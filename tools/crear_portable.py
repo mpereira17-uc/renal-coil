@@ -54,7 +54,7 @@ for recipe in assets['recipes']:
         recipe['photo'] = 'data:image/webp;base64,'+base64.b64encode(photo.read_bytes()).decode()
 assets['kidney'] = (ROOT/'assets/anatomia/kidney.svg').read_text(encoding='utf-8')
 styles=[]
-for path in ['tokens.css','base.css','layout.css','components.css','extensions.css','visual.css','rediseno.css','infografias.css','diario.css','pulido.css','interaccion.css','funciones.css','estudio.css','portadas.css','aprende.css','ux.css','cocina.css','sistema.css','movimiento.css','profesional.css','tema-clinica.css']:
+for path in ['tokens.css','base.css','layout.css','components.css','extensions.css','visual.css','rediseno.css','infografias.css','diario.css','pulido.css','interaccion.css','funciones.css','estudio.css','portadas.css','aprende.css','ux.css','cocina.css','sistema.css','movimiento.css','profesional.css','tema-clinica.css','detalles.css']:
     source=(ROOT/'css'/path).read_text(encoding='utf-8')
     def embed_font(match):
         font=(ROOT/'css'/match.group(1)).resolve()
@@ -77,7 +77,7 @@ html=re.sub(r'  <link rel="preload"[^>]+>\n','',html)
 html=re.sub(r'  <link rel="manifest"[^>]+>\n','',html)
 html=re.sub(r'  <meta (?:property="og:image[^"\n]*"|name="twitter:image")[^>]+>\n','',html)
 html=re.sub(r'  <script>if \(location.protocol[\s\S]*?</script>\n','',html)
-for vendor in ['gsap.min.js','ScrollTrigger.min.js']:
+for vendor in ['gsap.min.js','ScrollTrigger.min.js','SplitText.min.js']:
     code=(ROOT/'js/vendor'/vendor).read_text(encoding='utf-8').replace('</script','<\\/script')
     html=html.replace(f'  <script src="js/vendor/{vendor}" defer></script>\n','  <script>\n'+code+'\n</script>\n')
 embedded_data=json.dumps(assets,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')

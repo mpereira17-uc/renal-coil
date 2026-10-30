@@ -107,3 +107,19 @@ Skills leídas desde sus repositorios: Impeccable (solo la guía; su programa no
 - Impeccable: fuera las etiquetas pequeñas encima de los títulos; títulos de Inicio alineados a la izquierda; sin 01/02/03 donde el orden no significa nada (Señales, Privacidad, Proyecto); avisos sin raya gruesa a la izquierda; sin tarjetas dentro de tarjetas en Privacidad; selección de texto, cursor, barra de scroll, casillas y foco con los colores de la página.
 - Transitions.dev (Learn more hover): las flechas "→" de los enlaces son ahora un chevrón dibujado que se abre al pasar el cursor.
 - Make Interfaces Feel Better: hundimiento al pulsar de 0.96 y borde de fotos negro/blanco al 10 %.
+
+## v5.4 (2026-10-30): capa de movimiento y detalles finos, sin cambiar el diseño
+
+Colores, letras, orden de secciones y textos quedan igual. GSAP 3.15 (ScrollTrigger + SplitText) en `js/vendor/`, incrustado también en `Abrir_sin_instalar.html`; nada se carga de otras páginas.
+
+- `css/detalles.css`: tiempos y curva en variables (`--dur-rapida` 150 ms, `--dur-media` 250 ms, `--dur-lenta` 300 ms, `--escalonado`, `--curva` ease-out sin rebote). El motor anterior (`--m-*`) usa esas mismas variables, así todas las entradas duran 150–300 ms.
+- `js/detalles.js`:
+  - portada: el título sube letra por letra tras una máscara por líneas, luego entran el texto, los botones y la imagen;
+  - títulos de sección: las palabras entran al llegar, una sola vez;
+  - tarjetas (inicio, infografías, recetas, hábitos, casos, recursos, señales): suben en cascada; las preguntas del repaso entran en cascada al abrirlo;
+  - botones principales magnéticos (solo con mouse);
+  - menú con texto que rueda; la copia lleva `aria-hidden`, así que los lectores leen cada enlace una vez;
+  - explorador del riñón y comparación por años: fundido con un poco de escala al cambiar de punto o de año.
+- Detalles: botones a 0.97 al pulsar, foco de teclado con anillo, cifras con `tabular-nums`, borde sutil en fotos.
+- Sin cambios en ids, funciones existentes, localStorage ni import/export. Los valores clínicos no se animan.
+- Con "Reducir movimiento" (sistema o Ajustes) todo queda quieto y visible; sin JavaScript la página se ve normal.
