@@ -2384,5 +2384,6 @@
   "clStatsSource": "Fuentes: NIDDK, CDC y Estándares de la ADA. Datos de población; no predicen lo que le pasará a una persona.",
   "clCtaTitle": "¿Notaste algún cambio en tu cuerpo?",
   "clCtaSigns": "Revisar las señales",
-  "clCtaVisit": "Preparar mi consulta"
+  "clCtaVisit": "Preparar mi consulta",
+  "recipeSourceLabel": "Receta adaptada de"
 }

@@ -2257,5 +2257,409 @@
       "co",
       "mx"
     ]
+  },
+  {
+    "id": "pimentones-pavo",
+    "image": "assets/recetas/arroz.svg",
+    "meal": "dinner",
+    "minutes": 70,
+    "servings": 6,
+    "lessSaltIdea": true,
+    "status": "sample-unvalidated",
+    "origin": "fuente-externa",
+    "source": {
+      "title": "American Kidney Fund · Kidney Kitchen: Turkey Stuffed Peppers",
+      "url": "https://kitchen.kidneyfund.org/recipe/turkey-stuffed-peppers-2/"
+    },
+    "es": {
+      "title": "Pimentones rellenos de pavo",
+      "ingredients": [
+        "Aceite de oliva en aerosol",
+        "1 cebolla picada, 2 dientes de ajo y cilantro picado",
+        "1 libra (450 g) de pavo molido magro",
+        "¼ cucharadita de sal kosher",
+        "1 cucharadita de ajo en polvo y 1 de comino en polvo",
+        "¼ taza de salsa de tomate",
+        "1 taza de caldo de pollo bajo en sodio",
+        "1 ½ tazas de arroz integral cocido",
+        "3 pimentones rojos grandes"
+      ],
+      "steps": [
+        "Precalienta el horno a 180 °C (350 °F). Rocía una sartén con aceite de oliva y caliéntala a fuego medio.",
+        "Agrega la cebolla, el ajo y el cilantro, y sofríe 2 minutos.",
+        "Añade el pavo, la sal, el ajo en polvo y el comino. Cocina de 4 a 5 minutos, hasta que la carne esté bien cocida.",
+        "Agrega la salsa de tomate y ½ taza del caldo. Mezcla el arroz cocido con la carne.",
+        "Corta los pimentones por la mitad, quita las semillas y rellena cada mitad con la mezcla. Ponlos en una fuente para horno con el resto del caldo en el fondo.",
+        "Cubre con papel aluminio y hornea 45 minutos.",
+        "Quita el papel aluminio y sirve."
+      ],
+      "note": "Usar caldo bajo en sodio y salsa de tomate sin sal añadida. Revisar porción de proteína y potasio (tomate y pimentón) con el equipo de salud.",
+      "substitutions": [
+        "Propuesta: arroz blanco en lugar de integral si el equipo de salud pide menos fósforo y potasio."
+      ]
+    },
+    "en": {
+      "title": "Turkey stuffed peppers",
+      "ingredients": [
+        "Olive oil spray",
+        "1 chopped onion, 2 garlic cloves and chopped cilantro",
+        "1 pound (450 g) lean ground turkey",
+        "¼ teaspoon kosher salt",
+        "1 teaspoon garlic powder and 1 teaspoon ground cumin",
+        "¼ cup tomato sauce",
+        "1 cup reduced-sodium chicken broth",
+        "1 ½ cups cooked brown rice",
+        "3 large red bell peppers"
+      ],
+      "steps": [
+        "Preheat the oven to 350 °F (180 °C). Spray a skillet with olive oil and heat over medium heat.",
+        "Add onion, garlic and cilantro and sauté for 2 minutes.",
+        "Add the turkey, salt, garlic powder and cumin. Cook for 4 to 5 minutes until the meat is completely cooked through.",
+        "Add the tomato sauce and ½ cup of the broth. Combine the cooked rice with the meat.",
+        "Cut the peppers in half, remove the seeds and fill each half with the mixture. Place them in a baking dish with the rest of the broth in the bottom.",
+        "Cover with foil and bake for 45 minutes.",
+        "Remove the foil and serve."
+      ],
+      "note": "Use reduced-sodium broth and no-salt-added tomato sauce. Review protein and potassium portions (tomato and peppers) with the care team.",
+      "substitutions": [
+        "Proposal: white rice instead of brown if the care team asks for less phosphorus and potassium."
+      ]
+    },
+    "ingredientAmounts": [
+      {
+        "amount": null,
+        "es": "Aceite de oliva en aerosol",
+        "en": "Olive oil spray",
+        "esPlural": "Aceite de oliva en aerosol",
+        "enPlural": "Olive oil spray"
+      },
+      {
+        "amount": 1,
+        "es": "cebolla picada, 2 dientes de ajo y cilantro picado",
+        "en": "chopped onion, 2 garlic cloves and chopped cilantro",
+        "esPlural": "cebollas picadas, ajo y cilantro picado",
+        "enPlural": "chopped onions, garlic and chopped cilantro"
+      },
+      {
+        "amount": 1,
+        "es": "libra (450 g) de pavo molido magro",
+        "en": "pound (450 g) lean ground turkey",
+        "esPlural": "libras de pavo molido magro",
+        "enPlural": "pounds lean ground turkey"
+      },
+      {
+        "amount": 0.25,
+        "es": "cucharadita de sal kosher",
+        "en": "teaspoon kosher salt",
+        "esPlural": "cucharaditas de sal kosher",
+        "enPlural": "teaspoons kosher salt"
+      },
+      {
+        "amount": 1,
+        "es": "cucharadita de ajo en polvo y 1 de comino en polvo",
+        "en": "teaspoon garlic powder and 1 teaspoon ground cumin",
+        "esPlural": "cucharaditas de ajo en polvo y de comino en polvo",
+        "enPlural": "teaspoons garlic powder and ground cumin"
+      },
+      {
+        "amount": 0.25,
+        "es": "taza de salsa de tomate",
+        "en": "cup tomato sauce",
+        "esPlural": "tazas de salsa de tomate",
+        "enPlural": "cups tomato sauce"
+      },
+      {
+        "amount": 1,
+        "es": "taza de caldo de pollo bajo en sodio",
+        "en": "cup reduced-sodium chicken broth",
+        "esPlural": "tazas de caldo de pollo bajo en sodio",
+        "enPlural": "cups reduced-sodium chicken broth"
+      },
+      {
+        "amount": 1.5,
+        "es": "tazas de arroz integral cocido",
+        "en": "cups cooked brown rice",
+        "esPlural": "tazas de arroz integral cocido",
+        "enPlural": "cups cooked brown rice"
+      },
+      {
+        "amount": 3,
+        "es": "pimentones rojos grandes",
+        "en": "large red bell peppers",
+        "esPlural": "pimentones rojos grandes",
+        "enPlural": "large red bell peppers"
+      }
+    ],
+    "validatedBy": null,
+    "validatedAt": null,
+    "nutrientAnalysis": {
+      "kcal": null,
+      "proteinG": null,
+      "sodiumMg": null,
+      "potassiumMg": null,
+      "phosphorusMg": null
+    },
+    "countries": [
+      "us"
+    ]
+  },
+  {
+    "id": "fajitas-pollo",
+    "image": "assets/recetas/pollo.svg",
+    "meal": "lunch",
+    "minutes": 30,
+    "servings": 3,
+    "lessSaltIdea": true,
+    "status": "sample-unvalidated",
+    "origin": "fuente-externa",
+    "source": {
+      "title": "National Kidney Foundation · Chicken Fajitas",
+      "url": "https://www.kidney.org/nutrition/recipes/chicken-fajitas"
+    },
+    "es": {
+      "title": "Fajitas de pollo",
+      "ingredients": [
+        "2 pechugas de pollo (unos 340 g)",
+        "6 cucharadas de queso rallado",
+        "½ cucharadita de cebolla en polvo",
+        "1 cucharadita de ajo en polvo",
+        "1 cucharadita de pimienta negra molida",
+        "½ cebolla amarilla en tiras",
+        "1 pimentón en tiras",
+        "6 tortillas de maíz pequeñas"
+      ],
+      "steps": [
+        "Sazona el pollo con la cebolla en polvo, el ajo en polvo y la pimienta.",
+        "Cocina el pollo hasta que por dentro llegue a 74 °C (165 °F). Déjalo reposar unos minutos y córtalo en tiras.",
+        "En la misma sartén, cocina la cebolla y el pimentón hasta que estén tiernos.",
+        "Calienta las tortillas y rellénalas con el pollo y las verduras.",
+        "Termina con el queso rallado."
+      ],
+      "note": "El queso aporta sodio y fósforo: usar poca cantidad. Preferir tortillas de maíz sin sal añadida. Revisar porción de proteína con el equipo de salud.",
+      "substitutions": [
+        "Propuesta: menos queso o un queso fresco bajo en sodio; revisar con el equipo de salud."
+      ]
+    },
+    "en": {
+      "title": "Chicken fajitas",
+      "ingredients": [
+        "2 chicken breasts (about 12 ounces)",
+        "6 tablespoons grated cheese",
+        "½ teaspoon onion powder",
+        "1 teaspoon garlic powder",
+        "1 teaspoon ground black pepper",
+        "½ yellow onion, cut into strips",
+        "1 bell pepper, cut into strips",
+        "6 small corn tortillas"
+      ],
+      "steps": [
+        "Season the chicken with onion powder, garlic powder and pepper.",
+        "Cook the chicken until it reaches 165 °F (74 °C) inside. Let it rest for a few minutes and cut into strips.",
+        "In the same pan, cook the onion and bell pepper until tender.",
+        "Warm the tortillas and fill them with the chicken and vegetables.",
+        "Top with the grated cheese."
+      ],
+      "note": "Cheese adds sodium and phosphorus: use a small amount. Prefer corn tortillas with no added salt. Review protein portion with the care team.",
+      "substitutions": [
+        "Proposal: less cheese or a low-sodium fresh cheese; check with the care team."
+      ]
+    },
+    "ingredientAmounts": [
+      {
+        "amount": 2,
+        "es": "pechugas de pollo (unos 340 g)",
+        "en": "chicken breasts (about 12 ounces)",
+        "esPlural": "pechugas de pollo",
+        "enPlural": "chicken breasts"
+      },
+      {
+        "amount": 6,
+        "es": "cucharadas de queso rallado",
+        "en": "tablespoons grated cheese",
+        "esPlural": "cucharadas de queso rallado",
+        "enPlural": "tablespoons grated cheese"
+      },
+      {
+        "amount": 0.5,
+        "es": "cucharadita de cebolla en polvo",
+        "en": "teaspoon onion powder",
+        "esPlural": "cucharaditas de cebolla en polvo",
+        "enPlural": "teaspoons onion powder"
+      },
+      {
+        "amount": 1,
+        "es": "cucharadita de ajo en polvo",
+        "en": "teaspoon garlic powder",
+        "esPlural": "cucharaditas de ajo en polvo",
+        "enPlural": "teaspoons garlic powder"
+      },
+      {
+        "amount": 1,
+        "es": "cucharadita de pimienta negra molida",
+        "en": "teaspoon ground black pepper",
+        "esPlural": "cucharaditas de pimienta negra molida",
+        "enPlural": "teaspoons ground black pepper"
+      },
+      {
+        "amount": 0.5,
+        "es": "cebolla amarilla en tiras",
+        "en": "yellow onion, cut into strips",
+        "esPlural": "cebollas amarillas en tiras",
+        "enPlural": "yellow onions, cut into strips"
+      },
+      {
+        "amount": 1,
+        "es": "pimentón en tiras",
+        "en": "bell pepper, cut into strips",
+        "esPlural": "pimentones en tiras",
+        "enPlural": "bell peppers, cut into strips"
+      },
+      {
+        "amount": 6,
+        "es": "tortillas de maíz pequeñas",
+        "en": "small corn tortillas",
+        "esPlural": "tortillas de maíz pequeñas",
+        "enPlural": "small corn tortillas"
+      }
+    ],
+    "validatedBy": null,
+    "validatedAt": null,
+    "nutrientAnalysis": {
+      "kcal": null,
+      "proteinG": null,
+      "sodiumMg": null,
+      "potassiumMg": null,
+      "phosphorusMg": null
+    },
+    "countries": [
+      "us"
+    ]
+  },
+  {
+    "id": "camarones-ajo",
+    "image": "assets/recetas/pescado.svg",
+    "meal": "dinner",
+    "minutes": 35,
+    "servings": 4,
+    "lessSaltIdea": true,
+    "status": "sample-unvalidated",
+    "origin": "fuente-externa",
+    "source": {
+      "title": "National Kidney Foundation · Shrimp Scampi",
+      "url": "https://www.kidney.org/nutrition/recipes/shrimp-scampi"
+    },
+    "es": {
+      "title": "Camarones al ajillo con limón (scampi)",
+      "ingredients": [
+        "1 libra (450 g) de camarones grandes pelados",
+        "5 dientes de ajo grandes picados",
+        "3 cucharadas de aceite de oliva extra virgen",
+        "½ a 1 cucharadita de ají en hojuelas",
+        "4 cucharadas de mantequilla sin sal",
+        "¼ taza de caldo bajo en sodio",
+        "Jugo de ½ limón"
+      ],
+      "steps": [
+        "Seca los camarones y ponlos en un recipiente con la mitad del ajo y 1 cucharada de aceite. Mezcla y deja reposar de 15 a 20 minutos.",
+        "Calienta el resto del aceite en una sartén grande.",
+        "Cocina los camarones 1 a 2 minutos por lado y sácalos de la sartén.",
+        "Agrega el resto del ajo y el ají en hojuelas, y cocina unos segundos sin que se queme.",
+        "Añade el caldo y el jugo de limón, y cocina 1 a 2 minutos.",
+        "Agrega la mantequilla y revuelve hasta que se derrita.",
+        "Regresa los camarones a la sartén, cocina 1 a 2 minutos más y sirve."
+      ],
+      "note": "Usar mantequilla sin sal y caldo bajo en sodio. Los camarones aportan proteína y algo de sodio: revisar porción con el equipo de salud.",
+      "substitutions": [
+        "Propuesta: menos mantequilla y un poco más de limón; revisar con el equipo de salud."
+      ]
+    },
+    "en": {
+      "title": "Shrimp scampi",
+      "ingredients": [
+        "1 pound (450 g) large shrimp, peeled",
+        "5 large garlic cloves, minced",
+        "3 tablespoons extra virgin olive oil",
+        "½ to 1 teaspoon red pepper flakes",
+        "4 tablespoons unsalted butter",
+        "¼ cup low-sodium broth",
+        "Juice of ½ lemon"
+      ],
+      "steps": [
+        "Pat the shrimp dry and place in a bowl with half of the garlic and 1 tablespoon of oil. Toss to coat and let sit for 15 to 20 minutes.",
+        "Heat the remaining oil in a large skillet.",
+        "Cook the shrimp for 1 to 2 minutes per side and remove from the skillet.",
+        "Add the remaining garlic and red pepper flakes and cook for a few seconds without burning.",
+        "Add the broth and lemon juice and cook for 1 to 2 minutes.",
+        "Add the butter and stir until melted.",
+        "Return the shrimp to the skillet, cook for 1 to 2 more minutes and serve."
+      ],
+      "note": "Use unsalted butter and low-sodium broth. Shrimp adds protein and some sodium: review portion with the care team.",
+      "substitutions": [
+        "Proposal: less butter and a little more lemon; check with the care team."
+      ]
+    },
+    "ingredientAmounts": [
+      {
+        "amount": 1,
+        "es": "libra (450 g) de camarones grandes pelados",
+        "en": "pound (450 g) large shrimp, peeled",
+        "esPlural": "libras de camarones grandes pelados",
+        "enPlural": "pounds large shrimp, peeled"
+      },
+      {
+        "amount": 5,
+        "es": "dientes de ajo grandes picados",
+        "en": "large garlic cloves, minced",
+        "esPlural": "dientes de ajo grandes picados",
+        "enPlural": "large garlic cloves, minced"
+      },
+      {
+        "amount": 3,
+        "es": "cucharadas de aceite de oliva extra virgen",
+        "en": "tablespoons extra virgin olive oil",
+        "esPlural": "cucharadas de aceite de oliva extra virgen",
+        "enPlural": "tablespoons extra virgin olive oil"
+      },
+      {
+        "amount": null,
+        "es": "½ a 1 cucharadita de ají en hojuelas",
+        "en": "½ to 1 teaspoon red pepper flakes",
+        "esPlural": "½ a 1 cucharadita de ají en hojuelas",
+        "enPlural": "½ to 1 teaspoon red pepper flakes"
+      },
+      {
+        "amount": 4,
+        "es": "cucharadas de mantequilla sin sal",
+        "en": "tablespoons unsalted butter",
+        "esPlural": "cucharadas de mantequilla sin sal",
+        "enPlural": "tablespoons unsalted butter"
+      },
+      {
+        "amount": 0.25,
+        "es": "taza de caldo bajo en sodio",
+        "en": "cup low-sodium broth",
+        "esPlural": "tazas de caldo bajo en sodio",
+        "enPlural": "cups low-sodium broth"
+      },
+      {
+        "amount": null,
+        "es": "Jugo de ½ limón",
+        "en": "Juice of ½ lemon",
+        "esPlural": "Jugo de ½ limón",
+        "enPlural": "Juice of ½ lemon"
+      }
+    ],
+    "validatedBy": null,
+    "validatedAt": null,
+    "nutrientAnalysis": {
+      "kcal": null,
+      "proteinG": null,
+      "sodiumMg": null,
+      "potassiumMg": null,
+      "phosphorusMg": null
+    },
+    "countries": [
+      "us"
+    ]
   }
 ]

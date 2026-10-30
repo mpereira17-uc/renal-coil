@@ -123,3 +123,7 @@ Colores, letras, orden de secciones y textos quedan igual. GSAP 3.15 (ScrollTrig
 - Detalles: botones a 0.97 al pulsar, foco de teclado con anillo, cifras con `tabular-nums`, borde sutil en fotos.
 - Sin cambios en ids, funciones existentes, localStorage ni import/export. Los valores clínicos no se animan.
 - Con "Reducir movimiento" (sistema o Ajustes) todo queda quieto y visible; sin JavaScript la página se ve normal.
+
+## v5.4.1 (2026-10-30): tres recetas nuevas en Alimentación
+
+Pimentones rellenos de pavo (American Kidney Fund), Fajitas de pollo y Camarones al ajillo con limón (National Kidney Foundation), en español e inglés, con la fuente enlazada en el detalle de cada receta ("Receta adaptada de…"). Los pasos se ordenaron y completaron (temperatura del horno, papel aluminio, cocción de las verduras, uso del caldo). Quedan como "Ejemplo por validar" y sin foto real: usan el dibujo hasta tener una foto con licencia.
