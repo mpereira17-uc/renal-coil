@@ -2534,7 +2534,8 @@
     },
     "countries": [
       "us"
-    ]
+    ],
+    "photo": "assets/recetas/fotos/fajitas-pollo.webp"
   },
   {
     "id": "camarones-ajo",
@@ -2661,6 +2662,7 @@
     },
     "countries": [
       "us"
-    ]
+    ],
+    "photo": "assets/recetas/fotos/camarones-ajo.webp"
   }
 ]

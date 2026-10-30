@@ -33,6 +33,8 @@ Las fotos son ilustrativas: muestran un plato parecido, no la porción exacta de
 | Piña en trozos con limón | assets/recetas/fotos/pina.webp | [Suri Huang](https://unsplash.com/@fukayamamo) | https://unsplash.com/photos/sliced-fruit-in-blue-ceramic-bowl-ZrszvAFfT-I |
 | Arepa con pollo desmechado | assets/recetas/fotos/arepa-pollo.webp | [Anton Acosta](https://unsplash.com/@ottelo) | https://unsplash.com/photos/arepa-sandwich-filled-with-avocado-and-chicken-iOUvc07TdWo |
 | Pimentones rellenos de pavo | assets/recetas/fotos/pimentones-pavo.webp | Por confirmar (Unsplash) | https://images.unsplash.com/photo-1596464716059-f81da526557b |
+| Fajitas de pollo | assets/recetas/fotos/fajitas-pollo.webp | Por confirmar (Pexels) | https://www.pexels.com/photo/32375350/ |
+| Camarones al ajillo con limón | assets/recetas/fotos/camarones-ajo.webp | Por confirmar (Pexels) | https://www.pexels.com/photo/16273763/ |
 
 La portada de Alimentación usa recortes circulares de las fotos de: Crema de coliflor, Arroz con calabacín y perejil, Ensalada de repollo y zanahoria, Revuelto de huevo con pimentón y cebolla y Sopa de pollo (assets/recetas/platos).
 
