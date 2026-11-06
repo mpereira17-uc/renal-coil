@@ -81,3 +81,14 @@ html body :is(.button, .text-link, .cl-why-link, .today-resume, .cl-cta):active 
 [data-motion="reduced"] .dt-magnetico { translate: none; }
 html[data-motion="reduced"] body :is(.button, .text-link, .cl-why-link, .today-resume, .cl-cta):active { transform: none !important; }
 @media print { .dt-roll-copia { display: none; } }
+
+/* Barra inferior en el celular (2026-11-06): el desenfoque (backdrop-filter) de la cabecera
+   convertía a la cabecera en el contenedor de la barra fija, así que la barra se iba con el
+   scroll y las fotos le pasaban por encima. En el celular la cabecera no lleva desenfoque,
+   y la barra queda pegada a la pantalla y por encima del contenido. */
+@media (max-width: 760px) {
+  .site-header, .site-header.is-compact { -webkit-backdrop-filter: none; backdrop-filter: none; filter: none; transform: none; contain: none; view-transition-name: none; }
+  .site-header.is-compact { background: var(--surface); }
+  #main-nav, #main-nav.open { z-index: 50; }
+  .back-to-top, .tour-card { bottom: calc(84px + env(safe-area-inset-bottom)); }
+}
