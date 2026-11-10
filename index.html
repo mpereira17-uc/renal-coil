@@ -44,6 +44,7 @@
   <link rel="stylesheet" href="css/profesional.css">
   <link rel="stylesheet" href="css/tema-clinica.css">
   <link rel="stylesheet" href="css/detalles.css">
+  <link rel="stylesheet" href="css/movil.css">
   <script>if (!matchMedia('(prefers-reduced-motion: reduce)').matches) { document.documentElement.classList.add('dt-entrada'); window.__dtEntrada = setTimeout(function () { document.documentElement.classList.remove('dt-entrada'); }, 2500); }</script>
   <link rel="preload" href="assets/fonts/texto.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/editorial.woff2" as="font" type="font/woff2" crossorigin>
@@ -59,13 +60,14 @@
         <span class="brand-name">renal<span class="brand-project">Proyecto COIL</span></span>
       </a>
       <nav id="main-nav" aria-label="Navegación principal" data-i18n-aria="mainNav">
-        <a href="#descubrir" data-route="descubrir"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m16 16 4 4M11 8v6m-3-3h6"/></svg><span data-i18n="navDiscover">Descubrir</span></a>
+        <a href="#descubrir" data-route="descubrir"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m16 16 4 4M11 8v6m-3-3h6"/></svg><span class="nav-long" data-i18n="navDiscover">Descubrir</span><span class="nav-short" data-i18n="navHomeShort">Inicio</span></a>
         <a href="#infografias" data-route="infografias"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M7 16v-4m5 4V8m5 8v-6"/></svg><span data-i18n="navInfo">Infografías</span></a>
         <a href="#aprende" data-route="aprende"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5C6.5 4 9.5 4 12 6c2.5-2 5.5-2 8-.5V19c-2.5-1.5-5.5-1.5-8 .5-2.5-2-5.5-2-8-.5Z"/><path d="M12 6v13.5"/></svg><span data-i18n="navLearn">Entender</span></a>
-        <a href="#seguimiento" data-route="seguimiento"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V4m0 16h16M7 15l4-5 4 3 5-7"/></svg><span data-i18n="navTrack">Mi seguimiento</span></a>
+        <a href="#seguimiento" data-route="seguimiento"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V4m0 16h16M7 15l4-5 4 3 5-7"/></svg><span class="nav-long" data-i18n="navTrack">Mi seguimiento</span><span class="nav-short" data-i18n="navTrackShort">Seguimiento</span></a>
         <a href="#alimentacion" data-route="alimentacion"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3v7m-3-7v5a3 3 0 0 0 6 0V3M6 11v10m12-18c-3 3-3 7 0 8V3Zm0 8v10"/></svg><span data-i18n="navFood">Alimentación</span></a>
         <a href="#habitos" data-route="habitos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M7 3v4m10-4v4M3 10h18m-13 5 3 3 5-5"/></svg><span data-i18n="navHabits">Hábitos</span></a>
         <a href="#senales" data-route="senales"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 5a5 5 0 0 0-8 1 5 5 0 0 0-8-1c-5 6 8 15 8 15S25 11 20 5Z"/><path d="M4 12h5l2-4 3 7 2-3h4"/></svg><span data-i18n="navSigns">Señales</span></a>
+        <button type="button" class="nav-more" id="nav-more" aria-haspopup="dialog"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="5" cy="12" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="19" cy="12" r="1.7"/></svg><span data-i18n="navMore">Más</span></button>
       </nav>
       <div class="header-tools"><button type="button" class="button primary cl-cta" id="cl-add" data-i18n="addRecord">Añadir medición</button>
         <div class="language-control" role="group" aria-label="Idioma" data-i18n-aria="language"><button type="button" data-lang="es" aria-pressed="true">ES</button><button type="button" data-lang="en" aria-pressed="false">EN</button></div>
@@ -80,8 +82,8 @@
         <div class="cl-hero-copy">
           <p class="eyebrow" data-i18n="heroEyebrow">Información para pacientes y familias</p>
           <h1 id="hero-title"><span data-i18n="heroTitle">Cuida tus riñones</span><br><em data-i18n="heroAccent">si vives con diabetes.</em></h1>
-          <p class="hero-description" data-i18n="heroDescription">Aquí puedes entender cómo la diabetes afecta a los riñones, anotar tus mediciones y preparar tus consultas.</p>
-          <div class="hero-actions"><button class="button primary" id="explore-filter" data-i18n="compareFilter">Comparar el filtrado</button><a class="text-link" href="#seguimiento" data-i18n="startTracking">Ver mi seguimiento</a></div>
+          <p class="hero-description" data-i18n="heroDescription">Entiende cómo la diabetes afecta a los riñones y lleva tus mediciones a cada consulta.</p>
+          <div class="hero-actions"><a class="button primary" href="#aprende" data-i18n="heroStart">Empezar por lo básico</a><a class="hero-alt" href="#seguimiento" data-i18n="heroHaveData">Ya tengo mediciones: anotarlas</a></div>
           <ul class="cl-trust">
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4 10-10"/></svg><span data-i18n="clTrust1">Capítulos escritos por estudiantes de medicina</span></li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4 10-10"/></svg><span data-i18n="clTrust2">En español y en inglés</span></li>
@@ -126,6 +128,7 @@
         </div>
       </div>
       <section class="kidney-study" id="kidney-study" aria-label="El riñón por capas" data-i18n-aria="studyKicker"></section>
+      <div class="filter-open"><button type="button" class="button secondary" id="explore-filter" data-i18n="compareFilter">Comparar el filtrado</button></div>
       <section id="filter-comparison" class="filter-section" hidden aria-labelledby="filter-title">
         <div class="section-heading"><div><p class="eyebrow" data-i18n="filterEyebrow">Simulación educativa</p><h2 id="filter-title" data-i18n="filterTitle">Lo que cambia en el filtrado</h2></div><button class="icon-button" id="close-filter" data-i18n-aria="closeComparison" aria-label="Cerrar comparación">×</button></div>
         <div class="filter-grid"><div class="filter-diagram" id="filter-diagram"></div><div class="filter-controls"><span class="tag" data-i18n="illustrative">Simulación conceptual</span><h3 id="filter-stage-title"></h3><p id="filter-stage-description"></p><label for="filter-stage" data-i18n="progression">Explora los cambios</label><input type="range" id="filter-stage" min="0" max="3" step="1" value="0"><div class="range-labels"><span data-i18n="filterHealthy">Filtrado conservado</span><span data-i18n="filterAffected">Filtrado afectado</span></div><p class="fine-print" data-i18n="filterDisclaimer">No representa etapas clínicas, porcentajes de función ni la evolución de una persona. El daño no es inevitable.</p></div></div>

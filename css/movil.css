@@ -1,0 +1,52 @@
+/* v5.5 · Revisión en celular y portada con un solo botón principal.
+   Es el último CSS: quitar su línea en index.html devuelve el aspecto anterior. */
+
+/* ---------- Piezas que solo existen para el celular ---------- */
+/* detalles.js envuelve cada texto del menú en .dt-roll: se oculta también el envoltorio. */
+#main-nav .nav-more, #main-nav .nav-short, #main-nav .dt-roll:has(> .nav-short) { display: none; }
+
+/* ---------- Portada de Inicio: un botón principal y un enlace ---------- */
+.cl-hero .hero-description { max-width: 40ch; }
+html body .cl-hero .hero-actions { flex-direction: column; align-items: flex-start; gap: .9rem; }
+html body .cl-hero .hero-actions .button.primary { min-height: 56px; padding-inline: 2.1rem; border-radius: 12px; font-size: 1.0625rem; }
+.cl-hero .hero-alt { display: inline-flex; align-items: center; min-height: 44px; color: var(--cl-blue); font-weight: 700; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1.5px; }
+.cl-hero .hero-alt:hover { text-decoration-thickness: 2.5px; }
+[data-theme="dark"] .cl-hero .hero-alt { color: #8dccdf; }
+.cl-trust { margin-top: 1.2rem; font-weight: 500; color: var(--text); }
+.filter-open { display: flex; justify-content: center; padding: 1.5rem var(--gutter) 0; }
+
+@media (max-width: 760px) {
+  /* ---------- Barra inferior: cinco destinos que se leen ---------- */
+  #main-nav, #main-nav.open { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  #main-nav a:is([data-route="infografias"], [data-route="habitos"], [data-route="senales"]) { display: none; }
+  #main-nav .nav-long, #main-nav .dt-roll:has(> .nav-long) { display: none; }
+  #main-nav .nav-short { display: inline; }
+  #main-nav .dt-roll:has(> .nav-short) { display: inline-grid; }
+  #main-nav a, #main-nav .nav-more { font-size: .7rem; letter-spacing: -.005em; padding: .5rem 0 .4rem; gap: .3rem; min-height: 56px; white-space: nowrap; }
+  #main-nav a svg, #main-nav .nav-more svg { width: 24px; height: 24px; }
+  #main-nav .nav-more { display: flex; line-height: inherit; flex-direction: column; align-items: center; justify-content: flex-start; border: 0; background: none; color: var(--ink); font-family: inherit; font-weight: 600; cursor: pointer; }
+  #main-nav .nav-more span { margin-top: -3px; }
+  html body #main-nav .nav-more[aria-current="page"] { color: var(--cl-blue); }
+  [data-theme="dark"] body #main-nav .nav-more[aria-current="page"] { color: #8dccdf; }
+  /* "Más" ya está abajo: el botón de tres puntos de la cabecera sobra. */
+  .header-tools .more-button { display: none !important; }
+
+  /* ---------- Portadas de sección: sin el botón de compactar ---------- */
+  html body .route > .page-intro.sh-hero .sh-toggle { display: none !important; }
+
+  /* ---------- Portada de Inicio: la foto se ve sin bajar ---------- */
+  .cl-trust { display: none; }
+  html body .cl-hero .hero-actions .button.primary { width: 100%; }
+  .cl-hero .hero-description { margin-bottom: 1.3rem; }
+}
+
+@media (max-width: 640px) {
+  /* ---------- Hábitos: una fila por hábito con los siete días completos ---------- */
+  .habit-grid { grid-template-columns: repeat(7, minmax(0, 1fr)); overflow: visible; column-gap: 2px; }
+  .habit-grid > .habit-day-heading:first-child { display: none; }
+  .habit-label { grid-column: 1 / -1; flex-direction: row; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: .1rem .8rem; height: auto; min-height: 0; padding: 1rem 0 .15rem; margin-top: .35rem; border-top: 1px solid var(--line); font-size: 1rem; }
+  .habit-label small { font-size: .8125rem; text-align: right; }
+  .habit-cell { display: flex; justify-content: center; padding: .35rem 0 .6rem; border: 0; }
+  .habit-check { width: 42px; height: 42px; border-radius: 50%; }
+}
+@media (max-width: 359px) { .habit-check { width: 36px; height: 36px; min-width: 36px; min-height: 36px; } }

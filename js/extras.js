@@ -215,6 +215,9 @@ function initMoreMenu() {
   tools.insertAdjacentHTML('beforeend', `<button type="button" class="icon-button more-button" id="open-more" data-i18n-aria="moreMenu" aria-label="${e(t('moreMenu'))}" aria-haspopup="dialog">${svg(icons.more)}</button>`);
   const item = (action, key, path) => `<button type="button" class="more-item" data-more="${action}">${svg(path)}<span data-i18n="${key}">${e(t(key))}</span></button>`;
   document.body.insertAdjacentHTML('beforeend', `<dialog id="more-dialog" class="sheet-dialog more-dialog" aria-labelledby="more-title"><div class="dialog-heading"><h2 id="more-title" data-i18n="moreTitle">${e(t('moreTitle'))}</h2><button class="icon-button" data-close-dialog="more-dialog" data-i18n-aria="close" aria-label="${e(t('close'))}">×</button></div><div class="more-list">
+    ${item('info', 'moreInfo', '<rect x="3" y="4" width="18" height="16" rx="3"/><path d="M7 16v-4m5 4V8m5 8v-6"/>')}
+    ${item('habits', 'moreHabits', '<rect x="3" y="5" width="18" height="16" rx="3"/><path d="M7 3v4m10-4v4M3 10h18m-13 5 3 3 5-5"/>')}
+    ${item('signs', 'moreSigns', '<path d="M20 5a5 5 0 0 0-8 1 5 5 0 0 0-8-1c-5 6 8 15 8 15S25 11 20 5Z"/><path d="M4 12h5l2-4 3 7 2-3h4"/>')}
     ${item('learn', 'moreLearn', '<path d="M4 5.5C6.5 4 9.5 4 12 6c2.5-2 5.5-2 8-.5V19c-2.5-1.5-5.5-1.5-8 .5-2.5-2-5.5-2-8-.5Z"/><path d="M12 6v13.5"/>')}
     ${item('project', 'moreProject', '<circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M15 14.5c3 0 6 1.8 6 5"/>')}
     ${item('search', 'moreSearch', '<circle cx="10" cy="10" r="6"/><path d="m15 15 5 5"/>')}
@@ -224,12 +227,20 @@ function initMoreMenu() {
     ${item('privacy', 'morePrivacy', '<path d="M12 3 5 6v5c0 4.5 3 8.5 7 10 4-1.5 7-5.5 7-10V6z"/>')}
   </div></dialog>`);
   document.getElementById('open-more').addEventListener('click', () => openDialog('more-dialog'));
+  // Barra inferior del celular: "Más" abre esta misma hoja y se marca cuando la sección actual vive aquí.
+  const navMore = document.getElementById('nav-more');
+  if (navMore) {
+    navMore.addEventListener('click', () => openDialog('more-dialog'));
+    const inMore = ['infografias', 'habitos', 'senales', 'proyecto'];
+    const mark = () => { const route = location.hash.replace('#', '').split(/[/?]/)[0]; if (inMore.includes(route)) navMore.setAttribute('aria-current', 'page'); else navMore.removeAttribute('aria-current'); };
+    window.addEventListener('hashchange', mark); mark();
+  }
   document.getElementById('more-dialog').addEventListener('click', event => {
     const action = event.target.closest('[data-more]')?.dataset.more;
     if (!action) return;
     closeDialog('more-dialog');
     const click = id => document.getElementById(id)?.click();
-    ({learn: () => { location.hash = 'aprende'; }, project: () => { location.hash = 'proyecto'; }, search: () => click('open-search'), theme: () => click('theme-toggle'), settings: () => click('open-settings'), presentation: () => click('open-presentation'), privacy: () => click('open-privacy')})[action]?.();
+    ({info: () => { location.hash = 'infografias'; }, habits: () => { location.hash = 'habitos'; }, signs: () => { location.hash = 'senales'; }, learn: () => { location.hash = 'aprende'; }, project: () => { location.hash = 'proyecto'; }, search: () => click('open-search'), theme: () => click('theme-toggle'), settings: () => click('open-settings'), presentation: () => click('open-presentation'), privacy: () => click('open-privacy')})[action]?.();
   });
 }
 function initBackToTop() {
