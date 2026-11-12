@@ -5994,6 +5994,62 @@ html body .privacy-grid article { background: var(--cl-sky) !important; box-shad
 [data-theme="dark"] .privacy-grid article { background: rgb(255 255 255 / 4%) !important; }
 .learn-head > .learn-num:has(+ h2) { display: none; }
 
+/* ---------- v5.4: fondo de la portada de Inicio (solo esta sección) ----------
+   Formas suaves con la paleta azul/teal y una trama de puntos discreta, para que el
+   fondo acompañe la foto y no quede como un bloque plano. En tableta y celular la foto
+   ocupa todo el ancho y lleva un marco decorativo detrás. Quitar este bloque lo revierte. */
+.cl-hero {
+  position: relative; isolation: isolate; overflow: hidden;
+  background:
+    radial-gradient(ellipse 70% 55% at 100% 0%, rgb(20 109 136 / 16%), transparent 70%),
+    radial-gradient(ellipse 60% 45% at 0% 100%, rgb(141 204 223 / 38%), transparent 72%),
+    linear-gradient(180deg, #f2f8fb 0%, var(--cl-sky) 55%, #dcedf3 100%);
+}
+.cl-hero::before {
+  content: ""; position: absolute; inset: 0; z-index: -2; pointer-events: none;
+  background: radial-gradient(rgb(20 109 136 / 16%) 1.2px, transparent 1.6px) 0 0 / 22px 22px;
+  -webkit-mask-image: radial-gradient(ellipse 55% 45% at 0% 0%, #000 0%, transparent 75%);
+  mask-image: radial-gradient(ellipse 55% 45% at 0% 0%, #000 0%, transparent 75%);
+}
+.cl-hero::after {
+  content: ""; position: absolute; z-index: -2; pointer-events: none;
+  width: clamp(260px, 42vw, 520px); aspect-ratio: 1; right: -12%; bottom: -18%;
+  border-radius: 50%; border: 2px solid rgb(20 109 136 / 12%);
+  box-shadow: 0 0 0 28px rgb(20 109 136 / 4%), 0 0 0 64px rgb(20 109 136 / 3%);
+}
+[data-theme="dark"] .cl-hero {
+  background:
+    radial-gradient(ellipse 70% 55% at 100% 0%, rgb(141 204 223 / 12%), transparent 70%),
+    radial-gradient(ellipse 60% 45% at 0% 100%, rgb(20 109 136 / 30%), transparent 72%),
+    linear-gradient(180deg, #1d2e3a 0%, var(--cl-sky) 55%, #16242e 100%);
+}
+[data-theme="dark"] .cl-hero::before { background-image: radial-gradient(rgb(141 204 223 / 14%) 1.2px, transparent 1.6px); }
+[data-theme="dark"] .cl-hero::after { border-color: rgb(141 204 223 / 12%); box-shadow: 0 0 0 28px rgb(141 204 223 / 4%), 0 0 0 64px rgb(141 204 223 / 3%); }
+
+@media (max-width: 980px) {
+  .cl-hero-media { max-width: none; isolation: isolate; margin: .5rem .9rem .9rem 0; }
+  .cl-hero-media img { aspect-ratio: 4 / 3; object-position: 35% 30%; }
+  /* Marco teal desplazado detrás de la foto */
+  .cl-hero-media::before {
+    content: ""; position: absolute; inset: .9rem -.9rem -.9rem .9rem; z-index: -1;
+    border-radius: 24px; background: linear-gradient(135deg, var(--cl-blue) 0%, #2a8fa8 55%, #8dccdf 100%); opacity: .9;
+  }
+  /* Trama de puntos en la esquina superior izquierda */
+  .cl-hero-media::after {
+    content: ""; position: absolute; top: -1.1rem; left: -1.1rem; z-index: -1; width: 96px; height: 96px;
+    background: radial-gradient(var(--cl-blue) 1.6px, transparent 2px) 0 0 / 14px 14px; opacity: .35;
+  }
+  [data-theme="dark"] .cl-hero-media::after { background-image: radial-gradient(#8dccdf 1.6px, transparent 2px); }
+  .cl-hero::after { right: -30%; bottom: -10%; width: 80vw; }
+}
+@media (max-width: 560px) {
+  .cl-hero-media { margin: .25rem .6rem .6rem 0; }
+  .cl-hero-media::before { inset: .6rem -.6rem -.6rem .6rem; border-radius: 20px; }
+  .cl-hero-media img { border-radius: 20px; }
+  .cl-hero-media::after { width: 72px; height: 72px; top: -.8rem; left: -.8rem; }
+}
+@media print { .cl-hero::before, .cl-hero::after { display: none; } }
+
 /* Capa de movimiento y detalles finos (v5.4).
    No cambia colores, letras, orden ni textos: solo cómo se mueven y responden las cosas.
    El movimiento lo lleva js/detalles.js con GSAP; aquí van los tiempos, las curvas y los detalles.
@@ -6077,6 +6133,17 @@ html body :is(.button, .text-link, .cl-why-link, .today-resume, .cl-cta):active 
 [data-motion="reduced"] .dt-magnetico { translate: none; }
 html[data-motion="reduced"] body :is(.button, .text-link, .cl-why-link, .today-resume, .cl-cta):active { transform: none !important; }
 @media print { .dt-roll-copia { display: none; } }
+
+/* Barra inferior en el celular (2026-11-06): el desenfoque (backdrop-filter) de la cabecera
+   convertía a la cabecera en el contenedor de la barra fija, así que la barra se iba con el
+   scroll y las fotos le pasaban por encima. En el celular la cabecera no lleva desenfoque,
+   y la barra queda pegada a la pantalla y por encima del contenido. */
+@media (max-width: 760px) {
+  .site-header, .site-header.is-compact { -webkit-backdrop-filter: none; backdrop-filter: none; filter: none; transform: none; contain: none; view-transition-name: none; }
+  .site-header.is-compact { background: var(--surface); }
+  #main-nav, #main-nav.open { z-index: 50; }
+  .back-to-top, .tour-card { bottom: calc(84px + env(safe-area-inset-bottom)); }
+}
 
 </style>
 </head>
@@ -7453,7 +7520,8 @@ function initScrollMotion() {
       // Al salir de la portada o de una franja, el texto sube y se desvanece un poco.
       document.querySelectorAll('.route:not([hidden]) > .page-intro.sh-hero, .route:not([hidden]) .cl-hero').forEach(band => {
         const copy = band.classList.contains('cl-hero') ? band.querySelector('.cl-hero-copy') : band.querySelectorAll(':scope > :not(.sh-toggle)');
-        gsap.to(copy, {y: -40, opacity: .35, ease: 'none', scrollTrigger: {trigger: band, start: 'center 40%', end: 'bottom top', scrub: true}});
+        // fromTo: si se crea mientras la entrada de la portada aún la oculta (bienvenida abierta), no debe quedarse en opacidad 0.
+        gsap.fromTo(copy, {y: 0, opacity: 1}, {y: -40, opacity: .35, ease: 'none', immediateRender: false, scrollTrigger: {trigger: band, start: 'center 40%', end: 'bottom top', scrub: true}});
       });
       // Infografías: la línea bajo los cuatro pasos se llena mientras se leen.
       document.querySelectorAll('.route:not([hidden]) .info-flow').forEach(flow => {
