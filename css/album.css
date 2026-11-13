@@ -72,6 +72,13 @@
 .album-fact > span { font-size: .8125rem; color: var(--muted); }
 .album-fact > b { font-size: .9375rem; font-weight: 700; color: var(--ink); font-variant-numeric: tabular-nums; white-space: nowrap; }
 .album-source { font-size: .8125rem; color: var(--muted); }
+/* La regla general [data-open-recipe]::after pone una flecha suelta; aquí va dentro del texto "Ver preparación". */
+.album-open::after { content: none; }
+.album-cta { display: inline-flex; align-items: center; gap: .35rem; margin-top: .15rem; font-size: .9375rem; font-weight: 700; color: var(--blue); }
+.album-cta-arrow { display: inline-block; transition: transform .2s cubic-bezier(.22, 1, .36, 1); }
+@media (hover: hover) and (pointer: fine) {
+  .album-open:hover .album-cta-arrow { transform: translateX(3px); }
+}
 
 .album-note { margin: 1rem 0 0; }
 
@@ -89,6 +96,9 @@
 @media (prefers-reduced-motion: reduce) {
   .album-open { transition: none; }
   .album-open:hover, .album-open:active { transform: none; }
+  .album-cta-arrow { transition: none; }
+  .album-open:hover .album-cta-arrow { transform: none; }
 }
 html[data-motion="reduced"] .album-open { transition: none; }
-html[data-motion="reduced"] .album-open:is(:hover, :active) { transform: none; }
+html[data-motion="reduced"] .album-open:is(:hover, :active),
+html[data-motion="reduced"] .album-open:hover .album-cta-arrow { transform: none; }

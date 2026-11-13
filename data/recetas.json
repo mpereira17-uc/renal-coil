@@ -2814,7 +2814,13 @@
     },
     "countries": [
       "mx"
-    ]
+    ],
+    "photo": "assets/recetas/fotos/pozole.webp",
+    "photoCredit": {
+      "author": "Gonzalo Guzmán García",
+      "url": "https://www.pexels.com/photo/soup-in-a-ceramic-bowl-14179982/",
+      "license": "Pexels"
+    }
   },
   {
     "id": "chilaquiles",
@@ -3004,7 +3010,13 @@
     },
     "countries": [
       "mx"
-    ]
+    ],
+    "photo": "assets/recetas/fotos/chilaquiles.webp",
+    "photoCredit": {
+      "author": "Iván Hernández-Cuevas",
+      "url": "https://www.pexels.com/photo/delicious-chilaquiles-with-fried-egg-37074229/",
+      "license": "Pexels"
+    }
   },
   {
     "id": "enchiladas-pollo",
@@ -3123,7 +3135,13 @@
     },
     "countries": [
       "mx"
-    ]
+    ],
+    "photo": "assets/recetas/fotos/enchiladas-pollo.webp",
+    "photoCredit": {
+      "author": "Jonathan Santiago",
+      "url": "https://www.pexels.com/photo/a-plate-of-food-with-onions-and-cheese-28293570/",
+      "license": "Pexels"
+    }
   },
   {
     "id": "arroz-mexicano",
@@ -3247,7 +3265,13 @@
     },
     "countries": [
       "mx"
-    ]
+    ],
+    "photo": "assets/recetas/fotos/arroz-mexicano.webp",
+    "photoCredit": {
+      "author": "Deep Dasgupta",
+      "url": "https://www.pexels.com/photo/south-indian-tomato-rice-with-fresh-cilantro-31109627/",
+      "license": "Pexels"
+    }
   },
   {
     "id": "empanadas-pollo",
@@ -3455,6 +3479,12 @@
     "countries": [
       "co",
       "mx"
-    ]
+    ],
+    "photo": "assets/recetas/fotos/empanadas-pollo.webp",
+    "photoCredit": {
+      "author": "Daniel Torobekov",
+      "url": "https://www.pexels.com/photo/close-up-shot-of-delicious-empanadas-on-wooden-chopping-board-13689920/",
+      "license": "Pexels"
+    }
   }
 ]

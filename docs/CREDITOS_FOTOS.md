@@ -35,6 +35,13 @@ Las fotos son ilustrativas: muestran un plato parecido, no la porción exacta de
 | Pimentones rellenos de pavo | assets/recetas/fotos/pimentones-pavo.webp | Por confirmar (Unsplash) | https://images.unsplash.com/photo-1596464716059-f81da526557b |
 | Fajitas de pollo | assets/recetas/fotos/fajitas-pollo.webp | Por confirmar (Pexels) | https://www.pexels.com/photo/32375350/ |
 | Camarones al ajillo con limón | assets/recetas/fotos/camarones-ajo.webp | Por confirmar (Pexels) | https://www.pexels.com/photo/16273763/ |
+| Pozole | assets/recetas/fotos/pozole.webp | [Gonzalo Guzmán García](https://www.pexels.com/@gonzalogfg/) (Pexels) | https://www.pexels.com/photo/soup-in-a-ceramic-bowl-14179982/ |
+| Chilaquiles de desayuno | assets/recetas/fotos/chilaquiles.webp | [Iván Hernández-Cuevas](https://www.pexels.com/@ivanhdz/) (Pexels) | https://www.pexels.com/photo/delicious-chilaquiles-with-fried-egg-37074229/ |
+| Enchiladas de pollo | assets/recetas/fotos/enchiladas-pollo.webp | [Jonathan Santiago](https://www.pexels.com/@jsantiagoph/) (Pexels) | https://www.pexels.com/photo/a-plate-of-food-with-onions-and-cheese-28293570/ |
+| Arroz a la mexicana | assets/recetas/fotos/arroz-mexicano.webp | [Deep Dasgupta](https://www.pexels.com/@deep-dasgupta-505474973/) (Pexels) | https://www.pexels.com/photo/south-indian-tomato-rice-with-fresh-cilantro-31109627/ |
+| Empanadas de pollo al horno o en freidora de aire | assets/recetas/fotos/empanadas-pollo.webp | [Daniel Torobekov](https://www.pexels.com/@alohaphotostudio/) (Pexels) | https://www.pexels.com/photo/close-up-shot-of-delicious-empanadas-on-wooden-chopping-board-13689920/ |
+
+Las fotos del álbum «Platos típicos» (pozole, chilaquiles, enchiladas, arroz y empanadas) vienen de Pexels y se usan bajo la Licencia Pexels (https://www.pexels.com/license/): uso gratuito, sin atribución obligatoria; la damos igual. La foto del arroz es un arroz rojo de otra cocina y es solo ilustrativa.
 
 La portada de Alimentación usa recortes circulares de las fotos de: Crema de coliflor, Arroz con calabacín y perejil, Ensalada de repollo y zanahoria, Revuelto de huevo con pimentón y cebolla y Sopa de pollo (assets/recetas/platos).
 
