@@ -1,5 +1,5 @@
 // Caché limitada a la interfaz. JSON de contenido y archivo autónomo quedan fuera.
-const CACHE='coil-ui-v5-5-20261113';
+const CACHE='coil-ui-v5-6-20261113';
 const FILES=[
   "./",
   "./index.html",
@@ -68,7 +68,7 @@ const FILES=[
   "css/portadas.css",
   "css/aprende.css",
   "css/ux.css",
-  "css/cocina.css","css/sistema.css","css/movimiento.css","css/profesional.css","css/tema-clinica.css","css/detalles.css","css/legibilidad.css","assets/fotos/inicio.webp","assets/fotos/infografias.webp","assets/fotos/aprende.webp","assets/fotos/seguimiento.webp","assets/fotos/habitos.webp","assets/fotos/senales.webp","assets/fotos/proyecto.webp","assets/fotos/cuidado.webp",
+  "css/cocina.css","css/sistema.css","css/movimiento.css","css/profesional.css","css/tema-clinica.css","css/detalles.css","css/album.css","css/legibilidad.css","assets/fotos/inicio.webp","assets/fotos/infografias.webp","assets/fotos/aprende.webp","assets/fotos/seguimiento.webp","assets/fotos/habitos.webp","assets/fotos/senales.webp","assets/fotos/proyecto.webp","assets/fotos/cuidado.webp",
   "assets/fonts/editorial-italic.woff2",
   "assets/fonts/editorial.woff2",
   "assets/fonts/texto-bold.woff2",

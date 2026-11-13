@@ -2664,5 +2664,797 @@
       "us"
     ],
     "photo": "assets/recetas/fotos/camarones-ajo.webp"
+  },
+  {
+    "id": "pozole",
+    "image": "assets/recetas/pollo.svg",
+    "meal": "dinner",
+    "minutes": 65,
+    "servings": 10,
+    "lessSaltIdea": false,
+    "status": "sample-unvalidated",
+    "origin": "fuente-externa",
+    "album": "tipicos",
+    "source": {
+      "title": "American Kidney Fund · Kidney Kitchen · Mexican Pozole",
+      "url": "https://kitchen.kidneyfund.org/recipe/mexican-pozole/"
+    },
+    "es": {
+      "title": "Pozole",
+      "ingredients": [
+        "1 cucharada de aceite de oliva",
+        "900 g de carne de res magra en cubos (unas 2 libras)",
+        "1 cebolla grande picada",
+        "1 diente de ajo bien picado",
+        "¼ cucharadita de sal",
+        "⅛ cucharadita de pimienta negra molida",
+        "¼ taza de cilantro",
+        "1 lata (425 g) de tomates guisados",
+        "55 g de pasta de tomate sin sal añadida (⅓ de lata)",
+        "1 lata (370 g) de maíz pozolero (hominy)"
+      ],
+      "steps": [
+        "Calienta el aceite en una olla grande. Seca los cubos de carne con papel de cocina y dóralos.",
+        "Agrega la cebolla, el ajo, la sal, la pimienta, el cilantro y agua hasta cubrir la carne. Tapa y cocina a fuego bajo hasta que la carne esté suave.",
+        "Añade los tomates guisados y la pasta de tomate. Cocina unos 20 minutos más.",
+        "Agrega el maíz pozolero y cocina 15 minutos más a fuego bajo, revolviendo de vez en cuando. Si queda muy espeso, añade agua."
+      ],
+      "note": "La fuente lo clasifica como bajo en potasio y medio en sodio y fósforo. Usa pasta de tomate sin sal añadida. Porción: 1 taza. Se puede cambiar la res por pechuga de pollo.",
+      "substitutions": [
+        "La fuente propone pechuga de pollo en lugar de res.",
+        "Propuesta: escurrir y enjuagar el maíz pozolero de lata para quitar algo de sal; revisar con el equipo de salud."
+      ]
+    },
+    "en": {
+      "title": "Pozole",
+      "ingredients": [
+        "1 tablespoon olive oil",
+        "900 g lean beef (eye round), cubed (about 2 pounds)",
+        "1 large onion, chopped",
+        "1 garlic clove, finely chopped",
+        "¼ teaspoon salt",
+        "⅛ teaspoon ground black pepper",
+        "¼ cup cilantro",
+        "1 can (15 ounces) stewed tomatoes",
+        "55 g no-salt-added tomato paste (⅓ can, 2 ounces)",
+        "1 can (13 ounces) hominy"
+      ],
+      "steps": [
+        "Heat the oil in a large pot. Pat the beef cubes dry with paper towels and brown them.",
+        "Add the onion, garlic, salt, pepper, cilantro and enough water to cover the meat. Cover and cook on low until the meat is tender.",
+        "Add the stewed tomatoes and tomato paste. Cook about 20 more minutes.",
+        "Add the hominy and cook 15 more minutes on low, stirring now and then. Add water if it gets too thick."
+      ],
+      "note": "The source rates it low in potassium and medium in sodium and phosphorus. Use no-salt-added tomato paste. Serving: 1 cup. Chicken breast can replace the beef.",
+      "substitutions": [
+        "The source suggests chicken breast instead of beef.",
+        "Idea: drain and rinse canned hominy to remove some salt; check with your care team."
+      ]
+    },
+    "ingredientAmounts": [
+      {
+        "amount": 1,
+        "es": "cucharada de aceite de oliva",
+        "en": "tablespoon olive oil",
+        "esPlural": "cucharadas de aceite de oliva",
+        "enPlural": "tablespoons olive oil"
+      },
+      {
+        "amount": 900,
+        "es": "g de carne de res magra en cubos (unas 2 libras)",
+        "en": "g lean beef (eye round), cubed (about 2 pounds)",
+        "esPlural": "g de carne de res magra en cubos (unas 2 libras)",
+        "enPlural": "g lean beef (eye round), cubed (about 2 pounds)"
+      },
+      {
+        "amount": 1,
+        "es": "cebolla grande picada",
+        "en": "large onion, chopped",
+        "esPlural": "cebollas grandes picadas",
+        "enPlural": "large onions, chopped"
+      },
+      {
+        "amount": 1,
+        "es": "diente de ajo bien picado",
+        "en": "garlic clove, finely chopped",
+        "esPlural": "dientes de ajo bien picados",
+        "enPlural": "garlic cloves, finely chopped"
+      },
+      {
+        "amount": 0.25,
+        "es": "cucharadita de sal",
+        "en": "teaspoon salt",
+        "esPlural": "cucharaditas de sal",
+        "enPlural": "teaspoons salt"
+      },
+      {
+        "amount": null,
+        "es": "⅛ cucharadita de pimienta negra molida",
+        "en": "⅛ teaspoon ground black pepper",
+        "esPlural": "⅛ cucharadita de pimienta negra molida",
+        "enPlural": "⅛ teaspoon ground black pepper"
+      },
+      {
+        "amount": 0.25,
+        "es": "taza de cilantro",
+        "en": "cup cilantro",
+        "esPlural": "tazas de cilantro",
+        "enPlural": "cups cilantro"
+      },
+      {
+        "amount": 1,
+        "es": "lata (425 g) de tomates guisados",
+        "en": "can (15 ounces) stewed tomatoes",
+        "esPlural": "latas (425 g) de tomates guisados",
+        "enPlural": "cans (15 ounces) stewed tomatoes"
+      },
+      {
+        "amount": 55,
+        "es": "g de pasta de tomate sin sal añadida (⅓ de lata)",
+        "en": "g no-salt-added tomato paste (⅓ can, 2 ounces)",
+        "esPlural": "g de pasta de tomate sin sal añadida (⅓ de lata)",
+        "enPlural": "g no-salt-added tomato paste (⅓ can, 2 ounces)"
+      },
+      {
+        "amount": 1,
+        "es": "lata (370 g) de maíz pozolero (hominy)",
+        "en": "can (13 ounces) hominy",
+        "esPlural": "latas (370 g) de maíz pozolero (hominy)",
+        "enPlural": "cans (13 ounces) hominy"
+      }
+    ],
+    "validatedBy": null,
+    "validatedAt": null,
+    "nutrientAnalysis": {
+      "kcal": 290,
+      "proteinG": 14,
+      "sodiumMg": 223,
+      "potassiumMg": 272,
+      "phosphorusMg": 293
+    },
+    "countries": [
+      "mx"
+    ]
+  },
+  {
+    "id": "chilaquiles",
+    "image": "assets/recetas/tostada.svg",
+    "meal": "breakfast",
+    "minutes": 30,
+    "servings": 6,
+    "lessSaltIdea": true,
+    "status": "sample-unvalidated",
+    "origin": "fuente-externa",
+    "album": "tipicos",
+    "source": {
+      "title": "American Kidney Fund · Kidney Kitchen · Mexican-Inspired Breakfast Chilaquiles",
+      "url": "https://kitchen.kidneyfund.org/recipe/mexican-breakfast-chilaquiles/"
+    },
+    "es": {
+      "title": "Chilaquiles de desayuno",
+      "ingredients": [
+        "4 tortillas de maíz frescas",
+        "Aceite de canola en aerosol",
+        "1 tomate mediano en cubos",
+        "¼ de pimentón amarillo en cubos",
+        "¼ de cebolla mediana en cubos",
+        "2 cucharadas de cilantro picado",
+        "6 huevos grandes",
+        "1 cucharada de aceite de canola",
+        "1 taza de queso Monterey Jack rallado",
+        "¼ taza de jalapeño picado",
+        "½ aguacate en tajadas finas",
+        "Limón en cascos, para servir",
+        "¼ cucharadita de sal (opcional)"
+      ],
+      "steps": [
+        "Precalienta el horno a 190 °C (375 °F).",
+        "Corta cada tortilla en 6 triángulos.",
+        "Rocíalos con un poco de aceite en aerosol y hornéalos unos 6 minutos. Voltéalos y hornea 5 minutos más.",
+        "Mezcla el tomate, el pimentón, la cebolla y el cilantro para hacer una salsa fresca. Reserva.",
+        "Bate los huevos con la sal, si la usas.",
+        "Calienta el aceite de canola a fuego medio en una sartén de 30 cm que pueda ir al horno.",
+        "Revuelve los huevos con suavidad 3 a 4 minutos, hasta que cuajen. Pásalos a un plato y limpia la sartén.",
+        "Enciende el gratinador del horno. Pon la mitad de los totopos en la sartén, la mitad del queso, el resto de los totopos y del queso, y encima los huevos y el jalapeño.",
+        "Gratina 1 a 2 minutos, hasta que el queso se derrita y los totopos empiecen a dorarse.",
+        "Saca del horno y cubre con el aguacate y la salsa fresca. Sirve con limón si quieres."
+      ],
+      "note": "Los totopos caseros evitan la sal y los aditivos de fósforo de muchos totopos comprados. La fuente lo clasifica como bajo en potasio y medio en sodio y fósforo. El queso aporta sodio y fósforo.",
+      "substitutions": [
+        "Los totopos que sobren se guardan 2 a 3 días en un recipiente bien cerrado.",
+        "Propuesta: menos queso o un queso fresco bajo en sodio; revisar con el equipo de salud."
+      ]
+    },
+    "en": {
+      "title": "Breakfast chilaquiles",
+      "ingredients": [
+        "4 fresh corn tortillas",
+        "Canola oil cooking spray",
+        "1 medium tomato, diced",
+        "¼ yellow bell pepper, diced",
+        "¼ medium onion, diced",
+        "2 tablespoons cilantro, chopped",
+        "6 large eggs",
+        "1 tablespoon canola oil",
+        "1 cup Monterey Jack cheese, shredded",
+        "¼ cup jalapeño, chopped",
+        "½ avocado, thinly sliced",
+        "Lime wedges, for serving",
+        "¼ teaspoon salt (optional)"
+      ],
+      "steps": [
+        "Preheat the oven to 375 °F (190 °C).",
+        "Cut each tortilla into 6 triangles.",
+        "Spray them lightly with cooking spray and bake about 6 minutes. Turn them over and bake 5 more minutes.",
+        "Mix the tomato, bell pepper, onion and cilantro to make a fresh salsa. Set aside.",
+        "Beat the eggs with the salt, if using.",
+        "Heat the canola oil over medium heat in an oven-safe 12-inch skillet.",
+        "Gently scramble the eggs 3 to 4 minutes, until set. Move them to a plate and wipe the skillet.",
+        "Turn on the broiler. Layer half the chips in the skillet, half the cheese, the rest of the chips and cheese, then the eggs and jalapeño.",
+        "Broil 1 to 2 minutes, until the cheese melts and the chips start to brown.",
+        "Remove from the oven and top with avocado and the fresh salsa. Serve with lime if you like."
+      ],
+      "note": "Homemade chips avoid the salt and phosphate additives in many store-bought chips. The source rates it low in potassium and medium in sodium and phosphorus. Cheese adds sodium and phosphorus.",
+      "substitutions": [
+        "Leftover chips keep 2 to 3 days in a tightly sealed container.",
+        "Idea: less cheese or a low-sodium fresh cheese; check with your care team."
+      ]
+    },
+    "ingredientAmounts": [
+      {
+        "amount": 4,
+        "es": "tortilla de maíz fresca",
+        "en": "fresh corn tortilla",
+        "esPlural": "tortillas de maíz frescas",
+        "enPlural": "fresh corn tortillas"
+      },
+      {
+        "amount": null,
+        "es": "Aceite de canola en aerosol",
+        "en": "Canola oil cooking spray",
+        "esPlural": "Aceite de canola en aerosol",
+        "enPlural": "Canola oil cooking spray"
+      },
+      {
+        "amount": 1,
+        "es": "tomate mediano en cubos",
+        "en": "medium tomato, diced",
+        "esPlural": "tomates medianos en cubos",
+        "enPlural": "medium tomatoes, diced"
+      },
+      {
+        "amount": 0.25,
+        "es": "de pimentón amarillo en cubos",
+        "en": "yellow bell pepper, diced",
+        "esPlural": "de pimentón amarillo en cubos",
+        "enPlural": "yellow bell pepper, diced"
+      },
+      {
+        "amount": 0.25,
+        "es": "de cebolla mediana en cubos",
+        "en": "medium onion, diced",
+        "esPlural": "de cebolla mediana en cubos",
+        "enPlural": "medium onion, diced"
+      },
+      {
+        "amount": 2,
+        "es": "cucharada de cilantro picado",
+        "en": "tablespoon cilantro, chopped",
+        "esPlural": "cucharadas de cilantro picado",
+        "enPlural": "tablespoons cilantro, chopped"
+      },
+      {
+        "amount": 6,
+        "es": "huevo grande",
+        "en": "large egg",
+        "esPlural": "huevos grandes",
+        "enPlural": "large eggs"
+      },
+      {
+        "amount": 1,
+        "es": "cucharada de aceite de canola",
+        "en": "tablespoon canola oil",
+        "esPlural": "cucharadas de aceite de canola",
+        "enPlural": "tablespoons canola oil"
+      },
+      {
+        "amount": 1,
+        "es": "taza de queso Monterey Jack rallado",
+        "en": "cup Monterey Jack cheese, shredded",
+        "esPlural": "tazas de queso Monterey Jack rallado",
+        "enPlural": "cups Monterey Jack cheese, shredded"
+      },
+      {
+        "amount": 0.25,
+        "es": "taza de jalapeño picado",
+        "en": "cup jalapeño, chopped",
+        "esPlural": "tazas de jalapeño picado",
+        "enPlural": "cups jalapeño, chopped"
+      },
+      {
+        "amount": 0.5,
+        "es": "aguacate en tajadas finas",
+        "en": "avocado, thinly sliced",
+        "esPlural": "aguacates en tajadas finas",
+        "enPlural": "avocados, thinly sliced"
+      },
+      {
+        "amount": null,
+        "es": "Limón en cascos, para servir",
+        "en": "Lime wedges, for serving",
+        "esPlural": "Limón en cascos, para servir",
+        "enPlural": "Lime wedges, for serving"
+      },
+      {
+        "amount": 0.25,
+        "es": "cucharadita de sal (opcional)",
+        "en": "teaspoon salt (optional)",
+        "esPlural": "cucharaditas de sal (opcional)",
+        "enPlural": "teaspoons salt (optional)"
+      }
+    ],
+    "validatedBy": null,
+    "validatedAt": null,
+    "nutrientAnalysis": {
+      "kcal": 194,
+      "proteinG": 11,
+      "sodiumMg": 155,
+      "potassiumMg": 169,
+      "phosphorusMg": 207
+    },
+    "countries": [
+      "mx"
+    ]
+  },
+  {
+    "id": "enchiladas-pollo",
+    "image": "assets/recetas/pollo.svg",
+    "meal": "lunch",
+    "minutes": 45,
+    "servings": 6,
+    "lessSaltIdea": false,
+    "status": "sample-unvalidated",
+    "origin": "fuente-externa",
+    "album": "tipicos",
+    "source": {
+      "title": "DaVita · Chicken Enchiladas",
+      "url": "https://davita.com/diet-nutrition/recipes/chicken-turkey/chicken-enchiladas/"
+    },
+    "es": {
+      "title": "Enchiladas de pollo",
+      "ingredients": [
+        "2 cucharadas de aceite de canola",
+        "12 tortillas de maíz de 15 cm",
+        "3 tazas de pechuga de pollo cocida y desmechada",
+        "⅔ taza de cebolla larga bien picada",
+        "½ taza de crema agria ligera",
+        "1 ½ tazas de salsa para enchiladas (DaVita tiene su propia receta)"
+      ],
+      "steps": [
+        "Precalienta el horno a 190 °C (375 °F).",
+        "Calienta el aceite en una sartén.",
+        "Pasa cada tortilla un momento por la sartén para ablandarla y ponla en un plato.",
+        "En el centro de cada tortilla pon ¼ de taza de pollo, 1 cucharada de cebolla y 2 cucharaditas de crema agria.",
+        "Enrolla cada enchilada y acomódala en un molde para horno.",
+        "Cubre con la taza y media de salsa para enchiladas.",
+        "Hornea de 20 a 30 minutos, hasta que estén bien calientes."
+      ],
+      "note": "DaVita la marca para dietas de diabetes y de diálisis. Porción: 2 enchiladas. La salsa comprada suele tener mucha sal: la fuente usa su propia salsa casera. El tiempo total es aproximado; la fuente no lo indica.",
+      "substitutions": [
+        "Propuesta: preparar la salsa en casa o elegir una baja en sodio; revisar con el equipo de salud."
+      ]
+    },
+    "en": {
+      "title": "Chicken enchiladas",
+      "ingredients": [
+        "2 tablespoons canola oil",
+        "12 corn tortillas, 6-inch",
+        "3 cups cooked chicken breast, shredded",
+        "⅔ cup green onion, finely chopped",
+        "½ cup light sour cream",
+        "1 ½ cups enchilada sauce (DaVita has its own recipe)"
+      ],
+      "steps": [
+        "Preheat the oven to 375 °F (190 °C).",
+        "Heat the oil in a skillet.",
+        "Dip each tortilla briefly in the skillet to soften it and set it on a plate.",
+        "In the center of each tortilla place ¼ cup chicken, 1 tablespoon onion and 2 teaspoons sour cream.",
+        "Roll up each enchilada and place it in a baking dish.",
+        "Cover with the 1½ cups of enchilada sauce.",
+        "Bake 20 to 30 minutes, until hot."
+      ],
+      "note": "DaVita marks it for diabetes and dialysis diets. Serving: 2 enchiladas. Store-bought sauce is often high in salt: the source uses its own homemade sauce. Total time is approximate; the source does not state it.",
+      "substitutions": [
+        "Idea: make the sauce at home or choose a low-sodium one; check with your care team."
+      ]
+    },
+    "ingredientAmounts": [
+      {
+        "amount": 2,
+        "es": "cucharada de aceite de canola",
+        "en": "tablespoon canola oil",
+        "esPlural": "cucharadas de aceite de canola",
+        "enPlural": "tablespoons canola oil"
+      },
+      {
+        "amount": 12,
+        "es": "tortilla de maíz de 15 cm",
+        "en": "corn tortilla, 6-inch",
+        "esPlural": "tortillas de maíz de 15 cm",
+        "enPlural": "corn tortillas, 6-inch"
+      },
+      {
+        "amount": 3,
+        "es": "taza de pechuga de pollo cocida y desmechada",
+        "en": "cup cooked chicken breast, shredded",
+        "esPlural": "tazas de pechuga de pollo cocida y desmechada",
+        "enPlural": "cups cooked chicken breast, shredded"
+      },
+      {
+        "amount": 0.6666666666666666,
+        "es": "taza de cebolla larga bien picada",
+        "en": "cup green onion, finely chopped",
+        "esPlural": "tazas de cebolla larga bien picada",
+        "enPlural": "cups green onion, finely chopped"
+      },
+      {
+        "amount": 0.5,
+        "es": "taza de crema agria ligera",
+        "en": "cup light sour cream",
+        "esPlural": "tazas de crema agria ligera",
+        "enPlural": "cups light sour cream"
+      },
+      {
+        "amount": 1.5,
+        "es": "taza de salsa para enchiladas (DaVita tiene su propia receta)",
+        "en": "cup enchilada sauce (DaVita has its own recipe)",
+        "esPlural": "tazas de salsa para enchiladas (DaVita tiene su propia receta)",
+        "enPlural": "cups enchilada sauce (DaVita has its own recipe)"
+      }
+    ],
+    "validatedBy": null,
+    "validatedAt": null,
+    "nutrientAnalysis": {
+      "kcal": 334,
+      "proteinG": 23,
+      "sodiumMg": 169,
+      "potassiumMg": 450,
+      "phosphorusMg": 331
+    },
+    "countries": [
+      "mx"
+    ]
+  },
+  {
+    "id": "arroz-mexicano",
+    "image": "assets/recetas/arroz.svg",
+    "meal": "lunch",
+    "minutes": 30,
+    "servings": 6,
+    "lessSaltIdea": true,
+    "status": "sample-unvalidated",
+    "origin": "fuente-externa",
+    "album": "tipicos",
+    "source": {
+      "title": "DaVita · Mexican Rice",
+      "url": "https://davita.com/diet-nutrition/recipes/pasta-rice-grains/mexican-rice/"
+    },
+    "es": {
+      "title": "Arroz a la mexicana",
+      "ingredients": [
+        "1 taza de arroz blanco crudo",
+        "¼ taza de aceite de canola",
+        "¼ taza de cebolla",
+        "1 diente de ajo",
+        "¼ taza de salsa de tomate baja en sodio",
+        "3 tazas de agua",
+        "¼ cucharadita de sal (opcional)"
+      ],
+      "steps": [
+        "Pica la cebolla y el ajo.",
+        "Calienta el aceite en una sartén a fuego medio-alto. Agrega el arroz y dóralo, revolviendo seguido.",
+        "Añade la cebolla y el ajo y sofríe hasta que estén suaves.",
+        "Agrega la salsa de tomate, el agua y la sal.",
+        "Tapa y cocina a fuego bajo unos 20 minutos, hasta que el arroz absorba el agua. No destapes mientras se cocina."
+      ],
+      "note": "DaVita lo marca para enfermedad renal sin diálisis, diálisis y diabetes. Porción: ½ taza. Si la salsa de tomate no es baja en sodio, no agregues sal: el sodio queda parecido. El tiempo total es aproximado.",
+      "substitutions": [
+        "Si usas salsa de tomate normal, omite la sal (indicación de la fuente)."
+      ]
+    },
+    "en": {
+      "title": "Mexican rice",
+      "ingredients": [
+        "1 cup white rice, uncooked",
+        "¼ cup canola oil",
+        "¼ cup onion",
+        "1 garlic clove",
+        "¼ cup low-sodium tomato sauce",
+        "3 cups water",
+        "¼ teaspoon salt (optional)"
+      ],
+      "steps": [
+        "Chop the onion and garlic.",
+        "Heat the oil in a skillet over medium-high heat. Add the rice and brown it, stirring often.",
+        "Add the onion and garlic and sauté until tender.",
+        "Add the tomato sauce, water and salt.",
+        "Cover and simmer about 20 minutes, until the water is absorbed. Do not lift the lid while it cooks."
+      ],
+      "note": "DaVita marks it for CKD without dialysis, dialysis and diabetes. Serving: ½ cup. If the tomato sauce is not low-sodium, skip the salt: sodium ends up about the same. Total time is approximate.",
+      "substitutions": [
+        "If you use regular tomato sauce, leave out the salt (the source's advice)."
+      ]
+    },
+    "ingredientAmounts": [
+      {
+        "amount": 1,
+        "es": "taza de arroz blanco crudo",
+        "en": "cup white rice, uncooked",
+        "esPlural": "tazas de arroz blanco crudo",
+        "enPlural": "cups white rice, uncooked"
+      },
+      {
+        "amount": 0.25,
+        "es": "taza de aceite de canola",
+        "en": "cup canola oil",
+        "esPlural": "tazas de aceite de canola",
+        "enPlural": "cups canola oil"
+      },
+      {
+        "amount": 0.25,
+        "es": "taza de cebolla",
+        "en": "cup onion",
+        "esPlural": "tazas de cebolla",
+        "enPlural": "cups onion"
+      },
+      {
+        "amount": 1,
+        "es": "diente de ajo",
+        "en": "garlic clove",
+        "esPlural": "dientes de ajo",
+        "enPlural": "garlic cloves"
+      },
+      {
+        "amount": 0.25,
+        "es": "taza de salsa de tomate baja en sodio",
+        "en": "cup low-sodium tomato sauce",
+        "esPlural": "tazas de salsa de tomate baja en sodio",
+        "enPlural": "cups low-sodium tomato sauce"
+      },
+      {
+        "amount": 3,
+        "es": "taza de agua",
+        "en": "cup water",
+        "esPlural": "tazas de agua",
+        "enPlural": "cups water"
+      },
+      {
+        "amount": 0.25,
+        "es": "cucharadita de sal (opcional)",
+        "en": "teaspoon salt (optional)",
+        "esPlural": "cucharaditas de sal (opcional)",
+        "enPlural": "teaspoons salt (optional)"
+      }
+    ],
+    "validatedBy": null,
+    "validatedAt": null,
+    "nutrientAnalysis": {
+      "kcal": 194,
+      "proteinG": 2,
+      "sodiumMg": 94,
+      "potassiumMg": 77,
+      "phosphorusMg": 41
+    },
+    "countries": [
+      "mx"
+    ]
+  },
+  {
+    "id": "empanadas-pollo",
+    "image": "assets/recetas/pollo.svg",
+    "meal": "dinner",
+    "minutes": 75,
+    "servings": 6,
+    "lessSaltIdea": false,
+    "status": "sample-unvalidated",
+    "origin": "fuente-externa",
+    "album": "tipicos",
+    "source": {
+      "title": "National Kidney Foundation · Chicken Empanadas",
+      "url": "https://www.kidney.org/nutrition/recipes/chicken-empanadas"
+    },
+    "es": {
+      "title": "Empanadas de pollo al horno o en freidora de aire",
+      "ingredients": [
+        "1 ¼ tazas de harina de trigo",
+        "¼ cucharadita de sal (masa)",
+        "½ taza de agua caliente",
+        "1 cucharada de aceite (masa)",
+        "225 g de pollo (½ libra)",
+        "1 diente de ajo en láminas",
+        "1 hoja de laurel",
+        "½ taza de cebolla en cubos",
+        "½ taza de pimentón en cubos",
+        "1 cucharada de aceite (relleno)",
+        "1 cucharada de pasta de tomate",
+        "¼ cucharadita de sal (relleno)",
+        "¼ cucharadita de orégano seco",
+        "⅛ cucharadita de comino molido",
+        "85 g de mozzarella fresca (3 onzas)",
+        "Agua para sellar"
+      ],
+      "steps": [
+        "En una olla honda pon agua, el ajo, el laurel y el pollo crudo. Hierve de 18 a 20 minutos, hasta que por dentro llegue a 74 °C (165 °F).",
+        "Masa: mezcla el agua caliente, la sal, el aceite y la harina, primero con un tenedor y luego con las manos, hasta que quede pareja. Tapa y deja reposar 25 minutos.",
+        "Relleno: desmecha el pollo. Sofríe la cebolla y el pimentón en el aceite a fuego medio de 6 a 8 minutos. Agrega el pollo y los demás condimentos, mezcla, retira del fuego y deja enfriar.",
+        "Divide la masa en 6 bolitas y estira cada una en un círculo de unos 10 cm. Pon unos 35 g de relleno y 15 g de mozzarella en una mitad, moja el borde, dobla y sella con un tenedor. Puedes congelarlas en este punto.",
+        "Precalienta la freidora de aire a 175 °C (350 °F) y cocina 22 minutos, hasta que estén doradas. Sirve calientes."
+      ],
+      "note": "Según la NKF, tiene menos sodio que la empanada tradicional y la freidora de aire usa mucho menos aceite que freír. Porción: 1 empanada. La fuente la ubica en la cocina caribeña y mexicana; la empanada también es típica en Colombia.",
+      "substitutions": [
+        "La fuente propone cambiar la proteína del relleno, usar otras hierbas sin sal u hornearlas en vez de usar freidora de aire.",
+        "Freírlas en aceite aumenta las calorías y la grasa (indicación de la fuente)."
+      ]
+    },
+    "en": {
+      "title": "Baked or air-fried chicken empanadas",
+      "ingredients": [
+        "1 ¼ cups all-purpose flour",
+        "¼ teaspoon salt (dough)",
+        "½ cup hot water",
+        "1 tablespoon oil (dough)",
+        "225 g chicken (½ pound)",
+        "1 garlic clove, sliced",
+        "1 bay leaf",
+        "½ cup onion, cubed",
+        "½ cup bell pepper, cubed",
+        "1 tablespoon oil (filling)",
+        "1 tablespoon tomato paste",
+        "¼ teaspoon salt (filling)",
+        "¼ teaspoon dried oregano",
+        "⅛ teaspoon ground cumin",
+        "85 g fresh mozzarella (3 ounces)",
+        "Water, to seal"
+      ],
+      "steps": [
+        "In a deep pot add water, the garlic, the bay leaf and the raw chicken. Boil 18 to 20 minutes, until it reaches 165 °F (74 °C) inside.",
+        "Dough: mix the hot water, salt, oil and flour, first with a fork and then by hand, until smooth. Cover and rest 25 minutes.",
+        "Filling: shred the chicken. Sauté the onion and bell pepper in the oil over medium heat for 6 to 8 minutes. Add the chicken and the other seasonings, mix, remove from heat and let cool.",
+        "Divide the dough into 6 balls and roll each into a circle about 4 inches across. Put about 1.2 ounces of filling and ½ ounce of mozzarella on one half, wet the edge, fold and seal with a fork. You can freeze them at this point.",
+        "Preheat the air fryer to 350 °F (175 °C) and cook 22 minutes, until golden. Serve hot."
+      ],
+      "note": "According to the NKF it has less sodium than the traditional empanada, and air frying uses much less oil than deep frying. Serving: 1 empanada. The source lists it under Caribbean and Mexican cuisine; empanadas are also typical in Colombia.",
+      "substitutions": [
+        "The source suggests another protein for the filling, other salt-free herbs, or baking instead of air frying.",
+        "Deep frying adds calories and fat (the source's note)."
+      ]
+    },
+    "ingredientAmounts": [
+      {
+        "amount": 1.25,
+        "es": "taza de harina de trigo",
+        "en": "cup all-purpose flour",
+        "esPlural": "tazas de harina de trigo",
+        "enPlural": "cups all-purpose flour"
+      },
+      {
+        "amount": 0.25,
+        "es": "cucharadita de sal (masa)",
+        "en": "teaspoon salt (dough)",
+        "esPlural": "cucharaditas de sal (masa)",
+        "enPlural": "teaspoons salt (dough)"
+      },
+      {
+        "amount": 0.5,
+        "es": "taza de agua caliente",
+        "en": "cup hot water",
+        "esPlural": "tazas de agua caliente",
+        "enPlural": "cups hot water"
+      },
+      {
+        "amount": 1,
+        "es": "cucharada de aceite (masa)",
+        "en": "tablespoon oil (dough)",
+        "esPlural": "cucharadas de aceite (masa)",
+        "enPlural": "tablespoons oil (dough)"
+      },
+      {
+        "amount": 225,
+        "es": "g de pollo (½ libra)",
+        "en": "g chicken (½ pound)",
+        "esPlural": "g de pollo (½ libra)",
+        "enPlural": "g chicken (½ pound)"
+      },
+      {
+        "amount": 1,
+        "es": "diente de ajo en láminas",
+        "en": "garlic clove, sliced",
+        "esPlural": "dientes de ajo en láminas",
+        "enPlural": "garlic cloves, sliced"
+      },
+      {
+        "amount": 1,
+        "es": "hoja de laurel",
+        "en": "bay leaf",
+        "esPlural": "hojas de laurel",
+        "enPlural": "bay leaves"
+      },
+      {
+        "amount": 0.5,
+        "es": "taza de cebolla en cubos",
+        "en": "cup onion, cubed",
+        "esPlural": "tazas de cebolla en cubos",
+        "enPlural": "cups onion, cubed"
+      },
+      {
+        "amount": 0.5,
+        "es": "taza de pimentón en cubos",
+        "en": "cup bell pepper, cubed",
+        "esPlural": "tazas de pimentón en cubos",
+        "enPlural": "cups bell pepper, cubed"
+      },
+      {
+        "amount": 1,
+        "es": "cucharada de aceite (relleno)",
+        "en": "tablespoon oil (filling)",
+        "esPlural": "cucharadas de aceite (relleno)",
+        "enPlural": "tablespoons oil (filling)"
+      },
+      {
+        "amount": 1,
+        "es": "cucharada de pasta de tomate",
+        "en": "tablespoon tomato paste",
+        "esPlural": "cucharadas de pasta de tomate",
+        "enPlural": "tablespoons tomato paste"
+      },
+      {
+        "amount": 0.25,
+        "es": "cucharadita de sal (relleno)",
+        "en": "teaspoon salt (filling)",
+        "esPlural": "cucharaditas de sal (relleno)",
+        "enPlural": "teaspoons salt (filling)"
+      },
+      {
+        "amount": 0.25,
+        "es": "cucharadita de orégano seco",
+        "en": "teaspoon dried oregano",
+        "esPlural": "cucharaditas de orégano seco",
+        "enPlural": "teaspoons dried oregano"
+      },
+      {
+        "amount": null,
+        "es": "⅛ cucharadita de comino molido",
+        "en": "⅛ teaspoon ground cumin",
+        "esPlural": "⅛ cucharadita de comino molido",
+        "enPlural": "⅛ teaspoon ground cumin"
+      },
+      {
+        "amount": 85,
+        "es": "g de mozzarella fresca (3 onzas)",
+        "en": "g fresh mozzarella (3 ounces)",
+        "esPlural": "g de mozzarella fresca (3 onzas)",
+        "enPlural": "g fresh mozzarella (3 ounces)"
+      },
+      {
+        "amount": null,
+        "es": "Agua para sellar",
+        "en": "Water, to seal",
+        "esPlural": "Agua para sellar",
+        "enPlural": "Water, to seal"
+      }
+    ],
+    "validatedBy": null,
+    "validatedAt": null,
+    "nutrientAnalysis": {
+      "kcal": 224,
+      "proteinG": 12,
+      "sodiumMg": 267,
+      "potassiumMg": 156,
+      "phosphorusMg": 151
+    },
+    "countries": [
+      "co",
+      "mx"
+    ]
   }
 ]

@@ -2385,5 +2385,16 @@
   "clCtaTitle": "Noticed any change in your body?",
   "clCtaSigns": "Check the signs",
   "clCtaVisit": "Prepare my visit",
-  "recipeSourceLabel": "Recipe adapted from"
+  "recipeSourceLabel": "Recipe adapted from",
+  "albumTitle": "Traditional dishes, with less salt",
+  "albumLead": "Mexican and Latin dishes in versions from kidney organizations: American Kidney Fund, DaVita and National Kidney Foundation. Each one shows its salt, potassium and phosphorus per serving.",
+  "albumOpen": "Open the recipe: {title}",
+  "albumSodium": "Sodium",
+  "albumPotassium": "Potassium",
+  "albumPhosphorus": "Phosphorus",
+  "albumPerServing": "Per serving, from the source",
+  "albumNote": "Values are the ones each organization publishes per serving. Your limits depend on your kidney function: confirm them with your doctor or dietitian.",
+  "recipeNutrientsTitle": "Per serving, from the source",
+  "recipeKcal": "Calories",
+  "recipeProtein": "Protein"
 }

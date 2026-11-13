@@ -33,3 +33,6 @@ html[data-theme="dark"] .learning-progress .today-resume:hover { background: var
 html[data-theme="dark"] #main-nav a:hover,
 html[data-theme="dark"] body #main-nav a[aria-current="page"] { color: var(--blue) !important; }
 html[data-theme="dark"] #main-nav a::after { background: var(--blue); }
+/* Etiqueta del país sobre la foto: fondo blanco fijo, así que el texto debe ser oscuro también en tema oscuro
+   (antes quedaba blanco sobre blanco). */
+html[data-theme="dark"] .recipe-country { color: #203442; }

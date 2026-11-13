@@ -1,7 +1,7 @@
 import { EVENTOS, on } from './events.js';
 // Búsqueda, filtros, favoritas y detalle de recetas bilingües.
 import { data } from './data.js';
-import { language, t } from './i18n.js';
+import { language, t, formatNumber } from './i18n.js';
 import { getState, updateState } from './store.js';
 import { escapeHTML, icon, toast, openDialog, emptyState } from './ui.js';
 let selectedMeal = 'all';
@@ -23,10 +23,32 @@ function favoriteButton(recipe) {
   const saved=getState().favorites.includes(recipe.id),copy=recipe[language()];
   return `<button class="favorite-button" data-favorite="${recipe.id}" aria-pressed="${saved}" aria-label="${escapeHTML(t(saved?'removeFavorite':'saveFavorite',{title:copy.title}))}">${icon('heart',19)}</button>`;
 }
+// Nutrientes por porción tal como los publica la fuente. Valores fijos: no se animan ni se recalculan.
+const NUTRIENTS=[['sodiumMg','albumSodium','mg'],['potassiumMg','albumPotassium','mg'],['phosphorusMg','albumPhosphorus','mg']];
+const hasNutrients=recipe=>NUTRIENTS.some(([key])=>Number.isFinite(recipe.nutrientAnalysis?.[key]));
+const nutrientValue=(value,unit)=>Number.isFinite(value)?`${formatNumber(value,0)} ${unit}`:'—';
+function nutrientFacts(recipe){
+  if(!hasNutrients(recipe))return '';
+  const a=recipe.nutrientAnalysis,rows=[...NUTRIENTS,['kcal','recipeKcal',''],['proteinG','recipeProtein','g']];
+  return `<section class="recipe-nutrients" aria-labelledby="recipe-nutrients-title"><h3 id="recipe-nutrients-title">${escapeHTML(t('recipeNutrientsTitle'))}</h3><dl>${rows.map(([key,label,unit])=>`<div><dt>${escapeHTML(t(label))}</dt><dd>${escapeHTML(nutrientValue(a[key],unit).trim())}</dd></div>`).join('')}</dl></section>`;
+}
+// Álbum "Platos típicos": recetas con album:"tipicos", tomadas de organizaciones renales.
+function renderAlbum(){
+  const host=document.getElementById('recipe-album');if(!host)return;
+  const items=(data.recipes||[]).filter(recipe=>recipe.album==='tipicos');
+  host.hidden=!items.length;if(!items.length)return;
+  const card=recipe=>{
+    const copy=recipe[language()]||recipe.es,a=recipe.nutrientAnalysis||{};
+    const facts=NUTRIENTS.map(([key,label,unit])=>`<span class="album-fact"><span>${escapeHTML(t(label))}</span><b>${escapeHTML(nutrientValue(a[key],unit))}</b></span>`).join('');
+    const org=(recipe.source?.title||'').split(' · ')[0];
+    return `<li class="album-card"><button type="button" class="album-open" data-open-recipe="${escapeHTML(recipe.id)}" aria-label="${escapeHTML(t('albumOpen',{title:copy.title}))}"><span class="album-visual recipe-visual" data-meal="${escapeHTML(recipe.meal)}">${recipeIllustration(recipe.id)}${countryBadge(recipe)}</span><span class="album-body"><span class="album-meal">${escapeHTML(t(recipe.meal))} · ${recipe.minutes} ${escapeHTML(t('minutes'))}</span><strong class="album-name">${escapeHTML(copy.title)}</strong><span class="album-facts" title="${escapeHTML(t('albumPerServing'))}">${facts}</span><span class="album-source">${escapeHTML(org)}</span></span></button></li>`;
+  };
+  host.innerHTML=`<div class="album-head"><h2 id="album-title">${escapeHTML(t('albumTitle'))}</h2><p class="album-lead">${escapeHTML(t('albumLead'))}</p></div><ul class="album-row">${items.map(card).join('')}</ul><p class="fine-print album-note">${escapeHTML(t('albumPerServing'))}. ${escapeHTML(t('albumNote'))}</p>`;
+}
 export function renderRecipeDetail() {
   const recipe=data.recipes.find(r=>r.id===openedRecipe);if(!recipe)return;
   const copy=recipe[language()];
-  document.getElementById('recipe-detail').innerHTML=`<div class="dialog-heading"><div><p class="eyebrow">${escapeHTML(t('recipeShortBadge'))} / ${escapeHTML(t(recipe.meal))}</p><h2 id="recipe-dialog-title">${escapeHTML(copy.title)}</h2><div class="recipe-detail-meta"><span>${recipe.minutes} ${escapeHTML(t('minutes'))}</span><span id="recipe-portions-summary">${escapeHTML(t('servings',{count:portionCount}))}</span>${favoriteButton(recipe)}</div><div class="portion-controls"><label><span>${escapeHTML(t('servingsControl'))}</span><input id="recipe-portions" type="number" inputmode="numeric" min="1" max="24" step="1" value="${portionCount}"></label><button id="add-shopping" class="button secondary" data-shopping-recipe="${recipe.id}">${escapeHTML(t('addShopping'))}</button></div></div><button class="icon-button" data-close-dialog="recipe-dialog" aria-label="${escapeHTML(t('close'))}">×</button></div>${recipe.photo?`<figure class="recipe-detail-photo"><img src="${escapeHTML(recipe.photo)}" alt="${escapeHTML(copy.title)}" decoding="async"><figcaption>${escapeHTML(t('photoIllustrative'))}${recipe.photoCredit?` · ${escapeHTML(t('photoBy',{author:recipe.photoCredit.author}))}`:''}</figcaption></figure>`:''}${detailActions(recipe,portionCount)}<span class="tag demo-tag">${escapeHTML(t('recipeExample'))}</span><div class="recipe-detail-grid"><div><h3>${escapeHTML(t('ingredients'))}</h3><ul id="recipe-ingredients">${scaledIngredients(recipe,portionCount).map(ingredient=>`<li>${escapeHTML(ingredientText(ingredient))}</li>`).join('')}</ul></div><div><h3>${escapeHTML(t('preparation'))}</h3><ol>${copy.steps.map(step=>`<li>${escapeHTML(step)}</li>`).join('')}</ol></div></div><aside class="recipe-detail-note"><strong>${escapeHTML(t('reviewNote'))}</strong><p>${escapeHTML(copy.note)}</p></aside><aside class="recipe-detail-note"><strong>${escapeHTML(t('substitutions'))}</strong><ul>${copy.substitutions.map(item=>`<li>${escapeHTML(item)}</li>`).join('')}</ul></aside>${recipe.source?`<p class="fine-print recipe-source">${escapeHTML(t('recipeSourceLabel'))}: <a href="${escapeHTML(recipe.source.url)}" target="_blank" rel="noopener noreferrer">${escapeHTML(recipe.source.title)}</a></p>`:''}<p class="fine-print">${escapeHTML(t('nutritionAmount'))}</p><p class="fine-print">${escapeHTML(t('dietNote'))}</p>${detailRelated(recipe)}`;
+  document.getElementById('recipe-detail').innerHTML=`<div class="dialog-heading"><div><p class="eyebrow">${escapeHTML(t('recipeShortBadge'))} / ${escapeHTML(t(recipe.meal))}</p><h2 id="recipe-dialog-title">${escapeHTML(copy.title)}</h2><div class="recipe-detail-meta"><span>${recipe.minutes} ${escapeHTML(t('minutes'))}</span><span id="recipe-portions-summary">${escapeHTML(t('servings',{count:portionCount}))}</span>${favoriteButton(recipe)}</div><div class="portion-controls"><label><span>${escapeHTML(t('servingsControl'))}</span><input id="recipe-portions" type="number" inputmode="numeric" min="1" max="24" step="1" value="${portionCount}"></label><button id="add-shopping" class="button secondary" data-shopping-recipe="${recipe.id}">${escapeHTML(t('addShopping'))}</button></div></div><button class="icon-button" data-close-dialog="recipe-dialog" aria-label="${escapeHTML(t('close'))}">×</button></div>${recipe.photo?`<figure class="recipe-detail-photo"><img src="${escapeHTML(recipe.photo)}" alt="${escapeHTML(copy.title)}" decoding="async"><figcaption>${escapeHTML(t('photoIllustrative'))}${recipe.photoCredit?` · ${escapeHTML(t('photoBy',{author:recipe.photoCredit.author}))}`:''}</figcaption></figure>`:''}${detailActions(recipe,portionCount)}<span class="tag demo-tag">${escapeHTML(t('recipeExample'))}</span><div class="recipe-detail-grid"><div><h3>${escapeHTML(t('ingredients'))}</h3><ul id="recipe-ingredients">${scaledIngredients(recipe,portionCount).map(ingredient=>`<li>${escapeHTML(ingredientText(ingredient))}</li>`).join('')}</ul></div><div><h3>${escapeHTML(t('preparation'))}</h3><ol>${copy.steps.map(step=>`<li>${escapeHTML(step)}</li>`).join('')}</ol></div></div>${nutrientFacts(recipe)}<aside class="recipe-detail-note"><strong>${escapeHTML(t('reviewNote'))}</strong><p>${escapeHTML(copy.note)}</p></aside><aside class="recipe-detail-note"><strong>${escapeHTML(t('substitutions'))}</strong><ul>${copy.substitutions.map(item=>`<li>${escapeHTML(item)}</li>`).join('')}</ul></aside>${recipe.source?`<p class="fine-print recipe-source">${escapeHTML(t('recipeSourceLabel'))}: <a href="${escapeHTML(recipe.source.url)}" target="_blank" rel="noopener noreferrer">${escapeHTML(recipe.source.title)}</a></p>`:''}<p class="fine-print">${escapeHTML(t('nutritionAmount'))}</p><p class="fine-print">${escapeHTML(t('dietNote'))}</p>${detailRelated(recipe)}`;
 }
 export function renderRecipes() {
   const focusedMeal=document.activeElement?.dataset.meal;
@@ -35,6 +57,7 @@ export function renderRecipes() {
   document.getElementById('recipe-meal-filters').innerHTML=mealKeys.map(meal=>`<button data-meal="${meal}" aria-pressed="${meal===selectedMeal}">${escapeHTML(t(meal==='all'?'allMeals':meal))}</button>`).join('');
   const recipes=getRecipeList(getState(),data.recipes,{language:language(),query:document.getElementById('recipe-search').value,lessSalt:document.getElementById('recipe-sodium').checked,favorites:document.getElementById('recipe-favorites').checked,meal:selectedMeal,status:document.getElementById('recipe-unvalidated').checked?'sample-unvalidated':''}).filter(extraFilter);
   document.getElementById('recipe-count').textContent=t('recipesFound',{count:recipes.length});
+  renderAlbum();
   const grid=document.getElementById('recipe-grid');
   grid.innerHTML=recipes.length?recipes.map(recipe=>{
     const copy=recipe[language()],index=data.recipes.findIndex(r=>r.id===recipe.id)+1;
@@ -59,6 +82,7 @@ export function initRecipes() {
     if(event.target.closest('[data-reset-recipe]'))reset();
   };
   document.getElementById('recipe-grid').addEventListener('click',recipeClick);
+  document.getElementById('recipe-album')?.addEventListener('click',recipeClick);
   document.getElementById('recipe-detail').addEventListener('click',recipeClick);
   document.getElementById('recipe-detail').addEventListener('input',event=>{if(event.target.id!=='recipe-portions')return;const value=Number(event.target.value);if(!Number.isInteger(value)||value<1||value>24)return;portionCount=value;const recipe=data.recipes.find(r=>r.id===openedRecipe);document.getElementById('recipe-ingredients').innerHTML=scaledIngredients(recipe,portionCount).map(item=>`<li>${escapeHTML(ingredientText(item))}</li>`).join('');document.getElementById('recipe-portions-summary').textContent=t('servings',{count:portionCount});document.querySelector('#recipe-detail .cook-actions').outerHTML=detailActions(recipe,portionCount);});
   document.getElementById('recipe-detail').addEventListener('change',event=>{if(event.target.id==='recipe-portions'){const value=Number(event.target.value);if(!Number.isInteger(value)||value<1||value>24){event.target.value=portionCount;return;}if(value===portionCount)return;portionCount=value;renderRecipeDetail();document.getElementById('recipe-portions').focus();}});

@@ -2385,5 +2385,16 @@
   "clCtaTitle": "¿Notaste algún cambio en tu cuerpo?",
   "clCtaSigns": "Revisar las señales",
   "clCtaVisit": "Preparar mi consulta",
-  "recipeSourceLabel": "Receta adaptada de"
+  "recipeSourceLabel": "Receta adaptada de",
+  "albumTitle": "Platos típicos, con menos sal",
+  "albumLead": "Comidas de México y la cocina latina en versiones de organizaciones renales: American Kidney Fund, DaVita y National Kidney Foundation. Cada una dice cuánta sal, potasio y fósforo trae por porción.",
+  "albumOpen": "Ver la receta: {title}",
+  "albumSodium": "Sodio",
+  "albumPotassium": "Potasio",
+  "albumPhosphorus": "Fósforo",
+  "albumPerServing": "Por porción, según la fuente",
+  "albumNote": "Los valores son los que publica cada organización por porción. Tus límites dependen de tu función renal: confírmalos con tu médico o nutricionista.",
+  "recipeNutrientsTitle": "Por porción, según la fuente",
+  "recipeKcal": "Calorías",
+  "recipeProtein": "Proteína"
 }
