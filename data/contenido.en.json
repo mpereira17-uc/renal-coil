@@ -2396,5 +2396,9 @@
   "albumNote": "Values are the ones each organization publishes per serving. Your limits depend on your kidney function: confirm them with your doctor or dietitian.",
   "recipeNutrientsTitle": "Per serving, from the source",
   "recipeKcal": "Calories",
-  "recipeProtein": "Protein"
+  "recipeProtein": "Protein",
+  "dataModeDemoTitle": "You are looking at an example",
+  "dataModeDemoText": "These measurements are made up to show how this section works. They do not belong to anyone.",
+  "dataModeRealTitle": "You are looking at your records",
+  "dataModeRealText": "Only your measurements. They stay in this browser and are not sent anywhere."
 }

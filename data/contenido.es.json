@@ -2396,5 +2396,9 @@
   "albumNote": "Los valores son los que publica cada organización por porción. Tus límites dependen de tu función renal: confírmalos con tu médico o nutricionista.",
   "recipeNutrientsTitle": "Por porción, según la fuente",
   "recipeKcal": "Calorías",
-  "recipeProtein": "Proteína"
+  "recipeProtein": "Proteína",
+  "dataModeDemoTitle": "Estás viendo un ejemplo",
+  "dataModeDemoText": "Estas mediciones son inventadas para mostrar cómo funciona la sección. No son de ninguna persona.",
+  "dataModeRealTitle": "Estás viendo tus registros",
+  "dataModeRealText": "Solo tus mediciones. Se guardan en este navegador y no se envían a ningún lado."
 }

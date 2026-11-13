@@ -38,8 +38,8 @@ function renderTable(records, mode) {
 }
 export function renderMeasurements() {
   const state=getState(),mode=state.dataMode,records=visibleRecords();
-  document.getElementById('data-mode-tag').textContent=t(mode==='demo'?'demoMode':'realMode');
-  document.getElementById('data-mode-description').textContent=t(mode==='demo'?'demoDescription':'realDescription');
+  document.getElementById('data-mode-tag').textContent=t(mode==='demo'?'dataModeDemoTitle':'dataModeRealTitle');
+  document.getElementById('data-mode-description').textContent=t(mode==='demo'?'dataModeDemoText':'dataModeRealText');
   document.getElementById('toggle-demo').textContent=t(mode==='demo'?'showReal':'showDemo');
   document.querySelector('.data-mode-bar').classList.toggle('personal',mode==='personal');
   document.getElementById('clear-records').disabled=mode==='demo'||state.records.length===0;
