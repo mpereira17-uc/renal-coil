@@ -2,7 +2,7 @@ import { EVENTOS, on } from './events.js';
 // Sección de infografías: causa → consecuencia → cuidados, cifras con contexto y glosario.
 // Los textos viven en data/contenido.*.json (claves info*). Los iconos son SVG propios.
 import { content, t } from './i18n.js';
-import { escapeHTML } from './ui.js';
+import { escapeHTML, notice } from './ui.js';
 import { pictogram } from './education.js';
 
 const ICONS = {
@@ -77,7 +77,7 @@ function renderStats() {
   document.getElementById('info-stats').innerHTML = stats.map((stat, index) => {
     const [total, marked] = STAT_PICTOGRAMS[index];
     const verified = index === 2;
-    return `<article class="info-stat ${verified ? 'verified' : 'draft'}"><p class="small-label">${escapeHTML(stat.label)}</p>${pictogram(total, marked)}<p class="info-stat-text">${escapeHTML(stat.text)}</p><span class="tag ${verified ? '' : 'demo-tag'}">${escapeHTML(stat.badge)}</span></article>`;
+    return `<article class="info-stat ${verified ? 'verified' : 'draft'}"><p class="small-label">${escapeHTML(stat.label)}</p>${pictogram(total, marked)}<p class="info-stat-text">${escapeHTML(stat.text)}</p>${verified ? `<span class="tag">${escapeHTML(stat.badge)}</span>` : notice('review', stat.badge, '', {compact: true})}</article>`;
   }).join('');
 }
 

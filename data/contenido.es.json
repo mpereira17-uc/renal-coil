@@ -2400,5 +2400,16 @@
   "dataModeDemoTitle": "Estás viendo un ejemplo",
   "dataModeDemoText": "Estas mediciones son inventadas para mostrar cómo funciona la sección. No son de ninguna persona.",
   "dataModeRealTitle": "Estás viendo tus registros",
-  "dataModeRealText": "Solo tus mediciones. Se guardan en este navegador y no se envían a ningún lado."
+  "dataModeRealText": "Solo tus mediciones. Se guardan en este navegador y no se envían a ningún lado.",
+  "avisoDemoText": "Son mediciones inventadas. Cuando registres las tuyas, aparecerán aquí.",
+  "avisoRealText": "Guardados solo en este navegador.",
+  "avisoValidationText": "Un profesional de salud todavía debe revisar esta información. Úsala como guía, no como indicación médica.",
+  "avisoRecipeTitle": "Receta de ejemplo",
+  "avisoRecipeText": "Revísala con tu nutricionista: la sal, el potasio y la proteína que te convienen dependen de tu función renal.",
+  "avisoFoodDbTitle": "Base de alimentos de ejemplo",
+  "avisoFoodDbText": "Los valores nutricionales son aproximados y todavía no están validados.",
+  "avisoConceptTitle": "Simulación educativa",
+  "avisoConceptText": "Muestra la idea general. No sirve para diagnosticar ni para decidir un tratamiento.",
+  "avisoReviewText": "Lo escribieron estudiantes de medicina y lo están revisando profesionales de salud.",
+  "avisoSourcesText": "Las fuentes están citadas; falta la revisión final del equipo académico del proyecto."
 }

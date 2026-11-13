@@ -4,7 +4,7 @@ import { EVENTOS, on } from './events.js';
 import { data, loadData } from './data.js';
 import { content, t, language, formatNumber, formatDate, translateDOM } from './i18n.js';
 import { getState, updateState, localDate, demoRecords } from './store.js';
-import { escapeHTML as e, toast, openDialog, closeDialog } from './ui.js';
+import { escapeHTML as e, toast, openDialog, closeDialog, notice } from './ui.js';
 import { currentRoute } from './router.js';
 import { initCarePlan, upcomingAppointments } from './care-plan.js';
 import { isReducedMotion } from './preferences.js';
@@ -84,7 +84,7 @@ function renderToday() {
   const allChapters = content().sections.length + totalLearn;
   const dateLabel = formatDate(localDate(), {weekday: 'long', day: 'numeric', month: 'long'});
   const ring = (value, max) => `<svg class="today-ring" viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="18"/>${value ? `<circle class="value" cx="22" cy="22" r="18" pathLength="100" stroke-dasharray="${Math.round(value / max * 100)} 100"/>` : ''}</svg>`;
-  target.innerHTML = `<div class="section-heading"><div><p class="eyebrow">${e(t('todayEyebrow'))}</p><h2 id="today-title">${e(t('todayTitle', {date: dateLabel}))}</h2></div>${state.dataMode === 'demo' ? `<span class="tag demo-tag">${e(t('demoMode'))}</span>` : ''}</div>
+  target.innerHTML = `<div class="section-heading"><div><p class="eyebrow">${e(t('todayEyebrow'))}</p><h2 id="today-title">${e(t('todayTitle', {date: dateLabel}))}</h2></div>${state.dataMode === 'demo' ? notice('example', t('dataModeDemoTitle'), t('avisoDemoText')) : ''}</div>
   <div class="today-grid">
     <a class="today-card" href="#seguimiento" data-section="seguimiento"><span class="today-icon">${svg(icons.drop)}</span><span class="today-label">${e(t('todayLatest'))}</span>
       ${latestRows.length ? `<dl class="today-latest">${latestRows.map(([key, record, value, unit]) => `<div><dt>${e(t(key))}</dt><dd><strong>${e(value(record))}</strong> <small>${e(unit)}</small><span>${e(formatDate(record.date, {day: 'numeric', month: 'short'}))}</span></dd></div>`).join('')}</dl>` : `<span class="today-sub">${e(t('todayNoRecord'))}</span>`}
@@ -248,7 +248,7 @@ function initBackToTop() {
 function renderPrivacy() {
   const target = document.getElementById('privacy-section');
   if (!target) return;
-  target.innerHTML = `<div class="section-heading"><h2>${e(t('privacyPageTitle'))}</h2><span class="tag demo-tag">${e(t('validationPending'))}</span></div><div class="privacy-grid">${content().privacyPage.map((block, i) => `<article><span class="privacy-index">${String(i + 1).padStart(2, '0')}</span><h3>${e(block.title)}</h3><p>${e(block.text)}</p></article>`).join('')}</div>`;
+  target.innerHTML = `<div class="section-heading"><h2>${e(t('privacyPageTitle'))}</h2>${notice('review', t('validationPending'), t('avisoValidationText'))}</div><div class="privacy-grid">${content().privacyPage.map((block, i) => `<article><span class="privacy-index">${String(i + 1).padStart(2, '0')}</span><h3>${e(block.title)}</h3><p>${e(block.text)}</p></article>`).join('')}</div>`;
 }
 function initPrivacyPage() {
   const sources = document.querySelector('[data-view="proyecto"] .sources-section');

@@ -83,6 +83,46 @@ html[data-theme="dark"] #route-seguimiento .data-mode-bar.personal { --dm-accent
 #route-seguimiento .profile-select select { border-radius: 999px; min-height: 40px; min-width: 6rem; }
 
 /* =========================================================
+   1b · Aviso común (ui.js → notice): reemplaza las etiquetas "Datos de ejemplo", "Validación pendiente"…
+   Mismo lenguaje que el aviso de Mi seguimiento, en tamaño secundario.
+   ========================================================= */
+.aviso {
+  --av-accent: var(--cl-blue); --av-soft: var(--cl-sky); --av-line: rgb(20 109 136 / 18%); --av-icon-ink: #fff;
+  display: flex; align-items: flex-start; gap: .75rem;
+  max-width: 34rem; margin: 0; padding: .75rem 1rem .75rem .85rem; border-radius: 12px;
+  background: var(--av-soft);
+  box-shadow: inset 3px 0 0 var(--av-accent), inset 0 0 0 1px var(--av-line);
+  text-align: left; font-family: var(--sans);
+}
+.aviso-example { --av-accent: var(--amber); --av-soft: var(--amber-soft); --av-line: var(--warning-line); }
+html[data-theme="dark"] .aviso { --av-accent: #1f5f74; --av-line: rgb(141 204 223 / 22%); }
+html[data-theme="dark"] .aviso-example { --av-accent: var(--amber); --av-line: var(--warning-line); --av-icon-ink: #2a2214; }
+
+.aviso-icon {
+  flex: none; display: grid; place-items: center; width: 32px; height: 32px; border-radius: 8px;
+  background: var(--av-accent); color: var(--av-icon-ink);
+}
+.aviso-body { display: flex; flex-direction: column; gap: .15rem; min-width: 0; padding-top: .3rem; }
+.aviso-body strong { font-size: .9375rem; font-weight: 700; line-height: 1.3; color: var(--ink); }
+.aviso-body > span { font-size: .875rem; line-height: 1.5; color: var(--text); text-wrap: pretty; }
+
+/* Compacto: solo ícono y título (por ejemplo, en las tarjetas de cifras). */
+.aviso-compact { display: inline-flex; align-items: center; gap: .5rem; padding: .35rem .75rem .35rem .4rem; border-radius: 10px; }
+.aviso-compact .aviso-icon { width: 26px; height: 26px; border-radius: 7px; }
+.aviso-compact .aviso-icon svg { width: 15px; height: 15px; }
+.aviso-compact .aviso-body { padding-top: 0; }
+.aviso-compact .aviso-body strong { font-size: .875rem; }
+
+/* Dónde va cada uno */
+.section-heading > .aviso { flex: 0 1 30rem; }
+.today-panel .section-heading { align-items: flex-start; gap: 1rem; flex-wrap: wrap; }
+.mini-tracking .aviso, .reference-content > .aviso, .recipe-detail .aviso, #recipe-detail > .aviso { margin-bottom: 1rem; }
+#recipe-detail > .aviso { margin-top: 1rem; }
+.hero-actions .aviso, .page-intro .aviso { flex-basis: 100%; margin-top: .25rem; }
+.filter-controls > .aviso, .concept-layout ~ .aviso { margin-bottom: .75rem; }
+.info-stat .aviso-compact { margin-top: .75rem; }
+
+/* =========================================================
    2 · Infografías: "Del azúcar en la sangre al filtro del riñón"
    ========================================================= */
 

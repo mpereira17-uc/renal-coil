@@ -2400,5 +2400,16 @@
   "dataModeDemoTitle": "You are looking at an example",
   "dataModeDemoText": "These measurements are made up to show how this section works. They do not belong to anyone.",
   "dataModeRealTitle": "You are looking at your records",
-  "dataModeRealText": "Only your measurements. They stay in this browser and are not sent anywhere."
+  "dataModeRealText": "Only your measurements. They stay in this browser and are not sent anywhere.",
+  "avisoDemoText": "These are made-up measurements. Yours will appear here once you add them.",
+  "avisoRealText": "Stored only in this browser.",
+  "avisoValidationText": "A health professional still needs to review this information. Use it as a guide, not as medical advice.",
+  "avisoRecipeTitle": "Sample recipe",
+  "avisoRecipeText": "Check it with your dietitian: the salt, potassium and protein that suit you depend on your kidney function.",
+  "avisoFoodDbTitle": "Sample food database",
+  "avisoFoodDbText": "Nutrition values are approximate and not validated yet.",
+  "avisoConceptTitle": "Educational simulation",
+  "avisoConceptText": "It shows the general idea. It cannot be used to diagnose or to decide on a treatment.",
+  "avisoReviewText": "Written by medical students and being reviewed by health professionals.",
+  "avisoSourcesText": "Sources are cited; the project's academic team still has to do the final review."
 }

@@ -5,7 +5,7 @@ import { EVENTOS, on } from './events.js';
 import { data } from './data.js';
 import { t, formatNumber, formatDate, language, content } from './i18n.js';
 import { getState, updateState, localDate, shiftDate, demoRecords } from './store.js';
-import { escapeHTML, icon, toast, openDialog, closeDialog, confirmAction, emptyState } from './ui.js';
+import { escapeHTML, icon, toast, openDialog, closeDialog, confirmAction, emptyState, notice } from './ui.js';
 import { makeChart, attachChartTooltip } from './charts.js';
 import { measurementCSV, measurementKeys } from './csv.js';
 import { getVisibleRecords, getChartSeries, glucoseCounts } from './selectors.js';
@@ -85,7 +85,7 @@ function openReportGuide() {
   openDialog('report-guide');
 }
 function renderReferences() {
-  document.getElementById('reference-content').innerHTML=`<div class="reference-content"><span class="tag demo-tag">${escapeHTML(t('validationPending'))}</span><p style="margin-top:1rem">${escapeHTML(t('referencesDisclaimer'))}</p><table class="reference-table"><tbody>${fieldKeys.filter(key=>data.ranges.metrics[key].exampleBand).map(key=>`<tr><td>${escapeHTML(t(key))}</td><td>${data.ranges.metrics[key].exampleBand.map(n=>formatNumber(n,2)).join('–')} ${escapeHTML(data.ranges.metrics[key].unit)}</td></tr>`).join('')}</tbody></table><p>${escapeHTML(t('referencesIndividual'))}</p><p class="fine-print">${escapeHTML(t('unitsDisclaimer'))}</p></div>`;
+  document.getElementById('reference-content').innerHTML=`<div class="reference-content">${notice('review', t('validationPending'), t('avisoValidationText'))}<p style="margin-top:1rem">${escapeHTML(t('referencesDisclaimer'))}</p><table class="reference-table"><tbody>${fieldKeys.filter(key=>data.ranges.metrics[key].exampleBand).map(key=>`<tr><td>${escapeHTML(t(key))}</td><td>${data.ranges.metrics[key].exampleBand.map(n=>formatNumber(n,2)).join('–')} ${escapeHTML(data.ranges.metrics[key].unit)}</td></tr>`).join('')}</tbody></table><p>${escapeHTML(t('referencesIndividual'))}</p><p class="fine-print">${escapeHTML(t('unitsDisclaimer'))}</p></div>`;
 }
 function exportCSV() {
   const records=visibleRecords();if(!records.length){toast(t('emptyExport'));return;}

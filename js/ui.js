@@ -54,4 +54,16 @@ export function initDialogs() {
   document.getElementById('confirm-cancel').addEventListener('click',()=>closeDialog('confirm-dialog'));
   document.getElementById('confirm-accept').addEventListener('click',()=>{const resolve=confirmResolve;confirmResolve=null;closeDialog('confirm-dialog');resolve?.(true);});
 }
+// Aviso común (ícono + título + explicación). Reemplaza las etiquetas sueltas tipo "Datos de ejemplo".
+// kind: 'example' (ámbar: datos o recetas de ejemplo), 'review' (pendiente de revisión), 'info' (ilustrativo).
+// title y text llegan ya traducidos; se escapan aquí. compact: solo ícono + título, para espacios chicos.
+const NOTICE_ICONS = {
+  example: '<path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.7 3h10.6a2 2 0 0 0 1.7-3l-5-9V3"/><path d="M7.5 15h9"/>',
+  review: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+  info: '<circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.01"/>'
+};
+export function notice(kind, title, text = '', {compact = false} = {}) {
+  const k = NOTICE_ICONS[kind] ? kind : 'info';
+  return `<div class="aviso aviso-${k}${compact ? ' aviso-compact' : ''}" role="note"><span class="aviso-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">${NOTICE_ICONS[k]}</svg></span><span class="aviso-body"><strong>${escapeHTML(title)}</strong>${text && !compact ? `<span>${escapeHTML(text)}</span>` : ''}</span></div>`;
+}
 export function emptyState(title, description = '', button = '') { return `<div class="empty-state"><h3>${escapeHTML(t(title))}</h3>${description?`<p>${escapeHTML(t(description))}</p>`:''}${button}</div>`; }

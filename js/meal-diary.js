@@ -5,7 +5,7 @@ import { data } from './data.js';
 import { language, t, content } from './i18n.js';
 import { getState, updateState, localDate, shiftDate, parseDate, validDate, validateMeal, validateMealGoals, mealSlots } from './store.js';
 import { currentRoute } from './router.js';
-import { escapeHTML as e, toast, openDialog, closeDialog, confirmAction } from './ui.js';
+import { escapeHTML as e, toast, openDialog, closeDialog, confirmAction, notice } from './ui.js';
 import { downloadText, datedName } from './files.js';
 import { recipeForMealName } from './cocina.js';
 import { NUTRIENTS, UNITS, GOAL_NUTRIENTS, foodMap, mealTotals, dayTotals, compareMeals, goalProgress, roundNutrient } from './meal-math.js';
@@ -87,7 +87,7 @@ export function renderDiary() {
   if (!host || !data.foods) return;
   const open = host.querySelector('.diary-goals')?.open === true;
   const dayMeals = meals().filter(meal => meal.date === day);
-  host.innerHTML = `<div class="diary-head"><div><p class="eyebrow">${e(t('diaryEyebrow'))}</p><h2 id="diary-title">${e(t('diaryTitle'))}</h2><p class="diary-intro">${e(t('diaryIntro'))}</p><span class="tag demo-tag">${e(t('diaryDbBadge'))}</span></div><button class="button primary" data-action="add-meal">${e(t('diaryAdd'))}</button></div>
+  host.innerHTML = `<div class="diary-head"><div><p class="eyebrow">${e(t('diaryEyebrow'))}</p><h2 id="diary-title">${e(t('diaryTitle'))}</h2><p class="diary-intro">${e(t('diaryIntro'))}</p>${notice('example', t('avisoFoodDbTitle'), t('avisoFoodDbText'))}</div><button class="button primary" data-action="add-meal">${e(t('diaryAdd'))}</button></div>
   <div class="diary-day"><button class="icon-button" data-action="prev-day" aria-label="${e(t('diaryPrevDay'))}">‹</button><label class="day-picker"><span class="sr-only">${e(t('diaryDate'))}</span><input id="diary-date" type="date" value="${day}"><strong>${e(dayLabel(day))}</strong></label><button class="icon-button" data-action="next-day" aria-label="${e(t('diaryNextDay'))}">›</button><button class="text-link" data-action="today"${day === localDate() ? ' disabled' : ''}>${e(t('diaryToday'))}</button></div>
   ${summaryHTML(dayMeals)}${goalsHTML(open)}${mealsHTML(dayMeals)}${compareHTML()}${toolsHTML()}<p class="fine-print diary-footnote">${e(t('diaryDisclaimer'))} ${e(data.foods.note?.[language()] || '')}</p>`;
 }
