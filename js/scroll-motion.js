@@ -28,7 +28,9 @@ export function initScrollMotion() {
       // Al salir de la portada o de una franja, el texto sube y se desvanece un poco.
       document.querySelectorAll('.route:not([hidden]) > .page-intro.sh-hero, .route:not([hidden]) .cl-hero').forEach(band => {
         const copy = band.classList.contains('cl-hero') ? band.querySelector('.cl-hero-copy') : band.querySelectorAll(':scope > :not(.sh-toggle)');
-        gsap.to(copy, {y: -40, opacity: .35, ease: 'none', scrollTrigger: {trigger: band, start: 'center 40%', end: 'bottom top', scrub: true}});
+        // Inicio explícito (visible): si no, GSAP toma la opacidad 0 que pone html.dt-entrada mientras prepara la entrada
+        // y, al volver arriba, deja la portada vacía. immediateRender:false deja que la entrada de detalles.js mande al cargar.
+        gsap.fromTo(copy, {y: 0, opacity: 1}, {y: -40, opacity: .35, ease: 'none', immediateRender: false, scrollTrigger: {trigger: band, start: 'center 40%', end: 'bottom top', scrub: true}});
       });
       // Infografías: la línea bajo los cuatro pasos se llena mientras se leen.
       document.querySelectorAll('.route:not([hidden]) .info-flow').forEach(flow => {

@@ -1,0 +1,35 @@
+/* Legibilidad: tamaños mínimos y contraste para lectura cómoda (público con diabetes, a menudo mayor).
+   Se carga al final para ajustar sin reescribir los demás archivos. Solo tamaño y color: no cambia ids ni avisos médicos. */
+
+/* ---------- Texto de tarjetas: de ~15 px a 16-17 px ---------- */
+.cl-why-item p,
+.quick-card .quick-text { font-size: 1rem; line-height: 1.55; }
+
+/* ---------- Textos pequeños: nada por debajo de 13 px ---------- */
+.today-latest dt { font-size: .875rem; }
+.today-latest dd span { font-size: .8125rem; }
+.today-sub,
+.learning-progress > div span { font-size: .9375rem; }
+.today-link,
+.learning-progress .today-resume { font-size: .9375rem; }
+.tag,
+.demo-tag,
+.specimen-label { font-size: .8125rem; }
+.small-label,
+.eyebrow { font-size: max(.8125rem, 13px); }
+.fine-print,
+.cl-stats-source { font-size: max(.875rem, 14px); line-height: 1.5; }
+.ks-mono { font-size: max(.8125rem, 13px); }
+.hero-footnote span { font-size: .9375rem; }
+.brand-project { font-size: .75rem; }
+
+/* ---------- Contraste en tema oscuro ----------
+   --cl-blue (#146d88) es el azul del tema claro: sobre el fondo oscuro da 2.5:1.
+   Para TEXTO se usa el azul claro del tema oscuro (≈ 8:1). Los botones con fondo azul y texto blanco no cambian. */
+html[data-theme="dark"] :is(.today-link, .today-resume) { color: var(--blue) !important; }
+html[data-theme="dark"] .today-link::after { background: var(--blue); }
+html[data-theme="dark"] .learning-progress .today-resume { border-color: var(--control-border); }
+html[data-theme="dark"] .learning-progress .today-resume:hover { background: var(--blue); border-color: var(--blue); color: var(--action-text) !important; }
+html[data-theme="dark"] #main-nav a:hover,
+html[data-theme="dark"] body #main-nav a[aria-current="page"] { color: var(--blue) !important; }
+html[data-theme="dark"] #main-nav a::after { background: var(--blue); }
