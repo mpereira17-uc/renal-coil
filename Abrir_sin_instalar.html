@@ -6250,6 +6250,98 @@ html[data-motion="reduced"] .album-open { transition: none; }
 html[data-motion="reduced"] .album-open:is(:hover, :active),
 html[data-motion="reduced"] .album-open:hover .album-cta-arrow { transform: none; }
 
+/* Coherencia con Inicio: Mi seguimiento e Infografías usan el mismo lenguaje que la portada.
+   - Botones en píldora de 50 px: principal relleno en --cl-blue, secundario en superficie con borde fino.
+   - Íconos en cuadrado relleno (--cl-blue / #1f5f74 en oscuro) con el ícono en blanco, como .cl-why-icon y .today-icon.
+   - Tarjetas alineadas a la izquierda, con radio de 10 px.
+   Solo estilos: no cambia ids, textos ni avisos. */
+
+/* =========================================================
+   1 · Mi seguimiento: barras y botones de herramientas
+   ========================================================= */
+
+/* Píldora secundaria (igual que "Ver mi seguimiento" en la portada). */
+html body #route-seguimiento :is(#toggle-demo, #story-open, #measurements-print),
+html body #route-seguimiento .tracking-tools :is(.button, .text-link) {
+  display: inline-flex; align-items: center; justify-content: center; gap: .45rem;
+  min-height: 50px; padding: .55rem 1.5rem; border-radius: 999px;
+  background: var(--surface); border: 1px solid var(--line); color: var(--cl-navy);
+  font-size: .9375rem; font-weight: 600; text-decoration: none; box-shadow: none;
+}
+html[data-theme="dark"] body #route-seguimiento :is(#toggle-demo, #story-open, #measurements-print),
+html[data-theme="dark"] body #route-seguimiento .tracking-tools :is(.button, .text-link) { color: var(--ink); border-color: var(--control-border); }
+
+/* Píldora principal (igual que "Comparar el filtrado"): la acción que más ayuda en consulta. */
+html body #route-seguimiento #consultation-print {
+  background: var(--cl-blue); border-color: var(--cl-blue); color: #fff;
+}
+html body #route-seguimiento :is(#toggle-demo, #story-open, #measurements-print, #consultation-print):hover { border-color: var(--cl-blue); }
+html body #route-seguimiento #consultation-print:hover { background: var(--cl-blue-dark); border-color: var(--cl-blue-dark); }
+html body #route-seguimiento :is(#toggle-demo, #story-open, #measurements-print, #consultation-print):focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+
+/* Fila de herramientas: el interruptor a la izquierda y los botones juntos, sin huecos raros. */
+#route-seguimiento .tracking-tools { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem; }
+#route-seguimiento .tracking-tools .checkbox-control { margin-right: auto; }
+
+/* "Solo glucosa" como píldora de filtro, igual que los filtros de recetas. */
+#route-seguimiento .tracking-tools .checkbox-control {
+  display: inline-flex; align-items: center; gap: .6rem;
+  min-height: 50px; padding: .5rem 1.25rem .5rem 1rem; border-radius: 999px;
+  background: var(--surface); border: 1px solid var(--line); cursor: pointer;
+  font-weight: 600; color: var(--ink);
+}
+#route-seguimiento .tracking-tools .checkbox-control input { width: 20px; height: 20px; margin: 0; accent-color: var(--cl-blue); }
+#route-seguimiento .tracking-tools .checkbox-control:has(input:checked) { border-color: var(--cl-blue); background: var(--accent-soft); }
+html[data-theme="dark"] #route-seguimiento .tracking-tools .checkbox-control { border-color: var(--control-border); }
+html[data-theme="dark"] #route-seguimiento .tracking-tools .checkbox-control input { accent-color: var(--blue); }
+
+/* Barras de aviso: menos "caja dentro de caja". Fondo suave de la portada, sin borde. */
+#route-seguimiento :is(.workspace-strip, .data-mode-bar) {
+  border: 0 !important; box-shadow: none !important; border-radius: 14px;
+  background: var(--cl-sky) !important;
+}
+#route-seguimiento .workspace-strip { padding: .6rem 1rem; }
+#route-seguimiento .data-mode-bar { padding: .75rem .75rem .75rem 1.1rem; align-items: center; }
+#route-seguimiento .profile-select select { border-radius: 999px; min-height: 40px; min-width: 6rem; }
+
+/* =========================================================
+   2 · Infografías: "Del azúcar en la sangre al filtro del riñón"
+   ========================================================= */
+
+.info-flow { counter-reset: flow; }
+.flow-step { counter-increment: flow; text-align: left; border-radius: 10px; padding: 1.5rem 1.4rem 1.4rem; }
+.flow-step p { margin: 0; }
+
+/* Ícono en cuadrado relleno, como en "¿Por qué cuidar los riñones?". */
+.flow-icon {
+  width: 56px; height: 56px; margin: 0 0 1rem; border-radius: 10px;
+  background: var(--cl-blue); color: #fff;
+}
+.flow-icon svg { width: 28px; height: 28px; }
+html[data-theme="dark"] .flow-icon { background: #1f5f74; color: #fff; }
+
+/* Sin insignia flotante: el número va como "01", igual que en el explorador del riñón. */
+.flow-number { display: none; }
+.flow-step h3::before {
+  content: "0" counter(flow);
+  content: "0" counter(flow) / "";
+  display: block; margin-bottom: .3rem;
+  font: 700 .875rem/1 var(--sans); letter-spacing: .02em; color: var(--blue);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Flecha entre pasos: a la altura del ícono, que ahora está a la izquierda arriba. */
+@media (min-width: 761px) {
+  .flow-step:not(:last-child)::after { top: calc(1.5rem + 28px - .6rem); }
+}
+
+/* Celular: el ícono a la izquierda y el texto al lado, como las tarjetas de la portada en celular. */
+@media (max-width: 760px) {
+  .flow-step { grid-template-columns: 56px minmax(0, 1fr); align-items: start; }
+  .flow-icon { margin: 0; grid-row: span 2; }
+  .flow-step:not(:last-child)::after { left: calc(28px + 1.25rem - .6rem); }
+}
+
 /* Legibilidad: tamaños mínimos y contraste para lectura cómoda (público con diabetes, a menudo mayor).
    Se carga al final para ajustar sin reescribir los demás archivos. Solo tamaño y color: no cambia ids ni avisos médicos. */
 
