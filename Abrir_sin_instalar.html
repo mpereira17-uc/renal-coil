@@ -6289,6 +6289,15 @@ html[data-theme="dark"] #main-nav a::after { background: var(--blue); }
    (antes quedaba blanco sobre blanco). */
 html[data-theme="dark"] .recipe-country { color: #203442; }
 
+/* ---------- Guía emergente (tour) ----------
+   Usaba var(--ink) de fondo: oscuro en tema claro, pero casi blanco en tema oscuro, con texto blanco encima (1.1:1).
+   Ahora el fondo es un azul marino fijo en los dos temas, y el botón "Siguiente" lleva texto oscuro fijo. */
+.tour-card { background: #0b2f45; }
+.tour-actions .tour-next { color: #0b2f45; }
+html[data-theme="dark"] .tour-card { border: 1px solid #5b7588; box-shadow: 0 24px 60px rgb(0 0 0 / 55%); }
+.tour-actions .tour-skip { color: rgb(255 255 255 / 85%); }
+.tour-card .tour-count { color: rgb(255 255 255 / 75%); }
+
 </style>
 </head>
 <body>
