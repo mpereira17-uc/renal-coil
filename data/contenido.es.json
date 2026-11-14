@@ -1150,6 +1150,42 @@
       ],
       "source": "mx",
       "draft": "redactado por el equipo de diseño, por validar"
+    },
+    {
+      "term": "Lesión renal aguda",
+      "def": "Pérdida repentina de la función de los riñones, en horas o días.",
+      "alt": "Acute kidney injury",
+      "draft": true
+    },
+    {
+      "term": "Acidosis tubular renal",
+      "def": "Problema del riñón para eliminar ácidos y potasio, que se acumulan en la sangre.",
+      "alt": "Renal tubular acidosis",
+      "draft": true
+    },
+    {
+      "term": "Hiperpotasemia",
+      "def": "Potasio alto en la sangre. Puede alterar el ritmo del corazón.",
+      "alt": "Hyperkalemia",
+      "draft": true
+    },
+    {
+      "term": "Eritropoyetina",
+      "def": "Hormona que producen los riñones y que estimula la formación de glóbulos rojos.",
+      "alt": "Erythropoietin",
+      "draft": true
+    },
+    {
+      "term": "Anemia renal",
+      "def": "Falta de glóbulos rojos porque los riñones dañados producen poca eritropoyetina.",
+      "alt": "Renal anemia",
+      "draft": true
+    },
+    {
+      "term": "Enfermedad renal terminal",
+      "def": "Etapa más avanzada de la enfermedad renal crónica (estadio 5); requiere diálisis o trasplante.",
+      "alt": "End-stage kidney disease",
+      "draft": true
     }
   ],
   "infoGlossaryNote": "Definiciones para estudio; la revisión académica está pendiente.",
@@ -1395,7 +1431,7 @@
   "bankOther": "En inglés",
   "bankPendingDef": "Definición pendiente del equipo médico.",
   "qsLearnTitle": "Entender la enfermedad",
-  "qsLearnText": "Causas, factores de riesgo, diagnóstico y prevención, en siete capítulos.",
+  "qsLearnText": "Causas, factores de riesgo, diagnóstico, complicaciones y prevención, en ocho capítulos.",
   "moreLearn": "Entender la enfermedad",
   "heroProgress": "Avance",
   "learn": [
@@ -1625,6 +1661,49 @@
       ],
       "sources": [
         "Umanath & Lewis, 2018"
+      ]
+    },
+    {
+      "id": "complicaciones",
+      "ghost": "Complicaciones",
+      "label": "Complicaciones",
+      "title": "Lo que puede venir después.",
+      "accent": "",
+      "highlight": "puede venir después",
+      "draft": "adaptado por el equipo de diseño desde la presentación de México (nov. 2026), por validar",
+      "author": "Equipo de México",
+      "blocks": [
+        {
+          "paragraphs": [
+            "Cuando la nefropatía diabética avanza, o cuando el riñón ya está debilitado, pueden aparecer otras complicaciones. Algunas llegan de golpe (agudas) y otras se instalan poco a poco (crónicas). Conocerlas ayuda a reconocerlas a tiempo y a entender por qué los controles importan."
+          ]
+        }
+      ],
+      "columns": [
+        {
+          "title": "Agudas: aparecen de golpe",
+          "items": [
+            "Lesión renal aguda: el riñón deja de funcionar bien de forma repentina. En personas con diabetes es más frecuente y más grave, y la recuperación puede tardar más. Puede desencadenarse por deshidratación grave, infecciones (como la cetoacidosis o la sepsis), algunos medicamentos, el medio de contraste de ciertos estudios de imagen o la falta de oxígeno. Si no se atiende a tiempo, puede dejar daño permanente.",
+            "Acidosis tubular renal: la diabetes puede alterar señales hormonales que el riñón necesita para eliminar el potasio y algunos ácidos. Esas sustancias se acumulan y alteran el funcionamiento del cuerpo.",
+            "Hiperpotasemia (potasio alto en la sangre): el exceso de potasio puede alterar el ritmo eléctrico del corazón. A veces da debilidad muscular o cansancio, y a veces no da síntomas; se detecta con un análisis de sangre."
+          ]
+        },
+        {
+          "title": "Crónicas: se instalan con el tiempo",
+          "items": [
+            "Enfermedad renal terminal (estadio 5): los riñones casi no cumplen su función. Se acumulan desechos y líquido, se altera el potasio y sube la presión arterial. En esta etapa se necesita diálisis o trasplante.",
+            "Anemia renal: los riñones dañados producen menos eritropoyetina, la hormona que estimula la formación de glóbulos rojos. Causa cansancio, palidez, mareos y sensación de falta de aire.",
+            "Hipertensión arterial secundaria: los riñones dañados retienen agua y sal y regulan peor los vasos sanguíneos, y la presión sube. A su vez, la presión alta daña más el riñón: es un círculo vicioso.",
+            "Enfermedad cardiovascular: el líquido retenido hace trabajar más al corazón, los desechos acumulados inflaman los vasos sanguíneos y el depósito de calcio endurece las arterias."
+          ]
+        }
+      ],
+      "note": "La detección temprana, el control de la glucosa y la presión, y el seguimiento frecuente ayudan a frenar el avance y a evitar estas complicaciones. Evita la automedicación: consulta a tu equipo de salud antes de tomar cualquier medicamento, incluso los de venta libre.",
+      "sources": [
+        "Advani, 2020",
+        "Infante et al., 2023",
+        "American Diabetes Association Professional Practice Committee, 2026",
+        "Taal et al., Brenner and Rector's The Kidney, 2012"
       ]
     },
     {
@@ -2121,7 +2200,7 @@
   "todayPressure": "Presión arterial",
   "todayResume": "Continuar: {title}",
   "badgeReader": "Lector de Entender",
-  "badgeReaderHint": "Lee los siete capítulos de Entender.",
+  "badgeReaderHint": "Lee todos los capítulos de Entender.",
   "habitState_done": "Hecho",
   "habitState_missed": "No se hizo",
   "habitState_na": "No aplica",
@@ -2267,6 +2346,15 @@
         "Se usan un examen de orina (albúmina) y uno de sangre (creatinina para calcular la TFGe).",
         "Un resultado alterado se repite antes de confirmar.",
         "La biopsia no se necesita en la mayoría de los casos."
+      ]
+    },
+    {
+      "id": "complicaciones",
+      "key": "Si la nefropatía avanza, puede traer otros problemas en el riñón, la sangre y el corazón.",
+      "summary": [
+        "Agudas: lesión renal aguda, acidosis tubular renal y potasio alto.",
+        "Crónicas: enfermedad renal terminal, anemia, presión alta y enfermedad del corazón.",
+        "Detectar a tiempo y seguir el tratamiento ayuda a evitarlas."
       ]
     },
     {

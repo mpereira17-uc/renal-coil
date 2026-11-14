@@ -1150,6 +1150,42 @@
       ],
       "source": "mx",
       "draft": "redactado por el equipo de diseño, por validar"
+    },
+    {
+      "term": "Acute kidney injury",
+      "def": "Sudden loss of kidney function, over hours or days.",
+      "alt": "Lesión renal aguda",
+      "draft": true
+    },
+    {
+      "term": "Renal tubular acidosis",
+      "def": "A kidney problem removing acids and potassium, which build up in the blood.",
+      "alt": "Acidosis tubular renal",
+      "draft": true
+    },
+    {
+      "term": "Hyperkalemia",
+      "def": "High potassium in the blood. It can disturb the heart's rhythm.",
+      "alt": "Hiperpotasemia",
+      "draft": true
+    },
+    {
+      "term": "Erythropoietin",
+      "def": "A hormone made by the kidneys that stimulates red blood cell production.",
+      "alt": "Eritropoyetina",
+      "draft": true
+    },
+    {
+      "term": "Renal anemia",
+      "def": "A lack of red blood cells because damaged kidneys make little erythropoietin.",
+      "alt": "Anemia renal",
+      "draft": true
+    },
+    {
+      "term": "End-stage kidney disease",
+      "def": "The most advanced stage of chronic kidney disease (stage 5); it requires dialysis or a transplant.",
+      "alt": "Enfermedad renal terminal",
+      "draft": true
     }
   ],
   "infoGlossaryNote": "Definitions for study purposes; academic review is pending.",
@@ -1395,7 +1431,7 @@
   "bankOther": "In Spanish",
   "bankPendingDef": "Definition pending from the medical team.",
   "qsLearnTitle": "Understand the disease",
-  "qsLearnText": "Causes, risk factors, diagnosis and prevention, in seven chapters.",
+  "qsLearnText": "Causes, risk factors, diagnosis, complications and prevention, in eight chapters.",
   "moreLearn": "Understand the disease",
   "heroProgress": "Progress",
   "learn": [
@@ -1625,6 +1661,49 @@
       ],
       "sources": [
         "Umanath & Lewis, 2018"
+      ]
+    },
+    {
+      "id": "complicaciones",
+      "ghost": "Complications",
+      "label": "Complications",
+      "title": "What can come next.",
+      "accent": "",
+      "highlight": "can come next",
+      "draft": "adapted by the design team from the Mexico team's presentation (Nov 2026), pending review",
+      "author": "Mexico team",
+      "blocks": [
+        {
+          "paragraphs": [
+            "As diabetic nephropathy progresses, or when the kidneys are already weakened, other complications can appear. Some come on suddenly (acute) and others develop slowly (chronic). Knowing them helps you recognize them early and understand why check-ups matter."
+          ]
+        }
+      ],
+      "columns": [
+        {
+          "title": "Acute: they appear suddenly",
+          "items": [
+            "Acute kidney injury: the kidneys suddenly stop working well. In people with diabetes it is more common and more severe, and recovery can take longer. It can be triggered by severe dehydration, infections (such as ketoacidosis or sepsis), some medicines, the contrast dye used in certain imaging tests, or lack of oxygen. If not treated in time, it can leave permanent damage.",
+            "Renal tubular acidosis: diabetes can disrupt hormonal signals the kidneys need to remove potassium and some acids. These substances build up and disturb how the body works.",
+            "Hyperkalemia (high potassium in the blood): too much potassium can disturb the heart's electrical rhythm. It sometimes causes muscle weakness or tiredness, and sometimes no symptoms; it is found with a blood test."
+          ]
+        },
+        {
+          "title": "Chronic: they develop over time",
+          "items": [
+            "End-stage kidney disease (stage 5): the kidneys barely work. Waste and fluid build up, potassium becomes unbalanced and blood pressure rises. At this stage dialysis or a transplant is needed.",
+            "Renal anemia: damaged kidneys make less erythropoietin, the hormone that stimulates red blood cell production. It causes tiredness, paleness, dizziness and shortness of breath.",
+            "Secondary high blood pressure: damaged kidneys hold on to water and salt and regulate blood vessels less well, so pressure rises. In turn, high pressure damages the kidneys further: a vicious circle.",
+            "Cardiovascular disease: retained fluid makes the heart work harder, built-up waste inflames blood vessels, and calcium deposits stiffen the arteries."
+          ]
+        }
+      ],
+      "note": "Early detection, controlling blood sugar and blood pressure, and regular follow-up help slow progression and prevent these complications. Avoid self-medicating: ask your healthcare team before taking any medicine, including over-the-counter ones.",
+      "sources": [
+        "Advani, 2020",
+        "Infante et al., 2023",
+        "American Diabetes Association Professional Practice Committee, 2026",
+        "Taal et al., Brenner and Rector's The Kidney, 2012"
       ]
     },
     {
@@ -2121,7 +2200,7 @@
   "todayPressure": "Blood pressure",
   "todayResume": "Continue: {title}",
   "badgeReader": "Understand reader",
-  "badgeReaderHint": "Read the seven chapters in Understand.",
+  "badgeReaderHint": "Read all the chapters in Understand.",
   "habitState_done": "Done",
   "habitState_missed": "Not done",
   "habitState_na": "Does not apply",
@@ -2267,6 +2346,15 @@
         "A urine test (albumin) and a blood test (creatinine to estimate eGFR) are used.",
         "An abnormal result is repeated before confirming.",
         "A biopsy is not needed in most cases."
+      ]
+    },
+    {
+      "id": "complicaciones",
+      "key": "If nephropathy progresses, it can lead to other problems in the kidneys, blood and heart.",
+      "summary": [
+        "Acute: acute kidney injury, renal tubular acidosis and high potassium.",
+        "Chronic: end-stage kidney disease, anemia, high blood pressure and heart disease.",
+        "Early detection and sticking to treatment help prevent them."
       ]
     },
     {
