@@ -825,12 +825,12 @@
       "text": "High blood sugar levels damage the blood vessels in the kidney."
     },
     {
-      "title": "The filter changes",
-      "text": "The kidney's filter (glomerulus) is altered."
+      "title": "Hyperfiltration",
+      "text": "The kidney filters more blood than normal and gets overloaded."
     },
     {
-      "title": "Protein in the urine",
-      "text": "Protein starts to be lost in the urine."
+      "title": "The filter is damaged",
+      "text": "The filtering barrier (glomerulus) changes and protein appears in the urine."
     },
     {
       "title": "Less filtering capacity",
@@ -1410,7 +1410,7 @@
   "learnEyebrow": "Understanding the disease",
   "learnTitle": "Diabetic kidney disease,",
   "learnAccent": "explained step by step.",
-  "learnDescription": "Seven chapters written by medical students in Mexico, translated and simplified by the COIL team. Tap the underlined words to see what they mean.",
+  "learnDescription": "Eight chapters written by medical students in Mexico, translated and simplified by the COIL team. Tap the underlined words to see what they mean.",
   "learnReview": "Content under clinical review",
   "learnBy": "Text",
   "learnTranslated": "Translation and simplification: COIL team",
@@ -1431,7 +1431,7 @@
   "bankOther": "In Spanish",
   "bankPendingDef": "Definition pending from the medical team.",
   "qsLearnTitle": "Understand the disease",
-  "qsLearnText": "Causes, risk factors, diagnosis, complications and prevention, in eight chapters.",
+  "qsLearnText": "Causes, complications, diagnosis and prevention, in eight chapters.",
   "moreLearn": "Understand the disease",
   "heroProgress": "Progress",
   "learn": [
@@ -1746,6 +1746,11 @@
           "value": "Every day",
           "title": "Habits",
           "text": "Eating a healthy diet, exercising regularly, maintaining a healthy weight, and avoiding smoking can help protect the kidneys. Managing high cholesterol can reduce the risk of heart problems associated with diabetes and kidney disease."
+        },
+        {
+          "value": "No self-medicating",
+          "title": "Careful with medicines",
+          "text": "Some over-the-counter medicines, such as anti-inflammatories (ibuprofen or naproxen), can harm the kidneys. Ask your doctor before taking a new one and do not stop your treatment unless they tell you to."
         }
       ],
       "note": "Goals and medications are set by your health team. Do not start, change, or stop a treatment on your own.",

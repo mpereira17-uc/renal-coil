@@ -825,12 +825,12 @@
       "text": "Niveles altos de azúcar en la sangre dañan los vasos sanguíneos del riñón."
     },
     {
-      "title": "El filtro se altera",
-      "text": "Se altera el filtro del riñón (glomérulo)."
+      "title": "Hiperfiltración",
+      "text": "El riñón filtra más sangre de lo normal y se sobrecarga."
     },
     {
-      "title": "Proteínas en la orina",
-      "text": "Comienzan a perderse proteínas en la orina."
+      "title": "El filtro se daña",
+      "text": "Se altera la barrera de filtración (glomérulo) y aparecen proteínas en la orina."
     },
     {
       "title": "Menos capacidad de filtrar",
@@ -1410,7 +1410,7 @@
   "learnEyebrow": "Entender la enfermedad",
   "learnTitle": "La enfermedad renal diabética,",
   "learnAccent": "explicada paso a paso.",
-  "learnDescription": "Siete capítulos escritos por estudiantes de medicina en México, traducidos y simplificados por el equipo COIL. Toca las palabras subrayadas para ver qué significan.",
+  "learnDescription": "Ocho capítulos escritos por estudiantes de medicina en México, traducidos y simplificados por el equipo COIL. Toca las palabras subrayadas para ver qué significan.",
   "learnReview": "Contenido en revisión clínica",
   "learnBy": "Texto",
   "learnTranslated": "Traducción y simplificación: equipo COIL",
@@ -1431,7 +1431,7 @@
   "bankOther": "En inglés",
   "bankPendingDef": "Definición pendiente del equipo médico.",
   "qsLearnTitle": "Entender la enfermedad",
-  "qsLearnText": "Causas, factores de riesgo, diagnóstico, complicaciones y prevención, en ocho capítulos.",
+  "qsLearnText": "Causas, complicaciones, diagnóstico y prevención, en ocho capítulos.",
   "moreLearn": "Entender la enfermedad",
   "heroProgress": "Avance",
   "learn": [
@@ -1746,6 +1746,11 @@
           "value": "Cada día",
           "title": "Hábitos",
           "text": "Comer de forma saludable, hacer ejercicio con regularidad, mantener un peso saludable y no fumar ayudan a proteger los riñones. Controlar el colesterol alto reduce el riesgo de problemas del corazón asociados a la diabetes y a la enfermedad renal."
+        },
+        {
+          "value": "Sin automedicarte",
+          "title": "Medicamentos con cuidado",
+          "text": "Algunos medicamentos que se compran sin receta, como los antiinflamatorios (ibuprofeno o naproxeno), pueden dañar el riñón. Pregunta a tu médico antes de tomar uno nuevo y no suspendas tu tratamiento sin su indicación."
         }
       ],
       "note": "Las metas y los medicamentos los indica tu equipo de salud. No empieces, cambies ni suspendas un tratamiento por tu cuenta.",
