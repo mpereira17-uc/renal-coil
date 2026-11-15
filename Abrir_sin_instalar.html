@@ -8425,10 +8425,7 @@ function renderToday() {
   const nextLearn = content().learn.find(c => !state.learning.chapters.includes('aprende-' + c.id));
   const resume = nextSection ? {href: `#descubrir/${nextSection.id}`, title: nextSection.title} : nextLearn ? {href: `#aprende/${nextLearn.id}`, title: nextLearn.title} : null;
   const habits = habitDefinitions(content().habits,getState().habitPlan), today = state.habits[localDate()] || {}, done = habits.filter(h => today[h.id]).length;
-  const visit = upcomingAppointments(state)[0], recipe = recipeOfDay(), total = content().reviewQuestions.length;
-  const read = content().sections.filter(s => state.learning.chapters.includes(s.id)).length;
-  const readLearn = content().learn.filter(c => state.learning.chapters.includes('aprende-' + c.id)).length, totalLearn = content().learn.length;
-  const allChapters = content().sections.length + totalLearn;
+  const visit = upcomingAppointments(state)[0], recipe = recipeOfDay();
   const dateLabel = formatDate(localDate(), {weekday: 'long', day: 'numeric', month: 'long'});
   const ring = (value, max) => `<svg class="today-ring" viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="18"/>${value ? `<circle class="value" cx="22" cy="22" r="18" pathLength="100" stroke-dasharray="${Math.round(value / max * 100)} 100"/>` : ''}</svg>`;
   target.innerHTML = `<div class="section-heading"><div><p class="eyebrow">${e(t('todayEyebrow'))}</p><h2 id="today-title">${e(t('todayTitle', {date: dateLabel}))}</h2></div>${state.dataMode === 'demo' ? notice('example', t('dataModeDemoTitle'), t('avisoDemoText')) : ''}</div>
@@ -8446,7 +8443,7 @@ function renderToday() {
       ${recipe?.photo ? `<img class="today-photo" src="${e(recipe.photo)}" alt="" loading="lazy">` : ''}${recipe ? `<strong class="today-value today-text">${e(recipe[language()]?.title || recipe.es.title)}</strong><span class="today-sub">${recipe.minutes} min</span>` : '<span class="today-sub">…</span>'}
       <span class="today-link">${e(t('todayOpenRecipe'))} →</span></a>
   </div>
-  <div class="learning-strip"><div class="learning-progress"><span class="today-icon">${svg(icons.book)}</span><div><strong>${e(t('todayLearning'))}</strong><span>${e(t('todayChaptersBoth', {done: read, total: content().sections.length, learnDone: readLearn, learnTotal: totalLearn}))} · ${e(state.learning.quizBest === null ? t('todayQuizNone') : t('todayQuiz', {score: state.learning.quizBest, total}))}</span><div class="learning-bar"><span style="width:${Math.round((read + readLearn) / allChapters * 100)}%"></span></div>${resume ? `<a class="text-link today-resume" href="${e(resume.href)}">${e(t('todayResume', {title: resume.title}))} →</a>` : ''}</div></div></div>`;
+  ${resume ? `<div class="learning-strip"><div class="learning-progress"><span class="today-icon">${svg(icons.book)}</span><div><strong>${e(t('todayLearning'))}</strong><a class="text-link today-resume" href="${e(resume.href)}">${e(t('todayResume', {title: resume.title}))} →</a></div></div></div>` : ''}`;
 }
 function initToday() {
   const quick = document.querySelector('[data-view="descubrir"] .quick-start');
@@ -8937,17 +8934,13 @@ function glomerulusSVG() {
   return `<svg viewBox="0 0 400 400" aria-hidden="true"><circle class="lg-glow" cx="200" cy="200" r="150"/><circle class="lg-bowman" cx="200" cy="200" r="128"/>${pour}<path class="lg-arteriole" d="M200 72V10M224 74l14-60"/><g class="lg-tuft">${loops}</g>${molecules}${hormones}<g class="lg-pressure"><path d="M200 120v-22m0 22-7-8m7 8 7-8M280 200h22m-22 0 8-7m-8 7 8 7M200 280v22m0-22-7 8m7-8 7 8M120 200H98m22 0-8-7m8 7-8 7"/></g>${proteins}${scars}<path class="lg-urine" d="M330 300c20 10 40 30 50 60"/></svg>`;
 }
 
-// Guía de lectura de cada capítulo: idea principal y resumen al inicio; repaso, preguntas para la consulta y
-// «Marcar como leído» al final. Los textos viven en content().learnGuides (redactados por el equipo de diseño, por validar).
+// Guía de lectura de cada capítulo: idea principal y resumen al inicio.
+// Los textos viven en content().learnGuides (redactados por el equipo de diseño, por validar).
+// Sin «Marcar como leído», marcas ✓ ni conteo de leídos: no aportan a quien lee.
 const guideOf = id => (content().learnGuides || []).find(guide => guide.id === id);
-const isRead = id => getState().learning.chapters.includes('aprende-' + id);
 function guideTopHTML(guide) {
   if (!guide) return '';
   return `<div class="learn-guide-top"><p class="learn-key"><span class="learn-mono">${e(t('guideKey'))}</span>${e(guide.key)}</p><div class="learn-summary"><p class="learn-mono">${e(t('guideSummary'))}</p><ul>${guide.summary.map(item=>`<li>${e(item)}</li>`).join('')}</ul></div></div>`;
-}
-function guideBottomHTML(chapter, guide) {
-  if (!guide) return '';
-  return `<div class="learn-guide-bottom"><p class="learn-read-row"><button type="button" class="button ${isRead(chapter.id)?'secondary is-read':'primary'}" data-learn-read="${chapter.id}" aria-pressed="${isRead(chapter.id)}">${e(t(isRead(chapter.id)?'guideRead':'guideMarkRead'))}</button></p></div>`;
 }
 function chapterHTML(chapter, index) {
   const guide = guideOf(chapter.id);
@@ -8964,7 +8957,7 @@ function chapterHTML(chapter, index) {
   return `<article class="learn-chapter${chapter.dark?' is-dark':''}" id="aprende-${chapter.id}" data-learn="${chapter.id}" tabindex="-1">
     <span class="learn-ghost" aria-hidden="true">${e(chapter.ghost)}</span>
     <header class="learn-head"><p class="learn-mono learn-num">${e(t('learnChapterN', {n: index+1}))} · ${e(chapter.label)}</p><h2>${titleHTML(chapter)}</h2><p class="learn-credit">${credit}${chapter.draft?draftBadge():''}</p></header>
-    ${guideTopHTML(guide)}<div class="learn-body">${body}</div>${guideBottomHTML(chapter, guide)}
+    ${guideTopHTML(guide)}<div class="learn-body">${body}</div>
     <p class="learn-sources"><span class="learn-mono">${e(t('learnSources'))}</span> ${chapter.sources.map(e).join('; ')}</p>
   </article>`;
 }
@@ -8985,7 +8978,7 @@ function renderBank() {
 
 function render() {
   const chapters = content().learn;
-  document.getElementById('learn-index').innerHTML = `<p class="learn-mono">${e(t('learnIndex'))}</p><ol>${chapters.map((chapter,i)=>`<li><a href="#aprende/${chapter.id}" data-learn-link="${chapter.id}"${isRead(chapter.id)?' class="is-read"':''}><span class="learn-mono">${pad(i+1)}</span>${e(chapter.label)}${isRead(chapter.id)?`<span class="learn-check" aria-label="${e(t('guideRead'))}">✓</span>`:''}</a></li>`).join('')}<li><a href="#aprende/palabras" data-learn-link="palabras"><span class="learn-mono">${pad(chapters.length+1)}</span>${e(t('bankEyebrow').charAt(0)+t('bankEyebrow').slice(1).toLowerCase())}</a></li><li><a href="#aprende/preguntas" data-learn-link="preguntas"><span class="learn-mono">${pad(chapters.length+2)}</span>${e(t('faqNav'))}</a></li><li><a href="#aprende/recursos" data-learn-link="recursos"><span class="learn-mono">${pad(chapters.length+3)}</span>${e(t('resNav'))}</a></li></ol><div class="learn-progress"><span id="learn-progress"></span></div><p class="learn-read-count">${e(t('learnProgressCount',{done:chapters.filter(c=>isRead(c.id)).length,total:chapters.length}))}</p>`;
+  document.getElementById('learn-index').innerHTML = `<p class="learn-mono">${e(t('learnIndex'))}</p><ol>${chapters.map((chapter,i)=>`<li><a href="#aprende/${chapter.id}" data-learn-link="${chapter.id}"><span class="learn-mono">${pad(i+1)}</span>${e(chapter.label)}</a></li>`).join('')}<li><a href="#aprende/palabras" data-learn-link="palabras"><span class="learn-mono">${pad(chapters.length+1)}</span>${e(t('bankEyebrow').charAt(0)+t('bankEyebrow').slice(1).toLowerCase())}</a></li><li><a href="#aprende/preguntas" data-learn-link="preguntas"><span class="learn-mono">${pad(chapters.length+2)}</span>${e(t('faqNav'))}</a></li><li><a href="#aprende/recursos" data-learn-link="recursos"><span class="learn-mono">${pad(chapters.length+3)}</span>${e(t('resNav'))}</a></li></ol><div class="learn-progress"><span id="learn-progress"></span></div>`;
   document.getElementById('learn-chapters').innerHTML = chapters.map(chapterHTML).join('');
   renderBank();
   renderLearnExtra();
@@ -9038,38 +9031,31 @@ function onScroll() {
   });
 }
 
+// Ir a un capítulo. El salto es inmediato y se hace después de que las animaciones de scroll (GSAP/ScrollTrigger)
+// recalculen la página al cambiar de dirección: si no, ese recálculo devolvía la posición al inicio y el clic
+// en la lista de capítulos parecía no hacer nada.
+let jumpTimer = 0;
 function goToChapter(chapter) {
   if (!chapter || chapter === 'causas') return;
   const target = document.getElementById(`aprende-${chapter}`);
   if (!target) return;
-  requestAnimationFrame(()=>{target.scrollIntoView({behavior:isReducedMotion()?'instant':'smooth', block:'start'});target.focus({preventScroll:true});});
+  clearTimeout(jumpTimer);
+  jumpTimer = setTimeout(()=>{
+    target.scrollIntoView({behavior:'instant', block:'start'});
+    target.focus({preventScroll:true});
+    window.ScrollTrigger?.update();
+  }, 180);
 }
 
-// Actualiza las marcas de leído sin volver a dibujar los capítulos (no se pierden respuestas ni posición).
-function refreshRead() {
-  const chapters = content().learn;
-  chapters.forEach(chapter => {
-    const button = document.querySelector(`[data-learn-read="${chapter.id}"]`), read = isRead(chapter.id);
-    if (button) { button.className = `button ${read ? 'secondary is-read' : 'primary'}`; button.setAttribute('aria-pressed', String(read)); button.textContent = t(read ? 'guideRead' : 'guideMarkRead'); }
-    const link = document.querySelector(`#learn-index [data-learn-link="${chapter.id}"]`);
-    if (link) { link.classList.toggle('is-read', read); link.querySelector('.learn-check')?.remove(); if (read) link.insertAdjacentHTML('beforeend', `<span class="learn-check" aria-label="${e(t('guideRead'))}">✓</span>`); }
-  });
-  const count = document.querySelector('.learn-read-count');
-  if (count) count.textContent = t('learnProgressCount', {done: chapters.filter(c => isRead(c.id)).length, total: chapters.length});
-}
 function initLearn() {
   render();
   initLearnExtra();
   const route = document.getElementById('route-aprende');
+  // Tocar el capítulo en el que ya está la dirección no cambia el # (no hay hashchange): se salta igual.
   route.addEventListener('click', event => {
-    const read = event.target.closest('[data-learn-read]');
-    if (read) {
-      const id = read.dataset.learnRead, learning = getState().learning, key = 'aprende-' + id;
-      const chapters = learning.chapters.includes(key) ? learning.chapters.filter(c => c !== key) : [...learning.chapters, key];
-      if (updateState({learning: {...learning, chapters}})) { refreshRead(); document.querySelector(`[data-learn-read="${id}"]`)?.focus(); }
-    }
+    const link = event.target.closest('#learn-index [data-learn-link]');
+    if (link && link.getAttribute('href') === location.hash) { event.preventDefault(); goToChapter(link.dataset.learnLink); }
   });
-  on(EVENTOS.STATE, event => { if (event.detail.keys.some(key => ['learning', 'activeProfile'].includes(key))) refreshRead(); });
   document.getElementById('bank-search').addEventListener('input', event=>{query = event.target.value; renderBank();});
   let queued = false;
   window.addEventListener('scroll', ()=>{if(queued)return;queued=true;requestAnimationFrame(()=>{queued=false;onScroll();});}, {passive:true});

@@ -78,10 +78,7 @@ function renderToday() {
   const nextLearn = content().learn.find(c => !state.learning.chapters.includes('aprende-' + c.id));
   const resume = nextSection ? {href: `#descubrir/${nextSection.id}`, title: nextSection.title} : nextLearn ? {href: `#aprende/${nextLearn.id}`, title: nextLearn.title} : null;
   const habits = habitDefinitions(content().habits,getState().habitPlan), today = state.habits[localDate()] || {}, done = habits.filter(h => today[h.id]).length;
-  const visit = upcomingAppointments(state)[0], recipe = recipeOfDay(), total = content().reviewQuestions.length;
-  const read = content().sections.filter(s => state.learning.chapters.includes(s.id)).length;
-  const readLearn = content().learn.filter(c => state.learning.chapters.includes('aprende-' + c.id)).length, totalLearn = content().learn.length;
-  const allChapters = content().sections.length + totalLearn;
+  const visit = upcomingAppointments(state)[0], recipe = recipeOfDay();
   const dateLabel = formatDate(localDate(), {weekday: 'long', day: 'numeric', month: 'long'});
   const ring = (value, max) => `<svg class="today-ring" viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="18"/>${value ? `<circle class="value" cx="22" cy="22" r="18" pathLength="100" stroke-dasharray="${Math.round(value / max * 100)} 100"/>` : ''}</svg>`;
   target.innerHTML = `<div class="section-heading"><div><p class="eyebrow">${e(t('todayEyebrow'))}</p><h2 id="today-title">${e(t('todayTitle', {date: dateLabel}))}</h2></div>${state.dataMode === 'demo' ? notice('example', t('dataModeDemoTitle'), t('avisoDemoText')) : ''}</div>
@@ -99,7 +96,7 @@ function renderToday() {
       ${recipe?.photo ? `<img class="today-photo" src="${e(recipe.photo)}" alt="" loading="lazy">` : ''}${recipe ? `<strong class="today-value today-text">${e(recipe[language()]?.title || recipe.es.title)}</strong><span class="today-sub">${recipe.minutes} min</span>` : '<span class="today-sub">…</span>'}
       <span class="today-link">${e(t('todayOpenRecipe'))} →</span></a>
   </div>
-  <div class="learning-strip"><div class="learning-progress"><span class="today-icon">${svg(icons.book)}</span><div><strong>${e(t('todayLearning'))}</strong><span>${e(t('todayChaptersBoth', {done: read, total: content().sections.length, learnDone: readLearn, learnTotal: totalLearn}))} · ${e(state.learning.quizBest === null ? t('todayQuizNone') : t('todayQuiz', {score: state.learning.quizBest, total}))}</span><div class="learning-bar"><span style="width:${Math.round((read + readLearn) / allChapters * 100)}%"></span></div>${resume ? `<a class="text-link today-resume" href="${e(resume.href)}">${e(t('todayResume', {title: resume.title}))} →</a>` : ''}</div></div></div>`;
+  ${resume ? `<div class="learning-strip"><div class="learning-progress"><span class="today-icon">${svg(icons.book)}</span><div><strong>${e(t('todayLearning'))}</strong><a class="text-link today-resume" href="${e(resume.href)}">${e(t('todayResume', {title: resume.title}))} →</a></div></div></div>` : ''}`;
 }
 function initToday() {
   const quick = document.querySelector('[data-view="descubrir"] .quick-start');
