@@ -62,8 +62,10 @@ const NOTICE_ICONS = {
   review: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
   info: '<circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.01"/>'
 };
-export function notice(kind, title, text = '', {compact = false} = {}) {
+// titleKey/textKey: para avisos que se dibujan una sola vez; translateDOM los actualiza al cambiar de idioma.
+export function notice(kind, title, text = '', {compact = false, titleKey = '', textKey = ''} = {}) {
   const k = NOTICE_ICONS[kind] ? kind : 'info';
-  return `<div class="aviso aviso-${k}${compact ? ' aviso-compact' : ''}" role="note"><span class="aviso-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">${NOTICE_ICONS[k]}</svg></span><span class="aviso-body"><strong>${escapeHTML(title)}</strong>${text && !compact ? `<span>${escapeHTML(text)}</span>` : ''}</span></div>`;
+  const i18n = key => key ? ` data-i18n="${escapeHTML(key)}"` : '';
+  return `<div class="aviso aviso-${k}${compact ? ' aviso-compact' : ''}" role="note"><span class="aviso-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">${NOTICE_ICONS[k]}</svg></span><span class="aviso-body"><strong${i18n(titleKey)}>${escapeHTML(title)}</strong>${text && !compact ? `<span${i18n(textKey)}>${escapeHTML(text)}</span>` : ''}</span></div>`;
 }
 export function emptyState(title, description = '', button = '') { return `<div class="empty-state"><h3>${escapeHTML(t(title))}</h3>${description?`<p>${escapeHTML(t(description))}</p>`:''}${button}</div>`; }

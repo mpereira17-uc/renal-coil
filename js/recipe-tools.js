@@ -5,9 +5,14 @@ import { getState, updateState } from './store.js';
 import { escapeHTML as e, toast, confirmAction, icon } from './ui.js';
 import { downloadText, datedName } from './files.js';
 
+// Las equivalencias entre paréntesis con números ("(unas 2 libras)", "(unos 340 g)") valen solo para las porciones
+// originales: si se cambian las porciones se quitan, para no mostrar "1.800 g (unas 2 libras)".
+const fixedEquivalence = /\s*\([^)]*\d[^)]*\)/g;
 export function scaledIngredients(recipe, servings, lang=language()) {
+  const scaled = Number(servings) !== Number(recipe.servings);
+  const clean = text => scaled && text ? text.replace(fixedEquivalence, '') : text;
   return recipe.ingredientAmounts.map(item=>({
-    label:item[lang], pluralLabel:item[lang+'Plural']||item[lang], es:item.es,
+    label:clean(item[lang]), pluralLabel:clean(item[lang+'Plural']||item[lang]), es:item.es,
     amount:item.amount===null?null:item.amount*servings/recipe.servings
   }));
 }
@@ -42,9 +47,11 @@ function shoppingItems(state=getState()) {
     const name=recipe[language()]?.title||recipe.es.title;
     for(const item of scaledIngredients(recipe,entry.servings)) {
       if(hidden.has(item.es))continue;
-      const previous=items.get(item.label), from=new Map(previous?.from||[]);
+      // Se agrupa por el ingrediente original (es) y sin equivalencias fijas: la cantidad es la suma de varias recetas.
+      const label=item.label.replace(fixedEquivalence,''), pluralLabel=item.pluralLabel.replace(fixedEquivalence,'');
+      const previous=items.get(item.es), from=new Map(previous?.from||[]);
       from.set(name,(from.get(name)||0)+entry.servings);
-      items.set(item.label,{...item,amount:item.amount===null?null:(previous?.amount||0)+item.amount,category:shopCategory(item.es),from});
+      items.set(item.es,{...item,label,pluralLabel,amount:item.amount===null?null:(previous?.amount||0)+item.amount,category:shopCategory(item.es),from});
     }
   }
   for(const extra of custom.extra)items.set('extra:'+extra.id,{label:extra.text,es:'extra:'+extra.id,extraId:extra.id,amount:null,category:'other',from:new Map()});

@@ -23,7 +23,10 @@ export function initRouter() {
     const root=document.documentElement,next=currentRoute().route;
     if(!document.startViewTransition||!root.classList.contains('motion-ready')||next===previousRoute){applyRoute();return;}
     root.classList.add('vt-route');
-    document.startViewTransition(()=>applyRoute()).finished.finally(()=>root.classList.remove('vt-route'));
+    // Si se cambia de sección muy rápido, la transición anterior se salta: no es un error, solo se ignora.
+    const vt=document.startViewTransition(()=>applyRoute());
+    vt.ready.catch(()=>{}); vt.updateCallbackDone.catch(()=>{});
+    vt.finished.catch(()=>{}).finally(()=>root.classList.remove('vt-route'));
   });
   document.getElementById('mobile-menu').addEventListener('click',()=>{const open=document.getElementById('main-nav').classList.toggle('open');document.getElementById('mobile-menu').setAttribute('aria-expanded',String(open));});
   document.getElementById('main-nav').addEventListener('keydown',event=>{if(event.key==='Escape'){document.getElementById('main-nav').classList.remove('open');document.getElementById('mobile-menu').setAttribute('aria-expanded','false');document.getElementById('mobile-menu').focus();}});

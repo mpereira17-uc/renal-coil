@@ -6451,6 +6451,30 @@ html[data-theme="dark"] #main-nav a::after { background: var(--blue); }
    (antes quedaba blanco sobre blanco). */
 html[data-theme="dark"] .recipe-country { color: #203442; }
 
+/* ---------- Revisión de calidad (15-nov-2026) ---------- */
+
+/* Etiquetas pequeñas (.eyebrow, .small-label, número de capítulo) usan --cl-blue (#146d88): en tema oscuro quedaban
+   en 2.5:1 («Tu semana», «Mundial · borrador del equipo», «Colaboración entre universidades»). */
+html[data-theme="dark"] .route:not(#route-descubrir) :is(.eyebrow, .learn-mono.learn-num, .small-label) { color: var(--blue); }
+/* Capítulos con fondo oscuro (p. ej. «Cómo se daña»), también en tema claro: textos azules claros, no #146d88. */
+.route:not(#route-descubrir) .learn-chapter.is-dark :is(.eyebrow, .learn-mono, .small-label) { color: #8fd6e8; }
+/* «La idea principal» dentro de un capítulo oscuro: el recuadro claro dejaba texto blanco sobre celeste (1.1:1). */
+.route .learn-chapter.is-dark .learn-key {
+  background: rgb(255 255 255 / 8%) !important;
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 18%) !important;
+  color: var(--ink);
+}
+/* «Empezar a leer» sobre la tarjeta azul de Inicio: 4.1:1 → más de 5:1 oscureciendo un poco su fondo. */
+.cl-why-link { background: rgb(0 0 0 / 16%) !important; }
+.cl-why-link:hover { background: rgb(0 0 0 / 26%) !important; }
+
+/* Textos que seguían en 11-12 px. */
+.draft-badge, .res-audience, .recipe-country, .recipe-validation, .status-badge, .local-label,
+.shopping-count, .recipe-number, .learn-stage-label, #learn-index .learn-mono, .res-host { font-size: max(.8125rem, 13px); }
+
+/* Enlaces difíciles de tocar en celular (20-23 px de alto): migas y listas de fuentes. */
+.cl-crumbs a, .source-item a, .chapter-sources a { display: inline-block; padding-block: .45rem; }
+
 /* ---------- Guía emergente (tour) ----------
    Usaba var(--ink) de fondo: oscuro en tema claro, pero casi blanco en tema oscuro, con texto blanco encima (1.1:1).
    Ahora el fondo es un azul marino fijo en los dos temas, y el botón "Siguiente" lleva texto oscuro fijo. */
@@ -6984,9 +7008,11 @@ const NOTICE_ICONS = {
   review: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
   info: '<circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.01"/>'
 };
-function notice(kind, title, text = '', {compact = false} = {}) {
+// titleKey/textKey: para avisos que se dibujan una sola vez; translateDOM los actualiza al cambiar de idioma.
+function notice(kind, title, text = '', {compact = false, titleKey = '', textKey = ''} = {}) {
   const k = NOTICE_ICONS[kind] ? kind : 'info';
-  return `<div class="aviso aviso-${k}${compact ? ' aviso-compact' : ''}" role="note"><span class="aviso-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">${NOTICE_ICONS[k]}</svg></span><span class="aviso-body"><strong>${escapeHTML(title)}</strong>${text && !compact ? `<span>${escapeHTML(text)}</span>` : ''}</span></div>`;
+  const i18n = key => key ? ` data-i18n="${escapeHTML(key)}"` : '';
+  return `<div class="aviso aviso-${k}${compact ? ' aviso-compact' : ''}" role="note"><span class="aviso-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">${NOTICE_ICONS[k]}</svg></span><span class="aviso-body"><strong${i18n(titleKey)}>${escapeHTML(title)}</strong>${text && !compact ? `<span${i18n(textKey)}>${escapeHTML(text)}</span>` : ''}</span></div>`;
 }
 function emptyState(title, description = '', button = '') { return `<div class="empty-state"><h3>${escapeHTML(t(title))}</h3>${description?`<p>${escapeHTML(t(description))}</p>`:''}${button}</div>`; }
 
@@ -7018,7 +7044,10 @@ function initRouter() {
     const root=document.documentElement,next=currentRoute().route;
     if(!document.startViewTransition||!root.classList.contains('motion-ready')||next===previousRoute){applyRoute();return;}
     root.classList.add('vt-route');
-    document.startViewTransition(()=>applyRoute()).finished.finally(()=>root.classList.remove('vt-route'));
+    // Si se cambia de sección muy rápido, la transición anterior se salta: no es un error, solo se ignora.
+    const vt=document.startViewTransition(()=>applyRoute());
+    vt.ready.catch(()=>{}); vt.updateCallbackDone.catch(()=>{});
+    vt.finished.catch(()=>{}).finally(()=>root.classList.remove('vt-route'));
   });
   document.getElementById('mobile-menu').addEventListener('click',()=>{const open=document.getElementById('main-nav').classList.toggle('open');document.getElementById('mobile-menu').setAttribute('aria-expanded',String(open));});
   document.getElementById('main-nav').addEventListener('keydown',event=>{if(event.key==='Escape'){document.getElementById('main-nav').classList.remove('open');document.getElementById('mobile-menu').setAttribute('aria-expanded','false');document.getElementById('mobile-menu').focus();}});
@@ -7120,9 +7149,14 @@ const { getState, updateState } = getModule("js/store.js");
 const { escapeHTML:e, toast, confirmAction, icon } = getModule("js/ui.js");
 const { downloadText, datedName } = getModule("js/files.js");
 
+// Las equivalencias entre paréntesis con números ("(unas 2 libras)", "(unos 340 g)") valen solo para las porciones
+// originales: si se cambian las porciones se quitan, para no mostrar "1.800 g (unas 2 libras)".
+const fixedEquivalence = /\s*\([^)]*\d[^)]*\)/g;
 function scaledIngredients(recipe, servings, lang=language()) {
+  const scaled = Number(servings) !== Number(recipe.servings);
+  const clean = text => scaled && text ? text.replace(fixedEquivalence, '') : text;
   return recipe.ingredientAmounts.map(item=>({
-    label:item[lang], pluralLabel:item[lang+'Plural']||item[lang], es:item.es,
+    label:clean(item[lang]), pluralLabel:clean(item[lang+'Plural']||item[lang]), es:item.es,
     amount:item.amount===null?null:item.amount*servings/recipe.servings
   }));
 }
@@ -7157,9 +7191,11 @@ function shoppingItems(state=getState()) {
     const name=recipe[language()]?.title||recipe.es.title;
     for(const item of scaledIngredients(recipe,entry.servings)) {
       if(hidden.has(item.es))continue;
-      const previous=items.get(item.label), from=new Map(previous?.from||[]);
+      // Se agrupa por el ingrediente original (es) y sin equivalencias fijas: la cantidad es la suma de varias recetas.
+      const label=item.label.replace(fixedEquivalence,''), pluralLabel=item.pluralLabel.replace(fixedEquivalence,'');
+      const previous=items.get(item.es), from=new Map(previous?.from||[]);
       from.set(name,(from.get(name)||0)+entry.servings);
-      items.set(item.label,{...item,amount:item.amount===null?null:(previous?.amount||0)+item.amount,category:shopCategory(item.es),from});
+      items.set(item.es,{...item,label,pluralLabel,amount:item.amount===null?null:(previous?.amount||0)+item.amount,category:shopCategory(item.es),from});
     }
   }
   for(const extra of custom.extra)items.set('extra:'+extra.id,{label:extra.text,es:'extra:'+extra.id,extraId:extra.id,amount:null,category:'other',from:new Map()});
@@ -7640,7 +7676,9 @@ const normalize=text=>String(text).toLowerCase().normalize('NFD').replace(/[\u03
 let index=[],results=[],selected=0,gTimer=0,gPrefix=false;
 const routes={descubrir:'navDiscover',infografias:'navInfo',aprende:'navLearn',seguimiento:'navTrack',alimentacion:'navFood',habitos:'navHabits',senales:'navSigns',proyecto:'credits'};
 function bilingualText(list,id,fields){return ['es','en'].map(lang=>{const item=data[lang][list].find(value=>value.id===id);return fields.flatMap(field=>item?.[field]||'').join(' ');}).join(' ');}
-function buildIndex(){index=[];for(const lang of ['es','en']){const copy=data[lang];for(const [route,key] of Object.entries(routes))index.push({type:'section',lang,title:copy[key]||route,text:route+' '+(data.es[key]||'')+' '+(data.en[key]||''),hash:route});copy.sections.forEach(chapter=>index.push({type:'chapter',lang,title:chapter.title,text:bilingualText('sections',chapter.id,['title','description','points']),hash:`descubrir/${chapter.id}`}));copy.learn.forEach((chapter,i)=>index.push({type:'chapter',lang,title:chapter.label,text:[chapter.label,chapter.title,chapter.accent,data.es.learn[i].label,data.en.learn[i].label,...(chapter.blocks||[]).flatMap(block=>block.paragraphs)].join(' '),hash:`aprende/${chapter.id}`}));copy.infoGlossary.forEach(item=>index.push({type:'chapter',lang,title:item.term,text:[item.term,item.alt,...(item.aliases||[])].join(' '),hash:'aprende/palabras'}));copy.habits.forEach(habit=>index.push({type:'habit',lang,title:habit.title,text:bilingualText('habits',habit.id,['title','detail']),hash:'habitos'}));data.recipes.forEach(recipe=>index.push({type:'recipe',lang,title:recipe[lang].title,text:['es','en'].flatMap(code=>[recipe[code].title,...recipe[code].ingredients]).join(' '),hash:'alimentacion',recipeId:recipe.id,photo:recipe.photo||''}));}}
+// Todo el texto de un capítulo o término (párrafos, columnas, tarjetas, pasos, notas, definición), menos las claves indicadas.
+const allText=(value,skip=[])=>typeof value==='string'?[value]:Array.isArray(value)?value.flatMap(v=>allText(v)):value&&typeof value==='object'?Object.entries(value).filter(([k])=>!skip.includes(k)).flatMap(([,v])=>allText(v)):[];
+function buildIndex(){index=[];for(const lang of ['es','en']){const copy=data[lang];for(const [route,key] of Object.entries(routes))index.push({type:'section',lang,title:copy[key]||route,text:route+' '+(data.es[key]||'')+' '+(data.en[key]||''),hash:route});copy.sections.forEach(chapter=>index.push({type:'chapter',lang,title:chapter.title,text:bilingualText('sections',chapter.id,['title','description','points']),hash:`descubrir/${chapter.id}`}));copy.learn.forEach((chapter,i)=>index.push({type:'chapter',lang,title:chapter.label,text:[data.es.learn[i].label,data.en.learn[i].label,...allText(chapter,['id','sources','author','draft','ghost'])].join(' '),hash:`aprende/${chapter.id}`}));copy.infoGlossary.forEach(item=>index.push({type:'chapter',lang,title:item.term,text:allText(item).join(' '),hash:'aprende/palabras'}));copy.habits.forEach(habit=>index.push({type:'habit',lang,title:habit.title,text:bilingualText('habits',habit.id,['title','detail']),hash:'habitos'}));data.recipes.forEach(recipe=>index.push({type:'recipe',lang,title:recipe[lang].title,text:['es','en'].flatMap(code=>[recipe[code].title,...recipe[code].ingredients]).join(' '),hash:'alimentacion',recipeId:recipe.id,photo:recipe.photo||''}));}}
 function renderSearch(){const query=normalize(document.getElementById('global-search').value);results=index.filter(item=>item.lang===language()&&(!query||normalize(item.text).includes(query))).slice(0,30);selected=Math.min(selected,Math.max(0,results.length-1));document.getElementById('search-announcement').textContent=t('searchCount',{count:results.length});const html=[];for(const type of ['section','chapter','recipe','habit']){const grouped=results.map((r,i)=>({...r,i})).filter(r=>r.type===type);if(!grouped.length)continue;html.push(`<h3>${e(t(type))}</h3>${grouped.map(r=>`<button class="search-result" id="search-result-${r.i}" data-search-result="${r.i}" role="option" aria-selected="${r.i===selected}">${r.photo?`<img class="search-thumb" src="${e(r.photo)}" alt="" loading="lazy">`:''}<span>${e(r.title)}</span><small>${e(t(type))} ↗</small></button>`).join('')}`);}document.getElementById('search-results').innerHTML=html.join('')||`<p>${e(t('searchEmpty'))}</p>`;document.getElementById('global-search').setAttribute('aria-activedescendant',results.length?`search-result-${selected}`:'');}
 async function go(index){const result=results[index];if(!result)return;closeDialog('search-dialog');location.hash=result.hash;if(result.recipeId){await loadData(['recipes']);const module=await Promise.resolve().then(()=>getModule("js/recipes.js"));module.openRecipeFromSearch(result.recipeId);}}
 function initSearch(){document.body.insertAdjacentHTML('beforeend',`<dialog id="search-dialog" class="sheet-dialog search-dialog" aria-labelledby="search-title"><div class="dialog-heading"><h2 id="search-title" data-i18n="searchAll">${e(t('searchAll'))}</h2><button class="icon-button" data-close-dialog="search-dialog" aria-label="${e(t('close'))}" data-i18n-aria="close">×</button></div><input id="global-search" type="search" role="combobox" aria-expanded="true" aria-controls="search-results" aria-autocomplete="list" data-i18n-placeholder="searchPlaceholder" placeholder="${e(t('searchPlaceholder'))}" data-i18n-aria="searchAll" aria-label="${e(t('searchAll'))}"><p id="search-announcement" class="fine-print" aria-live="polite"></p><div id="search-results" role="listbox"></div></dialog><dialog id="shortcuts-dialog" class="sheet-dialog" aria-labelledby="shortcuts-title"><div class="dialog-heading"><h2 id="shortcuts-title" data-i18n="shortcuts">${e(t('shortcuts'))}</h2><button class="icon-button" data-close-dialog="shortcuts-dialog" data-i18n-aria="close" aria-label="${e(t('close'))}">×</button></div><div id="shortcut-list"></div></dialog>`);
@@ -8333,7 +8371,12 @@ function initCarePlan() {
     if (ics) { const item = getState().appointments.find(v => v.id === ics.dataset.ics); if (item) downloadCalendar([item]); }
     if (event.target.closest('#visits-ics-all')) downloadCalendar(upcomingAppointments());
   });
-  if (location.hash === '#seguimiento/citas') requestAnimationFrame(() => document.getElementById('care-plan').scrollIntoView());
+  // "Agregar una cita" (Inicio) lleva a #seguimiento/citas: bajar al plan de cuidado también al llegar desde otra
+  // sección, no solo al abrir la página ahí. Espera a que el cambio de sección y ScrollTrigger terminen de recalcular.
+  let citasTimer = 0;
+  const goToCitas = () => { clearTimeout(citasTimer); citasTimer = setTimeout(() => document.getElementById('care-plan')?.scrollIntoView({behavior: 'instant', block: 'start'}), 220); };
+  if (location.hash === '#seguimiento/citas') goToCitas();
+  on(EVENTOS.ROUTE, event => { if (event.detail.route === 'seguimiento' && event.detail.chapter === 'citas') goToCitas(); });
   on(EVENTOS.STATE, event => {
     if (event.detail.keys.some(key => ['medications', 'appointments', 'activeProfile'].includes(key))) renderCare();
     if (event.detail.keys.some(key => ['records', 'dataMode', 'activeProfile'].includes(key))) renderCombo();
@@ -9507,7 +9550,7 @@ let compared=['corteza','glomerulo'],answers={},concept=45;
 function specimen(prefix){return data.kidney.replace('role="group"','role="img"').replace(/id="kidney-/g,`id="${prefix}-kidney-`).replace('kidney-title kidney-desc',`${prefix}-kidney-title ${prefix}-kidney-desc`).replace(/<g class="kidney-hotspot"[\s\S]*?<\/g>/g,'').replace(/<circle[^>]*><animateMotion[\s\S]*?<\/circle>/g,'');}
 function glomerulus(){const fraction=concept/100;const loops=Array.from({length:7},(_,i)=>{const x=38+i*22,y=70+(i%2)*15;return `<path d="M${x} ${y}q${8+fraction*6} ${-38+fraction*(i%2?15:-8)} 18 -3t${-10-fraction*9} 26q-21 4 -8 -23Z" fill="none" stroke="var(--coral)" stroke-width="${3+fraction*2}" opacity="${.45+fraction*.55}"/>`;}).join('');const flow=Array.from({length:Math.max(1,Math.round(7-fraction*5))},(_,i)=>`<circle class="concept-flow" cx="${25+i*24}" cy="135" r="3" fill="var(--blue)" style="--flow-delay:${i*.25}s;--flow-duration:${2+fraction*4}s"/>`).join('');return `<svg viewBox="0 0 220 180" role="img" aria-label="${e(t('conceptSlider'))}"><ellipse cx="110" cy="82" rx="94" ry="62" fill="var(--coral-soft)" stroke="var(--coral)" opacity=".8"/><path d="M12 83h30m137 0h29M20 135h180" stroke="var(--blue)" stroke-width="2" fill="none"/>${loops}${flow}</svg>`;}
 function initKidneyTools(){document.querySelector('.studio-tools').innerHTML=`<button id="compare-parts" class="text-link" data-i18n="compareParts">${e(t('compareParts'))}</button><button id="open-quiz" class="text-link" data-i18n="reviewQuiz">${e(t('reviewQuiz'))}</button>`;
- document.querySelector('.education-section').insertAdjacentHTML('beforebegin',`<section class="anatomy-comparison" id="part-comparison" hidden aria-labelledby="part-comparison-title"><div class="section-heading"><h2 id="part-comparison-title" data-i18n="compareParts">${e(t('compareParts'))}</h2><button id="close-part-comparison" class="icon-button" data-i18n-aria="close" aria-label="${e(t('close'))}">×</button></div><div class="part-comparison-grid" id="part-comparison-grid"></div></section><section class="concept-section" aria-labelledby="concept-title"><div class="section-heading"><div><p class="eyebrow" data-i18n="conceptSlider">${e(t('conceptSlider'))}</p><h2 id="concept-title" data-i18n="beforeAfter">${e(t('beforeAfter'))}</h2></div>${notice('info', t('avisoConceptTitle'), t('avisoConceptText'))}</div><div class="concept-layout"><div><div class="specimen-compare" id="specimen-compare"><div class="specimen-after">${specimen('after')}</div><div class="specimen-before">${specimen('before')}</div><div class="specimen-divider" aria-hidden="true"><span>↔</span></div><span class="specimen-label before" data-i18n="beforeLabel">${e(t('beforeLabel'))}</span><span class="specimen-label after" data-i18n="afterLabel">${e(t('afterLabel'))}</span></div><label for="concept-slider" class="sr-only" data-i18n="conceptSlider">${e(t('conceptSlider'))}</label><input id="concept-slider" type="range" min="0" max="100" step="1" value="45" aria-describedby="concept-disclaimer"><div class="concept-timeline">${[0,5,10,15].map((year,i)=>`<button data-concept-step="${Math.round(i*100/3)}">${e(t('conceptTimeline',{year}))}</button>`).join('')}</div></div><aside class="glomerulus-surface"><div id="concept-glomerulus"></div><h3 id="concept-stage-title"></h3><p id="concept-stage-copy"></p><p id="concept-disclaimer" class="fine-print" data-i18n="conceptDisclaimer">${e(t('conceptDisclaimer'))}</p></aside></div></section>`);
+ document.querySelector('.education-section').insertAdjacentHTML('beforebegin',`<section class="anatomy-comparison" id="part-comparison" hidden aria-labelledby="part-comparison-title"><div class="section-heading"><h2 id="part-comparison-title" data-i18n="compareParts">${e(t('compareParts'))}</h2><button id="close-part-comparison" class="icon-button" data-i18n-aria="close" aria-label="${e(t('close'))}">×</button></div><div class="part-comparison-grid" id="part-comparison-grid"></div></section><section class="concept-section" aria-labelledby="concept-title"><div class="section-heading"><div><p class="eyebrow" data-i18n="conceptSlider">${e(t('conceptSlider'))}</p><h2 id="concept-title" data-i18n="beforeAfter">${e(t('beforeAfter'))}</h2></div>${notice('info', t('avisoConceptTitle'), t('avisoConceptText'), {titleKey: 'avisoConceptTitle', textKey: 'avisoConceptText'})}</div><div class="concept-layout"><div><div class="specimen-compare" id="specimen-compare"><div class="specimen-after">${specimen('after')}</div><div class="specimen-before">${specimen('before')}</div><div class="specimen-divider" aria-hidden="true"><span>↔</span></div><span class="specimen-label before" data-i18n="beforeLabel">${e(t('beforeLabel'))}</span><span class="specimen-label after" data-i18n="afterLabel">${e(t('afterLabel'))}</span></div><label for="concept-slider" class="sr-only" data-i18n="conceptSlider">${e(t('conceptSlider'))}</label><input id="concept-slider" type="range" min="0" max="100" step="1" value="45" aria-describedby="concept-disclaimer"><div class="concept-timeline">${[0,5,10,15].map((year,i)=>`<button data-concept-step="${Math.round(i*100/3)}">${e(t('conceptTimeline',{year}))}</button>`).join('')}</div></div><aside class="glomerulus-surface"><div id="concept-glomerulus"></div><h3 id="concept-stage-title"></h3><p id="concept-stage-copy"></p><p id="concept-disclaimer" class="fine-print" data-i18n="conceptDisclaimer">${e(t('conceptDisclaimer'))}</p></aside></div></section>`);
  document.body.insertAdjacentHTML('beforeend',`<dialog id="quiz-dialog" class="sheet-dialog" aria-labelledby="quiz-title"><div class="dialog-heading"><h2 id="quiz-title" data-i18n="quizTitle">${e(t('quizTitle'))}</h2><button class="icon-button" data-close-dialog="quiz-dialog" data-i18n-aria="close" aria-label="${e(t('close'))}">×</button></div><form id="quiz-form"><div id="quiz-questions"></div><button class="button primary" data-i18n="checkAnswers">${e(t('checkAnswers'))}</button><p id="quiz-result" role="status"></p></form></dialog>`);
  document.getElementById('compare-parts').addEventListener('click',()=>{document.getElementById('part-comparison').hidden=false;renderComparison();document.getElementById('part-comparison').scrollIntoView({behavior:isReducedMotion()?'instant':'smooth',block:'start'});document.getElementById('compare-part-0').focus({preventScroll:true});});document.getElementById('close-part-comparison').addEventListener('click',()=>{document.getElementById('part-comparison').hidden=true;document.getElementById('compare-parts').focus();});
  document.getElementById('part-comparison-grid').addEventListener('change',event=>{if(event.target.dataset.comparePart){compared[Number(event.target.dataset.comparePart)]=event.target.value;renderComparison();document.getElementById(event.target.id)?.focus();}});

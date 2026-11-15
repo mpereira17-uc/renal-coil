@@ -175,7 +175,12 @@ export function initCarePlan() {
     if (ics) { const item = getState().appointments.find(v => v.id === ics.dataset.ics); if (item) downloadCalendar([item]); }
     if (event.target.closest('#visits-ics-all')) downloadCalendar(upcomingAppointments());
   });
-  if (location.hash === '#seguimiento/citas') requestAnimationFrame(() => document.getElementById('care-plan').scrollIntoView());
+  // "Agregar una cita" (Inicio) lleva a #seguimiento/citas: bajar al plan de cuidado también al llegar desde otra
+  // sección, no solo al abrir la página ahí. Espera a que el cambio de sección y ScrollTrigger terminen de recalcular.
+  let citasTimer = 0;
+  const goToCitas = () => { clearTimeout(citasTimer); citasTimer = setTimeout(() => document.getElementById('care-plan')?.scrollIntoView({behavior: 'instant', block: 'start'}), 220); };
+  if (location.hash === '#seguimiento/citas') goToCitas();
+  on(EVENTOS.ROUTE, event => { if (event.detail.route === 'seguimiento' && event.detail.chapter === 'citas') goToCitas(); });
   on(EVENTOS.STATE, event => {
     if (event.detail.keys.some(key => ['medications', 'appointments', 'activeProfile'].includes(key))) renderCare();
     if (event.detail.keys.some(key => ['records', 'dataMode', 'activeProfile'].includes(key))) renderCombo();

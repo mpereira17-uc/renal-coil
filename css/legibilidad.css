@@ -37,6 +37,30 @@ html[data-theme="dark"] #main-nav a::after { background: var(--blue); }
    (antes quedaba blanco sobre blanco). */
 html[data-theme="dark"] .recipe-country { color: #203442; }
 
+/* ---------- Revisión de calidad (15-nov-2026) ---------- */
+
+/* Etiquetas pequeñas (.eyebrow, .small-label, número de capítulo) usan --cl-blue (#146d88): en tema oscuro quedaban
+   en 2.5:1 («Tu semana», «Mundial · borrador del equipo», «Colaboración entre universidades»). */
+html[data-theme="dark"] .route:not(#route-descubrir) :is(.eyebrow, .learn-mono.learn-num, .small-label) { color: var(--blue); }
+/* Capítulos con fondo oscuro (p. ej. «Cómo se daña»), también en tema claro: textos azules claros, no #146d88. */
+.route:not(#route-descubrir) .learn-chapter.is-dark :is(.eyebrow, .learn-mono, .small-label) { color: #8fd6e8; }
+/* «La idea principal» dentro de un capítulo oscuro: el recuadro claro dejaba texto blanco sobre celeste (1.1:1). */
+.route .learn-chapter.is-dark .learn-key {
+  background: rgb(255 255 255 / 8%) !important;
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 18%) !important;
+  color: var(--ink);
+}
+/* «Empezar a leer» sobre la tarjeta azul de Inicio: 4.1:1 → más de 5:1 oscureciendo un poco su fondo. */
+.cl-why-link { background: rgb(0 0 0 / 16%) !important; }
+.cl-why-link:hover { background: rgb(0 0 0 / 26%) !important; }
+
+/* Textos que seguían en 11-12 px. */
+.draft-badge, .res-audience, .recipe-country, .recipe-validation, .status-badge, .local-label,
+.shopping-count, .recipe-number, .learn-stage-label, #learn-index .learn-mono, .res-host { font-size: max(.8125rem, 13px); }
+
+/* Enlaces difíciles de tocar en celular (20-23 px de alto): migas y listas de fuentes. */
+.cl-crumbs a, .source-item a, .chapter-sources a { display: inline-block; padding-block: .45rem; }
+
 /* ---------- Guía emergente (tour) ----------
    Usaba var(--ink) de fondo: oscuro en tema claro, pero casi blanco en tema oscuro, con texto blanco encima (1.1:1).
    Ahora el fondo es un azul marino fijo en los dos temas, y el botón "Siguiente" lleva texto oscuro fijo. */
