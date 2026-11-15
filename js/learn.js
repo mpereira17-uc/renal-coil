@@ -73,7 +73,7 @@ function renderBank() {
 
 function render() {
   const chapters = content().learn;
-  document.getElementById('learn-index').innerHTML = `<p class="learn-mono">${e(t('learnIndex'))}</p><ol>${chapters.map((chapter,i)=>`<li><a href="#aprende/${chapter.id}" data-learn-link="${chapter.id}"><span class="learn-mono">${pad(i+1)}</span>${e(chapter.label)}</a></li>`).join('')}<li><a href="#aprende/palabras" data-learn-link="palabras"><span class="learn-mono">${pad(chapters.length+1)}</span>${e(t('bankEyebrow').charAt(0)+t('bankEyebrow').slice(1).toLowerCase())}</a></li><li><a href="#aprende/preguntas" data-learn-link="preguntas"><span class="learn-mono">${pad(chapters.length+2)}</span>${e(t('faqNav'))}</a></li><li><a href="#aprende/recursos" data-learn-link="recursos"><span class="learn-mono">${pad(chapters.length+3)}</span>${e(t('resNav'))}</a></li></ol><div class="learn-progress"><span id="learn-progress"></span></div>`;
+  document.getElementById('learn-index').innerHTML = `<p class="learn-mono">${e(t('learnIndex'))}</p><ol>${chapters.map((chapter,i)=>`<li><a href="#aprende/${chapter.id}" data-learn-link="${chapter.id}"><span class="learn-mono">${pad(i+1)}</span>${e(chapter.label)}</a></li>`).join('')}</ol><div class="learn-progress"><span id="learn-progress"></span></div>`;
   document.getElementById('learn-chapters').innerHTML = chapters.map(chapterHTML).join('');
   renderBank();
   renderLearnExtra();
